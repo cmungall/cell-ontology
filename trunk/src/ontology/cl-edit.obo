@@ -1,7 +1,7 @@
 format-version: 1.2
-date: 13:01:2012 09:59
-saved-by: haendel
-auto-generated-by: OBO-Edit 2.1-beta11
+date: 22:02:2012 10:20
+saved-by: djs93
+auto-generated-by: OBO-Edit 2.1.1-beta6
 subsetdef: abnormal_slim ""
 subsetdef: absent_slim ""
 subsetdef: attribute_slim ""
@@ -313,6 +313,8 @@ name: neuronal receptor cell (sensu Animalia)
 namespace: cell
 is_a: CL:0000197 ! receptor cell
 is_a: CL:0000540 ! neuron
+intersection_of: CL:0000540 ! neuron
+intersection_of: capable_of GO:0050906 ! detection of stimulus involved in sensory perception
 
 [Term]
 id: CL:0000007
@@ -556,6 +558,8 @@ id: CL:0000029
 name: neuron neural crest derived
 namespace: cell
 is_a: CL:0000540 ! neuron
+intersection_of: CL:0000540 ! neuron
+intersection_of: develops_from CL:0000333 ! neural crest cell
 relationship: develops_from CL:0002676 ! neural crest derived neuroblast
 
 [Term]
@@ -1496,19 +1500,19 @@ def: "A neuron that uses acetylcholine as a vesicular neurotransmitter." [GOC:tf
 xref: BTO:0004902
 xref: FMA:84796
 xref: WBbt:0006840
-is_a: CL:0000107 ! autonomic neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000109
 name: adrenergic neuron
 namespace: cell
-is_a: CL:0000107 ! autonomic neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000110
 name: peptidergic neuron
 namespace: cell
-is_a: CL:0000107 ! autonomic neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000111
@@ -1548,7 +1552,7 @@ is_a: CL:0000221 ! ectodermal cell
 id: CL:0000115
 name: endothelial cell
 namespace: cell
-def: "An endothelial cell comprises the outermost layer or lining of anatomical structures and can be squamous or cuboidal. In mammals, endothelial cell has vimentin filaments and is derived from the mesoderm." [GOC:tfm, http://63.198.234.228/OpenFMA/Endothelial%20cell.html, MESH:D042783, https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3364936&group_id=36855]
+def: "An endothelial cell comprises the outermost layer or lining of anatomical structures and can be squamous or cuboidal. In mammals, endothelial cell has vimentin filaments and is derived from the mesoderm." [GOC:tfm, http://63.198.234.228/OpenFMA/Endothelial%20cell.html, https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3364936&group_id=36855, MESH:D042783]
 comment: From FMA: 9.07.2001: Endothelial cell has always been classified as a kind of epithelial cell, specifically a squamous cell but that is not true. First, endothelial cell can either be squamous or cuboidal (e.g. high-endothelial cell) and secondly, it has different embryological derivation (mesodermal) than a true epithelial cell (ectodermal and endodermal). The basis for present classification is the fact that it comprises the outermost layer or lining of anatomical structures (location-based) but a better structural basis for the differentia is the cytoskeleton of the cell. Endothelial cell has vimentin filaments while an epithelial cell has keratin filaments. [Onard].
 synonym: "endotheliocyte" EXACT []
 xref: BTO:0001176
@@ -2386,7 +2390,8 @@ id: CL:0000199
 name: mechanoreceptor cell
 namespace: cell
 def: "A cell specialized to transduce mechanical stimuli and relay that information centrally in the nervous system." [MESH:A.08.800.550.700.500]
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+intersection_of: CL:0000540 ! neuron
+intersection_of: capable_of GO:0050974 ! detection of mechanical stimulus involved in sensory perception
 
 [Term]
 id: CL:0000200
@@ -2431,7 +2436,8 @@ id: CL:0000206
 name: chemoreceptor cell
 namespace: cell
 def: "A cell specialized to detect chemical substances and relay that information centrally in the nervous system. Chemoreceptors may monitor external stimuli, as in taste and olfaction, or internal stimuli, such as the concentrations of oxygen and carbon dioxide in the blood." [MESH:A.08.800.550.700.120]
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+intersection_of: CL:0000540 ! neuron
+intersection_of: capable_of GO:0050907 ! detection of chemical stimulus involved in sensory perception
 
 [Term]
 id: CL:0000207
@@ -2442,7 +2448,8 @@ synonym: "olfactory sensory neuron" EXACT []
 synonym: "Schultze's cell" EXACT []
 xref: BTO:0004185
 xref: FMA:67860
-is_a: CL:0000206 ! chemoreceptor cell
+intersection_of: CL:0000540 ! neuron
+intersection_of: capable_of GO:0050911 ! detection of chemical stimulus involved in sensory perception of smell
 
 [Term]
 id: CL:0000208
@@ -2470,6 +2477,8 @@ xref: BTO:0001060
 xref: FBbt:00004211
 xref: FMA:86740
 is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+intersection_of: CL:0000540 ! neuron
+intersection_of: capable_of GO:0050962 ! detection of light stimulus involved in sensory perception
 
 [Term]
 id: CL:0000211
@@ -5053,7 +5062,7 @@ name: nitrergic neuron
 namespace: cell
 def: "A nerve cell where transmission is mediated by nitric oxide." [MESH:A.08.663.748]
 xref: FMA:84792
-is_a: CL:0000107 ! autonomic neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000529
@@ -6029,8 +6038,8 @@ id: CL:0000610
 name: plant cell
 namespace: cell
 comment: This term was obsoleted as it is redundant with PO:0009002 in the cell ontology (PO)
-consider: PO:0009002
 is_obsolete: true
+consider: PO:0009002
 
 [Term]
 id: CL:0000611
@@ -6162,7 +6171,7 @@ def: "A neuron that uses GABA as a vesicular neurotransmitter" [GOC:tfm]
 synonym: "GABA-ergic neuron" EXACT []
 xref: FMA:84788
 xref: WBbt:0005190
-is_a: CL:0000107 ! autonomic neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000618
@@ -6696,7 +6705,7 @@ is_obsolete: true
 id: CL:0000673
 name: Kenyon cell
 namespace: cell
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+is_a: CL:0000028 ! CNS neuron (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000674
@@ -6741,7 +6750,7 @@ id: CL:0000679
 name: glutamatergic neuron
 namespace: cell
 xref: WBbt:0006829
-is_a: CL:0000107 ! autonomic neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000680
@@ -6911,7 +6920,7 @@ synonym: "dopaminergic cell" EXACT []
 xref: BTO:0004032
 xref: FMA:84787
 xref: WBbt:0006746
-is_a: CL:0000107 ! autonomic neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000701
@@ -19580,11 +19589,11 @@ creation_date: 2012-01-12T04:44:34Z
 
 [Term]
 id: CL:0005021
-name: mesenchymal lymphangioblast 
+name: mesenchymal lymphangioblast
 namespace: cell
 def: "Mesenchymal derived lymphatic progenitor cells that give rise to the superficial lymphatics." [PMID:15624319, PMID:18430230]
-is_a: CL:0005020 ! lymphangioblast
 is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0005020 ! lymphangioblast
 created_by: Ceri
 creation_date: 2012-01-12T05:01:22Z
 
@@ -31171,10 +31180,20 @@ synonym: "sensory perception, stimulus detection" EXACT []
 synonym: "sensory transduction" EXACT []
 xref: Wikipedia:Transduction_(physiology)
 is_a: GO:0051606 ! detection of stimulus
-intersection_of: GO:0051606 ! detection of stimulus
-intersection_of: part_of GO:0007600 ! sensory perception
-relationship: part_of GO:0007600 ! sensory perception
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0050907
+name: detection of chemical stimulus involved in sensory perception
+namespace: biological_process
+def: "The series of events in which a sensory chemical stimulus is received by a cell and converted into a molecular signal." [GOC:ai]
+synonym: "sensory detection of chemical stimulus" EXACT []
+synonym: "sensory detection of chemical stimulus during sensory perception" EXACT []
+synonym: "sensory perception, sensory detection of chemical stimulus" EXACT []
+synonym: "sensory perception, sensory transduction of chemical stimulus" EXACT []
+synonym: "sensory transduction of chemical stimulus" EXACT []
+synonym: "sensory transduction of chemical stimulus during sensory perception" EXACT []
+is_a: GO:0050906 ! detection of stimulus involved in sensory perception
 
 [Term]
 id: GO:0050908
@@ -31194,6 +31213,54 @@ intersection_of: GO:0009583 ! detection of light stimulus
 intersection_of: part_of GO:0007601 ! visual perception
 relationship: part_of GO:0007601 ! visual perception
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0050910
+name: detection of mechanical stimulus involved in sensory perception of sound
+namespace: biological_process
+alt_id: GO:0009592
+alt_id: GO:0055128
+def: "The series of events involved in the perception of sound vibration. The vibration is received by a cell and converted into a molecular signal." [GOC:ai]
+synonym: "detection of sound" EXACT []
+synonym: "hearing, sensory transduction of sound" EXACT []
+synonym: "perception of sound, detection of mechanical stimulus" EXACT []
+synonym: "perception of sound, sensory detection of mechanical stimulus" EXACT []
+synonym: "perception of sound, sensory transduction of mechanical stimulus" EXACT []
+synonym: "sensory detection of mechanical stimulus during perception of sound" EXACT []
+synonym: "sensory transduction of mechanical stimulus during perception of sound" EXACT []
+synonym: "sensory transduction of sound" EXACT []
+is_a: GO:0050974 ! detection of mechanical stimulus involved in sensory perception
+
+[Term]
+id: GO:0050911
+name: detection of chemical stimulus involved in sensory perception of smell
+namespace: biological_process
+def: "The series of events involved in the perception of smell in which an olfactory chemical stimulus is received by a cell and converted into a molecular signal." [GOC:ai]
+synonym: "perception of smell, detection of chemical stimulus" EXACT []
+synonym: "perception of smell, sensory detection of chemical stimulus" EXACT []
+synonym: "perception of smell, sensory transduction of chemical stimulus" EXACT []
+synonym: "sensory detection of chemical stimulus during perception of smell" EXACT []
+synonym: "sensory detection of scent" EXACT []
+synonym: "sensory detection of smell" EXACT []
+synonym: "sensory transduction of chemical stimulus during perception of smell" EXACT []
+synonym: "sensory transduction of scent" EXACT []
+synonym: "sensory transduction of smell" EXACT []
+is_a: GO:0050907 ! detection of chemical stimulus involved in sensory perception
+
+[Term]
+id: GO:0050912
+name: detection of chemical stimulus involved in sensory perception of taste
+namespace: biological_process
+def: "The series of events involved in the perception of taste in which a gustatory chemical stimulus is received by a cell and converted into a molecular signal." [GOC:ai]
+synonym: "perception of taste, detection of chemical stimulus" EXACT []
+synonym: "perception of taste, sensory detection of chemical stimulus" EXACT []
+synonym: "perception of taste, sensory transduction of chemical stimulus" EXACT []
+synonym: "sensory detection of chemical stimulus during perception of taste" EXACT []
+synonym: "sensory detection of taste" EXACT []
+synonym: "sensory transduction of chemical stimulus during perception of taste" EXACT []
+synonym: "sensory transduction of taste" EXACT []
+synonym: "taste perception" BROAD []
+is_a: GO:0050907 ! detection of chemical stimulus involved in sensory perception
 
 [Term]
 id: GO:0050920
@@ -31254,6 +31321,19 @@ intersection_of: GO:0009583 ! detection of light stimulus
 intersection_of: part_of GO:0007600 ! sensory perception
 relationship: part_of GO:0050953 ! sensory perception of light stimulus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0050974
+name: detection of mechanical stimulus involved in sensory perception
+namespace: biological_process
+def: "The series of events in which a sensory mechanical stimulus is received by a cell and converted into a molecular signal." [GOC:ai]
+synonym: "sensory detection of mechanical stimulus" EXACT []
+synonym: "sensory detection of mechanical stimulus during sensory perception" EXACT []
+synonym: "sensory perception, sensory detection of mechanical stimulus" EXACT []
+synonym: "sensory perception, sensory transduction of mechanical stimulus" EXACT []
+synonym: "sensory transduction of mechanical stimulus" EXACT []
+synonym: "sensory transduction of mechanical stimulus during sensory perception" EXACT []
+is_a: GO:0050906 ! detection of stimulus involved in sensory perception
 
 [Term]
 id: GO:0051023
@@ -57778,6 +57858,11 @@ is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Typedef]
+id: derives_from
+name: derives from
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+
+[Typedef]
 id: develops_from
 name: develops_from
 namespace: RO
@@ -57977,11 +58062,6 @@ xref: RO:0002131
 [Typedef]
 id: secretes
 name: secretes
-
-[Typedef]
-id: derives_from
-name: derives from
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 
 [Typedef]
 id: similar_in_magnitude_relative_to
