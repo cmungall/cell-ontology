@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 22:02:2012 10:20
+date: 26:02:2012 17:22
 saved-by: djs93
 auto-generated-by: OBO-Edit 2.1.1-beta6
 subsetdef: abnormal_slim ""
@@ -298,7 +298,11 @@ id: CL:0000004
 name: cell by organism
 namespace: cell
 def: "A classification of cells by the organisms within which they are contained." [FB:ma]
-is_a: CL:0000003 ! native cell
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its species.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+is_obsolete: true
+consider: CL:0000000
+consider: CL:0000003
+consider: CL:0001034
 
 [Term]
 id: CL:0000005
@@ -359,7 +363,11 @@ is_a: CL:0000333 ! neural crest cell
 id: CL:0000012
 name: cell by class
 namespace: cell
-is_a: CL:0000003 ! native cell
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+is_obsolete: true
+consider: CL:0000000
+consider: CL:0000003
+consider: CL:0001034
 
 [Term]
 id: CL:0000013
@@ -602,8 +610,7 @@ name: stem cell
 namespace: cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A.11.872]
 xref: FMA:63368
-is_a: CL:0000144 ! cell by function
-intersection_of: CL:0000144 ! cell by function
+intersection_of: CL:0000003 ! native cell
 intersection_of: capable_of GO:0017145 ! stem cell division
 
 [Term]
@@ -689,7 +696,6 @@ name: germ line cell
 namespace: cell
 def: "A cell that is within the developmental lineage of gametes and is able to pass along its genetic material to offspring." [GOC:tfm, ISBN:0721662544]
 comment: Originally this term had some plant germ line cell children.
-is_a: CL:0000144 ! cell by function
 intersection_of: CL:0000548 ! animal cell
 intersection_of: capable_of GO:0022414 ! reproductive process
 
@@ -914,10 +920,11 @@ id: CL:0000055
 name: non-terminally differentiated cell
 namespace: cell
 def: "A precursor cell with a limited number of potential fates." [SANBI:mhl]
+comment: define using PATO mulit-potent or oligopotent?
 synonym: "blast cell" EXACT []
 xref: BTO:0000125
 xref: FMA:84782
-is_a: CL:0000012 ! cell by class
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000056
@@ -999,7 +1006,11 @@ id: CL:0000063
 name: cell by histology
 namespace: cell
 def: "A classification of cells by their microscopic appearance." [FB:ma, GOC:tfm]
-is_a: CL:0000012 ! cell by class
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its microscopic appearance.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+is_obsolete: true
+consider: CL:0000000
+consider: CL:0000003
+consider: CL:0001034
 
 [Term]
 id: CL:0000064
@@ -1007,8 +1018,7 @@ name: ciliated cell
 namespace: cell
 def: "A cell that has a filiform extrusion of the cell surface." [GOC:tfm]
 xref: XAO:0000031
-is_a: CL:0000063 ! cell by histology
-intersection_of: CL:0000063 ! cell by histology
+intersection_of: CL:0000003 ! native cell
 intersection_of: has_plasma_membrane_part GO:0005929 ! cilium
 
 [Term]
@@ -1019,8 +1029,8 @@ def: "A neurectoderm derived cell that lines the neural lumen." [GOC:tfm, JB:jb,
 synonym: "ependymocyte" EXACT []
 xref: BTO:0001724
 xref: FMA:70550
-is_a: CL:0000067 ! ciliated epithelial cell
 is_a: CL:0000710 ! neurecto-epithelial cell
+relationship: has_plasma_membrane_part GO:0005929 ! cilium
 
 [Term]
 id: CL:0000066
@@ -1032,7 +1042,7 @@ xref: BTO:0000414
 xref: FBbt:00000124
 xref: FMA:66768
 xref: WBbt:0003672
-is_a: CL:0000063 ! cell by histology
+is_a: CL:0000003 ! native cell
 is_a: CL:0000548 ! animal cell
 
 [Term]
@@ -1041,8 +1051,6 @@ name: ciliated epithelial cell
 namespace: cell
 def: "An epithelial cell that has a cillia." [GOC:tfm]
 xref: FMA:70605
-is_a: CL:0000064 ! ciliated cell
-is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 intersection_of: CL:0000075 ! columnar/cuboidal epithelial cell
 intersection_of: has_plasma_membrane_part GO:0005929 ! cilium
 
@@ -1144,8 +1152,7 @@ id: CL:0000080
 name: circulating cell
 namespace: cell
 def: "A cell which moves among different tissues of the body, via blood, lymph, or other medium." [GOC:add]
-is_a: CL:0000144 ! cell by function
-intersection_of: CL:0000144 ! cell by function
+intersection_of: CL:0000003 ! native cell
 intersection_of: part_of UBERON:0000179 ! haemolymphatic fluid
 
 [Term]
@@ -1454,7 +1461,6 @@ name: bipolar neuron
 namespace: cell
 def: "A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body." [GOC:tfm, ISBN:0444009442]
 xref: FMA:67282
-is_a: CL:0000063 ! cell by histology
 is_a: CL:0000099 ! interneuron
 
 [Term]
@@ -1754,8 +1760,8 @@ synonym: "stem cells, mesenchymal" EXACT [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
 xref: FMA:70546
+is_a: CL:0000003 ! native cell
 is_a: CL:0000048 ! multi fate stem cell
-is_a: CL:0000063 ! cell by histology
 is_a: CL:0002320 ! connective tissue cell
 intersection_of: CL:0002320 ! connective tissue cell
 intersection_of: capable_of GO:0001649 ! osteoblast differentiation
@@ -1868,7 +1874,11 @@ id: CL:0000144
 name: cell by function
 namespace: cell
 def: "A classification of cells by their primary end goal or behavior." [FB:ma]
-is_a: CL:0000012 ! cell by class
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its function or behavior.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+is_obsolete: true
+consider: CL:0000000
+consider: CL:0000003
+consider: CL:0001034
 
 [Term]
 id: CL:0000145
@@ -1933,8 +1943,7 @@ namespace: cell
 def: "A cell that specializes in controlled release of one or more substances." [GOC:tfm, ISBN:0721662544]
 xref: BTO:0003659
 xref: FMA:86916
-is_a: CL:0000144 ! cell by function
-intersection_of: CL:0000144 ! cell by function
+intersection_of: CL:0000003 ! native cell
 intersection_of: capable_of GO:0032940 ! secretion by cell
 
 [Term]
@@ -2223,7 +2232,7 @@ id: CL:0000181
 name: metabolising cell
 namespace: cell
 def: "A cell whose primary function is intermediary metabolism." [FB:ma]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000182
@@ -2247,7 +2256,7 @@ id: CL:0000183
 name: contractile cell
 namespace: cell
 def: "A cell whose primary function is to shorten." [FB:ma]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000185
@@ -2370,7 +2379,7 @@ is_a: CL:0000228 ! multinucleate cell
 id: CL:0000197
 name: receptor cell
 namespace: cell
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000198
@@ -2481,14 +2490,14 @@ id: CL:0000211
 name: electrically active cell
 namespace: cell
 def: "A cell whose function is determined by the generation or the reception of an electric signal." [FB:ma]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000212
 name: absorptive cell
 namespace: cell
 def: "A cell that takes up and metabolizes substances." [CL:CVS]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000213
@@ -2519,7 +2528,7 @@ id: CL:0000215
 name: barrier cell
 namespace: cell
 def: "A cell whose primary function is to prevent the transport of stuff across compartments." [JB:jb]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000216
@@ -2560,15 +2569,19 @@ id: CL:0000219
 name: motile cell
 namespace: cell
 def: "A cell that moves by its own activities." [FB:ma]
-is_a: CL:0000144 ! cell by function
-intersection_of: CL:0000144 ! cell by function
+intersection_of: CL:0000003 ! native cell
 intersection_of: capable_of GO:0048870 ! cell motility
 
 [Term]
 id: CL:0000220
 name: cell by lineage
 namespace: cell
-is_a: CL:0000012 ! cell by class
+is_obsolete: true
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell in a multicellular organiam, apart from a zygote, can potentially be classified by its lineage.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+is_obsolete: true
+consider: CL:0000000
+consider: CL:0000003
+consider: CL:0001034
 
 [Term]
 id: CL:0000221
@@ -2577,7 +2590,7 @@ namespace: cell
 def: "A cell of the outer of the three germ layers of the embryo." [MESH:A.16.254.425.273]
 synonym: "ectoderm cell" EXACT []
 xref: FMA:72549
-is_a: CL:0000220 ! cell by lineage
+is_a: CL:0000003 ! native cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
@@ -2588,7 +2601,7 @@ def: "A cell of the middle germ layer of the embryo." [MESH:A.16.254.425.660]
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
-is_a: CL:0000220 ! cell by lineage
+is_a: CL:0000003 ! native cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
@@ -2598,7 +2611,7 @@ namespace: cell
 def: "A cell of the inner of the three germ layers of the embryo." [MESH:A.16.254.425.407]
 synonym: "endoderm cell" EXACT []
 xref: FMA:72555
-is_a: CL:0000220 ! cell by lineage
+is_a: CL:0000003 ! native cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
@@ -2606,9 +2619,11 @@ id: CL:0000224
 name: cell by nuclear number
 namespace: cell
 def: "A classification of cells by the number of their nuclei." [FB:ma, GOC:tfm]
-is_a: CL:0000012 ! cell by class
-intersection_of: CL:0000012 ! cell by class
-intersection_of: has_quality PATO:0001404 ! nucleate quality
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its nuclear number (note that this term was previously used as a parent class of enucleate cell).  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+is_obsolete: true
+consider: CL:0000000
+consider: CL:0000003
+consider: CL:0001034
 
 [Term]
 id: CL:0000225
@@ -2617,8 +2632,7 @@ namespace: cell
 def: "A cell that lacks a nucleus." [FB:ma]
 synonym: "non-nucleated cell" EXACT []
 xref: FMA:68647
-is_a: CL:0000224 ! cell by nuclear number
-intersection_of: CL:0000224 ! cell by nuclear number
+intersection_of: CL:0000003 ! native cell
 intersection_of: has_quality PATO:0001405 ! anucleate
 
 [Term]
@@ -2626,16 +2640,14 @@ id: CL:0000226
 name: single nucleate cell
 namespace: cell
 def: "A cell with a single nucleus." [FB:ma, GOC:tfm]
-is_a: CL:0002242 ! nucleate cell
-intersection_of: CL:0002242 ! nucleate cell
+intersection_of: CL:0000003 ! native cell
 intersection_of: has_quality PATO:0001407 ! mononucleate
 
 [Term]
 id: CL:0000227
 name: binucleate cell
 namespace: cell
-is_a: CL:0000228 ! multinucleate cell
-intersection_of: CL:0000228 ! multinucleate cell
+intersection_of: CL:0000003 ! native cell
 intersection_of: has_quality PATO:0001406 ! binucleate
 
 [Term]
@@ -2647,8 +2659,7 @@ synonym: "syncitium" EXACT []
 synonym: "syncytial cell" EXACT []
 synonym: "syncytium" EXACT []
 xref: WBbt:0008074
-is_a: CL:0002242 ! nucleate cell
-intersection_of: CL:0002242 ! nucleate cell
+intersection_of: CL:0000003 ! native cell
 intersection_of: has_quality PATO:0001908 ! multinucleate
 
 [Term]
@@ -2892,7 +2903,8 @@ is_obsolete: true
 id: CL:0000255
 name: eukaryotic cell
 namespace: cell
-is_a: CL:0000004 ! cell by organism
+is_a: CL:0000003 ! native cell
+disjoint_from: CL:0000520
 
 [Term]
 id: CL:0000256
@@ -3171,7 +3183,7 @@ id: CL:0000293
 name: structural cell
 namespace: cell
 def: "A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism." [TAIR:sr]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000294
@@ -3446,7 +3458,7 @@ id: CL:0000325
 name: stuff accumulating cell
 namespace: cell
 def: "A cell that is specialised to accumulate a particular substance(s)." [FB:ma]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000326
@@ -3471,8 +3483,7 @@ is_a: CL:0000325 ! stuff accumulating cell
 id: CL:0000329
 name: oxygen accumulating cell
 namespace: cell
-is_a: CL:0000144 ! cell by function
-intersection_of: CL:0000144 ! cell by function
+intersection_of: CL:0000003 ! native cell
 intersection_of: capable_of GO:0015671 ! oxygen transport
 
 [Term]
@@ -3506,8 +3517,8 @@ name: neural crest cell
 namespace: cell
 def: "A cell of the strip of specialized ectoderm flanking each side of the embryonal neural plate, which after the closure of the neural tube, forms a column of isolated cells along the dorsal aspect of the neural tube. Most of the cranial and all of the spinal sensory ganglion cells arise by differentiation of neural crest cells." [MESH:A.16.254.600]
 xref: FMA:86667
+is_a: CL:0000003 ! native cell
 is_a: CL:0000219 ! motile cell
-is_a: CL:0000220 ! cell by lineage
 is_a: CL:0002321 ! embryonic cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
 
@@ -3778,8 +3789,8 @@ namespace: cell
 def: "Diploid cell produced by the fusion of sperm cell nucleus and egg cell." [ISBN:0471245208]
 xref: BTO:0000854
 xref: FMA:72395
+is_a: CL:0000003 ! native cell
 is_a: CL:0000007 ! early embryonic cell
-is_a: CL:0000220 ! cell by lineage
 
 [Term]
 id: CL:0000366
@@ -4113,15 +4124,14 @@ id: CL:0000412
 name: polyploid cell
 namespace: cell
 def: "A cell whose nucleus, or nuclei, each contain more than two haploid genomes." [FB:ma]
-is_a: CL:0000414 ! cell by ploidy
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000413
 name: haploid cell
 namespace: cell
 def: "A cell whose nucleus contains a single haploid genome." [FB:ma, GOC:tfm]
-is_a: CL:0000414 ! cell by ploidy
-intersection_of: CL:0000414 ! cell by ploidy
+intersection_of: CL:0000003 ! native cell
 intersection_of: has_quality PATO:0001375 ! haploid
 
 [Term]
@@ -4129,9 +4139,12 @@ id: CL:0000414
 name: cell by ploidy
 namespace: cell
 def: "A classification of cells by the number of haploid genome equivalents of their nucleus or nuclei." [FB:ma, GOC:tfm]
-is_a: CL:0000012 ! cell by class
-intersection_of: CL:0000012 ! cell by class
-intersection_of: has_quality PATO:0001374 ! ploidy
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell with chromosomes can be classified by its ploidy. If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), eukaryotic cell (CL:0000255) or cell in vitro (CL:0001034) as appropriate.
+is_obsolete: true
+consider: CL:0000000
+consider: CL:0000003
+consider: CL:0001034
+consider: CL:0000255
 
 [Term]
 id: CL:0000415
@@ -4139,7 +4152,7 @@ name: diploid cell
 namespace: cell
 def: "A cell whose nucleus has two haploid genomes." [FB:ma]
 xref: FMA:72300
-is_a: CL:0000414 ! cell by ploidy
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000416
@@ -4193,7 +4206,7 @@ id: CL:0000422
 name: mitogenic signaling cell
 namespace: cell
 def: "A cell whose primary function is to cause growth by stimulating cell division in its immediate cellular environment." [FB:ma]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000423
@@ -4367,7 +4380,7 @@ is_a: CL:0000737 ! striated muscle cell
 id: CL:0000445
 name: apoptosis fated cell
 namespace: cell
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000446
@@ -4583,7 +4596,7 @@ id: CL:0000473
 name: defensive cell
 namespace: cell
 def: "A cell whose primary function is to protect the organism." [JB:jb]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000474
@@ -4991,7 +5004,7 @@ is_a: CL:0000234 ! phagocyte
 id: CL:0000520
 name: prokaryotic cell
 namespace: cell
-is_a: CL:0000004 ! cell by organism
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000521
@@ -5267,6 +5280,7 @@ id: CL:0000548
 name: animal cell
 namespace: cell
 is_a: CL:0000255 ! eukaryotic cell
+disjoint_from: CL:0000521 ! fungal cell
 
 [Term]
 id: CL:0000549
@@ -6263,14 +6277,14 @@ id: CL:0000627
 name: transporting cell
 namespace: cell
 def: "A cell involved in transporting nutrients, minerals, water, gases and other chemicals between cells for a variety of purposes including conveying nutrition to other tissues, removing waste products from the tissues, conveying gases for respiration, distributing heat and repelling invasion of foreign substances." [TAIR:sr]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000628
 name: photosynthetic cell
 namespace: cell
 def: "A cell that can perform photosynthesis, in which carbohydrates are synthesized from carbon dioxide and water, using light as the energy source." [TAIR:sr]
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000629
@@ -6287,7 +6301,7 @@ def: "A cell whose primary function is to support other cell types." [FB:ma, GOC
 xref: BTO:0002315
 xref: FMA:86947
 xref: ZFA:0000688
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000631
@@ -6609,7 +6623,7 @@ is_a: CL:0000468 ! neuroglioblast
 id: CL:0000663
 name: valve cell
 namespace: cell
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000664
@@ -6647,7 +6661,7 @@ def: "The cell characteristic of an organ, as distinguished from associated conn
 comment: cell type has a similar but slightly different meaning in botany (plants): see  PO:0000074.
 xref: BTO:0002174
 xref: FMA:84638
-is_a: CL:0000063 ! cell by histology
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000669
@@ -6962,7 +6976,6 @@ alt_id: CL:1000430
 def: "Specialized ependymal cell that produces the cerebrospinal fluid from the blood and secretes it into the lumen of the brain and spinal chord." [GOC:add, GOC:tfm, JB:jb, PMID:9550134]
 synonym: "epithelial cell of choroid plexus" EXACT []
 xref: FMA:70549
-is_a: CL:0000065 ! ependymal cell
 is_a: CL:0000627 ! transporting cell
 intersection_of: CL:0000065 ! ependymal cell
 intersection_of: part_of UBERON:0001886 ! choroid plexus
@@ -7102,7 +7115,7 @@ is_a: CL:0000725 ! nitrogen fixing cell
 id: CL:0000725
 name: nitrogen fixing cell
 namespace: cell
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000726
@@ -8703,6 +8716,8 @@ def: "An olfactory receptor cell in which the apical ending of the dendrite is a
 synonym: "ciliated olfactory sensory neuron" EXACT []
 synonym: "ciliated sensory neuron" EXACT []
 is_a: CL:0000207 ! olfactory receptor cell
+relationship: has_plasma_membrane_part GO:0005929 ! cilium
+
 
 [Term]
 id: CL:0000848
@@ -9181,7 +9196,7 @@ namespace: cell
 def: "A type of cell containing lipids in small vacuoles and typically seen in atherolosclerotic lesions, as well as other conditions." [GOC:add]
 xref: BTO:0003872
 xref: FMA:83586
-is_a: CL:0000063 ! cell by histology
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000892
@@ -14315,8 +14330,7 @@ name: nucleate cell
 namespace: cell
 def: "A cell containing at least one nucleus." [GOC:tfm]
 xref: FMA:67513
-is_a: CL:0000224 ! cell by nuclear number
-intersection_of: CL:0000224 ! cell by nuclear number
+intersection_of: CL:0000003 ! native cell
 intersection_of: has_part GO:0005634 ! nucleus
 created_by: tmeehan
 creation_date: 2010-09-07T03:32:33Z
@@ -15872,7 +15886,8 @@ def: "A cell of an organism that does not pass on its genetic material to the or
 xref: BTO:0001268
 xref: FMA:72300
 xref: WBbt:0008378
-is_a: CL:0000144 ! cell by function
+is_a: CL:0000003 ! native cell
+disjoint_from: CL:0000039 ! germ line cell
 created_by: tmeehan
 creation_date: 2010-09-24T09:44:42Z
 
@@ -19515,14 +19530,16 @@ id: CL:0005012
 name: multi-ciliated epithelial cell
 namespace: cell
 def: "A ciliated epithelial cell with many cilium." [CL:CVS]
-is_a: CL:0000067 ! ciliated epithelial cell
+is_a: CL:0000066 ! epithelial cell
+relationship: has_plasma_membrane_part GO:0005929 ! cilium
 
 [Term]
 id: CL:0005013
 name: single ciliated epithelial cell
 namespace: cell
 def: "A ciliated epithelial cell with a single cilium." [CL:CVS]
-is_a: CL:0000067 ! ciliated epithelial cell
+is_a: CL:0000066 ! epithelial cell
+relationship: has_plasma_membrane_part GO:0005929 ! cilium
 
 [Term]
 id: CL:0005014
