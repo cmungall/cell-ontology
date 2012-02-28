@@ -1,7 +1,7 @@
 format-version: 1.2
-date: 26:02:2012 17:22
-saved-by: djs93
-auto-generated-by: OBO-Edit 2.1.1-beta6
+date: 28:02:2012 16:27
+saved-by: adiehl
+auto-generated-by: OBO-Edit 2.1.1-beta7
 subsetdef: abnormal_slim ""
 subsetdef: absent_slim ""
 subsetdef: attribute_slim ""
@@ -2576,7 +2576,6 @@ intersection_of: capable_of GO:0048870 ! cell motility
 id: CL:0000220
 name: cell by lineage
 namespace: cell
-is_obsolete: true
 comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell in a multicellular organiam, apart from a zygote, can potentially be classified by its lineage.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
 is_obsolete: true
 consider: CL:0000000
@@ -2904,7 +2903,7 @@ id: CL:0000255
 name: eukaryotic cell
 namespace: cell
 is_a: CL:0000003 ! native cell
-disjoint_from: CL:0000520
+disjoint_from: CL:0000520 ! prokaryotic cell
 
 [Term]
 id: CL:0000256
@@ -4143,8 +4142,8 @@ comment: This term was made obsolete because there is no difference in meaning b
 is_obsolete: true
 consider: CL:0000000
 consider: CL:0000003
-consider: CL:0001034
 consider: CL:0000255
+consider: CL:0001034
 
 [Term]
 id: CL:0000415
@@ -8365,8 +8364,6 @@ synonym: "LAK cell" BROAD [PMID:14685782]
 synonym: "lymphokine activated killer cell" BROAD [PMID:14685782]
 synonym: "mature NK cell" EXACT []
 is_a: CL:0000623 ! natural killer cell
-intersection_of: CL:0000623 ! natural killer cell
-intersection_of: capable_of GO:0045233 ! natural killer cell receptor activity
 disjoint_from: CL:0002338 ! CD56-positive, CD161-positive immature natural killer cell
 disjoint_from: CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
 relationship: develops_from CL:0000823 ! immature natural killer cell
@@ -8717,7 +8714,6 @@ synonym: "ciliated olfactory sensory neuron" EXACT []
 synonym: "ciliated sensory neuron" EXACT []
 is_a: CL:0000207 ! olfactory receptor cell
 relationship: has_plasma_membrane_part GO:0005929 ! cilium
-
 
 [Term]
 id: CL:0000848
