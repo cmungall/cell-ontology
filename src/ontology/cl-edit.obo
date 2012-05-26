@@ -2200,6 +2200,8 @@ xref: BTO:0003939
 xref: FMA:18688
 is_a: CL:0000174 ! steroid hormone secreting cell
 is_a: CL:0002132 ! stromal cell of ovary
+relationship: part_of UBERON:0002512 ! corpus luteum
+relationship: capable_of GO:0042701 ! progesterone secretion
 
 [Term]
 id: CL:0000176
@@ -2220,11 +2222,12 @@ id: CL:0000178
 name: Leydig cell
 namespace: cell
 def: "A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis." [GOC:tfm, PMID:12050120]
-synonym: "interstitial cell" EXACT []
+comment: Note that the Amphibian Anatomy Ontology (AA) has a class 'leydig cells' but this is unrelated
+synonym: "interstitial cell" BROAD []
+synonym: "interstitial cell of Leydig" EXACT []
 xref: BTO:0000755
 xref: EMAPA:29655
 xref: FMA:72297
-xref: FMA:86571
 is_a: CL:0000177 ! testosterone secreting cell
 
 [Term]
@@ -2262,7 +2265,6 @@ is_a: CL:0000668 ! parenchymal cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0002107 ! liver
-relationship: develops_from CL:0000134 ! mesenchymal cell
 relationship: develops_from CL:0000223 ! endodermal cell
 
 [Term]
@@ -2427,6 +2429,8 @@ def: "A mechanoreceptor cell located in the inner ear that is sensitive to audit
 comment: In mammals these cells are located in the organ of Corti.
 synonym: "auditory receptor cell" EXACT []
 synonym: "cochlear hair cell" EXACT []
+synonym: "inner ear hair cell" EXACT [GO:0060119]
+synonym: "inner ear receptor cell" EXACT [GO:0060119]
 xref: FMA:62364
 is_a: CL:0002374 ! ear hair cell
 is_a: CL:0002491 ! auditory epithelial cell
@@ -2747,6 +2751,8 @@ xref: FMA:83806
 is_a: CL:0000219 ! motile cell
 is_a: CL:0000325 ! stuff accumulating cell
 is_a: CL:0000473 ! defensive cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: capable_of GO:0006909 ! phagocytosis
 
 [Term]
 id: CL:0000235
@@ -3651,7 +3657,8 @@ id: CL:0000347
 name: scleral cell
 namespace: cell
 def: "A cell of the sclera of the eye." [GOC:add]
-is_a: CL:0000293 ! structural cell
+intersection_of: CL:0000293 ! structural cell
+intersection_of: part_of UBERON:0001773 ! sclera
 relationship: develops_from CL:0000008 ! cranial neural crest cell
 
 [Term]
@@ -3659,14 +3666,16 @@ id: CL:0000348
 name: choroidal cell of the eye
 namespace: cell
 def: "A cell of the choroid of the eye." [GOC:add]
-is_a: CL:0000293 ! structural cell
+intersection_of: CL:0000293 ! structural cell
+intersection_of: part_of UBERON:0001776 ! choroid
 relationship: develops_from CL:0000008 ! cranial neural crest cell
 
 [Term]
 id: CL:0000349
 name: extraembryonic cell
 namespace: cell
-is_a: CL:0000548 ! animal cell
+intersection_of: CL:0000548 ! animal cell
+intersection_of: part_of UBERON:0000478 ! extraembryonic structure
 is_a: CL:0002371 ! somatic cell
 
 [Term]
@@ -3961,6 +3970,8 @@ name: hemocyte (sensu Nematoda and Protostomia)
 namespace: cell
 is_a: CL:0000519 ! phagocyte (sensu Nematoda and Protostomia)
 relationship: develops_from CL:0000385 ! prohemocyte (sensu Nematoda and Protostomia)
+relationship: capable_of GO:0035010 {source="PMID:18025161"} ! encapsulation of foreign target
+xref: FBbt:00005063 ! hemocyte
 
 [Term]
 id: CL:0000388
@@ -3994,6 +4005,7 @@ namespace: cell
 def: "An insect immune cell that develops from plasmatocyte." [PMID:12930778]
 is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
 relationship: develops_from CL:0000394 ! plasmatocyte
+xref: FBbt:00001688 ! podocyte
 
 [Term]
 id: CL:0000392
@@ -4361,7 +4373,8 @@ def: "A cell of the intermediate pituitary that produces melanocyte stimulating 
 synonym: "melanotrope" EXACT []
 synonym: "melanotroph" EXACT []
 xref: BTO:0002277
-is_a: CL:0000167 ! peptide hormone secreting cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: capable_of GO:0036160 ! melanocyte-stimulating hormone secretion
 
 [Term]
 id: CL:0000441
@@ -4384,7 +4397,8 @@ is_a: CL:0000473 ! defensive cell
 id: CL:0000443
 name: calcitonin secreting cell
 namespace: cell
-is_a: CL:0000167 ! peptide hormone secreting cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: capable_of GO:0036161 ! calcitonin secretion
 
 [Term]
 id: CL:0000444
@@ -4632,6 +4646,7 @@ id: CL:0000474
 name: pericardial cell
 namespace: cell
 def: "Cell which forms the outer layer of the dorsal vessel within the abdomen of the fly larvae. These cells sequester macromolecules from the hemolymph." [FBbt:00003184, GOC:tfm, PMID:19783135]
+synonym: "pericardial nephrocyte" BROAD [GO:0061320]
 xref: FBbt:00003184
 is_a: CL:0000519 ! phagocyte (sensu Nematoda and Protostomia)
 is_a: CL:0002520 ! nephrocyte
@@ -4660,6 +4675,8 @@ relationship: capable_of GO:0070460 ! thyroid-stimulating hormone secretion
 id: CL:0000477
 name: follicle cell
 namespace: cell
+synonym: "ovarian follicle cell" EXACT [GO:0007297]
+comment: Editors note: check this. Currently used in goxp
 xref: FBbt:00004904
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 relationship: develops_from CL:0000441 ! follicle stem cell
@@ -4739,6 +4756,7 @@ id: CL:0000486
 name: garland cell
 namespace: cell
 def: "A large binucleate cell that forms a 'garland' around the anterior end of the proventriculus (cardia) at its junction with the esophagus in both adults and larvae flies. Each cell is surrounded by a basement membrane and there are numerous micro-invaginations (lacunae) extending from the surface into the cytoplasm. At the mouth of each lacuna is a doubled filament forming a specialised filtration system (diaphragm). The filtrate is endocytosed from the lacunae." [fbbt:00005059, GOC:tfm, PMID:19783135]
+synonym: "garland nephrocyte" BROAD [GO:0061321]
 xref: BTO:0004596
 xref: FBbt:00005059
 is_a: CL:0000227 ! binucleate cell
@@ -5215,6 +5233,7 @@ id: CL:0000542
 name: lymphocyte
 namespace: cell
 def: "A lymphocyte is a leukocyte commonly found in the blood and lymph that has the characteristics of a large nucleus, a neutral staining cytoplasm, and prominent heterochromatin." [GOC:add, ISBN:0683073696, ISBN:0781735149]
+comment: Editors note: consider adding taxon constraint to vertebrata (PMID:18025161)
 xref: BTO:0000775
 xref: FMA:62863
 is_a: CL:0000738 ! leukocyte
@@ -15818,7 +15837,7 @@ creation_date: 2010-09-22T01:40:44Z
 id: CL:0002363
 name: keratocyte
 namespace: cell
-def: "A keratocyte is a specialized fibroblast residing in the  cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. This corneal layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components.  This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
+def: "A keratocyte is a specialized fibroblast residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. This corneal layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components.  This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
 synonym: "corneal fibroblast" EXACT []
 synonym: "corneal keratocyte" EXACT []
 is_a: CL:0000057 ! fibroblast
@@ -21606,7 +21625,8 @@ id: CL:1000606
 name: kidney nerve cell
 namespace: cell
 xref: KUPO:0001015
-is_a: CL:0000540 ! neuron
+intersection_of: CL:0000540 ! neuron
+intersection_of: part_of UBERON:0002113 ! kidney
 is_a: CL:1000500 ! kidney interstitial cell
 
 [Term]
@@ -22602,6 +22622,19 @@ xref: FMA:70986
 is_a: CL:0000083 ! epithelial cell of pancreas
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0000017 ! exocrine pancreas
+
+[Term]
+id: CL:1001434
+name: periglomerular cell
+def: "The glomerular layer is the most superficial layer, consisting of mitral cell dendritic arborizations (glomeruli), olfactory nerve fibers, and periglomerular cells. Periglomerular cells contact multiple mitral cell dendrites within the glomeruli and provide lateral inhibition of neighboring glomeruli while allowing excitation of a specific mitral cell dendritic tree." [BTO:0003796]
+synonym: "glomerular layer cell" EXACT  [NIF_Cell:nifext_122]
+synonym: "olfactory bulb glomerular layer cell" EXACT  [NIF_Cell:nifext_122]
+synonym: "olfactory bulb (accessory) glomerular layer cell" EXACT  [NIF_Cell:nifext_122]
+synonym: "periglomerular cell" EXACT  [NIF_Cell:nifext_122]
+is_a: CL:0000540 ! neuron
+relationship: part_of UBERON:0005377 ! olfactory bulb glomerular layer
+xref: BTO:0003796 ! periglomerular cell
+xref: NIF_Cell:nifext_122
 
 [Term]
 id: CP:0000000
