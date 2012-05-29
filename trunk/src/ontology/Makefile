@@ -28,6 +28,15 @@ cl-basic.obo: build/cl-simple.obo
 cl-basic.owl: build/cl-simple.owl
 	cp $< $@
 
+cl-edit.owl: cl-edit.obo
+	obolib-obo2owl -o $@ $<
+
+
+bridge/cl-bridge-to-uberon.obo: cl.obo
+	blip-findall -i $< "parent(X,part_of,Y),id_idspace(X,'CL'),id_idspace(Y,'UBERON')" -select X-Y -label -use_tabs -no_pred | sort -u | tbl2obolinks.pl --rel part_of - > $@.tmp && cat $@.tmp part_of.obo > $@
+bridge/cl-bridge-to-%.owl: bridge/cl-bridge-to-%.obo
+	owltools $< -o file://`pwd`/$@
+
 fix-%: %
 	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
