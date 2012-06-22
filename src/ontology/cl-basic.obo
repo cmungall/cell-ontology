@@ -1,6 +1,7 @@
 format-version: 1.2
-date: 25:03:2012 20:24
-saved-by: cjm
+date: 15:06:2012 17:58
+saved-by: haendel
+auto-generated-by: OBO-Edit 2.1.1-beta8
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -28,6 +29,7 @@ subsetdef: grouping_class "Subset consisting of classes creating for grouping pu
 subsetdef: high_level_annotation_qc "High-level terms not to be used for direct annotation"
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
 subsetdef: inherited_grouping_class "A grouping class that originates in two or more separate anatomical ontologies. Includes 'region of X' type terms"
+subsetdef: loose_concept "loose concept"
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
 subsetdef: mf_needs_review "Catalytic activity terms in need of attention"
@@ -43,6 +45,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
 synonymtypedef: ATTRIBUTION_REQUIRED "expert consultation and attribution required" 
 synonymtypedef: BRAND_NAME "BRAND NAME" 
+synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged" 
 synonymtypedef: DEVELOPMENTAL "developmental term" 
 synonymtypedef: DUBIOUS "dubious or contested synonym" 
 synonymtypedef: FORMULA "FORMULA" 
@@ -52,6 +55,7 @@ synonymtypedef: InChIKey "InChIKey"
 synonymtypedef: INCONSISTENT "indicates that a synonym is used in an inconsistent or confusing way, typically between species" 
 synonymtypedef: INN "INN" 
 synonymtypedef: IUPAC_NAME "IUPAC NAME" 
+synonymtypedef: LATIN "latin term" 
 synonymtypedef: PLURAL "plural term" 
 synonymtypedef: PRO-short-label "Unique short label for PRO terms for display purposes" EXACT
 synonymtypedef: PSI-MOD-label "Unique short label curated by PSI-MOD" EXACT
@@ -81,7 +85,7 @@ treat-xrefs-as-genus-differentia: TGMA part_of NCBITaxon:44484
 treat-xrefs-as-genus-differentia: WBbt part_of NCBITaxon:6237
 treat-xrefs-as-genus-differentia: XAO part_of NCBITaxon:8353
 treat-xrefs-as-genus-differentia: ZFA part_of NCBITaxon:7954
-remark: $Revision: 1.113 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
+remark: $Revision: 1.107 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
 treat-xrefs-as-has-subclass: EHDAA
 treat-xrefs-as-has-subclass: EHDAA2
@@ -634,12 +638,6 @@ xref: FMA:84790
 is_a: CL:0000723 ! somatic stem cell
 
 [Term]
-id: CL:0000053
-name: enamel secreting cell
-namespace: cell
-is_a: CL:0000151 ! secretory cell
-
-[Term]
 id: CL:0000054
 name: bone matrix secreting cell
 namespace: cell
@@ -694,31 +692,44 @@ relationship: develops_from CL:0000134 ! mesenchymal cell
 id: CL:0000059
 name: ameloblast
 namespace: cell
-def: "A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992)." [GOC:tfm, MESH:A.11.436.107]
+alt_id: CL:0000053
+alt_id: CL:0000139
+def: "Skeletogenic cell that produces enamel, overlies the odontogenic papilla, and arises from the differentiation of a preameloblast cell." [GO_REF:0000034, GOC:tfm, MESH:A.11.436.107]
+comment: Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
+synonym: "amelocyte" EXACT []
+synonym: "enamel secreting cell" EXACT []
 xref: BTO:0001663
 xref: FMA:70576
-is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0002159 ! general ecto-epithelial cell
-relationship: develops_from CL:0000333 ! neural crest cell
+is_a: CL:0000146 ! simple columnar epithelial cell
+is_a: CL:0000151 ! secretory cell
+is_a: CL:0002251 ! epithelial cell of alimentary canal
+relationship: develops_from CL:0007000 ! preameloblast
 
 [Term]
 id: CL:0000060
 name: odontoblast
 namespace: cell
-def: "One of the cells forming the outer surface of dental pulp that produces tooth dentin." [ISBN:0618947256]
+def: "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell. Skeletogenic cell that produces dentine, is located in the odontogenic papilla, and develops from a preodontoblast cell." [GO_REF:0000034, ISBN:0618947256]
+comment: legacy def: One of the cells forming the outer surface of dental pulp that produces tooth dentin.
 xref: BTO:0001769
 xref: FMA:62999
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002159 ! general ecto-epithelial cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+is_a: CL:0002251 ! epithelial cell of alimentary canal
+relationship: develops_from CL:0007003 ! preodontoblast
 
 [Term]
 id: CL:0000061
 name: cementoblast
 namespace: cell
-def: "A cell of ectomesenchymal origin that aids in the formation the cementum layer on the roots of teeth." [ISBN:0781733901]
+alt_id: CL:0000859
+def: "Skeletogenic cell that produces cementum (a bony substance that covers the root of a tooth), is part of the odontogenic papilla, and develops from a precementoblast cell." [GO_REF:0000034, ISBN:0781733901]
+comment: Legacy def: A cell of ectomesenchymal origin that aids in the formation the cementum layer on the roots of teeth.
+synonym: "cementum secreting cell" EXACT []
 xref: FMA:63002
 is_a: CL:0000062 ! osteoblast
+is_a: CL:0000151 ! secretory cell
+relationship: develops_from CL:0007002 ! precementoblast
 
 [Term]
 id: CL:0000062
@@ -1459,14 +1470,6 @@ xref: FMA:66782
 is_a: CL:0000153 ! GAG secreting cell
 is_a: CL:0000667 ! collagen secreting cell
 relationship: develops_from CL:0000058 ! chondroblast
-
-[Term]
-id: CL:0000139
-name: amelocyte
-namespace: cell
-is_a: CL:0000053 ! enamel secreting cell
-is_a: CL:0000146 ! simple columnar epithelial cell
-relationship: develops_from CL:0000059 ! ameloblast
 
 [Term]
 id: CL:0000140
@@ -7769,13 +7772,6 @@ name: fast muscle myoblast
 namespace: cell
 def: "A skeletal muscle myoblast that differentiates into fast muscle fibers." [SANBI:mhl]
 is_a: CL:0000515 ! skeletal muscle myoblast
-
-[Term]
-id: CL:0000859
-name: cementum secreting cell
-namespace: cell
-def: "A secretory cell that secretes cementum, a bony substance that covers the root of a tooth." [SANBI:mhl]
-is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000860
@@ -16820,6 +16816,45 @@ created_by: Ceri
 creation_date: 2012-01-12T05:21:09Z
 
 [Term]
+id: CL:0007000
+name: preameloblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to develop into an ameloblast. Located in the inner enamel epithelium, these cells elongate, their nuclei shift distally (away from the dental papilla), and their cytoplasm becomes filled with organelles needed for synthesis and secretion of enamel proteins." [GO_REF:0000034, PMCID:PMC2737325]
+is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: develops_from CL:0002077 ! ecto-epithelial cell
+created_by: haendel
+creation_date: 2012-06-15T01:27:01Z
+
+[Term]
+id: CL:0007001
+name: skeletogenic cell
+namespace: cell
+def: "Cell that has the potential to form a skeletal cell type (e.g. cells in periosteum, cells in marrow) and produce extracellular matrix (often mineralized) and skeletal tissue (often mineralized)." [GO_REF:0000034]
+comment: Needs logical definition. Should be capable_of skeletal system morphogenesis? or skeletal tissue development? needs to be added to GO. \n\nNOTES:a cell type of the early embryo (see also: mesenchymal cells) that will give rise to mineralized connective tissue. Scleroblasts can differentiate into osteoblasts (bone-forming cells), chondroblasts (cartilage-forming cells), odontoblasts (dentin-forming cells), ameloblasts (enamel-forming cells). The mesenchymal cells developing into osteoblasts and chondroblasts are derived from the mesoderm. Those developing into odontoblasts are neural crest cells. Those developing into ameloblasts are derived from the ectoderm.  http://www.copewithcytokines.de/cope.cgi?key=scleroblasts
+synonym: "scleroblast" EXACT [GO_REF:0000034]
+is_a: CL:0000003 ! native cell
+created_by: haendel
+creation_date: 2012-06-15T02:51:27Z
+
+[Term]
+id: CL:0007002
+name: precementoblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to develop into a cementoblast." [GO_REF:0000034]
+is_a: CL:0000055 ! non-terminally differentiated cell
+created_by: haendel
+creation_date: 2012-06-15T04:37:13Z
+
+[Term]
+id: CL:0007003
+name: preodontoblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to form an odontoblast, deposits predentine, and arises from a neural crest cell." [GO_REF:0000034]
+is_a: CL:0000055 ! non-terminally differentiated cell
+created_by: haendel
+creation_date: 2012-06-15T05:15:11Z
+
+[Term]
 id: CL:1000082
 name: stretch receptor cell
 namespace: cell
@@ -19291,6 +19326,11 @@ name: overlaps
 xref: RO:0002131
 
 [Typedef]
+id: RO:0003000
+name: produces
+xref: RO:0003000
+
+[Typedef]
 id: adjacent_to
 name: adjacent_to
 
@@ -19310,6 +19350,7 @@ expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://p
 [Typedef]
 id: decreased_in_magnitude_relative_to
 name: decreased_in_magnitude_relative_to
+namespace: quality
 def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
 comment: This relation is used to determine the 'directionality' of relative qualities such as 'decreased strength', relative to the parent type, 'strength'.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
@@ -19332,12 +19373,14 @@ xref: RO:0002202
 [Typedef]
 id: different_in_magnitude_relative_to
 name: different_in_magnitude_relative_to
+namespace: quality
 def: "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Typedef]
 id: directly_associated_with
 name: directly_associated_with
+namespace: quality
 def: "q1 directly_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 increases if the magnitude of q2 is increased, or the magnitude of q1 decreases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
 comment: Example: 'Lewy bodies increased number related to dystrophic neurite increased number' (from annotation of PMID:8740227 in http://ccdb.ucsd.edu/1.0/NDPO.owl#ndpo_404). Here the increase in the number of lewy bodies is directly_associated_with the increase in the number of dystrophic neurites.\nAssociation is weaker than correlation or proportionality. These relations may be later added to PATO.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
@@ -19351,6 +19394,7 @@ name: has_completed
 [Typedef]
 id: has_cross_section
 name: has_cross_section
+namespace: quality
 def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." [PATOC:CJM]
 comment: Example: a spherical object has the quality of being spherical, and the spherical quality has_cross_section round.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
@@ -19358,12 +19402,14 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 [Typedef]
 id: has_dividend_quality
 name: has_dividend_quality
+namespace: quality
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 is_a: has_ratio_quality ! has_ratio_quality
 
 [Typedef]
 id: has_divisor_quality
 name: has_divisor_quality
+namespace: quality
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 is_a: has_ratio_quality ! has_ratio_quality
 
@@ -19392,7 +19438,9 @@ namespace: RO
 [Typedef]
 id: has_part
 name: has_part
+namespace: gene_ontology
 namespace: protein
+namespace: quality
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
 comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
@@ -19421,11 +19469,13 @@ xref: OBO_REL:has_quality
 [Typedef]
 id: has_ratio_quality
 name: has_ratio_quality
+namespace: quality
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Typedef]
 id: increased_in_magnitude_relative_to
 name: increased_in_magnitude_relative_to
+namespace: quality
 def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
 comment: This relation is used to determine the 'directionality' of relative qualities such as 'increased strength', relative to the parent type, 'strength'.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
@@ -19435,6 +19485,7 @@ is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
 [Typedef]
 id: inversely_associated_with
 name: inversely_associated_with
+namespace: quality
 def: "q1 inversely_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 decreases if the magnitude of q2 is increased, or the magnitude of q1 increases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
 comment: Association is weaker than correlation or proportionality. These relations may be later added to PATO.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
@@ -19465,6 +19516,7 @@ name: located_in
 [Typedef]
 id: negatively_regulates
 name: negatively_regulates
+namespace: gene_ontology
 xref: RO:0002212
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
@@ -19472,14 +19524,15 @@ is_a: regulates ! regulates
 [Typedef]
 id: occurs_in
 name: occurs in
+namespace: gene_ontology
 xref: BFO:0000066
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-transitive_over: part_of ! part_of
 transitive_over: part_of ! part_of
 
 [Typedef]
 id: part_of
 name: part_of
+namespace: gene_ontology
 namespace: protein
 namespace: uberon
 xref: BFO:0000050
@@ -19498,6 +19551,7 @@ xref: BFO:0000056
 [Typedef]
 id: positively_regulates
 name: positively_regulates
+namespace: gene_ontology
 xref: RO:0002213
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
@@ -19510,6 +19564,7 @@ xref: BFO:0000054
 [Typedef]
 id: reciprocal_of
 name: reciprocal_of
+namespace: quality
 def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." [PATOC:CJM]
 comment: There are frequently two ways to state the same thing: we can say 'spermatocyte lacks asters' or 'asters absent from spermatocyte'. In this case the quality is 'lacking all parts of type' - it is a (relational) quality of the spermatocyte, and it is with respect to instances of 'aster'. One of the popular requirements of PATO is that it continue to support 'absent', so we need to relate statements which use this quality to the 'lacking all parts of type' quality.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
@@ -19517,9 +19572,9 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 [Typedef]
 id: regulates
 name: regulates
+namespace: gene_ontology
 xref: RO:0002211
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-transitive_over: part_of ! part_of
 transitive_over: part_of ! part_of
 
 [Typedef]
@@ -19529,6 +19584,7 @@ name: replaces
 [Typedef]
 id: results_in
 name: results_in
+namespace: gene_ontology
 comment: This relation is currently used to connect two regulation processes p1 and p2, such that if r1 regulates p1 and r2 regulates p2, and r1 results_in r2 then the regulation of p1 is required for the regulation of p2. For an example of use, see GO:0035958 'regulation of glyoxylate cycle by regulation of transcription from RNA polymerase II promoter'. Note that a precise definition of this relation is under discussion. After it has been formalized it will be added to RO, where it will have a RO ID. Note that the existing identifier and label are subject to change.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 created_by: cjm
@@ -19541,12 +19597,14 @@ name: secretes
 [Typedef]
 id: similar_in_magnitude_relative_to
 name: similar_in_magnitude_relative_to
+namespace: quality
 def: "q1 similar_in_magnitude_relative_to q2 if and only if magnitude(q1) =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Typedef]
 id: towards
 name: towards
+namespace: quality
 comment: Relation binding a relational quality or disposition to the relevant type of entity.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
