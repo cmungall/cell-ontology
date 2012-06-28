@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 15:06:2012 17:58
+date: 28:06:2012 08:26
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.1.1-beta8
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -314,7 +314,7 @@ id: CL:0000005
 name: fibroblast neural crest derived
 namespace: cell
 is_a: CL:0000057 ! fibroblast
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000006
@@ -334,9 +334,9 @@ is_a: CL:0002321 ! embryonic cell
 
 [Term]
 id: CL:0000008
-name: cranial neural crest cell
+name: migratory cranial neural crest cell
 namespace: cell
-is_a: CL:0000333 ! neural crest cell
+is_a: CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000009
@@ -360,9 +360,9 @@ is_a: CL:0000578 ! experimentally modified cell in vitro
 
 [Term]
 id: CL:0000011
-name: trunk neural crest cell
+name: migratory trunk neural crest cell
 namespace: cell
-is_a: CL:0000333 ! neural crest cell
+is_a: CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000012
@@ -556,8 +556,8 @@ name: smooth muscle cell neural crest derived
 namespace: cell
 is_a: CL:0000192 ! smooth muscle cell
 intersection_of: CL:0000192 ! smooth muscle cell
-intersection_of: develops_from CL:0000333 ! neural crest cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+intersection_of: develops_from CL:0000333 ! migratory neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000028
@@ -572,7 +572,7 @@ name: neuron neural crest derived
 namespace: cell
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
-intersection_of: develops_from CL:0000333 ! neural crest cell
+intersection_of: develops_from CL:0000333 ! migratory neural crest cell
 relationship: develops_from CL:0002676 ! neural crest derived neuroblast
 
 [Term]
@@ -1638,7 +1638,7 @@ id: CL:0000123
 name: neuron associated cell (sensu Vertebrata)
 namespace: cell
 is_a: CL:0000095 ! neuron associated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000124
@@ -1745,7 +1745,7 @@ xref: FMA:70614
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002371 ! somatic cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000133
@@ -2101,7 +2101,7 @@ synonym: "phaeochromocyte" EXACT []
 xref: BTO:0000259
 xref: FMA:69263
 is_a: CL:0000568 ! APUD cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000167
@@ -3540,14 +3540,15 @@ is_obsolete: true
 
 [Term]
 id: CL:0000333
-name: neural crest cell
+name: migratory neural crest cell
 namespace: cell
-def: "A cell of the strip of specialized ectoderm flanking each side of the embryonal neural plate, which after the closure of the neural tube, forms a column of isolated cells along the dorsal aspect of the neural tube. Most of the cranial and all of the spinal sensory ganglion cells arise by differentiation of neural crest cells." [MESH:A.16.254.600]
+def: "A cell derived from the specialized ectoderm flanking each side of the embryonic neural plate, which after the closure of the neural tube, forms masses of cells that migrate out from the dorsal aspect of the neural tube to spread throughout the body." [MESH:A.16.254.600]
 xref: FMA:86667
 is_a: CL:0000003 ! native cell
 is_a: CL:0000219 ! motile cell
 is_a: CL:0002321 ! embryonic cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
+relationship: develops_from CL:0007004 ! premigratory neural crest cell
 
 [Term]
 id: CL:0000334
@@ -3578,7 +3579,7 @@ is_a: CL:0000166 ! chromaffin cell
 is_a: CL:0000457 ! biogenic amine secreting cell
 intersection_of: CL:0000166 ! chromaffin cell
 intersection_of: part_of UBERON:0001236 ! adrenal medulla
-relationship: develops_from CL:0000011 ! trunk neural crest cell
+relationship: develops_from CL:0000011 ! migratory trunk neural crest cell
 
 [Term]
 id: CL:0000337
@@ -3647,7 +3648,7 @@ name: dental papilla cell
 namespace: cell
 def: "A small mass of condensed mesenchyme in the enamel organ; it differentiates into the dentin and dental pulp." [GOC:tfm, ISBN:0721662544]
 is_a: CL:0000134 ! mesenchymal cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000346
@@ -3657,7 +3658,7 @@ def: "A specialized mesenchymal cell that resides in the dermal papilla located 
 is_a: CL:0000134 ! mesenchymal cell
 intersection_of: CL:0000134 ! mesenchymal cell
 intersection_of: part_of UBERON:0000412 ! dermal papilla
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000347
@@ -3666,7 +3667,7 @@ namespace: cell
 def: "A cell of the sclera of the eye." [GOC:add]
 intersection_of: CL:0000293 ! structural cell
 intersection_of: part_of UBERON:0001773 ! sclera
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000348
@@ -3675,7 +3676,7 @@ namespace: cell
 def: "A cell of the choroid of the eye." [GOC:add]
 intersection_of: CL:0000293 ! structural cell
 intersection_of: part_of UBERON:0001776 ! choroid
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000349
@@ -5233,7 +5234,7 @@ xref: BTO:0003217
 xref: FMA:83377
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0000710 ! neurecto-epithelial cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000542
@@ -5650,7 +5651,7 @@ def: "A mesenchymal cell found in the developing heart." [PMID:18816864]
 is_a: CL:0000134 ! mesenchymal cell
 intersection_of: CL:0000134 ! mesenchymal cell
 intersection_of: part_of UBERON:0000948 ! heart
-relationship: develops_from CL:0000011 ! trunk neural crest cell
+relationship: develops_from CL:0000011 ! migratory trunk neural crest cell
 
 [Term]
 id: CL:0000570
@@ -5665,7 +5666,7 @@ intersection_of: CL:0000710 ! neurecto-epithelial cell
 intersection_of: capable_of GO:0001820 ! serotonin secretion
 intersection_of: capable_of GO:0014046 ! dopamine secretion
 intersection_of: has_plasma_membrane_part PR:000001024 ! neural cell adhesion molecule 1
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000571
@@ -6879,7 +6880,7 @@ namespace: cell
 def: "A columnar/cuboidal epithelial cell that secretes cerebrospinal fluid." [GOC:tfm]
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000151 ! secretory cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000687
@@ -15843,7 +15844,7 @@ synonym: "corneal keratocyte" EXACT []
 is_a: CL:0000057 ! fibroblast
 intersection_of: CL:0000057 ! fibroblast
 intersection_of: part_of UBERON:0001777 ! substantia propria of cornea
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 created_by: tmeehan
 creation_date: 2010-09-22T01:57:40Z
 
@@ -15981,7 +15982,7 @@ namespace: cell
 def: "A giioblast cell that develops from a migratory neural crest cell. The SCP is embedded among neurons (axons) with minimal extracellular spaces separating them from nerve cell membranes and has no basal lamina. In rodents SCPs are the only cells in the Schwann cell linage that expresses Cdh19." [GOC:tfm]
 synonym: "Schwann cell precursor cell" EXACT []
 is_a: CL:0000030 ! glioblast
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2010-09-24T02:06:10Z
 
@@ -18663,12 +18664,10 @@ creation_date: 2011-03-06T07:11:26Z
 
 [Term]
 id: CL:0002607
-name: enteric neural crest cell
+name: migratory enteric neural crest cell
 namespace: cell
-def: "A neural crest cell that is part of the enteric nervous system." [GOC:tfm]
-is_a: CL:0000333 ! neural crest cell
-intersection_of: CL:0000333 ! neural crest cell
-intersection_of: part_of UBERON:0002005 ! enteric nervous system
+def: "A neural crest cell that gives rise to cells of the enteric nervous system." [GOC:tfm]
+is_a: CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2011-03-06T07:24:35Z
 
@@ -19404,7 +19403,7 @@ name: neural crest derived neuroblast
 namespace: cell
 def: "A neuroblast derived from a neural crest cell." [GOC:tfm, PMID:17407019]
 is_a: CL:0000337 ! neuroblast (sensu Vertebrata)
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2011-08-22T09:24:15Z
 
@@ -19484,7 +19483,7 @@ namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into an iridophore." [CL:CVS]
 comment: Derived from UBERON:0002342 neural crest.
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005002
@@ -19492,7 +19491,7 @@ name: xanthoblast
 namespace: cell
 def: "A non-terminally differentiated cell that differentiates into a xanthophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005003
@@ -19500,7 +19499,7 @@ name: leucoblast
 namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into a leucophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005004
@@ -19508,7 +19507,7 @@ name: pigment erythroblast
 namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into an erythrophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005005
@@ -19516,7 +19515,7 @@ name: cyanoblast
 namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into a cyanophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005006
@@ -19703,11 +19702,92 @@ creation_date: 2012-06-15T04:37:13Z
 id: CL:0007003
 name: preodontoblast
 namespace: cell
-def: "Skeletogenic cell that has the potential to form an odontoblast, deposits predentine, and arises from a neural crest cell." [GO_REF:0000034]
+def: "Skeletogenic cell that has the potential to form an odontoblast, deposits predentine, and arises from a cranial neural crest cell." [GO_REF:0000034]
 is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 relationship: part_of UBERON:0005176 ! tooth enamel organ
 created_by: haendel
 creation_date: 2012-06-15T05:15:11Z
+
+[Term]
+id: CL:0007004
+name: premigratory neural crest cell
+namespace: cell
+def: "Cell that is part of the neural crest region of the neuroepithelium, prior to migration. Note that not all premigratory neural crest cells may become migratory neural crest cells." [UBERONREF:0000002]
+is_a: CL:0000003 ! native cell
+relationship: part_of UBERON:0002342 ! neural crest
+created_by: haendel
+creation_date: 2012-06-27T08:27:35Z
+
+[Term]
+id: CL:0007005
+name: notochordal cell
+namespace: cell
+def: "Cell that is part of the notochord." [GO_REF:0000034]
+comment: NOTE: TO DO, notochord development still needs work.
+is_a: CL:0000003 ! native cell
+relationship: develops_from CL:0007006 ! chordamesodermal cell
+relationship: part_of UBERON:0002328 ! notochord
+created_by: haendel
+creation_date: 2012-06-27T08:47:31Z
+
+[Term]
+id: CL:0007006
+name: chordamesodermal cell
+namespace: cell
+def: "Mesodermal cell that is axially located and gives rise to the cells of the notochord." [GO_REF:0000034]
+is_a: CL:0000222 ! mesodermal cell
+relationship: part_of UBERON:0004880 ! chordamesoderm
+created_by: haendel
+creation_date: 2012-06-27T08:52:41Z
+
+[Term]
+id: CL:0007007
+name: notochordal sheath cell
+namespace: cell
+def: "Notochordal cell that is part of the outer epithelium of the notochord and surrounds the vacuolated notochord cells." [CL:MAH]
+is_a: CL:0007005 ! notochordal cell
+created_by: haendel
+creation_date: 2012-06-27T09:26:37Z
+
+[Term]
+id: CL:0007008
+name: notochordal vacuole cell
+namespace: cell
+def: "Notochordal cell that is inner portion of the notochord and becomes vacuolated as development proceeds." [CL:MAH]
+synonym: "chordoblast" EXACT [PMID:14574572]
+is_a: CL:0007005 ! notochordal cell
+created_by: haendel
+creation_date: 2012-06-27T09:29:30Z
+
+[Term]
+id: CL:0007009
+name: prechondroblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to develop into a chondroblast; and arises from neural crest, meseosdermal and notochordal and connective tissue cells." [GO_REF:0000034]
+is_a: CL:0000055 ! non-terminally differentiated cell
+created_by: haendel
+creation_date: 2012-06-27T10:44:01Z
+
+[Term]
+id: CL:0007010
+name: preosteoblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to transform into an osteoblast, and develops from neural crest or mesodermal cells." [GO_REF:0000034]
+is_a: CL:0000055 ! non-terminally differentiated cell
+created_by: haendel
+creation_date: 2012-06-27T10:57:21Z
+
+[Term]
+id: CL:0007011
+name: enteric neuron
+namespace: cell
+def: "Neuron that is part of the enteric nervous system." [CL:MAH]
+is_a: CL:0000540 ! neuron
+relationship: develops_from CL:0002607 ! migratory enteric neural crest cell
+relationship: part_of UBERON:0002005 ! enteric nervous system
+created_by: haendel
+creation_date: 2012-06-28T08:20:31Z
 
 [Term]
 id: CL:1000082
