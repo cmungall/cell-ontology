@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 28:06:2012 08:26
+date: 09:07:2012 19:40
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.1.1-beta8
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -258,6 +258,14 @@ is_a: CHEBI:33582 ! carbon group molecular entity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
 
 [Term]
+id: CHEBI:52255
+name: hydroxylapatite
+def: "A phosphate mineral with the formula Ca5(PO4)3(OH)." []
+synonym: "Ca5HO13P3" RELATED FORMULA [ChEBI:]
+is_a: CHEBI:24431 ! chemical entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
+
+[Term]
 id: CL:0000000
 name: cell
 namespace: cell
@@ -378,7 +386,8 @@ consider: CL:0001034
 id: CL:0000013
 name: dentine secreting cell
 namespace: cell
-is_a: CL:0000151 ! secretory cell
+is_obsolete: true
+consider: CL:0000140
 
 [Term]
 id: CL:0000014
@@ -952,13 +961,14 @@ relationship: develops_from CL:0000134 ! mesenchymal cell
 id: CL:0000058
 name: chondroblast
 namespace: cell
-def: "An immature cartilage-producing cell found in growing cartilage." [GOC:tfm, ISBN:0618947256]
+def: "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell." [GO_REF:0000034, GOC:tfm, ISBN:0618947256]
 synonym: "chrondoplast" EXACT []
 xref: BTO:0003607
 xref: FMA:66783
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: develops_from CL:0007009 ! prechondroblast
+relationship: RO:0003000 UBERON:0002418 ! cartilage tissue
 
 [Term]
 id: CL:0000059
@@ -982,7 +992,7 @@ relationship: RO:0003000 UBERON:0001752 ! enamel
 id: CL:0000060
 name: odontoblast
 namespace: cell
-def: "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell. Skeletogenic cell that produces dentine, is located in the odontogenic papilla, and develops from a preodontoblast cell." [GO_REF:0000034, ISBN:0618947256]
+def: "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell." [GO_REF:0000034, ISBN:0618947256]
 comment: legacy def: One of the cells forming the outer surface of dental pulp that produces tooth dentin.
 xref: BTO:0001769
 xref: FMA:62999
@@ -1011,12 +1021,13 @@ relationship: RO:0003000 UBERON:0001753 ! cementum
 id: CL:0000062
 name: osteoblast
 namespace: cell
-def: "A bone-forming cell which secretes an extracellular matrix. Hydroxyapatite crystals are then deposited into the matrix to form bone." [MESH:A.11.329.629]
+def: "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell." [GO_REF:0000034, MESH:A.11.329.629]
 xref: BTO:0001593
 xref: FMA:66780
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000375 ! osteoprogenitor cell
+relationship: develops_from CL:0007010 ! preosteoblast
+relationship: RO:0003000 UBERON:0008883 ! osteoid
 
 [Term]
 id: CL:0000063
@@ -1059,7 +1070,6 @@ xref: BTO:0000414
 xref: FBbt:00000124
 xref: FMA:66768
 xref: WBbt:0003672
-is_a: CL:0000003 ! native cell
 is_a: CL:0000548 ! animal cell
 
 [Term]
@@ -1777,7 +1787,6 @@ synonym: "stem cells, mesenchymal" EXACT [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
 xref: FMA:70546
-is_a: CL:0000003 ! native cell
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002320 ! connective tissue cell
 intersection_of: CL:0002320 ! connective tissue cell
@@ -1827,7 +1836,6 @@ def: "A mature osteoblast that has become embedded in the bone matrix. They occu
 synonym: "bone cell" BROAD []
 xref: BTO:0002038
 xref: FMA:66779
-is_a: CL:0000054 ! bone matrix secreting cell
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000062 ! osteoblast
 
@@ -1835,7 +1843,7 @@ relationship: develops_from CL:0000062 ! osteoblast
 id: CL:0000138
 name: chondrocyte
 namespace: cell
-def: "Polymorphic cell that form cartilage." [MESH:A.11.329.171]
+def: "Skeletogenic cell that is terminally differentiated, secretes an avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell." [GO_REF:0000034, MESH:A.11.329.171]
 synonym: "cartilage cell" EXACT []
 xref: BTO:0000249
 xref: FMA:66782
@@ -1848,19 +1856,22 @@ relationship: develops_from CL:0000058 ! chondroblast
 id: CL:0000140
 name: odontocyte
 namespace: cell
-is_a: CL:0000013 ! dentine secreting cell
+def: "Skeletogenic cell that secretes dentine matrix, is derived from odontogenic papilla. Embedded in dentine tissue, and is the transformation of a non-terminally differentiated odontoblast cell." [GO_REF:0000034]
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000060 ! odontoblast
 relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: RO:0003000 UBERON:0001751 ! dentine
 
 [Term]
 id: CL:0000141
 name: cementocyte
 namespace: cell
 def: "An osteocytelike cell with numerous processes, trapped in a lacuna in the cement of the tooth." [ISBN:0781733901]
+comment: CHECK: wikipedia says that cementocytes no longer produce cementum, but the phenoscape def is: Skeletogenic cell that produces cementum, is part of the odontogenic papilla, and is a transformation of a cementoblast cell (no change to existing def).
 xref: FMA:63003
 is_a: CL:0000137 ! osteocyte
 relationship: develops_from CL:0000061 ! cementoblast
+relationship: part_of UBERON:0005176 ! tooth enamel organ
 
 [Term]
 id: CL:0000142
@@ -2546,7 +2557,6 @@ is_a: CL:0000213 ! lining cell
 is_a: CL:0002078 ! meso-epithelial cell
 intersection_of: CL:0002078 ! meso-epithelial cell
 intersection_of: part_of UBERON:0002018 ! synovial membrane
-relationship: develops_from CL:0000134 ! mesenchymal cell
 
 [Term]
 id: CL:0000215
@@ -2614,7 +2624,6 @@ namespace: cell
 def: "A cell of the outer of the three germ layers of the embryo." [MESH:A.16.254.425.273]
 synonym: "ectoderm cell" EXACT []
 xref: FMA:72549
-is_a: CL:0000003 ! native cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
@@ -2625,7 +2634,6 @@ def: "A cell of the middle germ layer of the embryo." [MESH:A.16.254.425.660]
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
-is_a: CL:0000003 ! native cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
@@ -2635,7 +2643,6 @@ namespace: cell
 def: "A cell of the inner of the three germ layers of the embryo." [MESH:A.16.254.425.407]
 synonym: "endoderm cell" EXACT []
 xref: FMA:72555
-is_a: CL:0000003 ! native cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
@@ -3820,7 +3827,6 @@ namespace: cell
 def: "Diploid cell produced by the fusion of sperm cell nucleus and egg cell." [ISBN:0471245208]
 xref: BTO:0000854
 xref: FMA:72395
-is_a: CL:0000003 ! native cell
 is_a: CL:0000007 ! early embryonic cell
 
 [Term]
@@ -3896,8 +3902,8 @@ id: CL:0000375
 name: osteoprogenitor cell
 namespace: cell
 xref: BTO:0002051
-is_a: CL:0000035 ! single fate stem cell
-relationship: develops_from CL:0000335 ! mesenchyme condensation cell
+is_obsolete: true
+replaced_by: CL:0007010
 
 [Term]
 id: CL:0000376
@@ -7305,6 +7311,8 @@ name: periarticular chondrocyte
 namespace: cell
 def: "A round chondrocyte that first differentiates in the late embryonic growth plate of bone." [PMID:15951842]
 is_a: CL:0000138 ! chondrocyte
+intersection_of: CL:0000138 ! chondrocyte
+intersection_of: part_of UBERON:0010996 ! articular cartilage of joint
 
 [Term]
 id: CL:0000743
@@ -19755,6 +19763,7 @@ id: CL:0007008
 name: notochordal vacuole cell
 namespace: cell
 def: "Notochordal cell that is inner portion of the notochord and becomes vacuolated as development proceeds." [CL:MAH]
+synonym: "chordablast" EXACT [GO_REF:0000034]
 synonym: "chordoblast" EXACT [PMID:14574572]
 is_a: CL:0007005 ! notochordal cell
 created_by: haendel
@@ -19774,6 +19783,7 @@ id: CL:0007010
 name: preosteoblast
 namespace: cell
 def: "Skeletogenic cell that has the potential to transform into an osteoblast, and develops from neural crest or mesodermal cells." [GO_REF:0000034]
+synonym: "osteoprogenitor cell" EXACT []
 is_a: CL:0000055 ! non-terminally differentiated cell
 created_by: haendel
 creation_date: 2012-06-27T10:57:21Z
@@ -47235,6 +47245,27 @@ relationship: part_of UBERON:0002067 ! dermis
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0001994
+name: hyaline cartilage
+alt_id: UBERON:FMA_64783-MA_0000109
+def: "Cartilage (tissue) which consists of chondrocytes and collagen, the intercellular matrix of which is an amorphous gel with a perichondrium." [Wikipedia:Hyaline_cartilage]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "hyaline cartilage tissue" EXACT []
+xref: FMA:64783
+xref: http://upload.wikimedia.org/wikipedia/commons/e/ee/Hypertrophic_Zone_of_Epiphyseal_Plate.jpg
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Gray292.png/200px-Gray292.png
+xref: MA:0000109
+xref: ncithesaurus:Hyaline_Cartilage
+xref: SCTID:39298000
+xref: VSAO:0000094
+xref: XAO:0004029
+is_a: UBERON:0002418 ! cartilage tissue
+relationship: has_part CL:0000138 ! chondrocyte
+property_value: external_definition "Cartilage tissue primarily composed of type II collagen (thin fibrils) and a glassy appearance.[VSAO]" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0001995
 name: fibrocartilage
 namespace: uberon
@@ -51430,6 +51461,28 @@ is_a: UBERON:0000344 ! mucosa
 is_a: UBERON:0004119 ! endoderm-derived structure
 relationship: part_of UBERON:0001043 ! esophagus
 relationship: part_of UBERON:0001096 ! wall of esophagus
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0002481
+name: bone tissue
+alt_id: UBERON:MA_0002780-FMA_224804
+def: "Skeletal tissue with a collagen-rich extracellular matrix vascularized, mineralized with hydroxyapatite and typically including osteocytes located in lacunae that communicate with one another by cell processes (in canaliculi). Bone is deposited by osteoblasts[VSAO]." [VSAO:0000047, Wikipedia:Bone_tissue]
+subset: uberon_slim
+synonym: "calcium tissue" EXACT []
+synonym: "osseous tissue" EXACT []
+synonym: "osteogenic tissue" EXACT [VSAO:curator]
+xref: FMA:224804
+xref: galen:BoneTissue
+xref: MA:0002780
+xref: MESH:A.02.835.232
+xref: ncithesaurus:Bone_Tissue
+xref: VSAO:0000047
+xref: ZFA:0005621
+is_a: UBERON:0004755 {source="VSAO"} ! skeletal tissue
+relationship: has_part CHEBI:52255 ! hydroxylapatite
+relationship: part_of UBERON:0001474 ! bone
+property_value: external_definition "Skeletal tissue with a collagen-rich extracellular matrix vascularized, mineralized with hydroxyapatite and typically including osteocytes located in lacunae that communicate with one another by cell processes (in canaliculi). Bone is deposited by osteoblasts.[VSAO]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -59941,6 +59994,26 @@ relationship: part_of UBERON:0002048 ! lung
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0008883
+name: osteoid
+def: "Bone tissue that is an unmineralized bone matrix deposited by osteoblasts prior to the mineralization of bone tissue[VSAO]. Unmineralized, organic portion of the bone matrix that forms prior to the maturation of bone tissue. Osteoblasts begin the process of forming bone tissue by secreting the osteoid as several specific proteins. When the osteoid becomes mineralized, it and the adjacent bone cells have developed into new bone tissue[WP]" [VSAO:0000046, Wikipedia:Osteoid]
+comment: AO notes: request from GO?
+synonym: "pre-bone" EXACT [PSPUB:0000170]
+synonym: "prebone" EXACT [VSAO:curator]
+synonym: "prebone tissue" EXACT [FMA:66830]
+xref: FMA:66830
+xref: http://upload.wikimedia.org/wikipedia/commons/9/9c/Active_osteoblasts.jpg
+xref: ncithesaurus:Osteoid
+xref: SCTID:39365008
+xref: VSAO:0000046
+xref: XAO:0004035
+is_a: UBERON:0004755 ! skeletal tissue
+relationship: part_of UBERON:0002481 ! bone tissue
+property_value: external_definition "Bone tissue that is an unmineralized bone matrix deposited by osteoblasts prior to the mineralization of bone tissue.[VSAO]" xsd:string
+property_value: axiom_lost_from_external_ontology "relationship loss: subclass proteinaceous extracellular matrix (VSAO:0000021)[VSAO]" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0008886
 name: pulmonary vascular system
 namespace: uberon
@@ -60974,6 +61047,28 @@ synonym: "muscle of head or neck" EXACT []
 xref: ncithesaurus:Head_and_Neck_Muscle
 is_a: UBERON:0001630 ! muscle organ
 relationship: part_of UBERON:0007811 ! craniocervical region
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0010996
+name: articular cartilage of joint
+def: "A thin layer of cartilage, usually hyaline, on the articular surface of bones in synovial joints." [BTO:0001572]
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "articular cartilage" EXACT [MA:0000487]
+synonym: "cartilago articularis" EXACT [FMA:12264]
+synonym: "hyaline cartilage" RELATED [BTO:0001572]
+xref: BTO:0001572
+xref: EFO:0001902
+xref: FMA:12264
+xref: GAID:101
+xref: galen:ArticularCartilage
+xref: MA:0000487
+xref: MESH:A.02.165.165
+xref: ncithesaurus:Articular_Cartilage
+xref: SCTID:305026006
+is_a: UBERON:0001994 {source="MA"} ! hyaline cartilage
+relationship: part_of UBERON:0002217 {source="Wikipedia"} ! synovial joint
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
