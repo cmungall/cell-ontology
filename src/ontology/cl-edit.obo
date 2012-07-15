@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 09:07:2012 19:40
+date: 15:07:2012 09:25
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.1.1-beta8
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -968,7 +968,7 @@ xref: FMA:66783
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0007009 ! prechondroblast
-relationship: RO:0003000 UBERON:0002418 ! cartilage tissue
+relationship: produces UBERON:0002418 ! cartilage tissue
 
 [Term]
 id: CL:0000059
@@ -977,16 +977,17 @@ namespace: cell
 alt_id: CL:0000053
 alt_id: CL:0000139
 def: "Skeletogenic cell that produces enamel, overlies the odontogenic papilla, and arises from the differentiation of a preameloblast cell." [GO_REF:0000034, GOC:tfm, MESH:A.11.436.107]
-comment: Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
+comment: non-encoded relationship from VAO produces VAO:0000066 \! pre-enamel.  Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
 synonym: "amelocyte" EXACT []
 synonym: "enamel secreting cell" EXACT []
 xref: BTO:0001663
 xref: FMA:70576
 is_a: CL:0000146 ! simple columnar epithelial cell
 is_a: CL:0000151 ! secretory cell
+relationship: adjacent_to UBERON:0001763 ! dental papilla
 relationship: develops_from CL:0007000 ! preameloblast
 relationship: part_of UBERON:0005176 ! tooth enamel organ
-relationship: RO:0003000 UBERON:0001752 ! enamel
+relationship: produces UBERON:0001752 ! enamel
 
 [Term]
 id: CL:0000060
@@ -1000,7 +1001,7 @@ is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002159 ! general ecto-epithelial cell
 relationship: develops_from CL:0007003 ! preodontoblast
 relationship: part_of UBERON:0005176 ! tooth enamel organ
-relationship: RO:0003000 UBERON:0001751 ! dentine
+relationship: produces UBERON:0001751 ! dentine
 
 [Term]
 id: CL:0000061
@@ -1015,7 +1016,7 @@ is_a: CL:0000062 ! osteoblast
 is_a: CL:0000151 ! secretory cell
 relationship: develops_from CL:0007002 ! precementoblast
 relationship: part_of UBERON:0005176 ! tooth enamel organ
-relationship: RO:0003000 UBERON:0001753 ! cementum
+relationship: produces UBERON:0001753 ! cementum
 
 [Term]
 id: CL:0000062
@@ -1027,7 +1028,7 @@ xref: FMA:66780
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0007010 ! preosteoblast
-relationship: RO:0003000 UBERON:0008883 ! osteoid
+relationship: produces UBERON:0008883 ! osteoid
 
 [Term]
 id: CL:0000063
@@ -1860,7 +1861,7 @@ def: "Skeletogenic cell that secretes dentine matrix, is derived from odontogeni
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000060 ! odontoblast
 relationship: develops_from CL:0000134 ! mesenchymal cell
-relationship: RO:0003000 UBERON:0001751 ! dentine
+relationship: produces UBERON:0001751 ! dentine
 
 [Term]
 id: CL:0000141
@@ -4659,7 +4660,7 @@ is_a: CL:0000003 ! native cell
 id: CL:0000474
 name: pericardial nephrocyte
 namespace: cell
-def: "an insect renal cell that filters hemolymph and is found with other pericardial nephrocytes in two rows flanking the dorsal vessel." [FBbt:00003184, GOC:tfm, PMID:19783135, GO:0061320]
+def: "an insect renal cell that filters hemolymph and is found with other pericardial nephrocytes in two rows flanking the dorsal vessel." [FBbt:00003184, GO:0061320, GOC:tfm, PMID:19783135]
 synonym: "pericardial cell" NARROW [FBbt:00005058, GO:0061320]
 xref: FBbt:00005058
 is_a: CL:0000519 ! phagocyte (sensu Nematoda and Protostomia)
@@ -7318,7 +7319,8 @@ intersection_of: part_of UBERON:0010996 ! articular cartilage of joint
 id: CL:0000743
 name: hypertrophic chondrocyte
 namespace: cell
-def: "A terminally differentiated chondrocyte that differentiates in the late embryonic growth plate of bone." [PMID:15951842]
+def: "Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification)." [GO_REF:0000034, PMID:15951842]
+comment: is hypertrophic pathological or normal?  and can it be described using  a pato term?
 is_a: CL:0000138 ! chondrocyte
 
 [Term]
@@ -19680,7 +19682,9 @@ id: CL:0007000
 name: preameloblast
 namespace: cell
 def: "Skeletogenic cell that has the potential to develop into an ameloblast. Located in the inner enamel epithelium, these cells elongate, their nuclei shift distally (away from the dental papilla), and their cytoplasm becomes filled with organelles needed for synthesis and secretion of enamel proteins." [GO_REF:0000034, PMCID:PMC2737325]
+comment: unsure of neural crest contribution.
 is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: adjacent_to UBERON:0001763 ! dental papilla
 relationship: develops_from CL:0002077 ! ecto-epithelial cell
 relationship: part_of UBERON:0005176 ! tooth enamel organ
 created_by: haendel
@@ -45451,6 +45455,38 @@ relationship: part_of UBERON:0003672 {source="cjm"} ! dentition
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0001763
+name: dental papilla
+def: "Tissue of the developing tooth. It is composed of pre-odontoblast and undiffentiated mesnchyme cells and connects to the basal lamina[ZFA]. The dental papilla is a condensation of ectomesenchymal cells called odontoblasts, seen in histologic sections of a developing tooth. It lies below a cellular aggregation known as the enamel organ. The dental papilla appears after 8-10 weeks intra uteral life. The dental papilla gives rise to the dentin and pulp of a tooth. The enamel organ, dental papilla, and dental follicle together forms one unit, called the tooth germ. This is of importance because all the tissues of a tooth and its supporting structures form from these distinct cellular aggregations." [Wikipedia:Dental_papilla, ZFA:0005140]
+comment: todo - add child terms for EMAPA. todo - check if the FMA and MA structures refer to developed structures. todo - check part_of - should perhaps be adjacent_to? Check relationships across taxa.
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "dentinal papilla" RELATED [BTO:0001839]
+synonym: "papilla dentis" RELATED [BTO:0001839]
+synonym: "papilla dentis" RELATED LATIN [Wikipedia:Dental_papilla]
+synonym: "pharyngeal tooth mesenchyme" RELATED [ZFA:0005140]
+synonym: "tooth mesenchyme" RELATED [ZFA:0005140]
+xref: BTO:0001839
+xref: FMA:57662
+xref: GAID:1277
+xref: http://upload.wikimedia.org/wikipedia/commons/2/22/Gray1011.png
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Gray1011.png/200px-Gray1011.png
+xref: MA:0001598
+xref: MESH:A.14.254.900.720.250
+xref: TAO:0005140
+xref: VHOG:0001465
+xref: VSAO:0000025
+xref: XAO:0004045
+xref: ZFA:0005140
+is_a: UBERON:0005087 {source="MESH"} ! tooth placode
+relationship: has_part CL:0000060 ! odontoblast
+relationship: part_of UBERON:0001091 {source="MA"} ! calcareous tooth
+relationship: part_of UBERON:0005176 {source="BTO"} ! tooth enamel organ
+property_value: external_definition "Tissue of the developing tooth. It is composed of pre-odontoblast and undiffentiated mesnchyme cells and connects to the basal lamina.[TAO]" xsd:string
+property_value: external_definition "Cell condensation that is a well-defined population of densely organized mesenchymal cells that aggregates adjacent to an epithelium.[VSAO]" xsd:string
+property_value: axiom_lost_from_external_ontology "relationship loss: subclass cell condensation (VSAO:0000006)[VSAO]" xsd:string
+
+[Term]
 id: UBERON:0001765
 name: mammary duct
 namespace: uberon
@@ -61391,6 +61427,12 @@ is_a: regulates ! regulates
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Typedef]
+id: produces
+name: produces
+namespace: RO
+xref: RO:0003000
+
+[Typedef]
 id: realized_by
 name: realized by
 xref: BFO:0000054
@@ -61425,11 +61467,6 @@ creation_date: 2012-03-14T10:35:44Z
 id: RO:0002131
 name: overlaps
 xref: RO:0002131
-
-[Typedef]
-id: RO:0003000
-name: produces
-xref: RO:0003000
 
 [Typedef]
 id: secretes
