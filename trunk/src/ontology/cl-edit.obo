@@ -68,7 +68,7 @@ treat-xrefs-as-equivalent: CARO
 treat-xrefs-as-equivalent: GO
 treat-xrefs-as-equivalent: NIF_GrossAnatomy
 treat-xrefs-as-equivalent: OG
-treat-xrefs-as-equivalent: VAO
+treat-xrefs-as-equivalent: VSAO
 treat-xrefs-as-genus-differentia: AAO part_of NCBITaxon:8292
 treat-xrefs-as-genus-differentia: FBbt part_of NCBITaxon:7227
 treat-xrefs-as-genus-differentia: FMA part_of NCBITaxon:9606
@@ -977,7 +977,7 @@ namespace: cell
 alt_id: CL:0000053
 alt_id: CL:0000139
 def: "Skeletogenic cell that produces enamel, overlies the odontogenic papilla, and arises from the differentiation of a preameloblast cell." [GO_REF:0000034, GOC:tfm, MESH:A.11.436.107]
-comment: non-encoded relationship from VAO produces VAO:0000066 \! pre-enamel.  Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
+comment: non-encoded relationship from VSAO produces VSAO:0000066 \! pre-enamel.  Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
 synonym: "amelocyte" EXACT []
 synonym: "enamel secreting cell" EXACT []
 xref: BTO:0001663
@@ -1023,7 +1023,7 @@ id: CL:0000062
 name: osteoblast
 namespace: cell
 def: "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell." [GO_REF:0000034, MESH:A.11.329.629]
-comment: non-encoded relationships from VAO - capable_of_producing VAO:0000020 ! mineralized extracellular matrix. part_of UBERON:0008883 ! osteoid
+comment: non-encoded relationships from VSAO - capable_of_producing VSAO:0000020 ! mineralized extracellular matrix. part_of UBERON:0008883 ! osteoid
 xref: BTO:0001593
 xref: FMA:66780
 is_a: CL:0000055 ! non-terminally differentiated cell
@@ -1835,7 +1835,7 @@ id: CL:0000137
 name: osteocyte
 namespace: cell
 def: "A mature osteoblast that has become embedded in the bone matrix. They occupy a small cavity, called lacuna, in the matrix and are connected to adjacent osteocytes via protoplasmic projections called canaliculi." [GOC:tfm, MESH:A.11.329.629.500]
-comment: VAO relationship simplified OBO_REL:integral_part_of VAO:0000118 ! cellular bone tissue. 
+comment: VSAO relationship simplified OBO_REL:integral_part_of VSAO:0000118 ! cellular bone tissue. 
 synonym: "bone cell" BROAD []
 xref: BTO:0002038
 xref: FMA:66779
@@ -6387,7 +6387,7 @@ def: "A cell that is found in the perisinusoidal space of the liver that is capa
 comment: Hepatic stellate cells are CD271-positive, desmin-positive, DDR-2-positive, GFAP-positive, synamin-positive, synaptophysin-positive, vimentin-positive, They are capable of producing angiotensin II, fibronectin, laminin, MMP-1, MMP-2, MMP-3, MMP-9, MMP-11, TGF-beta1, TIMP-1, TIMP-2, type I collagen, type III collagen, type IV collagen, and type VI collagen.
 synonym: "fat-storing cell" RELATED []
 synonym: "hepatic perisinusoidal cell" EXACT []
-synonym: "ito cell" EXACT []
+synonym: "Ito cell" EXACT []
 synonym: "lipocyte" RELATED []
 synonym: "perisinusoidal cell" EXACT []
 synonym: "vitamin A-storing cells" RELATED [PMID:12808230]
@@ -7977,8 +7977,10 @@ synonym: "cytotoxic T cell" BROAD []
 synonym: "cytotoxic T lymphocyte" BROAD []
 synonym: "cytotoxic T-cell" BROAD []
 synonym: "cytotoxic T-lymphocyte" BROAD []
-synonym: "killer T cell" EXACT []
-synonym: "killer T lymphocyte" EXACT []
+synonym: "killer T cell" BROAD []
+synonym: "killer T-cell" BROAD []
+synonym: "killer T lymphocyte" BROAD []
+synonym: "killer T-lymphocyte" BROAD []
 xref: FMA:70573
 is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
 intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
@@ -11273,16 +11275,16 @@ creation_date: 2011-11-16T04:28:16Z
 [Term]
 id: CL:0001039
 name: terminally differentiated osteoblast
-def: "Osteoblast that is terminally differentiated, located adjacent to acellular or cellular bone tissue within periosteum, and is capable of mineralizing the matrix." [VAO:curator]
-xref: VAO:0000116 ! terminally differentiated osteoblast
+def: "Osteoblast that is terminally differentiated, located adjacent to acellular or cellular bone tissue within periosteum, and is capable of mineralizing the matrix." [VSAO:curator]
+xref: VSAO:0000116 ! terminally differentiated osteoblast
 is_a: CL:0000062 ! osteoblast
 
 [Term]
 id: CL:0001040
 name: non-terminally differentiated osteoblast
-def: "Osteoblast that is non-terminally differentiated and located in cellular bone tissue or under the periosteum in acellular bone." [VAO:curator]
-comment: VAO relationship simplified OBO_REL:integral_part_of VAO:0000118 ! cellular bone tissue
-xref: VAO:0000117 ! non-terminally differentiated osteoblast
+def: "Osteoblast that is non-terminally differentiated and located in cellular bone tissue or under the periosteum in acellular bone." [VSAO:curator]
+comment: VSAO relationship simplified OBO_REL:integral_part_of VSAO:0000118 ! cellular bone tissue
+xref: VSAO:0000117 ! non-terminally differentiated osteoblast
 is_a: CL:0000062 ! osteoblast
 relationship: integral_part_of UBERON:0002481 ! bone tissue
 
