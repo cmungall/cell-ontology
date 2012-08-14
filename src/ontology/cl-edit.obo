@@ -276,6 +276,7 @@ xref: GO:0005623
 xref: KUPO:0000002
 xref: WBbt:0004017
 xref: XAO:0003012
+xref: VHOG:0001533 ! cell
 
 [Term]
 id: CL:0000001
@@ -405,6 +406,7 @@ name: male germ cell
 namespace: cell
 xref: FMA:72290
 xref: MA:0002765
+xref: VHOG:0001531 ! male germ cell
 is_a: CL:0000586 ! germ cell
 intersection_of: CL:0000586 ! germ cell
 intersection_of: capable_of GO:0007283 ! spermatogenesis
@@ -492,6 +494,7 @@ name: female germ cell
 namespace: cell
 def: "Female germ cell is a germ cell that supports female gamete production." [GOC:tfm, PMID:11023867, PMID:20454446]
 xref: MA:0000388
+xref: VHOG:0001530 ! female germ cell
 is_a: CL:0000586 ! germ cell
 intersection_of: CL:0000586 ! germ cell
 intersection_of: capable_of GO:0048477 ! oogenesis
@@ -656,6 +659,7 @@ synonym: "HSC" EXACT []
 xref: BTO:0000725
 xref: FMA:70337
 xref: FMA:86475
+xref: VHOG:0001485 ! hematopoietic stem cell
 is_a: CL:0000988 ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: capable_of GO:0002244 ! hemopoietic progenitor cell differentiation
@@ -943,6 +947,7 @@ def: "A precursor cell of the myogenic lineage that develops from the mesoderm. 
 xref: BTO:0000222
 xref: FBbt:00005083
 xref: FMA:70335
+xref: VHOG:0001529 ! myoblast
 is_a: CL:0000680 ! muscle precursor cell
 relationship: develops_from CL:0000355 ! muscle stem cell
 
@@ -954,6 +959,7 @@ def: "A connective tissue cell which secretes an extracellular matrix rich in co
 comment: These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.
 xref: BTO:0000452
 xref: FMA:63877
+xref: VHOG:0001482 ! fibroblast
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000134 ! mesenchymal cell
 
@@ -1048,6 +1054,7 @@ name: ciliated cell
 namespace: cell
 def: "A cell that has a filiform extrusion of the cell surface." [GOC:tfm]
 xref: XAO:0000031
+xref: VHOG:0001532 ! ciliated cell
 intersection_of: CL:0000003 ! native cell
 intersection_of: has_plasma_membrane_part GO:0005929 ! cilium
 
@@ -1229,6 +1236,7 @@ synonym: "T-cell" EXACT []
 synonym: "T-lymphocyte" EXACT []
 xref: BTO:0000782
 xref: FMA:62870
+xref: VHOG:0001479 ! T cell
 is_a: CL:0000542 ! lymphocyte
 intersection_of: CL:0000542 ! lymphocyte
 intersection_of: capable_of GO:0002456 ! T cell mediated immunity
@@ -1925,6 +1933,7 @@ id: CL:0000147
 name: pigment cell
 namespace: cell
 def: "A pigment cell is a cell that contains pigment granules." [GOC:tfm]
+xref: VHOG:0001678 ! pigment cell
 synonym: "chromatocyte" EXACT []
 synonym: "chromatophore" EXACT []
 is_a: CL:0000325 ! stuff accumulating cell
@@ -1938,6 +1947,7 @@ def: "A pigment cell derived from the neural crest. Contains melanin-filled pigm
 synonym: "melanophore" NARROW []
 xref: BTO:0000847
 xref: FMA:70545
+xref: VHOG:0001679 ! melanophore
 is_a: CL:0000147 ! pigment cell
 is_a: CL:0000710 ! neurecto-epithelial cell
 intersection_of: CL:0000147 ! pigment cell
@@ -2328,6 +2338,7 @@ name: muscle cell
 namespace: cell
 def: "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns." [MESH:A.11.620]
 synonym: "myocyte" EXACT []
+synonym: "muscle fiber" EXACT []
 xref: BTO:0000888
 xref: BTO:0000902
 xref: FBbt:00005074
@@ -2577,12 +2588,13 @@ namespace: cell
 def: "A supporting cell projecting inward from the basement membrane of seminiferous tubules. They surround and nourish the developing male germ cells and secrete androgen binding protein. Their tight junctions with the spermatogonia and spermatocytes provide a blood-testis barrier." [MESH:A.05.360.444.849.789]
 xref: BTO:0001238
 xref: FMA:72298
+xref: VHOG:0001348 ! Sertoli cell
 is_a: CL:0000215 ! barrier cell
 is_a: CL:0000511 ! androgen binding protein secreting cell
 is_a: CL:0000630 ! supportive cell
 is_a: CL:0002625 ! seminiferous tubule epithelial cell
 intersection_of: CL:0000630 ! supportive cell
-intersection_of: part_of UBERON:0000473 ! testis
+intersection_of: part_of UBERON:0001343 ! seminiferous tubule of testis
 
 [Term]
 id: CL:0000217
@@ -2799,6 +2811,7 @@ synonym: "B-cell" EXACT []
 synonym: "B-lymphocyte" EXACT []
 xref: BTO:0000776
 xref: FMA:62869
+xref: VHOG:0001480 ! B cell
 is_a: CL:0000945 ! lymphocyte of B lineage
 intersection_of: CL:0000945 ! lymphocyte of B lineage
 intersection_of: capable_of GO:0019724 ! B cell mediated immunity
@@ -2883,6 +2896,7 @@ id: CL:0000247
 name: Rohon-Beard neuron
 namespace: cell
 is_a: CL:0000531 ! primary sensory neuron
+xref: VHOG:0001484 ! Rohon-Beard neuron
 
 [Term]
 id: CL:0000248
@@ -5230,6 +5244,7 @@ xref: BTO:0000938
 xref: FBbt:00005106
 xref: FMA:54527
 xref: WBbt:0003679
+xref: VHOG:0001483 ! neuron
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
@@ -5255,6 +5270,7 @@ def: "A lymphocyte is a leukocyte commonly found in the blood and lymph that has
 comment: Editors note: consider adding taxon constraint to vertebrata (PMID:18025161)
 xref: BTO:0000775
 xref: FMA:62863
+xref: VHOG:0001535 ! lymphocyte
 is_a: CL:0000738 ! leukocyte
 intersection_of: CL:0000738 ! leukocyte
 intersection_of: has_part CP:0000000 ! neutrophillic cytoplasm
@@ -5895,6 +5911,7 @@ namespace: cell
 def: "The reproductive cell in multicellular organisms." [MESH:A.05.360.490]
 xref: BTO:0000535
 xref: WBbt:0006796
+xref: VHOG:0001534 ! germ cell
 is_a: CL:0000039 ! germ line cell
 intersection_of: CL:0000039 ! germ line cell
 intersection_of: capable_of GO:0048609 ! multicellular organismal reproductive process
@@ -6302,6 +6319,7 @@ xref: BTO:0000914
 xref: BTO:0004716
 xref: FMA:63147
 xref: FMA:83601
+xref: VHOG:0001697 ! natural killer cell
 is_a: CL:0000542 ! lymphocyte
 intersection_of: CL:0000542 ! lymphocyte
 intersection_of: capable_of GO:0002228 ! natural killer cell mediated immunity
@@ -6764,6 +6782,7 @@ is_a: CL:0000219 ! motile cell
 intersection_of: CL:0000039 ! germ line cell
 intersection_of: capable_of GO:0048870 ! cell motility
 intersection_of: part_of UBERON:0000922 ! embryo
+
 
 [Term]
 id: CL:0000671
@@ -7351,9 +7370,10 @@ synonym: "cardiac myocyte" EXACT []
 synonym: "cardiocyte" BROAD []
 synonym: "cardiomyocyte" EXACT []
 synonym: "heart muscle cell" EXACT []
+synonym: "cardiac muscle fiber" EXACT [GO:0048739]
 xref: BTO:0001539
 xref: FMA:14067
-xref: FMA:83808
+alt_id: FMA:83808
 is_a: CL:0000737 ! striated muscle cell
 is_a: CL:0002494 ! cardiocyte
 intersection_of: CL:0000737 ! striated muscle cell
@@ -14375,8 +14395,13 @@ name: male gonocyte
 namespace: cell
 def: "A primordial germ cell that is destined to become a male germ cell." [GOC:tfm]
 synonym: "male primordial germ cell" EXACT []
+synonym: "testis primordial germ cell" EXACT [VHOG:0000662]
 xref: FMA:84771
+xref: VHOG:0000662 ! testis primordial germ cells
+xref: EMAPA:18686
+xref: EHDAA2:0001053 ! male primordial germ cells
 is_a: CL:0000670 ! primordial germ cell
+relationship: part_of UBERON:0000473 ! testis
 created_by: tmeehan
 creation_date: 2010-09-07T02:11:13Z
 
@@ -14385,10 +14410,15 @@ id: CL:0002239
 name: ooblast
 namespace: cell
 def: "A primordial cell from which an oocyte (ovum) ultimately is developed." [GOC:tfm]
-synonym: "ovigerm" EXACT []
+synonym: "ovigerm" EXACT  [FMA:84772]
+synonym: "ovary primordial germ cell" EXACT [VHOG:0000661]
+xref: VHOG:0000661 ! ovary primordial germ cells
+xref: EHDAA2:0000505 ! female primordial germ cells
 xref: FMA:84772
 xref: ISBN:0721662544
+xref: EMAPA:17965
 is_a: CL:0000670 ! primordial germ cell
+relationship: part_of UBERON:0000992 ! female gonad
 created_by: tmeehan
 creation_date: 2010-09-07T02:11:16Z
 
