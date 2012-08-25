@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 15:06:2012 17:58
+date: 15:07:2012 09:25
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.1.1-beta8
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -38,11 +38,13 @@ subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype R
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: uberon_slim "Uberon slim - somewhat arbitrary subset that excludes obscure terms and deep compositional terms"
+subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
 subsetdef: unvetted ""
 subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: upper_ontology_conflict "Terms in this subset group together terms from different anatomy ontologies that have conflicting upper ontology/CARO assignments. For example, in FMA the naris is immaterial and in ZFA it is an organism subdivision."
 subsetdef: value_slim "Value slim"
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
+subsetdef: virus_checked "Viral overhaul terms"
 synonymtypedef: ATTRIBUTION_REQUIRED "expert consultation and attribution required" 
 synonymtypedef: BRAND_NAME "BRAND NAME" 
 synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged" 
@@ -50,6 +52,7 @@ synonymtypedef: DEVELOPMENTAL "developmental term"
 synonymtypedef: DUBIOUS "dubious or contested synonym" 
 synonymtypedef: FORMULA "FORMULA" 
 synonymtypedef: HOMOLOGY "a synonym made on the basis of a possibly homologous structure in another species" 
+synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens" 
 synonymtypedef: InChI "InChI" 
 synonymtypedef: InChIKey "InChIKey" 
 synonymtypedef: INCONSISTENT "indicates that a synonym is used in an inconsistent or confusing way, typically between species" 
@@ -69,7 +72,7 @@ treat-xrefs-as-equivalent: CARO
 treat-xrefs-as-equivalent: GO
 treat-xrefs-as-equivalent: NIF_GrossAnatomy
 treat-xrefs-as-equivalent: OG
-treat-xrefs-as-equivalent: VAO
+treat-xrefs-as-equivalent: VSAO
 treat-xrefs-as-genus-differentia: AAO part_of NCBITaxon:8292
 treat-xrefs-as-genus-differentia: FBbt part_of NCBITaxon:7227
 treat-xrefs-as-genus-differentia: FMA part_of NCBITaxon:9606
@@ -97,9 +100,11 @@ name: cell
 namespace: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:mah]
 comment: The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one).
+subset: upper_level
 xref: FMA:68646
 xref: GO:0005623
 xref: KUPO:0000002
+xref: VHOG:0001533
 xref: WBbt:0004017
 xref: XAO:0003012
 
@@ -128,6 +133,7 @@ name: native cell
 namespace: cell
 def: "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." [CARO:mah]
 comment: To accommodate unicellular organisms better, 'cell in vivo' has been re-labeled 'native cell' to better represent its intended meaning - that is, that it is a cell in the context of a multicellular organism or in a natural environment. 'Native' is intended to contrast with 'in vitro', which refers to cells or other biological entities that have been intentionally placed in a controlled, non-natural setting for the purpose of study or manipulation. (MAH 1.12.12).
+subset: upper_level
 synonym: "cell in vivo" NARROW []
 xref: CARO:0000013
 is_a: CL:0000000 ! cell
@@ -148,7 +154,7 @@ id: CL:0000005
 name: fibroblast neural crest derived
 namespace: cell
 is_a: CL:0000057 ! fibroblast
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000006
@@ -166,9 +172,9 @@ is_a: CL:0002321 ! embryonic cell
 
 [Term]
 id: CL:0000008
-name: cranial neural crest cell
+name: migratory cranial neural crest cell
 namespace: cell
-is_a: CL:0000333 ! neural crest cell
+is_a: CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000009
@@ -192,9 +198,9 @@ is_a: CL:0000578 ! experimentally modified cell in vitro
 
 [Term]
 id: CL:0000011
-name: trunk neural crest cell
+name: migratory trunk neural crest cell
 namespace: cell
-is_a: CL:0000333 ! neural crest cell
+is_a: CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000012
@@ -210,7 +216,8 @@ consider: CL:0001034
 id: CL:0000013
 name: dentine secreting cell
 namespace: cell
-is_a: CL:0000151 ! secretory cell
+is_obsolete: true
+consider: CL:0000140
 
 [Term]
 id: CL:0000014
@@ -226,6 +233,7 @@ name: male germ cell
 namespace: cell
 xref: FMA:72290
 xref: MA:0002765
+xref: VHOG:0001531
 is_a: CL:0000586 ! germ cell
 
 [Term]
@@ -300,6 +308,7 @@ name: female germ cell
 namespace: cell
 def: "Female germ cell is a germ cell that supports female gamete production." [GOC:tfm, PMID:11023867, PMID:20454446]
 xref: MA:0000388
+xref: VHOG:0001530
 is_a: CL:0000586 ! germ cell
 
 [Term]
@@ -362,8 +371,8 @@ id: CL:0000027
 name: smooth muscle cell neural crest derived
 namespace: cell
 is_a: CL:0000192 ! smooth muscle cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000028
@@ -377,7 +386,7 @@ id: CL:0000029
 name: neuron neural crest derived
 namespace: cell
 is_a: CL:0000540 ! neuron
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 relationship: develops_from CL:0002676 ! neural crest derived neuroblast
 
 [Term]
@@ -451,6 +460,7 @@ synonym: "HSC" EXACT []
 xref: BTO:0000725
 xref: FMA:70337
 xref: FMA:86475
+xref: VHOG:0001485
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0000988 ! hematopoietic cell
 relationship: develops_from CL:0000566 ! angioblastic mesenchymal cell
@@ -477,6 +487,7 @@ name: germ line cell
 namespace: cell
 def: "A cell that is within the developmental lineage of gametes and is able to pass along its genetic material to offspring." [GOC:tfm, ISBN:0721662544]
 comment: Originally this term had some plant germ line cell children.
+subset: upper_level
 is_a: CL:0000548 ! animal cell
 disjoint_from: CL:0002371 ! somatic cell
 
@@ -662,6 +673,7 @@ def: "A precursor cell of the myogenic lineage that develops from the mesoderm. 
 xref: BTO:0000222
 xref: FBbt:00005083
 xref: FMA:70335
+xref: VHOG:0001529
 is_a: CL:0000680 ! muscle precursor cell
 relationship: develops_from CL:0000355 ! muscle stem cell
 
@@ -673,6 +685,7 @@ def: "A connective tissue cell which secretes an extracellular matrix rich in co
 comment: These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.
 xref: BTO:0000452
 xref: FMA:63877
+xref: VHOG:0001482
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000134 ! mesenchymal cell
 
@@ -680,13 +693,13 @@ relationship: develops_from CL:0000134 ! mesenchymal cell
 id: CL:0000058
 name: chondroblast
 namespace: cell
-def: "An immature cartilage-producing cell found in growing cartilage." [GOC:tfm, ISBN:0618947256]
+def: "Skeletogenic cell that is typically non-terminally differentiated, secretes an avascular, GAG rich matrix; is not buried in cartilage tissue matrix, retains the ability to divide, located adjacent to cartilage tissue (including within the perichondrium), and develops from prechondroblast (and thus prechondrogenic) cell." [GO_REF:0000034, GOC:tfm, ISBN:0618947256]
 synonym: "chrondoplast" EXACT []
 xref: BTO:0003607
 xref: FMA:66783
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: develops_from CL:0007009 ! prechondroblast
 
 [Term]
 id: CL:0000059
@@ -695,7 +708,7 @@ namespace: cell
 alt_id: CL:0000053
 alt_id: CL:0000139
 def: "Skeletogenic cell that produces enamel, overlies the odontogenic papilla, and arises from the differentiation of a preameloblast cell." [GO_REF:0000034, GOC:tfm, MESH:A.11.436.107]
-comment: Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
+comment: non-encoded relationship from VSAO produces VSAO:0000066 ! pre-enamel.  Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
 synonym: "amelocyte" EXACT []
 synonym: "enamel secreting cell" EXACT []
 xref: BTO:0001663
@@ -709,7 +722,7 @@ relationship: develops_from CL:0007000 ! preameloblast
 id: CL:0000060
 name: odontoblast
 namespace: cell
-def: "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell. Skeletogenic cell that produces dentine, is located in the odontogenic papilla, and develops from a preodontoblast cell." [GO_REF:0000034, ISBN:0618947256]
+def: "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell." [GO_REF:0000034, ISBN:0618947256]
 comment: legacy def: One of the cells forming the outer surface of dental pulp that produces tooth dentin.
 xref: BTO:0001769
 xref: FMA:62999
@@ -735,12 +748,13 @@ relationship: develops_from CL:0007002 ! precementoblast
 id: CL:0000062
 name: osteoblast
 namespace: cell
-def: "A bone-forming cell which secretes an extracellular matrix. Hydroxyapatite crystals are then deposited into the matrix to form bone." [MESH:A.11.329.629]
+def: "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell." [GO_REF:0000034, MESH:A.11.329.629]
+comment: non-encoded relationships from VSAO - capable_of_producing VSAO:0000020
 xref: BTO:0001593
 xref: FMA:66780
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000375 ! osteoprogenitor cell
+relationship: develops_from CL:0007010 ! preosteoblast
 
 [Term]
 id: CL:0000063
@@ -758,6 +772,7 @@ id: CL:0000064
 name: ciliated cell
 namespace: cell
 def: "A cell that has a filiform extrusion of the cell surface." [GOC:tfm]
+xref: VHOG:0001532
 xref: XAO:0000031
 is_a: CL:0000003 ! native cell
 
@@ -929,6 +944,7 @@ synonym: "T-cell" EXACT []
 synonym: "T-lymphocyte" EXACT []
 xref: BTO:0000782
 xref: FMA:62870
+xref: VHOG:0001479
 is_a: CL:0000542 ! lymphocyte
 disjoint_from: CL:0000623 ! natural killer cell
 disjoint_from: CL:0000945 ! lymphocyte of B lineage
@@ -1003,7 +1019,7 @@ synonym: "chondroclast" RELATED []
 xref: BTO:0000968
 xref: FMA:66781
 is_a: CL:0000766 ! myeloid leukocyte
-is_a: CL:0002320 ! connective tissue cell
+is_a: CL:0001035 ! bone cell
 relationship: develops_from CL:0000576 ! monocyte
 
 [Term]
@@ -1292,7 +1308,7 @@ id: CL:0000123
 name: neuron associated cell (sensu Vertebrata)
 namespace: cell
 is_a: CL:0000095 ! neuron associated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000124
@@ -1387,7 +1403,7 @@ def: "Cell of the single layer of large flattened cells covering the surface of 
 xref: FMA:70614
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0000710 ! neurecto-epithelial cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000133
@@ -1452,18 +1468,19 @@ id: CL:0000137
 name: osteocyte
 namespace: cell
 def: "A mature osteoblast that has become embedded in the bone matrix. They occupy a small cavity, called lacuna, in the matrix and are connected to adjacent osteocytes via protoplasmic projections called canaliculi." [GOC:tfm, MESH:A.11.329.629.500]
+comment: VSAO relationship simplified OBO_REL:integral_part_of VSAO:0000118
 synonym: "bone cell" BROAD []
 xref: BTO:0002038
 xref: FMA:66779
-is_a: CL:0000054 ! bone matrix secreting cell
-is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000062 ! osteoblast
+xref: VSAO:0000124
+is_a: CL:0001035 ! bone cell
+relationship: develops_from CL:0001040 ! non-terminally differentiated osteoblast
 
 [Term]
 id: CL:0000138
 name: chondrocyte
 namespace: cell
-def: "Polymorphic cell that form cartilage." [MESH:A.11.329.171]
+def: "Skeletogenic cell that is terminally differentiated, secretes an avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell." [GO_REF:0000034, MESH:A.11.329.171]
 synonym: "cartilage cell" EXACT []
 xref: BTO:0000249
 xref: FMA:66782
@@ -1475,7 +1492,7 @@ relationship: develops_from CL:0000058 ! chondroblast
 id: CL:0000140
 name: odontocyte
 namespace: cell
-is_a: CL:0000013 ! dentine secreting cell
+def: "Skeletogenic cell that secretes dentine matrix, is derived from odontogenic papilla. Embedded in dentine tissue, and is the transformation of a non-terminally differentiated odontoblast cell." [GO_REF:0000034]
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000060 ! odontoblast
 relationship: develops_from CL:0000134 ! mesenchymal cell
@@ -1485,6 +1502,7 @@ id: CL:0000141
 name: cementocyte
 namespace: cell
 def: "An osteocytelike cell with numerous processes, trapped in a lacuna in the cement of the tooth." [ISBN:0781733901]
+comment: CHECK: wikipedia says that cementocytes no longer produce cementum, but the phenoscape def is: Skeletogenic cell that produces cementum, is part of the odontogenic papilla, and is a transformation of a cementoblast cell (no change to existing def).
 xref: FMA:63003
 is_a: CL:0000137 ! osteocyte
 relationship: develops_from CL:0000061 ! cementoblast
@@ -1538,6 +1556,7 @@ namespace: cell
 def: "A pigment cell is a cell that contains pigment granules." [GOC:tfm]
 synonym: "chromatocyte" EXACT []
 synonym: "chromatophore" EXACT []
+xref: VHOG:0001678
 is_a: CL:0000325 ! stuff accumulating cell
 
 [Term]
@@ -1549,6 +1568,7 @@ def: "A pigment cell derived from the neural crest. Contains melanin-filled pigm
 synonym: "melanophore" NARROW []
 xref: BTO:0000847
 xref: FMA:70545
+xref: VHOG:0001679
 is_a: CL:0000147 ! pigment cell
 is_a: CL:0000710 ! neurecto-epithelial cell
 relationship: develops_from CL:0000541 ! melanoblast
@@ -1716,7 +1736,7 @@ synonym: "phaeochromocyte" EXACT []
 xref: BTO:0000259
 xref: FMA:69263
 is_a: CL:0000568 ! APUD cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000167
@@ -1743,8 +1763,8 @@ synonym: "beta cell of pancreatic islet" EXACT [FMA:70586]
 synonym: "insulin-secreting cell" EXACT [FMA:70586]
 synonym: "pancreatic B cell" EXACT []
 synonym: "pancreatic B-cell" EXACT [FMA:70586]
-synonym: "pancreatic beta cell" EXACT []
 synonym: "pancreatic beta cell" EXACT [FMA:70586]
+synonym: "pancreatic beta cell" EXACT []
 synonym: "pancreatic islet core" EXACT [MA:0002419]
 synonym: "type B enteroendocrine cell" EXACT [FMA:70586]
 xref: BTO:0000783
@@ -1811,7 +1831,6 @@ def: "A progesterone secreting cell in the corpus luteum. The large luteal cells
 synonym: "lutein cell" EXACT []
 xref: BTO:0003939
 xref: FMA:18688
-is_a: CL:0000039 ! germ line cell
 is_a: CL:0000179 ! progesterone secreting cell
 is_a: CL:0002132 ! stromal cell of ovary
 
@@ -1910,6 +1929,7 @@ id: CL:0000187
 name: muscle cell
 namespace: cell
 def: "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns." [MESH:A.11.620]
+synonym: "muscle fiber" EXACT []
 synonym: "myocyte" EXACT []
 xref: BTO:0000888
 xref: BTO:0000902
@@ -2136,7 +2156,6 @@ xref: FMA:66786
 is_a: CL:0000153 ! GAG secreting cell
 is_a: CL:0000213 ! lining cell
 is_a: CL:0002078 ! meso-epithelial cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
 
 [Term]
 id: CL:0000215
@@ -2152,6 +2171,7 @@ namespace: cell
 def: "A supporting cell projecting inward from the basement membrane of seminiferous tubules. They surround and nourish the developing male germ cells and secrete androgen binding protein. Their tight junctions with the spermatogonia and spermatocytes provide a blood-testis barrier." [MESH:A.05.360.444.849.789]
 xref: BTO:0001238
 xref: FMA:72298
+xref: VHOG:0001348
 is_a: CL:0000511 ! androgen binding protein secreting cell
 is_a: CL:0000630 ! supportive cell
 is_a: CL:0002625 ! seminiferous tubule epithelial cell
@@ -2355,6 +2375,7 @@ synonym: "B-cell" EXACT []
 synonym: "B-lymphocyte" EXACT []
 xref: BTO:0000776
 xref: FMA:62869
+xref: VHOG:0001480
 is_a: CL:0000945 ! lymphocyte of B lineage
 relationship: develops_from CL:0000826 ! pro-B cell
 
@@ -2436,6 +2457,7 @@ is_a: CL:0000099 ! interneuron
 id: CL:0000247
 name: Rohon-Beard neuron
 namespace: cell
+xref: VHOG:0001484
 is_a: CL:0000531 ! primary sensory neuron
 
 [Term]
@@ -3035,6 +3057,7 @@ id: CL:0000325
 name: stuff accumulating cell
 namespace: cell
 def: "A cell that is specialised to accumulate a particular substance(s)." [FB:ma]
+subset: upper_level
 is_a: CL:0000003 ! native cell
 
 [Term]
@@ -3089,13 +3112,14 @@ is_obsolete: true
 
 [Term]
 id: CL:0000333
-name: neural crest cell
+name: migratory neural crest cell
 namespace: cell
-def: "A cell of the strip of specialized ectoderm flanking each side of the embryonal neural plate, which after the closure of the neural tube, forms a column of isolated cells along the dorsal aspect of the neural tube. Most of the cranial and all of the spinal sensory ganglion cells arise by differentiation of neural crest cells." [MESH:A.16.254.600]
+def: "A cell derived from the specialized ectoderm flanking each side of the embryonic neural plate, which after the closure of the neural tube, forms masses of cells that migrate out from the dorsal aspect of the neural tube to spread throughout the body." [MESH:A.16.254.600]
 xref: FMA:86667
 is_a: CL:0000219 ! motile cell
 is_a: CL:0002321 ! embryonic cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
+relationship: develops_from CL:0007004 ! premigratory neural crest cell
 
 [Term]
 id: CL:0000334
@@ -3123,7 +3147,7 @@ synonym: "medullary chromaffin cell of adrenal gland" EXACT [FMA:69262]
 xref: FMA:69262
 is_a: CL:0000457 ! biogenic amine secreting cell
 is_a: CL:1000426 ! chromaffin cell of adrenal gland
-relationship: develops_from CL:0000011 ! trunk neural crest cell
+relationship: develops_from CL:0000011 ! migratory trunk neural crest cell
 
 [Term]
 id: CL:0000337
@@ -3190,7 +3214,7 @@ name: dental papilla cell
 namespace: cell
 def: "A small mass of condensed mesenchyme in the enamel organ; it differentiates into the dentin and dental pulp." [GOC:tfm, ISBN:0721662544]
 is_a: CL:0000134 ! mesenchymal cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000346
@@ -3198,7 +3222,7 @@ name: hair follicle dermal papilla cell
 namespace: cell
 def: "A specialized mesenchymal cell that resides in the dermal papilla located at the bottom of hair follicles. This cell plays a pivotal roles in hair formation, growth, and cycling." [GOC:tfm, PMID:9893172]
 is_a: CL:0000134 ! mesenchymal cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000347
@@ -3206,7 +3230,7 @@ name: scleral cell
 namespace: cell
 def: "A cell of the sclera of the eye." [GOC:add]
 is_a: CL:0000293 ! structural cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000348
@@ -3214,7 +3238,7 @@ name: choroidal cell of the eye
 namespace: cell
 def: "A cell of the choroid of the eye." [GOC:add]
 is_a: CL:0000293 ! structural cell
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000349
@@ -3421,8 +3445,8 @@ id: CL:0000375
 name: osteoprogenitor cell
 namespace: cell
 xref: BTO:0002051
-is_a: CL:0000035 ! single fate stem cell
-relationship: develops_from CL:0000335 ! mesenchyme condensation cell
+is_obsolete: true
+replaced_by: CL:0007010
 
 [Term]
 id: CL:0000376
@@ -4144,11 +4168,11 @@ is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000474
-name: pericardial cell
+name: pericardial nephrocyte
 namespace: cell
-def: "Cell which forms the outer layer of the dorsal vessel within the abdomen of the fly larvae. These cells sequester macromolecules from the hemolymph." [FBbt:00003184, GOC:tfm, PMID:19783135]
-synonym: "pericardial nephrocyte" BROAD [GO:0061320]
-xref: FBbt:00003184
+def: "an insect renal cell that filters hemolymph and is found with other pericardial nephrocytes in two rows flanking the dorsal vessel." [FBbt:00003184, GO:0061320, GOC:tfm, PMID:19783135]
+synonym: "pericardial cell" NARROW [FBbt:00005058, GO:0061320]
+xref: FBbt:00005058
 is_a: CL:0000519 ! phagocyte (sensu Nematoda and Protostomia)
 is_a: CL:0002520 ! nephrocyte
 
@@ -4699,6 +4723,7 @@ synonym: "nerve cell" EXACT []
 xref: BTO:0000938
 xref: FBbt:00005106
 xref: FMA:54527
+xref: VHOG:0001483
 xref: WBbt:0003679
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
@@ -4715,7 +4740,7 @@ xref: BTO:0003217
 xref: FMA:83377
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0000710 ! neurecto-epithelial cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000542
@@ -4725,6 +4750,7 @@ def: "A lymphocyte is a leukocyte commonly found in the blood and lymph that has
 comment: Editors note: consider adding taxon constraint to vertebrata (PMID:18025161)
 xref: BTO:0000775
 xref: FMA:62863
+xref: VHOG:0001535
 is_a: CL:0002087 ! nongranular leukocyte
 is_a: CL:0002242 ! nucleate cell
 disjoint_from: CL:0000766 ! myeloid leukocyte
@@ -4793,6 +4819,7 @@ relationship: develops_from CL:0000038 ! erythroid progenitor cell
 id: CL:0000548
 name: animal cell
 namespace: cell
+subset: upper_level
 is_a: CL:0000255 ! eukaryotic cell
 
 [Term]
@@ -4888,6 +4915,7 @@ synonym: "megalokaryocyte" EXACT []
 xref: BTO:0000843
 xref: FMA:83555
 is_a: CL:0000763 ! myeloid cell
+is_a: CL:0002092 ! bone marrow cell
 disjoint_from: CL:0000764 ! erythroid lineage cell
 relationship: develops_from CL:0000553 ! megakaryocyte progenitor cell
 
@@ -4904,6 +4932,7 @@ synonym: "GMP" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 synonym: "granulocyte-macrophage progenitor" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
+is_a: CL:0002092 ! bone marrow cell
 relationship: develops_from CL:0000049 ! common myeloid progenitor
 
 [Term]
@@ -5027,7 +5056,7 @@ namespace: cell
 def: "A mesenchymal cell found in the developing heart." [PMID:18816864]
 is_a: CL:0000134 ! mesenchymal cell
 is_a: CL:0002494 ! cardiocyte
-relationship: develops_from CL:0000011 ! trunk neural crest cell
+relationship: develops_from CL:0000011 ! migratory trunk neural crest cell
 
 [Term]
 id: CL:0000570
@@ -5039,7 +5068,7 @@ xref: FMA:68653
 is_a: CL:0000443 ! calcitonin secreting cell
 is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000710 ! neurecto-epithelial cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000571
@@ -5195,6 +5224,7 @@ name: germ cell
 namespace: cell
 def: "The reproductive cell in multicellular organisms." [MESH:A.05.360.490]
 xref: BTO:0000535
+xref: VHOG:0001534
 xref: WBbt:0006796
 is_a: CL:0000039 ! germ line cell
 
@@ -5223,6 +5253,7 @@ synonym: "inner hair cell" BROAD []
 xref: BTO:0003667
 xref: FMA:62365
 is_a: CL:0000202 ! auditory hair cell
+is_a: CL:0001035 ! bone cell
 
 [Term]
 id: CL:0000590
@@ -5535,6 +5566,7 @@ xref: BTO:0000914
 xref: BTO:0004716
 xref: FMA:63147
 xref: FMA:83601
+xref: VHOG:0001697
 is_a: CL:0000542 ! lymphocyte
 relationship: develops_from CL:0000825 ! pro-NK cell
 
@@ -5612,7 +5644,7 @@ def: "A cell that is found in the perisinusoidal space of the liver that is capa
 comment: Hepatic stellate cells are CD271-positive, desmin-positive, DDR-2-positive, GFAP-positive, synamin-positive, synaptophysin-positive, vimentin-positive, They are capable of producing angiotensin II, fibronectin, laminin, MMP-1, MMP-2, MMP-3, MMP-9, MMP-11, TGF-beta1, TIMP-1, TIMP-2, type I collagen, type III collagen, type IV collagen, and type VI collagen.
 synonym: "fat-storing cell" RELATED []
 synonym: "hepatic perisinusoidal cell" EXACT []
-synonym: "ito cell" EXACT []
+synonym: "Ito cell" EXACT []
 synonym: "lipocyte" RELATED []
 synonym: "perisinusoidal cell" EXACT []
 synonym: "vitamin A-storing cells" RELATED [PMID:12808230]
@@ -6092,7 +6124,7 @@ namespace: cell
 def: "A columnar/cuboidal epithelial cell that secretes cerebrospinal fluid." [GOC:tfm]
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000151 ! secretory cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000687
@@ -6512,7 +6544,8 @@ is_a: CL:0000138 ! chondrocyte
 id: CL:0000743
 name: hypertrophic chondrocyte
 namespace: cell
-def: "A terminally differentiated chondrocyte that differentiates in the late embryonic growth plate of bone." [PMID:15951842]
+def: "Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification)." [GO_REF:0000034, PMID:15951842]
+comment: is hypertrophic pathological or normal?  and can it be described using  a pato term?
 is_a: CL:0000138 ! chondrocyte
 
 [Term]
@@ -6534,14 +6567,15 @@ is_a: CL:0000099 ! interneuron
 id: CL:0000746
 name: cardiac muscle cell
 namespace: cell
+alt_id: FMA:83808
 def: "Cardiac muscle cells are striated muscle cells that are responsible for heart contraction. In mammals, the contractile fiber resembles those of skeletal muscle but are only one third as large in diameter, are richer in sarcoplasm, and contain centrally located instead of peripheral nuclei." [GOC:mtg_cardiacconduct_nov11, GOC:tfm, ISBN:0323052908]
+synonym: "cardiac muscle fiber" EXACT [GO:0048739]
 synonym: "cardiac myocyte" EXACT []
 synonym: "cardiocyte" BROAD []
 synonym: "cardiomyocyte" EXACT []
 synonym: "heart muscle cell" EXACT []
 xref: BTO:0001539
 xref: FMA:14067
-xref: FMA:83808
 is_a: CL:0000737 ! striated muscle cell
 is_a: CL:0002494 ! cardiocyte
 relationship: develops_from CL:0000513 ! cardiac muscle myoblast
@@ -7062,8 +7096,10 @@ synonym: "cytotoxic T cell" BROAD []
 synonym: "cytotoxic T lymphocyte" BROAD []
 synonym: "cytotoxic T-cell" BROAD []
 synonym: "cytotoxic T-lymphocyte" BROAD []
-synonym: "killer T cell" EXACT []
-synonym: "killer T lymphocyte" EXACT []
+synonym: "killer T cell" BROAD []
+synonym: "killer T lymphocyte" BROAD []
+synonym: "killer T-cell" BROAD []
+synonym: "killer T-lymphocyte" BROAD []
 xref: FMA:70573
 is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
 is_a: CL:0000910 ! cytotoxic T cell
@@ -9479,6 +9515,31 @@ created_by: haendel
 creation_date: 2012-01-12T09:58:38Z
 
 [Term]
+id: CL:0001035
+name: bone cell
+namespace: cell
+def: "A connective tissue cell found in bone." [GO_REF:0000034, GOC:add]
+is_a: CL:0000548 ! animal cell
+created_by: adiehl
+creation_date: 2011-11-16T04:28:16Z
+
+[Term]
+id: CL:0001039
+name: terminally differentiated osteoblast
+def: "Osteoblast that is terminally differentiated, located adjacent to acellular or cellular bone tissue within periosteum, and is capable of mineralizing the matrix." [VSAO:curator]
+xref: VSAO:0000116
+is_a: CL:0000062 ! osteoblast
+
+[Term]
+id: CL:0001040
+name: non-terminally differentiated osteoblast
+def: "Osteoblast that is non-terminally differentiated and located in cellular bone tissue or under the periosteum in acellular bone." [VSAO:curator]
+comment: VSAO relationship simplified OBO_REL:integral_part_of VSAO:0000118
+xref: VSAO:0000117
+is_a: CL:0000062 ! osteoblast
+is_a: CL:0001035 ! bone cell
+
+[Term]
 id: CL:0001658
 name: visual pigment cell (sensu Nematoda and Protostomia)
 namespace: cell
@@ -10550,9 +10611,10 @@ id: CL:0002092
 name: bone marrow cell
 namespace: cell
 def: "A cell found in the bone marrow. This can include fibroblasts, macrophages, adipocytes, osteoblasts, osteoclasts, endothelial cells and hematopoietic cells." [GOC:tfm, ISBN:0618947256]
+comment: MH consider whether bone marrow cells are bone cells in the structural sense vs. being part of bone organ sense.
 xref: BTO:0004850
 xref: FMA:83621
-is_a: CL:0002320 ! connective tissue cell
+is_a: CL:0001035 ! bone cell
 created_by: tmeehan
 creation_date: 2010-07-22T04:48:15Z
 
@@ -11268,6 +11330,7 @@ synonym: "epithelial cell rests of Malassez " EXACT []
 synonym: "epithelial debris of Malassez" EXACT []
 xref: FMA:62987
 is_a: CL:0002159 ! general ecto-epithelial cell
+is_a: CL:0002251 ! epithelial cell of alimentary canal
 created_by: tmeehan
 creation_date: 2010-08-26T08:51:27Z
 
@@ -11328,8 +11391,10 @@ creation_date: 2010-08-26T01:59:18Z
 id: CL:0002172
 name: interdental cell
 namespace: cell
-def: "A  long, spindle-shaped supporting cells arranged in parallel rowsthat secretes components of the tectorial membrane and potassium ions into the endolymph." [GOC:tfm, MP:0004482, PMID:2111803]
+def: "A long, spindle-shaped supporting cells arranged in parallel rows that secretes components of the tectorial membrane and potassium ions into the endolymph." [GOC:tfm, MP:0004482, PMID:2111803]
+synonym: "interdental cell of cochlea" EXACT [FMA:79797]
 xref: FMA:79797
+is_a: CL:0001035 ! bone cell
 is_a: CL:0002315 ! supporting cell of cochlea
 created_by: tmeehan
 creation_date: 2010-08-25T02:02:48Z
@@ -12061,7 +12126,11 @@ name: male gonocyte
 namespace: cell
 def: "A primordial germ cell that is destined to become a male germ cell." [GOC:tfm]
 synonym: "male primordial germ cell" EXACT []
+synonym: "testis primordial germ cell" EXACT [VHOG:0000662]
+xref: EHDAA2:0001053
+xref: EMAPA:18686
 xref: FMA:84771
+xref: VHOG:0000662
 is_a: CL:0000670 ! primordial germ cell
 created_by: tmeehan
 creation_date: 2010-09-07T02:11:13Z
@@ -12071,9 +12140,13 @@ id: CL:0002239
 name: ooblast
 namespace: cell
 def: "A primordial cell from which an oocyte (ovum) ultimately is developed." [GOC:tfm]
-synonym: "ovigerm" EXACT []
+synonym: "ovary primordial germ cell" EXACT [VHOG:0000661]
+synonym: "ovigerm" EXACT [FMA:84772]
+xref: EHDAA2:0000505
+xref: EMAPA:17965
 xref: FMA:84772
 xref: ISBN:0721662544
+xref: VHOG:0000661
 is_a: CL:0000670 ! primordial germ cell
 created_by: tmeehan
 creation_date: 2010-09-07T02:11:16Z
@@ -13461,7 +13534,7 @@ def: "A keratocyte is a specialized fibroblast residing in the cornea stroma th
 synonym: "corneal fibroblast" EXACT []
 synonym: "corneal keratocyte" EXACT []
 is_a: CL:0000057 ! fibroblast
-relationship: develops_from CL:0000008 ! cranial neural crest cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 created_by: tmeehan
 creation_date: 2010-09-22T01:57:40Z
 
@@ -13543,6 +13616,7 @@ id: CL:0002371
 name: somatic cell
 namespace: cell
 def: "A cell of an organism that does not pass on its genetic material to the organism's offspring (i.e. a non-germ line cell)." [GOC:tfm, ISBN:0721662544]
+subset: upper_level
 xref: BTO:0001268
 xref: FMA:72300
 xref: WBbt:0008378
@@ -13594,7 +13668,7 @@ namespace: cell
 def: "A giioblast cell that develops from a migratory neural crest cell. The SCP is embedded among neurons (axons) with minimal extracellular spaces separating them from nerve cell membranes and has no basal lamina. In rodents SCPs are the only cells in the Schwann cell linage that expresses Cdh19." [GOC:tfm]
 synonym: "Schwann cell precursor cell" EXACT []
 is_a: CL:0000030 ! glioblast
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2010-09-24T02:06:10Z
 
@@ -14634,6 +14708,7 @@ def: "A tissue-resident macrophage located in the bone marrow.  This cell type i
 synonym: "MF.BM" RELATED []
 xref: BTO:0004732
 is_a: CL:0000864 ! tissue-resident macrophage
+is_a: CL:0002092 ! bone marrow cell
 created_by: tmeehan
 creation_date: 2010-11-23T04:19:25Z
 
@@ -14730,6 +14805,7 @@ name: strial intermediate cell
 namespace: cell
 def: "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ." [GOC:tfm, MP:0000048]
 is_a: CL:0000148 ! melanocyte
+is_a: CL:0001035 ! bone cell
 is_a: CL:0002491 ! auditory epithelial cell
 created_by: tmeehan
 creation_date: 2010-12-03T03:29:15Z
@@ -14768,6 +14844,7 @@ id: CL:0002490
 name: organ of Corti supporting cell
 namespace: cell
 def: "A supporting cell of the organ of Corti." [GOC:tfm, MP:0004300]
+is_a: CL:0001035 ! bone cell
 is_a: CL:0002315 ! supporting cell of cochlea
 created_by: tmeehan
 creation_date: 2010-12-06T03:09:01Z
@@ -14795,6 +14872,8 @@ id: CL:0002493
 name: strial basal cell
 namespace: cell
 def: "A polarized cell that is juxtaposed to fibrocytes in the underlying spiral ligament.  This cell type secretes potassium ions derived from fibrocytes through gap junctions." [GOC:tfm, MP:0004365]
+comment: Basal cells form a multi-layered epithelial barrier that separates the extracellular spaces of the stria vascularis and the spiral ligament[PMID:18353863]
+is_a: CL:0001035 ! bone cell
 is_a: CL:0002491 ! auditory epithelial cell
 created_by: tmeehan
 creation_date: 2010-12-06T03:26:53Z
@@ -15566,6 +15645,7 @@ name: vertebral mesenchymal stem cell
 namespace: cell
 def: "A mesenchymal stem cell of the vertebrae." [GOC:tfm]
 is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0001035 ! bone cell
 created_by: tmeehan
 creation_date: 2011-03-01T10:40:27Z
 
@@ -15876,10 +15956,10 @@ creation_date: 2011-03-06T07:11:26Z
 
 [Term]
 id: CL:0002607
-name: enteric neural crest cell
+name: migratory enteric neural crest cell
 namespace: cell
-def: "A neural crest cell that is part of the enteric nervous system." [GOC:tfm]
-is_a: CL:0000333 ! neural crest cell
+def: "A neural crest cell that gives rise to cells of the enteric nervous system." [GOC:tfm]
+is_a: CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2011-03-06T07:24:35Z
 
@@ -16463,6 +16543,7 @@ name: otic fibrocyte
 namespace: cell
 def: "A fibrocyte of the cochlea that has specialized structural and molecular adaptions." [GOC:tfm, PMID:18353863]
 is_a: CL:0000135 ! fibrocyte
+is_a: CL:0001035 ! bone cell
 created_by: tmeehan
 creation_date: 2011-07-11T03:35:01Z
 
@@ -16472,6 +16553,7 @@ name: type 2 otic fibrocyte
 namespace: cell
 def: "An otic fibrocyte that underlies the spiral prominence and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph." [GOC:tfm, PMID:18353863]
 synonym: "type II otic fibrocyte" EXACT []
+synonym: "type II spiral ligament fibrocyte" EXACT [MP:0004488]
 is_a: CL:0002665 ! otic fibrocyte
 created_by: tmeehan
 creation_date: 2011-07-11T03:40:40Z
@@ -16482,6 +16564,7 @@ name: type 5 otic fibrocyte
 namespace: cell
 def: "An otic fibrocyte that resides above the stria vasularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph." [GOC:tfm, PMID:18353863]
 synonym: "type V otic fibrocyte" EXACT []
+synonym: "type V spiral ligament fibrocyte" EXACT []
 is_a: CL:0002665 ! otic fibrocyte
 created_by: tmeehan
 creation_date: 2011-07-11T03:40:42Z
@@ -16492,6 +16575,7 @@ name: type 4 otic fibrocyte
 namespace: cell
 def: "An otic fibrocyte that is lateral to the basilar membrane and anchoris it to the lateral wall." [GOC:tfm, PMID:18353863]
 synonym: "type IV otic fibrocyte" EXACT []
+synonym: "type IV spiral ligament fibrocyte" EXACT [MP:0004490]
 is_a: CL:0002665 ! otic fibrocyte
 created_by: tmeehan
 creation_date: 2011-07-11T03:40:46Z
@@ -16502,6 +16586,7 @@ name: type 3 otic fibrocyte
 namespace: cell
 def: "An otic fibrocyte that lines the otic capsule." [GOC:tfm, PMID:18353863]
 synonym: "type III otic fibrocyte" EXACT []
+synonym: "type III spiral ligament fibrocyte" EXACT [MP:0004489]
 is_a: CL:0002665 ! otic fibrocyte
 created_by: tmeehan
 creation_date: 2011-07-11T03:40:50Z
@@ -16512,6 +16597,7 @@ name: type 1 otic fibrocyte
 namespace: cell
 def: "An otic fibrocyte that underlies the stria vascularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph." [GOC:tfm, PMID:18353863]
 synonym: "type I otic fibrocyte" EXACT []
+synonym: "type I spiral ligament fibrocyte" EXACT [MP:0004487]
 is_a: CL:0002665 ! otic fibrocyte
 created_by: tmeehan
 creation_date: 2011-07-11T03:39:27Z
@@ -16569,7 +16655,7 @@ name: neural crest derived neuroblast
 namespace: cell
 def: "A neuroblast derived from a neural crest cell." [GOC:tfm, PMID:17407019]
 is_a: CL:0000337 ! neuroblast (sensu Vertebrata)
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2011-08-22T09:24:15Z
 
@@ -16636,7 +16722,7 @@ namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into an iridophore." [CL:CVS]
 comment: Derived from UBERON:0002342 neural crest.
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005002
@@ -16644,7 +16730,7 @@ name: xanthoblast
 namespace: cell
 def: "A non-terminally differentiated cell that differentiates into a xanthophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005003
@@ -16652,7 +16738,7 @@ name: leucoblast
 namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into a leucophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005004
@@ -16660,7 +16746,7 @@ name: pigment erythroblast
 namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into an erythrophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005005
@@ -16668,7 +16754,7 @@ name: cyanoblast
 namespace: cell
 def: "A non-terminally differentiated cell that originates from the neural crest and differentiates into a cyanophore." [CL:CVS]
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: develops_from CL:0000333 ! neural crest cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0005006
@@ -16820,6 +16906,7 @@ id: CL:0007000
 name: preameloblast
 namespace: cell
 def: "Skeletogenic cell that has the potential to develop into an ameloblast. Located in the inner enamel epithelium, these cells elongate, their nuclei shift distally (away from the dental papilla), and their cytoplasm becomes filled with organelles needed for synthesis and secretion of enamel proteins." [GO_REF:0000034, PMCID:PMC2737325]
+comment: unsure of neural crest contribution. In VSAO we have develops_from CL:0000008
 is_a: CL:0000055 ! non-terminally differentiated cell
 relationship: develops_from CL:0002077 ! ecto-epithelial cell
 created_by: haendel
@@ -16849,10 +16936,103 @@ creation_date: 2012-06-15T04:37:13Z
 id: CL:0007003
 name: preodontoblast
 namespace: cell
-def: "Skeletogenic cell that has the potential to form an odontoblast, deposits predentine, and arises from a neural crest cell." [GO_REF:0000034]
+def: "Skeletogenic cell that has the potential to form an odontoblast, deposits predentine, and arises from a cranial neural crest cell." [GO_REF:0000034]
 is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 created_by: haendel
 creation_date: 2012-06-15T05:15:11Z
+
+[Term]
+id: CL:0007004
+name: premigratory neural crest cell
+namespace: cell
+def: "Cell that is part of the neural crest region of the neuroepithelium, prior to migration. Note that not all premigratory neural crest cells may become migratory neural crest cells." [UBERONREF:0000002]
+is_a: CL:0000003 ! native cell
+created_by: haendel
+creation_date: 2012-06-27T08:27:35Z
+
+[Term]
+id: CL:0007005
+name: notochordal cell
+namespace: cell
+def: "Cell that is part of the notochord." [GO_REF:0000034]
+comment: NOTE: TO DO, notochord development still needs work.
+is_a: CL:0000003 ! native cell
+relationship: develops_from CL:0007006 ! chordamesodermal cell
+created_by: haendel
+creation_date: 2012-06-27T08:47:31Z
+
+[Term]
+id: CL:0007006
+name: chordamesodermal cell
+namespace: cell
+def: "Mesodermal cell that is axially located and gives rise to the cells of the notochord." [GO_REF:0000034]
+is_a: CL:0000222 ! mesodermal cell
+created_by: haendel
+creation_date: 2012-06-27T08:52:41Z
+
+[Term]
+id: CL:0007007
+name: notochordal sheath cell
+namespace: cell
+def: "Notochordal cell that is part of the outer epithelium of the notochord and surrounds the vacuolated notochord cells." [CL:MAH]
+is_a: CL:0007005 ! notochordal cell
+created_by: haendel
+creation_date: 2012-06-27T09:26:37Z
+
+[Term]
+id: CL:0007008
+name: notochordal vacuole cell
+namespace: cell
+def: "Notochordal cell that is inner portion of the notochord and becomes vacuolated as development proceeds." [CL:MAH]
+synonym: "chordablast" EXACT [GO_REF:0000034]
+synonym: "chordoblast" EXACT [PMID:14574572]
+is_a: CL:0007005 ! notochordal cell
+created_by: haendel
+creation_date: 2012-06-27T09:29:30Z
+
+[Term]
+id: CL:0007009
+name: prechondroblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to develop into a chondroblast; and arises from neural crest, meseosdermal and notochordal and connective tissue cells." [GO_REF:0000034]
+is_a: CL:0000055 ! non-terminally differentiated cell
+created_by: haendel
+creation_date: 2012-06-27T10:44:01Z
+
+[Term]
+id: CL:0007010
+name: preosteoblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to transform into an osteoblast, and develops from neural crest or mesodermal cells." [GO_REF:0000034]
+synonym: "osteoprogenitor cell" EXACT []
+is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: develops_from CL:0000222 ! mesodermal cell
+relationship: develops_from CL:0000333 ! migratory neural crest cell
+created_by: haendel
+creation_date: 2012-06-27T10:57:21Z
+
+[Term]
+id: CL:0007011
+name: enteric neuron
+namespace: cell
+def: "Neuron that is part of the enteric nervous system." [CL:MAH]
+is_a: CL:0000029 ! neuron neural crest derived
+relationship: develops_from CL:0002607 ! migratory enteric neural crest cell
+created_by: haendel
+creation_date: 2012-06-28T08:20:31Z
+
+[Term]
+id: CL:0007012
+name: non-terminally differentiated odontoblast
+def: "Odontoblast that non-terminally differentiated, located in the odontogenic papilla and dentine tissue, and transforms from a odontoblast cell." [GO_REF:0000034, PSPUB:0000170]
+is_a: CL:0000060 ! odontoblast
+
+[Term]
+id: CL:0007013
+name: terminally differentiated odontoblast
+def: "Odontoblast that is terminally differentiated and derived from an odontogenic papilla and associated with dentine." [GO_REF:0000034]
+is_a: CL:0000060 ! odontoblast
 
 [Term]
 id: CL:1000082
@@ -19326,11 +19506,6 @@ name: overlaps
 xref: RO:0002131
 
 [Typedef]
-id: RO:0003000
-name: produces
-xref: RO:0003000
-
-[Typedef]
 id: adjacent_to
 name: adjacent_to
 
@@ -19555,6 +19730,12 @@ namespace: gene_ontology
 xref: RO:0002213
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
+
+[Typedef]
+id: produces
+name: produces
+namespace: RO
+xref: RO:0003000
 
 [Typedef]
 id: realized_by
