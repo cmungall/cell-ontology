@@ -33,6 +33,8 @@ subsetdef: loose_concept "loose concept"
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
 subsetdef: mf_needs_review "Catalytic activity terms in need of attention"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
 subsetdef: organ_slim "organs, excluding individual muscles and skeletal elements"
 subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
@@ -158,8 +160,9 @@ relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
 id: CL:0000006
-name: neuronal receptor cell (sensu Animalia)
+name: neuronal receptor cell
 namespace: cell
+synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
 is_a: CL:0000197 ! receptor cell
 is_a: CL:0000540 ! neuron
 
@@ -715,7 +718,6 @@ xref: BTO:0001663
 xref: FMA:70576
 is_a: CL:0000146 ! simple columnar epithelial cell
 is_a: CL:0000151 ! secretory cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 relationship: develops_from CL:0007000 ! preameloblast
 
 [Term]
@@ -728,7 +730,6 @@ xref: BTO:0001769
 xref: FMA:62999
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002159 ! general ecto-epithelial cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 relationship: develops_from CL:0007003 ! preodontoblast
 
 [Term]
@@ -2028,14 +2029,15 @@ namespace: cell
 def: "The peripheral receptor for pain. Includes receptors which are sensitive to painful mechanical stimuli, extreme heat or cold, and chemical stimuli. All mammalian nociceptors are free nerve endings." [MESH:A.08.800.550.700.650]
 synonym: "nociceptor" EXACT []
 synonym: "nocireceptor" EXACT []
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000199
 name: mechanoreceptor cell
 namespace: cell
 def: "A cell specialized to transduce mechanical stimuli and relay that information centrally in the nervous system." [MESH:A.08.800.550.700.500]
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+synonym: "mechanoreceptor" EXACT [MP:0000972]
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000200
@@ -2062,27 +2064,27 @@ is_a: CL:0002491 ! auditory epithelial cell
 id: CL:0000203
 name: gravity sensitive cell
 namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000204
 name: acceleration receptive cell
 namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000205
 name: thermoreceptor cell
 namespace: cell
 def: "A cellular receptor which mediates the sense of temperature. Thermoreceptor cells in vertebrates are mostly located under the skin. In mammals there are separate types of thermoreceptors for cold and for warmth and pain receptor cells which detect cold or heat extreme enough to cause pain." [GOC:tfm, MESH:A.08.800.550.700.840, MP:0000971]
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000206
 name: chemoreceptor cell
 namespace: cell
 def: "A cell specialized to detect chemical substances and relay that information centrally in the nervous system. Chemoreceptors may monitor external stimuli, as in taste and olfaction, or internal stimuli, such as the concentrations of oxygen and carbon dioxide in the blood." [MESH:A.08.800.550.700.120]
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000207
@@ -2120,7 +2122,7 @@ def: "A cell specialized to detect and transduce light." [MESH:A.08.663.650.650]
 xref: BTO:0001060
 xref: FBbt:00004211
 xref: FMA:86740
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000211
@@ -3452,7 +3454,7 @@ replaced_by: CL:0007010
 id: CL:0000376
 name: humidity receptor cell
 namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:0000377
@@ -3688,7 +3690,7 @@ is_a: CL:0000402 ! CNS interneuron
 
 [Term]
 id: CL:0000411
-name: hypodermal cell
+name: flatworm hypodermal cell
 namespace: cell
 def: "An epithelial cell of the hypodermis of flatworms." [GOC:tfm, http://www.wormatlas.org/hermaphrodite/hypodermis/mainframe.htm]
 xref: WBbt:0007846
@@ -11151,6 +11153,7 @@ def: "A cell found within the dental pulp." [GOC:tfm, PMID:11087820]
 xref: BTO:0000339
 xref: FMA:87170
 is_a: CL:0002159 ! general ecto-epithelial cell
+is_a: CL:0002320 ! connective tissue cell
 created_by: tmeehan
 creation_date: 2010-08-24T02:52:09Z
 
@@ -11238,6 +11241,7 @@ name: endosteal cell
 namespace: cell
 def: "A cell type that makes up the highly vascular membrane lining the marrow cavity of long bones." [FMA:0618947256, GOC:tfm]
 xref: FMA:86495
+is_a: CL:0001035 ! bone cell
 is_a: CL:0002078 ! meso-epithelial cell
 created_by: tmeehan
 creation_date: 2010-08-24T03:33:58Z
@@ -12452,8 +12456,8 @@ namespace: cell
 def: "A type D cell of the small intestine." [GOC:tfm]
 xref: FMA:268736
 is_a: CL:0000502 ! type D enteroendocrine cell
-is_a: CL:0000510 ! paneth cell
 is_a: CL:0002254 ! epithelial cell of small intestine
+is_a: CL:1001516 ! intestinal enteroendocrine cell
 created_by: tmeehan
 creation_date: 2010-09-10T01:34:22Z
 
@@ -13606,6 +13610,7 @@ id: CL:0002370
 name: respiratory goblet cell
 namespace: cell
 def: "A simple columnar epithelial cell that secretes mucin. Rough endoplasmic reticulum, mitochondria, the nucleus, and other organelles are concentrated in the basal portion. The apical plasma membrane projects microvilli to increase surface area for secretion." [GOC:tfm, ISBN:0721662544]
+synonym: "respiratory mucosa goblet cells" EXACT [MP:0010863]
 is_a: CL:0000160 ! goblet cell
 is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 created_by: tmeehan
@@ -17038,7 +17043,7 @@ is_a: CL:0000060 ! odontoblast
 id: CL:1000082
 name: stretch receptor cell
 namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell (sensu Animalia)
+is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
 id: CL:1000083
@@ -19490,20 +19495,134 @@ is_a: CL:0000083 ! epithelial cell of pancreas
 
 [Term]
 id: CL:1001434
+name: olfactory bulb interneuron
+def: "A neuron residing in the olfactory bulb that serve to process and refine signals arising from olfactory sensory neurons" [PMID:18603310]
+is_a: CL:0000101 ! sensory neuron
+
+[Term]
+id: CL:1001435
 name: periglomerular cell
-def: "The glomerular layer is the most superficial layer, consisting of mitral cell dendritic arborizations (glomeruli), olfactory nerve fibers, and periglomerular cells. Periglomerular cells contact multiple mitral cell dendrites within the glomeruli and provide lateral inhibition of neighboring glomeruli while allowing excitation of a specific mitral cell dendritic tree." [BTO:0003796]
+def: "the small neuron in the glomerular layer of the olfactory bulb whose dendrites arborize within a glomerulus, where it receives synaptic input from olfactory receptor cell axon terminals, and also engages in dendrodendritic interactions with mitral and tufted cell dendrites; uses both GABA and dopamine as a neurotransmitter" [MP:0009943]
 synonym: "glomerular layer cell" EXACT [NIF_Cell:nifext_122]
 synonym: "olfactory bulb (accessory) glomerular layer cell" EXACT [NIF_Cell:nifext_122]
 synonym: "olfactory bulb glomerular layer cell" EXACT [NIF_Cell:nifext_122]
+synonym: "olfactory bulb glomerularal cell" EXACT [MP:0009943]
 synonym: "periglomerular cell" EXACT [NIF_Cell:nifext_122]
 xref: BTO:0003796
 xref: NIF_Cell:nifext_122
+is_a: CL:1001434 ! olfactory bulb interneuron
+
+[Term]
+id: CL:1001436
+name: hair-tylotrich neuron
+def: "the subcutaneous mechanoreceptors that innervate tylotrich hair follicles" [MP:0000977]
+is_a: CL:0002487 ! cutaneous/subcutaneous mechanoreceptor cell
+
+[Term]
+id: CL:1001437
+name: hair-down neuron
+def: "the subcutaneous mechanoreceptors that innervate vellus hairs" [MP:0000979]
+is_a: CL:0002487 ! cutaneous/subcutaneous mechanoreceptor cell
+
+[Term]
+id: CL:1001451
+name: sensory neuron of dorsal root ganglion
+def: "the sensory neurons of the dorsal root ganglia that sense body position and send information about how much the muscle is stretched to the spinal cord" [MP:0004297]
+synonym: "proprioceptive neuron" EXACT [MP:0004297]
+is_a: CL:0000101 ! sensory neuron
+
+[Term]
+id: CL:1001474
+name: medium spiny neuron
+def: "the inhibitory projection neurons located in the striatum that integrate glutamatergic signals arising from the cerebral cortex and thalamus" [MP:0008462]
+synonym: "medium-sized densely spiny neuron" RELATED [BTO:0004778]
+xref: BTO:0004778
 is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:1001502
+name: mitral cell
+def: "the large glutaminergic nerve cells whose dendrites synapse with axons of the olfactory receptor neurons in the glomerular layer of the olfactory bulb, and whose axons pass centrally in the olfactory tract to the olfactory cortex" [MP:0009954]
+is_a: CL:1001434 ! olfactory bulb interneuron
+
+[Term]
+id: CL:1001503
+name: olfactory bulb tufted cell
+def: "the principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala" [MP:0009955]
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:1001505
+name: parvocellular neurosecretory cell
+def: "the secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system" [MP:0010125]
+is_a: CL:0000167 ! peptide hormone secreting cell
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:1001509
+name: glycinergic neuron
+def: "the neurons that utilize glycine as a neurotransmitter" [MP:0010385]
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:1001516
+name: intestinal enteroendocrine cell
+def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract" [MP:0010802]
+is_a: CL:0000164 ! enteroendocrine cell
+is_a: CL:0000510 ! paneth cell
+
+[Term]
+id: CL:1001517
+name: stomach enteroendocrine cell
+def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the stomach" [MP:0010803]
+is_a: CL:0000164 ! enteroendocrine cell
+is_a: CL:0002659 ! glandular cell of stomach
+
+[Term]
+id: CL:1001561
+name: vomeronasal sensory neuron
+def: "chemosensitive cells that innervate the vomernasal organ epithelium and are responsible for receiving and transmitting pheromone signals" [MP:0011679]
+is_a: CL:0000101 ! sensory neuron
+
+[Term]
+id: CL:1001566
+name: bronchioalveolar stem cells
+def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and Clara cells in response to lung injury." [MP:0011691]
+is_a: CL:0000034 ! stem cell
+
+[Term]
+id: CL:1001567
+name: lung endothelial cell
+synonym: "endothelial cell of lung" RELATED []
+synonym: "pulmonary vessel endothelial cell" RELATED []
+is_a: CL:0000082 ! epithelial cell of lung
+is_a: CL:0002139 ! endothelial cell of vascular tree
+
+[Term]
+id: CL:1001568
+name: pulmonary artery endothelial cell
+synonym: "PAEC cell" RELATED [BTO:0001141]
+xref: BTO:0001141
+is_a: CL:1000413 ! endothelial cell of artery
 
 [Typedef]
 id: RO:0002131
 name: overlaps
 xref: RO:0002131
+
+[Typedef]
+id: UBPROP:0000001
+name: external_definition
+def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [UBERON:cjm]
+xref: UBPROP:0000001
+is_metadata_tag: true
+
+[Typedef]
+id: UBPROP:0000002
+name: axiom_lost_from_external_ontology
+def: "A textual description of an axiom loss in this ontology compared to an external ontology." [UBERON:cjm]
+xref: UBPROP:0000002
+is_metadata_tag: true
 
 [Typedef]
 id: adjacent_to
@@ -19781,6 +19900,16 @@ name: similar_in_magnitude_relative_to
 namespace: quality
 def: "q1 similar_in_magnitude_relative_to q2 if and only if magnitude(q1) =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
+
+[Typedef]
+id: spatially_disjoint_from
+name: spatially_disjoint_from
+def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+synonym: "shares_no_parts_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: towards
