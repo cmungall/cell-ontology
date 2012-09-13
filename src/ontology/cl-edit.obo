@@ -12555,10 +12555,11 @@ creation_date: 2010-06-29T11:07:25Z
 id: CL:0002072
 name: nodal myocyte
 namespace: cell
-def: "A specialized cardiac myocyte in the sinuatrial and atrioventricular nodes. The cell is slender and fusiform confined to the nodal center, circumferentially arranged around the nodal artery." [FMA:67101, GOC:tfm, http://63.198.234.228/OpenFMA/Nodal%20myocyte.html]
+def: "A specialized cardiac myocyte in the sinoatrial and atrioventricular nodes. The cell is slender and fusiform confined to the nodal center, circumferentially arranged around the nodal artery." [FMA:67101, GOC:tfm, http://63.198.234.228/OpenFMA/Nodal%20myocyte.html]
 synonym: "myocytus nodalis" EXACT []
 synonym: "P cell" EXACT []
-synonym: "pacemaker cell" EXACT []
+synonym: "cardiac pacemaker cell" EXACT [GOC:pr]
+synonym: "pacemaker cell" BROAD []
 xref: BTO:0004190
 xref: FMA:67101
 is_a: CL:0002086 ! specialized cardiac myocyte
@@ -12760,6 +12761,7 @@ namespace: cell
 def: "This is a cell found in the gastrointestinal tract of mammals and serves as a pacemaker that triggers gut contraction. ICCs mediate inputs from the enteric nervous system to smooth muscle cells and are thought to be the cells from which gastrointestinal stromal tumors (GISTs) arise." [GOC:tfm, PMID:16460275, PMID:19520112]
 comment: Some argue this cell type is of mesenchymal origin.
 synonym: "ICC" EXACT []
+synonym: "intestinal pacemaker cell" EXACT [GOC:pr]
 xref: BTO:0003914
 xref: FMA:86573
 is_a: CL:0000710 ! neurecto-epithelial cell
@@ -12869,7 +12871,7 @@ creation_date: 2010-08-23T11:18:18Z
 id: CL:0002096
 name: internodal tract myocyte
 namespace: cell
-def: "A specialised myocyte that lies between the sinuatrial node and the atrioventricular node and is involved in the conduction of electrical signals." [GOC:tfm, ISBN:0781729300]
+def: "A specialised myocyte that lies between the sinoatrial node and the atrioventricular node and is involved in the conduction of electrical signals." [GOC:tfm, ISBN:0781729300]
 xref: FMA:223275
 is_a: CL:0002086 ! specialized cardiac myocyte
 created_by: tmeehan
@@ -21055,12 +21057,13 @@ intersection_of: part_of UBERON:0001154 ! appendix
 
 [Term]
 id: CL:1000409
-name: myocyte of sinuatrial node
+name: myocyte of sinoatrial node
 namespace: cell
-def: "A muscle cell that is part of the sinuatrial node." [FMA:67102, GOC:tfm]
+def: "A muscle cell that is part of the sinoatrial node." [FMA:67102, GOC:tfm]
 synonym: "myocyte of sinoatrial node" EXACT [FMA:67102]
 synonym: "SA nodal myocyte" EXACT [FMA:67102]
 synonym: "sinuatrial node myocyte" EXACT [FMA:67102]
+synonym: "sinoatrial node myocyte" EXACT []
 xref: FMA:67102
 is_a: CL:0002072 ! nodal myocyte
 intersection_of: CL:0000187 ! muscle cell
@@ -21578,20 +21581,22 @@ is_a: CL:0000185 ! myoepithelial cell
 
 [Term]
 id: CL:1000477
-name: pacemaker cell of sinuatrial node
+name: cardiac pacemaker cell of sinoatrial node
 namespace: cell
-def: "A nodal myocyte that is part of the sinuatrial node." [GOC:tfm]
+def: "A nodal myocyte that is part of the sinoatrial node." [GOC:tfm]
 synonym: "pacemaker cell of sinoatrial node" EXACT []
+synonym: "pacemaker cell of sinuatrial node" EXACT []
+synonym: "cardiac pacemaker cell of sinuatrial node" EXACT []
 xref: FMA:83383
-is_a: CL:1000409 ! myocyte of sinuatrial node
+is_a: CL:1000409 ! myocyte of sinoatrial node
 relationship: part_of UBERON:0002351 ! sinoatrial node
 
 [Term]
 id: CL:1000478
-name: transitional myocyte of sinuatrial node
+name: transitional myocyte of sinoatrial node
 namespace: cell
-def: "A transitional myocyte that is part of the sinuatrial node." [GOC:tfm]
-synonym: "transitinal myocyte of sinoatrial node" EXACT []
+def: "A transitional myocyte that is part of the sinoatrial node." [GOC:tfm]
+synonym: "transitinal myocyte of sinuatrial node" EXACT []
 xref: FMA:83384
 is_a: CL:0002073 ! transitional myocyte
 intersection_of: CL:0002073 ! transitional myocyte
