@@ -1,0 +1,158 @@
+ontology: cl/cl-relations
+
+[Term]
+id: BFO:0000007
+name: process
+
+[Typedef]
+id: adjacent_to
+name: adjacent_to
+
+[Typedef]
+id: bearer_of
+name: bearer of
+namespace: BFO
+xref: BFO:0000053
+
+[Typedef]
+id: capable_of
+name: capable_of
+def: "A relation between a material entity (such as a cell) and a process. This is a shortcut relation, translation rule for which is: capable_of P <-> bearer_of (some realized_by only P). Example: osteoclast capable of bone resorption." [GOC:cjm]
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
+!property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+xref: RO:0002215
+
+[Typedef]
+id: develops_from
+name: develops_from
+namespace: RO
+xref: RO:0002202
+
+[Typedef]
+id: has_completed
+name: has_completed
+
+[Typedef]
+id: has_high_plasma_membrane_amount
+name: has_high_plasma_membrane_amount
+namespace: RO
+def: "A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al *PMID:19243617)." [PMID:19243617]
+
+[Typedef]
+id: has_low_plasma_membrane_amount
+name: has_low_plasma_membrane_amount
+namespace: RO
+def: "A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al *PMID:19243617)." [PMID:19243617]
+
+[Typedef]
+id: has_modification
+name: has_modification
+namespace: RO
+
+[Typedef]
+id: has_not_completed
+name: has_not_completed
+namespace: RO
+
+[Typedef]
+id: has_plasma_membrane_part
+name: has_plasma_membrane_part
+namespace: RO
+def: "Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part." [PMID:19243617]
+xref: RO:0002104
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
+
+[Typedef]
+id: has_quality
+name: has_quality
+namespace: RO
+alt_id: OBO_REL:0000029
+xref: OBO_REL:has_quality
+
+[Typedef]
+id: lacks_modification
+name: lacks_modification
+namespace: RO
+
+[Typedef]
+id: lacks_part
+name: lacks_part
+namespace: RO
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 ?Y" []
+
+[Typedef]
+id: lacks_plasma_membrane_part
+name: lacks_plasma_membrane_part
+namespace: RO
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
+
+[Typedef]
+id: located_in
+name: located_in
+
+[Typedef]
+id: occurs_in
+name: occurs in
+namespace: gene_ontology
+xref: BFO:0000066
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: part_of
+name: part of
+namespace: bfo
+xref: BFO:0000050
+!property_value: IAO:0000412 http://purl.obolibrary.org/obo/bfo.owl
+is_transitive: true
+
+[Typedef]
+id: has_part
+name: has part
+namespace: bfo
+xref: BFO:0000051
+!property_value: IAO:0000412 http://purl.obolibrary.org/obo/bfo.owl
+inverse_of: part_of
+is_transitive: true
+
+[Typedef]
+id: participates_in
+name: participates in
+xref: BFO:0000056
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/bfo.owl
+
+[Typedef]
+id: positively_regulates
+name: positively_regulates
+namespace: gene_ontology
+xref: RO:0002213
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+is_a: regulates ! regulates
+
+[Typedef]
+id: produces
+name: produces
+namespace: RO
+xref: RO:0003000
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
+id: realized_by
+name: realized by
+xref: BFO:0000054
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/bfo.owl
+
+[Typedef]
+id: secretes
+name: secretes
+
+[Typedef]
+id: spatially_disjoint_from
+name: spatially_disjoint_from
+def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+synonym: "shares_no_parts_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+

@@ -7,12 +7,14 @@ release: cl.obo cl.owl cl-basic.obo cl-basic.owl
 # (todo: make thispart of Oort)
 #extsubset/pr-core.obo: extsubset/pr.obo
 #	obo-grep.pl  -r 'id: PR:' $< > $@
-extsubset/pr-simple.obo:
-	cd extsubset && ontology-release-runner --force --no-subsets --reasoner elk --simple  http://purl.obolibrary.org/obo/pr.obo
-#	wget $(OBO)/pr.obo -O $@
 
-build/cl.obo: cl-edit.obo
-	ontology-release-runner --outdir build --no-subsets --allow-overwrite --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo extsubset/pr-simple.obo
+pr-minimal.obo: extsubset/pr-simple.obo
+	obo-grep.pl -r Term $< | grep -v ^relationship: > $@
+extsubset/pr-simple.obo:
+	cd extsubset && ontology-release-runner --repair-cardinality --force --no-subsets --reasoner elk --simple http://purl.obolibrary.org/obo/pr.obo
+
+build/cl.obo: cl-edit.obo cl-relations.obo
+	ontology-release-runner --repair-cardinality --outdir build --no-subsets --allow-overwrite --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< cl-relations.obo $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo pr-minimal.obo
 #	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix $(OBO)/CL_ --prefix $(OBO)/CP_ cl-edit.obo $(OBO)/uberon/basic.owl pr-core.obo $(OBO)/go.owl $(OBO)/pato.owl chebi_lite.obo
 .PRECIOUS: build/cl.obo
 
@@ -30,7 +32,6 @@ cl-basic.owl: build/cl-simple.owl
 
 cl-edit.owl: cl-edit.obo
 	obolib-obo2owl -o $@ $<
-
 
 bridge/cl-bridge-to-uberon.obo: cl.obo
 	blip-findall -i $< "parent(X,part_of,Y),id_idspace(X,'CL'),id_idspace(Y,'UBERON')" -select X-Y -label -use_tabs -no_pred | sort -u | tbl2obolinks.pl --rel part_of - > $@.tmp && cat $@.tmp part_of.obo > $@

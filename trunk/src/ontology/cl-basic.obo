@@ -711,7 +711,7 @@ namespace: cell
 alt_id: CL:0000053
 alt_id: CL:0000139
 def: "Skeletogenic cell that produces enamel, overlies the odontogenic papilla, and arises from the differentiation of a preameloblast cell." [GO_REF:0000034, GOC:tfm, MESH:A.11.436.107]
-comment: non-encoded relationship from VSAO produces VSAO:0000066 ! pre-enamel.  Legacy definition: A cylindrical epithelial cell in the innermost layer of the enamel organ. Their functions include contribution to the development of the dentinoenamel junction by the deposition of a layer of the matrix, thus producing the foundation for the prisms (the structural units of the dental enamel), and production of the matrix for the enamel prisms and interprismatic substance. (From Jablonski's Dictionary of Dentistry, 1992).
+comment: non-encoded relationship from VSAO produces VSAO:0000066
 synonym: "amelocyte" EXACT []
 synonym: "enamel secreting cell" EXACT []
 xref: BTO:0001663
@@ -1656,7 +1656,7 @@ id: CL:0000158
 name: Clara cell
 namespace: cell
 def: "Epithelial progenitor cell of the lung. Clara cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Clara cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium." [GOC:tfm, PMID:12107102, PMID:7905712]
-synonym: "bronchiolar non-ciliated " EXACT []
+synonym: "bronchiolar non-ciliated cell" EXACT []
 synonym: "Clara cell of bronchiole" EXACT []
 xref: BTO:0004811
 xref: FMA:14119
@@ -10247,6 +10247,7 @@ synonym: "squamous alveolar cell" EXACT []
 synonym: "squamous alveolar lining cell" EXACT []
 synonym: "type 1 alveolar epithelial cells" EXACT []
 synonym: "type 1 pneumocyte" EXACT []
+synonym: "type I alveolar cells" EXACT []
 synonym: "type I alveolar epithelial cells" EXACT []
 xref: BTO:0000780
 xref: FMA:62500
@@ -10270,6 +10271,7 @@ synonym: "TII" EXACT []
 synonym: "type 2 alveolar epithelial cell" EXACT []
 synonym: "type 2 alveolocyte" EXACT []
 synonym: "type 2 pneumocyte" EXACT []
+synonym: "type II alveolar cell" EXACT []
 synonym: "type II alveolar epithelial cell" EXACT []
 synonym: "type II alveolocyte" EXACT []
 xref: BTO:0000538
@@ -10377,10 +10379,11 @@ creation_date: 2010-06-29T11:07:25Z
 id: CL:0002072
 name: nodal myocyte
 namespace: cell
-def: "A specialized cardiac myocyte in the sinuatrial and atrioventricular nodes. The cell is slender and fusiform confined to the nodal center, circumferentially arranged around the nodal artery." [FMA:67101, GOC:tfm, http://63.198.234.228/OpenFMA/Nodal%20myocyte.html]
+def: "A specialized cardiac myocyte in the sinoatrial and atrioventricular nodes. The cell is slender and fusiform confined to the nodal center, circumferentially arranged around the nodal artery." [FMA:67101, GOC:tfm, http://63.198.234.228/OpenFMA/Nodal%20myocyte.html]
+synonym: "cardiac pacemaker cell" EXACT [GOC:pr]
 synonym: "myocytus nodalis" EXACT []
 synonym: "P cell" EXACT []
-synonym: "pacemaker cell" EXACT []
+synonym: "pacemaker cell" BROAD []
 xref: BTO:0004190
 xref: FMA:67101
 is_a: CL:0002086 ! specialized cardiac myocyte
@@ -10570,6 +10573,7 @@ namespace: cell
 def: "This is a cell found in the gastrointestinal tract of mammals and serves as a pacemaker that triggers gut contraction. ICCs mediate inputs from the enteric nervous system to smooth muscle cells and are thought to be the cells from which gastrointestinal stromal tumors (GISTs) arise." [GOC:tfm, PMID:16460275, PMID:19520112]
 comment: Some argue this cell type is of mesenchymal origin.
 synonym: "ICC" EXACT []
+synonym: "intestinal pacemaker cell" EXACT [GOC:pr]
 xref: BTO:0003914
 xref: FMA:86573
 is_a: CL:0000710 ! neurecto-epithelial cell
@@ -10657,7 +10661,7 @@ creation_date: 2010-08-23T11:18:18Z
 id: CL:0002096
 name: internodal tract myocyte
 namespace: cell
-def: "A specialised myocyte that lies between the sinuatrial node and the atrioventricular node and is involved in the conduction of electrical signals." [GOC:tfm, ISBN:0781729300]
+def: "A specialised myocyte that lies between the sinoatrial node and the atrioventricular node and is involved in the conduction of electrical signals." [GOC:tfm, ISBN:0781729300]
 xref: FMA:223275
 is_a: CL:0002086 ! specialized cardiac myocyte
 created_by: tmeehan
@@ -11751,8 +11755,7 @@ namespace: cell
 alt_id: CL:1000386
 def: "A brush cell found in the epithelium of lobular bronchiole." [GOC:tfm]
 xref: FMA:263220
-is_a: CL:0000082 ! epithelial cell of lung
-is_a: CL:0002075 ! brush cell of trachebronchial tree
+is_a: CL:0002208 ! brush cell of bronchus
 created_by: tmeehan
 creation_date: 2010-09-02T02:38:34Z
 
@@ -12219,9 +12222,9 @@ name: null lymphocyte
 namespace: cell
 def: "A lymphocyte that lacks T or B cell surface markers." [GOC:tfm, ISBN:068340007X]
 xref: FMA:83601
+is_obsolete: true
 created_by: tmeehan
 creation_date: 2010-09-07T03:43:42Z
-is_obsolete: true
 
 [Term]
 id: CL:0002246
@@ -12568,9 +12571,9 @@ namespace: cell
 def: "A PP cell located in the pancreatic acinus. Obsoleted due to a lack of published evidence that this cell type is actually found in the pancreatic acinus." [GOC:tfm]
 synonym: "type F cell of pancreatic acinus" EXACT []
 xref: FMA:85400
+is_obsolete: true
 created_by: tmeehan
 creation_date: 2010-09-10T03:30:33Z
-is_obsolete: true
 
 [Term]
 id: CL:0002277
@@ -17547,7 +17550,7 @@ name: serous cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263084
-is_a: CL:0000313 ! serous secreting cell
+is_a: CL:1000331 ! serous cell of epithelium of bronchus
 
 [Term]
 id: CL:1000334
@@ -17703,9 +17706,7 @@ name: basal cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A basal cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263126
-is_a: CL:0000082 ! epithelial cell of lung
-is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
-is_a: CL:0002633 ! respiratory basal cell
+is_a: CL:1000349 ! basal cell of epithelium of bronchus
 
 [Term]
 id: CL:1000353
@@ -18024,11 +18025,12 @@ is_a: CL:0002253 ! epithelial cell of large intestine
 
 [Term]
 id: CL:1000409
-name: myocyte of sinuatrial node
+name: myocyte of sinoatrial node
 namespace: cell
-def: "A muscle cell that is part of the sinuatrial node." [FMA:67102, GOC:tfm]
+def: "A muscle cell that is part of the sinoatrial node." [FMA:67102, GOC:tfm]
 synonym: "myocyte of sinoatrial node" EXACT [FMA:67102]
 synonym: "SA nodal myocyte" EXACT [FMA:67102]
+synonym: "sinoatrial node myocyte" EXACT []
 synonym: "sinuatrial node myocyte" EXACT [FMA:67102]
 xref: FMA:67102
 is_a: CL:0002072 ! nodal myocyte
@@ -18463,22 +18465,24 @@ is_a: CL:0000185 ! myoepithelial cell
 
 [Term]
 id: CL:1000477
-name: pacemaker cell of sinuatrial node
+name: cardiac pacemaker cell of sinoatrial node
 namespace: cell
-def: "A nodal myocyte that is part of the sinuatrial node." [GOC:tfm]
+def: "A nodal myocyte that is part of the sinoatrial node." [GOC:tfm]
+synonym: "cardiac pacemaker cell of sinuatrial node" EXACT []
 synonym: "pacemaker cell of sinoatrial node" EXACT []
+synonym: "pacemaker cell of sinuatrial node" EXACT []
 xref: FMA:83383
-is_a: CL:1000409 ! myocyte of sinuatrial node
+is_a: CL:1000409 ! myocyte of sinoatrial node
 
 [Term]
 id: CL:1000478
-name: transitional myocyte of sinuatrial node
+name: transitional myocyte of sinoatrial node
 namespace: cell
-def: "A transitional myocyte that is part of the sinuatrial node." [GOC:tfm]
-synonym: "transitinal myocyte of sinoatrial node" EXACT []
+def: "A transitional myocyte that is part of the sinoatrial node." [GOC:tfm]
+synonym: "transitinal myocyte of sinuatrial node" EXACT []
 xref: FMA:83384
 is_a: CL:0002073 ! transitional myocyte
-is_a: CL:1000409 ! myocyte of sinuatrial node
+is_a: CL:1000409 ! myocyte of sinoatrial node
 
 [Term]
 id: CL:1000479
@@ -19652,13 +19656,6 @@ is_transitive: true
 is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
 
 [Typedef]
-id: derives_from
-name: derives_from
-namespace: protein
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
-is_transitive: true
-
-[Typedef]
 id: develops_from
 name: develops_from
 namespace: RO
@@ -19731,19 +19728,17 @@ namespace: RO
 
 [Typedef]
 id: has_part
-name: has_part
-namespace: gene_ontology
-namespace: protein
-namespace: quality
+name: has part
+namespace: bfo
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
 comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
 xref: OBO_REL:has_part
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl/cl-relations.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 is_transitive: true
-is_transitive: true
+inverse_of: part_of ! part_of
 
 [Typedef]
 id: has_plasma_membrane_part
@@ -19826,15 +19821,12 @@ transitive_over: part_of ! part_of
 [Typedef]
 id: part_of
 name: part_of
-namespace: gene_ontology
-namespace: protein
-namespace: uberon
+namespace: bfo
 xref: BFO:0000050
 xref: OBO_REL:part_of
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl/cl-relations.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-is_transitive: true
 is_transitive: true
 
 [Typedef]
@@ -19876,10 +19868,6 @@ namespace: gene_ontology
 xref: RO:0002211
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 transitive_over: part_of ! part_of
-
-[Typedef]
-id: replaces
-name: replaces
 
 [Typedef]
 id: results_in

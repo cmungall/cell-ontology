@@ -2098,7 +2098,7 @@ id: CL:0000158
 name: Clara cell
 namespace: cell
 def: "Epithelial progenitor cell of the lung. Clara cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Clara cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium." [GOC:tfm, PMID:12107102, PMID:7905712]
-synonym: "bronchiolar non-ciliated " EXACT []
+synonym: "bronchiolar non-ciliated cell" EXACT []
 synonym: "Clara cell of bronchiole" EXACT []
 xref: BTO:0004811
 xref: FMA:14119
@@ -12418,6 +12418,7 @@ synonym: "squamous alveolar lining cell" EXACT []
 synonym: "type 1 alveolar epithelial cells" EXACT []
 synonym: "type 1 pneumocyte" EXACT []
 synonym: "type I alveolar epithelial cells" EXACT []
+synonym: "type I alveolar cells" EXACT []
 xref: BTO:0000780
 xref: FMA:62500
 is_a: CL:0000322 ! pneumocyte
@@ -12443,6 +12444,7 @@ synonym: "type 2 alveolar epithelial cell" EXACT []
 synonym: "type 2 alveolocyte" EXACT []
 synonym: "type 2 pneumocyte" EXACT []
 synonym: "type II alveolar epithelial cell" EXACT []
+synonym: "type II alveolar cell" EXACT []
 synonym: "type II alveolocyte" EXACT []
 xref: BTO:0000538
 xref: FMA:62501
@@ -55563,8 +55565,6 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0003886
 name: body cavity precursor
 namespace: uberon
-comment: grouping class
-comment: non_informative
 is_a: UBERON:0002553 ! anatomical cavity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -63609,18 +63609,14 @@ namespace: RO
 
 [Typedef]
 id: has_part
-name: has_part
+name: has part
 namespace: gene_ontology
 namespace: protein
 namespace: quality
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
 comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
-xref: OBO_REL:has_part
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
-is_transitive: true
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/bfo.owl
 is_transitive: true
 
 [Typedef]
@@ -63708,16 +63704,10 @@ transitive_over: part_of ! part_of
 
 [Typedef]
 id: part_of
-name: part_of
-namespace: gene_ontology
-namespace: protein
-namespace: uberon
+name: part of
+namespace: bfo
 xref: BFO:0000050
-xref: OBO_REL:part_of
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-is_transitive: true
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/bfo.owl
 is_transitive: true
 
 [Typedef]
@@ -63759,10 +63749,6 @@ namespace: gene_ontology
 xref: RO:0002211
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 transitive_over: part_of ! part_of
-
-[Typedef]
-id: replaces
-name: replaces
 
 [Typedef]
 id: results_in
