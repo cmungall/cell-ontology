@@ -40,6 +40,7 @@ subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype R
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: uberon_slim "Uberon slim - somewhat arbitrary subset that excludes obscure terms and deep compositional terms"
+subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
 subsetdef: unvetted ""
 subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
@@ -75,23 +76,23 @@ treat-xrefs-as-equivalent: GO
 treat-xrefs-as-equivalent: NIF_GrossAnatomy
 treat-xrefs-as-equivalent: OG
 treat-xrefs-as-equivalent: VSAO
-treat-xrefs-as-genus-differentia: AAO part_of NCBITaxon:8292
-treat-xrefs-as-genus-differentia: FBbt part_of NCBITaxon:7227
-treat-xrefs-as-genus-differentia: FMA part_of NCBITaxon:9606
-treat-xrefs-as-genus-differentia: HAO part_of NCBITaxon:7399
-treat-xrefs-as-genus-differentia: KUPO part_of NCBITaxon:9606
-treat-xrefs-as-genus-differentia: MA part_of NCBITaxon:10088
-treat-xrefs-as-genus-differentia: MFO part_of NCBITaxon:8089
-treat-xrefs-as-genus-differentia: ncithesaurus part_of NCBITaxon:40674
-treat-xrefs-as-genus-differentia: SPD part_of NCBITaxon:6893
-treat-xrefs-as-genus-differentia: TADS part_of NCBITaxon:6939
-treat-xrefs-as-genus-differentia: TAO part_of NCBITaxon:32443
-treat-xrefs-as-genus-differentia: TGMA part_of NCBITaxon:44484
-treat-xrefs-as-genus-differentia: WBbt part_of NCBITaxon:6237
-treat-xrefs-as-genus-differentia: XAO part_of NCBITaxon:8353
-treat-xrefs-as-genus-differentia: ZFA part_of NCBITaxon:7954
 remark: $Revision: 1.107 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
+treat-xrefs-as-reverse-genus-differentia: AAO part_of NCBITaxon:8292
+treat-xrefs-as-reverse-genus-differentia: FBbt part_of NCBITaxon:7227
+treat-xrefs-as-reverse-genus-differentia: FMA part_of NCBITaxon:9606
+treat-xrefs-as-reverse-genus-differentia: HAO part_of NCBITaxon:7399
+treat-xrefs-as-reverse-genus-differentia: KUPO part_of NCBITaxon:9606
+treat-xrefs-as-reverse-genus-differentia: MA part_of NCBITaxon:10088
+treat-xrefs-as-reverse-genus-differentia: MFO part_of NCBITaxon:8089
+treat-xrefs-as-reverse-genus-differentia: ncithesaurus part_of NCBITaxon:40674
+treat-xrefs-as-reverse-genus-differentia: SPD part_of NCBITaxon:6893
+treat-xrefs-as-reverse-genus-differentia: TADS part_of NCBITaxon:6939
+treat-xrefs-as-reverse-genus-differentia: TAO part_of NCBITaxon:32443
+treat-xrefs-as-reverse-genus-differentia: TGMA part_of NCBITaxon:44484
+treat-xrefs-as-reverse-genus-differentia: WBbt part_of NCBITaxon:6237
+treat-xrefs-as-reverse-genus-differentia: XAO part_of NCBITaxon:8353
+treat-xrefs-as-reverse-genus-differentia: ZFA part_of NCBITaxon:7954
 treat-xrefs-as-has-subclass: EHDAA
 treat-xrefs-as-has-subclass: EHDAA2
 treat-xrefs-as-has-subclass: EMAPA
@@ -102,7 +103,7 @@ name: cell
 namespace: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:mah]
 comment: The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one).
-subset: upper_level
+subset: ubprop:upper_level
 xref: FMA:68646
 xref: GO:0005623
 xref: KUPO:0000002
@@ -135,7 +136,7 @@ name: native cell
 namespace: cell
 def: "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." [CARO:mah]
 comment: To accommodate unicellular organisms better, 'cell in vivo' has been re-labeled 'native cell' to better represent its intended meaning - that is, that it is a cell in the context of a multicellular organism or in a natural environment. 'Native' is intended to contrast with 'in vitro', which refers to cells or other biological entities that have been intentionally placed in a controlled, non-natural setting for the purpose of study or manipulation. (MAH 1.12.12).
-subset: upper_level
+subset: ubprop:upper_level
 synonym: "cell in vivo" NARROW []
 xref: CARO:0000013
 is_a: CL:0000000 ! cell
@@ -490,7 +491,7 @@ name: germ line cell
 namespace: cell
 def: "A cell that is within the developmental lineage of gametes and is able to pass along its genetic material to offspring." [GOC:tfm, ISBN:0721662544]
 comment: Originally this term had some plant germ line cell children.
-subset: upper_level
+subset: ubprop:upper_level
 is_a: CL:0000548 ! animal cell
 disjoint_from: CL:0002371 ! somatic cell
 
@@ -3059,7 +3060,7 @@ id: CL:0000325
 name: stuff accumulating cell
 namespace: cell
 def: "A cell that is specialised to accumulate a particular substance(s)." [FB:ma]
-subset: upper_level
+subset: ubprop:upper_level
 is_a: CL:0000003 ! native cell
 
 [Term]
@@ -4821,7 +4822,7 @@ relationship: develops_from CL:0000038 ! erythroid progenitor cell
 id: CL:0000548
 name: animal cell
 namespace: cell
-subset: upper_level
+subset: ubprop:upper_level
 is_a: CL:0000255 ! eukaryotic cell
 
 [Term]
@@ -13624,7 +13625,7 @@ id: CL:0002371
 name: somatic cell
 namespace: cell
 def: "A cell of an organism that does not pass on its genetic material to the organism's offspring (i.e. a non-germ line cell)." [GOC:tfm, ISBN:0721662544]
-subset: upper_level
+subset: ubprop:upper_level
 xref: BTO:0001268
 xref: FMA:72300
 xref: WBbt:0008378
