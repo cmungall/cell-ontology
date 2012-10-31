@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 23:10:2012 16:45
+date: 31:10:2012 15:13
 saved-by: adiehl
 auto-generated-by: OBO-Edit 2.3
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -30,7 +30,7 @@ subsetdef: high_level_annotation_qc "High-level terms not to be used for direct 
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
 subsetdef: inherited_grouping_class "A grouping class that originates in two or more separate anatomical ontologies. Includes 'region of X' type terms"
 subsetdef: loose_concept "loose concept"
-subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
+subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord, peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
 subsetdef: mf_needs_review "Catalytic activity terms in need of attention"
 subsetdef: mpath_slim "Pathology slim"
@@ -69,7 +69,7 @@ synonymtypedef: SENSU "taxonomic disambiguation"
 synonymtypedef: SMILES "SMILES"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: cl
-remark: $Revision: 1.96 $  See PMID:15693950, PMID:12799354, PMID:20123131, Contact Alexander Diehl, addiehl@buffalo.edu, University of Buffalo.
+remark: $Revision: 1.113 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 treat-xrefs-as-equivalent: BILA
 treat-xrefs-as-equivalent: BSPO
 treat-xrefs-as-equivalent: CARO
@@ -314,7 +314,7 @@ id: CL:0000004
 name: cell by organism
 namespace: cell
 def: "A classification of cells by the organisms within which they are contained." [FB:ma]
-comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its species.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its species. If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
 is_obsolete: true
 consider: CL:0000000
 consider: CL:0000003
@@ -379,7 +379,7 @@ is_a: CL:0000333 ! migratory neural crest cell
 id: CL:0000012
 name: cell by class
 namespace: cell
-comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified. If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
 is_obsolete: true
 consider: CL:0000000
 consider: CL:0000003
@@ -858,7 +858,7 @@ id: CL:0000049
 name: common myeloid progenitor
 namespace: cell
 def: "A progenitor cell committed to myeloid lineage, including the megakaryocyte and erythroid lineages. These cells are CD34-positive, and express Gata1, Gata2, C/EBPa, and Pu.1." [GOC:add, GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/Common_myeloid_progenitor, ISBN:0878932437, MESH:D023461, PMCID:PMC2212039, PMID:10724173, PMID:16551251, PMID:16647566]
-comment: CMP are reportedly CD16-positive, CD32-positive, CD38-positive, CD45RA-negative, CD110-negative, CD117-positive, CD123-positive,  and SCA1-negative.
+comment: CMP are reportedly CD16-positive, CD32-positive, CD38-positive, CD45RA-negative, CD110-negative, CD117-positive, CD123-positive, and SCA1-negative.
 synonym: "CFU-GEMM" RELATED [ISBN:0878932437]
 synonym: "CFU-S" RELATED [ISBN:0878932437]
 synonym: "CMP" EXACT [ISBN:0878932437]
@@ -1051,7 +1051,7 @@ id: CL:0000063
 name: cell by histology
 namespace: cell
 def: "A classification of cells by their microscopic appearance." [FB:ma, GOC:tfm]
-comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its microscopic appearance.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its microscopic appearance. If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
 is_obsolete: true
 consider: CL:0000000
 consider: CL:0000003
@@ -1300,7 +1300,7 @@ is_a: CL:0000085 ! germ line stem cell (sensu Vertebrata)
 id: CL:0000091
 name: Kupffer cell
 namespace: cell
-def: "A tissue-resident macrophage of the reticuloendothelial system found on the luminal surface of the hepatic sinusoids involved in erythrocyte clearance. Markers include F4/80+, CD11b-low, CD68-positive, sialoadhesin-positive, CD163/SRCR-positive.  Irregular, with long processes including lamellipodia extending into the sinusoid lumen, have flattened nucleus with cytoplasm containing characteristic invaginations of the plasma membrane (vermiform bodies); lie within the sinusoid lumen attached to the endothelial surface; derived from the bone marrow, form a major part of the body's mononuclear phagocyte system." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0517223651, MESH:A11.329.372.588, PMID:15771589, PMID:17105582]
+def: "A tissue-resident macrophage of the reticuloendothelial system found on the luminal surface of the hepatic sinusoids involved in erythrocyte clearance. Markers include F4/80+, CD11b-low, CD68-positive, sialoadhesin-positive, CD163/SRCR-positive. Irregular, with long processes including lamellipodia extending into the sinusoid lumen, have flattened nucleus with cytoplasm containing characteristic invaginations of the plasma membrane (vermiform bodies); lie within the sinusoid lumen attached to the endothelial surface; derived from the bone marrow, form a major part of the body's mononuclear phagocyte system." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0517223651, MESH:A11.329.372.588, PMID:15771589, PMID:17105582]
 comment: Markers: Mouse: F4/80+, CD11b-low, CD68+, sialoadhesin+, CD163/SRCR+; role or process: immune, antigen-presentation, clearance of senescent erythrocytes, iron metabolism. Kupffer cells are also reportedly C3aR-positive, CD14-low, CD54-positive, CD88-positive, and CD284-positive. They are also capable of producing IL-1, IL-6, TNF-alpha, nitric oxide, PGD2, PGE2, PGF2alpha, and TXA2.
 synonym: "hepatic macrophage" EXACT []
 synonym: "littoral cell of hepatic sinusoid" EXACT []
@@ -1384,8 +1384,8 @@ relationship: develops_from CL:0000133 ! neurectodermal cell
 id: CL:0000096
 name: mature neutrophil
 namespace: cell
-def: "A fully differentiated neutrophil, a granular leukocyte having a nucleus with three to five lobes connected by slender threads, and cytoplasm containing fine inconspicuous granules and stainable by neutral dyes. They are produced in bone marrow at a rate of 5e10-10e10/ day and have a half-life of 6-8 hours. Neutrophils are CD15-positive, CD16-positive, CD32-positive, CD43-positive, CD181-positive, and CD182-positive .\"" [GOC:add, GOC:tfm, http://www.cap.org, MESH:A11.118.637.415.583, MESH:D009504, PMID:11138776, PMID:12560239, PMID:15514007, PMID:7880385]
-comment: Neutrophils are also capable of secreting GRO-alpha, IL-1beta, IL-1ra, IL-3, IL-12, IP-10, MIG, MIP-1alpha, MIP-1beta, TGF-beta, TNF-alpha, VEGF, and anti-microbial peptides.  They can positively influence the chemotaxis of basophils, T-cells, monocytes, macrophages, dendritic cells, and other neutrophils.\\nNeutrophils are also CD35-positive, CD64-positive, CD89-positive, CD184-positive, and fMLP receptor-positive Ly-6G-positive (mouse), TLR2-low, TLR4-low, and lineage-negative (CD2, CD3, CD5, CD9, CD19, CD36, CD49d, CD56, CD61, CD235a (glycophorin-A)).
+def: "A fully differentiated neutrophil, a granular leukocyte having a nucleus with three to five lobes connected by slender threads, and cytoplasm containing fine inconspicuous granules and stainable by neutral dyes. They are produced in bone marrow at a rate of 5e10-10e10/day and have a half-life of 6-8 hours. Neutrophils are CD15-positive, CD16-positive, CD32-positive, CD43-positive, CD181-positive, and CD182-positive." [GOC:add, GOC:tfm, http://www.cap.org, MESH:A11.118.637.415.583, MESH:D009504, PMID:11138776, PMID:12560239, PMID:15514007, PMID:7880385]
+comment: Neutrophils are also capable of secreting GRO-alpha, IL-1beta, IL-1ra, IL-3, IL-12, IP-10, MIG, MIP-1alpha, MIP-1beta, TGF-beta, TNF-alpha, VEGF, and anti-microbial peptides. They can positively influence the chemotaxis of basophils, T-cells, monocytes, macrophages, dendritic cells, and other neutrophils. Neutrophils are also CD35-positive, CD64-positive, CD89-positive, CD184-positive, and fMLP receptor-positive Ly-6G-positive (mouse), TLR2-low, TLR4-low, and lineage-negative (CD2, CD3, CD5, CD9, CD19, CD36, CD49d, CD56, CD61, CD235a (glycophorin-A)).
 synonym: "mature neutrocyte" EXACT []
 synonym: "mature neutrophil leucocyte" EXACT []
 synonym: "mature neutrophil leukocyte" EXACT []
@@ -1791,8 +1791,8 @@ id: CL:0000134
 name: mesenchymal cell
 namespace: cell
 alt_id: CL:0002452
-def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. This cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro.  Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
-comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive,  CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
+def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. This cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
+comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
 synonym: "BMSC" EXACT []
 synonym: "bone marrow stromal cells" EXACT []
 synonym: "CFU-F" EXACT []
@@ -1830,7 +1830,7 @@ id: CL:0000135
 name: fibrocyte
 namespace: cell
 def: "An inactive fibroblast; cytoplasm is sparse, endoplasmic reticulum is scanty with flattened nucleus. Term used by some histologists; when fibroblasts become relatively inactive in fiber formation. However, this cell has the potential for fibrogenesis in quiescent connective tissue of the adult, as well as during development, other histologists prefer to use the term fibroblast in all circumstances. These cells represent ~0.5% of peripheral blood leukocytes." [GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/Fibrocyte, ISBN:0412046911, ISBN:0517223651, PMID:11641248, PMID:15010326, PMID:17607298, PMID:18222966, PMID:8790603, PMID:9551999]
-comment: Cultured human fibrocytes are MHCI-positive, MHCII-positive, CD1a-negative, CD3-negative, CD4-negative, CD8-negative, CD10-negative, CD11b-positive, CD13-positive, CD14-negative, CD16-negative, CD18-positive, CD19-negative, CD25-negative, CD29-positive, CD32-positive, CD33-negative, CD34-positive, CD38-negative, CD40-positive, CD44-negative, CD45RO-positive, CD49a-positive, CD49b-positive, CD49c-negative, CD49d-negative, CD49e-positive, CD49f-negative, CD56-negative, CD58-positive, CD61-positive, CD64-positive, CD70-negative, CD71-positive, CD80-positive, CD83-negative, CD86-positive, CD103-negative, CD105-positive, CD181-positive, CD182-negative, CD183-positive, CD184-positive, CD185-negative, CD186-negative, CD191-positive, CD192-negative, CD193-positive, CD194-positive, CD195-positive, CD196-negative, CD197-positive, CD199-positive, desmin-negative, F4/80-positive, Gr1-positive, LSP-1-positive, MHCI-positive, MHCII-positive, alpha-SMA-negative, TCRab-negative, TCRgd-negative, and vimentin-positive.  Fibrocytes are also capable of secreting angiogenin, bFGF, CCL2, CCL3, CCL4, CCL8, CXCL1, type I collagen, type III collagen, CTGF, fibronectin, GM-CSF, IL-1a, IL-6, IL-8, IL-10, M-CSF, MMP-9, PDGF-A, TGF-alpha, TGF-beta1, TNF-alpha, and VEGF-A.
+comment: Cultured human fibrocytes are MHCI-positive, MHCII-positive, CD1a-negative, CD3-negative, CD4-negative, CD8-negative, CD10-negative, CD11b-positive, CD13-positive, CD14-negative, CD16-negative, CD18-positive, CD19-negative, CD25-negative, CD29-positive, CD32-positive, CD33-negative, CD34-positive, CD38-negative, CD40-positive, CD44-negative, CD45RO-positive, CD49a-positive, CD49b-positive, CD49c-negative, CD49d-negative, CD49e-positive, CD49f-negative, CD56-negative, CD58-positive, CD61-positive, CD64-positive, CD70-negative, CD71-positive, CD80-positive, CD83-negative, CD86-positive, CD103-negative, CD105-positive, CD181-positive, CD182-negative, CD183-positive, CD184-positive, CD185-negative, CD186-negative, CD191-positive, CD192-negative, CD193-positive, CD194-positive, CD195-positive, CD196-negative, CD197-positive, CD199-positive, desmin-negative, F4/80-positive, Gr1-positive, LSP-1-positive, MHCI-positive, MHCII-positive, alpha-SMA-negative, TCRab-negative, TCRgd-negative, and vimentin-positive. Fibrocytes are also capable of secreting angiogenin, bFGF, CCL2, CCL3, CCL4, CCL8, CXCL1, type I collagen, type III collagen, CTGF, fibronectin, GM-CSF, IL-1a, IL-6, IL-8, IL-10, M-CSF, MMP-9, PDGF-A, TGF-alpha, TGF-beta1, TNF-alpha, and VEGF-A.
 xref: FMA:63879
 is_a: CL:0000499 ! stromal cell
 intersection_of: CL:0000499 ! stromal cell
@@ -1921,7 +1921,7 @@ id: CL:0000144
 name: cell by function
 namespace: cell
 def: "A classification of cells by their primary end goal or behavior." [FB:ma]
-comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its function or behavior.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its function or behavior. If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
 is_obsolete: true
 consider: CL:0000000
 consider: CL:0000003
@@ -2643,7 +2643,7 @@ intersection_of: capable_of GO:0048870 ! cell motility
 id: CL:0000220
 name: cell by lineage
 namespace: cell
-comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell in a multicellular organiam, apart from a zygote, can potentially be classified by its lineage.  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell in a multicellular organiam, apart from a zygote, can potentially be classified by its lineage. If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
 is_obsolete: true
 consider: CL:0000000
 consider: CL:0000003
@@ -2682,7 +2682,7 @@ id: CL:0000224
 name: cell by nuclear number
 namespace: cell
 def: "A classification of cells by the number of their nuclei." [FB:ma, GOC:tfm]
-comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its nuclear number (note that this term was previously used as a parent class of enucleate cell).  If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
+comment: This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its nuclear number (note that this term was previously used as a parent class of enucleate cell). If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.
 is_obsolete: true
 consider: CL:0000000
 consider: CL:0000003
@@ -4545,7 +4545,7 @@ id: CL:0000453
 name: Langerhans cell
 namespace: cell
 def: "Langerhans cell is a conventional dendritic cell that has plasma membrane part CD207. A Langerhans cell is a stellate dendritic cell of myeloid origin, that appears clear on light microscopy and has a dark-staining, indented nucleus and characteristic inclusions (Birbeck granules) in the cytoplasm; Langerhans cells are found principally in the stratum spinosum of the epidermis, but they also occur in other stratified epithelia and have been identified in the lung, lymph nodes, spleen, and thymus." [GO_REF:0000031, GOC:add, GOC:amm, ISBN:0721601464, ISBN:0781735149, PMCID:PMC2346585, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000021 )(PMID: 19243617). These cells are also CD1a-high, CD14-negative, CD207-positive (langerin), CD324-positive (E-cadherin), and DCIR-positive. They reside in the epidermis.
+comment: Originally described in the dendritic cell ontology (DC_CL:0000021 )(PMID:19243617). These cells are also CD1a-high, CD14-negative, CD207-positive (langerin), CD324-positive (E-cadherin), and DCIR-positive. They reside in the epidermis.
 synonym: "Langerhans' cell" EXACT []
 synonym: "LC" EXACT []
 xref: BTO:0000705
@@ -5529,7 +5529,7 @@ id: CL:0000557
 name: granulocyte monocyte progenitor cell
 namespace: cell
 def: "A hematopoietic progenitor cell that is committed to the granulocyte and monocyte lineages. These cells are CD123-positive, and do not express Gata1 or Gata2 but do express C/EBPa, and Pu.1." [GO_REF:0000031, GOC:amm, GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/CFU-GM, http://www.copewithcytokines.de, ISBN:0721601464, MESH:D055014, PMCID:PMC2213186, PMCID:PMC548021, PMID:16551251, PMID:16647566]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000042)(PMID: 19243617). GMPs are reportedly CD16-positive, CD32-positive, CD34-positive, CD38-positive, CD45RA-positive, CD110-negative, CD117-positive, CD123-positive, and SCA1-negative.
+comment: Originally described in the dendritic cell ontology (DC_CL:0000042)(PMID:19243617). GMPs are reportedly CD16-positive, CD32-positive, CD34-positive, CD38-positive, CD45RA-positive, CD110-negative, CD117-positive, CD123-positive, and SCA1-negative.
 synonym: "CFU-C , Colony forming unit in culture" BROAD [http://www.copewithcytokines.de]
 synonym: "CFU-GM" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 synonym: "colony forming unit granulocyte macrophage" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
@@ -5807,7 +5807,7 @@ id: CL:0000578
 name: experimentally modified cell in vitro
 namespace: cell
 def: "A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure." [FB:ma, ReO:mhb]
-comment: This class has been re-labeled to imply reference only to in vitro experimentally modified cells, similarly, the definition has been slightly updated to reflect this.experimentally modified cell' refers only to cells in vitro, and not modified in vivo/in environment cells .  There is currently no class representing unmodified in vitro cells (other than the parent 'cell in vitro'), or a class representing modified native cells. More granular subclassing of experimentally modified cell can be found in ReO. MHB 1.12.12
+comment: This class has been re-labeled to imply reference only to in vitro experimentally modified cells, similarly, the definition has been slightly updated to reflect this. 'experimentally modified cell' refers only to cells in vitro, and not modified in vivo/in environment cells. There is currently no class representing unmodified in vitro cells (other than the parent 'cell in vitro'), or a class representing modified native cells. More granular subclassing of experimentally modified cell can be found in ReO. MHB 1.12.12
 is_a: CL:0001034 ! cell in vitro
 
 [Term]
@@ -6556,7 +6556,7 @@ is_a: CL:0000127 ! astrocyte
 id: CL:0000645
 name: pituicyte
 namespace: cell
-def: "A cell with long processes running parallel to adjacent axons in the proximal infundibulum of the neurohypophysis. These processes form a three-dimensional network among the axons of the hypothalamic neurosecretory cells and are connected by gap junctions which provide for their metabolic coupling. This cell type constitutes most of the nonexcitable tissue in the neurohypophsis; function may include possibly acting as an intermediate in the modulation of oxytocin and vasopressin release. This  cell type is highly variable in size and shape and commonly contain lipid droplets and deposits of lipochrome pigment." [http://en.wikipedia.org/wiki/Pituicyte, ISBN:0412046911, ISBN:0517223651]
+def: "A cell with long processes running parallel to adjacent axons in the proximal infundibulum of the neurohypophysis. These processes form a three-dimensional network among the axons of the hypothalamic neurosecretory cells and are connected by gap junctions which provide for their metabolic coupling. This cell type constitutes most of the nonexcitable tissue in the neurohypophsis; function may include possibly acting as an intermediate in the modulation of oxytocin and vasopressin release. This cell type is highly variable in size and shape and commonly contain lipid droplets and deposits of lipochrome pigment." [http://en.wikipedia.org/wiki/Pituicyte, ISBN:0412046911, ISBN:0517223651]
 xref: BTO:0003793
 xref: FMA:83503
 is_a: CL:0000127 ! astrocyte
@@ -6779,7 +6779,7 @@ id: CL:0000668
 name: parenchymal cell
 namespace: cell
 def: "The cell characteristic of an organ, as distinguished from associated connective or supporting tissues." [ISBN:0471245208]
-comment: cell type has a similar but slightly different meaning in botany (plants): see  PO:0000074.
+comment: cell type has a similar but slightly different meaning in botany (plants): see PO:0000074.
 xref: BTO:0002174
 xref: FMA:84638
 is_a: CL:0000003 ! native cell
@@ -6790,7 +6790,7 @@ name: pericyte cell
 namespace: cell
 alt_id: CL:0000184
 def: "An elongated, contractile cell found wrapped about precapillary arterioles outside the basement membrane. Pericytes are present in capillaries where proper adventitia and muscle layer are missing (thus distingushing this cell type from adventitial cells). They are relatively undifferentiated and may become fibroblasts, macrophages, or smooth muscle cells." [GOC:dsd, GOC:tfm, ISBN:0721662544, MESH:D020286, PMID:16807374, PMID:17986482, PMID:20024907]
-comment: Pericytes are CD10-positive, CD13-positive, CD31-negative, CD45-negative, CD106-positive, CD117-negative, CD140-positive, CD144-negative, CD146-positive, CD271-positive, CD325-positive, NG2-positive, RGS5-positive,  SMA-positive, and desmin-positive. A subpopulation is CD248-positive. They are also capable of producing angiopoietin 1, CXCL12, TGF-beta, and VEGF-A.
+comment: Pericytes are CD10-positive, CD13-positive, CD31-negative, CD45-negative, CD106-positive, CD117-negative, CD140-positive, CD144-negative, CD146-positive, CD271-positive, CD325-positive, NG2-positive, RGS5-positive, SMA-positive, and desmin-positive. A subpopulation is CD248-positive. They are also capable of producing angiopoietin 1, CXCL12, TGF-beta, and VEGF-A.
 synonym: "adventitial cell" RELATED []
 synonym: "adventitial reticular cell" EXACT []
 synonym: "ARC" EXACT [PMID:17986482]
@@ -7376,7 +7376,7 @@ id: CL:0000743
 name: hypertrophic chondrocyte
 namespace: cell
 def: "Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification)." [GO_REF:0000034, PMID:15951842]
-comment: is hypertrophic pathological or normal?  and can it be described using  a pato term?
+comment: is hypertrophic pathological or normal? and can it be described using a pato term?
 is_a: CL:0000138 ! chondrocyte
 
 [Term]
@@ -7884,7 +7884,8 @@ relationship: develops_from CL:0000037 ! hematopoietic stem cell
 id: CL:0000785
 name: mature B cell
 namespace: cell
-def: "A B cell that is mature, having left the bone marrow. Initially, these cells are IgM-positive and IgD-positive, and they can be activated by antigen." [GOC:add, ISBN:0781735149]
+def: "A B cell that is mature, having left the bone marrow. Initially, these cells are IgM-positive and IgD-positive, and they can be activated by antigen." [GOC:add, GOC:dsd, ISBN:0781735149]
+comment: Mature B cells are also reportedly CD10-negative, CD19-positive, CD22-positive, CD34-negative, CD48-positive, CD79a-positive, CD84-positive, CD127-negative, CD352-positive, RAG-negative, TdT-negative, Vpre-B-negative, and pre-BCR-negative. Transcription factors expressed: Pax5-positive.
 synonym: "mature B lymphocyte" EXACT []
 synonym: "mature B-cell" EXACT []
 synonym: "mature B-lymphocyte" EXACT []
@@ -7901,8 +7902,8 @@ relationship: develops_from CL:0000818 ! transitional stage B cell
 id: CL:0000786
 name: plasma cell
 namespace: cell
-def: "A terminally differentiated, post-mitotic, antibody secreting cell of the B cell lineage with the phenotype CD138-positive, surface immunonoglobulin-negative, and MHC Class II-negative. Plasma cells are oval or round with extensive rough endoplasmic reticulum, a well-developed Golgi apparatus, and a round nucleus having a characteristic cartwheel heterochromatin pattern and are devoted to producing large amounts of immunoglobulin." [GO_REF:0000031, GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Plasma_cell, ISBN:0721601464, ISBN:0781735149, PMID:20081059, PMID:20839338]
-comment: Plasma cells develop in the spleen and migrate to the bone marrow.  Plasma cells are also CD10-negative, CD19-positive, CD20-negative, CD22-negative, CD27-positive, CD38-positive, CD45-positive, CD48-positive, and IgD-negative. Transcription factors: BLIMP1-positive, IRF4-positive, and XBP1-positive.
+def: "A terminally differentiated, post-mitotic, antibody secreting cell of the B cell lineage with the phenotype CD138-positive, surface immunonoglobulin-negative, and MHC Class II-negative. Plasma cells are oval or round with extensive rough endoplasmic reticulum, a well-developed Golgi apparatus, and a round nucleus having a characteristic cartwheel heterochromatin pattern and are devoted to producing large amounts of immunoglobulin." [GO_REF:0000031, GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Plasma_cell, ISBN:0721601464, ISBN:0781735149, PMID:19447676, PMID:20081059, PMID:20839338, PMID:20951740]
+comment: Plasma cells develop in the spleen and migrate to the bone marrow. Plasma cells are also reportedly CD5-negative, CD10-negative, CD19-positive, CD20-negative, CD21-negative, CD22-negative, CD23-negative, CD24-negative, CD25-negative, CD27-positive, CD34-negative, CD38-positive, CD40-positive, CD43-positive, CD45-positive, CD48-positive, CD53-low, CD80-negative, CD81-positive, CD86-positive, CD95-positive, CD196-negative, CD229-positive, CD270-positive, CD352-positive, CD361-positive, and IgD-negative. Transcription factors: BLIMP1-positive, IRF4-positive, PAX5-negative, SpiB-negative, Ets1-negative, and XBP1-positive.
 synonym: "effector B cell" RELATED []
 synonym: "effector B-cell" RELATED []
 synonym: "plasma B cell" EXACT []
@@ -7940,7 +7941,8 @@ intersection_of: lacks_plasma_membrane_part PR:000001935 ! syndecan-1
 id: CL:0000788
 name: naive B cell
 namespace: cell
-def: "A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD27-negative and that has not yet been activated by antigen in the periphery." [GO_REF:0000031, GOC:add, GOC:rhs, ISBN:0781765196]
+def: "A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD27-negative and that has not yet been activated by antigen in the periphery." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:19447676, PMID:20081059, PMID:20839338, PMID:20933013]
+comment: Naïve B-cells are also reportedly CD10-negative, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD25-negative, CD27-negative, CD34-negative, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD80-negative, CD81-positive, CD84-positive, CD86-negative, CD95-negative, CD138-negative, CD150-positive, CD184/CXCR4-positive, CD185/CXCR5-positive, CD196/CCR6-positive, CD200-positive, CD229-positive, CD243-positive, CD289-positive, CD290-positive, CD352-positive, MHCII/HLA-DR-positive, cadherin 9-positive, and sIgH-positive, Transcription factors: Pax5-positive, ETS1-positive, FOXO1A-positive, KLF4-positive, KLF9-positive, MiTF-positive, OBF1-positive, PLZF-positive, and SpiB-positive.
 synonym: "naive B lymphocyte" EXACT []
 synonym: "naive B-cell" EXACT []
 synonym: "naive B-lymphocyte" EXACT []
@@ -8387,11 +8389,12 @@ intersection_of: capable_of GO:0050777 ! negative regulation of immune response
 id: CL:0000816
 name: immature B cell
 namespace: cell
-def: "An immature B cell is a precursor B cell that has the phenotype surface IgM-positive and surface IgD-negative, and have not undergone class immunoglobulin class switching or peripheral encounter with antigen and activation." [GO_REF:0000031, GOC:add, GOC:rhs, GOC:tfm, ISBN:0781735149]
+def: "An immature B cell is a precursor B cell that has the phenotype surface IgM-positive and surface IgD-negative, and have not undergone class immunoglobulin class switching or peripheral encounter with antigen and activation." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, GOC:tfm, ISBN:0781735149, PMID:20081059, PMID:20839338]
+comment: Immature B cells are also reportedly CD5-positive, CD10-positive, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD24-positive, CD25-negative, CD27-negative, CD34-negative, CD38-positive, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD79a-positive, CD80-negative, CD81-positive, CD86-negative, CD95-negative, CD127-negative, CD138-negative, CD185-positive, CD196-positive, MHCII/HLA-DR-positive, RAG-positive, TdT-negative, Vpre-B-negative, and preBCR-negative. Transcription factors expressed: Pax5-positive.
 synonym: "immature B lymphocyte" EXACT []
 synonym: "immature B-cell" EXACT []
 synonym: "immature B-lymphocyte" EXACT []
-synonym: "newly formed B Cell" EXACT [ISBN:781735149]
+synonym: "newly formed B cell" EXACT [ISBN:781735149]
 is_a: CL:0000817 ! precursor B cell
 intersection_of: CL:0000236 ! B cell
 intersection_of: has_not_completed GO:0045190 ! isotype switching
@@ -8433,7 +8436,7 @@ id: CL:0000819
 name: B-1 B cell
 namespace: cell
 def: "A B cell of distinct lineage and surface marker expression. B-1 B cells are thought to be the primary source of natural IgM immunoglobulin, that is, IgM produced in large quantities without prior antigenic stimulation and generally reactive against various microorganisms, as well as the source of T-independent IgA immunoglobulin in the mucosal areas. These cells are CD43-positive." [GO_REF:0000031, GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/B-1_cell, PMID:11861604, PMID:20933013, PMID:21220451]
-comment: There are small numbers of B-1 cells found in the lymph nodes and spleen , while larger numbers can be found in the peritoneal and pleural cavities. B-1 B cells are reportedly CD11b-positive, CD20-positive, CD21-positive, CD27-positive, CD44-positive, CD45RB-positive, CD48-positive, CD70-negative, CD150-positive, CD244-negative, and CD352-positive.
+comment: There are small numbers of B-1 cells found in the lymph nodes and spleen, while larger numbers can be found in the peritoneal and pleural cavities. B-1 B cells are reportedly CD11b-positive, CD20-positive, CD21-positive, CD27-positive, CD44-positive, CD45RB-positive, CD48-positive, CD70-negative, CD150-positive, CD244-negative, CD352-positive, sIgM-positive, and sIgD-low.
 synonym: "B-1 B lymphocyte" EXACT []
 synonym: "B-1 B-cell" EXACT []
 synonym: "B-1 B-lymphocyte" EXACT []
@@ -8491,7 +8494,7 @@ intersection_of: lacks_plasma_membrane_part PR:000001839 ! T-cell surface glycop
 id: CL:0000822
 name: B-2 B cell
 namespace: cell
-def: "A conventional B cell subject to antigenic stimulation and dependent on T cell help and with a distinct surface marker expression pattern from B-1 B cells. These cells are CD43-negative." [GCO:dsd, GOC:add, GOC:tfm, ISBN:0781735149, PMID:11861604, PMID:20933013]
+def: "A conventional B cell subject to antigenic stimulation and dependent on T cell help and with a distinct surface marker expression pattern from B-1 B cells. These cells are CD43-negative." [GOC:add, GOC:dsd, GOC:tfm, ISBN:0781735149, PMID:11861604, PMID:20933013]
 comment: B-2 B cells are reportedly CD48-positive, CD244-negative, and CD352-positive.
 synonym: "B-0 B cell" RELATED []
 synonym: "B-2 B lymphocyte" EXACT []
@@ -8559,13 +8562,17 @@ relationship: develops_from CL:0000051 ! common lymphoid progenitor
 id: CL:0000826
 name: pro-B cell
 namespace: cell
-def: "A progenitor cell of the B cell lineage, with some lineage specific activity such as early stages of recombination of B cell receptor genes, but not yet fully committed to the B cell lineage until the expression of PAX5 occurs." [GOC:add, ISBN:0781735149, PMID:12633665]
+def: "A progenitor cell of the B cell lineage, with some lineage specific activity such as early stages of recombination of B cell receptor genes, but not yet fully committed to the B cell lineage until the expression of PAX5 occurs." [GOC:add, GOC:dsd, ISBN:0781735149, PMID:12633665, PMID:16551251, PMID:18432934]
+comment: Human pro-B cells are reportedly CD10-positive, CD22-positive, CD34-positive, CD38-positive, CD45-low, CD48-positive, CD79a-positive, CD127-positive, CD184-positive, RAG-positive, TdT-positive, Vpre-B-positive, pre-BCR-negative, IgD-negative, and IgM-negative. Transcription factors expressed: Pax5-positive, EBF-positive, E2A-negative, Ikaros-negative, and PU.1-negative.
 synonym: "pre-B cell (Philadelphia nomenclature)" RELATED [PMID:11244048]
 synonym: "pre-pro B cell" BROAD [PMID:17582343]
 synonym: "pro-B lymphocyte" EXACT []
 synonym: "pro-B-cell" EXACT []
 synonym: "pro-B-lymphocyte" EXACT []
 synonym: "progenitor B cell" EXACT []
+synonym: "progenitor B lymphocyte" EXACT []
+synonym: "progenitor B-cell" EXACT []
+synonym: "progenitor B-lymphocyte" EXACT []
 xref: BTO:0003104
 is_a: CL:0000838 ! lymphoid lineage restricted progenitor cell
 intersection_of: CL:0000838 ! lymphoid lineage restricted progenitor cell
@@ -8827,7 +8834,7 @@ intersection_of: lacks_part GO:0030141 ! secretory granule
 id: CL:0000843
 name: follicular B cell
 namespace: cell
-def: "A resting mature B cell that has the phenotype IgM-positive, IgD-positive, CD23-positive and CD21-positive, and found in the B cell follicles of the white pulp of the spleen or the corticol areas of the peripheral lymph nodes. This cell type is also described as being CD19-positive, B220-positive, IgM-positive, AA4-negative, CD23-positive, CD43-negative, and CD5-negative." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Follicular_B_Cells, ISBN:0781735149, PMCID:PMC2193793, PMID:20933013]
+def: "A resting mature B cell that has the phenotype IgM-positive, IgD-positive, CD23-positive and CD21-positive, and found in the B cell follicles of the white pulp of the spleen or the corticol areas of the peripheral lymph nodes. This cell type is also described as being CD19-positive, B220-positive, AA4-negative, CD43-negative, and CD5-negative." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Follicular_B_Cells, ISBN:0781735149, PMCID:PMC2193793, PMID:20933013]
 comment: Follicular B cells are also reportedly CD48-positive, CD84-positive, CD229-positive, and CD352-positive.
 synonym: "Fo B cell" EXACT []
 synonym: "Fo B-cell" EXACT []
@@ -8849,7 +8856,7 @@ id: CL:0000844
 name: germinal center B cell
 namespace: cell
 def: "A rapidly cycling mature B cell that has distinct phenotypic characteristics and is involved in T-dependent immune responses and located typically in the germinal centers of lymph nodes. This cell type expresses Ly77 after activation." [GOC:add, GOC:dsd, GOC:tfm, ISBN:0781735149, PMID:19447676, PMID:20933013]
-comment: Germinal center B cells are also reportedly CD10-positive, CD19-positive, CD20-positive, CD38-positive, CD44-low, CD45-positive, CD48-positive, CD95-positive,  CD352-positive, and HLA-DR-positive. Transcription factors: BCL6-positive, Ets1-positive, IRF8-positive, MTA3-positive, OBF1-positive, PAX5-positive, SpiB-positive, and STAT3-positive.
+comment: Germinal center B cells are also reportedly CD10-positive, CD19-positive, CD20-positive, CD38-positive, CD44-low, CD45-positive, CD48-positive, CD95-positive, CD352-positive, and HLA-DR-positive. Transcription factors: BCL6-positive, Ets1-positive, IRF8-positive, MTA3-positive, OBF1-positive, PAX5-positive, SpiB-positive, and STAT3-positive.
 synonym: "GC B cell" EXACT []
 synonym: "GC B lymphocyte" EXACT []
 synonym: "GC B-cell" EXACT []
@@ -8866,7 +8873,7 @@ relationship: develops_from CL:0000843 ! follicular B cell
 id: CL:0000845
 name: marginal zone B cell
 namespace: cell
-def: "A mature B cell that is located in the marginal zone of the spleen with the phenotype CD23-negative and CD21-positive and expressing a B cell receptor usually reactive to bacterial cell wall components or senescent self components such as oxidized-LDL. This cell type is also described as being CD19-positive, B220-positive, IgM-high, AA4-negative, CD23-negative, CD21/35-high." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Marginal-zone_B_cell, ISBN:0781735149, PMID:10933592, PMID:20933013]
+def: "A mature B cell that is located in the marginal zone of the spleen with the phenotype CD23-negative and CD21-positive and expressing a B cell receptor usually reactive to bacterial cell wall components or senescent self components such as oxidized-LDL. This cell type is also described as being CD19-positive, B220-positive, IgM-high, AA4-negative, CD35-high." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Marginal-zone_B_cell, ISBN:0781735149, PMID:10933592, PMID:20933013]
 comment: MZ B cells are reportedly CD1-positive (mice), CD20-positive, CD48-positive, CD84-positive, CD150-positive, CD229-positive, and CD352-positive.
 synonym: "marginal zone B lymphocyte" EXACT []
 synonym: "marginal zone B-cell" EXACT []
@@ -9147,7 +9154,7 @@ intersection_of: part_of UBERON:0002106 ! spleen
 id: CL:0000872
 name: splenic marginal zone macrophage
 namespace: cell
-def: "A splenic macrophage found in the marginal zone of the spleen, involved in recognition and clearance of particulate material from the splenic circulation.  Markers include  F4/80-negative, MARCO-positive, SR-A-positive, SIGN-R1-positive, and Dectin2-positive." [GO_REF:0000031, GOC:ana, PMID:16861066]
+def: "A splenic macrophage found in the marginal zone of the spleen, involved in recognition and clearance of particulate material from the splenic circulation. Markers include F4/80-negative, MARCO-positive, SR-A-positive, SIGN-R1-positive, and Dectin2-positive." [GO_REF:0000031, GOC:ana, PMID:16861066]
 comment: Markers: Mouse: F4/80-, MARCO+, SR-A+, SIGN-R1+, Dectin2+.
 is_a: CL:0000871 ! splenic macrophage
 intersection_of: CL:0000871 ! splenic macrophage
@@ -9162,7 +9169,7 @@ intersection_of: part_of UBERON:0001251 ! marginal zone of spleen
 id: CL:0000873
 name: splenic metallophillic macrophage
 namespace: cell
-def: "A splenic macrophage found in the areas surrounding the white pulp of the spleen, adjacent to the marginal sinus.  Markers include F4/80-negative, Dectin2-low, sialoadhesin-positive." [GO_REF:0000031, GOC:ana, PMID:20018690]
+def: "A splenic macrophage found in the areas surrounding the white pulp of the spleen, adjacent to the marginal sinus. Markers include F4/80-negative, Dectin2-low, sialoadhesin-positive." [GO_REF:0000031, GOC:ana, PMID:20018690]
 comment: Markers: Mouse: F4/80-, Dectin2-low, sialoadhesin+.
 is_a: CL:0000871 ! splenic macrophage
 intersection_of: CL:0000871 ! splenic macrophage
@@ -9221,7 +9228,7 @@ intersection_of: part_of UBERON:0001959 ! white pulp of spleen
 id: CL:0000877
 name: splenic tingible body macrophage
 namespace: cell
-def: "A splenic white pulp macrophage found in and around the germinal centers of the white pulp of the spleen that participates in phagocytosis of apoptotic B cells from the germinal centers.  A marker for a cell of this type is Mertk-positive." [GO_REF:0000031, GOC:ana, GOC:tfm, PMID:19631584]
+def: "A splenic white pulp macrophage found in and around the germinal centers of the white pulp of the spleen that participates in phagocytosis of apoptotic B cells from the germinal centers. A marker for a cell of this type is Mertk-positive." [GO_REF:0000031, GOC:ana, GOC:tfm, PMID:19631584]
 is_a: CL:0000876 ! splenic white pulp macrophage
 intersection_of: CL:0000876 ! splenic white pulp macrophage
 intersection_of: capable_of GO:0043277 ! apoptotic cell clearance
@@ -9344,7 +9351,7 @@ intersection_of: part_of UBERON:0002006 ! cortex of lymph node
 id: CL:0000889
 name: myeloid suppressor cell
 namespace: cell
-def: "An immature myeloid leukocyte of heterogeneous phenotype found particularly in cancer and sepsis patients that is capable of suppressing activity of T cells in ex vivo assays.  This cell type is CD45-positive, CD11b-positive." [GO_REF:0000031, GOC:add, GOC:ana, PMID:16168663, PMID:17016554, PMID:17016559]
+def: "An immature myeloid leukocyte of heterogeneous phenotype found particularly in cancer and sepsis patients that is capable of suppressing activity of T cells in ex vivo assays. This cell type is CD45-positive, CD11b-positive." [GO_REF:0000031, GOC:add, GOC:ana, PMID:16168663, PMID:17016554, PMID:17016559]
 comment: Markers: Mouse: CD11b+GR1+CD31+; Human: CD34+ CD33+CD15-CD13+. (According to some reports in humans these cells are iNOS+ARG1+IL13+IFNg+); location: In cancerous tissue; in the blood and lymphoid organs in sepsis.
 is_a: CL:0000766 ! myeloid leukocyte
 intersection_of: CL:0000766 ! myeloid leukocyte
@@ -10218,7 +10225,9 @@ relationship: develops_from CL:0000894 ! DN1 thymic pro-T cell
 id: CL:0000943
 name: Be1 Cell
 namespace: cell
-def: "A Be cell that facilitates development of T-helper 1 (Th1) phenotype in CD4-positive T cells, and secretes high levels of interleukin-2, tumor necrosis factor-alpha and interferon-gamma." [GO_REF:0000031, GOC:msz, GOC:tfm, PMID:11101868]
+def: "A Be cell that facilitates development of T-helper 1 (Th1) phenotype in CD4-positive T cells, and secretes high levels of interleukin-2, tumor necrosis factor-alpha and interferon-gamma." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMID:11101868, PMID:20224569]
+comment: Be1 cells are also reportedly capable of secreting IL-6, IL-10, and IL-12. They are also reportedly CD11b-negative and B220-positive.
+synonym: "B effector 1 cell" EXACT [PMID:11101868, PMID:20224569]
 synonym: "B effector cell type 1" RELATED []
 is_a: CL:0000968 ! Be cell
 intersection_of: CL:0000968 ! Be cell
@@ -10231,7 +10240,9 @@ intersection_of: capable_of GO:0045627 ! positive regulation of T-helper 1 cell 
 id: CL:0000944
 name: Be2 cell
 namespace: cell
-def: "A Be cell that facilitates development of T-helper 2 (Th2) phenotype T cells, and secretes high levels of interleukin-2, interleukin-10, interleukin-4, and interleukin-6." [GO_REF:0000031, GOC:msz, GOC:tfm, PMID:11101868]
+def: "A Be cell that facilitates development of T-helper 2 (Th2) phenotype T cells, and secretes high levels of interleukin-2, interleukin-10, interleukin-4, and interleukin-6." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMID:11101868, PMID:20224569]
+comment: Be2 cells are also reportedly capable of secreting IL-13 and TNF. They are also reportedly CD11b-negative and B220-positive.
+synonym: "B effector 2 cell" EXACT [PMID:11101868, PMID:20224569]
 synonym: "B effector cell type 2" RELATED []
 is_a: CL:0000968 ! Be cell
 intersection_of: CL:0000968 ! Be cell
@@ -10275,6 +10286,13 @@ id: CL:0000948
 name: IgE memory B cell
 namespace: cell
 def: "A class switched memory B cell that expresses IgE on the cell surface." [GO_REF:0000031, GOC:rhs, ISBN:0781765196]
+synonym: "IgE memory B lymphocyte" EXACT []
+synonym: "IgE memory B-cell" EXACT []
+synonym: "IgE memory B-lymphocyte" EXACT []
+synonym: "memory IgE B cell" EXACT []
+synonym: "memory IgE B lymphocyte" EXACT []
+synonym: "memory IgE B-cell" EXACT []
+synonym: "memory IgE B-lymphocyte" EXACT []
 is_a: CL:0000972 ! class switched memory B cell
 intersection_of: CL:0000972 ! class switched memory B cell
 intersection_of: has_plasma_membrane_part GO:0071742 ! IgE immunoglobulin complex
@@ -10322,7 +10340,7 @@ intersection_of: has_plasma_membrane_part PR:000001859 ! immunoglobulin lambda-l
 id: CL:0000953
 name: preBCR-negative large pre-B-II cell
 namespace: cell
-def: "A pre-BCR-negative large pre-B-II cell is a large pre-B-II cell that is pre-B cell receptor-negative, composed of surrogate light chain protein (SL), which is composed of VpreB  and Lambda 5/14.1, in complex with immunoglobulin mu heavy chain (IgHmu), on the cell surface, and lack a DNA rearrangement of immunoglobulin light chain genes." [GO_REF:0000031, GOC:rhs, GOC:tfm, PMID:9785673]
+def: "A pre-BCR-negative large pre-B-II cell is a large pre-B-II cell that is pre-B cell receptor-negative, composed of surrogate light chain protein (SL), which is composed of VpreB and Lambda 5/14.1, in complex with immunoglobulin mu heavy chain (IgHmu), on the cell surface, and lack a DNA rearrangement of immunoglobulin light chain genes." [GO_REF:0000031, GOC:rhs, GOC:tfm, PMID:9785673]
 is_a: CL:0000957 ! large pre-B-II cell
 intersection_of: CL:0000957 ! large pre-B-II cell
 intersection_of: has_not_completed GO:0071708 ! immunoglobulin light chain V-J recombination
@@ -10334,7 +10352,9 @@ intersection_of: lacks_plasma_membrane_part PR:000001859 ! immunoglobulin lambda
 id: CL:0000954
 name: small pre-B-II cell
 namespace: cell
-def: "A small pre-B-II cell is a pre-B-II cell that is Rag1-positive, Rag2-positive, pre-BCR-negative, and BCR-negative, is not proliferating, and carries a DNA rearrangement of one or more immunoglobulin light chain genes." [GO_REF:0000031, GOC:rhs, GOC:tfm, PMID:9785673]
+def: "A small pre-B-II cell is a pre-B-II cell that is Rag1-positive, Rag2-positive, pre-BCR-negative, and BCR-negative, is not proliferating, and carries a DNA rearrangement of one or more immunoglobulin light chain genes." [GO_REF:0000031, GOC:dsd, GOC:rhs, GOC:tfm, PMID:16551251, PMID:18432934, PMID:9785673]
+comment: Small pre-B-II cells are also reportedly CD10-positive, CD19-positive, CD34-negative, CD79a-positive, CD127-negative, TdT-negative, Vpre-B-negative, sIgM-negative, and sIgD-negative. Transcription factors: PU.1-positive, Ikaros-positive, E2A-positive, and PAX5-positive.
+synonym: "small pre-BII cell" EXACT []
 is_a: CL:0000955 ! pre-B-II cell
 intersection_of: CL:0000955 ! pre-B-II cell
 intersection_of: has_part PR:000003457 ! V(D)J recombination-activating protein 1
@@ -10347,8 +10367,10 @@ intersection_of: participates_in GO:0071708 ! immunoglobulin light chain V-J rec
 id: CL:0000955
 name: pre-B-II cell
 namespace: cell
-def: "A pre-B-II cell is a precursor B cell that expresses immunoglobulin mu heavy chain (IgHmu+), and lack expression of CD34, TdT, immunoglobulin kappa light chain and immunoglobulin lambda light chain." [GO_REF:0000031, GOC:rhs, GOC:tfm, PMID:9785673]
+def: "A pre-B-II cell is a precursor B cell that expresses immunoglobulin mu heavy chain (IgHmu+), and lack expression of CD34, TdT, immunoglobulin kappa light chain and immunoglobulin lambda light chain." [GO_REF:0000031, GOC:dsd, GOC:rhs, GOC:tfm, PMID:9785673]
+comment: pre-B-II cell are also reportedly CD19-positive, CD22-positive, CD38-positive, CD45-positive, and CD48-positive.
 synonym: "pre-B-lymphocyte" EXACT []
+synonym: "pre-BII cell" EXACT []
 xref: BTO:0001133
 is_a: CL:0000817 ! precursor B cell
 intersection_of: CL:0000817 ! precursor B cell
@@ -10362,7 +10384,9 @@ relationship: develops_from CL:0000826 ! pro-B cell
 id: CL:0000956
 name: pre-B-I cell
 namespace: cell
-def: "A pre-B-I cell is a precursor B cell that expresses CD34 and surrogate immunoglobulin light chain (VpreB , Lambda 5 (mouse)/14.1 (human)) on the cell surface, and TdT, Rag1,and Rag2 intracellularly. Cell type carries a D-JH DNA rearrangement, and lacks expression of immunglobulin heavy chain protein." [GO_REF:0000031, GOC:rhs, GOC:tfm, PMID:9785673]
+def: "A pre-B-I cell is a precursor B cell that expresses CD34 and surrogate immunoglobulin light chain (VpreB , Lambda 5 (mouse)/14.1 (human)) on the cell surface, and TdT, Rag1,and Rag2 intracellularly. Cell type carries a D-JH DNA rearrangement, and lacks expression of immunglobulin heavy chain protein." [GO_REF:0000031, GOC:dsd, GOC:rhs, GOC:tfm, PMID:16551251, PMID:18432934, PMID:20839338, PMID:9785673]
+comment: Human pre-B-I cells are reportedly CD10-positive, CD19-positive, CD22-positive, CD38-positive, CD45-low, CD79a-positive, CD127-negative, pre-BCR-negative, IgM-negative, IgD-negative, and Tdt-positive. Transcription factors expressed: Pax5-positive.
+synonym: "pre-BI cell" EXACT []
 synonym: "pro-B cell (Philadelphia nomenclature)" RELATED [PMID:11244048]
 is_a: CL:0000817 ! precursor B cell
 intersection_of: CL:0000817 ! precursor B cell
@@ -10379,8 +10403,10 @@ relationship: develops_from CL:0000826 ! pro-B cell
 id: CL:0000957
 name: large pre-B-II cell
 namespace: cell
-def: "A large pre-B-II cell is a pre-B-II cell that is proliferating and is Rag1-negative and Rag2-negative." [GO_REF:0000031, GOC:rhs, PMID:9785673]
+def: "A large pre-B-II cell is a pre-B-II cell that is proliferating and is Rag1-negative and Rag2-negative." [GO_REF:0000031, GOC:dsd, GOC:rhs, PMID:16551251, PMID:18432934, PMID:9785673]
+comment: Large pre-B-II cells are also reportedly CD10-positive, CD19-positive, CD34-negative, CD79a-positive, CD127-negative, TdT-negative, Vpre-B-positive, pre-BCR-positive, sIgM-negative, and sIgD-negative. Transcription factors: PU.1-positive, Ikaros-positive, E2A-positive, and PAX5-positive.
 synonym: "large pre-B cell" BROAD [PMID:11244048]
+synonym: "large pre-BII cell" EXACT []
 is_a: CL:0000955 ! pre-B-II cell
 intersection_of: CL:0000955 ! pre-B-II cell
 intersection_of: lacks_part PR:000003457 ! V(D)J recombination-activating protein 1
@@ -10391,7 +10417,11 @@ intersection_of: participates_in GO:0046651 ! lymphocyte proliferation
 id: CL:0000958
 name: T1 B cell
 namespace: cell
-def: "A transitional stage B cell that migrates from the bone marrow into the peripheral circulation, and finally to the spleen. This cell type has the phenotype surface IgM-positive, surface IgD-negative, CD21-negative, CD23-negative, and CD62L-negative, and CD93-positive. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-negative." [GO_REF:0000031, GOC:msz, GOC:tfm, http://www.immgen.org/index_content.html, PMCID:PMC2193793, PMID:12810111]
+def: "A transitional stage B cell that migrates from the bone marrow into the peripheral circulation, and finally to the spleen. This cell type has the phenotype surface IgM-positive, surface IgD-negative, CD21-negative, CD23-negative, and CD62L-negative, and CD93-positive. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-negative." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2193793, PMID:12810111]
+comment: T1 B cells are also reportedly CD10-negative/positive??, CD20-positive, CD24-positive, CD38-positive, CD48-positive, CD84-positive, CD150-positive, CD244-negative, and CD352-positive.
+synonym: "T1 B lymphocyte" EXACT []
+synonym: "T1 B-cell" EXACT []
+synonym: "T1 B-lymphocyte" EXACT []
 synonym: "transitional stage 1 B cell" EXACT []
 is_a: CL:0000818 ! transitional stage B cell
 intersection_of: CL:0000818 ! transitional stage B cell
@@ -10405,7 +10435,11 @@ intersection_of: lacks_plasma_membrane_part PR:000001880 ! low affinity immunogl
 id: CL:0000959
 name: T2 B cell
 namespace: cell
-def: "A transitional stage B cell that has the phenotype surface IgM-positive, surface IgD-postive, CD21-positive, CD23-positive, CD62L-negative, CD93-positive and is located in the splenic B follicles. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-positive." [GO_REF:0000031, GOC:msz, GOC:tfm, http://www.immgen.org/index_content.html, PMCID:PMC2193793, PMID:12810111]
+def: "A transitional stage B cell that has the phenotype surface IgM-positive, surface IgD-postive, CD21-positive, CD23-positive, CD62L-negative, CD93-positive and is located in the splenic B follicles. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-positive." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2193793, PMID:12810111]
+comment: T2 B cells are also reportedly CD20-positive, CD24-positive, CD38-positive, CD48-positive, CD84-positive, CD150-positive, CD244-negative, and CD352-positive.
+synonym: "T2 B lymphocyte" EXACT []
+synonym: "T2 B-cell" EXACT []
+synonym: "T2 B-lymphocyte" EXACT []
 synonym: "transitional stage 2 B cell" EXACT []
 is_a: CL:0000818 ! transitional stage B cell
 intersection_of: CL:0000818 ! transitional stage B cell
@@ -10423,6 +10457,9 @@ name: T3 B cell
 namespace: cell
 def: "A transitional stage B cell that expresses surface IgM and IgD, and CD62L. This cell type appears to be an anergic B cell that does not proliferate upon BCR signaling, is found in the spleen and lymph nodes, and has the phenotype surface IgM-positive, surface IgD-positive, CD21-positive, CD23-positive, CD62L-positive, and CD93-positive. This cell type has also been described as IgM-low, CD19-positive, B220-positive, AA4-positive, and CD23-positive (i.e. this cell-type is distinguished from T2 cells by surface expression of IgM)." [GO_REF:0000031, GOC:msz, GOC:tfm, http://www.immgen.org/index_content.html, PMID:12810111, PMID:17174121]
 synonym: "An1 B cell" EXACT [PMID:17174121]
+synonym: "T3 B lymphocyte" EXACT []
+synonym: "T3 B-cell" EXACT []
+synonym: "T3 B-lymphocyte" EXACT []
 synonym: "transitional stage 3 B cell" EXACT []
 is_a: CL:0000818 ! transitional stage B cell
 intersection_of: CL:0000818 ! transitional stage B cell
@@ -10454,7 +10491,7 @@ relationship: develops_from CL:0000818 ! transitional stage B cell
 id: CL:0000962
 name: Bm2 B cell
 namespace: cell
-def: "A follicular B cell that is IgD-positive and CD23-positive and CD38-positive. This naive cell type is activated in the extrafollicular areas via interaction with dendritic cells and antigen specific T cells." [GO_REF:0000031, GOC:dsd, GOC:msz, PMID:17992590, PMID:8006591]
+def: "A follicular B cell that is IgD-positive and CD23-positive and CD38-positive. This naive cell type is activated in the extrafollicular areas via interaction with dendritic cells and antigen specific T cells." [GO_REF:0000031, GOC:dsd, GOC:msz, PMID:17992590, PMID:18432934, PMID:8006591]
 comment: These cells are also CD10-negative, CD39-positive, CD44-positive, CD71-negative, CD77-negative, IgM-positive, IgG-negative, IgA-negative, and IgE-negative.
 synonym: "Bm2 B lymphocyte" EXACT []
 synonym: "Bm2 B-cell" EXACT []
@@ -10485,12 +10522,15 @@ relationship: develops_from CL:0000965 ! Bm3 B cell
 id: CL:0000964
 name: Bm2' B cell
 namespace: cell
-def: "A germinal center B cell that founds a germinal center, and has the phenotype IgD-positive, CD38-positive, and CD23-negative." [GCO:dsd, GO_REF:0000031, GOC:msz, GOC:tfm, PMID:17992590, PMID:18432934, PMID:8006591]
-comment: Bm2' B cells are also reportedly CD10-positive, CD39-negative, CD44- negative, CD71- positive, CD77-negative, IgM-positive, IgG-negative, IgA-negative, and IgE-negative.
+def: "A germinal center B cell that founds a germinal center, and has the phenotype IgD-positive, CD38-positive, and CD23-negative." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMID:17992590, PMID:18432934, PMID:8006591]
+comment: Bm2' B cells are also reportedly CD10-positive, CD39-negative, CD44-negative, CD71-positive, CD77-negative, IgM-positive, IgG-negative, IgA-negative, and IgE-negative.
 synonym: "Bm2' B lymphocyte" EXACT []
 synonym: "Bm2' B-cell" EXACT []
 synonym: "Bm2' B-lymphocyte" EXACT []
 synonym: "Bm2-prime B cell" EXACT []
+synonym: "Bm2-prime B lymphocyte " EXACT []
+synonym: "Bm2-prime B-cell " EXACT []
+synonym: "Bm2-prime B-lymphocyte " EXACT []
 synonym: "germinal center founder cell" RELATED []
 is_a: CL:0000844 ! germinal center B cell
 intersection_of: CL:0000844 ! germinal center B cell
@@ -10556,7 +10596,7 @@ relationship: develops_from CL:0000966 ! Bm4 B cell
 id: CL:0000968
 name: Be cell
 namespace: cell
-def: "A mature B cell that produces cytokines that can influence CD4 T cell differentiation." [GO_REF:0000031, GOC:msz, GOC:tfm, PMID:11101868]
+def: "A mature B cell that produces cytokines that can influence CD4 T cell differentiation." [GO_REF:0000031, GOC:msz, GOC:tfm, PMID:11101868, PMID:20224569]
 synonym: "B effector cell" EXACT []
 synonym: "effector B cell" EXACT []
 synonym: "effector B lymphocyte" EXACT []
@@ -10571,7 +10611,11 @@ intersection_of: capable_of GO:0043370 ! regulation of CD4-positive, alpha-beta 
 id: CL:0000969
 name: regulatory B cell
 namespace: cell
-def: "A mature B cell that has the phenotype CD1d-positive and expresses interleukin-10. This cell type has been associated with suppression of chronic inflammatory responses and T cell responses." [GO_REF:0000031, GOC:msz, GOC:tfm, PMID:11869683]
+def: "A mature B cell that has the phenotype CD1d-positive and expresses interleukin-10. This cell type has been associated with suppression of chronic inflammatory responses and T cell responses." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, MESH:D060151, PMID:11869683, PMID:18482568, PMID:20224569, PMID:20809522]
+comment: Regulatory B cells reportedly represent 1-2% of the spleen and 7-8% of the peritoneal B220-positive cells in mice. They are also found in the bone marrow, lymph node, and blood of mice. These cells are also reportedly capable of secreting IL-10 and are reportedly CD5-positive, CD21-positive, CD24-positive, CD93-negative, B220-positive, IgM-positive, and IgD-positive.
+synonym: "B(reg)" EXACT []
+synonym: "B10 cell" EXACT []
+synonym: "Breg" EXACT []
 synonym: "regulatory B lymphocyte" EXACT []
 synonym: "regulatory B-cell" EXACT []
 synonym: "regulatory B-lymphocyte" EXACT []
@@ -10604,10 +10648,15 @@ relationship: develops_from CL:0000980 ! plasmablast
 id: CL:0000971
 name: IgM memory B cell
 namespace: cell
-def: "An IgM memory B cell is an unswitched memory B cell with the phenotype IgM-positive and IgD-negative." [GO_REF:0000031, GOC:rhs, ISBN:0781765196]
+def: "An IgM memory B cell is an unswitched memory B cell with the phenotype IgM-positive and IgD-negative." [GO_REF:0000031, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:19447676]
+comment: IgM memory B cells are also reportedly CD1c-positive, CD95-positive, CD80-positive, CD84-positive, CD86-positive, CD150-negative, CD229-positive, CD289-positive, and CD290-positive. Transcription factors: Notch2-positive, PAX5-positive, SpiB-positive, Ets1-positive, and OBF1-positive.
 synonym: "IgM memory B lymphocyte" EXACT []
 synonym: "IgM memory B-cell" EXACT []
 synonym: "IgM memory B-lymphocyte" EXACT []
+synonym: "memory IgM B cell" EXACT []
+synonym: "memory IgM B lymphocyte" EXACT []
+synonym: "memory IgM B-cell" EXACT []
+synonym: "memory IgM B-lymphocyte" EXACT []
 is_a: CL:0000970 ! unswitched memory B cell
 intersection_of: CL:0000970 ! unswitched memory B cell
 intersection_of: lacks_plasma_membrane_part GO:0071738 ! IgD immunoglobulin complex
@@ -10616,7 +10665,8 @@ intersection_of: lacks_plasma_membrane_part GO:0071738 ! IgD immunoglobulin comp
 id: CL:0000972
 name: class switched memory B cell
 namespace: cell
-def: "A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are usually CD27-positive and have either IgG, IgE, or IgA on the cell surface." [GO_REF:0000031, GOC:rhs, ISBN:0781765196]
+def: "A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are usually CD27-positive and have either IgG, IgE, or IgA on the cell surface." [GO_REF:0000031, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013]
+comment: Class switched memory B cells are also reportedly CD48-positive, CD229-positive, and CD352-positive.
 synonym: "class switched memory B lymphocyte" EXACT []
 synonym: "class switched memory B-cell" EXACT []
 synonym: "class switched memory B-lymphocyte" EXACT []
@@ -10631,10 +10681,15 @@ relationship: develops_from CL:0000970 ! unswitched memory B cell
 id: CL:0000973
 name: IgA memory B cell
 namespace: cell
-def: "A class switched memory B cell that expresses IgA." [GO_REF:0000031, GOC:msz, ISBN:0781765196]
+def: "A class switched memory B cell that expresses IgA." [GO_REF:0000031, GOC:dsd, GOC:msz, ISBN:0781765196]
+comment: IgA memory B cell are also reportedly RORalpha-positive.
 synonym: "IgA memory B lymphocyte" EXACT []
 synonym: "IgA memory B-cell" EXACT []
 synonym: "IgA memory B-lymphocyte" EXACT []
+synonym: "memory IgA B cell" EXACT []
+synonym: "memory IgA B lymphocyte" EXACT []
+synonym: "memory IgA B-cell" EXACT []
+synonym: "memory IgA B-lymphocyte" EXACT []
 is_a: CL:0000972 ! class switched memory B cell
 intersection_of: CL:0000972 ! class switched memory B cell
 intersection_of: has_plasma_membrane_part GO:0071745 ! IgA immunoglobulin complex
@@ -10700,6 +10755,10 @@ def: "An IgG memory B cell is a class switched memory B cell that is class switc
 synonym: "IgG memory B lymphocyte" EXACT []
 synonym: "IgG memory B-cell" EXACT []
 synonym: "IgG memory B-lymphocyte" EXACT []
+synonym: "memory IgG B cell" EXACT []
+synonym: "memory IgG B lymphocyte" EXACT []
+synonym: "memory IgG B-cell" EXACT []
+synonym: "memory IgG B-lymphocyte" EXACT []
 is_a: CL:0000972 ! class switched memory B cell
 intersection_of: CL:0000972 ! class switched memory B cell
 intersection_of: has_plasma_membrane_part GO:0071735 ! IgG immunoglobulin complex
@@ -10724,6 +10783,13 @@ id: CL:0000981
 name: double negative memory B cell
 namespace: cell
 def: "A memory B cell with the phenotype IgD-negative and CD27-negative." [GO_REF:0000031, GOC:msz, GOC:tfm]
+synonym: "dn memory B cell" EXACT []
+synonym: "dn memory B lymphocyte" EXACT []
+synonym: "dn memory B-cell" EXACT []
+synonym: "dn memory B-lymphocyte" EXACT []
+synonym: "double negative memory B lymphocyte" EXACT []
+synonym: "double negative memory B-cell" EXACT []
+synonym: "double negative memory B-lymphocyte" EXACT []
 is_a: CL:0000787 ! memory B cell
 intersection_of: CL:0000787 ! memory B cell
 intersection_of: lacks_plasma_membrane_part GO:0071738 ! IgD immunoglobulin complex
@@ -10802,7 +10868,7 @@ id: CL:0000989
 name: CD11c-low plasmacytoid dendritic cell
 namespace: cell
 def: "CD11c-low plasmacytoid dendritic cell is a leukocyte that is CD11c-low, CD45R-positive, GR1-positive and CD11b-negative." [GO_REF:0000031, GOC:amm, GOC:dsd, PMID:15771572, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000001 )(PMID: 19243617). These cells are CD281-positive (TLR1), CD282-positive (TLR2), CD285-positive (TLR5), CD286-positive (TLR6), and CD288-positive (TLR8).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000001)(PMID:19243617). These cells are CD281-positive (TLR1), CD282-positive (TLR2), CD285-positive (TLR5), CD286-positive (TLR6), and CD288-positive (TLR8).
 is_a: CL:0000784 ! plasmacytoid dendritic cell
 intersection_of: CL:0000784 ! plasmacytoid dendritic cell
 intersection_of: has_low_plasma_membrane_amount PR:000001013 ! integrin alpha-X
@@ -10815,7 +10881,7 @@ id: CL:0000990
 name: conventional dendritic cell
 namespace: cell
 def: "Conventional dendritic cell is a dendritic cell that is CD11c-high." [GO_REF:0000031, GOC:amm, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL: 0000003)(PMID: 19243617) These cells are also CD20-negative, MHCII-positive.
+comment: Originally described in the dendritic cell ontology (DC_CL:0000003)(PMID:19243617) These cells are also CD20-negative, MHCII-positive.
 synonym: "cDC" EXACT []
 synonym: "DC1" EXACT []
 synonym: "dendritic reticular cell" EXACT []
@@ -10832,7 +10898,7 @@ id: CL:0000991
 name: CD11c-negative plasmacytoid dendritic cell
 namespace: cell
 def: "CD11c-negative plasmacytoid dendritic cell is a leukocyte is CD11c-negative, CD45RA-positive, CD85g-positive(ILT7), CD123-positive, CD303-positive." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000004 )(PMID: 19243617). These cells are CD281-positive (TLR1), CD286-positive (TLR6), and CD290-positive (TLR10).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000004)(PMID:19243617). These cells are CD281-positive (TLR1), CD286-positive (TLR6), and CD290-positive (TLR10).
 synonym: "CD303-positive dendritic cell" EXACT []
 is_a: CL:0000784 ! plasmacytoid dendritic cell
 intersection_of: CL:0000784 ! plasmacytoid dendritic cell
@@ -10848,7 +10914,7 @@ id: CL:0000992
 name: immature CD11c-low plasmacytoid dendritic cell
 namespace: cell
 def: "Immature CD11c-low plasmacytoid dendritic cell is a CD11c-low plasmacytoid dendritic cell that is CD80-low and CD86-low." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL: 0000006)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000006)(PMID:19243617).
 is_a: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 intersection_of: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 intersection_of: has_low_plasma_membrane_amount PR:000001412 ! CD86 molecule
@@ -10860,7 +10926,7 @@ id: CL:0000993
 name: mature CD11c-low plasmacytoid dendritic cell
 namespace: cell
 def: "Mature CD11c-low plasmacytoid dendritic cell is a CD11c-low plasmacytoid dendritic cell that is CD83-high and is CD80-positive, CD86-positive, and MHCII-positive." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000007 )(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000007)(PMID:19243617).
 is_a: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 intersection_of: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -10874,7 +10940,7 @@ id: CL:0000994
 name: immature CD11c-negative plasmacytoid dendritic cell
 namespace: cell
 def: "Immature CD11c-negative plasmacytoid dendritic cell is a CD11c-negative plasmacytoid dendritic cell is CD80-negative, CD86-low and MHCII-low." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000008 )(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000008)(PMID:19243617).
 is_a: CL:0000991 ! CD11c-negative plasmacytoid dendritic cell
 intersection_of: CL:0000991 ! CD11c-negative plasmacytoid dendritic cell
 intersection_of: capable_of GO:0019882 ! antigen processing and presentation
@@ -10887,7 +10953,7 @@ relationship: develops_from CL:0000995 ! CD34-positive, CD38-positive common mye
 id: CL:0000995
 name: CD34-positive, CD38-positive common myeloid progenitor OR CD34-positive, CD38-positive common lymphoid progenitor
 namespace: cell
-comment: Originally described in the dendritic cell ontology (DC_CL:1100000 )(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:1100000)(PMID:19243617).
 synonym: "CD71-positive common myeloid precursor OR CD7-negative lymphoid precursor OR CD7-positive lymphoid" BROAD []
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
 union_of: CL:0001021 ! CD34-positive, CD38-positive common lymphoid progenitor
@@ -10898,7 +10964,7 @@ id: CL:0000996
 name: mature CD11c-negative plasmacytoid dendritic cell
 namespace: cell
 def: "Mature CD11c-negative plasmacytoid dendritic cell is a CD11c-negative plasmacytoid dendritic cell is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000009 )(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000009)(PMID:19243617).
 is_a: CL:0000991 ! CD11c-negative plasmacytoid dendritic cell
 intersection_of: CL:0000991 ! CD11c-negative plasmacytoid dendritic cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -10912,7 +10978,7 @@ id: CL:0000997
 name: immature CD8_alpha-negative CD11b-positive dendritic cell
 namespace: cell
 def: "Immature CD8_alpha-negative CD11b-positive dendritic cell is a CD8_alpha-negative CD11b-positive dendritic cell that is CD80-low, CD86-low, and MHCII-low." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000010 )(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000010)(PMID:19243617).
 is_a: CL:0000999 ! CD4-positive CD11b-positive dendritic cell
 intersection_of: CL:0000999 ! CD4-positive CD11b-positive dendritic cell
 intersection_of: has_low_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -10925,7 +10991,7 @@ id: CL:0000998
 name: CD8_alpha-negative CD11b-negative dendritic cell
 namespace: cell
 def: "CD8_alpha-negative CD11b-negative dendritic cell is a conventional dendritic cell that is CD11b-negative, CD4-negative CD8_alpha-negative and is CD205-positive. This cell is able to cross- present antigen to CD8-alpha-positive T cells." [GO_REF:0000031, GOC:amm, http:www.immgen.org/index_content.html, PMCID:PMC2346585]
-comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL: 0000011)(PMID: 19243617).
+comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000011)(PMID:19243617).
 synonym: "DC.8-4-11b-" EXACT []
 synonym: "triple negative dendritic cell" EXACT []
 is_a: CL:0000990 ! conventional dendritic cell
@@ -10942,7 +11008,7 @@ id: CL:0000999
 name: CD4-positive CD11b-positive dendritic cell
 namespace: cell
 def: "CD8_alpha-negative CD11b-positive dendritic cell is a conventional dendritic cell that is CD11b-positive, CD4-positive and is CD205-negative and CD8_alpha-negative." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
-comment: Defined as having a disposition to secreting anti-inflammatory cytokines.\\nThese markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL: 0000012)(PMID: 19243617).
+comment: Defined as having a disposition to secreting anti-inflammatory cytokines. These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000012)(PMID:19243617).
 synonym: "DC.4+" EXACT []
 is_a: CL:0002465 ! CD11b-positive dendritic cell
 intersection_of: CL:0000990 ! conventional dendritic cell
@@ -10958,7 +11024,7 @@ id: CL:0001000
 name: CD8_alpha-positive CD11b-negative dendritic cell
 namespace: cell
 def: "CD8_alpha-positive CD11b-negative dendritic cell is a conventional dendritic cell that is CD11b-negative, CD4-negative and is CD205-positive and CD8_alpha-positive." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
-comment: Cells are defined as having a disposition to secreting inflammatory cytokines. Originally described in the dendritic cell ontology (DC_CL:0000013)(PMID: 19243617).
+comment: Cells are defined as having a disposition to secreting inflammatory cytokines. Originally described in the dendritic cell ontology (DC_CL:0000013)(PMID:19243617).
 synonym: "DC.8+" EXACT []
 is_a: CL:0000990 ! conventional dendritic cell
 intersection_of: CL:0000990 ! conventional dendritic cell
@@ -10976,7 +11042,7 @@ id: CL:0001001
 name: immature CD8_alpha-negative CD11b-negative dendritic cell
 namespace: cell
 def: "Immature CD8_alpha-negative CD11b-negative dendritic cell is a CD8_alpha-negative CD11b-negative dendritic cell that is CD80-low, CD86-low, and MHCII-low." [GO_REF:0000031, GOC:amm, PMCID:PMC2346585]
-comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:DC_CL:0000014)(PMID: 19243617).
+comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000014)(PMID:19243617).
 is_a: CL:0000998 ! CD8_alpha-negative CD11b-negative dendritic cell
 intersection_of: CL:0000998 ! CD8_alpha-negative CD11b-negative dendritic cell
 intersection_of: has_low_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -10989,7 +11055,7 @@ id: CL:0001002
 name: mature CD8_alpha-negative CD11b-negative dendritic cell
 namespace: cell
 def: "Mature CD8_alpha-negative CD11b-negative dendritic cell is a CD8_alpha-negative CD11b-negative dendritic cell that is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
-comment: These markers are associated with mouse cells. Defined as having a disposition to secretion of anti-inflammatory cytokines.  Originally described in the dendritic cell ontology (DC_CL:0000015)(PMID: 19243617).
+comment: These markers are associated with mouse cells. Defined as having a disposition to secretion of anti-inflammatory cytokines. Originally described in the dendritic cell ontology (DC_CL:0000015)(PMID:19243617).
 is_a: CL:0000998 ! CD8_alpha-negative CD11b-negative dendritic cell
 intersection_of: CL:0000998 ! CD8_alpha-negative CD11b-negative dendritic cell
 intersection_of: capable_of GO:0001816 ! cytokine production
@@ -11004,7 +11070,7 @@ id: CL:0001003
 name: mature CD8_alpha-negative CD11b-positive dendritic cell
 namespace: cell
 def: "Mature CD8_alpha-negative CD11b-positive dendritic cell is a CD8_alpha-negative CD11b-positive dendritic cell that is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000016)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000016)(PMID:19243617).
 is_a: CL:0000999 ! CD4-positive CD11b-positive dendritic cell
 intersection_of: CL:0000999 ! CD4-positive CD11b-positive dendritic cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11018,7 +11084,7 @@ id: CL:0001004
 name: immature CD8_alpha-positive CD11b-negative dendritic cell
 namespace: cell
 def: "Immature CD8_alpha-positive CD11b-negative dendritic cell is a CD8_alpha-positive CD11b-negative dendritic cell that is CD80-low, CD86-low, and MHCII-low." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000017)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000017)(PMID:19243617).
 is_a: CL:0001000 ! CD8_alpha-positive CD11b-negative dendritic cell
 intersection_of: CL:0001000 ! CD8_alpha-positive CD11b-negative dendritic cell
 intersection_of: has_low_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11031,7 +11097,7 @@ id: CL:0001005
 name: mature CD8_alpha-positive CD11b-negative dendritic cell
 namespace: cell
 def: "Mature CD8_alpha-positive CD11b-negative dendritic cell is a CD8_alpha-positive CD11b-negative dendritic cell that is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, PMCID:PMC2346585]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000018)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000018)(PMID:19243617).
 is_a: CL:0001000 ! CD8_alpha-positive CD11b-negative dendritic cell
 intersection_of: CL:0001000 ! CD8_alpha-positive CD11b-negative dendritic cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11045,7 +11111,7 @@ id: CL:0001006
 name: dermal dendritic cell
 namespace: cell
 def: "Dermal dendritic cell is a conventional dendritic cell that is CD11b-positive, CD205-positive and CD8 alpha-negative." [GO_REF:0000031, GOC:amm, PMCID:PMC2346585]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000019)(PMID: 19243617). These cells are also CD281-positive (TLR1), CD282-positive (TLR2), CD283-positive (TLR3), CD284-positive (TLR4), CD285-positive (TLR5), CD288-positive (TLR8), and CD289-positive (TLR9).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000019)(PMID:19243617). These cells are also CD281-positive (TLR1), CD282-positive (TLR2), CD283-positive (TLR3), CD284-positive (TLR4), CD285-positive (TLR5), CD288-positive (TLR8), and CD289-positive (TLR9).
 xref: BTO:0004812
 is_a: CL:0000990 ! conventional dendritic cell
 intersection_of: CL:0000990 ! conventional dendritic cell
@@ -11059,7 +11125,7 @@ id: CL:0001007
 name: interstitial dendritic cell
 namespace: cell
 def: "Interstitial dendritic cell is a conventional dendritic cell that is CD11b-positive, CD1a-positive, CD206-positive, CD209-positive, and CD36-positive." [GO_REF:0000031, GOC:amm, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000020)(PMID: 19243617). These cells are also CD281-positive (TLR1), CD282-positive (TLR2), CD283-positive (TLR3), CD284-positive (TLR4), CD286-positive (TLR6), CD288-positive (TLR8), and CD290-positive (TLR10).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000020)(PMID:19243617). These cells are also CD281-positive (TLR1), CD282-positive (TLR2), CD283-positive (TLR3), CD284-positive (TLR4), CD286-positive (TLR6), CD288-positive (TLR8), and CD290-positive (TLR10).
 is_a: CL:0000990 ! conventional dendritic cell
 intersection_of: CL:0000990 ! conventional dendritic cell
 intersection_of: has_plasma_membrane_part PR:000001012 ! integrin alpha-M
@@ -11073,7 +11139,7 @@ id: CL:0001008
 name: Kit and Sca1-positive hematopoietic stem cell
 namespace: cell
 def: "A hematopoietic stem cell that has plasma membrane part Kit-positive, SCA-1-positive, CD150-positive and CD34-negative." [GO_REF:0000031, GOC:add, GOC:amm, GOC:tfm, PMID:17952047, PMID:19022770]
-comment: Cell markers are associated with mouse hematopoietic stem cell. Originally described in the dendritic cell ontology (DC_CL:0000043)(PMID: 19243617).
+comment: Cell markers are associated with mouse hematopoietic stem cell. Originally described in the dendritic cell ontology (DC_CL:0000043)(PMID:19243617).
 synonym: "LSK stem cell" EXACT []
 synonym: "Sca1-positive hematopoietic stem cell" EXACT []
 is_a: CL:0000037 ! hematopoietic stem cell
@@ -11096,7 +11162,7 @@ id: CL:0001009
 name: immature dermal dendritic cell
 namespace: cell
 def: "Immature dermal dendritic cell is a dermal dendritic cell that is CD80-low, CD86-low, and MHCII-low." [GO_REF:0000031, GOC:amm, PMCID:PMC2346585]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000022)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000022)(PMID:19243617).
 is_a: CL:0001006 ! dermal dendritic cell
 intersection_of: CL:0001006 ! dermal dendritic cell
 intersection_of: has_low_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11109,7 +11175,7 @@ id: CL:0001010
 name: mature dermal dendritic cell
 namespace: cell
 def: "Mature dermal dendritic cell is a dermal dendritic cell that is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, PMCID:PMC2346585]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000023)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000023)(PMID:19243617).
 is_a: CL:0001006 ! dermal dendritic cell
 intersection_of: CL:0001006 ! dermal dendritic cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11123,7 +11189,7 @@ id: CL:0001011
 name: immature interstitial dendritic cell
 namespace: cell
 def: "Immature interstitial dendritic cell is a interstitial dendritic cell that is CD80-low, CD86-low, and MHCII-low." [GO_REF:0000031, GOC:amm, GOC:tfm, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000024)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000024)(PMID:19243617).
 is_a: CL:0001007 ! interstitial dendritic cell
 intersection_of: CL:0001007 ! interstitial dendritic cell
 intersection_of: has_low_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11135,7 +11201,7 @@ relationship: develops_from CL:0001012 ! CD7-negative lymphoid progenitor OR gra
 id: CL:0001012
 name: CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor
 namespace: cell
-comment: Originally described in the dendritic cell ontology (DC_CL:1110000)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:1110000)(PMID:19243617).
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
 union_of: CL:0000557 ! granulocyte monocyte progenitor cell
 union_of: CL:0001027 ! CD7-negative lymphoid progenitor cell
@@ -11145,7 +11211,7 @@ id: CL:0001013
 name: mature interstitial dendritic cell
 namespace: cell
 def: "Mature interstitial dendritic cell is a interstitial dendritic cell that is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, GOC:tfm, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000025)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000025)(PMID:19243617).
 is_a: CL:0001007 ! interstitial dendritic cell
 intersection_of: CL:0001007 ! interstitial dendritic cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11159,7 +11225,7 @@ id: CL:0001014
 name: CD1a-positive Langerhans cell
 namespace: cell
 def: "CD1a-positive Langerhans cell is a Langerhans_cell that is CD1a-positive and CD324-positive." [GO_REF:0000031, GOC:amm, PMID:17850486]
-comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000026)(PMID: 19243617). These cells are also CD281-positive (TLR1), CD282-positive (TLR2), CD284-positive (TLR4), CD286-positive (TLR6), CD287-positive (TLR7), and CD290-positive (TLR10). When activated, these cells are capable of producing IL-6, IL-8, and IL-15.
+comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000026)(PMID:19243617). These cells are also CD281-positive (TLR1), CD282-positive (TLR2), CD284-positive (TLR4), CD286-positive (TLR6), CD287-positive (TLR7), and CD290-positive (TLR10). When activated, these cells are capable of producing IL-6, IL-8, and IL-15.
 synonym: "CD1a-LC" EXACT []
 is_a: CL:0000453 ! Langerhans cell
 intersection_of: CL:0000453 ! Langerhans cell
@@ -11171,7 +11237,7 @@ id: CL:0001015
 name: CD8_alpha-low Langerhans cell
 namespace: cell
 def: "CD8_alpha-low Langerhans cell is a Langerhans cell that is CD205-high and is CD8_alpha-low." [GO_REF:0000031, GOC:amm, PMCID:PMC2346585]
-comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000027)(PMID: 19243617). They are also CD205-high, CD281-positive (TLR1), CD282-positive (TLR2), CD283-positive (TLR3), CD285-positive (TLR5), CD286-positive (TLR6), and CD289-positive (TLR9).
+comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000027)(PMID:19243617). They are also CD205-high, CD281-positive (TLR1), CD282-positive (TLR2), CD283-positive (TLR3), CD285-positive (TLR5), CD286-positive (TLR6), and CD289-positive (TLR9).
 is_a: CL:0000453 ! Langerhans cell
 intersection_of: CL:0000453 ! Langerhans cell
 intersection_of: has_high_plasma_membrane_amount PR:000001026 ! lymphocyte antigen 75
@@ -11182,7 +11248,7 @@ id: CL:0001016
 name: immature CD1a-positive Langerhans cell
 namespace: cell
 def: "Immature CD1a-positive Langerhans cell is a CD1a-positive Langerhans cell that is CD80-low, CD86-low, and MHCII-low." [GO_REF:0000031, GOC:amm, GOC:tfm, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000028)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:0000028)(PMID:19243617).
 is_a: CL:0001014 ! CD1a-positive Langerhans cell
 intersection_of: CL:0001014 ! CD1a-positive Langerhans cell
 intersection_of: has_low_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11194,7 +11260,7 @@ id: CL:0001017
 name: mature CD1a-positive Langerhans cell
 namespace: cell
 def: "Mature CD1a-positive Langerhans cell is a CD1a-positive Langerhans cell that is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, GOC:tfm, PMID:17850486]
-comment: Originally described in the dendritic cell ontology (DC_CL:0000029)(PMID: 19243617). When activated, these cells produce IL-6, IL-8, and IL-15.
+comment: Originally described in the dendritic cell ontology (DC_CL:0000029)(PMID:19243617). When activated, these cells produce IL-6, IL-8, and IL-15.
 is_a: CL:0001014 ! CD1a-positive Langerhans cell
 intersection_of: CL:0001014 ! CD1a-positive Langerhans cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11208,7 +11274,7 @@ id: CL:0001018
 name: immature CD8_alpha-low Langerhans cell
 namespace: cell
 def: "Immature CD8_alpha-low Langerhans cell is a CD8_alpha-low Langerhans cell that is CD80-low, CD86-low, and MHCII-low." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
-comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000030)(PMID: 19243617).
+comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000030)(PMID:19243617).
 is_a: CL:0001015 ! CD8_alpha-low Langerhans cell
 intersection_of: CL:0001015 ! CD8_alpha-low Langerhans cell
 intersection_of: has_low_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11220,7 +11286,7 @@ relationship: develops_from CL:0001019 ! CD115-positive monocyte OR common dendr
 id: CL:0001019
 name: CD115-positive monocyte OR common dendritic progenitor
 namespace: cell
-comment: Originally described in the dendritic cell ontology (DC_CL:1111000)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:1111000)(PMID:19243617).
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 union_of: CL:0001022 ! CD115-positive monocyte
 union_of: CL:0001029 ! common dendritic progenitor
@@ -11230,7 +11296,7 @@ id: CL:0001020
 name: mature CD8_alpha-low Langerhans cell
 namespace: cell
 def: "Mature CD8_alpha-low Langerhans cell is a CD8_alpha-low Langerhans cell that that is CD80-high, CD86-high, MHCII-high and is CD83-positive." [GO_REF:0000031, GOC:amm, PMCID:PMC2346585]
-comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000031)(PMID: 19243617).
+comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000031)(PMID:19243617).
 is_a: CL:0001015 ! CD8_alpha-low Langerhans cell
 intersection_of: CL:0001015 ! CD8_alpha-low Langerhans cell
 intersection_of: has_high_plasma_membrane_amount GO:0042613 ! MHC class II protein complex
@@ -11244,7 +11310,7 @@ id: CL:0001021
 name: CD34-positive, CD38-positive common lymphoid progenitor
 namespace: cell
 def: "A common lymphoid progenitor that is CD10-positive, CD45RA-positive, CD34-positive and CD38-positive." [GO_REF:0000031, GOC:add, GOC:amm, GOC:tfm, PMCID:PMC2346585, PMID:19022770]
-comment: These markers are associated with human common lymphoid progenitors. Originally described in the dendritic cell ontology (DC_CL:0000032)(PMID: 19243617).
+comment: These markers are associated with human common lymphoid progenitors. Originally described in the dendritic cell ontology (DC_CL:0000032)(PMID:19243617).
 synonym: "CD10-positive common lymphocyte precursor" EXACT []
 synonym: "CD10-positive common lymphocyte progenitor" EXACT []
 synonym: "CD10-positive common lymphoid precursor" EXACT []
@@ -11262,7 +11328,7 @@ id: CL:0001022
 name: CD115-positive monocyte
 namespace: cell
 def: "CD115-positive monocyte is a monocyte that is CD115-positive and CD11b-positive." [GO_REF:0000031, GOC:add, GOC:amm, PMID:17952047]
-comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000033)(PMID: 19243617).
+comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000033)(PMID:19243617).
 is_a: CL:0000576 ! monocyte
 intersection_of: CL:0000576 ! monocyte
 intersection_of: has_plasma_membrane_part PR:000001012 ! integrin alpha-M
@@ -11274,7 +11340,7 @@ id: CL:0001023
 name: Kit-positive, CD34-positive common myeloid progenitor
 namespace: cell
 def: "A common myeloid progenitor that is Kit-positive and CD34-positive, Il7ra-negative, and is SCA1-low and Fcgr2-low and Fcgr3-low." [GO_REF:0000031, GOC:add, GOC:amm, GOC:tfm, http://www.immgen.org/index_content.html, PMID:1261582, PMID:17952047]
-comment: Markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000034)(PMID: 19243617).
+comment: Markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000034)(PMID:19243617).
 synonym: "CD117-positive common myeloid precursor" BROAD []
 is_a: CL:0000049 ! common myeloid progenitor
 intersection_of: CL:0000049 ! common myeloid progenitor
@@ -11291,7 +11357,7 @@ id: CL:0001024
 name: CD34-positive, CD38-negative hematopoietic stem cell
 namespace: cell
 def: "CD133-positive hematopoietic stem cell is a hematopoietic stem cell that is CD34-positive, CD90-positive, and CD133-positive." [GO_REF:0000031, GOC:add, GOC:amm, GOC:tfm, PMID:10430905, PMID:11750107, PMID:16551251, PMID:20024907, PMID:9389721]
-comment: Cell markers are associated with human hematopoietic stem cells. Originally described in the dendritic cell ontology (DC_CL:0000035)(PMID: 19243617).
+comment: Cell markers are associated with human hematopoietic stem cells. Originally described in the dendritic cell ontology (DC_CL:0000035)(PMID:19243617).
 synonym: "CD133-positive hematopoietic stem cell" EXACT [PMID:16140871]
 xref: FMA:86475
 is_a: CL:0000037 ! hematopoietic stem cell
@@ -11331,7 +11397,7 @@ id: CL:0001026
 name: CD34-positive, CD38-positive common myeloid progenitor
 namespace: cell
 def: "A common myeloid progenitor that is CD34-positive, CD38-positive, IL3ra-low, CD10-negative, CD7-negative, CD45RA-negative, and IL-5Ralpha-negative." [GO_REF:0000031, GOC:add, GOC:amm, PMCID:PMC2626675, PMID:16551251]
-comment: Markers are associated with human cell type. Originally described in the dendritic cell ontology (DC_CL:0000038)(PMID: 19243617).
+comment: Markers are associated with human cell type. Originally described in the dendritic cell ontology (DC_CL:0000038)(PMID:19243617).
 synonym: "CD71-positive common myeloid precursor" NARROW []
 is_a: CL:0000049 ! common myeloid progenitor
 intersection_of: CL:0000049 ! common myeloid progenitor
@@ -11348,7 +11414,7 @@ id: CL:0001027
 name: CD7-negative lymphoid progenitor cell
 namespace: cell
 def: "CD7-negative lymphoid progenitor cell is a lymphoid progenitor cell that is CD34-positive, CD7-negative and CD45RA-negative." [GO_REF:0000031, GOC:amm, PMID:16551251]
-comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000039)(PMID: 19243617).
+comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000039)(PMID:19243617).
 synonym: "CD7-negative lymphoid precursor" EXACT []
 is_a: CL:0000051 ! common lymphoid progenitor
 intersection_of: CL:0000051 ! common lymphoid progenitor
@@ -11362,7 +11428,7 @@ id: CL:0001028
 name: CD7-positive lymphoid progenitor cell
 namespace: cell
 def: "CD7-positive lymphoid progenitor cell is a lymphoid progenitor cell that is CD34-positive, CD7-positive and is CD45RA-negative." [GO_REF:0000031, GOC:amm, GOC:tfm, PMID:16551251, PMID:19491395]
-comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000040)(PMID: 19243617).
+comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000040)(PMID:19243617).
 synonym: "CD7-positive lymphoid precursor" EXACT []
 is_a: CL:0000051 ! common lymphoid progenitor
 intersection_of: CL:0000051 ! common lymphoid progenitor
@@ -11376,7 +11442,7 @@ id: CL:0001029
 name: common dendritic progenitor
 namespace: cell
 def: "Common dendritic precursor is a hematopoietic progenitor cell that is CD117-low, CD135-positive, CD115-positive and lacks plasma membrane parts for hematopoietic lineage markers." [GO_REF:0000031, GOC:amm, GOC:tfm, PMID:16551251, PMID:17922016, PMID:19286519]
-comment: Surface markers are for mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000041) CDP are reportedly CD2-negative, CD3-negative, CD4-negative, CD5-negative, CD8a-negative, CD11c-positive, CD14-negative, CD19-negative, CD20-negative, CD56-negative, B220-negative, Ly6g-negative, MHCII-positive, and Ter119-negative. (PMID: 19243617).
+comment: Surface markers are for mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000041) CDP are reportedly CD2-negative, CD3-negative, CD4-negative, CD5-negative, CD8a-negative, CD11c-positive, CD14-negative, CD19-negative, CD20-negative, CD56-negative, B220-negative, Ly6g-negative, MHCII-positive, and Ter119-negative. (PMID:19243617).
 synonym: "CDP" EXACT [PMID:21219184]
 synonym: "common dendritic precursor" EXACT []
 synonym: "pro-DCs" EXACT [PMID:21219184]
@@ -11403,7 +11469,7 @@ relationship: develops_from CL:0002009 ! macrophage dendritic cell progenitor
 id: CL:0001030
 name: CD117-positive common myeloid progenitor OR CD217-positive common lymphoid progenitor
 namespace: cell
-comment: Originally described in the dendritic cell ontology (DC_CL:1111100)(PMID: 19243617).
+comment: Originally described in the dendritic cell ontology (DC_CL:1111100)(PMID:19243617).
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
 union_of: CL:0001023 ! Kit-positive, CD34-positive common myeloid progenitor
 union_of: CL:0001025 ! Kit-positive, Sca1-positive common lymphoid progenitor
@@ -12281,8 +12347,8 @@ creation_date: 2010-04-28T10:50:07Z
 id: CL:0002046
 name: early pro-B cell
 namespace: cell
-def: "A pro-B cell that is CD22-positive, CD34-positive, CD38-positive and has TdT activity. Pre-BCR is expressed on the cell surface. Cell is CD19-negative, CD20-negative, complement receptor type 2-negative and CD10-low. D-to-J recombination of the heavy chain occurs at this stage." [GOC:tfm, PMID:18432934]
-comment: Markers are commonly associated with human cells.
+def: "A pro-B cell that is CD22-positive, CD34-positive, CD38-positive and TdT-positive (has TdT activity). Pre-BCR is expressed on the cell surface. Cell is CD19-negative, CD20-negative, complement receptor type 2-negative and CD10-low. D-to-J recombination of the heavy chain occurs at this stage." [GOC:dsd, GOC:tfm, PMID:18432934]
+comment: Markers are commonly associated with human cells. These cells are also reportedly CD21-negative. Transcription factors: PU.1-positive, Ikaros-positive, E2A-positive, and PAX5-positive.
 is_a: CL:0000826 ! pro-B cell
 intersection_of: CL:0000826 ! pro-B cell
 intersection_of: has_low_plasma_membrane_amount PR:000001898 ! neprilysin
@@ -12302,7 +12368,7 @@ id: CL:0002047
 name: Fraction B precursor B cell
 namespace: cell
 def: "A precursor B cell that is CD45RA-positive, CD43-positive, CD24-positive and BP-1-negative." [GOC:ak, GOC:tfm, PMID:18432934]
-comment: Markers are commonly associated with mouse cells.
+comment: Markers are commonly associated with mouse cells. These cells are also reportedly RAG1-positive and RAG2-positive.
 synonym: "Fr. B" EXACT []
 synonym: "Fraction B" EXACT []
 is_a: CL:0002400 ! Fraction B/C precursor B cell
@@ -12318,7 +12384,8 @@ creation_date: 2010-04-28T11:56:21Z
 id: CL:0002048
 name: late pro-B cell
 namespace: cell
-def: "A pre-B cell precursor is CD19-low, CD22-positive , CD34-positive, CD38-positive." [GOC:tfm, PMID:18432934]
+def: "A pre-B cell precursor is CD19-low, CD22-positive , CD34-positive, CD38-positive." [GOC:dsd, GOC:tfm, PMID:18432934]
+comment: Late pro-B cells are also reportedly CD10-positive, CD20-negative, CD21-negative, and TdT-positive. Transcription factors: PU.1-positive, Ikaros-positive, E2A-positive, and PAX5-positive.
 is_a: CL:0000817 ! precursor B cell
 intersection_of: CL:0000817 ! precursor B cell
 intersection_of: has_low_plasma_membrane_amount PR:000001002 ! CD19 molecule
@@ -12387,7 +12454,8 @@ creation_date: 2010-04-28T02:27:47Z
 id: CL:0002052
 name: Fraction D precursor B cell
 namespace: cell
-def: "A pre-B cell that is pre-BCR-negative, and the kappa- and lambda- light immunoglobulin light chain-negative, CD43-low, and is BP-1-positive, CD45R-positive and CD25-positive. This cell type is also described as being AA4-positive, IgM-negative, CD19-positive, CD43-low/negative, and HSA-positive." [GOC:ak, GOC:tfm, http://www.immgen.org/index_content.html, PMID:17582343]
+def: "A pre-B cell that is pre-BCR-negative, and the kappa- and lambda- light immunoglobulin light chain-negative, CD43-low, and is BP-1-positive, CD45R-positive and CD25-positive. This cell type is also described as being AA4-positive, IgM-negative, CD19-positive, CD43-low/negative, and HSA-positive." [GOC:ak, GOC:dsd, GOC:tfm, http://www.immgen.org/index_content.html, PMID:17582343, PMID:18432934]
+comment: Fraction D precursor B cells are also reportedly CD24-positive and sIgD-negative.
 synonym: "Fr. D" EXACT []
 synonym: "Fraction D pre-B cell" EXACT [GOC:tfm]
 is_a: CL:0000817 ! precursor B cell
@@ -12424,8 +12492,8 @@ creation_date: 2010-04-28T03:04:48Z
 id: CL:0002054
 name: Fraction E immature B cell
 namespace: cell
-def: "An immature B cell that is IgM-positive, CD45R-positive, CD43-low, CD25-negative, and CD127-negative. This cell type has also been described as being AA4-positive, IgM-positive, CD19-positive, CD43-low/negative, and HSA-positive." [GOC:ak, GOC:tfm, PMID:17582343]
-comment: Markers associated with mouse cells.
+def: "An immature B cell that is IgM-positive, CD45R-positive, CD43-low, CD25-negative, and CD127-negative. This cell type has also been described as being AA4-positive, IgM-positive, CD19-positive, CD43-low/negative, and HSA-positive." [GOC:ak, GOC:dsd, GOC:tfm, PMID:17582343, PMID:18432934]
+comment: Markers associated with mouse cells. These cells are also reportedly sIgD-negative.
 is_a: CL:0000816 ! immature B cell
 intersection_of: CL:0000816 ! immature B cell
 intersection_of: has_low_plasma_membrane_amount PR:000001879 ! leukosialin
@@ -12458,7 +12526,7 @@ creation_date: 2010-04-28T03:19:14Z
 id: CL:0002056
 name: Fraction F mature B cell
 namespace: cell
-def: "A mature B cell subset originally defined as having being CD45R-positive, IgM-positive, IgD-positive and CD43-negative. Subsequent research demonstrated being CD21-positive and CD23-negative and CD93 negative." [GOC:tfm, http://www.immgen.org/index_content.html, PMID:17582343]
+def: "A mature B cell subset originally defined as having being CD45R-positive, IgM-positive, IgD-positive and CD43-negative. Subsequent research demonstrated being CD21-positive and CD23-negative and CD93 negative." [GOC:tfm, PMID:17582343]
 is_a: CL:0000785 ! mature B cell
 intersection_of: CL:0000785 ! mature B cell
 intersection_of: has_plasma_membrane_part GO:0071738 ! IgD immunoglobulin complex
@@ -12534,7 +12602,7 @@ creation_date: 2010-06-22T10:46:12Z
 id: CL:0002061
 name: T-helper 9 cell
 namespace: cell
-def: "A T-helper cell that is characterized by secreting interleukin 9 and responding to helminth infections. This cell-type can derives from Th2 cells in the presence of TGF-beta and interleukin 4.  TH2 cytokine production is surpressed." [GOC:tfm, PMID:18931678, PMID:19604299, PMID:20154671]
+def: "A T-helper cell that is characterized by secreting interleukin 9 and responding to helminth infections. This cell-type can derives from Th2 cells in the presence of TGF-beta and IL-4. Th2 cytokine production is surpressed." [GOC:tfm, PMID:18931678, PMID:19604299, PMID:20154671]
 synonym: "T helper cells type 9" EXACT []
 synonym: "T(H)-9 cell" EXACT []
 synonym: "Th9" EXACT [PMID:18931678]
@@ -12856,7 +12924,7 @@ creation_date: 2010-07-14T10:12:24Z
 id: CL:0002084
 name: Boettcher cell
 namespace: cell
-def: "A Boettcher cell is a polyhedral cells on the basilar membrane of the cochlea, and is located beneath Claudius cells. A Boettcher cell is considered a supporting cell for the organ of Corti, and is  present only in the lower turn of the cochlea. These cells interweave with each other, and project microvilli into the intercellular space. Because of their structural specialization, a Boettcher cell is believed to play a significant role in the function of the cochlea. They demonstrate high levels of calmodulin, and may be involved in mediating Ca(2+) regulation and ion transport." [GOC:tfm, http://en.wikipedia.org/wiki/Boettcher_cell]
+def: "A Boettcher cell is a polyhedral cells on the basilar membrane of the cochlea, and is located beneath Claudius cells. A Boettcher cell is considered a supporting cell for the organ of Corti, and is present only in the lower turn of the cochlea. These cells interweave with each other, and project microvilli into the intercellular space. Because of their structural specialization, a Boettcher cell is believed to play a significant role in the function of the cochlea. They demonstrate high levels of calmodulin, and may be involved in mediating Ca(2+) regulation and ion transport." [GOC:tfm, http://en.wikipedia.org/wiki/Boettcher_cell]
 synonym: "Boettcher's cell" EXACT []
 synonym: "Bottcher cell" EXACT []
 synonym: "Bottcher's cell" EXACT []
@@ -13081,6 +13149,13 @@ id: CL:0002101
 name: CD38-positive naive B cell
 namespace: cell
 def: "A CD38-positive naive B cell is a mature B cell that has the phenotype CD38-positive, surface IgD-positive, surface IgM-positive, and CD27-negative, and that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38+ naive B cell" EXACT []
+synonym: "CD38+ naive B lymphocyte" EXACT []
+synonym: "CD38+ naive B-cell" EXACT []
+synonym: "CD38+ naive B-lymphocyte" EXACT []
+synonym: "CD38-positive naive B lymphocyte" EXACT []
+synonym: "CD38-positive naive B-cell" EXACT []
+synonym: "CD38-positive naive B-lymphocyte" EXACT []
 is_a: CL:0000788 ! naive B cell
 intersection_of: CL:0000788 ! naive B cell
 intersection_of: has_plasma_membrane_part PR:000001408 ! ADP-ribosyl cyclase 1
@@ -13090,6 +13165,13 @@ id: CL:0002102
 name: CD38-negative naive B cell
 namespace: cell
 def: "A CD38-negative naive B cell is a mature B cell that has the phenotype CD38-negative, surface IgD-positive, surface IgM-positive, and CD27-negative, that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38- naive B cell" EXACT []
+synonym: "CD38- naive B lymphocyte" EXACT []
+synonym: "CD38- naive B-cell" EXACT []
+synonym: "CD38- naive B-lymphocyte" EXACT []
+synonym: "CD38-negative naive B lymphocyte" EXACT []
+synonym: "CD38-negative naive B-cell" EXACT []
+synonym: "CD38-negative naive B-lymphocyte" EXACT []
 is_a: CL:0000788 ! naive B cell
 intersection_of: CL:0000788 ! naive B cell
 intersection_of: lacks_plasma_membrane_part PR:000001408 ! ADP-ribosyl cyclase 1
@@ -13099,6 +13181,21 @@ id: CL:0002103
 name: IgG-positive double negative memory B cell
 namespace: cell
 def: "An IgG-positive double negative memory B cell is a double negative memory B cell with the phenotype IgG-positive, IgD-negative, and CD27-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "IgG+ dn memory B cell" EXACT []
+synonym: "IgG+ dn memory B lymphocyte" EXACT []
+synonym: "IgG+ dn memory B-cell" EXACT []
+synonym: "IgG+ dn memory B-lymphocyte" EXACT []
+synonym: "IgG+ double negative memory B cell" EXACT []
+synonym: "IgG+ double negative memory B lymphocyte" EXACT []
+synonym: "IgG+ double negative memory B-cell" EXACT []
+synonym: "IgG+ double negative memory B-lymphocyte" EXACT []
+synonym: "IgG-positive dn memory B cell" EXACT []
+synonym: "IgG-positive dn memory B lymphocyte" EXACT []
+synonym: "IgG-positive dn memory B-cell" EXACT []
+synonym: "IgG-positive dn memory B-lymphocyte" EXACT []
+synonym: "IgG-positive double negative memory B lymphocyte" EXACT []
+synonym: "IgG-positive double negative memory B-cell" EXACT []
+synonym: "IgG-positive double negative memory B-lymphocyte" EXACT []
 is_a: CL:0000981 ! double negative memory B cell
 intersection_of: CL:0000981 ! double negative memory B cell
 intersection_of: has_plasma_membrane_part GO:0071735 ! IgG immunoglobulin complex
@@ -13108,6 +13205,21 @@ id: CL:0002104
 name: IgG-negative double negative memory B cell
 namespace: cell
 def: "An IgG-negative double negative memory B cell is a double negative memory B cell with the phenotype IgG-negative, IgD-negative, and CD27-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "IgG- dn memory B cell" EXACT []
+synonym: "IgG- dn memory B lymphocyte" EXACT []
+synonym: "IgG- dn memory B-cell" EXACT []
+synonym: "IgG- dn memory B-lymphocyte" EXACT []
+synonym: "IgG- double negative memory B cell" EXACT []
+synonym: "IgG- double negative memory B lymphocyte" EXACT []
+synonym: "IgG- double negative memory B-cell" EXACT []
+synonym: "IgG- double negative memory B-lymphocyte" EXACT []
+synonym: "IgG-negative dn memory B cell" EXACT []
+synonym: "IgG-negative dn memory B lymphocyte" EXACT []
+synonym: "IgG-negative dn memory B-cell" EXACT []
+synonym: "IgG-negative dn memory B-lymphocyte" EXACT []
+synonym: "IgG-negative double negative memory B lymphocyte" EXACT []
+synonym: "IgG-negative double negative memory B-cell" EXACT []
+synonym: "IgG-negative double negative memory B-lymphocyte" EXACT []
 is_a: CL:0000981 ! double negative memory B cell
 intersection_of: CL:0000981 ! double negative memory B cell
 intersection_of: lacks_plasma_membrane_part GO:0071735 ! IgG immunoglobulin complex
@@ -13117,6 +13229,13 @@ id: CL:0002105
 name: CD38-positive IgG memory B cell
 namespace: cell
 def: "A CD38-positive IgG memory B cell is a class switched memory B cell that expresses IgG on the cell surface with the phenotype CD38-positive and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38+ IgG memory B cell" EXACT []
+synonym: "CD38+ IgG memory B lymphocyte" EXACT []
+synonym: "CD38+ IgG memory B-cell" EXACT []
+synonym: "CD38+ IgG memory B-lymphocyte" EXACT []
+synonym: "CD38-positive IgG memory B lymphocyte" EXACT []
+synonym: "CD38-positive IgG memory B-cell" EXACT []
+synonym: "CD38-positive IgG memory B-lymphocyte" EXACT []
 is_a: CL:0000979 ! IgG memory B cell
 intersection_of: CL:0000979 ! IgG memory B cell
 intersection_of: has_plasma_membrane_part PR:000001408 ! ADP-ribosyl cyclase 1
@@ -13154,6 +13273,17 @@ id: CL:0002109
 name: B220-positive CD38-positive naive B cell
 namespace: cell
 def: "A B220-positive CD38-positive naive B cell is a CD38-positive naive B cell that has the phenotype B220-positive, CD38-positive, surface IgD-positive, surface IgM-positive, and CD27-negative, and that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "B220+CD38+ naive B cell" EXACT []
+synonym: "B220+CD38+ naive B lymphocyte" EXACT []
+synonym: "B220+CD38+ naive B-cell" EXACT []
+synonym: "B220+CD38+ naive B-lymphocyte" EXACT []
+synonym: "B220-positive CD38-positive naive B lymphocyte" EXACT []
+synonym: "B220-positive CD38-positive naive B-cell" EXACT []
+synonym: "B220-positive CD38-positive naive B-lymphocyte" EXACT []
+synonym: "CD38+B220+ naive B cell" EXACT []
+synonym: "CD38+B220+ naive B lymphocyte" EXACT []
+synonym: "CD38+B220+ naive B-cell" EXACT []
+synonym: "CD38+B220+ naive B-lymphocyte" EXACT []
 is_a: CL:0002101 ! CD38-positive naive B cell
 intersection_of: CL:0002101 ! CD38-positive naive B cell
 intersection_of: has_plasma_membrane_part PR:000001014 ! receptor-type tyrosine-protein phosphatase C isoform CD45R
@@ -13172,6 +13302,13 @@ id: CL:0002111
 name: CD38-negative unswitched memory B cell
 namespace: cell
 def: "An CD38-negative unswitched memory B cell is an unswitched memory B cell that has the phenotype CD38-negative, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38- unswitched memory B cell" EXACT []
+synonym: "CD38- unswitched memory B lymphocyte" EXACT []
+synonym: "CD38- unswitched memory B-cell" EXACT []
+synonym: "CD38- unswitched memory B-lymphocyte" EXACT []
+synonym: "CD38-negative unswitched memory B lymphocyte" EXACT []
+synonym: "CD38-negative unswitched memory B-cell" EXACT []
+synonym: "CD38-negative unswitched memory B-lymphocyte" EXACT []
 is_a: CL:0000970 ! unswitched memory B cell
 intersection_of: CL:0000970 ! unswitched memory B cell
 intersection_of: lacks_plasma_membrane_part PR:000001408 ! ADP-ribosyl cyclase 1
@@ -13199,6 +13336,13 @@ id: CL:0002114
 name: CD38-positive unswitched memory B cell
 namespace: cell
 def: "A CD38-positive unswitched memory B cell is an unswitched memory B cell that has the phenotype CD38-positive, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38+ unswitched memory B cell" EXACT []
+synonym: "CD38+ unswitched memory B lymphocyte" EXACT []
+synonym: "CD38+ unswitched memory B-cell" EXACT []
+synonym: "CD38+ unswitched memory B-lymphocyte" EXACT []
+synonym: "CD38-positive unswitched memory B lymphocyte" EXACT []
+synonym: "CD38-positive unswitched memory B-cell" EXACT []
+synonym: "CD38-positive unswitched memory B-lymphocyte" EXACT []
 is_a: CL:0000970 ! unswitched memory B cell
 intersection_of: CL:0000970 ! unswitched memory B cell
 intersection_of: has_plasma_membrane_part PR:000001408 ! ADP-ribosyl cyclase 1
@@ -13226,6 +13370,13 @@ id: CL:0002117
 name: IgG-negative class switched memory B cell
 namespace: cell
 def: "A class switched memory B cell that lacks IgG on the cell surface." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "IgG- class switched memory B cell" EXACT []
+synonym: "IgG- class switched memory B lymphocyte" EXACT []
+synonym: "IgG- class switched memory B-cell" EXACT []
+synonym: "IgG- class switched memory B-lymphocyte" EXACT []
+synonym: "IgG-negative class switched memory B lymphocyte" EXACT []
+synonym: "IgG-negative class switched memory B-cell" EXACT []
+synonym: "IgG-negative class switched memory B-lymphocyte" EXACT []
 is_a: CL:0000972 ! class switched memory B cell
 intersection_of: CL:0000972 ! class switched memory B cell
 intersection_of: lacks_plasma_membrane_part GO:0071735 ! IgG immunoglobulin complex
@@ -13523,7 +13674,7 @@ creation_date: 2010-08-24T09:30:15Z
 id: CL:0002142
 name: dark cell of eccrine sweat gland
 namespace: cell
-def: "A cell pyramidal in shape, with their broad ends facing and forming the greater extent of the lining of the main lumen.  Secretes glycoproteins associated with mucus." [ISBN:0517223651]
+def: "A cell pyramidal in shape, with their broad ends facing and forming the greater extent of the lining of the main lumen. Secretes glycoproteins associated with mucus." [ISBN:0517223651]
 xref: FMA:70659
 is_a: CL:0000318 ! sweat secreting cell
 is_a: CL:0000434 ! eccrine cell
@@ -13672,7 +13823,7 @@ creation_date: 2010-08-24T03:07:53Z
 id: CL:0002155
 name: echinocyte
 namespace: cell
-def: "A crenated erythrocyte with 30+ crenations, bumps or spurs that are the result of  damage due to age or disease." [GOC:tfm]
+def: "A crenated erythrocyte with 30+ crenations, bumps or spurs that are the result of damage due to age or disease." [GOC:tfm]
 synonym: "burr cell" EXACT []
 xref: FMA:81099
 is_a: CL:0000595 ! enucleate erythrocyte
@@ -13854,7 +14005,7 @@ creation_date: 2010-08-25T02:02:48Z
 id: CL:0002173
 name: extraglomerular mesangial cell
 namespace: cell
-def: "A cell that is a specialized type of pericyte providing structural support for the capillary loops of kidney. A flat, elongated cell with extensive fine cytoplasmic processes found outside the kidney glomerulus near the macula densa and bound laterally by afferent and efferent arterioles.  Being phagocytic, this cell participates in the continuous turnover of the basal lamina by removing its outer portion containing residues of filtration, while the lamina is renewed on its inner surface by the endothelial cells." [GOC:tfm, http:/www.copewithcytokines.de/cope.cgi?key=Lacis%20cells, ISBN:0412046911]
+def: "A cell that is a specialized type of pericyte providing structural support for the capillary loops of kidney. A flat, elongated cell with extensive fine cytoplasmic processes found outside the kidney glomerulus near the macula densa and bound laterally by afferent and efferent arterioles. Being phagocytic, this cell participates in the continuous turnover of the basal lamina by removing its outer portion containing residues of filtration, while the lamina is renewed on its inner surface by the endothelial cells." [GOC:tfm, http:/www.copewithcytokines.de/cope.cgi?key=Lacis%20cells, ISBN:0412046911]
 synonym: "Goormaghtigh cell" EXACT []
 synonym: "lacis cell" RELATED []
 synonym: "polar cushion cells" EXACT []
@@ -14062,7 +14213,7 @@ creation_date: 2010-08-30T12:54:27Z
 id: CL:0002192
 name: metamyelocyte
 namespace: cell
-def: "A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a  myelocyte and a band form cell. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare." [GOC:tfm, http://en.wikipedia.org/wiki/Metamyelocyte, ISBN:0721601464]
+def: "A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a myelocyte and a band form cell. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare." [GOC:tfm, http://en.wikipedia.org/wiki/Metamyelocyte, ISBN:0721601464]
 xref: FMA:83541
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0002193 ! myelocyte
@@ -14122,7 +14273,7 @@ creation_date: 2010-08-30T02:01:49Z
 id: CL:0002197
 name: inactive chief cell of parathyoid gland
 namespace: cell
-def: "A parathyroid chief cell that is not actively secreting hormone.  Contains small Golgi complexes with only a few grouped vesicles and membrane-bound secretory granules; glycogen and many lipofuscin granules abound but sacs of granular endoplasmic reticulum are rare and dispersed. In normal humans, inactive chief cells out number active chief cells in a ratio of 3-5:1." [GOC:tfm, ISBN:0517223651]
+def: "A parathyroid chief cell that is not actively secreting hormone. Contains small Golgi complexes with only a few grouped vesicles and membrane-bound secretory granules; glycogen and many lipofuscin granules abound but sacs of granular endoplasmic reticulum are rare and dispersed. In normal humans, inactive chief cells out number active chief cells in a ratio of 3-5:1." [GOC:tfm, ISBN:0517223651]
 is_a: CL:0000446 ! chief cell of parathyroid gland
 created_by: tmeehan
 creation_date: 2010-09-02T11:14:01Z
@@ -14335,7 +14486,7 @@ creation_date: 2010-09-02T03:28:48Z
 id: CL:0002214
 name: type IIa muscle cell
 namespace: cell
-def: "A type II muscle cell that contain  large amounts of myoglobin, have many mitochondria and very many blood capillaries. Type II A cells are red, have a very high capacity for generating ATP by oxidative metabolic processes, split ATP at a very rapid rate, have a fast contraction velocity and are resistant to fatigue." [GOC:tfm]
+def: "A type II muscle cell that contains large amounts of myoglobin, has many mitochondria and very many blood capillaries. Type II A cells are red, have a very high capacity for generating ATP by oxidative metabolic processes, split ATP at a very rapid rate, have a fast contraction velocity and are resistant to fatigue." [GOC:tfm]
 synonym: "fast twitch A" EXACT []
 synonym: "fatigue resistant fast twitch muscle cell" EXACT []
 synonym: "type 2a muscle cell" EXACT []
@@ -14352,7 +14503,7 @@ creation_date: 2010-09-02T03:31:38Z
 id: CL:0002215
 name: type IIb muscle cell
 namespace: cell
-def: "A type II muscle cell that contains a low content of myoglobin, relatively few mitochondria, relatively few blood capillaries and large amounts glycogen. Type II B fibres are white, geared to generate ATP by anaerobic metabolic processes, not able to supply skeletal muscle fibres continuously with sufficient ATP, fatigue easily, split ATP at a fast rate and have a fast contraction velocity." [GOC:tfm, http://en.wikipedia.org/wiki/Skeletal_muscle, ISBN:0517223651]
+def: "A type II muscle cell that contains a low content of myoglobin, relatively few mitochondria, relatively few blood capillaries and large amounts of glycogen. Type II B fibres are white, geared to generate ATP by anaerobic metabolic processes, not able to supply skeletal muscle fibres continuously with sufficient ATP, fatigue easily, split ATP at a fast rate and have a fast contraction velocity." [GOC:tfm, http://en.wikipedia.org/wiki/Skeletal_muscle, ISBN:0517223651]
 synonym: "type 2b muscle cell" EXACT []
 synonym: "type 2b muscle fiber" EXACT []
 synonym: "type IIb muscle fiber" EXACT []
@@ -14930,7 +15081,7 @@ creation_date: 2010-09-14T10:57:26Z
 id: CL:0002263
 name: transitional cell of parathyroid gland
 namespace: cell
-def: "One of three types of  epithelial cells that populate the parathyroid gland; cytological characteristics intermediate between those of the chief cell and of the oxyphil cell. Because only one hormone is produced, the three cell forms are widely believed to be different phases in the life cycle of a single cell type, with the chief cell being its physiologically active stage." [GOC:tfm, ISBN:0412046911]
+def: "One of three types of epithelial cells that populate the parathyroid gland; cytological characteristics intermediate between those of the chief cell and of the oxyphil cell. Because only one hormone is produced, the three cell forms are widely believed to be different phases in the life cycle of a single cell type, with the chief cell being its physiologically active stage." [GOC:tfm, ISBN:0412046911]
 xref: FMA:69324
 is_a: CL:0002260 ! epithelial cell of parathyroid gland
 created_by: tmeehan
@@ -15111,7 +15262,7 @@ creation_date: 2010-09-10T03:51:47Z
 id: CL:0002279
 name: type L enteroendocrine cell
 namespace: cell
-def: "A enteroendocrine cell type that is numerous in ileum, present in jejunum and large intestine, few in duodenum.  This cell type produces glucagon-like immunoreactants (glicentin, glucagon-37, glucagon-29, GLP-1 and -2) and PYY." [ISBN:0517223651, PMID:15153415]
+def: "A enteroendocrine cell type that is numerous in ileum, present in jejunum and large intestine, few in duodenum. This cell type produces glucagon-like immunoreactants (glicentin, glucagon-37, glucagon-29, GLP-1 and -2) and PYY." [ISBN:0517223651, PMID:15153415]
 xref: FMA:62944
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000167 ! peptide hormone secreting cell
@@ -15194,7 +15345,7 @@ creation_date: 2010-09-13T10:57:21Z
 id: CL:0002286
 name: type II taste cell
 namespace: cell
-def: "A taste receptor cell that has a short microvilli, a projecting apical region, a large rounded nucleus, and expresses taste chemoreceptors thus making them the transducing cell for  taste qualities." [GOC:tfm, PMID:15738192]
+def: "A taste receptor cell that has a short microvilli, a projecting apical region, a large rounded nucleus, and expresses taste chemoreceptors thus making them the transducing cell for taste qualities." [GOC:tfm, PMID:15738192]
 synonym: "type 2 taste cell" EXACT []
 xref: FMA:62381
 is_a: CL:0000209 ! taste receptor cell
@@ -15206,7 +15357,7 @@ id: CL:0002287
 name: type IV taste receptor cell
 namespace: cell
 def: "A rounded, mitotically active stem cell which is the source of new cells of the taste bud; located basally." [GOC:tfm, ISBN:0517223651, PMID:15738192]
-comment: There is debate about the exact lineage of these cell types from this progenitor.  See PMID: 15738192.
+comment: There is debate about the exact lineage of these cell types from this progenitor. See PMID:15738192.
 synonym: "taste bud basal cell" BROAD []
 synonym: "type 4 taste cell" EXACT []
 xref: FMA:62380
@@ -15228,7 +15379,7 @@ creation_date: 2010-09-13T10:57:31Z
 id: CL:0002289
 name: type I taste bud cell
 namespace: cell
-def: "A densely staining taste receptor cell that contains many dense vacuoles in their apical regions which project into the apical space and bear  microvilli. This cell type serves as a supporting cell by surrounding and isolating the other cell types from each other; secrete a dense amorphous material that surrounds the microvilli in the taste pore. This cell type expresses a glial glutumate transporter, GLAST." [GOC:tfm, ISBN:0412046911, ISBN:0517223651, PMID:15738192]
+def: "A densely staining taste receptor cell that contains many dense vacuoles in their apical regions which project into the apical space and bear microvilli. This cell type serves as a supporting cell by surrounding and isolating the other cell types from each other; secrete a dense amorphous material that surrounds the microvilli in the taste pore. This cell type expresses a glial glutumate transporter, GLAST." [GOC:tfm, ISBN:0412046911, ISBN:0517223651, PMID:15738192]
 synonym: "dark tongue cell" EXACT []
 synonym: "type I taste cell" EXACT []
 synonym: "type taste 1 cell" EXACT []
@@ -15376,7 +15527,7 @@ creation_date: 2010-09-13T03:23:25Z
 id: CL:0002301
 name: type B synovial cell
 namespace: cell
-def: "A synovial cell type that resembles fibroblasts,has  abundant granular endoplasmic reticulum but contains fewer vacuoles and vesicles. This cell type secretes glycoproteins and hyaluronic acid." [GOC:tfm, ISBN:0517223651]
+def: "A synovial cell type that resembles fibroblasts, has abundant granular endoplasmic reticulum but contains fewer vacuoles and vesicles. This cell type secretes glycoproteins and hyaluronic acid." [GOC:tfm, ISBN:0517223651]
 xref: FMA:66788
 is_a: CL:0000214 ! synovial cell
 created_by: tmeehan
@@ -15779,7 +15930,7 @@ creation_date: 2010-09-20T02:31:53Z
 id: CL:0002335
 name: brown preadipocyte
 namespace: cell
-def: "A preadipocyte that is capable of differentiating into a brown adipocyte.  This cell type expresses uncoupling protein-1, PPAR-gamma, PR-domain-containing 16; and PGC-1alpha (peroxisome proliferator-activated receptor-gamma (PPARgamma) coactivator-1alpha)." [GOC:tfm, PMID:18719589]
+def: "A preadipocyte that is capable of differentiating into a brown adipocyte. This cell type expresses uncoupling protein-1, PPAR-gamma, PR-domain-containing 16; and PGC-1alpha (peroxisome proliferator-activated receptor-gamma (PPARgamma) coactivator-1alpha)." [GOC:tfm, PMID:18719589]
 is_a: CL:0002334 ! preadipocyte
 created_by: tmeehan
 creation_date: 2010-09-20T02:38:38Z
@@ -15855,7 +16006,7 @@ creation_date: 2010-09-20T03:34:10Z
 id: CL:0002342
 name: circulating endothelial cell
 namespace: cell
-def: "A circulating endothelial cell of the phenotype  CD146-positive, CD105-positive, CD45-negative. This cell type is indicative of recent vascular damage." [GOC:tfm, PMID:19652886]
+def: "A circulating endothelial cell of the phenotype CD146-positive, CD105-positive, CD45-negative. This cell type is indicative of recent vascular damage." [GOC:tfm, PMID:19652886]
 is_a: CL:0000115 ! endothelial cell
 created_by: tmeehan
 creation_date: 2010-09-20T03:49:58Z
@@ -16134,7 +16285,7 @@ creation_date: 2010-09-22T01:40:44Z
 id: CL:0002363
 name: keratocyte
 namespace: cell
-def: "A keratocyte is a specialized fibroblast residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. This corneal layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components.  This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
+def: "A keratocyte is a specialized fibroblast residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. This corneal layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
 synonym: "corneal fibroblast" EXACT []
 synonym: "corneal keratocyte" EXACT []
 is_a: CL:0000057 ! fibroblast
@@ -16159,7 +16310,7 @@ creation_date: 2010-09-23T03:17:12Z
 id: CL:0002365
 name: medullary thymic epithelial cell
 namespace: cell
-def: "An epithelial cell of the medullary thymus. This cell type  expresses a diverse range of tissue-specific antigens. This promiscuous gene expression is a cell-autonomous property of medullary epithelial cells and is maintained during the entire period of thymic T cell output." [GOC:tfm, PMID:18180458]
+def: "An epithelial cell of the medullary thymus. This cell type expresses a diverse range of tissue-specific antigens. This promiscuous gene expression is a cell-autonomous property of medullary epithelial cells and is maintained during the entire period of thymic T cell output." [GOC:tfm, PMID:18180458]
 synonym: "mTEC" EXACT []
 xref: BTO:0004563
 is_a: CL:0002293 ! epithelial cell of thymus
@@ -16577,7 +16728,7 @@ creation_date: 2010-10-07T02:05:46Z
 id: CL:0002402
 name: Peyer's patch B cell
 namespace: cell
-def: "A resting mature B cell within the Peyer's patch that is  CD19-positive, B220-positive, IgM-positive, AA4-negative, CD23-positive, CD43-negative, and CD5-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A resting mature B cell within the Peyer's patch that is CD19-positive, B220-positive, IgM-positive, AA4-negative, CD23-positive, CD43-negative, and CD5-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "Peyers patch B cell" EXACT []
 is_a: CL:0000785 ! mature B cell
 intersection_of: CL:0000785 ! mature B cell
@@ -16915,7 +17066,7 @@ creation_date: 2010-10-21T02:11:52Z
 id: CL:0002430
 name: CD4-intermediate, CD8-positive double-positive thymocyte
 namespace: cell
-def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive,  and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "T.4int8+.Th" EXACT []
 is_a: CL:0000809 ! double-positive, alpha-beta thymocyte
 intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
@@ -16931,7 +17082,7 @@ creation_date: 2010-10-21T02:29:19Z
 id: CL:0002431
 name: CD4-positive, CD8-intermediate double-positive thymocyte
 namespace: cell
-def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive,  and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "T.4int8+.th" EXACT []
 is_a: CL:0000809 ! double-positive, alpha-beta thymocyte
 intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
@@ -17197,7 +17348,7 @@ creation_date: 2010-11-10T01:41:00Z
 id: CL:0002451
 name: mammary stem cell
 namespace: cell
-def: "A multi-fate stem cell that is the source of cells for growth of the mammary gland during puberty and gestation. This cell type gives rise to both the luminal and myoepithelial cell types of the gland, and have been shown to have the ability to regenerate the entire organ in mice. This cell type also plays an important role in carcinogenesis of the breast.  This cell type is Lin-,CD24-positive, CD29-hi." [GOC:hjd, GOC:tfm, PMID:15987436, PMID:16397499, PMID:17851544]
+def: "A multi-fate stem cell that is the source of cells for growth of the mammary gland during puberty and gestation. This cell type gives rise to both the luminal and myoepithelial cell types of the gland, and have been shown to have the ability to regenerate the entire organ in mice. This cell type also plays an important role in carcinogenesis of the breast. This cell type is Lin-, CD24-positive, CD29-hi." [GOC:hjd, GOC:tfm, PMID:15987436, PMID:16397499, PMID:17851544]
 is_a: CL:0000048 ! multi fate stem cell
 created_by: tmeehan
 creation_date: 2010-11-10T01:46:51Z
@@ -17311,7 +17462,7 @@ creation_date: 2010-11-23T10:58:53Z
 id: CL:0002461
 name: CD103-positive dendritic cell
 namespace: cell
-def: "A conventional dendritic cell that is CD103-positive.  This cell type is usually found in non-lymphoid tissue." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A conventional dendritic cell that is CD103-positive. This cell type is usually found in non-lymphoid tissue." [GOC:tfm, http://www.immgen.org/index_content.html]
 is_a: CL:0000990 ! conventional dendritic cell
 intersection_of: CL:0000990 ! conventional dendritic cell
 intersection_of: has_plasma_membrane_part PR:000001010 ! integrin alpha-E
@@ -17498,7 +17649,7 @@ creation_date: 2010-11-23T04:09:09Z
 id: CL:0002476
 name: bone marrow macrophage
 namespace: cell
-def: "A tissue-resident macrophage located in the bone marrow.  This cell type is B220-negative, CD3e-negative, Ly-6C-negative, CD115-positive, F4/80-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A tissue-resident macrophage located in the bone marrow. This cell type is B220-negative, CD3e-negative, Ly-6C-negative, CD115-positive, F4/80-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "MF.BM" RELATED []
 xref: BTO:0004732
 is_a: CL:0000864 ! tissue-resident macrophage
@@ -17529,7 +17680,7 @@ creation_date: 2010-11-23T04:31:28Z
 id: CL:0002478
 name: F4/80-negative adipose macrophage
 namespace: cell
-def: "An adipose macrophage that does not express F4/80but is MHC-II-positive. This cell typeis  autofluorescence under typical flow cyometry conditions." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "An adipose macrophage that does not express F4/80but is MHC-II-positive. This cell type exhibits autofluorescence under typical flow cyometry conditions." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "MF.Autofl.Ad" EXACT []
 is_a: CL:0002477 ! adipose macrophage
 intersection_of: CL:0002477 ! adipose macrophage
@@ -17698,7 +17849,7 @@ creation_date: 2010-12-06T03:20:41Z
 id: CL:0002493
 name: strial basal cell
 namespace: cell
-def: "A polarized cell that is juxtaposed to fibrocytes in the underlying spiral ligament.  This cell type secretes potassium ions derived from fibrocytes through gap junctions." [GOC:tfm, MP:0004365]
+def: "A polarized cell that is juxtaposed to fibrocytes in the underlying spiral ligament. This cell type secretes potassium ions derived from fibrocytes through gap junctions." [GOC:tfm, MP:0004365]
 comment: Basal cells form a multi-layered epithelial barrier that separates the extracellular spaces of the stria vascularis and the spiral ligament[PMID:18353863]
 is_a: CL:0002491 ! auditory epithelial cell
 relationship: part_of UBERON:0002282 ! stria vascularis of cochlear duct
@@ -17952,7 +18103,7 @@ creation_date: 2011-01-24T10:22:18Z
 id: CL:0002514
 name: Vgamma5-negative CD8alpha alpha positive gamma-delta intraepithelial T cell
 namespace: cell
-def: "A CD8alpha alpha positive gamma-delta intraepithelial T cell that does not express a TCR partially encoded by  the Vgamma5 gene segment." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A CD8alpha alpha positive gamma-delta intraepithelial T cell that does not express a TCR partially encoded by the Vgamma5 gene segment." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "tgd.vg5-.IEL" EXACT []
 is_a: CL:0000802 ! CD8-alpha alpha positive, gamma-delta intraepithelial T cell
 created_by: tmeehan
@@ -18113,7 +18264,7 @@ id: CL:0002529
 name: CD1a-positive dermal dendritic cell
 namespace: cell
 def: "A dermal dendritic cell that is CD1a-positive and CD14-negative." [GOC:dsd, PMID:20309010]
-comment: Reside in the dermis. They are also CD11c-positive, CD40-positive, CD207-negative (langerin), CD209-negative (DC-SIGN), and CD324-negative (E-cadherin). When activated, they are capable of producing CXCL8 (IL-8) and IL-15.  Possibly a precursor of Langerhans cells or equivalent of langerin-positive dermal DCs in the mouse.
+comment: Reside in the dermis. They are also CD11c-positive, CD40-positive, CD207-negative (langerin), CD209-negative (DC-SIGN), and CD324-negative (E-cadherin). When activated, they are capable of producing CXCL8 (IL-8) and IL-15. Possibly a precursor of Langerhans cells or equivalent of langerin-positive dermal DCs in the mouse.
 synonym: "CD1a+ dermal DC" EXACT []
 is_a: CL:0001006 ! dermal dendritic cell
 intersection_of: CL:0001006 ! dermal dendritic cell
@@ -19303,7 +19454,7 @@ creation_date: 2011-07-08T02:06:53Z
 id: CL:0002637
 name: keratinized epithelial cell of the anal canal
 namespace: cell
-def: "An epithelial cell of the anal canal that is keratinized.  This cell type is found towards the lower, rectal end of the anal canal." [GOC:tfm]
+def: "An epithelial cell of the anal canal that is keratinized. This cell type is found towards the lower, rectal end of the anal canal." [GOC:tfm]
 is_a: CL:0000237 ! keratinizing barrier epithelial cell
 is_a: CL:0002634 ! epithelial cell of anal column
 created_by: tmeehan
@@ -19313,7 +19464,7 @@ creation_date: 2011-07-08T02:08:40Z
 id: CL:0002638
 name: bronchioalveolar stem cell
 namespace: cell
-def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and Clara cells in response to lung injury.  This cell type expresses markers Scgb1a1 and Sftpc." [GOC:tfm, PMID:15960971]
+def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and Clara cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc." [GOC:tfm, PMID:15960971]
 synonym: "basal epithelial cell of bronchioalveolar duct junction" EXACT []
 synonym: "BASC" EXACT []
 is_a: CL:0002633 ! respiratory basal cell
@@ -19328,7 +19479,7 @@ id: CL:0002639
 name: amniotic stem cell
 namespace: cell
 def: "An amniotic stem cell is a mesenchymalstem cell extracted from amniotic fluid. Amniotic stem cells are able to differentiate into various tissue type such as skin, cartilage, cardiac tissue, nerves, muscle, and bone" [GOC:tfm, PMID:20942606]
-comment: Not clear to me if amniotic stem cell is a different cell type from amnion mesenchymal stem cells.  They are treated as distinct in the literature as isolations methods are different, so I will keep them as separate terms for now.
+comment: Not clear to me if amniotic stem cell is a different cell type from amnion mesenchymal stem cells. They are treated as distinct in the literature as isolations methods are different, so I will keep them as separate terms for now.
 is_a: CL:0000134 ! mesenchymal cell
 is_a: CL:0002323 ! amniocyte
 created_by: tmeehan
@@ -19547,7 +19698,7 @@ id: CL:0002660
 name: luminal cell of acinus of lactiferous gland
 namespace: cell
 def: "A luminal epithelial cell of mammary gland located in acinus of structure." [GOC:tfm]
-comment: Consider if synonymous with mammary alveolar cell CL:0002325.  Some use this term to refer to the non-lactating cell type that gives rise to the lactating cell type.
+comment: Consider if synonymous with mammary alveolar cell CL:0002325. Some use this term to refer to the non-lactating cell type that gives rise to the lactating cell type.
 xref: FMA:74505
 is_a: CL:0002326 ! luminal epithelial cell of mammary gland
 created_by: tmeehan
@@ -19993,7 +20144,7 @@ id: CL:0007001
 name: skeletogenic cell
 namespace: cell
 def: "Cell that has the potential to form a skeletal cell type (e.g. cells in periosteum, cells in marrow) and produce extracellular matrix (often mineralized) and skeletal tissue (often mineralized)." [GO_REF:0000034]
-comment: Needs logical definition. Should be capable_of skeletal system morphogenesis? or skeletal tissue development? needs to be added to GO. \n\nNOTES:a cell type of the early embryo (see also: mesenchymal cells) that will give rise to mineralized connective tissue. Scleroblasts can differentiate into osteoblasts (bone-forming cells), chondroblasts (cartilage-forming cells), odontoblasts (dentin-forming cells), ameloblasts (enamel-forming cells). The mesenchymal cells developing into osteoblasts and chondroblasts are derived from the mesoderm. Those developing into odontoblasts are neural crest cells. Those developing into ameloblasts are derived from the ectoderm.  http://www.copewithcytokines.de/cope.cgi?key=scleroblasts
+comment: Needs logical definition. Should be capable_of skeletal system morphogenesis? or skeletal tissue development? needs to be added to GO. NOTES:a cell type of the early embryo (see also: mesenchymal cells) that will give rise to mineralized connective tissue. Scleroblasts can differentiate into osteoblasts (bone-forming cells), chondroblasts (cartilage-forming cells), odontoblasts (dentin-forming cells), ameloblasts (enamel-forming cells). The mesenchymal cells developing into osteoblasts and chondroblasts are derived from the mesoderm. Those developing into odontoblasts are neural crest cells. Those developing into ameloblasts are derived from the ectoderm. (http://www.copewithcytokines.de/cope.cgi?key=scleroblasts)
 synonym: "scleroblast" EXACT [GO_REF:0000034]
 is_a: CL:0000003 ! native cell
 created_by: haendel
@@ -21374,7 +21525,7 @@ id: CL:1000427
 name: adrenal cortex chromaffin cell
 namespace: cell
 def: "A chromaffin cell that is part of the adrenal cortex." [GOC:tfm]
-comment: Not clear this cell type exists.  Can't call it a cortical adrenal cell because of different germ layer origin.
+comment: Not clear this cell type exists. Can't call it a cortical adrenal cell because of different germ layer origin.
 synonym: "chromaffin cell of adrenal cortex" EXACT []
 xref: FMA:69795
 is_a: CL:0000166 ! chromaffin cell
