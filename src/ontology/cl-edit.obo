@@ -1801,18 +1801,18 @@ namespace: cell
 alt_id: CL:0002452
 def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. This cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
 comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
-synonym: "BMSC" EXACT []
-synonym: "bone marrow stromal cells" EXACT []
-synonym: "CFU-F" EXACT []
-synonym: "colony-forming unit-fibroblast" EXACT []
-synonym: "marrow stromal cells" EXACT [PMID:11378515]
-synonym: "mesenchymal precursor cell" EXACT []
-synonym: "mesenchymal progenitor cells" EXACT [MESH:D044982]
-synonym: "mesenchymal stem cell" EXACT []
-synonym: "mesenchymal stromal cell" EXACT []
-synonym: "mesenchymal stromal cells" EXACT []
-synonym: "MSC" EXACT [PMID:11378515]
-synonym: "stem cells, mesenchymal" EXACT [MESH:D044982]
+synonym: "BMSC" NARROW []
+synonym: "bone marrow stromal cells" NARROW []
+synonym: "CFU-F" RELATED []
+synonym: "colony-forming unit-fibroblast" NARROW []
+synonym: "marrow stromal cells" NARROW [PMID:11378515]
+synonym: "mesenchymal precursor cell" RELATED []
+synonym: "mesenchymal progenitor cells" RELATED PLURAL [MESH:D044982]
+synonym: "mesenchymal stem cell" RELATED []
+synonym: "mesenchymal stromal cell" RELATED []
+synonym: "mesenchymal stromal cells" RELATED PLURAL []
+synonym: "MSC" RELATED [PMID:11378515]
+synonym: "stem cells, mesenchymal" RELATED PLURAL [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
 xref: FMA:70546
@@ -2172,6 +2172,7 @@ name: type B pancreatic cell
 namespace: cell
 def: "A cell that secretes insulin and is located towards the center of the islets of Langerhans." [GOC:tfm, http://en.wikipedia.org/wiki/Pancreatic_b_cell, ISBN:0517223651]
 comment: Pancreatic beta cells are also reportedly CD284-positive. Upon activation, they upregulate their CD14 expression.
+synonym: "beta cell" BROAD  [ZFA:0009102]
 synonym: "B-cell of pancreatic islet" EXACT [FMA:70586]
 synonym: "beta cell islet" RELATED [MA:0002419]
 synonym: "beta cell of pancreatic islet" EXACT [FMA:70586]
@@ -2184,6 +2185,8 @@ synonym: "type B enteroendocrine cell" EXACT [FMA:70586]
 xref: BTO:0000783
 xref: FMA:70586
 xref: MA:0002419
+xref: EV:0200009 ! beta cell
+xref: ncithesaurus:Beta_Cell ! beta cell
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000168 ! insulin secreting cell
 intersection_of: CL:0000164 ! enteroendocrine cell
@@ -2207,6 +2210,7 @@ name: pancreatic A cell
 namespace: cell
 def: "A type of enteocrine cell found in the periphery of the islets of Langerhans that secretes glucagon." [GOC:tfm, ISBN:0721662544]
 synonym: "pancreatic alpha cell" EXACT []
+synonym: "alpha cell of iselt of Langerhans" EXACT []
 xref: BTO:0000990
 xref: FMA:70585
 is_a: CL:0002067 ! type A enterocrine cell
@@ -2282,6 +2286,7 @@ xref: BTO:0000755
 xref: EMAPA:29655
 xref: FMA:72297
 is_a: CL:0000177 ! testosterone secreting cell
+relationship: part_of UBERON:0005212 ! testis interstitial tissue
 
 [Term]
 id: CL:0000179
@@ -2458,6 +2463,7 @@ id: CL:0000198
 name: pain receptor cell
 namespace: cell
 def: "The peripheral receptor for pain. Includes receptors which are sensitive to painful mechanical stimuli, extreme heat or cold, and chemical stimuli. All mammalian nociceptors are free nerve endings." [MESH:A08.800.550.700.650]
+comment: Editor note: request detection of stimulus involved in sensory perception of pain; add develops_from relationship
 synonym: "nociceptor" EXACT []
 synonym: "nocireceptor" EXACT []
 is_a: CL:0000006 ! neuronal receptor cell
@@ -2475,7 +2481,8 @@ intersection_of: capable_of GO:0050974 ! detection of mechanical stimulus involv
 id: CL:0000200
 name: touch receptor cell
 namespace: cell
-is_a: CL:0000199 ! mechanoreceptor cell
+intersection_of: CL:0000540 ! neuron
+intersection_of: capable_of GO:0050976 ! detection of mechanical stimulus involved in sensory perception of touch
 
 [Term]
 id: CL:0000202
@@ -2491,12 +2498,15 @@ synonym: "inner ear receptor cell" EXACT [GO:0060119]
 xref: FMA:62364
 is_a: CL:0002374 ! ear hair cell
 is_a: CL:0002491 ! auditory epithelial cell
+relationship: part_of UBERON:0002227 ! spiral organ of cochlea
+relationship: capable_of GO:0050910 ! detection of mechanical stimulus involved in sensory perception of sound
 
 [Term]
 id: CL:0000203
 name: gravity sensitive cell
 namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell
+intersection_of: CL:0000006 ! neuronal receptor cell
+intersection_of: capable_of GO:0070999 ! detection of mechanical stimulus involved in sensory perception of gravity
 
 [Term]
 id: CL:0000204
@@ -2509,7 +2519,8 @@ id: CL:0000205
 name: thermoreceptor cell
 namespace: cell
 def: "A cellular receptor which mediates the sense of temperature. Thermoreceptor cells in vertebrates are mostly located under the skin. In mammals there are separate types of thermoreceptors for cold and for warmth and pain receptor cells which detect cold or heat extreme enough to cause pain." [GOC:tfm, MESH:A08.800.550.700.840, MP:0000971]
-is_a: CL:0000006 ! neuronal receptor cell
+intersection_of: CL:0000006 ! neuronal receptor cell
+intersection_of: capable_of GO:0050960 ! detection of temperature stimulus involved in thermoception
 
 [Term]
 id: CL:0000206
@@ -2547,6 +2558,8 @@ xref: FMA:67910
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0000206 ! chemoreceptor cell
 is_a: CL:0002076 ! endo-epithelial cell
+intersection_of: CL:0000540 ! neuron
+intersection_of: capable_of GO:0050912 ! detection of chemical stimulus involved in sensory perception of taste
 
 [Term]
 id: CL:0000210
@@ -2665,6 +2678,7 @@ def: "A cell of the outer of the three germ layers of the embryo." [MESH:A16.254
 synonym: "ectoderm cell" EXACT []
 xref: FMA:72549
 is_a: CL:0002321 ! embryonic cell
+relationship: part_of UBERON:0000924 ! ectoderm
 
 [Term]
 id: CL:0000222
@@ -2675,6 +2689,7 @@ synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
 is_a: CL:0002321 ! embryonic cell
+relationship: part_of UBERON:0000926 ! mesoderm
 
 [Term]
 id: CL:0000223
@@ -2684,6 +2699,7 @@ def: "A cell of the inner of the three germ layers of the embryo." [MESH:A16.254
 synonym: "endoderm cell" EXACT []
 xref: FMA:72555
 is_a: CL:0002321 ! embryonic cell
+relationship: part_of UBERON:0000925 ! endoderm
 
 [Term]
 id: CL:0000224
@@ -2730,6 +2746,7 @@ synonym: "syncitium" EXACT []
 synonym: "syncytial cell" EXACT []
 synonym: "syncytium" EXACT []
 xref: WBbt:0008074
+xref: AEO:0000203 ! syncytium
 intersection_of: CL:0000003 ! native cell
 intersection_of: has_quality PATO:0001908 ! multinucleate
 
@@ -2917,8 +2934,14 @@ is_a: CL:0000099 ! interneuron
 [Term]
 id: CL:0000247
 name: Rohon-Beard neuron
+def: "Type of neuron that is a primary mechanosensory cell, with peripheral neurites innervating the skin with free nerve endings." [VHOG:0001484]
+synonym: "RB neuron" RELATED  [VHOG:0001484]
+synonym: "Rohon Beard cell" EXACT  [VHOG:0001484]
+synonym: "Rohon-Beard cell" EXACT  []
 namespace: cell
 xref: VHOG:0001484
+xref: AAO:0010316 ! Rohon-Beard neuron
+xref: EFO:0003711 ! Rohon-Beard neuron
 is_a: CL:0000531 ! primary sensory neuron
 
 [Term]
@@ -3778,7 +3801,9 @@ is_a: CL:0000007 ! early embryonic cell
 id: CL:0000354
 name: blastemal cell
 namespace: cell
+synonym: "blastema cell" EXACT []
 is_a: CL:0000048 ! multi fate stem cell
+xref: ncithesaurus:Blastemal_Cell ! blastemal cell
 
 [Term]
 id: CL:0000355
@@ -3876,6 +3901,7 @@ namespace: cell
 def: "Diploid cell produced by the fusion of sperm cell nucleus and egg cell." [ISBN:0471245208]
 xref: BTO:0000854
 xref: FMA:72395
+xref: EHDAA2:0004546 ! zygote
 is_a: CL:0000007 ! early embryonic cell
 
 [Term]
@@ -4816,8 +4842,8 @@ synonym: "MCT" EXACT []
 synonym: "T mast cells" EXACT []
 is_a: CL:0000097 ! mast cell
 intersection_of: CL:0000097 ! mast cell
-intersection_of: capable_of GO:0002540 ! leukotriene production involved in inflammatory response
 intersection_of: part_of UBERON:0001961 ! mucosa-associated lymphoid tissue
+intersection_of: capable_of GO:0002540 ! leukotriene production involved in inflammatory response
 
 [Term]
 id: CL:0000486
@@ -5729,7 +5755,12 @@ name: parafollicular cell
 namespace: cell
 def: "A neuroepithelial cells that occurs singly or in small groups, close to the outer follicular borders but within the follicular basement membrane of the thyroid. Expresses a form of the neural cell adhesion molecule (N-CAM) on their surface. Secrets calcitonin, 5-hydroxytryptamine and dopamine." [GOC:tfm, ISBN:0517223651]
 synonym: "C cell" EXACT []
+synonym: "C cell of thyroid gland" EXACT  [FMA:68653]
+synonym: "clear cell of thyroid gland" EXACT  [FMA:68653]
+synonym: "parafollicular cell of thyroid gland" EXACT  [FMA:68653]
+synonym: "thyroid parafollicular cell" EXACT  [FMA:68653]
 xref: FMA:68653
+xref: SCTID:176770005 ! Entire thyroid parafollicular cell
 is_a: CL:0000443 ! calcitonin secreting cell
 is_a: CL:0000710 ! neurecto-epithelial cell
 intersection_of: CL:0000710 ! neurecto-epithelial cell
@@ -5737,6 +5768,7 @@ intersection_of: capable_of GO:0001820 ! serotonin secretion
 intersection_of: capable_of GO:0014046 ! dopamine secretion
 intersection_of: has_plasma_membrane_part PR:000001024 ! neural cell adhesion molecule 1
 relationship: develops_from CL:0000333 ! migratory neural crest cell
+relationship: part_of UBERON:0001747 ! parenchyma of thyroid gland
 
 [Term]
 id: CL:0000571
@@ -5986,8 +6018,6 @@ synonym: "inner hair cell" BROAD []
 xref: BTO:0003667
 xref: FMA:62365
 is_a: CL:0000202 ! auditory hair cell
-intersection_of: CL:0000202 ! auditory hair cell
-intersection_of: part_of UBERON:0002227 ! spiral organ of cochlea
 
 [Term]
 id: CL:0000590
@@ -6349,6 +6379,7 @@ synonym: "acinous cell" EXACT []
 xref: FMA:83625
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000154 ! protein secreting cell
+relationship: part_of UBERON:0009842 ! acinus
 
 [Term]
 id: CL:0000623
@@ -6530,6 +6561,7 @@ name: basophil cell of pars distalis of adenohypophysis
 namespace: cell
 def: "A basophillic chromophil cell that of the anterior pituitary gland." [GOC:tfm]
 synonym: "basophil cell of anterior lobe of hypophysis" EXACT []
+synonym: "pituitary beta cell" RELATED []
 synonym: "beta cell" RELATED []
 xref: FMA:83094
 is_a: CL:0000637 ! chromophil cell of anterior pituitary gland
@@ -6657,11 +6689,15 @@ id: CL:0000653
 name: glomerular visceral epithelial cell
 namespace: cell
 def: "A glomerular visceral epithelial cell is a specialized kidney epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells." [GOC:tfm]
-comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'.
+comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'[tfm].
 synonym: "podocyte" EXACT []
+synonym: "glomerular podocyte" EXACT  [FMA:70967]
+synonym: "epithelial cell of visceral layer of glomerular capsule" EXACT [FMA:70967]
 xref: BTO:0002295
+xref: FMA:70967 ! epithelial cell of visceral layer of glomerular capsule
 is_a: CL:0002518 ! kidney epithelial cell
 is_a: CL:0002522 ! renal filtration cell
+relationship: part_of UBERON:0005751 ! visceral layer of glomerular capsule
 
 [Term]
 id: CL:0000654
@@ -12689,8 +12725,8 @@ xref: FMA:63032
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000622 ! acinar cell
 intersection_of: CL:0000622 ! acinar cell
-intersection_of: has_part GO:0042589 ! zymogen granule membrane
 intersection_of: part_of UBERON:0001263 ! pancreatic acinus
+relationship: has_part GO:0042589 ! zymogen granule membrane
 created_by: tmeehan
 creation_date: 2010-06-24T03:16:29Z
 
@@ -13026,10 +13062,11 @@ creation_date: 2010-08-12T02:22:19Z
 id: CL:0002090
 name: polar body
 namespace: cell
-def: "One of two small cells formed by the first and second meiotic division of oocytes." [GOC:tfm, ISBN:068340007X]
+def: "One of two small cells formed by the first and second meiotic division of oocytes." [GOC:tfm, ISBN:068340007X, http://en.wikipedia.org/wiki/Polar_body]
 xref: FMA:85543
 xref: WBbt:0008429
 xref: XAO:0000262
+xref: EHDAA2:0004716 ! polar bodies
 is_a: CL:0000021 ! female germ cell
 created_by: tmeehan
 creation_date: 2010-08-23T09:49:53Z
@@ -13039,8 +13076,12 @@ id: CL:0002091
 name: primary polar body
 namespace: cell
 def: "A small cell formed by the first meiotic division of oocytes." [GOC:tfm, ISBN:068340007X]
-synonym: "polocytus primarius" EXACT []
+synonym: "polocytus primarius" EXACT  [FMA:18650]
+synonym: "first polar body" EXACT [EHDAA2:0000541]
 xref: FMA:18650
+xref: VHOG:0000464 ! first polar body
+xref: EMAPA:16032 ! first polar body
+xref: EHDAA2:0000541 ! first polar body
 is_a: CL:0002090 ! polar body
 created_by: tmeehan
 creation_date: 2010-08-23T09:49:58Z
@@ -13064,8 +13105,12 @@ id: CL:0002093
 name: secondary polar body
 namespace: cell
 def: "A small cell formed by the second meiotic division of oocytes. In mammals, the second polar body may fail to form unless the ovum has been penetrated by a sperm cell." [GOC:tfm, ISBN:068340007X]
-synonym: "polocytus secundarius" EXACT []
+synonym: "polocytus secundarius" EXACT  [FMA:18651]
+synonym: "second polar body" EXACT [EHDAA2:0001820]
 xref: FMA:18651
+xref: EMAPA:16045 ! second polar body
+xref: EMAPA:16034 ! second polar body
+xref: EHDAA2:0001820 ! second polar body
 is_a: CL:0002090 ! polar body
 created_by: tmeehan
 creation_date: 2010-08-23T09:50:01Z
@@ -14002,10 +14047,10 @@ creation_date: 2010-08-26T01:59:18Z
 
 [Term]
 id: CL:0002172
-name: interdental cell
+name: interdental cell of cochlea
 namespace: cell
 def: "A long, spindle-shaped supporting cells arranged in parallel rows that secretes components of the tectorial membrane and potassium ions into the endolymph." [GOC:tfm, MP:0004482, PMID:2111803]
-synonym: "interdental cell of cochlea" EXACT [FMA:79797]
+synonym: "interdental cell" EXACT []
 xref: FMA:79797
 is_a: CL:0002315 ! supporting cell of cochlea
 relationship: part_of UBERON:0002276 ! lamina of spiral limbus
@@ -14187,6 +14232,7 @@ intersection_of: CL:0000115 ! endothelial cell
 intersection_of: part_of UBERON:0000074 ! renal glomerulus
 created_by: tmeehan
 creation_date: 2010-08-26T10:59:44Z
+
 
 [Term]
 id: CL:0002189
@@ -20956,7 +21002,7 @@ xref: FMA:263102
 is_a: CL:1000339 ! enterocyte of epithelium proper of small intestine
 
 [Term]
-id: CL:1000343
+id: CL:1000343 ! paneth cell of epithelium of small intestine
 name: paneth cell of epithelium of small intestine
 namespace: cell
 def: "A paneth cell that is part of the epithelium of small intestine." [GOC:tfm]
@@ -22554,6 +22600,8 @@ relationship: part_of UBERON:0005167 ! papillary duct
 [Term]
 id: CL:1000742
 name: glomerular mesangial cell
+def: "Intraglomerular mesangial cells are specialized pericytes located among the glomerular capillaries within a renal corpuscle of a kidney." [Wikipedia:Intraglomerular_mesangial_cell]
+synonym: "intraglomerular mesangial cell" EXACT [CL:cjm]
 namespace: cell
 xref: KUPO:0001032
 is_a: CL:0000650 ! mesangial cell
@@ -61064,7 +61112,7 @@ synonym: "1st pharyngeal groove" EXACT [VHOG:0000969]
 synonym: "1st pharyngeal groove ectoderm" EXACT [VHOG:0000554]
 synonym: "branchial groove of 1st arch" EXACT [EMAPA:16119]
 xref: EHDAA:575
-xref: EHDAA2:0000009
+xref: EHDAA2:0000009 ! 1st arch groove ectoderm
 xref: EMAPA:16119
 xref: VHOG:0000554
 xref: VHOG:0000969
@@ -61084,14 +61132,13 @@ synonym: "branchial groove" RELATED [AAO:0010623, Wikipedia:Pharyngeal_groove]
 synonym: "gill cleft" NARROW []
 synonym: "Kiemenspalten" RELATED []
 synonym: "pharyngeal groove" EXACT [Wikipedia:Pharyngeal_groove]
+synonym: "pharyngeal groove ectoderm" EXACT [UBERON:cjm]
 synonym: "sulcus pharyngei" RELATED LATIN [Wikipedia:Pharyngeal_groove]
 xref: AAO:0010623
 xref: http://upload.wikimedia.org/wikipedia/commons/2/20/Kiemenbogen.jpg
 xref: ncithesaurus:Pharyngeal_Groove
 is_a: UBERON:0000490 {source="EHDAA2"} ! unilaminar epithelium
-is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0006846 {source="EHDAA2"} ! groove
-is_a: UBERON:0010371 ! ecto-epithelium
 relationship: develops_from UBERON:0000076 {source="EHDAA2"} ! external ectoderm
 relationship: part_of UBERON:0000922 ! embryo
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
