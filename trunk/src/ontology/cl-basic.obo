@@ -1,8 +1,8 @@
 format-version: 1.2
-data-version: 2012-11-04
-date: 31:10:2012 15:13
-saved-by: adiehl
-auto-generated-by: OBO-Edit 2.3
+data-version: 2012-12-31
+date: 30:12:2012 12:53
+saved-by: haendel
+auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -40,6 +40,7 @@ subsetdef: organ_slim "organs, excluding individual muscles and skeletal element
 subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
 subsetdef: scalar_slim "Scalar slim"
+subsetdef: termgenie_unvetted "Terms created by TermGenie that do not follow a template and require additional vetting by editors"
 subsetdef: uberon_slim "Uberon slim - somewhat arbitrary subset that excludes obscure terms and deep compositional terms"
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
@@ -49,6 +50,7 @@ subsetdef: upper_ontology_conflict "Terms in this subset group together terms fr
 subsetdef: value_slim "Value slim"
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
 subsetdef: virus_checked "Viral overhaul terms"
+synonymtypedef: ABBREVIATION "abbreviation" 
 synonymtypedef: ATTRIBUTION_REQUIRED "expert consultation and attribution required" 
 synonymtypedef: BRAND_NAME "BRAND NAME" 
 synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged" 
@@ -114,22 +116,26 @@ xref: XAO:0003012
 
 [Term]
 id: CL:0000001
-name: primary cell culture cell
+name: primary cultured cell
 namespace: cell
-def: "A cell culture cell that is part of a cell culture that does not have the capacity to proliferate indefinitely." [ReO:mhb]
-synonym: "mortal cell culture cell" EXACT [ReO:mhb]
+def: "A cultured cell that is freshly isolated from some source organism and not yet passaged." [ReO:mhb]
+comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+synonym: "mortal cultured cell" EXACT [ReO:mhb]
+synonym: "primary cell culture cell" EXACT []
 synonym: "primary cell line cell" RELATED []
+synonym: "unpassaged cultured cell" EXACT []
 xref: BTO:0002290
-is_a: CL:0000010 ! cell culture cell
+is_a: CL:0000010 ! cultured cell
 
 [Term]
 id: CL:0000002
 name: permanent cell line cell
 namespace: cell
-def: "A cell culture cell that is part of a cell line having the capacity to proliferate indefinitely if given appropriate space and nutrients." [ReO:mhb]
+def: "A cell line cell that is expected to be capable of an unlimited number of divisions, and is thus able to support indefinite growth/propagation in vitro as part of a permanent cell line." [ReO:mhb]
+comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+synonym: "continuous cell line cell" EXACT []
 synonym: "immortal cell line cell" EXACT [ReO:mhb]
-synonym: "permanent cell culture cell" EXACT []
-is_a: CL:0000010 ! cell culture cell
+is_a: CL:0007014 ! cell line cell
 
 [Term]
 id: CL:0000003
@@ -194,10 +200,10 @@ is_obsolete: true
 
 [Term]
 id: CL:0000010
-name: cell culture cell
+name: cultured cell
 namespace: cell
-def: "A cell in vitro that is propagated as part of a cell culture." [ReO:mhb]
-comment: The class has been re-labeled to 'culture' instead of 'line', as this class intends to cover cultured cells of multicellular and unicellular organisms, and both immortal and mortal cultured cells. 'Cell line' has different meanings to different people, in some cases referring to a culture that has been passaged, and in others referring to cultures that are immortal. 'Cell line cell' is included, however, as a narrow synonym.
+def: "A cell in vitro that has been maintained or propagated as part of a cell culture." [ReO:mhb]
+comment: Covers cells actively being cultured or stored in a quiescent state for future use. The class has been re-labeled to 'cultured cell' instead of 'cell line cell', as this class intends to cover cultured cells of multicellular and unicellular organisms, and both immortal and mortal cultured cells. 'Cell line' has different meanings to different people, in some cases referring to a culture that has been passaged, and in others referring to cultures that are immortal. 'Cell line cell' is included, however, as a narrow synonym.
 synonym: "cell line cell" NARROW []
 is_a: CL:0000578 ! experimentally modified cell in vitro
 
@@ -330,6 +336,7 @@ id: CL:0000023
 name: oocyte
 namespace: cell
 def: "A female germ cell that has entered meiosis." [GOC:tfm, ISBN:0721662544]
+synonym: "oogonium" RELATED []
 xref: BTO:0000964
 xref: FBbt:00004886
 xref: FMA:18644
@@ -1433,18 +1440,18 @@ namespace: cell
 alt_id: CL:0002452
 def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. This cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
 comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
-synonym: "BMSC" EXACT []
-synonym: "bone marrow stromal cells" EXACT []
-synonym: "CFU-F" EXACT []
-synonym: "colony-forming unit-fibroblast" EXACT []
-synonym: "marrow stromal cells" EXACT [PMID:11378515]
-synonym: "mesenchymal precursor cell" EXACT []
-synonym: "mesenchymal progenitor cells" EXACT [MESH:D044982]
-synonym: "mesenchymal stem cell" EXACT []
-synonym: "mesenchymal stromal cell" EXACT []
-synonym: "mesenchymal stromal cells" EXACT []
-synonym: "MSC" EXACT [PMID:11378515]
-synonym: "stem cells, mesenchymal" EXACT [MESH:D044982]
+synonym: "BMSC" NARROW []
+synonym: "bone marrow stromal cells" NARROW []
+synonym: "CFU-F" RELATED []
+synonym: "colony-forming unit-fibroblast" NARROW []
+synonym: "marrow stromal cells" NARROW [PMID:11378515]
+synonym: "mesenchymal precursor cell" RELATED []
+synonym: "mesenchymal progenitor cells" RELATED PLURAL [MESH:D044982]
+synonym: "mesenchymal stem cell" RELATED []
+synonym: "mesenchymal stromal cell" RELATED []
+synonym: "mesenchymal stromal cells" RELATED PLURAL []
+synonym: "MSC" RELATED [PMID:11378515]
+synonym: "stem cells, mesenchymal" RELATED PLURAL [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
 xref: FMA:70546
@@ -1771,6 +1778,7 @@ namespace: cell
 def: "A cell that secretes insulin and is located towards the center of the islets of Langerhans." [GOC:tfm, http://en.wikipedia.org/wiki/Pancreatic_b_cell, ISBN:0517223651]
 comment: Pancreatic beta cells are also reportedly CD284-positive. Upon activation, they upregulate their CD14 expression.
 synonym: "B-cell of pancreatic islet" EXACT [FMA:70586]
+synonym: "beta cell" BROAD [ZFA:0009102]
 synonym: "beta cell islet" RELATED [MA:0002419]
 synonym: "beta cell of pancreatic islet" EXACT [FMA:70586]
 synonym: "insulin-secreting cell" EXACT [FMA:70586]
@@ -1780,8 +1788,10 @@ synonym: "pancreatic beta cell" EXACT [FMA:70586]
 synonym: "pancreatic islet core" EXACT [MA:0002419]
 synonym: "type B enteroendocrine cell" EXACT [FMA:70586]
 xref: BTO:0000783
+xref: EV:0200009
 xref: FMA:70586
 xref: MA:0002419
+xref: ncithesaurus:Beta_Cell
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000168 ! insulin secreting cell
@@ -1801,6 +1811,7 @@ id: CL:0000171
 name: pancreatic A cell
 namespace: cell
 def: "A type of enteocrine cell found in the periphery of the islets of Langerhans that secretes glucagon." [GOC:tfm, ISBN:0721662544]
+synonym: "alpha cell of iselt of Langerhans" EXACT []
 synonym: "pancreatic alpha cell" EXACT []
 xref: BTO:0000990
 xref: FMA:70585
@@ -2039,6 +2050,7 @@ id: CL:0000198
 name: pain receptor cell
 namespace: cell
 def: "The peripheral receptor for pain. Includes receptors which are sensitive to painful mechanical stimuli, extreme heat or cold, and chemical stimuli. All mammalian nociceptors are free nerve endings." [MESH:A08.800.550.700.650]
+comment: Editor note: request detection of stimulus involved in sensory perception of pain; add develops_from relationship
 synonym: "nociceptor" EXACT []
 synonym: "nocireceptor" EXACT []
 is_a: CL:0000006 ! neuronal receptor cell
@@ -2069,6 +2081,7 @@ synonym: "cochlear hair cell" EXACT []
 synonym: "inner ear hair cell" EXACT [GO:0060119]
 synonym: "inner ear receptor cell" EXACT [GO:0060119]
 xref: FMA:62364
+is_a: CL:0001035 ! bone cell
 is_a: CL:0002374 ! ear hair cell
 is_a: CL:0002491 ! auditory epithelial cell
 
@@ -2076,7 +2089,7 @@ is_a: CL:0002491 ! auditory epithelial cell
 id: CL:0000203
 name: gravity sensitive cell
 namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000199 ! mechanoreceptor cell
 
 [Term]
 id: CL:0000204
@@ -2296,6 +2309,7 @@ def: "A cell with more than one nucleus." [FB:ma]
 synonym: "syncitium" EXACT []
 synonym: "syncytial cell" EXACT []
 synonym: "syncytium" EXACT []
+xref: AEO:0000203
 xref: WBbt:0008074
 is_a: CL:0000003 ! native cell
 
@@ -2471,6 +2485,12 @@ is_a: CL:0000099 ! interneuron
 id: CL:0000247
 name: Rohon-Beard neuron
 namespace: cell
+def: "Type of neuron that is a primary mechanosensory cell, with peripheral neurites innervating the skin with free nerve endings." [VHOG:0001484]
+synonym: "RB neuron" RELATED [VHOG:0001484]
+synonym: "Rohon Beard cell" EXACT [VHOG:0001484]
+synonym: "Rohon-Beard cell" EXACT []
+xref: AAO:0010316
+xref: EFO:0003711
 xref: VHOG:0001484
 is_a: CL:0000531 ! primary sensory neuron
 
@@ -3297,6 +3317,8 @@ is_a: CL:0000007 ! early embryonic cell
 id: CL:0000354
 name: blastemal cell
 namespace: cell
+synonym: "blastema cell" EXACT []
+xref: ncithesaurus:Blastemal_Cell
 is_a: CL:0000048 ! multi fate stem cell
 
 [Term]
@@ -3383,6 +3405,7 @@ name: zygote
 namespace: cell
 def: "Diploid cell produced by the fusion of sperm cell nucleus and egg cell." [ISBN:0471245208]
 xref: BTO:0000854
+xref: EHDAA2:0004546
 xref: FMA:72395
 is_a: CL:0000007 ! early embryonic cell
 
@@ -3858,6 +3881,7 @@ id: CL:0000431
 name: iridophore
 namespace: cell
 def: "A pigment cell derived from the neural crest. The cell contains flat light-reflecting platelets, probably of guanine, in stacks called reflecting platets or iridisomes. The color-generating components produce a silver, gold, or iridescent color." [SANBI:mhl]
+synonym: "guanophore" RELATED []
 is_a: CL:0000147 ! pigment cell
 relationship: develops_from CL:0005001 ! iridoblast
 
@@ -5086,7 +5110,12 @@ name: parafollicular cell
 namespace: cell
 def: "A neuroepithelial cells that occurs singly or in small groups, close to the outer follicular borders but within the follicular basement membrane of the thyroid. Expresses a form of the neural cell adhesion molecule (N-CAM) on their surface. Secrets calcitonin, 5-hydroxytryptamine and dopamine." [GOC:tfm, ISBN:0517223651]
 synonym: "C cell" EXACT []
+synonym: "C cell of thyroid gland" EXACT [FMA:68653]
+synonym: "clear cell of thyroid gland" EXACT [FMA:68653]
+synonym: "parafollicular cell of thyroid gland" EXACT [FMA:68653]
+synonym: "thyroid parafollicular cell" EXACT [FMA:68653]
 xref: FMA:68653
+xref: SCTID:176770005
 is_a: CL:0000443 ! calcitonin secreting cell
 is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000710 ! neurecto-epithelial cell
@@ -5275,7 +5304,6 @@ synonym: "inner hair cell" BROAD []
 xref: BTO:0003667
 xref: FMA:62365
 is_a: CL:0000202 ! auditory hair cell
-is_a: CL:0001035 ! bone cell
 
 [Term]
 id: CL:0000590
@@ -5743,6 +5771,7 @@ namespace: cell
 def: "A basophillic chromophil cell that of the anterior pituitary gland." [GOC:tfm]
 synonym: "basophil cell of anterior lobe of hypophysis" EXACT []
 synonym: "beta cell" RELATED []
+synonym: "pituitary beta cell" RELATED []
 xref: FMA:83094
 is_a: CL:0000637 ! chromophil cell of anterior pituitary gland
 
@@ -5866,17 +5895,21 @@ id: CL:0000653
 name: glomerular visceral epithelial cell
 namespace: cell
 def: "A glomerular visceral epithelial cell is a specialized kidney epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells." [GOC:tfm]
-comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'.
+comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'[tfm].
+synonym: "epithelial cell of visceral layer of glomerular capsule" EXACT [FMA:70967]
+synonym: "glomerular podocyte" EXACT [FMA:70967]
 synonym: "podocyte" EXACT []
 xref: BTO:0002295
-is_a: CL:0002518 ! kidney epithelial cell
+xref: FMA:70967
 is_a: CL:0002522 ! renal filtration cell
+is_a: CL:1000451 ! epithelial cell of visceral layer of glomerular capsule
 
 [Term]
 id: CL:0000654
 name: primary oocyte
 namespace: cell
 def: "A primary oocyte is an oocyte that has not completed female meosis I." [GOC:tfm, ISBN:0721662544]
+synonym: "primary oogonium" RELATED []
 xref: BTO:0000512
 xref: FMA:18645
 is_a: CL:0000023 ! oocyte
@@ -5887,6 +5920,7 @@ id: CL:0000655
 name: secondary oocyte
 namespace: cell
 def: "A secondary oocyte is an oocyte that has not completed meiosis II." [GOC:tfm, ISBN:0721662544]
+synonym: "primary oogonium" RELATED []
 xref: BTO:0003094
 xref: FMA:18646
 is_a: CL:0000023 ! oocyte
@@ -10854,7 +10888,8 @@ creation_date: 2010-08-12T02:22:19Z
 id: CL:0002090
 name: polar body
 namespace: cell
-def: "One of two small cells formed by the first and second meiotic division of oocytes." [GOC:tfm, ISBN:068340007X]
+def: "One of two small cells formed by the first and second meiotic division of oocytes." [GOC:tfm, http://en.wikipedia.org/wiki/Polar_body, ISBN:068340007X]
+xref: EHDAA2:0004716
 xref: FMA:85543
 xref: WBbt:0008429
 xref: XAO:0000262
@@ -10867,8 +10902,12 @@ id: CL:0002091
 name: primary polar body
 namespace: cell
 def: "A small cell formed by the first meiotic division of oocytes." [GOC:tfm, ISBN:068340007X]
-synonym: "polocytus primarius" EXACT []
+synonym: "first polar body" EXACT [EHDAA2:0000541]
+synonym: "polocytus primarius" EXACT [FMA:18650]
+xref: EHDAA2:0000541
+xref: EMAPA:16032
 xref: FMA:18650
+xref: VHOG:0000464
 is_a: CL:0002090 ! polar body
 created_by: tmeehan
 creation_date: 2010-08-23T09:49:58Z
@@ -10890,7 +10929,11 @@ id: CL:0002093
 name: secondary polar body
 namespace: cell
 def: "A small cell formed by the second meiotic division of oocytes. In mammals, the second polar body may fail to form unless the ovum has been penetrated by a sperm cell." [GOC:tfm, ISBN:068340007X]
-synonym: "polocytus secundarius" EXACT []
+synonym: "polocytus secundarius" EXACT [FMA:18651]
+synonym: "second polar body" EXACT [EHDAA2:0001820]
+xref: EHDAA2:0001820
+xref: EMAPA:16034
+xref: EMAPA:16045
 xref: FMA:18651
 is_a: CL:0002090 ! polar body
 created_by: tmeehan
@@ -11743,10 +11786,10 @@ creation_date: 2010-08-26T01:59:18Z
 
 [Term]
 id: CL:0002172
-name: interdental cell
+name: interdental cell of cochlea
 namespace: cell
 def: "A long, spindle-shaped supporting cells arranged in parallel rows that secretes components of the tectorial membrane and potassium ions into the endolymph." [GOC:tfm, MP:0004482, PMID:2111803]
-synonym: "interdental cell of cochlea" EXACT [FMA:79797]
+synonym: "interdental cell" EXACT []
 xref: FMA:79797
 is_a: CL:0001035 ! bone cell
 is_a: CL:0002315 ! supporting cell of cochlea
@@ -17389,6 +17432,38 @@ def: "Odontoblast that is terminally differentiated and derived from an odontoge
 is_a: CL:0000060 ! odontoblast
 
 [Term]
+id: CL:0007014
+name: cell line cell
+namespace: cell
+def: "A cultured cell that has been passaged at least one time in culture." [ReO:mhb]
+comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+synonym: "passaged cultured cell" EXACT []
+is_a: CL:0000010 ! cultured cell
+created_by: haendel
+creation_date: 2012-11-28T11:54:59Z
+
+[Term]
+id: CL:0007015
+name: finite cell line cell
+namespace: cell
+def: "A cell line cell that is expected to be capable of replicating a limited number of times in culture before undergoing senescence. Finite cell line cells cannot be propagated indefinitely (as permanent cell lines can)." [ReO:mhb]
+comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+synonym: "primary cell line cell" RELATED []
+is_a: CL:0007014 ! cell line cell
+created_by: haendel
+creation_date: 2012-11-28T11:56:20Z
+
+[Term]
+id: CL:0007016
+name: adaxial cell
+namespace: cell
+def: "Muscle precursor cell that is adjacent to the notochord and part of the presomitic mesoderm." [PMID:8951054]
+comment: In teleosts, adaxial cells give rise to slow muscle myoblasts.
+is_a: CL:0000680 ! muscle precursor cell
+created_by: haendel
+creation_date: 2012-12-30T12:43:15Z
+
+[Term]
 id: CL:1000082
 name: stretch receptor cell
 namespace: cell
@@ -17760,7 +17835,8 @@ name: goblet cell of epithelium of intestinal villus
 namespace: cell
 def: "A goblet cell that is part of the epithelium of intestinal villus." [GOC:tfm]
 xref: FMA:263046
-is_a: CL:1000495 ! goblet cell of small intestine
+is_a: CL:0000160 ! goblet cell
+is_a: CL:0000510 ! paneth cell
 
 [Term]
 id: CL:1000318
@@ -17914,7 +17990,6 @@ namespace: cell
 def: "An enterocyte that is part of the epithelium of intestinal villus." [GOC:tfm]
 xref: FMA:263088
 is_a: CL:0000584 ! enterocyte
-is_a: CL:0002254 ! epithelial cell of small intestine
 
 [Term]
 id: CL:1000337
@@ -18070,7 +18145,7 @@ namespace: cell
 def: "A M cell that is part of the epithelium of intestinal villus." [GOC:tfm]
 xref: FMA:263130
 is_a: CL:0000682 ! M cell
-is_a: CL:0002254 ! epithelial cell of small intestine
+is_a: CL:0002563 ! intestinal epithelial cell
 
 [Term]
 id: CL:1000355
@@ -18330,7 +18405,7 @@ def: "A melanocyte that is part of the eyelid." [GOC:tfm]
 synonym: "eyelid melanocyte" EXACT [FMA:59175]
 synonym: "sebaceous gland of wolff" EXACT [FMA:59175]
 xref: FMA:59175
-is_a: CL:1000458 ! melanocyte of skin
+is_a: CL:0000148 ! melanocyte
 
 [Term]
 id: CL:1000394
@@ -19319,6 +19394,8 @@ is_a: CL:1001431 ! kidney collecting duct principal cell
 id: CL:1000742
 name: glomerular mesangial cell
 namespace: cell
+def: "Intraglomerular mesangial cells are specialized pericytes located among the glomerular capillaries within a renal corpuscle of a kidney." [Wikipedia:Intraglomerular_mesangial_cell]
+synonym: "intraglomerular mesangial cell" EXACT [CL:cjm]
 xref: KUPO:0001032
 is_a: CL:0000650 ! mesangial cell
 is_a: CL:1000500 ! kidney interstitial cell
@@ -20234,8 +20311,6 @@ name: results_in
 namespace: gene_ontology
 comment: This relation is currently used to connect two regulation processes p1 and p2, such that if r1 regulates p1 and r2 regulates p2, and r1 results_in r2 then the regulation of p1 is required for the regulation of p2. For an example of use, see GO:0035958 'regulation of glyoxylate cycle by regulation of transcription from RNA polymerase II promoter'. Note that a precise definition of this relation is under discussion. After it has been formalized it will be added to RO, where it will have a RO ID. Note that the existing identifier and label are subject to change.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-created_by: cjm
-creation_date: 2012-03-14T10:35:44Z
 
 [Typedef]
 id: secretes
