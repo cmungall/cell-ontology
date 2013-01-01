@@ -2,7 +2,7 @@ OBO=http://purl.obolibrary.org/obo
 
 all: release
 
-release: cl.obo cl.owl cl-basic.obo cl-basic.owl
+release: cl.obo cl.owl cl-basic.obo cl-basic.owl diffs
 
 # PR mireots CHEBI, but is not always in sync, which causes problems for Oort (e.g. different defs in two version).
 # only use core PR info
@@ -47,7 +47,7 @@ fix-%: %
 # Diffs
 # ----------------------------------------
 
-diffs: cl-obo-diff.html cl-def-diff.html
+diffs: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
 
 cl-obo-diff.html: cl-basic.obo
 	compare-obo-files.pl --config 'html/ontology_name=Cell Ontology' --rss-path ./rss -f1 cl-lastbuild.obo -f2 $< -m html text rss -o cl-obo-diff
