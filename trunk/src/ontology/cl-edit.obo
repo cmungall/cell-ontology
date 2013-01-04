@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 30:12:2012 12:53
+date: 04:01:2013 10:01
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -294,12 +294,12 @@ is_a: CL:0000010 ! cultured cell
 
 [Term]
 id: CL:0000002
-name: permanent cell line cell
+name: immortal cell line cell
 namespace: cell
 def: "A cell line cell that is expected to be capable of an unlimited number of divisions, and is thus able to support indefinite growth/propagation in vitro as part of a permanent cell line." [ReO:mhb]
 comment: Covers cells actively being cultured or stored in a quiescent state for future use.
 synonym: "continuous cell line cell" EXACT []
-synonym: "immortal cell line cell" EXACT [ReO:mhb]
+synonym: "permanent cell line cell" EXACT []
 is_a: CL:0007014 ! cell line cell
 
 [Term]
@@ -2172,8 +2172,8 @@ name: type B pancreatic cell
 namespace: cell
 def: "A cell that secretes insulin and is located towards the center of the islets of Langerhans." [GOC:tfm, http://en.wikipedia.org/wiki/Pancreatic_b_cell, ISBN:0517223651]
 comment: Pancreatic beta cells are also reportedly CD284-positive. Upon activation, they upregulate their CD14 expression.
-synonym: "beta cell" BROAD  [ZFA:0009102]
 synonym: "B-cell of pancreatic islet" EXACT [FMA:70586]
+synonym: "beta cell" BROAD [ZFA:0009102]
 synonym: "beta cell islet" RELATED [MA:0002419]
 synonym: "beta cell of pancreatic islet" EXACT [FMA:70586]
 synonym: "insulin-secreting cell" EXACT [FMA:70586]
@@ -2183,10 +2183,10 @@ synonym: "pancreatic beta cell" EXACT [FMA:70586]
 synonym: "pancreatic islet core" EXACT [MA:0002419]
 synonym: "type B enteroendocrine cell" EXACT [FMA:70586]
 xref: BTO:0000783
+xref: EV:0200009
 xref: FMA:70586
 xref: MA:0002419
-xref: EV:0200009 ! beta cell
-xref: ncithesaurus:Beta_Cell ! beta cell
+xref: ncithesaurus:Beta_Cell
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000168 ! insulin secreting cell
 intersection_of: CL:0000164 ! enteroendocrine cell
@@ -2209,8 +2209,8 @@ id: CL:0000171
 name: pancreatic A cell
 namespace: cell
 def: "A type of enteocrine cell found in the periphery of the islets of Langerhans that secretes glucagon." [GOC:tfm, ISBN:0721662544]
-synonym: "pancreatic alpha cell" EXACT []
 synonym: "alpha cell of iselt of Langerhans" EXACT []
+synonym: "pancreatic alpha cell" EXACT []
 xref: BTO:0000990
 xref: FMA:70585
 is_a: CL:0002067 ! type A enterocrine cell
@@ -2745,8 +2745,8 @@ def: "A cell with more than one nucleus." [FB:ma]
 synonym: "syncitium" EXACT []
 synonym: "syncytial cell" EXACT []
 synonym: "syncytium" EXACT []
+xref: AEO:0000203
 xref: WBbt:0008074
-xref: AEO:0000203 ! syncytium
 intersection_of: CL:0000003 ! native cell
 intersection_of: has_quality PATO:0001908 ! multinucleate
 
@@ -2934,11 +2934,11 @@ is_a: CL:0000099 ! interneuron
 [Term]
 id: CL:0000247
 name: Rohon-Beard neuron
-def: "Type of neuron that is a primary mechanosensory cell, with peripheral neurites innervating the skin with free nerve endings." [VHOG:0001484]
-synonym: "RB neuron" RELATED  [VHOG:0001484]
-synonym: "Rohon Beard cell" EXACT  [VHOG:0001484]
-synonym: "Rohon-Beard cell" EXACT  []
 namespace: cell
+def: "Type of neuron that is a primary mechanosensory cell, with peripheral neurites innervating the skin with free nerve endings." [VHOG:0001484]
+synonym: "RB neuron" RELATED [VHOG:0001484]
+synonym: "Rohon Beard cell" EXACT [VHOG:0001484]
+synonym: "Rohon-Beard cell" EXACT []
 xref: VHOG:0001484
 xref: AAO:0010316 ! Rohon-Beard neuron
 xref: EFO:0003711 ! Rohon-Beard neuron
@@ -5755,10 +5755,10 @@ name: parafollicular cell
 namespace: cell
 def: "A neuroepithelial cells that occurs singly or in small groups, close to the outer follicular borders but within the follicular basement membrane of the thyroid. Expresses a form of the neural cell adhesion molecule (N-CAM) on their surface. Secrets calcitonin, 5-hydroxytryptamine and dopamine." [GOC:tfm, ISBN:0517223651]
 synonym: "C cell" EXACT []
-synonym: "C cell of thyroid gland" EXACT  [FMA:68653]
-synonym: "clear cell of thyroid gland" EXACT  [FMA:68653]
-synonym: "parafollicular cell of thyroid gland" EXACT  [FMA:68653]
-synonym: "thyroid parafollicular cell" EXACT  [FMA:68653]
+synonym: "C cell of thyroid gland" EXACT [FMA:68653]
+synonym: "clear cell of thyroid gland" EXACT [FMA:68653]
+synonym: "parafollicular cell of thyroid gland" EXACT [FMA:68653]
+synonym: "thyroid parafollicular cell" EXACT [FMA:68653]
 xref: FMA:68653
 xref: SCTID:176770005 ! Entire thyroid parafollicular cell
 is_a: CL:0000443 ! calcitonin secreting cell
@@ -6561,8 +6561,8 @@ name: basophil cell of pars distalis of adenohypophysis
 namespace: cell
 def: "A basophillic chromophil cell that of the anterior pituitary gland." [GOC:tfm]
 synonym: "basophil cell of anterior lobe of hypophysis" EXACT []
-synonym: "pituitary beta cell" RELATED []
 synonym: "beta cell" RELATED []
+synonym: "pituitary beta cell" RELATED []
 xref: FMA:83094
 is_a: CL:0000637 ! chromophil cell of anterior pituitary gland
 
@@ -6690,9 +6690,9 @@ name: glomerular visceral epithelial cell
 namespace: cell
 def: "A glomerular visceral epithelial cell is a specialized kidney epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells." [GOC:tfm]
 comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'[tfm].
-synonym: "podocyte" EXACT []
-synonym: "glomerular podocyte" EXACT  [FMA:70967]
 synonym: "epithelial cell of visceral layer of glomerular capsule" EXACT [FMA:70967]
+synonym: "glomerular podocyte" EXACT [FMA:70967]
+synonym: "podocyte" EXACT []
 xref: BTO:0002295
 xref: FMA:70967 ! epithelial cell of visceral layer of glomerular capsule
 is_a: CL:0002518 ! kidney epithelial cell
@@ -13076,8 +13076,8 @@ id: CL:0002091
 name: primary polar body
 namespace: cell
 def: "A small cell formed by the first meiotic division of oocytes." [GOC:tfm, ISBN:068340007X]
-synonym: "polocytus primarius" EXACT  [FMA:18650]
 synonym: "first polar body" EXACT [EHDAA2:0000541]
+synonym: "polocytus primarius" EXACT [FMA:18650]
 xref: FMA:18650
 xref: VHOG:0000464 ! first polar body
 xref: EMAPA:16032 ! first polar body
@@ -13105,7 +13105,7 @@ id: CL:0002093
 name: secondary polar body
 namespace: cell
 def: "A small cell formed by the second meiotic division of oocytes. In mammals, the second polar body may fail to form unless the ovum has been penetrated by a sperm cell." [GOC:tfm, ISBN:068340007X]
-synonym: "polocytus secundarius" EXACT  [FMA:18651]
+synonym: "polocytus secundarius" EXACT [FMA:18651]
 synonym: "second polar body" EXACT [EHDAA2:0001820]
 xref: FMA:18651
 xref: EMAPA:16045 ! second polar body
@@ -14232,7 +14232,6 @@ intersection_of: CL:0000115 ! endothelial cell
 intersection_of: part_of UBERON:0000074 ! renal glomerulus
 created_by: tmeehan
 creation_date: 2010-08-26T10:59:44Z
-
 
 [Term]
 id: CL:0002189
@@ -20338,10 +20337,11 @@ creation_date: 2012-11-28T11:54:59Z
 
 [Term]
 id: CL:0007015
-name: finite cell line cell
+name: mortal cell line cell
 namespace: cell
-def: "A cell line cell that is expected to be capable of replicating a limited number of times in culture before undergoing senescence. Finite cell line cells cannot be propagated indefinitely (as permanent cell lines can)." [ReO:mhb]
+def: "A cell line cell that is expected to be capable of replicating a limited number of times in culture before undergoing senescence. Mortal cell line cells cannot be propagated indefinitely (as permanent cell lines can)." [ReO:mhb]
 comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+synonym: "finite cell line cell" EXACT []
 synonym: "primary cell line cell" RELATED []
 is_a: CL:0007014 ! cell line cell
 created_by: haendel
@@ -22600,9 +22600,9 @@ relationship: part_of UBERON:0005167 ! papillary duct
 [Term]
 id: CL:1000742
 name: glomerular mesangial cell
+namespace: cell
 def: "Intraglomerular mesangial cells are specialized pericytes located among the glomerular capillaries within a renal corpuscle of a kidney." [Wikipedia:Intraglomerular_mesangial_cell]
 synonym: "intraglomerular mesangial cell" EXACT [CL:cjm]
-namespace: cell
 xref: KUPO:0001032
 is_a: CL:0000650 ! mesangial cell
 is_a: CL:1000612 ! kidney corpuscule cell
