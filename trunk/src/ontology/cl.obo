@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2012-12-31
-date: 30:12:2012 12:53
+data-version: 2013-01-08
+date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -288,7 +288,6 @@ name: primary cultured cell
 namespace: cell
 def: "A cultured cell that is freshly isolated from some source organism and not yet passaged." [ReO:mhb]
 comment: Covers cells actively being cultured or stored in a quiescent state for future use.
-synonym: "mortal cultured cell" EXACT [ReO:mhb]
 synonym: "primary cell culture cell" EXACT []
 synonym: "primary cell line cell" RELATED []
 synonym: "unpassaged cultured cell" EXACT []
@@ -297,12 +296,12 @@ is_a: CL:0000010 ! cultured cell
 
 [Term]
 id: CL:0000002
-name: permanent cell line cell
+name: immortal cell line cell
 namespace: cell
-def: "A cell line cell that is expected to be capable of an unlimited number of divisions, and is thus able to support indefinite growth/propagation in vitro as part of a permanent cell line." [ReO:mhb]
+def: "A cell line cell that is expected to be capable of an unlimited number of divisions, and is thus able to support indefinite growth/propagation in vitro as part of a immortal cell line." [ReO:mhb]
 comment: Covers cells actively being cultured or stored in a quiescent state for future use.
 synonym: "continuous cell line cell" EXACT []
-synonym: "immortal cell line cell" EXACT [ReO:mhb]
+synonym: "permanent cell line cell" EXACT []
 is_a: CL:0007014 ! cell line cell
 
 [Term]
@@ -373,7 +372,7 @@ is_obsolete: true
 id: CL:0000010
 name: cultured cell
 namespace: cell
-def: "A cell in vitro that has been maintained or propagated as part of a cell culture." [ReO:mhb]
+def: "A cell in vitro that is or has been maintained or propagated as part of a cell culture." [ReO:mhb]
 comment: Covers cells actively being cultured or stored in a quiescent state for future use. The class has been re-labeled to 'cultured cell' instead of 'cell line cell', as this class intends to cover cultured cells of multicellular and unicellular organisms, and both immortal and mortal cultured cells. 'Cell line' has different meanings to different people, in some cases referring to a culture that has been passaged, and in others referring to cultures that are immortal. 'Cell line cell' is included, however, as a narrow synonym.
 synonym: "cell line cell" NARROW []
 is_a: CL:0000578 ! experimentally modified cell in vitro
@@ -1199,6 +1198,7 @@ namespace: cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:A11.436]
 synonym: "epitheliocyte" EXACT []
 xref: BTO:0000414
+xref: CARO:0000077
 xref: FBbt:00000124
 xref: FMA:66768
 xref: WBbt:0003672
@@ -6614,6 +6614,7 @@ synonym: "pyramidal neuron" EXACT []
 xref: BTO:0003102
 xref: FMA:67310
 xref: FMA:86775
+xref: NIF_Cell:sao862606388
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 
 [Term]
@@ -12984,13 +12985,21 @@ name: cortical granule cell
 namespace: cell
 def: "Granule cell that is part of the cerebral cortex." [GOC:mah]
 is_a: CL:0000120 ! granule cell
+is_a: CL:0002609 ! neuron of cerebral cortex
+intersection_of: CL:0000120 ! granule cell
+intersection_of: part_of UBERON:0000956 ! cerebral cortex
+relationship: part_of UBERON:0000956 ! cerebral cortex
 
 [Term]
 id: CL:0001033
 name: hippocampal granule cell
 namespace: cell
 def: "Granule cell that is part of the hippocampus." [GOC:mah]
-is_a: CL:0000120 ! granule cell
+is_a: CL:0001032 ! cortical granule cell
+is_a: CL:0002608 ! hippocampal neuron
+intersection_of: CL:0000120 ! granule cell
+intersection_of: part_of UBERON:0001954 ! Ammon's horn
+relationship: part_of UBERON:0001954 ! Ammon's horn
 
 [Term]
 id: CL:0001034
@@ -14453,6 +14462,7 @@ namespace: cell
 def: "A secretory cell found in pancreatic acini that secretes digestive enzymes and mucins. This cell is a typical zymogenic cell, have a basal nucleus and basophilic cytoplasm consisting of regular arrays of granular endoplasmic reticulum with mitochondria and dense secretory granules." [GOC:tfm, http://www.copewithcytokines.de/cope.cgi?key=pancreatic%20acinar%20cells, ISBN:0517223651, PMID:20395539]
 synonym: "acinar cell of pancreas" EXACT []
 xref: BTO:0000028
+xref: CALOHA:TS-0737
 xref: FMA:63032
 is_a: CL:0000622 ! acinar cell
 is_a: CL:1001433 ! epithelial cell of exocrine pancreas
@@ -15386,6 +15396,7 @@ id: CL:0002129
 name: regular atrial cardiac myocyte
 namespace: cell
 def: "Regular cardiac myocyte of a cardiac atrium." [GOC:tfm]
+synonym: "atrial cardiac muscle cell" EXACT [GOC:pr]
 synonym: "atrial myocyte" EXACT []
 synonym: "regular atrial cardiac muscle fiber" EXACT []
 synonym: "regular cardiac muscle cell of atrium" EXACT []
@@ -15411,6 +15422,7 @@ namespace: cell
 def: "Regular cardiac myocyte of a cardiac ventricle." [GOC:tfm]
 synonym: "regular cardiac muscle cell of ventricle" EXACT []
 synonym: "regular ventricular cardiac muscle fiber" EXACT []
+synonym: "ventricular cardiac muscle cell" BROAD [GOC:pr]
 synonym: "ventricular myocyte" EXACT []
 xref: FMA:83109
 is_a: CL:0002098 ! regular cardiac myocyte
@@ -15422,8 +15434,12 @@ id: CL:0002132
 name: stromal cell of ovary
 namespace: cell
 def: "A stomal cell of the ovary" [GOC:tfm]
+synonym: "ovarian stromal cell" EXACT [GOC:cjm]
 xref: FMA:72299
 is_a: CL:0000499 ! stromal cell
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: part_of UBERON:0000992 ! female gonad
+relationship: part_of UBERON:0000992 ! female gonad
 created_by: tmeehan
 creation_date: 2010-08-23T12:10:31Z
 
@@ -15667,6 +15683,7 @@ namespace: cell
 def: "A columnar cell of the cervix uteri." [GOC:tfm, ISBN:0721662544]
 xref: FMA:86486
 is_a: CL:0002149 ! epithelial cell of uterus
+relationship: part_of UBERON:0000458 ! endocervix
 created_by: tmeehan
 creation_date: 2010-08-24T10:47:47Z
 
@@ -15677,6 +15694,7 @@ namespace: cell
 def: "The dead keratin-filled squamous cell of the stratum corneum. This cell type lacks a nucleus." [GOC:tfm, ISBN:068340007X]
 xref: BTO:0001943
 xref: FMA:68650
+is_a: CL:0000225 ! anucleate cell
 is_a: CL:0000311 ! keratin accumulating cell
 relationship: develops_from CL:0000312 ! keratinocyte
 relationship: part_of UBERON:0002027 ! stratum corneum of epidermis
@@ -15761,6 +15779,7 @@ namespace: cell
 def: "An extremely flattened cell type found on the inner side of the tympanic membrane. The surface of this cell type carries sparse pleomorphic microvilli that are more common near the junctional zones." [FMA:5686391, GOC:tfm]
 xref: FMA:70626
 is_a: CL:0002076 ! endo-epithelial cell
+relationship: part_of UBERON:0002364 ! tympanic membrane
 created_by: tmeehan
 creation_date: 2010-08-25T10:49:46Z
 
@@ -15852,7 +15871,9 @@ name: keratinized cell of the oral mucosa
 namespace: cell
 def: "A keratinized cell located in the hard palate or gingiva." [GOC:tfm, PMID:12014572]
 is_a: CL:0000237 ! keratinizing barrier epithelial cell
+is_a: CL:0002251 ! epithelial cell of alimentary canal
 is_a: CL:0002336 ! buccal mucosa cell
+relationship: part_of UBERON:0003729 ! mouth mucosa
 created_by: tmeehan
 creation_date: 2010-08-26T02:51:30Z
 
@@ -22619,10 +22640,11 @@ creation_date: 2012-11-28T11:54:59Z
 
 [Term]
 id: CL:0007015
-name: finite cell line cell
+name: mortal cell line cell
 namespace: cell
-def: "A cell line cell that is expected to be capable of replicating a limited number of times in culture before undergoing senescence. Finite cell line cells cannot be propagated indefinitely (as permanent cell lines can)." [ReO:mhb]
+def: "A cell line cell that is expected to be capable of replicating a limited number of times in culture before undergoing senescence. Mortal cell line cells cannot be propagated indefinitely (as immortal cell line cells can)." [ReO:mhb]
 comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+synonym: "finite cell line cell" EXACT []
 synonym: "primary cell line cell" RELATED []
 is_a: CL:0007014 ! cell line cell
 created_by: haendel
@@ -23788,6 +23810,8 @@ namespace: cell
 def: "A muscle cell that is part of the sinoatrial node." [FMA:67102, GOC:tfm]
 synonym: "myocyte of sinoatrial node" EXACT [FMA:67102]
 synonym: "SA nodal myocyte" EXACT [FMA:67102]
+synonym: "SA node cardiac muscle cell" EXACT [GOC:pr]
+synonym: "sinoatrial node cell" EXACT [GOC:pr]
 synonym: "sinoatrial node myocyte" EXACT []
 synonym: "sinuatrial node myocyte" EXACT [FMA:67102]
 xref: FMA:67102
@@ -23801,8 +23825,11 @@ id: CL:1000410
 name: myocyte of atrioventricular node
 namespace: cell
 def: "A muscle cell that is part of the atrioventricular node." [FMA:67106, GOC:tfm]
+synonym: "atrioventricular node cell" EXACT [GOC:pr]
 synonym: "atrioventricular node myocyte" EXACT [FMA:67106]
 synonym: "AV nodal myocyte" EXACT [FMA:67106]
+synonym: "AV node cardiac muscle cell" EXACT [GOC:pr]
+synonym: "AV node cell" EXACT [GOC:pr]
 xref: FMA:67106
 is_a: CL:0002072 ! nodal myocyte
 intersection_of: CL:0000187 ! muscle cell
@@ -25868,6 +25895,21 @@ is_a: CL:0000099 ! interneuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: part_of UBERON:0001954 ! Ammon's horn
 relationship: part_of UBERON:0001954 ! Ammon's horn
+
+[Term]
+id: CL:1001571
+name: hippocampal pyramidal neuron
+def: "A pyramidal cell of the hippocampus." [GOC:pr, PMID:19342486]
+synonym: "hippocampus (CA) pyramidal cell" EXACT [NIF_Cell:sao131261273]
+synonym: "hippocampus (CA) pyramidal neuron" EXACT [NIF_Cell:sao131261273]
+xref: NIF_Cell:sao131261273
+xref: SAO:sao131261273
+is_a: CL:0000598 ! pyramidal cell
+is_a: CL:0002608 ! hippocampal neuron
+intersection_of: CL:0000598 ! pyramidal cell
+intersection_of: part_of UBERON:0001954 ! Ammon's horn
+relationship: part_of UBERON:0001954 ! Ammon's horn
+relationship: part_of UBERON:0002313 ! hippocampus pyramidal layer
 
 [Term]
 id: CP:0000000
@@ -40800,7 +40842,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0000019
 name: camera-type eye
 namespace: uberon
-def: "The camera-type eye is an organ of sight that receives light through an aperture and focuses it through a lens, projecting it on a photoreceptor field[GO]. The eye contains the following parts (when they are present in the organism): the eyeball (eye proper), the lacrimal apparatus, the conjuctival, the eyelid // " [GO:0043010, UBERON:cjm]
+def: "The camera-type eye is an organ of sight that receives light through an aperture and focuses it through a lens, projecting it on a photoreceptor field[GO]. The eye contains the following parts (when they are present in the organism): the eyeball (eye proper), the lacrimal apparatus, the conjuctival, the eyelid." [GO:0043010, UBERON:cjm]
 comment: AO notes: FMA distinguishes Eye (subdivision of face) which has its parts an Eyeball (organ). MA includes eyelid, conjunctiva and lacrimal apparatus as part of MA:eye - consistent with FMA - so we can infer that MA:eye is more like FMA:eye than FMA:eyeball. For other AOs this distinction is less meaningful - e.g. ZFA has no eyelid; XAO has no eyelid, but it has conjuctiva, which is considered part of the xao:eye. GO considers eyelid development part of eye development. See also notes on optic nerve - XAO, AAO and BTO consider this part of the eye. MA considers the eye muscles part of the eye, whereas FMA has a class 'orbital content' for this
 subset: uberon_slim
 subset: vertebrate_core
@@ -41253,7 +41295,7 @@ is_a: UBERON:0000062 ! organ
 is_a: UBERON:0000078 ! mixed ectoderm/mesoderm/endoderm-derived structure
 is_a: UBERON:0004111 ! anatomical conduit
 is_a: UBERON:0006554 ! urinary system structure
-relationship: develops_from UBERON:0000164 {source="Wikipedia"} ! primitive urogenital sinus
+relationship: develops_from UBERON:0000164 {notes="pelvic part of UG sinus gives rise to prostatic and membranous parts of urethra", source="Wikipedia"} ! primitive urogenital sinus
 relationship: part_of UBERON:0001556 ! lower urinary tract
 property_value: has_relational_adjective "urethral" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -41263,12 +41305,13 @@ id: UBERON:0000058
 name: duct
 namespace: uberon
 def: "A tube shaped portion of tissue lined with epithelial cells that collects secretions and routes them to their destination[ZFA]." [Wikipedia:Duct_(anatomy), ZFA:0005171]
-comment: TODO - make distinctions between duct and tube clearer. Single layer of cells vs multiples? Function (e.g. exocrine gland duct?). Different ontologies use it in different ways. Consider adding duct of gland
+comment: TODO - make distinctions between duct and tube clearer. Single layer of cells vs multiples? Function (e.g. exocrine gland duct?). Different ontologies use it in different ways (e.g. isa epithelial tube in FBbt). Consider adding duct of gland
 subset: vertebrate_core
 synonym: "anatomical duct" EXACT []
 synonym: "exocrine duct" NARROW []
 synonym: "exocrine gland duct" NARROW []
 xref: AAO:0011123
+xref: FBbt:00100314
 xref: FMA:30320
 xref: galen:Duct
 xref: ncithesaurus:Duct
@@ -41813,7 +41856,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0000118
 name: lung bud
 namespace: uberon
-def: "Structure derived from foregut that becomes a lung." [GO:0060431, Wikipedia:Lung_buds]
+def: "Structure derived from foregut that becomes a lung[GO]." [GO:0060431, Wikipedia:Respiratory_bud]
+comment: Editors note: clarify successors - include bronchi?
+synonym: "gemma pulmonalis" RELATED LATIN [Wikipedia:Lung_buds]
+synonym: "gemma respiratoria" RELATED LATIN [Wikipedia:Lung_buds]
 synonym: "lung bud" RELATED PLURAL []
 synonym: "primary lung bud" RELATED [GO:0060572]
 synonym: "respiratory diverticulum" RELATED [Wikipedia:Lung_buds]
@@ -41845,6 +41891,7 @@ id: UBERON:0000121
 name: perineurium
 namespace: uberon
 def: "Connective tissue surrounding a fascicle." [Wikipedia:Perineurium]
+comment: consider FBbt:00007090 (perineurium): The outer two layers of glial cells that cover the central nervous system and the nerves. The outer layer is the perineurial sheath (sometimes referred to as the perineurial sheath outer layer); the inner layer is the sub-perineural glial sheath (sometimes referred to as the perineurial sheath inner layer)
 xref: BTO:0003153
 xref: FMA:52585
 xref: http://upload.wikimedia.org/wikipedia/commons/9/9c/Gray636.png
@@ -41943,7 +41990,7 @@ id: UBERON:0000162
 name: cloaca
 namespace: uberon
 def: "Common chamber into which the intestines and excretory system opens. Arises during development in all vertebrates, but in many it becomes subdivided, lost or incorporated into other structures" [ISBN10:0073040584, Wikipedia:Cloaca]
-comment: Development notes: hindgut endoderm and proctodeal ectoderm. Taxon notes: Human beings only have an embryonic cloaca, which is split up into separate tracts during the development of the urinary and reproductive organs[WP]. We deliberately exclude the wbbt class here, but may in future have a grouping class
+comment: Development notes: hindgut endoderm and proctodeal ectoderm. Taxon notes: Human beings only have an embryonic cloaca, which is split up into separate tracts during the development of the urinary and reproductive organs[WP]. Editor notes: adding df link to embryonic cloaca leads to a cycle in uberon-simple, as cloaca is a suberclass of embryonic cloaca
 synonym: "cloacal chamber" RELATED [AAO:0000095]
 synonym: "vent" RELATED [XAO:0000244]
 xref: AAO:0000095
@@ -41962,6 +42009,7 @@ property_value: external_definition "Anatomical structure which is the common re
 property_value: has_relational_adjective "cloacal" xsd:string
 property_value: homology_notes "A cloaca is apparently a primitive vertebrate feature because it occurs in most primitive gnathostomes and persists in the embryos of almost all vertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001186", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.572", source="http://bgee.unil.ch/"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: present_in_taxon NCBITaxon:9369 {notes="most adult placentals have no trace of a cloaca. However, the tenrecs and golden moles, small placental mammals native to Africa, retain a cloaca as adults."}
 
 [Term]
 id: UBERON:0000163
@@ -41988,11 +42036,11 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0000164
 name: primitive urogenital sinus
 namespace: uberon
-def: "Part of the human body only present in the development of the urinary and reproductive organs. It is the ventral part of the cloaca, formed after the cloaca separates from the rectum. It eventually becomes, among other things, the bladder[WP]. ventral part of the cloaca remaining after septation of the rectum, which further develops into part of the bladder, part of the prostatic part of the male urethra and the urethra and vestibule in females[MP]." [Wikipedia:Definitive_urogenital_sinus]
+def: "Ventral part of the cloaca remaining after septation of the rectum, which further develops into part of the bladder, part of the prostatic part of the male urethra and the urethra and vestibule in females[MP]." [Wikipedia:Definitive_urogenital_sinus]
 comment: Note that the term "urogenital sinus" may refer to the primitive urogenital sinus present as a transient developmental structure in most mammals or it may refer to a condition in which an unseptated cloaca persists in animals longer than normal[MP]
 synonym: "fetal UGS" EXACT [PMID:18977204]
 synonym: "UGS" EXACT [MP:0010116]
-synonym: "urogenital sinus" EXACT [MP:0010116]
+synonym: "urogenital sinus" BROAD [MP:0010116]
 xref: EHDAA2:0004060
 xref: EHDAA:5029
 xref: EHDAA:5919
@@ -42005,7 +42053,7 @@ xref: SCTID:50961009
 xref: VHOG:0000414
 is_a: UBERON:0005423 ! developing anatomical structure
 relationship: develops_from UBERON:0003064 ! intermediate mesoderm
-relationship: part_of UBERON:0000163 ! embryonic cloaca
+relationship: part_of UBERON:0000163 {source="MP-def"} ! embryonic cloaca
 relationship: part_of UBERON:0001008 {source="EHDAA2"} ! excretory system
 property_value: external_definition "The ventral part of the cloaca after its separation from the rectum, giving rise to the lower part of the bladder in both sexes, to the prostatic portion of the male urethra, and to the urethra and vestibule in the female. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000414", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/urogenital+sinus"}
 property_value: homology_notes "In mammals the lowly monotremes still have a cloaca. Higher types have done away with this structure and have a separate anal outlet for the rectum. The monotreme cloaca shows the initiation of this subdivision. The cloaca has such includes only the distal part, roughly comparable to the proctodeum. The more proximal part is divided into (1) a large dorsal passage into which the intestine opens, the coprodeum, and (2) a ventral portion, the urodeum with which the bladder connects. (...) the development of the placental mammals recapitulates in many respects the phylogenetic story. In the sexually indifferent stage of placental mammal there is a cloaca. While the indifferent stage still persists, a septum develops, and extends out to the closing membrane. This divides the cloaca into two chambers: a coprodeum continuous with the gut above, and a urodeum or urogenital sinus below.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000414", ontology="VHOG", source="ISBN:978-0721676678 Romer AS, Vertebrate body (1970)p.388-89 and Figure 300", source="http://bgee.unil.ch/"}
@@ -42278,10 +42326,8 @@ xref: ncithesaurus:Amnion
 xref: SCTID:181457005
 xref: VHOG:0000721
 is_a: UBERON:0004120 ! mesoderm-derived structure
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005631 ! extraembryonic membrane
-relationship: develops_from UBERON:0000924 {source="ISBN10:0073040584"} ! ectoderm
-relationship: develops_from UBERON:0004871 {source="ISBN10:0073040584"} ! somatic layer of lateral plate mesoderm
+relationship: develops_from UBERON:0005971 {source="ISBN10:0073040584"} ! amniotic fold
 property_value: external_definition "A thin but tough extraembryonic membrane of reptiles, birds and mammals that lines the chorion and contains the fEtus and the amniotic fluid around it. [Biology_Online][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000721", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: has_relational_adjective "amniotic" xsd:string
 property_value: homology_notes "Structures homologous to the four extraembryonic membranes of reptiles and birds appear in mammals: amnion, chorion, yolk sac, and allantois.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000721", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.187", source="http://bgee.unil.ch/"}
@@ -42830,6 +42876,18 @@ is_a: UBERON:0000064 ! organ part
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0000458
+name: endocervix
+namespace: uberon
+def: "1. The mucous membrane lining the canal of the cervix uteri. 2. The region of the opening of the uterine cervix into the uterine cavity." [BTO:0003002]
+xref: BTO:0003002
+xref: FMA:86485
+xref: ncithesaurus:Endocervix
+xref: SCTID:264460007
+is_a: UBERON:0000064 ! organ part
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0000459
 name: uterine wall
 namespace: uberon
@@ -43191,6 +43249,7 @@ xref: SCTID:361386004
 xref: TGMA:0000635
 xref: VHOG:0000726
 xref: WBbt:0006748
+xref: WikipediaCategory:Female_reproductive_system
 xref: XAO:0000156
 is_a: UBERON:0000990 ! reproductive system
 relationship: part_of UBERON:0003100 ! female organism
@@ -45190,7 +45249,8 @@ namespace: uberon
 def: "Membranous sac attached to an embryo, providing early nourishment in the form of yolk in bony fishes, sharks, reptiles, birds, and primitive mammals. It functions as the developmental circulatory system of the human embryo, before internal circulation begins. In the mouse, the yolk sac is the first site of blood formation, generating primitive macrophages and erythrocytes." [Wikipedia:Yolk_sac]
 comment: Taxon notes: In therians, a structure homologous to the yolk sac is is present, but contains no yolk platelets. Instead it is filled with fluid [ISBN10:0073040584 "Vertebrates, Kardong"]
 subset: uberon_slim
-synonym: "vesicula umbilicalis; saccus vitellinus" RELATED LATIN [Wikipedia:Yolk_sac]
+synonym: "saccus vitellinus" RELATED LATIN [Wikipedia:Yolk_sac]
+synonym: "vesicula umbilicalis" RELATED LATIN [Wikipedia:Yolk_sac]
 xref: BTO:0001471
 xref: EFO:0003078
 xref: EHDAA2:0002212
@@ -45537,6 +45597,7 @@ xref: AEO:0000000
 xref: BILA:0000000
 xref: CARO:0000000
 xref: EHDAA2:0002229
+xref: FBbt:10000000
 xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
@@ -45623,8 +45684,6 @@ xref: AEO:0000220
 xref: BTO:0000397
 xref: EFO:0000839
 xref: EHDAA2:0004605
-xref: EHDAA:8009
-xref: EHDAA:8045
 xref: EV:0100063
 xref: FMA:12516
 xref: GAID:1260
@@ -45921,11 +45980,12 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0001137
 name: dorsum
 namespace: uberon
-def: "The dorsal part of an animal, which in vertebrares includes the vertebral column. [cjm]." [Dorsum_(anatomy), UBERONREF:0000006]
+def: "The dorsal part of an animal, which in vertebrares includes the vertebral column. [cjm]." [UBERONREF:0000006, Wikipedia:Dorsum_(anatomy)]
 comment: Taxon notes: In humans, called the back, a large posterior area of the human body, rising from the top of the buttocks to the back of the neck and the shoulders. It is the surface opposite to the chest, its height being defined by the vertebral column (commonly referred to as the spine or backbone) and its breadth being supported by the ribcage and shoulders. The spinal canal runs through the spine and provides nerves to the rest of the body
 subset: uberon_slim
 synonym: "back" EXACT [FMA:14181]
 synonym: "back of body proper" EXACT [FMA:14181]
+synonym: "dorsal part of organism" EXACT []
 xref: BTO:0001713
 xref: EFO:0001405
 xref: FMA:14181
@@ -46097,6 +46157,7 @@ def: "Organ part which is continuous with the cecum proximally and the transvers
 comment: Note that in MA, this is a subclass of colon
 subset: uberon_slim
 synonym: "colon ascendens" RELATED LATIN [Wikipedia:Ascending_colon]
+synonym: "spiral colon" RELATED SENSU [Wikipedia:Spiral_colon]
 xref: BTO:0000270
 xref: EFO:0000843
 xref: FMA:14545
@@ -47150,7 +47211,7 @@ is_a: UBERON:0000078 ! mixed ectoderm/mesoderm/endoderm-derived structure
 is_a: UBERON:0000489 ! cavitated compound organ
 is_a: UBERON:0002075 ! viscus
 is_a: UBERON:0006554 ! urinary system structure
-relationship: develops_from UBERON:0000164 ! primitive urogenital sinus
+relationship: develops_from UBERON:0000164 {notes="upper part of UG sinus"} ! primitive urogenital sinus
 relationship: part_of UBERON:0001556 {source="FMA"} ! lower urinary tract
 property_value: external_definition "A saccular organ in which urine accumulates before discharge from the body. [Bemis_WE, Functional_Anatomy_of_the_Vertebrates:_An_Evolutionary_Perspective, Glossary_G-29, Grande_L, Liem_KF, Third_Edition_(2001)_Orlando_Fla.:_Harcourt_College_Publishers, Walker_WF][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000740", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: external_definition "Anatomical structure which consists of a membranous sac used to temporarily store urine until it is excreted from the body.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000623", ontology="AAO", source="AAO:BJB"}
@@ -48679,7 +48740,7 @@ id: UBERON:0001678
 name: temporal bone
 namespace: uberon
 def: "The temporal bones are situated at the sides and base of the skull, and lateral to the temporal lobes of the cerebrum." [Wikipedia:Temporal_bone]
-comment: The temporal bone consists of four parts: * Squama temporalis * Mastoid portion * Petrous portion (Petrosal ridge) * Tympanic part[WP]. AO notes: Note the Temporal bone is not explicitly categorized to a part of the cranium in FMA. Taxon notes: fusion of squamosal + angular (tympanic annulus) [derm.] + petrosal (prootic + opisthotic)[chond.] + styloid process[splanc.]
+comment: The temporal bone consists of four parts: * Squama temporalis * Mastoid portion * Petrous portion (Petrosal ridge) * Tympanic part[WP]. AO notes: Note the Temporal bone is not explicitly categorized to a part of the cranium in FMA. Taxon notes: fusion of squamosal + angular (tympanic annulus) [derm.] + petrosal (prootic + opisthotic)[chond.] + styloid process[splanc.] // In many mammals, as in humans, the petrosal, ectotympanic and squamosal bones synostose to form the temporal bone
 subset: uberon_slim
 synonym: "os temporale" RELATED LATIN [Wikipedia:Temporal_bone]
 xref: EHDAA:6035
@@ -49120,6 +49181,38 @@ relationship: develops_from UBERON:0001763 {source="ZFA"} ! odontogenic papilla
 relationship: part_of UBERON:0001091 ! calcareous tooth
 property_value: external_definition "Material in the center of the dentine of the mature tooth. In secondary teeth the pulp contains blood vessels and odontoblast.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005141", ontology="TAO", source="ZFIN:curator"}
 property_value: homology_notes "The oral cavity of vertebrates is generally thought to arise as an ectodermal invagination. Consistent with this, oral teeth are proposed to arise exclusively from ectoderm, contributing to tooth enamel epithelium, and from neural crest derived mesenchyme, contributing to dentin and pulp (reference 1); Teeth and tooth-like structures, together named odontodes, are repeated organs thought to share a common evolutionary origin. These structures can be found in gnathostomes at different locations along the body: oral teeth in the jaws, teeth and denticles in the oral-pharyngeal cavity, and dermal denticles on elasmobranch skin (reference 2).[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001469", ontology="VHOG", source="DOI:10.1038/nature07304 Soukup V, Epperlein HH, Horacek I, Cerny R, Dual epithelial origin of vertebrate oral teeth. Nature (2008), DOI:10.1186/1471-2148-11-307 The homology of odontodes in gnathostomes: insights from Dlx gene expression in the dogfish, Scyliorhinus canicula. BMC Evolutionary Biology (2011)", source="http://bgee.unil.ch/"}
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0001756
+name: middle ear
+namespace: uberon
+def: "The middle ear is the air-filled cavity within the skull of vertebrates that lies between the outer ear and the inner ear. It is linked to the pharynx (and therefore to outside air) via the Eustachian tube and in mammals contains the three ear ossicles, which transmit auditory vibrations from the outer ear (via the tympanum) to the inner ear (via the oval window)[GO]." [GO:0042474, Wikipedia:Middle_ear]
+subset: uberon_slim
+synonym: "auris media" RELATED LATIN [Wikipedia:Middle_ear]
+synonym: "auris media" RELATED [BTO:0002099]
+xref: AAO:0011065
+xref: BTO:0002099
+xref: EHDAA2:0001181
+xref: EHDAA:5693
+xref: EMAPA:17000
+xref: EV:0100357
+xref: FMA:56513
+xref: GAID:165
+xref: MA:0000253
+xref: MAT:0000146
+xref: MESH:A09.246.397
+xref: MIAA:0000146
+xref: ncithesaurus:Middle_Ear
+xref: NIF_GrossAnatomy:birnlex_1695
+xref: OpenCyc:Mx4rvbw1j5wpEbGdrcN5Y29ycA
+xref: SCTID:181185000
+xref: VHOG:0000312
+xref: XAO:0000191
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0001690 ! ear
+property_value: external_definition "The intermediate portion of the ear which consists of a small air-filled and membrane-lined chamber. It is lodged in the temporal bone and continues with the nasopharynx through the Eustachian tube. It is separated from the external ear by the tympanic membrane and from the inner ear by the fenestrae. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000312", ontology="VHOG", source="http://bgee.unil.ch/"}
+property_value: homology_notes "The tympanic cavity and auditory tube of an amniote develop from the first embryonic pharyngeal pouch, so they are homologous to the first gill pouch, or spiracle, of a fish. We are uncertain whether this homology strictly applies to the middle ear cavity and auditory tube of lissamphibians, which show certain peculiarities in their development.[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000312", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.417", source="http://bgee.unil.ch/"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -49774,9 +49867,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0001828
 name: gingiva
 namespace: uberon
-def: "The gingiva, or gums, consists of the mucosal tissue that lies over the alveolar bone. [WP,unvetted]." [Wikipedia:Gingiva]
+def: "The fibrous investing tissue, covered by keratinized epithelium, that immediately surrounds a tooth and is contiguous with its periodontal ligament and with the mucosal tissues of the mouth[Glossary of Periodontal Terms 2001]." [ISBN10:0013002015, Wikipedia:Gingiva]
 comment: Editor notes: FMA has a 3-level breakdown of jaws into: region, jaw (skeleton+gums), skeleton.
 subset: uberon_slim
+synonym: "gingival mucosa" RELATED []
 synonym: "gum" EXACT [FMA:59762]
 synonym: "gum tissue" EXACT [UBERON:cjm]
 synonym: "gums" EXACT []
@@ -49794,10 +49888,8 @@ xref: ncithesaurus:Gingiva
 xref: OpenCyc:Mx4rvViWnZwpEbGdrcN5Y29ycA
 xref: SCTID:181224006
 xref: VHOG:0001269
-is_a: UBERON:0000479 ! tissue
-is_a: UBERON:0004119 ! endoderm-derived structure
-is_a: UBERON:0004121 ! ectoderm-derived structure
-relationship: part_of UBERON:0003729 {source="FMA"} ! mouth mucosa
+is_a: UBERON:0003729 ! mouth mucosa
+relationship: part_of UBERON:0003729 {source="Carranza"} ! mouth mucosa
 relationship: part_of UBERON:0011595 ! jaw region
 property_value: has_relational_adjective "gingival" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -50708,6 +50800,7 @@ id: UBERON:0001949
 name: gingival epithelium
 namespace: uberon
 def: "A stratified squamous epithelium consisting of a basal layer; it is keratinized or parakeratinized[BTO]." [BTO:0004998]
+comment: In humans: 15% orthokeratinized, 75% parakeratinized, 10% non-keratinized; diurnal; decreased keratinization with age. Note that in FMA this is classified as keratinized squamous - this perhaps refers to the epithelium of the attached or free gingiva
 synonym: "epithelial tissue of gingiva" EXACT [OBOL:automatic]
 synonym: "epithelium of gingiva" EXACT []
 synonym: "gingiva epithelial tissue" EXACT [OBOL:automatic]
@@ -50716,10 +50809,8 @@ xref: BTO:0004998
 xref: FMA:62423
 xref: MA:0001576
 xref: ncithesaurus:Gingival_Epithelium
-is_a: UBERON:0000486 ! multilaminar epithelium
-is_a: UBERON:0003350 ! epithelium of mucosa
-is_a: UBERON:0003929 ! gut epithelium
-is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0002424 ! oral epithelium
+is_a: UBERON:0006915 ! stratified squamous epithelium
 relationship: part_of UBERON:0001828 ! gingiva
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -51408,11 +51499,12 @@ id: UBERON:0002027
 name: stratum corneum of epidermis
 namespace: uberon
 def: "outermost cornified layer of the epidermis, composed of large, flat, polyhedral, plate-like envelopes filled with keratin, which is made up of dead cells that have migrated up from the stratum granulosum." [Wikipedia:Stratum_corneum]
+comment: Note that some oral epitehlium also has cornified layer / stratum corneum
 synonym: "cornified layer" EXACT []
 synonym: "epidermis stratum corneum" EXACT []
-synonym: "horny layer" RELATED [BTO:0000344]
+synonym: "horny layer" BROAD [BTO:0000344]
 synonym: "horny layer of epidermis" EXACT [FMA:67545]
-synonym: "stratum corneum" EXACT []
+synonym: "stratum corneum" BROAD []
 synonym: "stratum corneum epidermidis" RELATED LATIN [Wikipedia:Stratum_corneum]
 xref: AAO:0010597
 xref: BTO:0000344
@@ -51423,8 +51515,8 @@ xref: MA:0000804
 xref: ncithesaurus:Stratum_Corneum
 xref: SCTID:361695002
 is_a: UBERON:0003055 ! periderm
-property_value: dc-description "this skin layer is composed mainly of dead cells that lack nuclei. As these dead cells slough off on the surface in the thin air-filled stratum disjunctum, they are continuously replaced by new cells from the stratum germinativum (basale). In the human forearm, for example, about 1300 cells/cm2/hr are shed. This outer layer that is sloughed off is also known as the stratum dysjunctum. Cells of the stratum corneum contain keratin, a protein that helps keep the skin hydrated by preventing water evaporation. These cells can also absorb water, further aiding in hydration, and explaining why humans and other animals experience wrinkling of the skin on the fingers and toes ('pruning') when immersed in water for prolonged periods. In addition, this layer is responsible for the 'spring back' or stretchy properties of skin. A weak glutenous protein bond pulls the skin back to its natural shape. The thickness of the stratum corneum varies according to the amount of protection and/or grip required by a region of the body. For example, the hands are typically used to grasp objects, requiring the palms to be covered with a thick stratum corneum. In a similar manner, the sole of the foot is prone to injury, and so it is protected with a thick stratum corneum layer. In general, the stratum corneum contains 15 to 20 layers of dead cells. The stratum corneum has a thickness between 10 and 40 μm. n reptiles, the stratum corneum is permanent, and is replaced only during times of rapid growth, in a process called ecdysis or moulting. The stratum corneum in reptiles contains beta-keratin, which provides a much more rigid skin layer." xsd:string {source="http://en.wikipedia.org/wiki/Stratum_corneum"}
 property_value: external_definition "The keratinized outermost layer of the epidermis, which is periodically shed.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010597", ontology="AAO", source="AAO:CAM"}
+property_value: external_definition "this skin layer is composed mainly of dead cells that lack nuclei. As these dead cells slough off on the surface in the thin air-filled stratum disjunctum, they are continuously replaced by new cells from the stratum germinativum (basale). In the human forearm, for example, about 1300 cells/cm2/hr are shed. This outer layer that is sloughed off is also known as the stratum dysjunctum. Cells of the stratum corneum contain keratin, a protein that helps keep the skin hydrated by preventing water evaporation. These cells can also absorb water, further aiding in hydration, and explaining why humans and other animals experience wrinkling of the skin on the fingers and toes ('pruning') when immersed in water for prolonged periods. In addition, this layer is responsible for the 'spring back' or stretchy properties of skin. A weak glutenous protein bond pulls the skin back to its natural shape. The thickness of the stratum corneum varies according to the amount of protection and/or grip required by a region of the body. For example, the hands are typically used to grasp objects, requiring the palms to be covered with a thick stratum corneum. In a similar manner, the sole of the foot is prone to injury, and so it is protected with a thick stratum corneum layer. In general, the stratum corneum contains 15 to 20 layers of dead cells. The stratum corneum has a thickness between 10 and 40 μm. n reptiles, the stratum corneum is permanent, and is replaced only during times of rapid growth, in a process called ecdysis or moulting. The stratum corneum in reptiles contains beta-keratin, which provides a much more rigid skin layer." xsd:string {source="http://en.wikipedia.org/wiki/Stratum_corneum"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -52575,7 +52667,7 @@ subset: major_organ
 subset: organ_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "kidney" EXACT []
+synonym: "reniculate kidney" NARROW SENSU [Wikipedia:Reniculate_kidney]
 xref: AAO:0000250
 xref: BTO:0000671
 xref: EFO:0000929
@@ -53622,8 +53714,8 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0002264
 name: olfactory bulb
 namespace: uberon
-def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO]. Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract. In most vertebrates, the olfactory bulb is the most rostral (forward) part of the brain. In humans, however, the olfactory bulb is on the inferior (bottom) side of the brain. The olfactory bulb is supported and protected by the cribriform plate which in mammals, separates it from the olfactory epithelium, and which is perforated by olfactory nerve axons. The bulb is divided into two distinct structures, the main olfactory bulb, and the accessory olfactory bulb[WP]." [Wikipedia:Olfactory_bulb]
-comment: Note that in uberon 'main olfactory bulb' is a separate class, but some ontologies may treat this as partially synonymous. Development notes: the olfactory bulbs develop as bilateral evaginations from a region of the prosencephalic neural plate intercalated between the septal and the cortical anlagen (Cobos et al. 2001b, Rubenstein et al. 1998). Comparing the structure of the olfactory bulb among vertebrate species, such as the leopard frog and the lab mouse, reveals that they all share the same fundamental layout(WP).
+def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO]. Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract. In most vertebrates, the olfactory bulb is the most rostral (forward) part of the brain. In humans, however, the olfactory bulb is on the inferior (bottom) side of the brain. The olfactory bulb is supported and protected by the cribriform plate which in mammals, separates it from the olfactory epithelium, and which is perforated by olfactory nerve axons. The bulb is divided into two distinct structures, the main olfactory bulb, and the accessory olfactory bulb[WP]." [BTO:0000961, Wikipedia:Olfactory_bulb]
+comment: Note that in uberon 'main olfactory bulb' is a separate class, but some ontologies may treat this as partially synonymous. The distinction may only make sense in tetrapods with a vomeronasal organ (olfactory nerves terminate in OB in fishes and in main OB in tetrapods - Butler and Hodos). Development notes: the olfactory bulbs develop as bilateral evaginations from a region of the prosencephalic neural plate intercalated between the septal and the cortical anlagen (Cobos et al. 2001b, Rubenstein et al. 1998). Comparing the structure of the olfactory bulb among vertebrate species, such as the leopard frog and the lab mouse, reveals that they all share the same fundamental layout(WP).
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "bulbus olfactorius" EXACT [Wikipedia:Olfactory_bulb]
@@ -53633,7 +53725,7 @@ xref: AAO:0010165
 xref: ABA:OLF
 xref: BM:Tel-OB
 xref: BTO:0000961
-xref: EHDAA2:0001294
+xref: EHDAA2:0004705
 xref: EV:0100173
 xref: FMA:77624
 xref: GAID:633
@@ -53649,9 +53741,10 @@ xref: VHOG:0000033
 xref: XAO:0004180
 xref: ZFA:0000402
 is_a: UBERON:0002791 ! regional part of telencephalon
-relationship: part_of UBERON:0001893 ! telencephalon
 relationship: part_of UBERON:0005366 ! olfactory lobe
+property_value: external_definition "Part of the rostral part of the cerebrum where axons of olfactory cells from the nasal mucosa terminate. Projects onto olfactory parts of pallium via olfactory tracts" xsd:string {source="ISBN10:0471888893"}
 property_value: external_definition "Part of the telencephalon comprised of anterior outgrowths of either of the cerebral hemispheres in which the olfactory nerve exits.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010165", ontology="AAO", source="AAO:BJB"}
+property_value: external_definition "Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract[FMA:77624]." xsd:string {source="FMA:77624"}
 property_value: external_definition "The part of the forebrain in which the olfactory nerves end and the olfactory tracts originate. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000033", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: homology_notes "The presence of paired evaginated hemispheres and olfactory bulbs in both agnathan and gnathostome radiations suggests that such hemispheres were also present in the common ancestor.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000033", ontology="VHOG", source="DOI:10.1146/annurev.ne.04.030181.001505 Northcutt RG, Evolution of the telencephalon in nonmammals. Ann. Rev. Neurosci. (1981)", source="http://bgee.unil.ch/"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -53849,6 +53942,22 @@ relationship: part_of UBERON:0001225 ! cortex of kidney
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0002305
+name: layer of hippocampus
+namespace: uberon
+def: "the layers of the laminar structure of the hippocampus." [MP:0000813, Wikipedia:Hippocampus_anatomy#Hippocampal_Cells_and_Layers]
+comment: TODO - check NIF xref
+synonym: "cytoarchitectural fields of hippocampal formation" EXACT [NIF_GrossAnatomy:birnlex_1192]
+synonym: "hippocampus layer" EXACT []
+xref: FMA:83679
+xref: MA:0002427
+xref: NIF_GrossAnatomy:birnlex_1192
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004121 ! ectoderm-derived structure
+relationship: part_of UBERON:0001954 ! Ammon's horn
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0002308
 name: nucleus of brain
 namespace: uberon
@@ -53864,6 +53973,24 @@ is_a: UBERON:0000125 ! neural nucleus
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0000955 ! brain
 relationship: part_of UBERON:0003528 ! brain grey matter
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0002313
+name: hippocampus pyramidal layer
+namespace: uberon
+alt_id: UBERON:0005369
+def: "A cytoarchitectural term denoting the layer of the hippocampus in which pyramidal cells are predominant. Its location is superficial to the Stratum oriens; it is deep to the Stratum radiatum in area CA1 and area CA2 and deep to the Stratum lucidum in area CA3 (Stephan-75) (NeuroNames)." [NIF_GrossAnatomy:birnlex_1444]
+synonym: "hippocampus stratum pyramidale" RELATED []
+synonym: "pyramidal cell layer of the hippocampus" EXACT [NIF_GrossAnatomy:birnlex_1444]
+synonym: "pyramidal layer of hippocampus" EXACT [FMA:83895]
+synonym: "stratum pyramidale" EXACT [NIF_GrossAnatomy:birnlex_1444]
+synonym: "stratum pyramidale hippocampi" EXACT [NIF_GrossAnatomy:birnlex_1444]
+xref: BTO:0001066
+xref: FMA:83895
+xref: MA:0000956
+xref: NIF_GrossAnatomy:birnlex_1444
+is_a: UBERON:0002305 ! layer of hippocampus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -54109,6 +54236,7 @@ xref: EHDAA2:0002225
 xref: FMA:85539
 xref: MA:0002411
 xref: ncithesaurus:Exocrine_System
+xref: WikipediaCategory:Exocrine_system
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
@@ -54591,6 +54719,39 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: never_in_taxon NCBITaxon:32443 {source="ISBN10:0073040584"}
 
 [Term]
+id: UBERON:0002364
+name: tympanic membrane
+namespace: uberon
+def: "A thin membrane that separates the external ear from the middle ear, consisting of two epithelia (one part of the the external accoustic meatus epithelium, the other part of the tympanic cavity epithelium) with a fibrous layer between them. Its function is to transmit sound from the air to the ossicles inside the middle ear. The malleus bone bridges the gap between the eardrum and the other ossicles. Rupture or perforation of the eardrum can lead to conductive hearing loss. [WP,unvetted]." [PMID:11237469, Wikipedia:Tympanic_membrane]
+comment: most AOs consider this part of the middle ear, so we go with this and place it in the middle ear as a border to the external, although it could be considered to overlap the external ear in that it has an EAM layer as part - for this reason we do not consider middle and external ear to be spatially disjoint. Development notes: The tympanic membrane (TM) has three layers, two epithelia provided by the external acoustic meatus (EAM) and the MEC, derived respectively from the first pharyngeal cleft and pouch, and a mesenchymally derived fibrous stratum[PMID:11237469]
+subset: organ_slim
+subset: uberon_slim
+synonym: "ear drum" EXACT []
+synonym: "eardrum" EXACT []
+synonym: "lateral wall of tympanic cavity" EXACT []
+synonym: "membranous wall of tympanic cavity" EXACT []
+synonym: "myrinx" EXACT []
+synonym: "paries membranaceus cavi tympani" EXACT LATIN [FMA:9595, FMA:TA]
+synonym: "Rivinus' membrane" EXACT []
+synonym: "tympanum" RELATED [Wikipedia:Tympanic_membrane]
+xref: EV:0100358
+xref: FMA:9595
+xref: GAID:870
+xref: MA:0000257
+xref: MESH:A09.246.397.873
+xref: ncithesaurus:Tympanic_Membrane
+xref: SCTID:181180005
+xref: VHOG:0001146
+xref: XAO:0000212
+is_a: UBERON:0000094 {source="FMA"} ! membrane organ
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: develops_from UBERON:0009213 {source="Wikipedia"} ! pharyngeal membrane of 1st arch
+relationship: part_of UBERON:0001756 {source="MA"} ! middle ear
+property_value: external_definition "The thin membrane which closes externally the cavity of the middle ear and is deeply sited at the bottom of the external auditory meatus. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001146", ontology="VHOG", source="http://bgee.unil.ch/"}
+property_value: homology_notes "In particular, a tympanic membrane was not present in the earliest tetrapods (...). An ear utilizing a tympanic membrane evolved independently at least three times in tetrapods: (1) in the lineage that leads to anurans (frogs), (2) in the line of evolution to turtles and diapsids, and (3) in the late synapsid lineage that gave rise to mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001146", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.418", source="http://bgee.unil.ch/"}
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0002365
 name: exocrine gland
 namespace: uberon
@@ -54654,7 +54815,8 @@ namespace: uberon
 def: "Endocrine glands are glands of the endocrine system that secrete their products, hormones, directly into the blood rather than through a duct. The main endocrine glands include the pituitary gland, pancreas, ovaries, testes, thyroid gland, and adrenal glands. The hypothalamus is a neuroendocrine organ. Other organs which are not so well known for their endocrine activity include the stomach, which produces such hormones as ghrelin[WP]." [Wikipedia:Endocrine_gland]
 subset: organ_slim
 subset: uberon_slim
-synonym: "ductless gland" EXACT []
+synonym: "ductless gland" EXACT [AEO:0000098]
+synonym: "ductless gland" RELATED [Wikipedia:Ductless_gland]
 synonym: "glandula endocrina" EXACT []
 synonym: "glandulae endocrinae" RELATED LATIN [Wikipedia:Endocrine_gland]
 xref: AEO:0000098
@@ -55422,6 +55584,35 @@ relationship: part_of UBERON:0001007 ! digestive system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0002424
+name: oral epithelium
+namespace: uberon
+def: "Epithelium that is part of the mouth and lines the oral cavity, typically stratified squamous, and may be para-, ortho- or non- keratinized. Primary barrier between oral environment and deeper tissues" [UBERON:cjm]
+comment: Editor note: consider including separate class for developmental structure (adult human is stratified; in EHDAA2 is unilaminar). Development notes: the avian oral epithelium has the developmental capacity to initiate tooth developmental programs with underlying grafts of non-avian oral ectomesenchyme [PMID:16488870]
+subset: vertebrate_core
+synonym: "epithelium of mucosa of mouth" EXACT [FMA:265152]
+synonym: "epithelium of oral mucosa" EXACT [FMA:265152]
+xref: AAO:0010357
+xref: BTO:0001775
+xref: EHDAA2:0001325
+xref: EHDAA:2187
+xref: EMAPA:16839
+xref: EMAPA:26942
+xref: FMA:265152
+xref: MA:0000344
+xref: ncithesaurus:Oral_Cavity_Epithelium
+xref: TAO:0000816
+xref: VHOG:0000187
+xref: XAO:0003201
+xref: ZFA:0000816
+is_a: UBERON:0003350 ! epithelium of mucosa
+is_a: UBERON:0003929 ! gut epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+relationship: part_of UBERON:0003729 ! mouth mucosa
+property_value: external_definition "The epithelium that lines the oral cavity. The oral epithelium epithelial cells with many short microvilli as well as mucous cells, rodlet cells and taste buds[ZFIN:ZDB-PUB-060921-12, ZFIN:ZDB-PUB-091204-24]." xsd:string {source="ZFA:0000816"}
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0002425
 name: visceral serous pericardium
 namespace: uberon
@@ -55853,6 +56044,7 @@ xref: EHDAA:2161
 xref: EHDAA:4475
 xref: EHDAA:6522
 xref: EMAPA:18425
+xref: FBbt:00100317
 xref: FMA:86294
 xref: galen:Gland
 xref: HAO:0000375
@@ -55862,6 +56054,7 @@ xref: MIAA:0000021
 xref: ncithesaurus:Gland
 xref: OpenCyc:Mx4rwP3vyJwpEbGdrcN5Y29ycA
 xref: SCTID:134358001
+xref: WikipediaCategory:Glands
 is_a: UBERON:0000062 ! organ
 property_value: has_relational_adjective "glandular" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -57099,12 +57292,14 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0003124
 name: chorion
 namespace: uberon
-def: "The outer membrane of the two membranes enclosing the embryo in reptiles, birds, and mammals. In placental mammals it contributes to the development of the placenta[BTO]. Wikipedia: The chorion is one of the membranes that exists during pregnancy between the developing fetus and mother. It is formed by extraembryonic mesoderm and the two layers of trophoblast and surrounds the embryo and other membranes. The chorionic villi emerge from the chorion, invade the endometrium, and allow transfer of nutrients from maternal blood to fetal blood." [Wikipedia:Chorion]
+def: "The chorion is one of the membranes that exists during pregnancy between the developing fetus and mother. It is formed by extraembryonic mesoderm and the two layers of trophoblast and surrounds the embryo and other membranes. The chorionic villi emerge from the chorion, invade the endometrium, and allow transfer of nutrients from maternal blood to fetal blood." [Wikipedia:Chorion]
 comment: Development notes: Extra-embryonic ectoderm[PMID:19829370]. Taxon notes: The chorion of placentals is bilaminar as in reptiles and birds, but forms from the trophoblast and includes the ajdacent mesodermal layer [ISBN10:0073040584 "Vertebrates, Kardong"].
 subset: uberon_slim
 synonym: "chorion (vertebrates)" EXACT []
 synonym: "chorion frondosum" RELATED [Wikipedia:Chorion]
 synonym: "chorionic sac" RELATED [Wikipedia:Chorion]
+synonym: "embryonic chorion" EXACT []
+synonym: "fetal chorion" EXACT []
 xref: BTO:0000252
 xref: EFO:0002780
 xref: EHDAA2:0000245
@@ -57118,8 +57313,11 @@ xref: MESH:A16.254.403.473
 xref: ncithesaurus:Chorion
 xref: ncithesaurus:Chorionic_Sac
 xref: VHOG:0000200
+is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0005631 ! extraembryonic membrane
+relationship: develops_from UBERON:0005971 {source="ISBN10:0073040584"} ! amniotic fold
 property_value: external_definition "The outer membrane enclosing the embryo in reptiles, birds, and mammals. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000200", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/chorion"}
+property_value: external_definition "The outer membrane of the two membranes enclosing the embryo in reptiles, birds, and mammals. In placental mammals it contributes to the development of the placenta[BTO:0000252]." xsd:string {source="BTO:0000252"}
 property_value: has_relational_adjective "chorionic" xsd:string
 property_value: homology_notes "Structures homologous to the four extraembryonic membranes of reptiles and birds appear in mammals: amnion, chorion, yolk sac, and allantois.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000200", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.187", source="http://bgee.unil.ch/"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -57216,6 +57414,7 @@ xref: MESH:A02.835.232.781
 xref: ncithesaurus:Skull
 xref: OpenCyc:Mx4rvVjOsZwpEbGdrcN5Y29ycA
 xref: SCTID:110530005
+xref: WikipediaCategory:Skull
 is_a: UBERON:0000075 {source="FMA"} ! subdivision of skeletal system
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: part_of UBERON:0000033 ! head
@@ -58179,7 +58378,7 @@ id: UBERON:0003729
 name: mouth mucosa
 namespace: uberon
 def: "the mucous membrane epithelium of the mouth. It can be divided into three categories: masticatory, lining, and specialized." [Wikipedia:Oral_mucosa]
-comment: ncit split mouth/oral mucosa into lip and buccal
+comment: Usage notes: this is defined as any mucous membrane of the mouth - including palate, lips, uvula, etc. ncit split mouth/oral mucosa into lip and buccal. In future we may split into masticatory/keratinized (gingiva + hard palate) vs lining/non-keratinized (lips, cheeks, floor of mouth, soft palate). FMA distinguishes between mucosa of mouth and region of mouth (the latter including the buccal mucosa)
 synonym: "adult mouth mucosa" EXACT [OBOL:automatic]
 synonym: "adult mouth mucosa of organ" EXACT [OBOL:automatic]
 synonym: "adult mouth mucous membrane" EXACT [OBOL:automatic]
@@ -58197,6 +58396,7 @@ synonym: "mucosal lining of mouth" RELATED [MA:0002794]
 synonym: "mucous membrane of adult mouth" EXACT [OBOL:automatic]
 synonym: "mucous membrane of mouth" EXACT [FMA:59660]
 synonym: "oral mucosa" RELATED [GAID:951]
+synonym: "oral mucous membrane" EXACT []
 synonym: "oral part of viscerocranial mucosa" EXACT [FMA:59660]
 synonym: "organ mucosa of adult mouth" EXACT [OBOL:automatic]
 synonym: "organ mucosa of mouth" EXACT [OBOL:automatic]
@@ -59193,7 +59393,6 @@ xref: BTO:0001108
 xref: MA:0000973
 xref: NIF_GrossAnatomy:nlx_anat_100201
 is_a: UBERON:0004001 ! olfactory bulb layer
-relationship: part_of UBERON:0002264 ! olfactory bulb
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -59596,7 +59795,7 @@ xref: SCTID:308825007
 xref: VHOG:0000738
 is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0005631 ! extraembryonic membrane
-relationship: develops_from UBERON:0000925 {source="ISBN10:0073040584"} ! endoderm
+relationship: develops_from UBERON:0000925 {notes="hindgut diverticulum endoderm", source="ISBN10:0073040584"} ! endoderm
 relationship: develops_from UBERON:0001040 {source="EHDAA2"} ! yolk sac
 relationship: develops_from UBERON:0004872 {source="ISBN10:0073040584"} ! splanchnic layer of lateral plate mesoderm
 property_value: external_definition "A membranous sac that develops from the posterior part of the alimentary canal in the embryos of mammals, birds, and reptiles, and it is important in the formation of the umbilical cord and placenta in mammals. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000738", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/allantois"}
@@ -59796,6 +59995,7 @@ xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA
 xref: SCTID:278198007
 xref: TAO:0000010
 xref: VHOG:0000302
+xref: WikipediaCategory:Cardiovascular_system
 xref: XAO:0000100
 xref: XAO:0001010
 xref: ZFA:0000010
@@ -60267,6 +60467,7 @@ synonym: "trilaminar disk" RELATED [UBERON:cjm]
 synonym: "trilaminar germ" RELATED [UBERON:cjm]
 xref: BILA:0000060
 xref: BTO:0001403
+xref: FBbt:00005317
 xref: GAID:1302
 xref: MESH:A16.254.412
 xref: MIAA:0000179
@@ -60774,23 +60975,6 @@ relationship: part_of UBERON:0005409 ! gastrointestinal system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
-id: UBERON:0004871
-name: somatic layer of lateral plate mesoderm
-namespace: uberon
-def: "Layer of lateral plate mesoderm that forms the future body wall - underlies the ectoderm[WP]." [Wikipedia:Lateral_plate_mesoderm#Division_into_layers]
-comment: check BILA
-synonym: "outer layer of lateral plate mesoderm" EXACT []
-synonym: "parietal mesoderm" RELATED [ISBN:9780878932504]
-synonym: "somatic mesoderm" RELATED [BILA:0000047]
-xref: AAO:0011100
-xref: BILA:0000047
-xref: XAO:0000271
-is_a: UBERON:0005423 ! developing anatomical structure
-relationship: part_of UBERON:0000922 ! embryo
-relationship: part_of UBERON:0003081 ! lateral plate mesoderm
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-
-[Term]
 id: UBERON:0004872
 name: splanchnic layer of lateral plate mesoderm
 namespace: uberon
@@ -60805,6 +60989,23 @@ xref: XAO:0000276
 is_a: UBERON:0005423 ! developing anatomical structure
 relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0003081 ! lateral plate mesoderm
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0004874
+name: somatopleure
+namespace: uberon
+def: "a structure created during embryogenesis when the lateral mesoderm splits into two layers - the outer (or somatic) layer becomes applied to the inner surface of the ectoderm, and with it forms the somatopleure.[WP]." [Wikipedia:Somatopleure]
+comment: todo - check relationship to LPM
+xref: EHDAA2:0001847
+xref: EHDAA:381
+xref: EMAPA:16180
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Gray16.png/200px-Gray16.png
+xref: ncithesaurus:Somatopleure
+xref: VHOG:0000557
+is_a: UBERON:0005423 ! developing anatomical structure
+relationship: part_of UBERON:0000922 ! embryo
+relationship: part_of UBERON:0003081 {source="EHDAA2"} ! lateral plate mesoderm
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -61164,10 +61365,9 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0005062
 name: neural fold
 namespace: uberon
-def: "One of the two elevated edges of the neural groove." [GO:0001842, MP:0011256]
+def: "One of the two elevated edges of the neural groove[GO,MP]." [GO:0001842, MP:0011256, Wikipedia:Neural_fold]
 synonym: "medullary fold" EXACT [MP:0011256]
 xref: EHDAA2:0001249
-xref: EMAPA:16090
 xref: EMAPA:16093
 xref: EMAPA:16142
 xref: EMAPA:16146
@@ -61190,6 +61390,7 @@ is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0010371 ! ecto-epithelium
 relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0003075 ! neural plate
+property_value: external_definition "In front of the primitive streak two longitudinal ridges, caused by a folding up of the ectoderm, make their appearance, one on either side of the middle line. These are named the neural folds; they commence some little distance behind the anterior end of the embryonic disk, where they are continuous with each other, and from there gradually extend backward, one on either side of the anterior end of the primitive streak. Also, after differentiation it turns into the neural tubes[Wikipedia:Neural_fold]." xsd:string {source="Wikipedia:Neural_fold"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -61739,7 +61940,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0005256
 name: trunk mesenchyme
 namespace: uberon
-def: "A mesenchyme that is part of a trunk." [OBOL:automatic]
+def: "Mesenchyme that is part of a trunk." [OBOL:automatic]
 subset: vertebrate_core
 xref: EFO:0003485
 xref: EHDAA2:0002092
@@ -61835,8 +62036,8 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0005281
 name: ventricular system of central nervous system
 namespace: uberon
-def: "a set of structures containing cerebrospinal fluid in the brain. It is continuous with the central canal of the spinal cord." [Wikipedia:Ventricular_system]
-comment: todo - resolve space vs structure conflation
+def: "a set of structures containing cerebrospinal fluid in the brain. It is continuous with the central canal of the spinal cord[WP]." [Wikipedia:Ventricular_system]
+comment: todo - resolve space vs structure conflation. We follow FMA in making this and the various ventricles a structure - it follows from this that strutures such as the tela choroidea and choroid plexuses can be part of the ventricles and ventricular system. Note: see also the class 'neuraxis cavity'
 subset: vertebrate_core
 synonym: "CNS ventricular system" EXACT [EHDAA2:0004362]
 synonym: "ventricle system" RELATED [Wikipedia:Ventricular_system]
@@ -61851,7 +62052,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/7/7d/Gray734.png
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Gray734.png/200px-Gray734.png
 xref: TAO:0001261
 xref: ZFA:0001261
-is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0000467 {source="ZFA"} ! anatomical system
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: part_of UBERON:0001017 ! central nervous system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -61915,6 +62116,20 @@ is_a: UBERON:0000479 ! tissue
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0002050 ! embryonic structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0005292
+name: extraembryonic tissue
+namespace: uberon
+def: "Portion of tissue that is contiguous with the embryo and is comprised of portions of tissue or cells that will not contribute to the embryo." [UBERON:cjm]
+synonym: "extra-embryonic tissue" EXACT []
+xref: BTO:0003360
+xref: EFO:0001406
+xref: MAT:0000061
+xref: MIAA:0000061
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0000479 ! tissue
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -62066,10 +62281,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0005366
 name: olfactory lobe
 namespace: uberon
-def: "An anterior projection of each cerebral hemisphere that is continuous anteriorly with the olfactory nerve[BTO]. A term applied to the olfactory apparatus on the lower surface of the frontal lobe of the brain. It consists of the olfactory bulb, tract, and trigone[BTO]." [BTO:0001362]
+def: "Olfactory apparatus on the lower surface of the frontal lobe of the brain. It consists of the olfactory bulb, tract, and trigone[BTO]." [BTO:0001362]
 xref: BTO:0001362
 xref: EFO:0000108
-xref: EHDAA2:0001294
+xref: EHDAA2_RETIRED:0001294
 xref: EHDAA:5480
 xref: EMAPA:17778
 xref: MA:0002413
@@ -62078,6 +62293,7 @@ xref: ncithesaurus:Olfactory_Lobe
 xref: VHOG:0000833
 is_a: UBERON:0002791 ! regional part of telencephalon
 relationship: part_of UBERON:0001893 ! telencephalon
+property_value: external_definition "Part of the telencephalon, comprised of paired anterior outgrowths of either of the cerebral hemispheres in which the olfactory nerve exits. In Xenopus,the olfactory bulbs begin to fuse at NF stage 50, fusion is complete around NF stage 58. The cerebral vein loops around the olfactory bulb by NF stage 43[XAO:0004180]." xsd:string {source="XAO:0004180"}
 property_value: homology_notes " (In mammals) Odorant detection is mediated by millions of olfactory sensory neurons located in the olfactory epithelium lining the nasal cavity. These neurons transmit sensory signals to the olfactory bulb of the brain, which in turn sends signals to the olfactory cortex.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000833", ontology="VHOG", source="DOI:10.1111/j.1753-4887.2004.tb00097.x Buck LB, Olfactory receptors and odor coding in mammals. Nutrition Reviews (2008)", source="http://bgee.unil.ch/"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -62107,7 +62323,6 @@ xref: MA:0000970
 xref: TAO:0000357
 xref: ZFA:0000357
 is_a: UBERON:0004001 ! olfactory bulb layer
-relationship: part_of UBERON:0002264 ! olfactory bulb
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -62312,7 +62527,6 @@ xref: SCTID:361510002
 xref: TAO:0002205
 xref: VHOG:0001163
 xref: ZFA:0001679
-xref: ZFIN:ZDB-ANAT-090226-2
 is_a: UBERON:0000479 ! tissue
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: develops_from UBERON:0003073 ! lens placode
@@ -62581,10 +62795,12 @@ name: extraembryonic mesoderm
 namespace: uberon
 def: "." [http://www.ana.ed.ac.uk/database/humat/notes/extraemb/mesoder.htm]
 synonym: "extra-embryonic mesoderm" EXACT []
+synonym: "extraembryonic mesenchyme" EXACT []
 xref: EHDAA2:0000474
 xref: VHOG:0000616
-is_a: UBERON:0000478 {source="EHDAA2"} ! extraembryonic structure
 is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005292 ! extraembryonic tissue
+is_a: UBERON:0007524 {source="EHDAA2"} ! dense mesenchyme tissue
 relationship: develops_from UBERON:0003081 ! lateral plate mesoderm
 relationship: develops_from UBERON:0008780 {source="EHDAA2"} ! inner cell mass derived epiblast
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -62859,6 +63075,7 @@ synonym: "branchial groove" RELATED [AAO:0010623, Wikipedia:Pharyngeal_groove]
 synonym: "gill cleft" NARROW []
 synonym: "Kiemenspalten" RELATED []
 synonym: "pharyngeal groove" EXACT [Wikipedia:Pharyngeal_groove]
+synonym: "pharyngeal groove ectoderm" EXACT [UBERON:cjm]
 synonym: "sulcus pharyngei" RELATED LATIN [Wikipedia:Pharyngeal_groove]
 xref: AAO:0010623
 xref: http://upload.wikimedia.org/wikipedia/commons/2/20/Kiemenbogen.jpg
@@ -63064,6 +63281,17 @@ relationship: part_of UBERON:0003956 ! aqueous drainage system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0005971
+name: amniotic fold
+namespace: uberon
+def: "A sheet of somatopleure that grows upward over the embryo and eventually meets in the midline enclosing the embryo, eventually giving rise to the amnion and chorion[Kardong]." [ISBN10:0073040584]
+xref: EMAPA:16076
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: develops_from UBERON:0004874 {source="Kardong"} ! somatopleure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0005983
 name: heart layer
 namespace: uberon
@@ -63178,17 +63406,16 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0006215
 name: rhombic lip
 namespace: uberon
-def: "The interface between the dorsal neuroepithelium and the roof plate of the fourth ventricle. The source of a number of migratory neuron populations of the hindbrain." [ZFIN:curator]
+def: "Rhombic lips are a posterior section of the developing metencephalon within an embryo. They extend posteriorly from the roof of the fourth ventricle to dorsal neuroepithelial cells and contain cerebellar precursor cells, among others" [Wikipedia:Rhombic_lips]
 subset: vertebrate_core
 synonym: "cerebellum primordium" RELATED [EMAPA:17074]
 synonym: "dorsal part of alar plate of metencephalon" RELATED [EMAPA:17074]
-xref: EHDAA2:0000229
-xref: EMAPA:17074
 xref: TAO:0001440
 xref: XAO:0004135
 xref: ZFA:0001440
 is_a: UBERON:0001048 ! primordium
-relationship: part_of UBERON:0002028 ! hindbrain
+relationship: part_of UBERON:0002028 {source="ZFA"} ! hindbrain
+relationship: part_of UBERON:0010092 {source="Wikipedia"} ! future metencephalon
 property_value: external_definition "The interface between the dorsal neuroepithelium and the roofplate of the fourth ventricle. The source of a number of migratory neuron populations of the hindbrain.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001440", ontology="TAO", source="ZFIN:curator"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -63899,6 +64126,7 @@ id: UBERON:0006914
 name: squamous epithelium
 namespace: uberon
 def: "an epithelium characterised by its most superficial layer consisting of squamous epithelial cells." [Wikipedia:Squamous_epithelium]
+comment: consider FBbt:00007028 (squamous epithelium) A type of epithelium that is made up of flattened cells which are arranged with their long axes in the plane of the epithelium
 xref: BTO:0002072
 xref: ncithesaurus:Squamous_Epithelium
 xref: SCTID:40118003
@@ -64124,6 +64352,7 @@ def: "The second pouch between the second and third arches. Contributes to the m
 subset: vertebrate_core
 synonym: "2nd arch branchial pouch" EXACT [RETIRED_EHDAA2:0000060]
 synonym: "2nd arch branchial pouch endoderm" EXACT [EHDAA2:0000061]
+synonym: "2nd arch pouch endoderm" EXACT [EHDAA2:0000058]
 synonym: "2nd pharyngeal pouch endoderm" EXACT [VHOG:0000561]
 synonym: "pharyngeal pouches 2" EXACT PLURAL [ZFA:0001130]
 synonym: "second arch pharyngeal pouch" EXACT [OBOL:automatic]
@@ -64132,8 +64361,9 @@ synonym: "second visceral pouch" EXACT [XAO:0000247]
 synonym: "visceral pouch 2" EXACT [XAO:0000247]
 xref: AAO:0011115
 xref: EFO:0003633
-xref: EHDAA2:0000061
+xref: EHDAA2:0000058
 xref: EMAPA:16275
+xref: EMAPA:16276
 xref: ncithesaurus:Second_Pharyngeal_Pouch
 xref: RETIRED_EHDAA2:0000060
 xref: SCTID:345349000
@@ -64157,7 +64387,6 @@ synonym: "presumptive central nervous system" RELATED [ZFA:0000131]
 xref: EFO:0003497
 xref: TAO:0000131
 xref: ZFA:0000131
-xref: ZFIN:ZDB-ANAT-010921-559
 is_a: UBERON:0000479 ! tissue
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: develops_from UBERON:0003075 ! neural plate
@@ -64190,7 +64419,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0007213
 name: mesenchyme derived from head neural crest
 namespace: uberon
-def: "A mesenchyme that develops_from a cranial neural crest." [OBOL:automatic]
+def: "Mesenchyme that develops_from a cranial neural crest." [OBOL:automatic]
 subset: vertebrate_core
 synonym: "head mesenchyme from cranial neural crest" EXACT []
 synonym: "head mesenchyme from neural crest" EXACT [EHDAA2:0000735]
@@ -64243,6 +64472,9 @@ name: nuclear complex of neuraxis
 namespace: uberon
 def: "Internal gray matter component which consists of an assemblage of nuclei of neuraxis. Example: cerebellar nuclear complex, Vestibular nuclear complex.[FMA]" [FMA:84059, FMA:FMA]
 comment: todo - move existing complex classes currently under nucleus to be under this class
+synonym: "cluster of neural nuclei" RELATED []
+synonym: "neural nuclei" RELATED []
+synonym: "nuclear complex" RELATED []
 xref: FMA:84059
 is_a: UBERON:0002020 ! gray matter of neuraxis
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -64676,6 +64908,7 @@ xref: galen:HeadAndNeck
 xref: MA:0000006
 xref: ncithesaurus:Head_and_Neck
 xref: SCTID:361355005
+xref: WikipediaCategory:Head_and_neck
 is_a: UBERON:0000475 {source="MA"} ! organism subdivision
 relationship: part_of UBERON:0000153 ! anterior region of body
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -64894,8 +65127,8 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0008859
 name: cardiac gastric gland
 namespace: uberon
-def: "the gastric glands in the cardiac region of the stomach; cardiac glands are fewer in number than in the fundus and body, and secrete mucin which coats the stomach and protects it" [MP:0010795]
-comment: Consistency note: Kardong places this in the glandular epithelium, FMA in the mucosa
+def: "A gastric gland in the cardiac region of the stomach; cardiac glands are fewer in number than in the fundus and body, and secrete mucin which coats the stomach and protects it[MP]" [MP:0010795, Wikipedia:Cardiac_glands]
+comment: Consistency note: Kardong places this in the glandular epithelium, FMA more generally in the mucosa
 subset: organ_slim
 synonym: "cardiac gland" RELATED [FMA:14920]
 synonym: "gardiac gland" EXACT [ISBN10:0073040584]
@@ -64907,6 +65140,7 @@ xref: SCTID:8894005
 is_a: UBERON:0000325 ! gastric gland
 relationship: part_of UBERON:0001162 ! cardia of stomach
 relationship: part_of UBERON:0004996 {source="FMA"} ! mucosa of cardia of stomach
+property_value: external_definition "The cardiac glands of the stomach secrete primarily mucus. They are few in number and occur close to the cardiac orifice where the esophagus joins the stomach. In general, they are more shallow than those in the other parts of the stomach. They are of two kinds: (1) simple tubular glands resembling those of the pyloric end of the stomach, but with short ducts. (2) compound racemose glands resembling the duodenal glands. The cardiac gland is both innervated by the parasympathetic and symapthetic nerve fibres of the autonomic nervous system[Wikipedia:Cardiac_glands]." xsd:string {source="Wikipedia:Cardiac_glands"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -65200,6 +65434,36 @@ relationship: part_of UBERON:0004726 {source="KUPO"} ! vasa recta
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0009210
+name: pharyngeal membrane
+namespace: uberon
+def: "a thin fold of ectoderm and endoderm that separates the pharyngeal pouches from the branchial clefts in a developing embryo." [http://musom.marshall.edu/anatomy/grosshom/z_devbranc.html]
+synonym: "pharyngeal membrane" EXACT []
+xref: ncithesaurus:Pharyngeal_Membrane
+is_a: UBERON:0002050 ! embryonic structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0009213
+name: pharyngeal membrane of 1st arch
+namespace: uberon
+def: "separates the first pharyngeal groove from the first pharyngeal pouch." [ISBN10:1416037055]
+comment: check EMAPA - 3 terms appear to match. We follow EMAPA in making each membrane part of the arch with the same number, though in fact it is between these arches
+synonym: "1st branchial membrane" EXACT [EMAPA:16992]
+synonym: "1st pharyngeal membrane" EXACT [VHOG:0001427]
+synonym: "future tympanic membrane" EXACT [EMAPA:17281]
+synonym: "tympanic membrane primordium" EXACT [ISBN10:1416037055]
+xref: EHDAA:3788
+xref: EMAPA:16121
+xref: EMAPA:16992
+xref: EMAPA:17281
+xref: VHOG:0001427
+is_a: UBERON:0009210 ! pharyngeal membrane
+relationship: part_of UBERON:0004362 {source="EMAPA"} ! pharyngeal arch 1
+property_value: homology_notes "In all vertebrates, the endodermal epithelium lining each pouch contacts the surface ectoderm of the clefts to form a series of bilayered branchial membranes, that break down in fish to form the gill openings.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001427", ontology="VHOG", source="ISBN:978-0124020603 Kaufman MH, Bard JBL, The anatomical basis of mouse development (1999) p.72", source="http://bgee.unil.ch/"}
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0009497
 name: epithelium of foregut-midgut junction
 namespace: uberon
@@ -65436,7 +65700,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0009845
 name: urogenital sinus mesenchyme
 namespace: uberon
-def: "A mesenchyme that is part of a primitive urogenital sinus." [OBOL:automatic]
+def: "Mesenchyme that is part of a primitive urogenital sinus." [OBOL:automatic]
 comment: Androgen receptor (AR) activation releases instructive signals from UGM that acts on UGS epithelium (UGE) to stimulate cell proliferation, form prostate ductal progenitors (prostatic buds), and regulate cell adhesion dynamics to permit prostatic bud outgrowth
 synonym: "UGM" EXACT [PMID:18977204]
 xref: EHDAA2:0004061
@@ -65604,7 +65868,6 @@ comment: check if the NIF class is actually a grouping class
 synonym: "plexiform layer" BROAD [NIF_GrossAnatomy:nlx_anat_20090405]
 xref: NIF_GrossAnatomy:nlx_anat_20090405
 is_a: UBERON:0004001 {source="NIF_GrossAnatomy"} ! olfactory bulb layer
-relationship: part_of UBERON:0002264 ! olfactory bulb
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -65718,6 +65981,17 @@ def: "An epithelium consisting of cuboidal epithelial cells." [Wikipedia:Cuboida
 comment: AO notes: in NCIT this is glandular. Editor notes: TODO - coordinate with CL, add cuboidal cell
 xref: ncithesaurus:Cuboidal_Epithelium
 is_a: UBERON:0000483 ! epithelium
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0010092
+name: future metencephalon
+namespace: uberon
+def: "A developing anatomical structure that develops_into a metencephalon." [OBOL:automatic]
+xref: EHDAA2:0000623
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0005423 ! developing anatomical structure
+relationship: part_of UBERON:0002028 ! hindbrain
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -65968,7 +66242,7 @@ comment: This ontology covers metazoa, so we do not use exoskeleton as primary l
 synonym: "dermal skeletal system" RELATED [VSAO:curator]
 synonym: "dermoskeleton" RELATED [VSAO:curator]
 synonym: "desmoskeleton" RELATED [VSAO:curator]
-synonym: "exoskeleton" BROAD [VSAO:curator]
+synonym: "exoskeleton" BROAD INCONSISTENT [VSAO:curator]
 xref: VSAO:0000035
 xref: XAO:0004025
 is_a: UBERON:0010912 {source="VSAO"} ! subdivision of skeleton
@@ -66400,7 +66674,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0011300
 name: gray matter of telencephalon
 namespace: uberon
-def: "A gray matter of neuraxis that is part of a telencephalon." [OBOL:automatic]
+def: "A portion of gray matter of neuraxis that is part of a telencephalon." [OBOL:automatic]
 xref: FMA:83911
 is_a: UBERON:0003528 ! brain grey matter
 relationship: part_of UBERON:0001893 ! telencephalon
@@ -66469,6 +66743,7 @@ is_a: UBERON:0004119 ! endoderm-derived structure
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: part_of UBERON:0000165 ! mouth
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: seeAlso http://eol.org/collections/11578 xsd:anyURI
 
 [Term]
 id: UBERON:0011676
@@ -66576,8 +66851,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0011997
 name: coelom
 namespace: uberon
-def: "The structure that contains the coelemic cavity." [Wikipedia:Body_cavity, Wikipedia:Coelem]
+def: "The structure that contains the coelemic cavity." [Wikipedia:Body_cavity, Wikipedia:Coelom]
 comment: Editor notes: EHDAA2 distingsuishes between the lumen, the lining, and the 'coelomic cavity', which despire it's name, is not a space - it is the aggregate of space plus lining.
+synonym: "coelem" RELATED []
+synonym: "coelomic cavity" RELATED [EHDAA2:0004731]
 xref: EHDAA2:0004731
 is_a: UBERON:0000481 {source="EHDAA2"} ! multi-tissue structure
 is_a: UBERON:0002050 ! embryonic structure
@@ -66719,7 +66996,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0013126
 name: vein of abdomen
 namespace: uberon
-comment: This class groups all veins that are in the abdomen. The term 'abdominal vein' may have specific meanings in different contexts. The lateral abdominal veins are present in fishes but usually merged or absent in tetrapods; in amphibians, the L&R abdominal veins merge into the ventral abdominal vein
+comment: This class groups all veins that are in the abdomen. The term 'abdominal vein' may have specific meanings in different contexts. The lateral abdominal veins are present in fishes but usually merged or absent in tetrapods; in amphibians, the L&R abdominal veins merge into the ventral abdominal vein. TODO: mirror representation of abdominal aorta
 subset: grouping_class
 synonym: "abdominal vein" EXACT []
 xref: SCTID:281473003
