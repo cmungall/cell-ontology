@@ -36,10 +36,16 @@ cl-basic.owl: build/cl-simple.owl
 cl-edit.owl: cl-edit.obo
 	obolib-obo2owl -o $@ $<
 
-bridge/cl-bridge-to-uberon.obo: cl.obo
-	blip-findall -i $< "parent(X,part_of,Y),id_idspace(X,'CL'),id_idspace(Y,'UBERON')" -select X-Y -label -use_tabs -no_pred | sort -u | tbl2obolinks.pl --rel part_of - > $@.tmp && cat $@.tmp part_of.obo > $@
-bridge/cl-bridge-to-%.owl: bridge/cl-bridge-to-%.obo
-	owltools $< -o file://`pwd`/$@
+bridge/cl-bridge-to-uberon.owl: cl.owl
+	owltools $< --extract-bridge-ontologies -d $* -s cl -x -o -f obo $@/no-bridge.obo
+bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
+	owltools $< -o -f obo $@
+
+# OLD:
+#bridge/cl-bridge-to-uberon.obo: cl.obo
+#	blip-findall -i $< "parent(X,part_of,Y),id_idspace(X,'CL'),id_idspace(Y,'UBERON')" -select X-Y -label -use_tabs -no_pred | sort -u | tbl2obolinks.pl --rel part_of - > $@.tmp && cat $@.tmp part_of.obo > $@
+#bridge/cl-bridge-to-%.owl: bridge/cl-bridge-to-%.obo
+#	owltools $< -o file://`pwd`/$@
 
 fix-%: %
 	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
