@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: 2013-01-13
+data-version: 2013-01-28
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -49,6 +49,7 @@ subsetdef: upper_level "abstract upper-level terms not directly useful for analy
 subsetdef: upper_ontology_conflict "Terms in this subset group together terms from different anatomy ontologies that have conflicting upper ontology/CARO assignments. For example, in FMA the naris is immaterial and in ZFA it is an organism subdivision."
 subsetdef: value_slim "Value slim"
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
+subsetdef: vessel_or_tree "A term classified differently in FMA due to its treatment of branching structures - to be reviewed and revised by editors"
 subsetdef: virus_checked "Viral overhaul terms"
 synonymtypedef: ABBREVIATION "abbreviation"
 synonymtypedef: ATTRIBUTION_REQUIRED "expert consultation and attribution required"
@@ -5897,11 +5898,10 @@ name: glomerular visceral epithelial cell
 namespace: cell
 def: "A glomerular visceral epithelial cell is a specialized kidney epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells." [GOC:tfm]
 comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'[tfm].
-synonym: "epithelial cell of visceral layer of glomerular capsule" EXACT [FMA:70967]
+synonym: "epithelial cell of visceral layer of glomerular capsule" BROAD [FMA:70967]
 synonym: "glomerular podocyte" EXACT [FMA:70967]
 synonym: "podocyte" EXACT []
 xref: BTO:0002295
-xref: FMA:70967
 is_a: CL:0002522 ! renal filtration cell
 is_a: CL:1000451 ! epithelial cell of visceral layer of glomerular capsule
 
@@ -12220,13 +12220,17 @@ id: CL:0002211
 name: type I muscle cell
 namespace: cell
 def: "A slow muscle cell that has large amounts of myoglobin, stores energy as triglycerides, generates ATP by the oxidative method and is resistant to fatigue." [GOC:tfm, ISBN:0517223651]
+synonym: "intermediate muscle fiber" RELATED [MESH:A02.633.565.700]
 synonym: "slow twitch fiber" EXACT []
 synonym: "slow twitch muscle cell" EXACT []
+synonym: "slow twitch muscle fiber" RELATED [MESH:A02.633.565.700]
+synonym: "slow-twitch muscle fiber" RELATED [MESH:A02.633.565.700]
 synonym: "type 1 muscle cell" EXACT []
 synonym: "type 1 muscle fiber" EXACT []
 synonym: "type I muscle fiber" EXACT []
 xref: BTO:0001812
 xref: FMA:84413
+xref: MESH:A02.633.565.700
 is_a: CL:0000189 ! slow muscle cell
 is_a: CL:0002210 ! red muscle cell
 created_by: tmeehan
@@ -18766,7 +18770,8 @@ id: CL:1000451
 name: epithelial cell of visceral layer of glomerular capsule
 namespace: cell
 def: "An epithelial cell that is part of the visceral layer of glomerular capsule." [GOC:tfm]
-synonym: "glomerular podocyte" EXACT [FMA:70967]
+comment: consider merging into CL:0000653
+synonym: "glomerular podocyte" NARROW [FMA:70967]
 xref: FMA:70967
 is_a: CL:1000450 ! epithelial cell of glomerular capsule
 
@@ -19039,6 +19044,7 @@ name: mesothelial cell of visceral pleura
 namespace: cell
 def: "A mesothelial cell that is part of the visceral pleura." [GOC:tfm]
 xref: FMA:86739
+is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000491 ! mesothelial cell of pleura
 
 [Term]
