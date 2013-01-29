@@ -1190,7 +1190,7 @@ is_a: CL:0000540 ! neuron
 id: CL:0000106
 name: unipolar neuron
 namespace: cell
-def: "Neuron with an axon and no dendrites." [FMA:67278]
+def: "Neuron with one neurite that extends from the cell body." [FMA:67278, GOC:nv]
 xref: FMA:67278
 is_a: CL:0000540 ! neuron
 
@@ -17106,6 +17106,7 @@ name: PP cell of intestine
 namespace: cell
 def: "A PP cell found in intestine." [GOC:tfm, PMID:2420136, PMID:728970]
 is_a: CL:0000696 ! PP cell
+is_a: CL:1001516 ! intestinal enteroendocrine cell
 created_by: tmeehan
 creation_date: 2011-09-27T11:59:01Z
 
@@ -17281,6 +17282,7 @@ name: pancreatic epsilon cell
 namespace: cell
 def: "Ghrelin secreting cells found in the found in the exocrine pancreas." [PMID:14970313]
 comment: In mammals the endocrine pancreas is called the Islets of Langerhans.
+synonym: "pancreatic e cell" EXACT []
 is_a: CL:0005018 ! ghrelin secreting cell
 
 [Term]
@@ -17491,6 +17493,26 @@ def: "A CNS interneuron located in the dorsal horn of the spinal cord." [GOC:nv]
 synonym: "dorsal spinal cord interneuron" RELATED []
 is_a: CL:0002611 ! neuron of the dorsal spinal cord
 is_a: CL:0005000 ! spinal cord interneuron
+
+[Term]
+id: CL:0011001
+name: spinal cord motor neuron
+def: "A motor neuron that passes from the spinal cord toward or to a muscle and conducts an impulse that causes movement." [GOC:nv]
+is_a: CL:0000100 ! motor neuron
+
+[Term]
+id: CL:0011002
+name: lateral motor column neuron
+def: "A motor neuron that is generated only on limb levels and send axons into the limb mesenchyme." [GOC:nv]
+comment: Need to MIREOT in 'spinal cord lateral column' from Uberon
+is_a: CL:0011001 ! spinal cord motor neuron
+
+[Term]
+id: CL:0011003
+name: magnocellular neurosecretory cell
+def: "A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that secretes the hormones oxytocin and vasopressin." [GOC:nv, MP:0009467]
+synonym: "magnocellular neuron" EXACT []
+is_a: CL:0000381 ! neurosecretory neuron
 
 [Term]
 id: CL:1000082
