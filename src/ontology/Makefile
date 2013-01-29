@@ -16,7 +16,7 @@ pr-minimal.obo: extsubset/pr-simple.obo
 extsubset/pr-simple.obo:
 	cd extsubset && ontology-release-runner --repair-cardinality --force --no-subsets --reasoner elk --simple http://purl.obolibrary.org/obo/pr.obo
 
-build/cl.obo: cl-edit.obo cl-relations.obo pr-minimal.obo
+build/cl.obo: cl-edit.owl cl-relations.obo pr-minimal.obo
 	ontology-release-runner --repair-cardinality --outdir build --no-subsets --allow-overwrite --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< cl-relations.obo $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo pr-minimal.obo
 #	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix $(OBO)/CL_ --prefix $(OBO)/CP_ cl-edit.obo $(OBO)/uberon/basic.owl pr-core.obo $(OBO)/go.owl $(OBO)/pato.owl chebi_lite.obo
 .PRECIOUS: build/cl.obo
@@ -33,8 +33,8 @@ cl-basic.obo: build/cl-simple.obo
 cl-basic.owl: build/cl-simple.owl
 	cp $< $@
 
-cl-edit.owl: cl-edit.obo
-	obolib-obo2owl -o $@ $<
+#cl-edit.owl: cl-edit.obo
+#	obolib-obo2owl -o $@ $<
 
 bridge/cl-bridge-to-uberon.owl: cl.owl
 	owltools $< --extract-bridge-ontologies -d $* -s cl -x -o -f obo $@/no-bridge.obo
