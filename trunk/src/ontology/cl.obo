@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: 2013-01-28
+data-version: cl-edit.owl
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -2547,7 +2547,6 @@ xref: FMA:14515
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000181 ! metabolising cell
 is_a: CL:0000417 ! endopolyploid cell
-is_a: CL:0000668 ! parenchymal cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0002107 ! liver
@@ -7019,6 +7018,7 @@ id: CL:0000628
 name: photosynthetic cell
 namespace: cell
 def: "A cell that can perform photosynthesis, in which carbohydrates are synthesized from carbon dioxide and water, using light as the energy source." [TAIR:sr]
+comment: see PMID:21177950, The making of a photosynthetic animal.
 is_a: CL:0000003 ! native cell
 
 [Term]
@@ -7408,13 +7408,13 @@ is_a: CL:0000327 ! extracellular matrix secreting cell
 
 [Term]
 id: CL:0000668
-name: parenchymal cell
+name: obsolete parenchymal cell
 namespace: cell
 def: "The cell characteristic of an organ, as distinguished from associated connective or supporting tissues." [ISBN:0471245208]
-comment: cell type has a similar but slightly different meaning in botany (plants): see PO:0000074.
+comment: OBSOLETE: Term was made obsolete to avoid confusion with plant parenchymal cell. Cell type has a similar but slightly different meaning in botany (plants): see PO:0000074.
 xref: BTO:0002174
 xref: FMA:84638
-is_a: CL:0000003 ! native cell
+is_obsolete: true
 
 [Term]
 id: CL:0000669
@@ -22666,6 +22666,27 @@ created_by: haendel
 creation_date: 2012-12-30T12:43:15Z
 
 [Term]
+id: CL:0009000
+name: sensory neuron of spinal nerve
+def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
+synonym: "spinal sensory neuron" EXACT []
+is_a: CL:0000101 ! sensory neuron
+intersection_of: CL:0000101 ! sensory neuron
+intersection_of: part_of UBERON:0001780 ! spinal nerve
+relationship: part_of UBERON:0001780 ! spinal nerve
+
+[Term]
+id: CL:0011000
+name: dorsal horn interneuron
+def: "A CNS interneuron located in the dorsal horn of the spinal cord." [GOC:nv]
+synonym: "dorsal spinal cord interneuron" RELATED []
+is_a: CL:0002611 ! neuron of the dorsal spinal cord
+is_a: CL:0005000 ! spinal cord interneuron
+intersection_of: CL:0000099 ! interneuron
+intersection_of: part_of UBERON:0002256 ! dorsal horn of spinal cord
+relationship: part_of UBERON:0002256 ! dorsal horn of spinal cord
+
+[Term]
 id: CL:1000082
 name: stretch receptor cell
 namespace: cell
@@ -25791,9 +25812,9 @@ is_a: CL:0002487 ! cutaneous/subcutaneous mechanoreceptor cell
 [Term]
 id: CL:1001451
 name: sensory neuron of dorsal root ganglion
-def: "the sensory neurons of the dorsal root ganglia that sense body position and send information about how much the muscle is stretched to the spinal cord" [MP:0004297]
+def: "A sensory neuron of the dorsal root ganglia that senses body position and sends information about how much the muscle is stretched to the spinal cord." [MP:0004297]
 synonym: "proprioceptive neuron" EXACT [MP:0004297]
-is_a: CL:0000101 ! sensory neuron
+is_a: CL:0009000 ! sensory neuron of spinal nerve
 relationship: part_of UBERON:0000044 ! dorsal root ganglion
 
 [Term]
