@@ -2,7 +2,7 @@ OBO=http://purl.obolibrary.org/obo
 
 all: release
 
-release: cl.obo cl.owl cl-basic.obo cl-basic.owl diffs
+release: cl.obo cl.owl cl-basic.obo cl-basic.owl diff
 
 # PR mireots CHEBI, but is not always in sync, which causes problems for Oort (e.g. different defs in two version).
 # only use core PR info
@@ -54,15 +54,21 @@ fix-%: %
 # Diffs
 # ----------------------------------------
 
-diffs: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
+diff: cl-basic.obo
+	cd diffs && make
 
-cl-obo-diff.html: cl-basic.obo
-	compare-obo-files.pl --config 'html/ontology_name=Cell Ontology' --rss-path ./rss -f1 cl-lastbuild.obo -f2 $< -m html text rss -o cl-obo-diff
-cl-def-diff.html: cl-basic.obo
-	compare-defs.pl --rss-path ./rss -f1 cl-lastbuild.obo -f2 $< -m html text -o cl-def-diff
+minidiff: build/cl.obo
+	cd diffs && make TGTS='html' SRC=../$<
 
-cl-lastbuild.obo: cl-basic.obo
-	cp $< $@
+#diffs: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
+
+#cl-obo-diff.html: cl-basic.obo
+#	compare-obo-files.pl --config 'html/ontology_name=Cell Ontology' --rss-path ./rss -f1 cl-lastbuild.obo -f2 $< -m html text rss -o cl-obo-diff
+#cl-def-diff.html: cl-basic.obo
+#	compare-defs.pl --rss-path ./rss -f1 cl-lastbuild.obo -f2 $< -m html text -o cl-def-diff
+
+#cl-lastbuild.obo: cl-basic.obo
+#	cp $< $@
 
 # ----------------------------------------
 # Legacy copy to cvs
