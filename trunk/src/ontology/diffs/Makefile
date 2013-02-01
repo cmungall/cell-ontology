@@ -1,0 +1,13 @@
+OBO=http://purl.obolibrary.org/obo
+SRC = ../cl-basic.obo
+TGTS = html text rss
+
+all: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
+
+cl-obo-diff.html: cl-lastbuild.obo $(SRC)
+	compare-obo-files.pl --config 'html/ontology_name=Cell Ontology' --rss-path . -f1 $< -f2 $(SRC) -m $(TGTS) -o cl-obo-diff
+cl-def-diff.html: cl-lastbuild.obo $(SRC)
+	compare-defs.pl --config 'html/ontology_name=Cell Ontology' --rss-path . -f1 $< -f2 $(SRC) -m $(TGTS) -o cl-def-diff
+
+cl-lastbuild.obo: $(SRC)
+	wget $(OBO)/cl-basic.obo -O $@
