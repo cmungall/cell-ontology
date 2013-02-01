@@ -22,13 +22,13 @@ build/cl.obo: cl-edit.owl cl-relations.obo pr-minimal.obo
 .PRECIOUS: build/cl.obo
 
 cl.obo: build/cl.obo
-	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
+	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
 cl.owl: build/cl.owl
 	cp $< $@
 
 cl-basic.obo: build/cl-simple.obo
-	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
+	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
 cl-basic.owl: build/cl-simple.owl
 	cp $< $@
@@ -48,7 +48,7 @@ bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
 #	owltools $< -o file://`pwd`/$@
 
 fix-%: %
-	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
+	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Diffs
