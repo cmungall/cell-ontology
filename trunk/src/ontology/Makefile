@@ -58,7 +58,7 @@ diff: cl-basic.obo
 	cd diffs && make
 
 minidiff: build/cl.obo
-	cd diffs && make TGTS='html' SRC=../$<
+	cd diffs && make TGTS='html' SRC=../build/cl-basic.obo
 
 #diffs: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
 
