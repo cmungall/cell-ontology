@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: 2013-01-31
+data-version: 2013-02-07
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -73,33 +73,8 @@ synonymtypedef: SENSU "taxonomic disambiguation"
 synonymtypedef: SMILES "SMILES"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: cl
-treat-xrefs-as-equivalent: BILA
-treat-xrefs-as-equivalent: BSPO
-treat-xrefs-as-equivalent: CARO
-treat-xrefs-as-equivalent: GO
-treat-xrefs-as-equivalent: NIF_GrossAnatomy
-treat-xrefs-as-equivalent: OG
-treat-xrefs-as-equivalent: VSAO
 remark: $Revision: 1.113 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
-treat-xrefs-as-reverse-genus-differentia: AAO part_of NCBITaxon:8292
-treat-xrefs-as-reverse-genus-differentia: FBbt part_of NCBITaxon:7227
-treat-xrefs-as-reverse-genus-differentia: FMA part_of NCBITaxon:9606
-treat-xrefs-as-reverse-genus-differentia: HAO part_of NCBITaxon:7399
-treat-xrefs-as-reverse-genus-differentia: KUPO part_of NCBITaxon:9606
-treat-xrefs-as-reverse-genus-differentia: MA part_of NCBITaxon:10088
-treat-xrefs-as-reverse-genus-differentia: MFO part_of NCBITaxon:8089
-treat-xrefs-as-reverse-genus-differentia: ncithesaurus part_of NCBITaxon:40674
-treat-xrefs-as-reverse-genus-differentia: SPD part_of NCBITaxon:6893
-treat-xrefs-as-reverse-genus-differentia: TADS part_of NCBITaxon:6939
-treat-xrefs-as-reverse-genus-differentia: TAO part_of NCBITaxon:32443
-treat-xrefs-as-reverse-genus-differentia: TGMA part_of NCBITaxon:44484
-treat-xrefs-as-reverse-genus-differentia: WBbt part_of NCBITaxon:6237
-treat-xrefs-as-reverse-genus-differentia: XAO part_of NCBITaxon:8353
-treat-xrefs-as-reverse-genus-differentia: ZFA part_of NCBITaxon:7954
-treat-xrefs-as-has-subclass: EHDAA
-treat-xrefs-as-has-subclass: EHDAA2
-treat-xrefs-as-has-subclass: EMAPA
 
 [Term]
 id: CL:0000000
@@ -2060,7 +2035,7 @@ id: CL:0000199
 name: mechanoreceptor cell
 namespace: cell
 def: "A cell specialized to transduce mechanical stimuli and relay that information centrally in the nervous system." [MESH:A08.800.550.700.500]
-synonym: "mechanoreceptor" EXACT [MP:0000972]
+synonym: "mechanoreceptor" RELATED [MP:0000972]
 is_a: CL:0000006 ! neuronal receptor cell
 
 [Term]
@@ -3215,6 +3190,7 @@ name: glioblast (sensu Nematoda and Protostomia)
 namespace: cell
 is_a: CL:0000030 ! glioblast
 is_a: CL:0000130 ! neuron associated cell (sensu Nematoda and Protostomia)
+relationship: develops_from CL:0000340 ! glioblast (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000341
@@ -5008,7 +4984,7 @@ id: CL:0000560
 name: band form neutrophil
 namespace: cell
 def: "A late neutrophilic metamyelocyte in which the nucleus is indented to more than half the distance to the farthest nuclear margin but in no area being condensed to a single filament. The nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature neutrophil. These cells are fMLP receptor-positive, CD11b-positive, CD35-negative, and CD49d-negative." [GOC:add, GOC:dsd, GOC:tfm, http://www.cap.org, ISBN:0721601464, PMID:10618520, PMID:12560239, PMID:15514007]
-comment: They are found in the Band 1 fraction.
+comment: Found in the Band 1 fraction.
 synonym: "band" BROAD []
 synonym: "band cell" BROAD []
 synonym: "band form" BROAD []
@@ -12305,7 +12281,7 @@ creation_date: 2010-09-02T03:51:17Z
 
 [Term]
 id: CL:0002217
-name: intermediate trophoblast
+name: intermediate trophoblast cell
 namespace: cell
 def: "A trophoblast that leaves the placenta and invades the endometrium and myometrium. This cell type is crucial in increasing blood flow to the fetus." [GOC:tfm, http://www.med.yale.edu/obgyn/kliman/placenta/articles/EOR_Placenta/Trophtoplacenta.html]
 xref: BTO:0002366
@@ -15553,7 +15529,7 @@ creation_date: 2011-02-08T10:46:34Z
 id: CL:0002519
 name: interrenal epithelial cell
 namespace: cell
-def: "The interrenal epithelial kidney cell is an epithelial cell found in the anterior kidney of teleosts fish. This cell type is arranged in layers around the posterior cardinal vein and contains many mitochondria with tubulovesicular cristae. Interrenal chromaffin cells are interspersed among the tissue layer created by this cell type." [GOC:mh, GOC:tfm, PMID:12668625]
+def: "An interrenal epithelial kidney cell is an epithelial cell found in the anterior kidney of teleosts fish. This cell type is arranged in layers around the posterior cardinal vein and contains many mitochondria with tubulovesicular cristae. Interrenal chromaffin cells are interspersed among the tissue layer created by this cell type." [GOC:mh, GOC:tfm, PMID:12668625]
 is_a: CL:0002518 ! kidney epithelial cell
 created_by: tmeehan
 creation_date: 2011-02-08T11:03:32Z
@@ -20205,6 +20181,15 @@ created_by: cjm
 creation_date: 2009-08-26T02:50:08Z
 
 [Typedef]
+id: dubious_for_taxon
+name: dubious_for_taxon
+namespace: uberon
+def: "S dubious_for_taxon T if it is probably the case that no instances of S can be found in any instance of T." [UBERON:cjm]
+comment: this relation lacks a strong logical interpretation, but can be used in place of never_in_taxon where it is desirable to state that the definition of the class is too strict for the taxon under consideration, but placing a never_in_taxon link would result in a chain of inconsistencies that will take time to resolve. Example: metencephalon in teleost
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
 id: has_completed
 name: has_completed
 
@@ -20255,7 +20240,7 @@ namespace: RO
 [Typedef]
 id: has_part
 name: has_part
-namespace: bfo
+namespace: quality
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
 comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
@@ -20286,6 +20271,38 @@ id: has_ratio_quality
 name: has_ratio_quality
 namespace: quality
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
+
+[Typedef]
+id: has_relational_adjective
+name: has_relational_adjective
+namespace: uberon
+comment: Used to connect a class to an adjectival form of its label. For example, a class with label 'intestine' may have a relational adjective 'intestinal'.
+xref: UBPROP:0000007
+is_metadata_tag: true
+
+[Typedef]
+id: homologous_to
+name: homologous_to
+namespace: uberon
+is_metadata_tag: true
+
+[Typedef]
+id: homology_notes
+name: homology_notes
+namespace: uberon
+def: "Notes on the homology status of this class." [UBERON:cjm]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000003
+is_metadata_tag: true
+
+[Typedef]
+id: immediate_transformation_of
+name: immediate_transformation_of
+namespace: uberon
+synonym: "direct_transformation_of" EXACT [UBERON:cjm]
+synonym: "immediately transforms from" EXACT [SIO:000658]
+xref: http://semanticscience.org/resource/SIO_000658
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Typedef]
 id: increased_in_magnitude_relative_to
@@ -20337,6 +20354,16 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
 
 [Typedef]
+id: never_in_taxon
+name: never_in_taxon
+namespace: uberon
+def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [PMID:20973947]
+xref: RO:0002161
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
 id: occurs_in
 name: occurs in
 namespace: gene_ontology
@@ -20361,12 +20388,31 @@ name: participates in
 xref: BFO:0000056
 
 [Typedef]
+id: pharyngeal_arch_number
+name: pharyngeal arch number
+namespace: uberon
+def: "x pharyngeal_arch_number N if and only if (i) x is a pharyngeal arch, and (ii) x is ancestrally pharyngeal arch number N in a series of pharyngeal arches repeated along a antero-posterior axis, with arch_number 1 being the mandibular arch." [UBERON:cjm]
+comment: Note that gill arch N = PA N-2. the term branchial_arch is ambiguous.
+property_value: is_count_of UBERON:0002539
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
 id: positively_regulates
 name: positively_regulates
 namespace: gene_ontology
 xref: RO:0002213
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
+
+[Typedef]
+id: present_in_taxon
+name: present_in_taxon
+namespace: uberon
+def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [UBERON:cjm]
+synonym: "applicable for taxon" EXACT []
+is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: produces
@@ -20407,6 +20453,13 @@ id: secretes
 name: secretes
 
 [Typedef]
+id: seeAlso
+name: see also
+namespace: uberon
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+is_metadata_tag: true
+
+[Typedef]
 id: similar_in_magnitude_relative_to
 name: similar_in_magnitude_relative_to
 namespace: quality
@@ -20416,12 +20469,20 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 [Typedef]
 id: spatially_disjoint_from
 name: spatially_disjoint_from
+namespace: uberon
 def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
 synonym: "non_overlapping_with" EXACT []
 synonym: "shares_no_parts_with" EXACT []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
 is_metadata_tag: true
 is_class_level: true
+
+[Typedef]
+id: taxon_notes
+name: taxon_notes
+namespace: uberon
+xref: UBPROP:0000008
+is_metadata_tag: true
 
 [Typedef]
 id: towards
