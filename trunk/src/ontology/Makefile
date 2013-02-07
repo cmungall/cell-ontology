@@ -59,7 +59,7 @@ diff: cl-basic.obo
 
 # TESTING: emailing self, will change to list
 minidiff: build/cl.obo
-	cd diffs && make TGTS='html txt' SRC=../build/cl-simple.obo && mail -s cl-diffs cjmungall@lbl.gov < diffs/cl-combined-diff.txt
+	cd diffs && make TGTS='html txt' SRC=../build/cl-simple.obo && mail -s cl-diffs cjmungall@lbl.gov < cl-combined-diff.txt
 
 #diffs: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
 
