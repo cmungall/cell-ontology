@@ -55,11 +55,11 @@ fix-%: %
 # ----------------------------------------
 
 diff: cl-basic.obo
-	cd diffs && make
+	cd diffs && rm cl-*diff* && make
 
 # TESTING: emailing self, will change to list
 minidiff: build/cl.obo
-	cd diffs && make TGTS='html txt' SRC=../build/cl-simple.obo && mail -s cl-diffs cjmungall@lbl.gov < cl-combined-diff.txt
+	cd diffs && rm cl-*diff* && make TGTS='html txt' SRC=../build/cl-simple.obo && mail -s cl-diffs cjmungall@lbl.gov < cl-combined-diff.txt
 
 #diffs: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
 
