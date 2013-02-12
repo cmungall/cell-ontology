@@ -1,0 +1,242 @@
+<html><head>
+<style type="text/css">       
+
+    body {        
+	background-color: MediumAquaMarine;
+    }
+
+    .zdark {
+	background-color: #bbbbbb;
+    }
+
+    .zlight {
+	background-color: #ffffff;
+    }
+
+    div.node-hilite {
+	position : absolute;
+	border : medium solid red;
+	display : none;
+    }
+
+    div.results {
+	width: 95%;
+	height: 480;
+	overflow: auto;
+    }
+
+    table.results {
+	border: thin solid black;
+    }
+
+    .label { 
+	font-weight: bold;
+	background-color: #333;
+	color: white;
+    }
+
+    table.results tr {
+    }
+
+    table.results th {
+	border-right: thin solid black;
+    }
+
+    table.results td {
+	border-top: thin solid black;
+	border-right: thin solid black;
+    }
+
+    table.results td.termlinks {
+	white-space: nowrap;
+    }
+
+    table.summary {
+	white-space:nowrap;
+	padding: 0px;
+	border-left   : thin solid gray;
+	border-bottom : thin solid gray;
+    }
+
+    table.summary td {
+	border-top : thin solid gray;
+	border-right : thin solid gray;
+    }
+
+    table.summary td:first-child {
+	background-color: #333;
+	color: white;
+    }
+
+    .edgetypelegend { 
+	 background-color:gray;
+	 padding:4px;
+	 position:absolute;
+    }
+
+</style>
+
+<script language="javascript">
+function submitForm(idlist){
+    var form = document.getElementById("_batch_link_form_");
+    form.IDSet.value = idlist;
+    form.submit();
+}
+function nodeClicked(areaElt,evt){
+    var h = areaElt.href;
+    var i = h.lastIndexOf('#');
+    if(i == -1)
+        return true;
+    var goid = h.substring(i+1);
+    var e = document.getElementById(goid);
+    if(e){
+        e.scrollIntoView()
+	evt.cancelBubble = true;
+        return false;
+    }
+    return true;
+}
+function findAreaNode(id){
+    return document.getElementById("area_"+id);
+}
+function findImgForArea(a){
+    var map = a.parentNode;
+    var mapname = map.name;
+    var imgid = "img_"+mapname.slice(4);
+    return document.getElementById(imgid);
+}
+function hilightNode(id){
+    var a = findAreaNode(id);
+    var d = window.nodeHilightDiv;
+    if(a){
+	var img = findImgForArea(a);
+	if(! img) return;
+	var coords = a.coords.split(",");
+	var x = parseInt(coords[0]);
+	var y = parseInt(coords[1]);
+	d.style.left = x + img.offsetLeft;
+	d.style.top  = y + img.offsetTop;
+	d.style.width = parseInt(coords[2]) - x;
+	d.style.height = parseInt(coords[3]) - y;
+	d.style.display = "block";
+	d.scrollIntoView();
+    }
+}
+function getWindowScroll(){
+    if(window.pageXOffset === undefined)
+	if(document.body.scrollLeft === undefined)
+	    return [document.documentElement.scrollLeft,
+	            document.documentElement.scrollTop];
+	else
+	    return [document.body.scrollLeft,
+	            document.body.scrollTop];
+    else 
+	return [window.pageXOffset,
+	        window.pageYOffset];
+}
+
+function showEdgeTypeLegend(evt){
+    var img = document.getElementById("edgetypelegend");
+    if(img){
+	var wscroll = getWindowScroll();
+	img.style.display = 'block';
+	img.style.left = evt.clientX + wscroll[0] + 5;
+	img.style.top  = evt.clientY + wscroll[1] + 5;
+	if( typeof(evt.stopPropagation) === "function" )
+	    evt.stopPropagation();
+    }
+}
+
+function hideEdgeTypeLegend(){
+    var img = document.getElementById("edgetypelegend");
+    if(img) img.style.display='none';
+}
+
+window.onload = function(){
+    window.nodeHilightDiv = document.createElement('div');
+    document.body.appendChild(window.nodeHilightDiv);
+    window.nodeHilightDiv.className = 'node-hilite';
+    window.nodeHilightDiv.onclick = function(){ window.nodeHilightDiv.style.display="none"; };
+}
+</script>
+</head><body>
+<form target="_blank" name="_gene_link_form_" id="_batch_link_form_" 
+      action="http://www.informatics.jax.org/javawi2/servlet/WIFetch"
+      method="post" enctype='multipart/form-data'>
+      <input type="hidden" name="page" value="batchSummary" />
+<input type="hidden" name="IDType" value="MGIMarker" />
+<input type="hidden" name="returnSet" value="Nomenclature" />
+<input type="hidden" name="returnSet" value="Location" />
+<input type="hidden" name="printFormat" value="toolbar" />
+<input type="hidden" name="IDSet" value="%s" />
+
+</form>
+<h1><img src="auxfiles/vlad_logo.gif" align="middle" /><a name="top">Vlad Results</a></h1>
+<table class="summary" cellspacing="0"><tr><td class="label">Vlad version:</td><td>v1.5</td></tr><tr><td class="label">Date:</td><td>Wed Aug 24 14:07:33 2011</td></tr><tr><td class="label">Run time:</td><td>37.94 sec</td></tr><tr><td class="label">Ontology file:</td><td>gene_ontology.obo</td></tr><tr><td class="label">Ontology date:</td><td>Mon Aug 22 19:30:00 2011</td></tr><tr><td class="label">Annotation file:</td><td>gene_association.mgi</td></tr><tr><td class="label">Annotation date:</td><td>???</td></tr><tr><td class="label">Analysis type:</td><td>enrichment</td></tr><tr><td class="label">Excluded evidence codes:</td><td>ND</td></tr><tr><td class="label">Number of query sets:</td><td>1</td></tr><tr><td class="label">Query set 1:</td><td>CL_0000989-down.xls (n=3; 17 not found)</td></tr><tr><td class="label">Universe set:</td><td>default (everything)</td></tr><tr><td class="label">Graph display:</td><td>Top 25 scoring terms and their ancestors. Interior nodes have been culled.</td></tr></table>
+<b>Jump to:</b> <a href="#biological_process" target="_self">biological_process</a> | <a href="#cellular_component" target="_self">cellular_component</a> | <a href="#molecular_function" target="_self">molecular_function</a> | <a href="#__unannotated__" target="_self">Unannotated id/symbols</a><p><h3><a name="biological_process">biological_process</a> (<a href="#top">top</a>)</h3><img id="img_biological_process" src="auxfiles/vlad.results.biological_process.png" usemap="#map_biological_process" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_biological_process">
+<area id="area_GO:0071841" shape="rect" href="#GO:0071841" coords="109,231,195,316"  alt="GO:0071841 cellular component organization or biogenesis at cellular level (1.50e-01)" title="GO:0071841 cellular component organization or biogenesis at cellular level (1.50e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0071842" shape="rect" href="#GO:0071842" coords="83,371,168,456"  alt="GO:0071842 cellular component organization at cellular level (1.43e-01)" title="GO:0071842 cellular component organization at cellular level (1.43e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0060271" shape="rect" href="#GO:0060271" coords="148,1008,292,1152"  alt="GO:0060271 cilium morphogenesis (4.04e-03)" title="GO:0060271 cilium morphogenesis (4.04e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048858" shape="rect" href="#GO:0048858" coords="160,840,280,960"  alt="GO:0048858 cell projection morphogenesis (2.24e-02)" title="GO:0048858 cell projection morphogenesis (2.24e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009987" shape="rect" href="#GO:0009987" coords="231,127,260,156"  alt="GO:0009987 cellular process (8.23e-01)" title="GO:0009987 cellular process (8.23e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048869" shape="rect" href="#GO:0048869" coords="219,230,304,317"  alt="GO:0048869 cellular developmental process (1.41e-01)" title="GO:0048869 cellular developmental process (1.41e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016043" shape="rect" href="#GO:0016043" coords="5,233,85,313"  alt="GO:0016043 cellular component organization (1.85e-01)" title="GO:0016043 cellular component organization (1.85e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032989" shape="rect" href="#GO:0032989" coords="205,510,317,623"  alt="GO:0032989 cellular component morphogenesis (3.41e-02)" title="GO:0032989 cellular component morphogenesis (3.41e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032990" shape="rect" href="#GO:0032990" coords="301,673,419,791"  alt="GO:0032990 cell part morphogenesis (2.30e-02)" title="GO:0032990 cell part morphogenesis (2.30e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048856" shape="rect" href="#GO:0048856" coords="328,233,408,313"  alt="GO:0048856 anatomical structure development (1.90e-01)" title="GO:0048856 anatomical structure development (1.90e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009653" shape="rect" href="#GO:0009653" coords="321,366,415,461"  alt="GO:0009653 anatomical structure morphogenesis (9.56e-02)" title="GO:0009653 anatomical structure morphogenesis (9.56e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030030" shape="rect" href="#GO:0030030" coords="69,510,181,623"  alt="GO:0030030 cell projection organization (3.44e-02)" title="GO:0030030 cell projection organization (3.44e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000902" shape="rect" href="#GO:0000902" coords="163,675,277,789"  alt="GO:0000902 cell morphogenesis (3.11e-02)" title="GO:0000902 cell morphogenesis (3.11e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0071840" shape="rect" href="#GO:0071840" coords="113,102,191,181"  alt="GO:0071840 cellular component organization or biogenesis (1.94e-01)" title="GO:0071840 cellular component organization or biogenesis (1.94e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008150" shape="rect" href="#GO:0008150" coords="173,5,317,53"  alt="GO:0008150 biological_process (1.00e+00)" title="GO:0008150 biological_process (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032502" shape="rect" href="#GO:0032502" coords="307,103,381,179"  alt="GO:0032502 developmental process (2.25e-01)" title="GO:0032502 developmental process (2.25e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="cellular_component">cellular_component</a> (<a href="#top">top</a>)</h3><img id="img_cellular_component" src="auxfiles/vlad.results.cellular_component.png" usemap="#map_cellular_component" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_cellular_component">
+
+</map>
+<h3><a name="molecular_function">molecular_function</a> (<a href="#top">top</a>)</h3><img id="img_molecular_function" src="auxfiles/vlad.results.molecular_function.png" usemap="#map_molecular_function" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_molecular_function">
+<area id="area_GO:0005488" shape="rect" href="#GO:0005488" coords="82,101,226,245"  alt="GO:0005488 binding (7.28e-01)" title="GO:0005488 binding (7.28e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003674" shape="rect" href="#GO:0003674" coords="82,5,226,53"  alt="GO:0003674 molecular_function (1.00e+00)" title="GO:0003674 molecular_function (1.00e+00)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="__unannotated__">Unannotated IDs</a></h3>
+<table border="0">
+<tr>
+<td><b>CL_0000989-down.xls</b><br/>
+<textarea rows="15" cols="18">10368947
+10428998
+10514133
+11630
+13196
+3.62084211916762
+4.16245250000213
+5.26521824936309
+6.9591989141796
+69863
+8.3253454887765
+9.6540497471945
+FoldChange
+Stdv
+entrezIDs
+mgiID
+symbol</textarea>
+</td>
+</table>
+<span id="edgetypelegend" 
+		     class="edgetypelegend"
+	             style="left:0;top:0;display:none;" 
+		     onclick="hideEdgeTypeLegend();" >
+			 <table border="0"><tr>
+			 <td style="text-align:left;cursor:pointer;">[close]</td>
+			 <td style="text-align:center;"><b>Legend: Edge Types</b></td>
+			 <td style="text-align:right;"><a href="http://www.geneontology.org/GO.ontology.relations.shtml" target="_blank">(details)</a></td>
+			 </tr>
+		         <tr><td colspan="3"><img src="auxfiles/legend.gif" /></td></tr>
+			 </table>
+		     </span>
+</body></html>

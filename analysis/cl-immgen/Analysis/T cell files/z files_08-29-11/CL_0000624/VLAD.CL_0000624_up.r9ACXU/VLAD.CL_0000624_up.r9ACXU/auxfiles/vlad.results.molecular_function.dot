@@ -1,0 +1,70 @@
+digraph "molecular_function" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">molecular_function</FONT></TD></TR><TR><TD BORDER="0">CL_0000624-up.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0046983" [ URL = "#GO:0046983", label = <<TABLE BORDER="0"><TR><TD>GO:0046983<BR/>protein<BR/>dimerization<BR/>activity<BR/>(5.10e-02)</TD></TR></TABLE>>, width = 1.10508386574, shape = "box", fontsize = 7.95660383336, height = 1.10508386574 ];
+"GO:0046872" [ URL = "#GO:0046872", label = <<TABLE BORDER="0"><TR><TD>GO:0046872<BR/>metal ion binding<BR/>(2.27e-01)</TD></TR></TABLE>>, width = 0.783684196569, shape = "box", fontsize = 5.6425262153, height = 0.783684196569 ];
+"GO:0043169" [ URL = "#GO:0043169", label = <<TABLE BORDER="0"><TR><TD>GO:0043169<BR/>cation binding<BR/>(2.29e-01)</TD></TR></TABLE>>, width = 0.780736702421, shape = "box", fontsize = 5.62130425743, height = 0.780736702421 ];
+"GO:0001948" [ URL = "#GO:0001948", label = <<TABLE BORDER="0"><TR><TD>GO:0001948<BR/>glycoprotein binding<BR/>(4.08e-03)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0019900" [ URL = "#GO:0019900", label = <<TABLE BORDER="0"><TR><TD>GO:0019900<BR/>kinase binding<BR/>(2.46e-02)</TD></TR></TABLE>>, width = 1.23219434245, shape = "box", fontsize = 8.87179926566, height = 1.23219434245 ];
+"GO:0005488" [ URL = "#GO:0005488", label = "", width = 0.37349261478, shape = "box", height = 0.37349261478 ];
+"GO:0046914" [ URL = "#GO:0046914", label = <<TABLE BORDER="0"><TR><TD>GO:0046914<BR/>transition<BR/>metal ion binding<BR/>(1.07e-01)</TD></TR></TABLE>>, width = 0.959956633588, shape = "box", fontsize = 6.91168776184, height = 0.959956633588 ];
+"GO:0003674" [ URL = "#GO:0003674", label = <<TABLE BORDER="0"><TR><TD>GO:0003674<BR/>molecular_function</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0005515" [ URL = "#GO:0005515", label = <<TABLE BORDER="0"><TR><TD>GO:0005515<BR/>protein binding<BR/>(3.83e-01)</TD></TR></TABLE>>, width = 0.63338612383, shape = "box", fontsize = 5.0, height = 0.63338612383 ];
+"GO:0008270" [ URL = "#GO:0008270", label = <<TABLE BORDER="0"><TR><TD>GO:0008270<BR/>zinc ion binding<BR/>(8.87e-02)</TD></TR></TABLE>>, width = 0.998128805627, shape = "box", fontsize = 7.18652740051, height = 0.998128805627 ];
+"GO:0019899" [ URL = "#GO:0019899", label = <<TABLE BORDER="0"><TR><TD>GO:0019899<BR/>enzyme binding<BR/>(6.36e-02)</TD></TR></TABLE>>, width = 1.06374852266, shape = "box", fontsize = 7.65898936318, height = 1.06374852266 ];
+"GO:0019901" [ URL = "#GO:0019901", label = <<TABLE BORDER="0"><TR><TD>GO:0019901<BR/>protein kinase binding<BR/>(2.09e-02)</TD></TR></TABLE>>, width = 1.25912391895, shape = "box", fontsize = 9.06569221647, height = 1.25912391895 ];
+"GO:0042803" [ URL = "#GO:0042803", label = <<TABLE BORDER="0"><TR><TD>GO:0042803<BR/>protein<BR/>homodimerization<BR/>activity<BR/>(3.43e-02)</TD></TR></TABLE>>, width = 1.17591261541, shape = "box", fontsize = 8.46657083096, height = 1.17591261541 ];
+"GO:0043167" [ URL = "#GO:0043167", label = <<TABLE BORDER="0"><TR><TD>GO:0043167<BR/>ion binding<BR/>(2.30e-01)</TD></TR></TABLE>>, width = 0.779810514882, shape = "box", fontsize = 5.61463570715, height = 0.779810514882 ];
+"GO:0042802" [ URL = "#GO:0042802", label = <<TABLE BORDER="0"><TR><TD>GO:0042802<BR/>identical<BR/>protein binding<BR/>(5.04e-02)</TD></TR></TABLE>>, width = 1.10755029639, shape = "box", fontsize = 7.97436213401, height = 1.10755029639 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0005515" -> "GO:0019899";
+"GO:0043167" -> "GO:0043169";
+"GO:0005515" -> "GO:0001948";
+"GO:0005515" -> "GO:0042802";
+"GO:0003674" -> "GO:0005488";
+"GO:0046914" -> "GO:0008270";
+"GO:0005488" -> "GO:0005515";
+"GO:0005515" -> "GO:0046983";
+"GO:0042802" -> "GO:0042803";
+"GO:0043169" -> "GO:0046872";
+"GO:0019899" -> "GO:0019900";
+"GO:0005488" -> "GO:0043167";
+"GO:0046983" -> "GO:0042803";
+"GO:0019900" -> "GO:0019901";
+"GO:0046872" -> "GO:0046914";
+}
+}
+}

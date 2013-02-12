@@ -1,0 +1,44 @@
+> library(affy); library(limma)
+> setwd("XXXXXX")
+> affystart(plot=T, express="rma")
+	#generates QC reports and and RMA expression value sheet printed to file	
+> mydata <-ReadAffy()
+> image(mydata)
+	# generates image file for spatial defect
+> eset <- rma(mydata)
+Background correcting
+Normalizing
+Calculating Expression
+>pData(eset); write.exprs(eset, file="expression_values.txt")
+
+> library(Biobase); library(puma); library(limma)
+> exprs <- as.matrix(read.delim("expression_values.txt", header = TRUE, row.names = 1))
+> ad = assayDataNew("lockedEnvironment", exprs = exprs)
+> dim(exprs)
+	### right number of samples?
+> head(exprs[, 1:5])
+	#### look like expected
+> pData <- read.delim("pData.txt", sep="\t")  
+	#### "pdata.txt" is a tab-delimited file with sample names in first column, new names in second column.  First row contains just "name", no tab (i.e. HEADER)
+>  metadata <- data.frame(labelDescription = c("Samples"))
+> phenoData <- new("AnnotatedDataFrame", data = pData, varMetadata = metadata)
+> pData(phenoData)
+	### look okay?
+> sampleNames(ad) <- sampleNames(phenoData)
+> eset <- new("ExpressionSet", phenoData =phenoData, assayData = ad)
+> pData(eset) <- data.frame("class"=c("B Fol PC", "B Fol PC", "B Fol PC", "B FrE Bm", "B FrE Bm", "B FrE Bm", "B FrE FL", "B FrE FL", "B FrE FL", "B FrF BM", "B FrF BM", "B FrF BM", "B GC Sp", "B GC Sp", "B GC Sp", "B MZ Sp", "B MZ Sp", "B MZ Sp", "B T1", "B T1", "B T1", "B T2", "B T2", "B T2", "B T3", "B T3", "B T3", "B1a PC", "B1a PC", "B1a PC", "B1a SP", "B1a SP", "B1a SP", "B1b SP", "B1b SP", "B1b SP", "B6.D6", "B6.D6", "B6.D6", "B6.G1", "B6.G1", "B6.G1", "B FO Sp", "B FO Sp", "B FO Sp", "103-11b+LV", "103-11b+LV", "103-11b+LV", "103+11b-LV", "103+11b-LV", "CD8- TH", "CD8- TH", "CD8- TH", "Triple Neg MLN", "Triple Neg Sp", "Triple Neg Sp", "Triple Neg Sp", "11b+ MLN", "11b+ MLN", "CD8+ TH", "CD8+ TH", "CD8+ TH", "Langerhen", "Langerhen", "PDC CD8- SP", "PDC CD8- SP", "PDC CD8- SP", "PDC CD8+ SP", "PDC CD8+ SP", "PDC CD8+ SP", "DC1 LN", "DC1 LN", "DC1 LN", "DC1 LU", "DC1 LU", "DC1 LU", "DC1 MLN", "DC1 MLN", "DC1 MLN", "DC1 SP", "DC1 SP", "DC1 SP", "DC1 SP", "DC1 SP", "DC2 LN", "DC2 LN", "DC2 LN", "DC2 LU", "DC2 LU", "DC2 LU", "DC2 MLN", "DC2 MLN", "DC2 MLN", "DC2 SP", "DC2 SP", "DC2 SP", "DC2 SP", "DC2 SP", "DC3 MLN", "DC3 SP", "DC3 SP", "DC3 SP", "DC4 MLN", "DC4 MLN", "DC6 LN", "DC6 LN", "DC6 LN", "DC7 LN", "DC7 LN", "DC7 LN", "DC8 LN", "DC8 LN", "DC8 LN", "DC9 LN", "DC9 LN", "DC9 LN", "Neutrophil", "Neutrophil", "Neutrophil", "Neutrophil", "Vg3 e17 Th", "Vg3 e17 Th", "Vg3 e17 Th", "Mo-II-480Hi-PC", "Mo-II-480Hi-PC", "Mo-II-480Hi-PC", "MO lung", "MO lung", "MO lung", "MO red pulp", "MO red pulp", "MO red pulp", "MO THIO5II- 480 HI", "MO THIO5II- 480 HI", "MO THIO5II- 480 HI", "MO THIO5II- 480 int", "MO THIO5II- 480 int", "MO THIO5II- 480 int", "MO THIO5II+ 480 int", "MO THIO5II+ 480 int", "MO THIO5II+ 480 int", "MO THIO5II+ 480lo", "MO THIO5II+ 480lo", "MO THIO5II+ 480lo", "Mon-6C-II- blood", "Mon-6C-II- blood", "Mon-6C-II- blood", "Mon-6C-II+ blood", "Mon-6C-II+ blood", "Mon-6C-II+ LN", "Mon-6C-II+ LN", "Mon-6C-II+ LN", "MO.6C-IIINT.BL#1.CEL", "MO.6C-IIINT.BL#1.CEL", "MO.6C-IIINT.BL#1.CEL", "MO.6C-IIINT.BL#1.CEL", "MO.6C-IIINT.BL#1.CEL", "Mon-6C+II- blood", "Mon-6C+II- blood", "Mon-6C+II- blood", "Mon-6C+II- LN", "Mon-6C+II- LN", "Mon-6C+II- LN", "Mon-6C+II+ blood", "Mon-6C+II+ blood", "Mon-6C+II+ blood", "Mon-6C+II+ blood", "NK 49CI-", "NK 49CI-", "NK 49CI-", "NK 49CI+", "NK 49CI+", "NK 49CI+", "NK 49 H-", "NK 49 H-", "NK 49 H-", "NK 49H+", "NK 49H+", "NK 49H+", "NK", "NK", "NK", "NKT4-Liver", "NKT4-Liver", "NKT4-Liver", "NKT4-Liver", "NKT4-Spleen", "NKT4-Spleen", "NKT4-Spleen", "NKT4+-Liver", "NKT4+-Liver", "NKT4+-Liver", "NKT4+-Liver", "NKT4+-Spleen", "NKT4+-Spleen", "NKT4+-Spleen", "Foxp3-", "Foxp3-", "Foxp3-", "Foxp3+CD25+", "Foxp3+CD25+", "Foxp3+CD25+", "CD4 memory LN", "CD4 memory LN", "CD4 memory LN", "CD4 Mem Spleen", "CD4 Mem Spleen", "CD4 Mem Spleen", "CD4 Mem CD44hiCD62L LN", "CD4 Mem CD44hiCD62L LN", "CD4 Mem CD44hiCD62L LN", "CD4 Mem CD44hiCD62L spleen", "CD4 Mem CD44hiCD62L spleen", "CD4 Mem CD44hiCD62L spleen", "CD4 naive Ln", "CD4 naive Ln", "CD4 naive Ln", "CD4 naive MLN", "CD4 naive MLN", "CD4 naive MLN", "CD4 naive PP", "CD4 naive PP", "CD4 naive Sp", "CD4 naive Sp", "CD4 naive Sp", "CD4 naive Sp", "CD4 mature TH", "CD4 mature TH", "CD4 mature TH", "CD8 Memory LN", "CD8 Memory LN", "CD8 Memory LN", "CD8 Memory Sp", "CD8 Memory Sp", "CD8 Memory Sp", "CD8 naive LN", "CD8 naive LN", "CD8 naive LN", "CD8 naive MLN", "CD8 naive MLN", "CD8 naive MLN", "CD8 naive PP", "CD8 naive PP", "CD8 naive PP", "CD8 naive SP", "CD8 naive SP", "CD8 naive SP", "CD8 mature TH", "CD8 mature TH", "CD8 mature TH", "GD T cell SP", "GD T cell SP", "GD T cell SP", "GD T cell TH", "GD T cell TH", "GD T cell TH", "Vg2- SP", "Vg2- SP", "Vg2- SP", "Vg2+ Sp", "Vg2+ Sp", "Vg2+ Sp", "Vg5- IEL", "Vg5- IEL", "Vg5- IEL", "Vg5+ IEL", "Vg5+ IEL", "Vg5+ IEL"))
+> design <-createDesignMatrix(eset)
+> fit <- lmFit(eset, design) 
+	#Fits a linear model for each gene based on the given series of arrays.
+> contrast.matrix <- createContrastMatrix(eset)
+> write.table(contrast.matrix, file="contrastMatrix.txt", sep="\t", header= TRUE)
+	#Remember to insert one empty cell into A1. Does it look good?  Yes, go to next step....
+> fit2 <- contrasts.fit(fit, contrast.matrix)
+	# Computes estimated coefficients and standard errors for a given set of contrasts.
+> fit2 <- eBayes(fit2) # Computes moderated t-statistics and log-odds of differential expression by empirical Bayes
+	# brings up the matrix.
+> z <- scan(file="z.txt")
+
+> for(i in z) {x <- topTable(fit2, coef=i, adjust="fdr", sort.by="P", number=50000); 
+				y <- x[x$P.Value < 0.05 & (x$logFC > 0.584963),]; write.table((y), file=paste(i, "txt", sep = "u."), row.names=F, sep="\t");
+				w <- x[x$P.Value < 0.05 & (x$logFC < -0.584963),]; write.table((w), file=paste(i, "txt", sep = "d."), row.names=F, sep="\t")}

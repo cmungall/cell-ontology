@@ -1,0 +1,65 @@
+digraph "cellular_component" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">cellular_component</FONT></TD></TR><TR><TD BORDER="0">CL_0002405-down.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0005622" [ URL = "#GO:0005622", label = <<TABLE BORDER="0"><TR><TD>GO:0005622<BR/>intracellular<BR/>(6.74e-01)</TD></TR></TABLE>>, width = 0.865122548705, shape = "box", fontsize = 6.22888235068, height = 0.865122548705 ];
+"GO:0005623" [ URL = "#GO:0005623", label = "", width = 0.347594484112, shape = "box", height = 0.347594484112 ];
+"GO:0043227" [ URL = "#GO:0043227", label = <<TABLE BORDER="0"><TR><TD>GO:0043227<BR/>membrane-bounded<BR/>organelle<BR/>(5.03e-01)</TD></TR></TABLE>>, width = 1.13859689405, shape = "box", fontsize = 8.19789763716, height = 1.13859689405 ];
+"GO:0044424" [ URL = "#GO:0044424", label = <<TABLE BORDER="0"><TR><TD>GO:0044424<BR/>intracellular part<BR/>(6.60e-01)</TD></TR></TABLE>>, width = 0.887687943558, shape = "box", fontsize = 6.39135319362, height = 0.887687943558 ];
+"GO:0005575" [ URL = "#GO:0005575", label = <<TABLE BORDER="0"><TR><TD>GO:0005575<BR/>cellular_component</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0043226" [ URL = "#GO:0043226", label = <<TABLE BORDER="0"><TR><TD>GO:0043226<BR/>organelle<BR/>(5.69e-01)</TD></TR></TABLE>>, width = 1.03132067594, shape = "box", fontsize = 7.42550886675, height = 1.03132067594 ];
+"GO:0005737" [ URL = "#GO:0005737", label = <<TABLE BORDER="0"><TR><TD>GO:0005737<BR/>cytoplasm<BR/>(4.90e-01)</TD></TR></TABLE>>, width = 1.15915735708, shape = "box", fontsize = 8.345932971, height = 1.15915735708 ];
+"GO:0043229" [ URL = "#GO:0043229", label = <<TABLE BORDER="0"><TR><TD>GO:0043229<BR/>intracellular<BR/>organelle<BR/>(5.68e-01)</TD></TR></TABLE>>, width = 1.03390452128, shape = "box", fontsize = 7.44411255318, height = 1.03390452128 ];
+"GO:0005634" [ URL = "#GO:0005634", label = <<TABLE BORDER="0"><TR><TD>GO:0005634<BR/>nucleus<BR/>(3.02e-01)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0043231" [ URL = "#GO:0043231", label = <<TABLE BORDER="0"><TR><TD>GO:0043231<BR/>intracellular<BR/>membrane-bounded<BR/>organelle<BR/>(5.02e-01)</TD></TR></TABLE>>, width = 1.14022810364, shape = "box", fontsize = 8.20964234624, height = 1.14022810364 ];
+"GO:0044464" [ URL = "#GO:0044464", label = "", width = 0.347594484112, shape = "box", height = 0.347594484112 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+"GO:0005622" -> "GO:0044424";
+"GO:0005623" -> "GO:0044464";
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0044464" -> "GO:0044424";
+"GO:0044424" -> "GO:0043229";
+"GO:0043226" -> "GO:0043227";
+"GO:0043226" -> "GO:0043229";
+"GO:0044464" -> "GO:0005622";
+"GO:0043227" -> "GO:0043231";
+"GO:0005575" -> "GO:0043226";
+"GO:0005575" -> "GO:0005623";
+"GO:0005575" -> "GO:0044464";
+"GO:0044424" -> "GO:0005737";
+"GO:0043231" -> "GO:0005634";
+"GO:0043229" -> "GO:0043231";
+}
+}
+}

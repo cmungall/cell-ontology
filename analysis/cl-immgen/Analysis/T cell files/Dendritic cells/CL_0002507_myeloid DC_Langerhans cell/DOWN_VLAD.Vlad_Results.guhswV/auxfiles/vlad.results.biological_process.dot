@@ -1,0 +1,59 @@
+digraph "biological_process" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">biological_process</FONT></TD></TR><TR><TD BORDER="0">CL_0002507_myeloid DC_Langerhans cell-down.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0033036" [ URL = "#GO:0033036", label = <<TABLE BORDER="0"><TR><TD>GO:0033036<BR/>macromolecule<BR/>localization<BR/>(7.68e-02)</TD></TR></TABLE>>, width = 0.970484474853, shape = "box", fontsize = 6.98748821894, height = 0.970484474853 ];
+"GO:0051234" [ URL = "#GO:0051234", label = <<TABLE BORDER="0"><TR><TD>GO:0051234<BR/>establishment<BR/>of localization<BR/>(1.78e-01)</TD></TR></TABLE>>, width = 0.798025184162, shape = "box", fontsize = 5.74578132597, height = 0.798025184162 ];
+"GO:0051179" [ URL = "#GO:0051179", label = <<TABLE BORDER="0"><TR><TD>GO:0051179<BR/>localization<BR/>(2.13e-01)</TD></TR></TABLE>>, width = 0.755863777758, shape = "box", fontsize = 5.44221919986, height = 0.755863777758 ];
+"GO:0015914" [ URL = "#GO:0015914", label = <<TABLE BORDER="0"><TR><TD>GO:0015914<BR/>phospholipid<BR/>transport<BR/>(2.09e-03)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0071702" [ URL = "#GO:0071702", label = <<TABLE BORDER="0"><TR><TD>GO:0071702<BR/>organic<BR/>substance<BR/>transport<BR/>(2.43e-02)</TD></TR></TABLE>>, width = 1.16572608922, shape = "box", fontsize = 8.39322784237, height = 1.16572608922 ];
+"GO:0006810" [ URL = "#GO:0006810", label = <<TABLE BORDER="0"><TR><TD>GO:0006810<BR/>transport<BR/>(1.75e-01)</TD></TR></TABLE>>, width = 0.802276312046, shape = "box", fontsize = 5.77638944673, height = 0.802276312046 ];
+"GO:0010876" [ URL = "#GO:0010876", label = <<TABLE BORDER="0"><TR><TD>GO:0010876<BR/>lipid<BR/>localization<BR/>(9.97e-03)</TD></TR></TABLE>>, width = 1.29714165151, shape = "box", fontsize = 9.33941989085, height = 1.29714165151 ];
+"GO:0008150" [ URL = "#GO:0008150", label = <<TABLE BORDER="0"><TR><TD>GO:0008150<BR/>biological_process</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0006869" [ URL = "#GO:0006869", label = <<TABLE BORDER="0"><TR><TD>GO:0006869<BR/>lipid transport<BR/>(9.16e-03)</TD></TR></TABLE>>, width = 1.3089191444, shape = "box", fontsize = 9.42421783966, height = 1.3089191444 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+"GO:0051179" -> "GO:0051234";
+"GO:0010876" -> "GO:0006869";
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0051179" -> "GO:0033036";
+"GO:0033036" -> "GO:0010876";
+"GO:0071702" -> "GO:0006869";
+"GO:0051234" -> "GO:0006810";
+"GO:0008150" -> "GO:0051179";
+"GO:0006869" -> "GO:0015914";
+"GO:0006810" -> "GO:0071702";
+"GO:0008150" -> "GO:0051234";
+}
+}
+}

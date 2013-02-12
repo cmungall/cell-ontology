@@ -1,0 +1,57 @@
+digraph "molecular_function" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">molecular_function</FONT></TD></TR><TR><TD BORDER="0">CL_0000909-up.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0043169" [ URL = "#GO:0043169", label = <<TABLE BORDER="0"><TR><TD>GO:0043169<BR/>cation binding<BR/>(2.29e-01)</TD></TR></TABLE>>, width = 1.05381629154, shape = "box", fontsize = 7.58747729912, height = 1.05381629154 ];
+"GO:0046872" [ URL = "#GO:0046872", label = <<TABLE BORDER="0"><TR><TD>GO:0046872<BR/>metal ion binding<BR/>(2.27e-01)</TD></TR></TABLE>>, width = 1.05782518597, shape = "box", fontsize = 7.61634133899, height = 1.05782518597 ];
+"GO:0001071" [ URL = "#GO:0001071", label = <<TABLE BORDER="0"><TR><TD>GO:0001071<BR/>nucleic acid<BR/>binding<BR/>transcription<BR/>factor activity<BR/>(5.00e-02)</TD></TR></TABLE>>, width = 1.4993221409, shape = "box", fontsize = 10.7951194145, height = 1.4993221409 ];
+"GO:0005488" [ URL = "#GO:0005488", label = "", width = 0.497679925512, shape = "box", height = 0.497679925512 ];
+"GO:0003674" [ URL = "#GO:0003674", label = <<TABLE BORDER="0"><TR><TD>GO:0003674<BR/>molecular_function</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0003700" [ URL = "#GO:0003700", label = <<TABLE BORDER="0"><TR><TD>GO:0003700<BR/>sequence-specific<BR/>DNA binding<BR/>transcription<BR/>factor activity<BR/>(4.99e-02)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0003676" [ URL = "#GO:0003676", label = <<TABLE BORDER="0"><TR><TD>GO:0003676<BR/>nucleic acid binding<BR/>(1.72e-01)</TD></TR></TABLE>>, width = 1.15087662391, shape = "box", fontsize = 8.28631169215, height = 1.15087662391 ];
+"GO:0003677" [ URL = "#GO:0003677", label = <<TABLE BORDER="0"><TR><TD>GO:0003677<BR/>DNA binding<BR/>(1.18e-01)</TD></TR></TABLE>>, width = 1.26879168367, shape = "box", fontsize = 9.13530012241, height = 1.26879168367 ];
+"GO:0043167" [ URL = "#GO:0043167", label = <<TABLE BORDER="0"><TR><TD>GO:0043167<BR/>ion binding<BR/>(2.30e-01)</TD></TR></TABLE>>, width = 1.05255656036, shape = "box", fontsize = 7.57840723458, height = 1.05255656036 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0003674" -> "GO:0001071";
+"GO:0005488" -> "GO:0043167";
+"GO:0043169" -> "GO:0046872";
+"GO:0003674" -> "GO:0005488";
+"GO:0001071" -> "GO:0003700";
+"GO:0005488" -> "GO:0003676";
+"GO:0043167" -> "GO:0043169";
+"GO:0003676" -> "GO:0003677";
+}
+}
+}

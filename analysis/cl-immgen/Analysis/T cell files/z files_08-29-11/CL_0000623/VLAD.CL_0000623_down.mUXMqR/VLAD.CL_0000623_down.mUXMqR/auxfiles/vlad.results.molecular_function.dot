@@ -1,0 +1,61 @@
+digraph "molecular_function" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">molecular_function</FONT></TD></TR><TR><TD BORDER="0">CL_0000623-down.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0060089" [ URL = "#GO:0060089", label = <<TABLE BORDER="0"><TR><TD>GO:0060089<BR/>molecular<BR/>transducer<BR/>activity<BR/>(1.60e-01)</TD></TR></TABLE>>, width = 0.856557154316, shape = "box", fontsize = 6.16721151108, height = 0.856557154316 ];
+"GO:0004871" [ URL = "#GO:0004871", label = <<TABLE BORDER="0"><TR><TD>GO:0004871<BR/>signal<BR/>transducer<BR/>activity<BR/>(1.60e-01)</TD></TR></TABLE>>, width = 0.856557154316, shape = "box", fontsize = 6.16721151108, height = 0.856557154316 ];
+"GO:0038023" [ URL = "#GO:0038023", label = <<TABLE BORDER="0"><TR><TD>GO:0038023<BR/>signaling<BR/>receptor<BR/>activity<BR/>(1.43e-01)</TD></TR></TABLE>>, width = 0.882450096401, shape = "box", fontsize = 6.35364069409, height = 0.882450096401 ];
+"GO:0005515" [ URL = "#GO:0005515", label = <<TABLE BORDER="0"><TR><TD>GO:0005515<BR/>protein binding<BR/>(3.83e-01)</TD></TR></TABLE>>, width = 0.62446395721, shape = "box", fontsize = 5.0, height = 0.62446395721 ];
+"GO:0005488" [ URL = "#GO:0005488", label = "", width = 0.368485442193, shape = "box", height = 0.368485442193 ];
+"GO:0004896" [ URL = "#GO:0004896", label = <<TABLE BORDER="0"><TR><TD>GO:0004896<BR/>cytokine<BR/>receptor<BR/>activity<BR/>(3.47e-03)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0004872" [ URL = "#GO:0004872", label = <<TABLE BORDER="0"><TR><TD>GO:0004872<BR/>receptor<BR/>activity<BR/>(1.79e-01)</TD></TR></TABLE>>, width = 0.830725779187, shape = "box", fontsize = 5.98122561015, height = 0.830725779187 ];
+"GO:0003674" [ URL = "#GO:0003674", label = <<TABLE BORDER="0"><TR><TD>GO:0003674<BR/>molecular_function</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0019955" [ URL = "#GO:0019955", label = <<TABLE BORDER="0"><TR><TD>GO:0019955<BR/>cytokine binding<BR/>(7.00e-03)</TD></TR></TABLE>>, width = 1.40429747545, shape = "box", fontsize = 10.1109418232, height = 1.40429747545 ];
+"GO:0004888" [ URL = "#GO:0004888", label = <<TABLE BORDER="0"><TR><TD>GO:0004888<BR/>transmembrane<BR/>signaling<BR/>receptor<BR/>activity<BR/>(1.38e-01)</TD></TR></TABLE>>, width = 0.890975217432, shape = "box", fontsize = 6.41502156551, height = 0.890975217432 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0003674" -> "GO:0060089";
+"GO:0004888" -> "GO:0004896";
+"GO:0005488" -> "GO:0005515";
+"GO:0038023" -> "GO:0004888";
+"GO:0005515" -> "GO:0019955";
+"GO:0004872" -> "GO:0038023";
+"GO:0003674" -> "GO:0004872";
+"GO:0060089" -> "GO:0004871";
+"GO:0003674" -> "GO:0005488";
+"GO:0004871" -> "GO:0038023";
+"GO:0019955" -> "GO:0004896";
+}
+}
+}

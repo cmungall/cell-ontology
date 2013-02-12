@@ -1,0 +1,377 @@
+<html><head>
+<style type="text/css">       
+
+    body {        
+	background-color: MediumAquaMarine;
+    }
+
+    .zdark {
+	background-color: #bbbbbb;
+    }
+
+    .zlight {
+	background-color: #ffffff;
+    }
+
+    div.node-hilite {
+	position : absolute;
+	border : medium solid red;
+	display : none;
+    }
+
+    div.results {
+	width: 95%;
+	height: 480;
+	overflow: auto;
+    }
+
+    table.results {
+	border: thin solid black;
+    }
+
+    .label { 
+	font-weight: bold;
+	background-color: #333;
+	color: white;
+    }
+
+    table.results tr {
+    }
+
+    table.results th {
+	border-right: thin solid black;
+    }
+
+    table.results td {
+	border-top: thin solid black;
+	border-right: thin solid black;
+    }
+
+    table.results td.termlinks {
+	white-space: nowrap;
+    }
+
+    table.summary {
+	white-space:nowrap;
+	padding: 0px;
+	border-left   : thin solid gray;
+	border-bottom : thin solid gray;
+    }
+
+    table.summary td {
+	border-top : thin solid gray;
+	border-right : thin solid gray;
+    }
+
+    table.summary td:first-child {
+	background-color: #333;
+	color: white;
+    }
+
+    .edgetypelegend { 
+	 background-color:gray;
+	 padding:4px;
+	 position:absolute;
+    }
+
+</style>
+
+<script language="javascript">
+function submitForm(idlist){
+    var form = document.getElementById("_batch_link_form_");
+    form.IDSet.value = idlist;
+    form.submit();
+}
+function nodeClicked(areaElt,evt){
+    var h = areaElt.href;
+    var i = h.lastIndexOf('#');
+    if(i == -1)
+        return true;
+    var goid = h.substring(i+1);
+    var e = document.getElementById(goid);
+    if(e){
+        e.scrollIntoView()
+	evt.cancelBubble = true;
+        return false;
+    }
+    return true;
+}
+function findAreaNode(id){
+    return document.getElementById("area_"+id);
+}
+function findImgForArea(a){
+    var map = a.parentNode;
+    var mapname = map.name;
+    var imgid = "img_"+mapname.slice(4);
+    return document.getElementById(imgid);
+}
+function hilightNode(id){
+    var a = findAreaNode(id);
+    var d = window.nodeHilightDiv;
+    if(a){
+	var img = findImgForArea(a);
+	if(! img) return;
+	var coords = a.coords.split(",");
+	var x = parseInt(coords[0]);
+	var y = parseInt(coords[1]);
+	d.style.left = x + img.offsetLeft;
+	d.style.top  = y + img.offsetTop;
+	d.style.width = parseInt(coords[2]) - x;
+	d.style.height = parseInt(coords[3]) - y;
+	d.style.display = "block";
+	d.scrollIntoView();
+    }
+}
+function getWindowScroll(){
+    if(window.pageXOffset === undefined)
+	if(document.body.scrollLeft === undefined)
+	    return [document.documentElement.scrollLeft,
+	            document.documentElement.scrollTop];
+	else
+	    return [document.body.scrollLeft,
+	            document.body.scrollTop];
+    else 
+	return [window.pageXOffset,
+	        window.pageYOffset];
+}
+
+function showEdgeTypeLegend(evt){
+    var img = document.getElementById("edgetypelegend");
+    if(img){
+	var wscroll = getWindowScroll();
+	img.style.display = 'block';
+	img.style.left = evt.clientX + wscroll[0] + 5;
+	img.style.top  = evt.clientY + wscroll[1] + 5;
+	if( typeof(evt.stopPropagation) === "function" )
+	    evt.stopPropagation();
+    }
+}
+
+function hideEdgeTypeLegend(){
+    var img = document.getElementById("edgetypelegend");
+    if(img) img.style.display='none';
+}
+
+window.onload = function(){
+    window.nodeHilightDiv = document.createElement('div');
+    document.body.appendChild(window.nodeHilightDiv);
+    window.nodeHilightDiv.className = 'node-hilite';
+    window.nodeHilightDiv.onclick = function(){ window.nodeHilightDiv.style.display="none"; };
+}
+</script>
+</head><body>
+<form target="_blank" name="_gene_link_form_" id="_batch_link_form_" 
+      action="http://www.informatics.jax.org/javawi2/servlet/WIFetch"
+      method="post" enctype='multipart/form-data'>
+      <input type="hidden" name="page" value="batchSummary" />
+<input type="hidden" name="IDType" value="MGIMarker" />
+<input type="hidden" name="returnSet" value="Nomenclature" />
+<input type="hidden" name="returnSet" value="Location" />
+<input type="hidden" name="printFormat" value="toolbar" />
+<input type="hidden" name="IDSet" value="%s" />
+
+</form>
+<h1><img src="auxfiles/vlad_logo.gif" align="middle" /><a name="top">Vlad Results</a></h1>
+<table class="summary" cellspacing="0"><tr><td class="label">Vlad version:</td><td>v1.5</td></tr><tr><td class="label">Date:</td><td>Mon Aug 29 19:43:02 2011</td></tr><tr><td class="label">Run time:</td><td>33.84 sec</td></tr><tr><td class="label">Ontology file:</td><td>gene_ontology.obo</td></tr><tr><td class="label">Ontology date:</td><td>Fri Aug 26 19:30:00 2011</td></tr><tr><td class="label">Annotation file:</td><td>gene_association.mgi</td></tr><tr><td class="label">Annotation date:</td><td>???</td></tr><tr><td class="label">Analysis type:</td><td>enrichment</td></tr><tr><td class="label">Excluded evidence codes:</td><td>ND</td></tr><tr><td class="label">Number of query sets:</td><td>1</td></tr><tr><td class="label">Query set 1:</td><td>CL_0000897_CD4-positive, alpha-beta T cell-up.xls (n=15; 65 not found)</td></tr><tr><td class="label">Universe set:</td><td>default (everything)</td></tr><tr><td class="label">Graph display:</td><td>Top 25 scoring terms and their ancestors. Interior nodes have been culled.</td></tr></table>
+<b>Jump to:</b> <a href="#biological_process" target="_self">biological_process</a> | <a href="#cellular_component" target="_self">cellular_component</a> | <a href="#molecular_function" target="_self">molecular_function</a> | <a href="#__unannotated__" target="_self">Unannotated id/symbols</a><p><h3><a name="biological_process">biological_process</a> (<a href="#top">top</a>)</h3><img id="img_biological_process" src="auxfiles/vlad.results.biological_process.png" usemap="#map_biological_process" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_biological_process">
+<area id="area_GO:0002684" shape="rect" href="#GO:0002684" coords="666,467,722,524"  alt="GO:0002684 positive regulation of immune system process (2.57e-01)" title="GO:0002684 positive regulation of immune system process (2.57e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032825" shape="rect" href="#GO:0032825" coords="516,613,627,725"  alt="GO:0032825 positive regulation of natural killer cell differentiation (4.84e-03)" title="GO:0032825 positive regulation of natural killer cell differentiation (4.84e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002729" shape="rect" href="#GO:0002729" coords="694,777,817,900"  alt="GO:0002729 positive regulation of natural killer cell cytokine production (1.62e-03)" title="GO:0002729 positive regulation of natural killer cell cytokine production (1.62e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032650" shape="rect" href="#GO:0032650" coords="1190,611,1305,727"  alt="GO:0032650 regulation of interleukin-1 alpha production (3.23e-03)" title="GO:0032650 regulation of interleukin-1 alpha production (3.23e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032730" shape="rect" href="#GO:0032730" coords="1062,780,1178,897"  alt="GO:0032730 positive regulation of interleukin-1 alpha production (3.23e-03)" title="GO:0032730 positive regulation of interleukin-1 alpha production (3.23e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050705" shape="rect" href="#GO:0050705" coords="509,779,627,898"  alt="GO:0050705 regulation of interleukin-1 alpha secretion (2.42e-03)" title="GO:0050705 regulation of interleukin-1 alpha secretion (2.42e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050717" shape="rect" href="#GO:0050717" coords="602,949,719,1068"  alt="GO:0050717 positive regulation of interleukin-1 alpha secretion (2.42e-03)" title="GO:0050717 positive regulation of interleukin-1 alpha secretion (2.42e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032823" shape="rect" href="#GO:0032823" coords="534,440,645,552"  alt="GO:0032823 regulation of natural killer cell differentiation (4.84e-03)" title="GO:0032823 regulation of natural killer cell differentiation (4.84e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032501" shape="rect" href="#GO:0032501" coords="1056,137,1090,171"  alt="GO:0032501 multicellular organismal process (6.30e-01)" title="GO:0032501 multicellular organismal process (6.30e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001816" shape="rect" href="#GO:0001816" coords="1165,282,1246,365"  alt="GO:0001816 cytokine production (5.59e-02)" title="GO:0001816 cytokine production (5.59e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051239" shape="rect" href="#GO:0051239" coords="1002,288,1074,360"  alt="GO:0051239 regulation of multicellular organismal process (1.15e-01)" title="GO:0051239 regulation of multicellular organismal process (1.15e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051240" shape="rect" href="#GO:0051240" coords="996,453,1080,538"  alt="GO:0051240 positive regulation of multicellular organismal process (4.43e-02)" title="GO:0051240 positive regulation of multicellular organismal process (4.43e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:2000850" shape="rect" href="#GO:2000850" coords="226,1290,356,1420"  alt="GO:2000850 negative regulation of glucocorticoid secretion (8.09e-04)" title="GO:2000850 negative regulation of glucocorticoid secretion (8.09e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051463" shape="rect" href="#GO:0051463" coords="153,1463,283,1593"  alt="GO:0051463 negative regulation of cortisol secretion (8.09e-04)" title="GO:0051463 negative regulation of cortisol secretion (8.09e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:2000831" shape="rect" href="#GO:2000831" coords="111,780,226,897"  alt="GO:2000831 regulation of steroid hormone secretion (3.23e-03)" title="GO:2000831 regulation of steroid hormone secretion (3.23e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:2000846" shape="rect" href="#GO:2000846" coords="89,950,205,1066"  alt="GO:2000846 regulation of corticosteroid hormone secretion (3.23e-03)" title="GO:2000846 regulation of corticosteroid hormone secretion (3.23e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:2000832" shape="rect" href="#GO:2000832" coords="226,943,356,1073"  alt="GO:2000832 negative regulation of steroid hormone secretion (8.09e-04)" title="GO:2000832 negative regulation of steroid hormone secretion (8.09e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006915" shape="rect" href="#GO:0006915" coords="5,604,135,734"  alt="GO:0006915 apoptosis (7.59e-04)" title="GO:0006915 apoptosis (7.59e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008219" shape="rect" href="#GO:0008219" coords="212,260,337,387"  alt="GO:0008219 cell death (1.19e-03)" title="GO:0008219 cell death (1.19e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0012501" shape="rect" href="#GO:0012501" coords="7,431,135,560"  alt="GO:0012501 programmed cell death (8.28e-04)" title="GO:0012501 programmed cell death (8.28e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:2000847" shape="rect" href="#GO:2000847" coords="226,1116,356,1246"  alt="GO:2000847 negative regulation of corticosteroid hormone secretion (8.09e-04)" title="GO:2000847 negative regulation of corticosteroid hormone secretion (8.09e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009987" shape="rect" href="#GO:0009987" coords="360,143,381,165"  alt="GO:0009987 cellular process (8.51e-01)" title="GO:0009987 cellular process (8.51e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048522" shape="rect" href="#GO:0048522" coords="445,461,512,530"  alt="GO:0048522 positive regulation of cellular process (1.35e-01)" title="GO:0048522 positive regulation of cellular process (1.35e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050794" shape="rect" href="#GO:0050794" coords="450,294,508,353"  alt="GO:0050794 regulation of cellular process (2.32e-01)" title="GO:0050794 regulation of cellular process (2.32e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032940" shape="rect" href="#GO:0032940" coords="202,491,209,500"  alt="GO:0032940 secretion by cell" title="GO:0032940 secretion by cell" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:2000849" shape="rect" href="#GO:2000849" coords="89,1123,205,1240"  alt="GO:2000849 regulation of glucocorticoid secretion (3.23e-03)" title="GO:2000849 regulation of glucocorticoid secretion (3.23e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001819" shape="rect" href="#GO:0001819" coords="1060,614,1168,724"  alt="GO:0001819 positive regulation of cytokine production (6.43e-03)" title="GO:0001819 positive regulation of cytokine production (6.43e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001817" shape="rect" href="#GO:0001817" coords="1102,448,1196,543"  alt="GO:0001817 regulation of cytokine production (2.19e-02)" title="GO:0001817 regulation of cytokine production (2.19e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032612" shape="rect" href="#GO:0032612" coords="1263,442,1369,549"  alt="GO:0032612 interleukin-1 production (8.06e-03)" title="GO:0032612 interleukin-1 production (8.06e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032611" shape="rect" href="#GO:0032611" coords="1327,614,1435,724"  alt="GO:0032611 interleukin-1 beta production (6.45e-03)" title="GO:0032611 interleukin-1 beta production (6.45e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050789" shape="rect" href="#GO:0050789" coords="746,128,799,180"  alt="GO:0050789 regulation of biological process (3.11e-01)" title="GO:0050789 regulation of biological process (3.11e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048583" shape="rect" href="#GO:0048583" coords="826,279,915,368"  alt="GO:0048583 regulation of response to stimulus (3.59e-02)" title="GO:0048583 regulation of response to stimulus (3.59e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051046" shape="rect" href="#GO:0051046" coords="334,451,423,540"  alt="GO:0051046 regulation of secretion (3.37e-02)" title="GO:0051046 regulation of secretion (3.37e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002682" shape="rect" href="#GO:0002682" coords="670,300,718,348"  alt="GO:0002682 regulation of immune system process (3.78e-01)" title="GO:0002682 regulation of immune system process (3.78e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048518" shape="rect" href="#GO:0048518" coords="740,291,805,356"  alt="GO:0048518 positive regulation of biological process (1.76e-01)" title="GO:0048518 positive regulation of biological process (1.76e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0060125" shape="rect" href="#GO:0060125" coords="378,943,508,1073"  alt="GO:0060125 negative regulation of growth hormone secretion (8.09e-04)" title="GO:0060125 negative regulation of growth hormone secretion (8.09e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051462" shape="rect" href="#GO:0051462" coords="87,1295,205,1414"  alt="GO:0051462 regulation of cortisol secretion (2.42e-03)" title="GO:0051462 regulation of cortisol secretion (2.42e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046883" shape="rect" href="#GO:0046883" coords="235,632,309,706"  alt="GO:0046883 regulation of hormone secretion (9.88e-02)" title="GO:0046883 regulation of hormone secretion (9.88e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046888" shape="rect" href="#GO:0046888" coords="248,795,334,882"  alt="GO:0046888 negative regulation of hormone secretion (3.97e-02)" title="GO:0046888 negative regulation of hormone secretion (3.97e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016265" shape="rect" href="#GO:0016265" coords="213,91,338,217"  alt="GO:0016265 death (1.26e-03)" title="GO:0016265 death (1.26e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0060341" shape="rect" href="#GO:0060341" coords="231,454,313,537"  alt="GO:0060341 regulation of cellular localization (5.46e-02)" title="GO:0060341 regulation of cellular localization (5.46e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008150" shape="rect" href="#GO:0008150" coords="306,5,435,48"  alt="GO:0008150 biological_process (1.00e+00)" title="GO:0008150 biological_process (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002727" shape="rect" href="#GO:0002727" coords="694,608,817,730"  alt="GO:0002727 regulation of natural killer cell cytokine production (1.62e-03)" title="GO:0002727 regulation of natural killer cell cytokine production (1.62e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048584" shape="rect" href="#GO:0048584" coords="881,448,974,543"  alt="GO:0048584 positive regulation of response to stimulus (2.24e-02)" title="GO:0048584 positive regulation of response to stimulus (2.24e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046010" shape="rect" href="#GO:0046010" coords="928,781,1041,896"  alt="GO:0046010 positive regulation of circadian sleep/wake cycle, non-REM sleep (4.04e-03)" title="GO:0046010 positive regulation of circadian sleep/wake cycle, non-REM sleep (4.04e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0045938" shape="rect" href="#GO:0045938" coords="930,614,1038,724"  alt="GO:0045938 positive regulation of circadian sleep/wake cycle, sleep (6.45e-03)" title="GO:0045938 positive regulation of circadian sleep/wake cycle, sleep (6.45e-03)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="cellular_component">cellular_component</a> (<a href="#top">top</a>)</h3><img id="img_cellular_component" src="auxfiles/vlad.results.cellular_component.png" usemap="#map_cellular_component" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_cellular_component">
+<area id="area_GO:0005576" shape="rect" href="#GO:0005576" coords="47,101,191,245"  alt="GO:0005576 extracellular region (1.25e-02)" title="GO:0005576 extracellular region (1.25e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044421" shape="rect" href="#GO:0044421" coords="60,294,177,413"  alt="GO:0044421 extracellular region part (5.16e-02)" title="GO:0044421 extracellular region part (5.16e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005615" shape="rect" href="#GO:0005615" coords="5,462,136,594"  alt="GO:0005615 extracellular space (2.43e-02)" title="GO:0005615 extracellular space (2.43e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009897" shape="rect" href="#GO:0009897" coords="372,789,511,928"  alt="GO:0009897 external side of plasma membrane (1.69e-02)" title="GO:0009897 external side of plasma membrane (1.69e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000267" shape="rect" href="#GO:0000267" coords="369,331,415,376"  alt="GO:0000267 cell fraction (6.67e-01)" title="GO:0000267 cell fraction (6.67e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005625" shape="rect" href="#GO:0005625" coords="404,489,481,567"  alt="GO:0005625 soluble fraction (2.87e-01)" title="GO:0005625 soluble fraction (2.87e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005626" shape="rect" href="#GO:0005626" coords="329,502,380,554"  alt="GO:0005626 insoluble fraction (5.70e-01)" title="GO:0005626 insoluble fraction (5.70e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044464" shape="rect" href="#GO:0044464" coords="388,169,396,178"  alt="GO:0044464 cell part (9.99e-01)" title="GO:0044464 cell part (9.99e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0071944" shape="rect" href="#GO:0071944" coords="439,318,508,389"  alt="GO:0071944 cell periphery (3.58e-01)" title="GO:0071944 cell periphery (3.58e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044425" shape="rect" href="#GO:0044425" coords="601,491,676,565"  alt="GO:0044425 membrane part (3.12e-01)" title="GO:0044425 membrane part (3.12e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009986" shape="rect" href="#GO:0009986" coords="233,297,345,410"  alt="GO:0009986 cell surface (6.85e-02)" title="GO:0009986 cell surface (6.85e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016020" shape="rect" href="#GO:0016020" coords="532,327,583,379"  alt="GO:0016020 membrane (5.74e-01)" title="GO:0016020 membrane (5.74e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044424" shape="rect" href="#GO:0044424" coords="201,349,209,358"  alt="GO:0044424 intracellular part (1.00e+00)" title="GO:0044424 intracellular part (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031224" shape="rect" href="#GO:0031224" coords="613,649,699,735"  alt="GO:0031224 intrinsic to membrane (2.07e-01)" title="GO:0031224 intrinsic to membrane (2.07e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031226" shape="rect" href="#GO:0031226" coords="535,808,636,909"  alt="GO:0031226 intrinsic to plasma membrane (1.14e-01)" title="GO:0031226 intrinsic to plasma membrane (1.14e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016021" shape="rect" href="#GO:0016021" coords="660,814,748,903"  alt="GO:0016021 integral to membrane (1.88e-01)" title="GO:0016021 integral to membrane (1.88e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044444" shape="rect" href="#GO:0044444" coords="160,520,176,536"  alt="GO:0044444 cytoplasmic part (9.66e-01)" title="GO:0044444 cytoplasmic part (9.66e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005829" shape="rect" href="#GO:0005829" coords="64,664,120,720"  alt="GO:0005829 cytosol (5.32e-01)" title="GO:0005829 cytosol (5.32e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005783" shape="rect" href="#GO:0005783" coords="144,667,192,717"  alt="GO:0005783 endoplasmic reticulum (6.00e-01)" title="GO:0005783 endoplasmic reticulum (6.00e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005886" shape="rect" href="#GO:0005886" coords="505,492,577,564"  alt="GO:0005886 plasma membrane (3.40e-01)" title="GO:0005886 plasma membrane (3.40e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044459" shape="rect" href="#GO:0044459" coords="493,643,589,741"  alt="GO:0044459 plasma membrane part (1.36e-01)" title="GO:0044459 plasma membrane part (1.36e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015629" shape="rect" href="#GO:0015629" coords="193,817,276,901"  alt="GO:0015629 actin cytoskeleton (2.24e-01)" title="GO:0015629 actin cytoskeleton (2.24e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042641" shape="rect" href="#GO:0042641" coords="292,977,412,1098"  alt="GO:0042641 actomyosin (4.53e-02)" title="GO:0042641 actomyosin (4.53e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032432" shape="rect" href="#GO:0032432" coords="148,977,268,1098"  alt="GO:0032432 actin filament bundle (4.36e-02)" title="GO:0032432 actin filament bundle (4.36e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005856" shape="rect" href="#GO:0005856" coords="216,673,253,711"  alt="GO:0005856 cytoskeleton (7.51e-01)" title="GO:0005856 cytoskeleton (7.51e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044430" shape="rect" href="#GO:0044430" coords="300,834,348,883"  alt="GO:0044430 cytoskeletal part (6.03e-01)" title="GO:0044430 cytoskeletal part (6.03e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005575" shape="rect" href="#GO:0005575" coords="156,5,300,53"  alt="GO:0005575 cellular_component (1.00e+00)" title="GO:0005575 cellular_component (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030054" shape="rect" href="#GO:0030054" coords="420,141,484,205"  alt="GO:0030054 cell junction (4.35e-01)" title="GO:0030054 cell junction (4.35e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001725" shape="rect" href="#GO:0001725" coords="219,1147,341,1269"  alt="GO:0001725 stress fiber (4.11e-02)" title="GO:0001725 stress fiber (4.11e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005624" shape="rect" href="#GO:0005624" coords="328,665,381,719"  alt="GO:0005624 membrane fraction (5.52e-01)" title="GO:0005624 membrane fraction (5.52e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043229" shape="rect" href="#GO:0043229" coords="201,523,209,533"  alt="GO:0043229 intracellular organelle (9.99e-01)" title="GO:0043229 intracellular organelle (9.99e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005887" shape="rect" href="#GO:0005887" coords="592,985,696,1089"  alt="GO:0005887 integral to plasma membrane (1.03e-01)" title="GO:0005887 integral to plasma membrane (1.03e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="molecular_function">molecular_function</a> (<a href="#top">top</a>)</h3><img id="img_molecular_function" src="auxfiles/vlad.results.molecular_function.png" usemap="#map_molecular_function" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_molecular_function">
+<area id="area_GO:0004725" shape="rect" href="#GO:0004725" coords="1040,429,1128,517"  alt="GO:0004725 protein tyrosine phosphatase activity (7.59e-02)" title="GO:0004725 protein tyrosine phosphatase activity (7.59e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004726" shape="rect" href="#GO:0004726" coords="1020,592,1148,720"  alt="GO:0004726 non-membrane spanning protein tyrosine phosphatase activity (4.41e-03)" title="GO:0004726 non-membrane spanning protein tyrosine phosphatase activity (4.41e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004175" shape="rect" href="#GO:0004175" coords="1152,423,1251,523"  alt="GO:0004175 endopeptidase activity (3.84e-02)" title="GO:0004175 endopeptidase activity (3.84e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004197" shape="rect" href="#GO:0004197" coords="1217,584,1361,728"  alt="GO:0004197 cysteine-type endopeptidase activity (1.04e-03)" title="GO:0004197 cysteine-type endopeptidase activity (1.04e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070011" shape="rect" href="#GO:0070011" coords="1159,265,1244,351"  alt="GO:0070011 peptidase activity, acting on L-amino acid peptides (8.71e-02)" title="GO:0070011 peptidase activity, acting on L-amino acid peptides (8.71e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008234" shape="rect" href="#GO:0008234" coords="1275,411,1397,535"  alt="GO:0008234 cysteine-type peptidase activity (5.93e-03)" title="GO:0008234 cysteine-type peptidase activity (5.93e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019956" shape="rect" href="#GO:0019956" coords="405,420,512,527"  alt="GO:0019956 chemokine binding (2.27e-02)" title="GO:0019956 chemokine binding (2.27e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004950" shape="rect" href="#GO:0004950" coords="536,601,645,711"  alt="GO:0004950 chemokine receptor activity (2.01e-02)" title="GO:0004950 chemokine receptor activity (2.01e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019958" shape="rect" href="#GO:0019958" coords="392,595,512,717"  alt="GO:0019958 C-X-C chemokine binding (7.93e-03)" title="GO:0019958 C-X-C chemokine binding (7.93e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005515" shape="rect" href="#GO:0005515" coords="152,264,240,352"  alt="GO:0005515 protein binding (7.65e-02)" title="GO:0005515 protein binding (7.65e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005102" shape="rect" href="#GO:0005102" coords="149,427,243,520"  alt="GO:0005102 receptor binding (5.80e-02)" title="GO:0005102 receptor binding (5.80e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043274" shape="rect" href="#GO:0043274" coords="267,415,381,531"  alt="GO:0043274 phospholipase binding (1.14e-02)" title="GO:0043274 phospholipase binding (1.14e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043560" shape="rect" href="#GO:0043560" coords="5,413,125,533"  alt="GO:0043560 insulin receptor substrate binding (8.80e-03)" title="GO:0043560 insulin receptor substrate binding (8.80e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016494" shape="rect" href="#GO:0016494" coords="463,781,585,904"  alt="GO:0016494 C-X-C chemokine receptor activity (7.05e-03)" title="GO:0016494 C-X-C chemokine receptor activity (7.05e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005488" shape="rect" href="#GO:0005488" coords="173,130,219,177"  alt="GO:0005488 binding (5.09e-01)" title="GO:0005488 binding (5.09e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001637" shape="rect" href="#GO:0001637" coords="536,419,645,528"  alt="GO:0001637 G-protein chemoattractant receptor activity (2.01e-02)" title="GO:0001637 G-protein chemoattractant receptor activity (2.01e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015026" shape="rect" href="#GO:0015026" coords="669,414,787,533"  alt="GO:0015026 coreceptor activity (9.68e-03)" title="GO:0015026 coreceptor activity (9.68e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016787" shape="rect" href="#GO:0016787" coords="923,102,1024,205"  alt="GO:0016787 hydrolase activity (3.10e-02)" title="GO:0016787 hydrolase activity (3.10e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016788" shape="rect" href="#GO:0016788" coords="919,253,1028,363"  alt="GO:0016788 hydrolase activity, acting on ester bonds (1.99e-02)" title="GO:0016788 hydrolase activity, acting on ester bonds (1.99e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005134" shape="rect" href="#GO:0005134" coords="9,776,143,909"  alt="GO:0005134 interleukin-2 receptor binding (2.65e-03)" title="GO:0005134 interleukin-2 receptor binding (2.65e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051428" shape="rect" href="#GO:0051428" coords="256,784,373,901"  alt="GO:0051428 peptide hormone receptor binding (1.06e-02)" title="GO:0051428 peptide hormone receptor binding (1.06e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004091" shape="rect" href="#GO:0004091" coords="811,425,907,521"  alt="GO:0004091 carboxylesterase activity (4.92e-02)" title="GO:0004091 carboxylesterase activity (4.92e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004519" shape="rect" href="#GO:0004519" coords="931,430,1016,517"  alt="GO:0004519 endonuclease activity (8.16e-02)" title="GO:0004519 endonuclease activity (8.16e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005158" shape="rect" href="#GO:0005158" coords="144,604,248,708"  alt="GO:0005158 insulin receptor binding (2.71e-02)" title="GO:0005158 insulin receptor binding (2.71e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070851" shape="rect" href="#GO:0070851" coords="32,612,120,700"  alt="GO:0070851 growth factor receptor binding (7.83e-02)" title="GO:0070851 growth factor receptor binding (7.83e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051427" shape="rect" href="#GO:0051427" coords="272,613,357,699"  alt="GO:0051427 hormone receptor binding (8.65e-02)" title="GO:0051427 hormone receptor binding (8.65e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003674" shape="rect" href="#GO:0003674" coords="124,5,268,53"  alt="GO:0003674 molecular_function (1.00e+00)" title="GO:0003674 molecular_function (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0038023" shape="rect" href="#GO:0038023" coords="708,287,748,329"  alt="GO:0038023 signaling receptor activity (5.74e-01)" title="GO:0038023 signaling receptor activity (5.74e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="__unannotated__">Unannotated IDs</a></h3>
+<table border="0">
+<tr>
+<td><b>CL_0000897_CD4-positive, alpha-beta T cell-up.xls</b><br/>
+<textarea rows="15" cols="18">0.383800816018833
+0.523812409853253
+0.671894856630581
+0.911849513009466
+1.06226894145945
+1.24822360545295
+1.31077444807984
+1.35194505011014
+1.80674249075097
+1.96374064976076
+10.4098266868265
+10.8249789408891
+10351691
+10356866
+10373027
+10380116
+10395389
+10471555
+10497886
+10533285
+10562132
+10574532
+10582985
+10582997
+10590909
+10592888
+10603151
+12145
+12362
+12363
+12483
+14758
+15.8587982610818
+18566
+19247
+2.13024071220803
+2.32571165400898
+2.33022254590849
+2.34834590367631
+2.44656009499028
+2.87711586461205
+207742
+234671
+26360
+3.51674445953391
+3.54029175783605
+3.90849954280962
+30925
+4.31344996288273
+4.38741725323692
+4.85805273305692
+5.09218858236545
+5.29732236993277
+6.59489818989288
+60505
+66042
+67125
+71946
+8.05519296772774
+9.33572059904451
+FoldChange
+Stdv
+entrezIDs
+mgiID
+symbol</textarea>
+</td>
+</table>
+<span id="edgetypelegend" 
+		     class="edgetypelegend"
+	             style="left:0;top:0;display:none;" 
+		     onclick="hideEdgeTypeLegend();" >
+			 <table border="0"><tr>
+			 <td style="text-align:left;cursor:pointer;">[close]</td>
+			 <td style="text-align:center;"><b>Legend: Edge Types</b></td>
+			 <td style="text-align:right;"><a href="http://www.geneontology.org/GO.ontology.relations.shtml" target="_blank">(details)</a></td>
+			 </tr>
+		         <tr><td colspan="3"><img src="auxfiles/legend.gif" /></td></tr>
+			 </table>
+		     </span>
+</body></html>

@@ -1,0 +1,74 @@
+digraph "cellular_component" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">cellular_component</FONT></TD></TR><TR><TD BORDER="0">CL_0000792-down.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0016021" [ URL = "#GO:0016021", label = <<TABLE BORDER="0"><TR><TD>GO:0016021<BR/>integral to<BR/>membrane<BR/>(7.28e-01)</TD></TR></TABLE>>, width = 1.31223421234, shape = "box", fontsize = 9.44808632884, height = 1.31223421234 ];
+"GO:0044464" [ URL = "#GO:0044464", label = <<TABLE BORDER="0"><TR><TD>GO:0044464<BR/>cell part<BR/>(8.37e-01)</TD></TR></TABLE>>, width = 0.983997753406, shape = "box", fontsize = 7.08478382453, height = 0.983997753406 ];
+"GO:0005622" [ URL = "#GO:0005622", label = <<TABLE BORDER="0"><TR><TD>GO:0005622<BR/>intracellular<BR/>(7.50e-01)</TD></TR></TABLE>>, width = 1.24852337277, shape = "box", fontsize = 8.98936828397, height = 1.24852337277 ];
+"GO:0044425" [ URL = "#GO:0044425", label = <<TABLE BORDER="0"><TR><TD>GO:0044425<BR/>membrane part<BR/>(7.86e-01)</TD></TR></TABLE>>, width = 1.14393388614, shape = "box", fontsize = 8.23632398017, height = 1.14393388614 ];
+"GO:0005623" [ URL = "#GO:0005623", label = <<TABLE BORDER="0"><TR><TD>GO:0005623<BR/>cell<BR/>(8.37e-01)</TD></TR></TABLE>>, width = 0.983997753406, shape = "box", fontsize = 7.08478382453, height = 0.983997753406 ];
+"GO:0044424" [ URL = "#GO:0044424", label = <<TABLE BORDER="0"><TR><TD>GO:0044424<BR/>intracellular part<BR/>(7.32e-01)</TD></TR></TABLE>>, width = 1.30213922931, shape = "box", fontsize = 9.37540245102, height = 1.30213922931 ];
+"GO:0043227" [ URL = "#GO:0043227", label = <<TABLE BORDER="0"><TR><TD>GO:0043227<BR/>membrane-bounded<BR/>organelle<BR/>(8.77e-01)</TD></TR></TABLE>>, width = 0.846948569709, shape = "box", fontsize = 6.09802970191, height = 0.846948569709 ];
+"GO:0016020" [ URL = "#GO:0016020", label = <<TABLE BORDER="0"><TR><TD>GO:0016020<BR/>membrane<BR/>(8.67e-01)</TD></TR></TABLE>>, width = 0.882436501197, shape = "box", fontsize = 6.35354280862, height = 0.882436501197 ];
+"GO:0031224" [ URL = "#GO:0031224", label = <<TABLE BORDER="0"><TR><TD>GO:0031224<BR/>intrinsic to<BR/>membrane<BR/>(7.38e-01)</TD></TR></TABLE>>, width = 1.28256169859, shape = "box", fontsize = 9.23444422986, height = 1.28256169859 ];
+"GO:0043226" [ URL = "#GO:0043226", label = <<TABLE BORDER="0"><TR><TD>GO:0043226<BR/>organelle<BR/>(9.20e-01)</TD></TR></TABLE>>, width = 0.677280241527, shape = "box", fontsize = 5.0, height = 0.677280241527 ];
+"GO:0005737" [ URL = "#GO:0005737", label = <<TABLE BORDER="0"><TR><TD>GO:0005737<BR/>cytoplasm<BR/>(8.68e-01)</TD></TR></TABLE>>, width = 0.881063611855, shape = "box", fontsize = 6.34365800536, height = 0.881063611855 ];
+"GO:0005634" [ URL = "#GO:0005634", label = <<TABLE BORDER="0"><TR><TD>GO:0005634<BR/>nucleus<BR/>(6.60e-01)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0043229" [ URL = "#GO:0043229", label = <<TABLE BORDER="0"><TR><TD>GO:0043229<BR/>intracellular<BR/>organelle<BR/>(9.19e-01)</TD></TR></TABLE>>, width = 0.681188775967, shape = "box", fontsize = 5.0, height = 0.681188775967 ];
+"GO:0043231" [ URL = "#GO:0043231", label = <<TABLE BORDER="0"><TR><TD>GO:0043231<BR/>intracellular<BR/>membrane-bounded<BR/>organelle<BR/>(8.76e-01)</TD></TR></TABLE>>, width = 0.849637743093, shape = "box", fontsize = 6.11739175027, height = 0.849637743093 ];
+"GO:0005575" [ URL = "#GO:0005575", label = <<TABLE BORDER="0"><TR><TD>GO:0005575<BR/>cellular_component</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+"GO:0005622" -> "GO:0044424";
+"GO:0005623" -> "GO:0044464";
+"GO:0016020" -> "GO:0044425";
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0044464" -> "GO:0044424";
+"GO:0031224" -> "GO:0016021";
+"GO:0044464" -> "GO:0016020";
+"GO:0043226" -> "GO:0043227";
+"GO:0043231" -> "GO:0005634";
+"GO:0005575" -> "GO:0044464";
+"GO:0044464" -> "GO:0044425";
+"GO:0044464" -> "GO:0005622";
+"GO:0044425" -> "GO:0031224";
+"GO:0043229" -> "GO:0043231";
+"GO:0043227" -> "GO:0043231";
+"GO:0005575" -> "GO:0005623";
+"GO:0005575" -> "GO:0043226";
+"GO:0044424" -> "GO:0043229";
+"GO:0043226" -> "GO:0043229";
+"GO:0044424" -> "GO:0005737";
+}
+}
+}
