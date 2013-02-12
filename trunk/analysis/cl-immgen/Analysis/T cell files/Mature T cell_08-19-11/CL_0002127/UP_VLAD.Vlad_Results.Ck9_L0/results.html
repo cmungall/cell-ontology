@@ -1,0 +1,301 @@
+<html><head>
+<style type="text/css">       
+
+    body {        
+	background-color: MediumAquaMarine;
+    }
+
+    .zdark {
+	background-color: #bbbbbb;
+    }
+
+    .zlight {
+	background-color: #ffffff;
+    }
+
+    div.node-hilite {
+	position : absolute;
+	border : medium solid red;
+	display : none;
+    }
+
+    div.results {
+	width: 95%;
+	height: 480;
+	overflow: auto;
+    }
+
+    table.results {
+	border: thin solid black;
+    }
+
+    .label { 
+	font-weight: bold;
+	background-color: #333;
+	color: white;
+    }
+
+    table.results tr {
+    }
+
+    table.results th {
+	border-right: thin solid black;
+    }
+
+    table.results td {
+	border-top: thin solid black;
+	border-right: thin solid black;
+    }
+
+    table.results td.termlinks {
+	white-space: nowrap;
+    }
+
+    table.summary {
+	white-space:nowrap;
+	padding: 0px;
+	border-left   : thin solid gray;
+	border-bottom : thin solid gray;
+    }
+
+    table.summary td {
+	border-top : thin solid gray;
+	border-right : thin solid gray;
+    }
+
+    table.summary td:first-child {
+	background-color: #333;
+	color: white;
+    }
+
+    .edgetypelegend { 
+	 background-color:gray;
+	 padding:4px;
+	 position:absolute;
+    }
+
+</style>
+
+<script language="javascript">
+function submitForm(idlist){
+    var form = document.getElementById("_batch_link_form_");
+    form.IDSet.value = idlist;
+    form.submit();
+}
+function nodeClicked(areaElt,evt){
+    var h = areaElt.href;
+    var i = h.lastIndexOf('#');
+    if(i == -1)
+        return true;
+    var goid = h.substring(i+1);
+    var e = document.getElementById(goid);
+    if(e){
+        e.scrollIntoView()
+	evt.cancelBubble = true;
+        return false;
+    }
+    return true;
+}
+function findAreaNode(id){
+    return document.getElementById("area_"+id);
+}
+function findImgForArea(a){
+    var map = a.parentNode;
+    var mapname = map.name;
+    var imgid = "img_"+mapname.slice(4);
+    return document.getElementById(imgid);
+}
+function hilightNode(id){
+    var a = findAreaNode(id);
+    var d = window.nodeHilightDiv;
+    if(a){
+	var img = findImgForArea(a);
+	if(! img) return;
+	var coords = a.coords.split(",");
+	var x = parseInt(coords[0]);
+	var y = parseInt(coords[1]);
+	d.style.left = x + img.offsetLeft;
+	d.style.top  = y + img.offsetTop;
+	d.style.width = parseInt(coords[2]) - x;
+	d.style.height = parseInt(coords[3]) - y;
+	d.style.display = "block";
+	d.scrollIntoView();
+    }
+}
+function getWindowScroll(){
+    if(window.pageXOffset === undefined)
+	if(document.body.scrollLeft === undefined)
+	    return [document.documentElement.scrollLeft,
+	            document.documentElement.scrollTop];
+	else
+	    return [document.body.scrollLeft,
+	            document.body.scrollTop];
+    else 
+	return [window.pageXOffset,
+	        window.pageYOffset];
+}
+
+function showEdgeTypeLegend(evt){
+    var img = document.getElementById("edgetypelegend");
+    if(img){
+	var wscroll = getWindowScroll();
+	img.style.display = 'block';
+	img.style.left = evt.clientX + wscroll[0] + 5;
+	img.style.top  = evt.clientY + wscroll[1] + 5;
+	if( typeof(evt.stopPropagation) === "function" )
+	    evt.stopPropagation();
+    }
+}
+
+function hideEdgeTypeLegend(){
+    var img = document.getElementById("edgetypelegend");
+    if(img) img.style.display='none';
+}
+
+window.onload = function(){
+    window.nodeHilightDiv = document.createElement('div');
+    document.body.appendChild(window.nodeHilightDiv);
+    window.nodeHilightDiv.className = 'node-hilite';
+    window.nodeHilightDiv.onclick = function(){ window.nodeHilightDiv.style.display="none"; };
+}
+</script>
+</head><body>
+<form target="_blank" name="_gene_link_form_" id="_batch_link_form_" 
+      action="http://www.informatics.jax.org/javawi2/servlet/WIFetch"
+      method="post" enctype='multipart/form-data'>
+      <input type="hidden" name="page" value="batchSummary" />
+<input type="hidden" name="IDType" value="MGIMarker" />
+<input type="hidden" name="returnSet" value="Nomenclature" />
+<input type="hidden" name="returnSet" value="Location" />
+<input type="hidden" name="printFormat" value="toolbar" />
+<input type="hidden" name="IDSet" value="%s" />
+
+</form>
+<h1><img src="auxfiles/vlad_logo.gif" align="middle" /><a name="top">Vlad Results</a></h1>
+<table class="summary" cellspacing="0"><tr><td class="label">Vlad version:</td><td>v1.5</td></tr><tr><td class="label">Date:</td><td>Mon Aug 15 18:09:36 2011</td></tr><tr><td class="label">Run time:</td><td>27.01 sec</td></tr><tr><td class="label">Ontology file:</td><td>gene_ontology.obo</td></tr><tr><td class="label">Ontology date:</td><td>Fri Aug 12 19:30:00 2011</td></tr><tr><td class="label">Annotation file:</td><td>gene_association.mgi</td></tr><tr><td class="label">Annotation date:</td><td>???</td></tr><tr><td class="label">Analysis type:</td><td>enrichment</td></tr><tr><td class="label">Excluded evidence codes:</td><td>ND</td></tr><tr><td class="label">Number of query sets:</td><td>1</td></tr><tr><td class="label">Query set 1:</td><td>CL_0002127-up.xls (n=3; 21 not found)</td></tr><tr><td class="label">Universe set:</td><td>default (everything)</td></tr><tr><td class="label">Graph display:</td><td>Top 25 scoring terms and their ancestors. Interior nodes have been culled.</td></tr></table>
+<b>Jump to:</b> <a href="#biological_process" target="_self">biological_process</a> | <a href="#cellular_component" target="_self">cellular_component</a> | <a href="#molecular_function" target="_self">molecular_function</a> | <a href="#__unannotated__" target="_self">Unannotated id/symbols</a><p><h3><a name="biological_process">biological_process</a> (<a href="#top">top</a>)</h3><img id="img_biological_process" src="auxfiles/vlad.results.biological_process.png" usemap="#map_biological_process" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_biological_process">
+<area id="area_GO:0009142" shape="rect" href="#GO:0009142" coords="648,1107,781,1240"  alt="GO:0009142 nucleoside triphosphate biosynthetic process (5.00e-03)" title="GO:0009142 nucleoside triphosphate biosynthetic process (5.00e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009201" shape="rect" href="#GO:0009201" coords="801,1289,935,1423"  alt="GO:0009201 ribonucleoside triphosphate biosynthetic process (4.79e-03)" title="GO:0009201 ribonucleoside triphosphate biosynthetic process (4.79e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009145" shape="rect" href="#GO:0009145" coords="347,1289,480,1423"  alt="GO:0009145 purine nucleoside triphosphate biosynthetic process (4.72e-03)" title="GO:0009145 purine nucleoside triphosphate biosynthetic process (4.72e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046483" shape="rect" href="#GO:0046483" coords="304,235,408,339"  alt="GO:0046483 heterocycle metabolic process (4.20e-02)" title="GO:0046483 heterocycle metabolic process (4.20e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0018130" shape="rect" href="#GO:0018130" coords="232,400,352,520"  alt="GO:0018130 heterocycle biosynthetic process (1.47e-02)" title="GO:0018130 heterocycle biosynthetic process (1.47e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0072521" shape="rect" href="#GO:0072521" coords="376,405,485,515"  alt="GO:0072521 purine-containing compound metabolic process (2.79e-02)" title="GO:0072521 purine-containing compound metabolic process (2.79e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009260" shape="rect" href="#GO:0009260" coords="805,1108,936,1239"  alt="GO:0009260 ribonucleotide biosynthetic process (6.51e-03)" title="GO:0009260 ribonucleotide biosynthetic process (6.51e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009152" shape="rect" href="#GO:0009152" coords="504,1290,635,1422"  alt="GO:0009152 purine ribonucleotide biosynthetic process (5.96e-03)" title="GO:0009152 purine ribonucleotide biosynthetic process (5.96e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009144" shape="rect" href="#GO:0009144" coords="373,1116,488,1231"  alt="GO:0009144 purine nucleoside triphosphate metabolic process (2.05e-02)" title="GO:0009144 purine nucleoside triphosphate metabolic process (2.05e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009205" shape="rect" href="#GO:0009205" coords="659,1299,773,1413"  alt="GO:0009205 purine ribonucleoside triphosphate metabolic process (2.01e-02)" title="GO:0009205 purine ribonucleoside triphosphate metabolic process (2.01e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006754" shape="rect" href="#GO:0006754" coords="577,1656,713,1792"  alt="GO:0006754 ATP biosynthetic process (4.11e-03)" title="GO:0006754 ATP biosynthetic process (4.11e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0071702" shape="rect" href="#GO:0071702" coords="21,231,133,343"  alt="GO:0071702 organic substance transport (2.42e-02)" title="GO:0071702 organic substance transport (2.42e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006869" shape="rect" href="#GO:0006869" coords="15,397,140,523"  alt="GO:0006869 lipid transport (9.24e-03)" title="GO:0006869 lipid transport (9.24e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0010876" shape="rect" href="#GO:0010876" coords="157,225,280,349"  alt="GO:0010876 lipid localization (1.01e-02)" title="GO:0010876 lipid localization (1.01e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006164" shape="rect" href="#GO:0006164" coords="221,1109,349,1237"  alt="GO:0006164 purine nucleotide biosynthetic process (8.15e-03)" title="GO:0006164 purine nucleotide biosynthetic process (8.15e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009165" shape="rect" href="#GO:0009165" coords="511,934,633,1058"  alt="GO:0009165 nucleotide biosynthetic process (1.10e-02)" title="GO:0009165 nucleotide biosynthetic process (1.10e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0072522" shape="rect" href="#GO:0072522" coords="248,579,373,706"  alt="GO:0072522 purine-containing compound biosynthetic process (8.70e-03)" title="GO:0072522 purine-containing compound biosynthetic process (8.70e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044249" shape="rect" href="#GO:0044249" coords="432,249,507,324"  alt="GO:0044249 cellular biosynthetic process (1.99e-01)" title="GO:0044249 cellular biosynthetic process (1.99e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044271" shape="rect" href="#GO:0044271" coords="509,403,621,517"  alt="GO:0044271 cellular nitrogen compound biosynthetic process (2.29e-02)" title="GO:0044271 cellular nitrogen compound biosynthetic process (2.29e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009199" shape="rect" href="#GO:0009199" coords="960,1116,1075,1231"  alt="GO:0009199 ribonucleoside triphosphate metabolic process (2.03e-02)" title="GO:0009199 ribonucleoside triphosphate metabolic process (2.03e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0034404" shape="rect" href="#GO:0034404" coords="511,763,633,885"  alt="GO:0034404 nucleobase, nucleoside and nucleotide biosynthetic process (1.16e-02)" title="GO:0034404 nucleobase, nucleoside and nucleotide biosynthetic process (1.16e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015914" shape="rect" href="#GO:0015914" coords="5,571,149,715"  alt="GO:0015914 phospholipid transport (2.12e-03)" title="GO:0015914 phospholipid transport (2.12e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0034641" shape="rect" href="#GO:0034641" coords="531,251,600,322"  alt="GO:0034641 cellular nitrogen compound metabolic process (2.37e-01)" title="GO:0034641 cellular nitrogen compound metabolic process (2.37e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006139" shape="rect" href="#GO:0006139" coords="645,424,717,496"  alt="GO:0006139 nucleobase, nucleoside, nucleotide and nucleic acid metabolic process (2.15e-01)" title="GO:0006139 nucleobase, nucleoside, nucleotide and nucleic acid metabolic process (2.15e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009206" shape="rect" href="#GO:0009206" coords="503,1473,636,1607"  alt="GO:0009206 purine ribonucleoside triphosphate biosynthetic process (4.66e-03)" title="GO:0009206 purine ribonucleoside triphosphate biosynthetic process (4.66e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009117" shape="rect" href="#GO:0009117" coords="657,770,764,878"  alt="GO:0009117 nucleotide metabolic process (3.31e-02)" title="GO:0009117 nucleotide metabolic process (3.31e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009141" shape="rect" href="#GO:0009141" coords="657,939,772,1053"  alt="GO:0009141 nucleoside triphosphate metabolic process (2.12e-02)" title="GO:0009141 nucleoside triphosphate metabolic process (2.12e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006163" shape="rect" href="#GO:0006163" coords="375,940,487,1052"  alt="GO:0006163 purine nucleotide metabolic process (2.53e-02)" title="GO:0006163 purine nucleotide metabolic process (2.53e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009259" shape="rect" href="#GO:0009259" coords="805,939,917,1053"  alt="GO:0009259 ribonucleotide metabolic process (2.25e-02)" title="GO:0009259 ribonucleotide metabolic process (2.25e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046034" shape="rect" href="#GO:0046034" coords="660,1478,783,1602"  alt="GO:0046034 ATP metabolic process (1.04e-02)" title="GO:0046034 ATP metabolic process (1.04e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008150" shape="rect" href="#GO:0008150" coords="147,5,291,53"  alt="GO:0008150 biological_process (1.00e+00)" title="GO:0008150 biological_process (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051179" shape="rect" href="#GO:0051179" coords="183,102,255,175"  alt="GO:0051179 localization (2.13e-01)" title="GO:0051179 localization (2.13e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044237" shape="rect" href="#GO:0044237" coords="443,112,496,165"  alt="GO:0044237 cellular metabolic process (4.31e-01)" title="GO:0044237 cellular metabolic process (4.31e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0055086" shape="rect" href="#GO:0055086" coords="651,589,757,696"  alt="GO:0055086 nucleobase, nucleoside and nucleotide metabolic process (3.59e-02)" title="GO:0055086 nucleobase, nucleoside and nucleotide metabolic process (3.59e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0034654" shape="rect" href="#GO:0034654" coords="504,581,627,704"  alt="GO:0034654 nucleobase, nucleoside, nucleotide and nucleic acid biosynthetic process (1.16e-02)" title="GO:0034654 nucleobase, nucleoside, nucleotide and nucleic acid biosynthetic process (1.16e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009150" shape="rect" href="#GO:0009150" coords="512,1117,624,1230"  alt="GO:0009150 purine ribonucleotide metabolic process (2.17e-02)" title="GO:0009150 purine ribonucleotide metabolic process (2.17e-02)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="cellular_component">cellular_component</a> (<a href="#top">top</a>)</h3><img id="img_cellular_component" src="auxfiles/vlad.results.cellular_component.png" usemap="#map_cellular_component" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_cellular_component">
+<area id="area_GO:0005623" shape="rect" href="#GO:0005623" coords="17,147,28,157"  alt="GO:0005623 cell (9.97e-01)" title="GO:0005623 cell (9.97e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044464" shape="rect" href="#GO:0044464" coords="60,304,71,315"  alt="GO:0044464 cell part (9.97e-01)" title="GO:0044464 cell part (9.97e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005578" shape="rect" href="#GO:0005578" coords="169,605,313,749"  alt="GO:0005578 proteinaceous extracellular matrix (3.99e-02)" title="GO:0005578 proteinaceous extracellular matrix (3.99e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005575" shape="rect" href="#GO:0005575" coords="37,5,181,53"  alt="GO:0005575 cellular_component (1.00e+00)" title="GO:0005575 cellular_component (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005576" shape="rect" href="#GO:0005576" coords="103,101,204,203"  alt="GO:0005576 extracellular region (2.03e-01)" title="GO:0005576 extracellular region (2.03e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044421" shape="rect" href="#GO:0044421" coords="183,251,300,368"  alt="GO:0044421 extracellular region part (1.20e-01)" title="GO:0044421 extracellular region part (1.20e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044425" shape="rect" href="#GO:0044425" coords="8,650,61,705"  alt="GO:0044425 membrane part (6.42e-01)" title="GO:0044425 membrane part (6.42e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031224" shape="rect" href="#GO:0031224" coords="5,797,64,856"  alt="GO:0031224 intrinsic to membrane (5.91e-01)" title="GO:0031224 intrinsic to membrane (5.91e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016020" shape="rect" href="#GO:0016020" coords="72,464,117,509"  alt="GO:0016020 membrane (7.40e-01)" title="GO:0016020 membrane (7.40e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031012" shape="rect" href="#GO:0031012" coords="171,416,312,557"  alt="GO:0031012 extracellular matrix (4.47e-02)" title="GO:0031012 extracellular matrix (4.47e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016021" shape="rect" href="#GO:0016021" coords="5,905,64,965"  alt="GO:0016021 integral to membrane (5.80e-01)" title="GO:0016021 integral to membrane (5.80e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="molecular_function">molecular_function</a> (<a href="#top">top</a>)</h3><img id="img_molecular_function" src="auxfiles/vlad.results.molecular_function.png" usemap="#map_molecular_function" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_molecular_function">
+<area id="area_GO:0003674" shape="rect" href="#GO:0003674" coords="267,5,411,53"  alt="GO:0003674 molecular_function (1.00e+00)" title="GO:0003674 molecular_function (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005215" shape="rect" href="#GO:0005215" coords="295,415,383,505"  alt="GO:0005215 transporter activity (7.02e-02)" title="GO:0005215 transporter activity (7.02e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016817" shape="rect" href="#GO:0016817" coords="159,101,255,197"  alt="GO:0016817 hydrolase activity, acting on acid anhydrides (4.30e-02)" title="GO:0016817 hydrolase activity, acting on acid anhydrides (4.30e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005488" shape="rect" href="#GO:0005488" coords="376,133,408,165"  alt="GO:0005488 binding (7.28e-01)" title="GO:0005488 binding (7.28e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043492" shape="rect" href="#GO:0043492" coords="132,1072,255,1195"  alt="GO:0043492 ATPase activity, coupled to movement of substances (6.32e-03)" title="GO:0043492 ATPase activity, coupled to movement of substances (6.32e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042626" shape="rect" href="#GO:0042626" coords="153,1253,276,1376"  alt="GO:0042626 ATPase activity, coupled to transmembrane movement of substances (6.19e-03)" title="GO:0042626 ATPase activity, coupled to transmembrane movement of substances (6.19e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004012" shape="rect" href="#GO:0004012" coords="479,1243,623,1387"  alt="GO:0004012 phospholipid-translocating ATPase activity (8.84e-04)" title="GO:0004012 phospholipid-translocating ATPase activity (8.84e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015075" shape="rect" href="#GO:0015075" coords="423,1085,519,1181"  alt="GO:0015075 ion transmembrane transporter activity (4.44e-02)" title="GO:0015075 ion transmembrane transporter activity (4.44e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042625" shape="rect" href="#GO:0042625" coords="244,1435,369,1562"  alt="GO:0042625 ATPase activity, coupled to transmembrane movement of ions (4.35e-03)" title="GO:0042625 ATPase activity, coupled to transmembrane movement of ions (4.35e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016887" shape="rect" href="#GO:0016887" coords="152,715,261,824"  alt="GO:0016887 ATPase activity (1.84e-02)" title="GO:0016887 ATPase activity (1.84e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042623" shape="rect" href="#GO:0042623" coords="140,897,252,1009"  alt="GO:0042623 ATPase activity, coupled (1.49e-02)" title="GO:0042623 ATPase activity, coupled (1.49e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015662" shape="rect" href="#GO:0015662" coords="243,1611,371,1741"  alt="GO:0015662 ATPase activity, coupled to transmembrane movement of ions, phosphorylative mechanism (3.67e-03)" title="GO:0015662 ATPase activity, coupled to transmembrane movement of ions, phosphorylative mechanism (3.67e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022804" shape="rect" href="#GO:0022804" coords="285,716,392,823"  alt="GO:0022804 active transmembrane transporter activity (2.08e-02)" title="GO:0022804 active transmembrane transporter activity (2.08e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015399" shape="rect" href="#GO:0015399" coords="279,893,399,1014"  alt="GO:0015399 primary active transmembrane transporter activity (6.80e-03)" title="GO:0015399 primary active transmembrane transporter activity (6.80e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022857" shape="rect" href="#GO:0022857" coords="293,561,384,653"  alt="GO:0022857 transmembrane transporter activity (5.69e-02)" title="GO:0022857 transmembrane transporter activity (5.69e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022891" shape="rect" href="#GO:0022891" coords="416,723,509,816"  alt="GO:0022891 substrate-specific transmembrane transporter activity (5.13e-02)" title="GO:0022891 substrate-specific transmembrane transporter activity (5.13e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016820" shape="rect" href="#GO:0016820" coords="5,708,128,831"  alt="GO:0016820 hydrolase activity, acting on acid anhydrides, catalyzing transmembrane movement of substances (6.19e-03)" title="GO:0016820 hydrolase activity, acting on acid anhydrides, catalyzing transmembrane movement of substances (6.19e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022892" shape="rect" href="#GO:0022892" coords="417,561,508,653"  alt="GO:0022892 substrate-specific transporter activity (5.85e-02)" title="GO:0022892 substrate-specific transporter activity (5.85e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005319" shape="rect" href="#GO:0005319" coords="533,704,664,835"  alt="GO:0005319 lipid transporter activity (3.13e-03)" title="GO:0005319 lipid transporter activity (3.13e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016818" shape="rect" href="#GO:0016818" coords="159,256,255,352"  alt="GO:0016818 hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides (4.30e-02)" title="GO:0016818 hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides (4.30e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016462" shape="rect" href="#GO:0016462" coords="159,411,255,509"  alt="GO:0016462 pyrophosphatase activity (4.28e-02)" title="GO:0016462 pyrophosphatase activity (4.28e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005548" shape="rect" href="#GO:0005548" coords="519,883,657,1023"  alt="GO:0005548 phospholipid transporter activity (1.36e-03)" title="GO:0005548 phospholipid transporter activity (1.36e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000287" shape="rect" href="#GO:0000287" coords="513,246,628,362"  alt="GO:0000287 magnesium ion binding (1.07e-02)" title="GO:0000287 magnesium ion binding (1.07e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015405" shape="rect" href="#GO:0015405" coords="279,1073,399,1194"  alt="GO:0015405 P-P-bond-hydrolysis-driven transmembrane transporter activity (6.73e-03)" title="GO:0015405 P-P-bond-hydrolysis-driven transmembrane transporter activity (6.73e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0017111" shape="rect" href="#GO:0017111" coords="159,558,255,655"  alt="GO:0017111 nucleoside-triphosphatase activity (4.07e-02)" title="GO:0017111 nucleoside-triphosphatase activity (4.07e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005524" shape="rect" href="#GO:0005524" coords="407,418,489,502"  alt="GO:0005524 ATP binding (9.65e-02)" title="GO:0005524 ATP binding (9.65e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032559" shape="rect" href="#GO:0032559" coords="407,263,489,345"  alt="GO:0032559 adenyl ribonucleotide binding (9.81e-02)" title="GO:0032559 adenyl ribonucleotide binding (9.81e-02)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="__unannotated__">Unannotated IDs</a></h3>
+<table border="0">
+<tr>
+<td><b>CL_0002127-up.xls</b><br/>
+<textarea rows="15" cols="18">10414744
+10420532
+10508909
+10573319
+13.0168980915378
+16.283460363482
+2.0830125545742
+244550
+26.7022587961217
+4.83984128407795
+5.60748608918644
+50769
+6.46270998018673
+640196
+7.88933845237988
+FoldChange
+NA
+Stdv
+entrezIDs
+mgiID
+symbol</textarea>
+</td>
+</table>
+<span id="edgetypelegend" 
+		     class="edgetypelegend"
+	             style="left:0;top:0;display:none;" 
+		     onclick="hideEdgeTypeLegend();" >
+			 <table border="0"><tr>
+			 <td style="text-align:left;cursor:pointer;">[close]</td>
+			 <td style="text-align:center;"><b>Legend: Edge Types</b></td>
+			 <td style="text-align:right;"><a href="http://www.geneontology.org/GO.ontology.relations.shtml" target="_blank">(details)</a></td>
+			 </tr>
+		         <tr><td colspan="3"><img src="auxfiles/legend.gif" /></td></tr>
+			 </table>
+		     </span>
+</body></html>

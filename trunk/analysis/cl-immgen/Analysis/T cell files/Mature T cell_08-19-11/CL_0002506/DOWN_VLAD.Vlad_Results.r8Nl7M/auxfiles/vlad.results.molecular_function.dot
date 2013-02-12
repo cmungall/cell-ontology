@@ -1,0 +1,67 @@
+digraph "molecular_function" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">molecular_function</FONT></TD></TR><TR><TD BORDER="0">CL_0002506-down.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0005529" [ URL = "#GO:0005529", label = <<TABLE BORDER="0"><TR><TD>GO:0005529<BR/>sugar binding<BR/>(1.52e-02)</TD></TR></TABLE>>, width = 0.993913823865, shape = "box", fontsize = 7.15617953183, height = 0.993913823865 ];
+"GO:0003824" [ URL = "#GO:0003824", label = <<TABLE BORDER="0"><TR><TD>GO:0003824<BR/>catalytic<BR/>activity<BR/>(3.43e-01)</TD></TR></TABLE>>, width = 0.509877268142, shape = "box", fontsize = 5.0, height = 0.509877268142 ];
+"GO:0043167" [ URL = "#GO:0043167", label = <<TABLE BORDER="0"><TR><TD>GO:0043167<BR/>ion binding<BR/>(2.30e-01)</TD></TR></TABLE>>, width = 0.594121435851, shape = "box", fontsize = 5.0, height = 0.594121435851 ];
+"GO:0016757" [ URL = "#GO:0016757", label = <<TABLE BORDER="0"><TR><TD>GO:0016757<BR/>transferase<BR/>activity,<BR/>transferring<BR/>glycosyl groups<BR/>(1.64e-02)</TD></TR></TABLE>>, width = 0.984756579303, shape = "box", fontsize = 7.09024737098, height = 0.984756579303 ];
+"GO:0016758" [ URL = "#GO:0016758", label = <<TABLE BORDER="0"><TR><TD>GO:0016758<BR/>transferase<BR/>activity,<BR/>transferring<BR/>hexosyl groups<BR/>(1.07e-02)</TD></TR></TABLE>>, width = 1.03430043599, shape = "box", fontsize = 7.4469631391, height = 1.03430043599 ];
+"GO:0043169" [ URL = "#GO:0043169", label = <<TABLE BORDER="0"><TR><TD>GO:0043169<BR/>cation binding<BR/>(2.29e-01)</TD></TR></TABLE>>, width = 0.594818654974, shape = "box", fontsize = 5.0, height = 0.594818654974 ];
+"GO:0016740" [ URL = "#GO:0016740", label = <<TABLE BORDER="0"><TR><TD>GO:0016740<BR/>transferase<BR/>activity<BR/>(1.14e-01)</TD></TR></TABLE>>, width = 0.719166104196, shape = "box", fontsize = 5.17799595021, height = 0.719166104196 ];
+"GO:0004553" [ URL = "#GO:0004553", label = <<TABLE BORDER="0"><TR><TD>GO:0004553<BR/>hydrolase<BR/>activity,<BR/>hydrolyzing<BR/>O-glycosyl<BR/>compounds<BR/>(5.85e-03)</TD></TR></TABLE>>, width = 1.10012353551, shape = "box", fontsize = 7.92088945565, height = 1.10012353551 ];
+"GO:0030246" [ URL = "#GO:0030246", label = <<TABLE BORDER="0"><TR><TD>GO:0030246<BR/>carbohydrate binding<BR/>(2.66e-02)</TD></TR></TABLE>>, width = 0.925308319969, shape = "box", fontsize = 6.66221990377, height = 0.925308319969 ];
+"GO:0003844" [ URL = "#GO:0003844", label = <<TABLE BORDER="0"><TR><TD>GO:0003844<BR/>1,4-alpha-glucan<BR/>branching<BR/>enzyme activity<BR/>(6.80e-05)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0005488" [ URL = "#GO:0005488", label = "", width = 0.290264988228, shape = "box", height = 0.290264988228 ];
+"GO:0003674" [ URL = "#GO:0003674", label = <<TABLE BORDER="0"><TR><TD>GO:0003674<BR/>molecular_function</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0016798" [ URL = "#GO:0016798", label = <<TABLE BORDER="0"><TR><TD>GO:0016798<BR/>hydrolase<BR/>activity,<BR/>acting on<BR/>glycosyl bonds<BR/>(7.27e-03)</TD></TR></TABLE>>, width = 1.07669592013, shape = "box", fontsize = 7.75221062493, height = 1.07669592013 ];
+"GO:0016787" [ URL = "#GO:0016787", label = <<TABLE BORDER="0"><TR><TD>GO:0016787<BR/>hydrolase<BR/>activity<BR/>(1.46e-01)</TD></TR></TABLE>>, width = 0.677120326994, shape = "box", fontsize = 5.0, height = 0.677120326994 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0003674" -> "GO:0003824";
+"GO:0005488" -> "GO:0043167";
+"GO:0043167" -> "GO:0043169";
+"GO:0003824" -> "GO:0016740";
+"GO:0016758" -> "GO:0003844";
+"GO:0003674" -> "GO:0005488";
+"GO:0016757" -> "GO:0016758";
+"GO:0016740" -> "GO:0016757";
+"GO:0016798" -> "GO:0004553";
+"GO:0030246" -> "GO:0005529";
+"GO:0016787" -> "GO:0016798";
+"GO:0003824" -> "GO:0016787";
+"GO:0005488" -> "GO:0030246";
+}
+}
+}

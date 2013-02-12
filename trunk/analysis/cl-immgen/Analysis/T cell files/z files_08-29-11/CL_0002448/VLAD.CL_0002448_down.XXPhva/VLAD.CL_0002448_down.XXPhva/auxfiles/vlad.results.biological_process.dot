@@ -1,0 +1,68 @@
+digraph "biological_process" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">biological_process</FONT></TD></TR><TR><TD BORDER="0">CL_0002448-down.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0009607" [ URL = "#GO:0009607", label = <<TABLE BORDER="0"><TR><TD>GO:0009607<BR/>response to<BR/>biotic stimulus<BR/>(5.27e-02)</TD></TR></TABLE>>, width = 1.26652649067, shape = "box", fontsize = 9.11899073282, height = 1.26652649067 ];
+"GO:0009615" [ URL = "#GO:0009615", label = <<TABLE BORDER="0"><TR><TD>GO:0009615<BR/>response to virus<BR/>(1.60e-02)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0007155" [ URL = "#GO:0007155", label = <<TABLE BORDER="0"><TR><TD>GO:0007155<BR/>cell adhesion<BR/>(7.92e-02)</TD></TR></TABLE>>, width = 1.17596087237, shape = "box", fontsize = 8.46691828105, height = 1.17596087237 ];
+"GO:0050896" [ URL = "#GO:0050896", label = "", width = 0.497516917562, shape = "box", height = 0.497516917562 ];
+"GO:0006915" [ URL = "#GO:0006915", label = <<TABLE BORDER="0"><TR><TD>GO:0006915<BR/>apoptosis<BR/>(7.35e-02)</TD></TR></TABLE>>, width = 1.19302333331, shape = "box", fontsize = 8.58976799984, height = 1.19302333331 ];
+"GO:0051707" [ URL = "#GO:0051707", label = <<TABLE BORDER="0"><TR><TD>GO:0051707<BR/>response to<BR/>other organism<BR/>(4.91e-02)</TD></TR></TABLE>>, width = 1.28133831606, shape = "box", fontsize = 9.2256358756, height = 1.28133831606 ];
+"GO:0022610" [ URL = "#GO:0022610", label = <<TABLE BORDER="0"><TR><TD>GO:0022610<BR/>biological<BR/>adhesion<BR/>(8.00e-02)</TD></TR></TABLE>>, width = 1.17371541011, shape = "box", fontsize = 8.45075095276, height = 1.17371541011 ];
+"GO:0051704" [ URL = "#GO:0051704", label = <<TABLE BORDER="0"><TR><TD>GO:0051704<BR/>multi-organism process<BR/>(7.11e-02)</TD></TR></TABLE>>, width = 1.20074089039, shape = "box", fontsize = 8.64533441077, height = 1.20074089039 ];
+"GO:0008219" [ URL = "#GO:0008219", label = <<TABLE BORDER="0"><TR><TD>GO:0008219<BR/>cell death<BR/>(8.27e-02)</TD></TR></TABLE>>, width = 1.16599869962, shape = "box", fontsize = 8.39519063727, height = 1.16599869962 ];
+"GO:0016265" [ URL = "#GO:0016265", label = <<TABLE BORDER="0"><TR><TD>GO:0016265<BR/>death<BR/>(8.40e-02)</TD></TR></TABLE>>, width = 1.16239905979, shape = "box", fontsize = 8.36927323051, height = 1.16239905979 ];
+"GO:0008150" [ URL = "#GO:0008150", label = <<TABLE BORDER="0"><TR><TD>GO:0008150<BR/>biological_process</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0009987" [ URL = "#GO:0009987", label = "", width = 0.470459596368, shape = "box", height = 0.470459596368 ];
+"GO:0012501" [ URL = "#GO:0012501", label = <<TABLE BORDER="0"><TR><TD>GO:0012501<BR/>programmed cell death<BR/>(7.52e-02)</TD></TR></TABLE>>, width = 1.18786859972, shape = "box", fontsize = 8.55265391801, height = 1.18786859972 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0009987" -> "GO:0007155";
+"GO:0009987" -> "GO:0008219";
+"GO:0008150" -> "GO:0051704";
+"GO:0012501" -> "GO:0006915";
+"GO:0008150" -> "GO:0050896";
+"GO:0008150" -> "GO:0009987";
+"GO:0016265" -> "GO:0008219";
+"GO:0051707" -> "GO:0009615";
+"GO:0008150" -> "GO:0016265";
+"GO:0051704" -> "GO:0051707";
+"GO:0050896" -> "GO:0009607";
+"GO:0009607" -> "GO:0051707";
+"GO:0022610" -> "GO:0007155";
+"GO:0008219" -> "GO:0012501";
+"GO:0008150" -> "GO:0022610";
+}
+}
+}

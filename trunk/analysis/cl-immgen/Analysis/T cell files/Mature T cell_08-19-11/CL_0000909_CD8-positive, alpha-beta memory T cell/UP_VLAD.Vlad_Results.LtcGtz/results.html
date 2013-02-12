@@ -1,0 +1,270 @@
+<html><head>
+<style type="text/css">       
+
+    body {        
+	background-color: MediumAquaMarine;
+    }
+
+    .zdark {
+	background-color: #bbbbbb;
+    }
+
+    .zlight {
+	background-color: #ffffff;
+    }
+
+    div.node-hilite {
+	position : absolute;
+	border : medium solid red;
+	display : none;
+    }
+
+    div.results {
+	width: 95%;
+	height: 480;
+	overflow: auto;
+    }
+
+    table.results {
+	border: thin solid black;
+    }
+
+    .label { 
+	font-weight: bold;
+	background-color: #333;
+	color: white;
+    }
+
+    table.results tr {
+    }
+
+    table.results th {
+	border-right: thin solid black;
+    }
+
+    table.results td {
+	border-top: thin solid black;
+	border-right: thin solid black;
+    }
+
+    table.results td.termlinks {
+	white-space: nowrap;
+    }
+
+    table.summary {
+	white-space:nowrap;
+	padding: 0px;
+	border-left   : thin solid gray;
+	border-bottom : thin solid gray;
+    }
+
+    table.summary td {
+	border-top : thin solid gray;
+	border-right : thin solid gray;
+    }
+
+    table.summary td:first-child {
+	background-color: #333;
+	color: white;
+    }
+
+    .edgetypelegend { 
+	 background-color:gray;
+	 padding:4px;
+	 position:absolute;
+    }
+
+</style>
+
+<script language="javascript">
+function submitForm(idlist){
+    var form = document.getElementById("_batch_link_form_");
+    form.IDSet.value = idlist;
+    form.submit();
+}
+function nodeClicked(areaElt,evt){
+    var h = areaElt.href;
+    var i = h.lastIndexOf('#');
+    if(i == -1)
+        return true;
+    var goid = h.substring(i+1);
+    var e = document.getElementById(goid);
+    if(e){
+        e.scrollIntoView()
+	evt.cancelBubble = true;
+        return false;
+    }
+    return true;
+}
+function findAreaNode(id){
+    return document.getElementById("area_"+id);
+}
+function findImgForArea(a){
+    var map = a.parentNode;
+    var mapname = map.name;
+    var imgid = "img_"+mapname.slice(4);
+    return document.getElementById(imgid);
+}
+function hilightNode(id){
+    var a = findAreaNode(id);
+    var d = window.nodeHilightDiv;
+    if(a){
+	var img = findImgForArea(a);
+	if(! img) return;
+	var coords = a.coords.split(",");
+	var x = parseInt(coords[0]);
+	var y = parseInt(coords[1]);
+	d.style.left = x + img.offsetLeft;
+	d.style.top  = y + img.offsetTop;
+	d.style.width = parseInt(coords[2]) - x;
+	d.style.height = parseInt(coords[3]) - y;
+	d.style.display = "block";
+	d.scrollIntoView();
+    }
+}
+function getWindowScroll(){
+    if(window.pageXOffset === undefined)
+	if(document.body.scrollLeft === undefined)
+	    return [document.documentElement.scrollLeft,
+	            document.documentElement.scrollTop];
+	else
+	    return [document.body.scrollLeft,
+	            document.body.scrollTop];
+    else 
+	return [window.pageXOffset,
+	        window.pageYOffset];
+}
+
+function showEdgeTypeLegend(evt){
+    var img = document.getElementById("edgetypelegend");
+    if(img){
+	var wscroll = getWindowScroll();
+	img.style.display = 'block';
+	img.style.left = evt.clientX + wscroll[0] + 5;
+	img.style.top  = evt.clientY + wscroll[1] + 5;
+	if( typeof(evt.stopPropagation) === "function" )
+	    evt.stopPropagation();
+    }
+}
+
+function hideEdgeTypeLegend(){
+    var img = document.getElementById("edgetypelegend");
+    if(img) img.style.display='none';
+}
+
+window.onload = function(){
+    window.nodeHilightDiv = document.createElement('div');
+    document.body.appendChild(window.nodeHilightDiv);
+    window.nodeHilightDiv.className = 'node-hilite';
+    window.nodeHilightDiv.onclick = function(){ window.nodeHilightDiv.style.display="none"; };
+}
+</script>
+</head><body>
+<form target="_blank" name="_gene_link_form_" id="_batch_link_form_" 
+      action="http://www.informatics.jax.org/javawi2/servlet/WIFetch"
+      method="post" enctype='multipart/form-data'>
+      <input type="hidden" name="page" value="batchSummary" />
+<input type="hidden" name="IDType" value="MGIMarker" />
+<input type="hidden" name="returnSet" value="Nomenclature" />
+<input type="hidden" name="returnSet" value="Location" />
+<input type="hidden" name="printFormat" value="toolbar" />
+<input type="hidden" name="IDSet" value="%s" />
+
+</form>
+<h1><img src="auxfiles/vlad_logo.gif" align="middle" /><a name="top">Vlad Results</a></h1>
+<table class="summary" cellspacing="0"><tr><td class="label">Vlad version:</td><td>v1.5</td></tr><tr><td class="label">Date:</td><td>Fri Aug 19 18:19:28 2011</td></tr><tr><td class="label">Run time:</td><td>27.28 sec</td></tr><tr><td class="label">Ontology file:</td><td>gene_ontology.obo</td></tr><tr><td class="label">Ontology date:</td><td>Thu Aug 18 19:30:00 2011</td></tr><tr><td class="label">Annotation file:</td><td>gene_association.mgi</td></tr><tr><td class="label">Annotation date:</td><td>???</td></tr><tr><td class="label">Analysis type:</td><td>enrichment</td></tr><tr><td class="label">Excluded evidence codes:</td><td>ND</td></tr><tr><td class="label">Number of query sets:</td><td>1</td></tr><tr><td class="label">Query set 1:</td><td>CL_0000909_CD8-positive, alpha-beta memory T cell-up.xls (n=1; 9 not found)</td></tr><tr><td class="label">Universe set:</td><td>default (everything)</td></tr><tr><td class="label">Graph display:</td><td>Top 25 scoring terms and their ancestors. Interior nodes have been culled.</td></tr></table>
+<b>Jump to:</b> <a href="#biological_process" target="_self">biological_process</a> | <a href="#cellular_component" target="_self">cellular_component</a> | <a href="#molecular_function" target="_self">molecular_function</a> | <a href="#__unannotated__" target="_self">Unannotated id/symbols</a><p><h3><a name="biological_process">biological_process</a> (<a href="#top">top</a>)</h3><img id="img_biological_process" src="auxfiles/vlad.results.biological_process.png" usemap="#map_biological_process" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_biological_process">
+<area id="area_GO:0007548" shape="rect" href="#GO:0007548" coords="1021,619,1165,763"  alt="GO:0007548 sex differentiation (1.29e-02)" title="GO:0007548 sex differentiation (1.29e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043170" shape="rect" href="#GO:0043170" coords="231,468,303,540"  alt="GO:0043170 macromolecule metabolic process (3.36e-01)" title="GO:0043170 macromolecule metabolic process (3.36e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009059" shape="rect" href="#GO:0009059" coords="220,643,313,738"  alt="GO:0009059 macromolecule biosynthetic process (1.53e-01)" title="GO:0009059 macromolecule biosynthetic process (1.53e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044260" shape="rect" href="#GO:0044260" coords="601,653,676,729"  alt="GO:0044260 cellular macromolecule metabolic process (3.03e-01)" title="GO:0044260 cellular macromolecule metabolic process (3.03e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0060255" shape="rect" href="#GO:0060255" coords="189,817,272,901"  alt="GO:0060255 regulation of macromolecule metabolic process (2.28e-01)" title="GO:0060255 regulation of macromolecule metabolic process (2.28e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0010467" shape="rect" href="#GO:0010467" coords="52,644,145,737"  alt="GO:0010467 gene expression (1.63e-01)" title="GO:0010467 gene expression (1.63e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008152" shape="rect" href="#GO:0008152" coords="611,133,667,189"  alt="GO:0008152 metabolic process (5.19e-01)" title="GO:0008152 metabolic process (5.19e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009058" shape="rect" href="#GO:0009058" coords="412,460,500,548"  alt="GO:0009058 biosynthetic process (2.02e-01)" title="GO:0009058 biosynthetic process (2.02e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044237" shape="rect" href="#GO:0044237" coords="607,297,671,361"  alt="GO:0044237 cellular metabolic process (4.26e-01)" title="GO:0044237 cellular metabolic process (4.26e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006807" shape="rect" href="#GO:0006807" coords="695,288,777,371"  alt="GO:0006807 nitrogen compound metabolic process (2.42e-01)" title="GO:0006807 nitrogen compound metabolic process (2.42e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019222" shape="rect" href="#GO:0019222" coords="388,651,465,730"  alt="GO:0019222 regulation of metabolic process (2.81e-01)" title="GO:0019222 regulation of metabolic process (2.81e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0090304" shape="rect" href="#GO:0090304" coords="751,645,841,736"  alt="GO:0090304 nucleic acid metabolic process (1.77e-01)" title="GO:0090304 nucleic acid metabolic process (1.77e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016070" shape="rect" href="#GO:0016070" coords="736,811,832,907"  alt="GO:0016070 RNA metabolic process (1.49e-01)" title="GO:0016070 RNA metabolic process (1.49e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031326" shape="rect" href="#GO:0031326" coords="336,961,427,1052"  alt="GO:0031326 regulation of cellular biosynthetic process (1.82e-01)" title="GO:0031326 regulation of cellular biosynthetic process (1.82e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:2000112" shape="rect" href="#GO:2000112" coords="336,1113,427,1205"  alt="GO:2000112 regulation of cellular macromolecule biosynthetic process (1.69e-01)" title="GO:2000112 regulation of cellular macromolecule biosynthetic process (1.69e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0034645" shape="rect" href="#GO:0034645" coords="461,811,555,906"  alt="GO:0034645 cellular macromolecule biosynthetic process (1.52e-01)" title="GO:0034645 cellular macromolecule biosynthetic process (1.52e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006351" shape="rect" href="#GO:0006351" coords="464,1107,565,1210"  alt="GO:0006351 transcription, DNA-dependent (1.11e-01)" title="GO:0006351 transcription, DNA-dependent (1.11e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009889" shape="rect" href="#GO:0009889" coords="296,813,387,904"  alt="GO:0009889 regulation of biosynthetic process (1.84e-01)" title="GO:0009889 regulation of biosynthetic process (1.84e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044249" shape="rect" href="#GO:0044249" coords="489,647,577,735"  alt="GO:0044249 cellular biosynthetic process (1.96e-01)" title="GO:0044249 cellular biosynthetic process (1.96e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0010468" shape="rect" href="#GO:0010468" coords="5,961,96,1052"  alt="GO:0010468 regulation of gene expression (1.82e-01)" title="GO:0010468 regulation of gene expression (1.82e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006355" shape="rect" href="#GO:0006355" coords="335,1259,428,1354"  alt="GO:0006355 regulation of transcription, DNA-dependent (1.55e-01)" title="GO:0006355 regulation of transcription, DNA-dependent (1.55e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0010556" shape="rect" href="#GO:0010556" coords="171,961,261,1053"  alt="GO:0010556 regulation of macromolecule biosynthetic process (1.73e-01)" title="GO:0010556 regulation of macromolecule biosynthetic process (1.73e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0006139" shape="rect" href="#GO:0006139" coords="747,461,832,547"  alt="GO:0006139 nucleobase, nucleoside, nucleotide and nucleic acid metabolic process (2.14e-01)" title="GO:0006139 nucleobase, nucleoside, nucleotide and nucleic acid metabolic process (2.14e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019219" shape="rect" href="#GO:0019219" coords="728,962,816,1051"  alt="GO:0019219 regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolic process (1.90e-01)" title="GO:0019219 regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolic process (1.90e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022414" shape="rect" href="#GO:0022414" coords="1033,269,1153,389"  alt="GO:0022414 reproductive process (4.84e-02)" title="GO:0022414 reproductive process (4.84e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003006" shape="rect" href="#GO:0003006" coords="1027,437,1160,571"  alt="GO:0003006 developmental process involved in reproduction (2.37e-02)" title="GO:0003006 developmental process involved in reproduction (2.37e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031323" shape="rect" href="#GO:0031323" coords="629,817,712,900"  alt="GO:0031323 regulation of cellular metabolic process (2.42e-01)" title="GO:0031323 regulation of cellular metabolic process (2.42e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008150" shape="rect" href="#GO:0008150" coords="844,5,988,53"  alt="GO:0008150 biological_process (1.00e+00)" title="GO:0008150 biological_process (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009987" shape="rect" href="#GO:0009987" coords="817,145,849,177"  alt="GO:0009987 cellular process (8.23e-01)" title="GO:0009987 cellular process (8.23e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032502" shape="rect" href="#GO:0032502" coords="873,119,959,204"  alt="GO:0032502 developmental process (2.25e-01)" title="GO:0032502 developmental process (2.25e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000003" shape="rect" href="#GO:0000003" coords="1033,101,1153,221"  alt="GO:0000003 reproduction (4.86e-02)" title="GO:0000003 reproduction (4.86e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048869" shape="rect" href="#GO:0048869" coords="863,281,959,378"  alt="GO:0048869 cellular developmental process (1.41e-01)" title="GO:0048869 cellular developmental process (1.41e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030154" shape="rect" href="#GO:0030154" coords="907,455,1003,553"  alt="GO:0030154 cell differentiation (1.36e-01)" title="GO:0030154 cell differentiation (1.36e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032774" shape="rect" href="#GO:0032774" coords="552,955,653,1058"  alt="GO:0032774 RNA biosynthetic process (1.11e-01)" title="GO:0032774 RNA biosynthetic process (1.11e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051171" shape="rect" href="#GO:0051171" coords="856,814,944,903"  alt="GO:0051171 regulation of nitrogen compound metabolic process (1.92e-01)" title="GO:0051171 regulation of nitrogen compound metabolic process (1.92e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051252" shape="rect" href="#GO:0051252" coords="589,1112,683,1205"  alt="GO:0051252 regulation of RNA metabolic process (1.59e-01)" title="GO:0051252 regulation of RNA metabolic process (1.59e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="cellular_component">cellular_component</a> (<a href="#top">top</a>)</h3><img id="img_cellular_component" src="auxfiles/vlad.results.cellular_component.png" usemap="#map_cellular_component" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_cellular_component">
+<area id="area_GO:0043229" shape="rect" href="#GO:0043229" coords="205,549,303,648"  alt="GO:0043229 intracellular organelle (5.68e-01)" title="GO:0043229 intracellular organelle (5.68e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043231" shape="rect" href="#GO:0043231" coords="263,701,373,811"  alt="GO:0043231 intracellular membrane-bounded organelle (5.02e-01)" title="GO:0043231 intracellular membrane-bounded organelle (5.02e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043227" shape="rect" href="#GO:0043227" coords="327,544,437,653"  alt="GO:0043227 membrane-bounded organelle (5.03e-01)" title="GO:0043227 membrane-bounded organelle (5.03e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005623" shape="rect" href="#GO:0005623" coords="250,102,282,135"  alt="GO:0005623 cell (9.42e-01)" title="GO:0005623 cell (9.42e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044464" shape="rect" href="#GO:0044464" coords="275,185,307,218"  alt="GO:0044464 cell part (9.42e-01)" title="GO:0044464 cell part (9.42e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005575" shape="rect" href="#GO:0005575" coords="247,5,391,53"  alt="GO:0005575 cellular_component (1.00e+00)" title="GO:0005575 cellular_component (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043226" shape="rect" href="#GO:0043226" coords="321,397,419,496"  alt="GO:0043226 organelle (5.69e-01)" title="GO:0043226 organelle (5.69e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005622" shape="rect" href="#GO:0005622" coords="171,267,254,349"  alt="GO:0005622 intracellular (6.74e-01)" title="GO:0005622 intracellular (6.74e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044424" shape="rect" href="#GO:0044424" coords="211,404,297,489"  alt="GO:0044424 intracellular part (6.60e-01)" title="GO:0044424 intracellular part (6.60e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005634" shape="rect" href="#GO:0005634" coords="246,859,390,1003"  alt="GO:0005634 nucleus (3.02e-01)" title="GO:0005634 nucleus (3.02e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="molecular_function">molecular_function</a> (<a href="#top">top</a>)</h3><img id="img_molecular_function" src="auxfiles/vlad.results.molecular_function.png" usemap="#map_molecular_function" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_molecular_function">
+<area id="area_GO:0003700" shape="rect" href="#GO:0003700" coords="100,293,244,437"  alt="GO:0003700 sequence-specific DNA binding transcription factor activity (4.99e-02)" title="GO:0003700 sequence-specific DNA binding transcription factor activity (4.99e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046872" shape="rect" href="#GO:0046872" coords="405,656,507,757"  alt="GO:0046872 metal ion binding (2.27e-01)" title="GO:0046872 metal ion binding (2.27e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001071" shape="rect" href="#GO:0001071" coords="116,101,260,245"  alt="GO:0001071 nucleic acid binding transcription factor activity (5.00e-02)" title="GO:0001071 nucleic acid binding transcription factor activity (5.00e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005488" shape="rect" href="#GO:0005488" coords="299,149,347,197"  alt="GO:0005488 binding (7.28e-01)" title="GO:0005488 binding (7.28e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003676" shape="rect" href="#GO:0003676" coords="268,310,377,421"  alt="GO:0003676 nucleic acid binding (1.72e-01)" title="GO:0003676 nucleic acid binding (1.72e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043167" shape="rect" href="#GO:0043167" coords="403,315,504,416"  alt="GO:0043167 ion binding (2.30e-01)" title="GO:0043167 ion binding (2.30e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003674" shape="rect" href="#GO:0003674" coords="183,5,327,53"  alt="GO:0003674 molecular_function (1.00e+00)" title="GO:0003674 molecular_function (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003677" shape="rect" href="#GO:0003677" coords="261,486,381,607"  alt="GO:0003677 DNA binding (1.18e-01)" title="GO:0003677 DNA binding (1.18e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043169" shape="rect" href="#GO:0043169" coords="405,496,507,597"  alt="GO:0043169 cation binding (2.29e-01)" title="GO:0043169 cation binding (2.29e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="__unannotated__">Unannotated IDs</a></h3>
+<table border="0">
+<tr>
+<td><b>CL_0000909_CD8-positive, alpha-beta memory T cell-up.xls</b><br/>
+<textarea rows="15" cols="18">0.709504103921206
+10505911
+242523
+3.23765161910606
+FoldChange
+Stdv
+entrezIDs
+mgiID
+symbol</textarea>
+</td>
+</table>
+<span id="edgetypelegend" 
+		     class="edgetypelegend"
+	             style="left:0;top:0;display:none;" 
+		     onclick="hideEdgeTypeLegend();" >
+			 <table border="0"><tr>
+			 <td style="text-align:left;cursor:pointer;">[close]</td>
+			 <td style="text-align:center;"><b>Legend: Edge Types</b></td>
+			 <td style="text-align:right;"><a href="http://www.geneontology.org/GO.ontology.relations.shtml" target="_blank">(details)</a></td>
+			 </tr>
+		         <tr><td colspan="3"><img src="auxfiles/legend.gif" /></td></tr>
+			 </table>
+		     </span>
+</body></html>

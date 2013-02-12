@@ -1,0 +1,427 @@
+d <- DGEList(counts = data, group = colnames(data))
+?substr
+d <- DGEList(counts = data)
+data[1:3,1:3]
+d <- DGEList(counts = data$counts)
+d$samples
+d <- calcNormFactors(d)
+d$samples
+par(mfrow = c(1, 2))
+maPlot(d$counts[, 1], d$counts[, 2], normalize = TRUE, pch = 19,
+cex = 0.4, ylim = c(-8, 8))
+grid(col = "blue")
+abline(h = log2(d$samples$norm.factors[2]/d$samples$norm.factors[1]),+ col = "red", lwd = 4)
+abline(h = log2(d$samples$norm.factors[2]/d$samples$norm.factors[1]),
+col = "red", lwd = 4)
+eff.libsize <- d$samples$lib.size * d$samples$norm.factors
+maPlot(d$counts[, 1]/eff.libsize[1], d$counts[, 2]/eff.libsize[2],
+normalize = FALSE, pch = 19, cex = 0.4, ylim = c(-8, 8))
+grid(col = "blue")
+ par(mfrow = c(3, 4))#
+> maPlot(d$counts[, 1], d$counts[, 2], normalize = TRUE, pch = 19,#
++ cex = 0.4, ylim = c(-8, 8))#
+> grid(col = "blue")#
+> abline(h = log2(d$samples$norm.factors[2]/d$samples$norm.factors[1]),#
++ col = "red", lwd = 4)#
+> eff.libsize <- d$samples$lib.size * d$samples$norm.factors#
+> maPlot(d$counts[, 1]/eff.libsize[1], d$counts[, 2]/eff.libsize[2],#
++ normalize = FALSE, pch = 19, cex = 0.4, ylim = c(-8, 8))#
+> grid(col = "blue")
+par(mfrow = c(3, 4))
+maPlot(d$counts[, 3], d$counts[, 4], normalize = TRUE, pch = 19,#
++ cex = 0.4, ylim = c(-8, 8))
+d <- estimateCommonDisp(d)
+names(d)
+d$samples$lib.size
+d$common.lib.size
+colSums(d$pseudo.alt)
+de.com <- exactTest(d)
+?exactTest
+sqrt(d$common.dispersion)
+d$samples$group
+de.com <- exactTest(d, pair=7,8)
+?groups
+$samples
+ read_table_CAGE_gene_expression <- function(infile)#
+{#
+  ### read the data file#
+  data = read.table(infile,sep="\t",header=T,as.is=T,na.strings="-", check.names=F, row.names=1)#
+  #
+  ### dealing with '% encoding'#
+  colnames(data) = sapply( colnames(data) , URLdecode)#
+  #
+  ### extract appropriate tables#
+  counts = data[ -grep( "STAT:" , rownames(data)) , grep("^raw.",colnames(data)) ]#
+  colnames(counts) = gsub("^raw.","", colnames(counts))#
+  tpm    = data[ -grep( "STAT:" , rownames(data)) , grep("^tpm.",colnames(data)) ]#
+  colnames(tpm) = gsub("^tpm.","", colnames(tpm))#
+  lib.size = data[ grep( "STAT:MAPPED_READS" , rownames(data)) , grep("^raw.",colnames(data))]#
+  #
+  ### return the results#
+  list(counts = counts, tpm = tpm, lib.size = lib.size)#
+}#
+#
+### setting#
+infile = "/Users/tmeehan/Documents/FANTOM interactions/data/human.primary_cell.hCAGE.hg19.refgene.osc.txt.gz"#
+#
+### loading#
+data = read_table_CAGE_gene_expression(infile)#
+#
+### see the results#
+data$counts[1:3,1:3]#
+data$tpm[1:3,1:3]#
+data$lib.size[1:3]
+library (edgeR)
+data$counts[1:3,1:34]
+data$counts[1:3,1:120]
+ read_table_CAGE_gene_expression <- function(infile)#
+{#
+  ### read the data file#
+  data = read.table(infile,sep="\t",header=T,as.is=T,na.strings="-", check.names=F, row.names=1)#
+  #
+  ### dealing with '% encoding'#
+  colnames(data) = sapply( colnames(data) , URLdecode)#
+  #
+  ### extract appropriate tables#
+  counts = data[ -grep( "STAT:" , rownames(data)) , grep("^raw.",colnames(data)) ]#
+  colnames(counts) = gsub("^raw.","", colnames(counts))#
+  tpm    = data[ -grep( "STAT:" , rownames(data)) , grep("^tpm.",colnames(data)) ]#
+  colnames(tpm) = gsub("^tpm.","", colnames(tpm))#
+  lib.size = data[ grep( "STAT:MAPPED_READS" , rownames(data)) , grep("^raw.",colnames(data))]#
+  #
+  ### return the results#
+  list(counts = counts, tpm = tpm, lib.size = lib.size)#
+}#
+#
+### setting#
+infile = "/Users/tmeehan/Documents/FANTOM interactions/data/human.primary_cell.hCAGE.hg19.refgene.osc.txt.gz"#
+#
+### loading#
+data = read_table_CAGE_gene_expression(infile)#
+#
+### see the results#
+data$counts[1:3,1:3]#
+data$tpm[1:3,1:3]#
+data$lib.size[1:3]
+data$counts[1:3,1:34]
+?iconv
+ read_table_CAGE_gene_expression <- function(infile)#
+{#
+  ### read the data file#
+  data = read.table(infile,sep="\t",header=T,as.is=T,na.strings="-", check.names=F, row.names=1)#
+  #
+  ### dealing with '% encoding'#
+  colnames(data) = sapply( colnames(data) , URLdecode)#
+  #
+  ### extract appropriate tables#
+  counts = data[ -grep( "STAT:" , rownames(data)) , grep("^raw.",colnames(data)) ]#
+  colnames(counts) = gsub("^raw.","", colnames(counts))#
+  tpm    = data[ -grep( "STAT:" , rownames(data)) , grep("^tpm.",colnames(data)) ]#
+  colnames(tpm) = gsub("^tpm.","", colnames(tpm))#
+  lib.size = data[ grep( "STAT:MAPPED_READS" , rownames(data)) , grep("^raw.",colnames(data))]#
+  #
+  ### return the results#
+  list(counts = counts, tpm = tpm, lib.size = lib.size)#
+}#
+#
+### setting#
+infile = "/Users/tmeehan/Documents/FANTOM interactions/data/human.primary_cell.hCAGE.hg19.refgene.osc.txt.gz"#
+#
+### loading#
+data = read_table_CAGE_gene_expression(infile)#
+#
+### see the results#
+data$counts[1:3,1:3]#
+data$tpm[1:3,1:3]#
+data$lib.size[1:3]
+?URLdecode
+ read_table_CAGE_gene_expression <- function(infile)#
+{#
+  ### read the data file#
+  data = read.table(infile,sep="\t",header=T,as.is=T,na.strings="-", check.names=F, row.names=1)#
+  #
+  ### dealing with '% encoding'#
+  colnames(data) = sapply( colnames(data) , URLdecode)#
+  #
+  ### extract appropriate tables#
+  counts = data[ -grep( "STAT:" , rownames(data)) , grep("^raw.",colnames(data)) ]#
+  colnames(counts) = gsub("^raw.","", colnames(counts))#
+  tpm    = data[ -grep( "STAT:" , rownames(data)) , grep("^tpm.",colnames(data)) ]#
+  colnames(tpm) = gsub("^tpm.","", colnames(tpm))#
+  lib.size = data[ grep( "STAT:MAPPED_READS" , rownames(data)) , grep("^raw.",colnames(data))]#
+  #
+  ### return the results#
+  list(counts = counts, tpm = tpm, lib.size = lib.size)#
+}#
+#
+### setting#
+infile = "/Users/tmeehan/Documents/FANTOM interactions/data/human.primary_cell.hCAGE.hg19.refgene.osc.txt.gz"#
+#
+### loading#
+data = read_table_CAGE_gene_expression(infile)#
+#
+### see the results#
+data$counts[1:3,1:3]#
+data$tpm[1:3,1:3]#
+data$lib.size[1:3]
+ read_table_CAGE_gene_expression <- function(infile)#
+{#
+  ### read the data file#
+  data = read.table(infile,sep="\t",header=T,as.is=T,na.strings="-", check.names=F, row.names=1)#
+  #
+  ### dealing with '% encoding'#
+  colnames(data) = sapply( colnames(data) , URLdecode)#
+  #
+  ### extract appropriate tables#
+  counts = data[ -grep( "STAT:" , rownames(data)) , grep("^raw.",colnames(data)) ]#
+  colnames(counts) = gsub("^raw.","", colnames(counts))#
+  tpm    = data[ -grep( "STAT:" , rownames(data)) , grep("^tpm.",colnames(data)) ]#
+  colnames(tpm) = gsub("^tpm.","", colnames(tpm))#
+  lib.size = data[ grep( "STAT:MAPPED_READS" , rownames(data)) , grep("^raw.",colnames(data))]#
+  #
+  ### return the results#
+  list(counts = counts, tpm = tpm, lib.size = lib.size)#
+}#
+#
+### setting#
+infile = "/Users/tmeehan/Documents/FANTOM interactions/data/human.primary_cell.hCAGE.hg19.refgene.osc.txt"#
+#
+### loading#
+data = read_table_CAGE_gene_expression(infile)#
+#
+### see the results#
+data$counts[1:3,1:3]#
+data$tpm[1:3,1:3]#
+data$lib.size[1:3]
+openvignette()
+openvignette(edgeR)
+data$counts[1:2]
+data$counts[1:2,]
+data$counts[1,]
+{#
+  ### read the data file#
+  data = read.table(infile,sep="\t",header=T,as.is=T,na.strings="-", check.names=F, row.names=1)#
+  #
+  ### dealing with '% encoding'#
+  colnames(data) = sapply( colnames(data) , URLdecode)#
+  #
+  ### extract appropriate tables#
+  counts = data[ -grep( "STAT:" , rownames(data)) , grep("^raw.",colnames(data)) ]#
+  colnames(counts) = gsub("^raw.","", colnames(counts))#
+  tpm    = data[ -grep( "STAT:" , rownames(data)) , grep("^tpm.",colnames(data)) ]#
+  colnames(tpm) = gsub("^tpm.","", colnames(tpm))#
+  lib.size = data[ grep( "STAT:MAPPED_READS" , rownames(data)) , grep("^raw.",colnames(data))]#
+  #
+  ### return the results#
+  list(counts = counts, tpm = tpm, lib.size = lib.size)#
+}#
+#
+### setting#
+infile = "/Users/tmeehan/Documents/FANTOM interactions/data/human.primary_cell.hCAGE.hg19.refgene.osc.txt"#
+#
+### loading#
+data = read_table_CAGE_gene_expression(infile)#
+#
+### see the results#
+data$counts[1:3,1:3]#
+data$tpm[1:3,1:3]#
+data$lib.size[1:3]
+/Users/tmeehan/Documents/FANTOM interactions/data/hg19pw/Users/tmeehan/Documents/FANTOM interactions/data/results
+source("/Users/tmeehan/Documents/FANTOM interactions/data/FFsignature")
+signature("mesoepithelial vs endoepithelial")
+library("WGCNA")
+lnames = load(file = "normalized-hg19.RData");
+lnames = load(file = "/Users/tmeehan/Documents/FANTOM interactions/data/normalized-hg19.RData")
+powers = c(c(1:10), seq(from = 12, to=20, by=2))
+sft = pickSoftThreshold(datExpr, powerVector = powers, verbose = 5)
+sizeGrWindow(9, 5)par(mfrow = c(1,2));cex1 = 0.9;
+plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit,signed R^2",type="n",main = paste("Scale independence"));text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],labels=powers,cex=cex1,col="red");# this line corresponds to using an R^2 cut-off of habline(h=0.90,col="red")# Mean connectivity as a function of the soft-thresholding powerplot(sft$fitIndices[,1], sft$fitIndices[,5],xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",main = paste("Mean connectivity"))text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
+net = blockwiseModules(datExpr, power = 10, minModuleSize = 30,reassignThreshold = 0, mergeCutHeight = 0.25,numericLabels = TRUE, pamRespectsDendro = FALSE,saveTOMs = TRUE,saveTOMFileBase = "hg19TOM",verbose = 3)
+table(net$colors)
+sizeGrWindow(12, 9)
+mergedColors = labels2colors(net$colors)
+plotDendroAndColors(net$dendrograms[[1]], mergedColors[net$blockGenes[[1]]],"Module colors",dendroLabels = FALSE, hang = 0.03,addGuide = TRUE, guideHang = 0.05)
+moduleLabels = net$colorsmoduleColors = labels2colors(net$colors)MEs = net$MEs;geneTree = net$dendrograms[[1]];save(MEs, moduleLabels, moduleColors, geneTree,file = "hg19-simple-networkConstruction-auto.RData")
+library(Biobase); library(puma); library(limma)
+exprs <- as.matrix(read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/expression_values.txt", header = TRUE, row.names = 1))
+ad = assayDataNew("lockedEnvironment", exprs = exprs)
+dim(exprs)
+head(exprs[, 1:5])
+pData <- read.delim("/Users/tmeehan/array/cel-file/pdata.txt", sep="\t")
+metadata <- data.frame(labelDescription = c("Samples"))
+phenoData <- new("AnnotatedDataFrame", data = pData, varMetadata = metadata)
+pData <- read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/pData.txt", sep="\t")
+metadata <- data.frame(labelDescription = c("Samples"))
+phenoData <- new("AnnotatedDataFrame", data = pData, varMetadata = metadata)
+pData(phenoData)
+sampleNames(ad) <- sampleNames(phenoData)
+eset <- new("ExpressionSet", phenoData =phenoData, assayData = ad)
+pData(eset) <- data.frame("class"=c("B Fol PC", "B Fol PC", "B Fol PC", "B FrE Bm", "B FrE Bm", "B FrE Bm", "B FrE FL", "B FrE FL", "B FrE FL", "B FrF BM", "B FrF BM", "B FrF BM", "B GC Sp", "B GC Sp", "B GC Sp", "B MZ Sp", "B MZ Sp", "B MZ Sp", "B T1", "B T1", "B T1", "B T2", "B T2", "B T2", "B T3", "B T3", "B T3", "B1a PC", "B1a PC", "B1a PC", "B1a SP", "B1a SP", "B1a SP", "B1b SP", "B1b SP", "B1b SP", "B6.D6", "B6.D6", "B6.D6", "B6.G1", "B6.G1", "B6.G1", "B FO Sp", "B FO Sp", "B FO Sp", "103-11b+LV", "103-11b+LV", "103-11b+LV", "103+11b-LV", "103+11b-LV", "CD8- TH", "CD8- TH", "CD8- TH", "Triple Neg MLN", "Triple Neg Sp", "Triple Neg Sp", "Triple Neg Sp", "11b+ MLN", "11b+ MLN", "CD8+ TH", "CD8+ TH", "CD8+ TH", "Langerhen", "Langerhen", "PDC CD8- SP", "PDC CD8- SP", "PDC CD8- SP", "PDC CD8+ SP", "PDC CD8+ SP", "PDC CD8+ SP", "DC1 LN", "DC1 LN", "DC1 LN", "DC1 LU", "DC1 LU", "DC1 LU", "DC1 MLN", "DC1 MLN", "DC1 MLN", "DC1 SP", "DC1 SP", "DC1 SP", "DC1 SP", "DC1 SP", "DC2 LN", "DC2 LN", "DC2 LN", "DC2 LU",
+ "DC2 LU", "DC2 LU", "DC2 MLN", "DC2 MLN", "DC2 MLN", "DC2 SP", "DC2 SP", "DC2 SP", "DC2 SP", "DC2 SP", "DC3 MLN", "DC3 SP", "DC3 SP", "DC3 SP", "DC4 MLN", "DC4 MLN", "DC6 LN", "DC6 LN", "DC6 LN", "DC7 LN", "DC7 LN", "DC7 LN", "DC8 LN", "DC8 LN", "DC8 LN", "DC9 LN", "DC9 LN", "DC9 LN", "Neutrophil", "Neutrophil", "Neutrophil", "Neutrophil", "Vg3 e17 Th", "Vg3 e17 Th", "Vg3 e17 Th", "Mo-II-480Hi-PC", "Mo-II-480Hi-PC", "Mo-II-480Hi-PC", "MO lung", "MO lung", "MO lung", "MO red pulp", "MO red pulp", "MO red pulp", "MO THIO5II- 480 HI", "MO THIO5II- 480 HI", "MO THIO5II- 480 HI", "MO THIO5II- 480 int", "MO THIO5II- 480 int", "MO THIO5II- 480 int", "MO THIO5II+ 480 int", "MO THIO5II+ 480 int", "MO THIO5II+ 480 int", "MO THIO5II+ 480lo", "MO THIO5II+ 480lo", "MO THIO5II+ 480lo", "Mon-6C-II- blood", "Mon-6C-II- blood", "Mon-6C-II- blood", "Mon-6C-II+ blood", "Mon-6C-II+ blood", "Mon-6C-II+ LN", "Mon-6C-II+ LN", "Mon-6C-II+ LN", "MO.6C-IIINT.BL#1.CEL", "MO.6C-IIINT.BL#1.CEL", "MO.6C-IIINT.BL#1.CEL", "MO.6C-IIINT.BL
+#1.CEL", "MO.6C-IIINT.BL#1.CEL", "Mon-6C+II- blood", "Mon-6C+II- blood", "Mon-6C+II- blood", "Mon-6C+II- LN", "Mon-6C+II- LN", "Mon-6C+II- LN", "Mon-6C+II+ blood", "Mon-6C+II+ blood", "Mon-6C+II+ blood", "Mon-6C+II+ blood", "NK 49CI-", "NK 49CI-", "NK 49CI-", "NK 49CI+", "NK 49CI+", "NK 49CI+", "NK 49 H-", "NK 49 H-", "NK 49 H-", "NK 49H+", "NK 49H+", "NK 49H+", "NK", "NK", "NK", "NKT4-Liver", "NKT4-Liver", "NKT4-Liver", "NKT4-Liver", "NKT4-Spleen", "NKT4-Spleen", "NKT4-Spleen", "NKT4+-Liver", "NKT4+-Liver", "NKT4+-Liver", "NKT4+-Liver", "NKT4+-Spleen", "NKT4+-Spleen", "NKT4+-Spleen", "Foxp3-", "Foxp3-", "Foxp3-", "Foxp3+CD25+", "Foxp3+CD25+", "Foxp3+CD25+", "CD4 memory LN", "CD4 memory LN", "CD4 memory LN", "CD4 Mem Spleen", "CD4 Mem Spleen", "CD4 Mem Spleen", "CD4 Mem CD44hiCD62L LN", "CD4 Mem CD44hiCD62L LN", "CD4 Mem CD44hiCD62L LN", "CD4 Mem CD44hiCD62L spleen", "CD4 Mem CD44hiCD62L spleen", "CD4 Mem CD44hiCD62L spleen", "CD4 naive Ln", "CD4 naive Ln", "CD4 naive Ln", "CD4 naive MLN", "CD4 naive MLN",
+"CD4 naive MLN", "CD4 naive PP", "CD4 naive PP", "CD4 naive Sp", "CD4 naive Sp", "CD4 naive Sp", "CD4 naive Sp", "CD4 mature TH", "CD4 mature TH", "CD4 mature TH", "CD8 Memory LN", "CD8 Memory LN", "CD8 Memory LN", "CD8 Memory Sp", "CD8 Memory Sp", "CD8 Memory Sp", "CD8 naive LN", "CD8 naive LN", "CD8 naive LN", "CD8 naive MLN", "CD8 naive MLN", "CD8 naive MLN", "CD8 naive PP", "CD8 naive PP", "CD8 naive PP", "CD8 naive SP", "CD8 naive SP", "CD8 naive SP", "CD8 mature TH", "CD8 mature TH", "CD8 mature TH", "GD T cell SP", "GD T cell SP", "GD T cell SP", "GD T cell TH", "GD T cell TH", "GD T cell TH", "Vg2- SP", "Vg2- SP", "Vg2- SP", "Vg2+ Sp", "Vg2+ Sp", "Vg2+ Sp", "Vg5- IEL", "Vg5- IEL", "Vg5- IEL", "Vg5+ IEL", "Vg5+ IEL", "Vg5+ IEL"))
+design <-createDesignMatrix(eset)
+design
+fit <- lmFit(eset, design)
+dim(fit)
+head(fit)
+head(fit[1:3,1:3])
+?head
+head(fit, [1:3,1:3])
+head(fit, 3)
+fit
+?fit
+?Lmfit
+?lmfit
+?lmFit
+fit$coefficients
+library(WGCNA);
+options(stringsAsFactors = FALSE)
+femData = fit$coeffecients
+dim(femData)
+femData = fit$coefficients
+dim(femData)
+names(femData)
+datExpr0 = as.data.frame(t(femData))
+head(datExpr0)
+gsg = goodSamplesGenes(datExpr0, verbose = 3)
+gsg$allOK
+sampleTree = flashClust(dist(datExpr0), method = "average");
+sizeGrWindow(12,9)
+par(cex = 0.6);par(mar = c(0,4,2,0))plot(sampleTree, main = "Sample clustering to detect outliers", sub="", xlab="", cex.lab = 1.5,cex.axis = 1.5, cex.main = 2)
+femaleSamples = rownames(datExpr)
+femaleSamples = rownames(datExpr0)
+femaleSamples
+datExpr = datExpr0
+powers = c(c(1:10), seq(from = 12, to=20, by=2))
+sft = pickSoftThreshold(datExpr, powerVector = powers, verbose = 5)# Plot the results:sizeGrWindow(9, 5)par(mfrow = c(1,2));cex1 = 0.9;# Scale-free topology fit index as a function of the soft-thresholding powerplot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],xlab="Soft Threshold (power)",ylab="Scale Free Topology Model Fit,signed R^2",type="n",main = paste("Scale independence"));text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],labels=powers,cex=cex1,col="red");# this line corresponds to using an R^2 cut-off of habline(h=0.90,col="red")# Mean connectivity as a function of the soft-thresholding powerplot(sft$fitIndices[,1], sft$fitIndices[,5],xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",main = paste("Mean connectivity"))text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
+net = blockwiseModules(datExpr, power = 16, minModuleSize = 30,reassignThreshold = 0, mergeCutHeight = 0.25,numericLabels = TRUE, pamRespectsDendro = FALSE,saveTOMs = TRUE,saveTOMFileBase = "femaleMouseTOM",verbose = 3)
+table(net$colors)
+sizeGrWindow(12, 9)# Convert labels to colors for plottingmergedColors = labels2colors(net$colors)# Plot the dendrogram and the module colors underneathplotDendroAndColors(net$dendrograms[[1]], mergedColors[net$blockGenes[[1]]],"Module colors",dendroLabels = FALSE, hang = 0.03,addGuide = TRUE, guideHang = 0.05)
+moduleLabels = net$colorsmoduleColors = labels2colors(net$colors)MEs = net$MEs;geneTree = net$dendrograms[[1]];save(MEs, moduleLabels, moduleColors, geneTree,file = "ImmGen-networkConstruction-auto.RData")
+?plotDendroAndColors
+row.names(datExpr0)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+?read.delim
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, row.names = 1))
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, row.names = 1)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, row.names = 1)
+head(traitData)
+traitData = traitData = read.csv(""/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.csv(""/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.csv("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", col.names = 1, row.names = 1)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", col.names = 1, row.names = 1, header = FALSE)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, row.names = 1)
+traitData = read.csv(""/Users/tmeehan/array/cel-file/normalized_mature_data/traits.csv")
+traitData = read.csv("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.csv")
+traitData = read.csv("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.csv" unique= FALSE)
+traitData = read.csv("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.csv", col.names=1, row.names=1)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, row.names = 1)
+names(traitData)
+?make.names
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, col.names = 1, row.names = 1)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, col.names = 1, row.names = 1)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header= TRUE)
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", skip = 1, header = FALSE)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header= TRUE)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, col.names = 1, row.names = 1)
+?read.delim
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, col.names = NA, row.names = 1)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", col.names=NA)
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.xls")
+traitData = scan("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = scan(file = "/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.delim(file = "/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, col.names = 1, row.names = 1)
+?read.txt
+read.csv
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.xls")
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+countfields
+countFields
+traitData = read.delim(file = "/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, col.names = 1, row.names = 1)
+traitData = read.delim(file = "/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, col.names = 1, row.names = 1)
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+traitData = read.delim(file = "/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, col.names = 1, row.names = 1)
+traitData = read.delim(file = "/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = TRUE, col.names = 1, row.names = 1)
+traitData = read.table("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+count.fields("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt")
+?countfields
+?count.fields
+read.table(pipe("pbpaste"))
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, row.names = 1)
+traitData
+names(traitData)  <- c(traitData[1,])
+traitData
+allTraits <- traitData[-r(1),]
+allTraits <- traitData[-c(1),]
+allTraits
+dim(allTraits)names(allTraits)
+names(datExpr)
+dim(datExpr)
+column.name(datExpr)
+names(datExpr)
+names(datExpr0)
+rownames(datExpr)
+traitData
+allTraits
+allTraits[1,]
+rownames(datExpr)
+rownames(allTraits)
+traitRows = match(rownames(datExpr), rownames(allTraits))
+traitRows
+datTraits = allTraits[traitRows, -1];
+rownames(datTraits) = allTraits[traitRows, 1];
+datTraits
+sampleTree2 = flashClust(dist(datExpr), method = "average")
+traitColors = numbers2colors(datTraits, signed = FALSE);
+traitColors = numbers2colors(as.numeric(datTraits), signed = FALSE);
+dim(datExpr)
+names(datExpr)
+datTraits = allTraits[traitRows, -1];
+datTraits
+rownames(datTraits) = allTraits[traitRows, 1];
+collectGarbage();
+sampleTree2 = flashClust(dist(datExpr), method = "average")
+traitColors = numbers2colors(datTraits, signed = FALSE);
+datTraits
+datTraits[-c(1,)]
+datTraits
+datTraits[-c(,1)]
+datTraits[-c(1,1)]
+traitData = read.csv("/Users/tmeehan/Documents/WGNA package/ClinicalTraits.csv");
+dim(traitData)names(traitData)
+allTraits = traitData[, -c(31, 16)];allTraits = allTraits[, c(2, 11:36) ];dim(allTraits)names(allTraits)
+row.names(allTraits)
+allTraits$Mice
+?match
+traitData = read.delim("/Users/tmeehan/array/cel-file/normalized_mature_data/traits.txt", header = FALSE, row.names = 1)
+names(traitData)  <- c(traitData[1,])
+traitData
+allTraits <- traitData[-c(1,)]
+allTraits <- traitData[-c(1,),]
+load(file=/Users/tmeehan/ImmGen-networkConstruction-auto.RData)
+load("/Users/tmeehan/ImmGen-networkConstruction-auto.RData")
+ls
+ls()
+table()
+table(net$colors)
+counts
+load("/Users/tmeehan/ImmGen-networkConstruction-auto.RData")
+ls()
+load("/Users/tmeehan/hg19-simple-networkConstruction-auto.RData")
+ls()
+load("/Users/tmeehan/ImmGen-networkConstruction-auto.RData")
+ls()
+OLlist3
+?match
+library("goseq")
+supportedGenomes()
+source("/Users/tmeehan/array analysis/new-r-run.txt")
+signature("CL_0000824")
+source("/Users/tmeehan/array analysis/new-r-run.txt")
+signature("CL_0000824")

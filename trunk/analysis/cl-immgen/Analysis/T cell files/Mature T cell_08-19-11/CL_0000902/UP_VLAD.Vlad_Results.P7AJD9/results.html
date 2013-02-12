@@ -1,0 +1,369 @@
+<html><head>
+<style type="text/css">       
+
+    body {        
+	background-color: MediumAquaMarine;
+    }
+
+    .zdark {
+	background-color: #bbbbbb;
+    }
+
+    .zlight {
+	background-color: #ffffff;
+    }
+
+    div.node-hilite {
+	position : absolute;
+	border : medium solid red;
+	display : none;
+    }
+
+    div.results {
+	width: 95%;
+	height: 480;
+	overflow: auto;
+    }
+
+    table.results {
+	border: thin solid black;
+    }
+
+    .label { 
+	font-weight: bold;
+	background-color: #333;
+	color: white;
+    }
+
+    table.results tr {
+    }
+
+    table.results th {
+	border-right: thin solid black;
+    }
+
+    table.results td {
+	border-top: thin solid black;
+	border-right: thin solid black;
+    }
+
+    table.results td.termlinks {
+	white-space: nowrap;
+    }
+
+    table.summary {
+	white-space:nowrap;
+	padding: 0px;
+	border-left   : thin solid gray;
+	border-bottom : thin solid gray;
+    }
+
+    table.summary td {
+	border-top : thin solid gray;
+	border-right : thin solid gray;
+    }
+
+    table.summary td:first-child {
+	background-color: #333;
+	color: white;
+    }
+
+    .edgetypelegend { 
+	 background-color:gray;
+	 padding:4px;
+	 position:absolute;
+    }
+
+</style>
+
+<script language="javascript">
+function submitForm(idlist){
+    var form = document.getElementById("_batch_link_form_");
+    form.IDSet.value = idlist;
+    form.submit();
+}
+function nodeClicked(areaElt,evt){
+    var h = areaElt.href;
+    var i = h.lastIndexOf('#');
+    if(i == -1)
+        return true;
+    var goid = h.substring(i+1);
+    var e = document.getElementById(goid);
+    if(e){
+        e.scrollIntoView()
+	evt.cancelBubble = true;
+        return false;
+    }
+    return true;
+}
+function findAreaNode(id){
+    return document.getElementById("area_"+id);
+}
+function findImgForArea(a){
+    var map = a.parentNode;
+    var mapname = map.name;
+    var imgid = "img_"+mapname.slice(4);
+    return document.getElementById(imgid);
+}
+function hilightNode(id){
+    var a = findAreaNode(id);
+    var d = window.nodeHilightDiv;
+    if(a){
+	var img = findImgForArea(a);
+	if(! img) return;
+	var coords = a.coords.split(",");
+	var x = parseInt(coords[0]);
+	var y = parseInt(coords[1]);
+	d.style.left = x + img.offsetLeft;
+	d.style.top  = y + img.offsetTop;
+	d.style.width = parseInt(coords[2]) - x;
+	d.style.height = parseInt(coords[3]) - y;
+	d.style.display = "block";
+	d.scrollIntoView();
+    }
+}
+function getWindowScroll(){
+    if(window.pageXOffset === undefined)
+	if(document.body.scrollLeft === undefined)
+	    return [document.documentElement.scrollLeft,
+	            document.documentElement.scrollTop];
+	else
+	    return [document.body.scrollLeft,
+	            document.body.scrollTop];
+    else 
+	return [window.pageXOffset,
+	        window.pageYOffset];
+}
+
+function showEdgeTypeLegend(evt){
+    var img = document.getElementById("edgetypelegend");
+    if(img){
+	var wscroll = getWindowScroll();
+	img.style.display = 'block';
+	img.style.left = evt.clientX + wscroll[0] + 5;
+	img.style.top  = evt.clientY + wscroll[1] + 5;
+	if( typeof(evt.stopPropagation) === "function" )
+	    evt.stopPropagation();
+    }
+}
+
+function hideEdgeTypeLegend(){
+    var img = document.getElementById("edgetypelegend");
+    if(img) img.style.display='none';
+}
+
+window.onload = function(){
+    window.nodeHilightDiv = document.createElement('div');
+    document.body.appendChild(window.nodeHilightDiv);
+    window.nodeHilightDiv.className = 'node-hilite';
+    window.nodeHilightDiv.onclick = function(){ window.nodeHilightDiv.style.display="none"; };
+}
+</script>
+</head><body>
+<form target="_blank" name="_gene_link_form_" id="_batch_link_form_" 
+      action="http://www.informatics.jax.org/javawi2/servlet/WIFetch"
+      method="post" enctype='multipart/form-data'>
+      <input type="hidden" name="page" value="batchSummary" />
+<input type="hidden" name="IDType" value="MGIMarker" />
+<input type="hidden" name="returnSet" value="Nomenclature" />
+<input type="hidden" name="returnSet" value="Location" />
+<input type="hidden" name="printFormat" value="toolbar" />
+<input type="hidden" name="IDSet" value="%s" />
+
+</form>
+<h1><img src="auxfiles/vlad_logo.gif" align="middle" /><a name="top">Vlad Results</a></h1>
+<table class="summary" cellspacing="0"><tr><td class="label">Vlad version:</td><td>v1.5</td></tr><tr><td class="label">Date:</td><td>Fri Aug 19 13:40:27 2011</td></tr><tr><td class="label">Run time:</td><td>35.56 sec</td></tr><tr><td class="label">Ontology file:</td><td>gene_ontology.obo</td></tr><tr><td class="label">Ontology date:</td><td>Thu Aug 18 19:30:00 2011</td></tr><tr><td class="label">Annotation file:</td><td>gene_association.mgi</td></tr><tr><td class="label">Annotation date:</td><td>???</td></tr><tr><td class="label">Analysis type:</td><td>enrichment</td></tr><tr><td class="label">Excluded evidence codes:</td><td>ND</td></tr><tr><td class="label">Number of query sets:</td><td>1</td></tr><tr><td class="label">Query set 1:</td><td>CL_0000902-up.xls (n=13; 61 not found)</td></tr><tr><td class="label">Universe set:</td><td>default (everything)</td></tr><tr><td class="label">Graph display:</td><td>Top 25 scoring terms and their ancestors. Interior nodes have been culled.</td></tr></table>
+<b>Jump to:</b> <a href="#biological_process" target="_self">biological_process</a> | <a href="#cellular_component" target="_self">cellular_component</a> | <a href="#molecular_function" target="_self">molecular_function</a> | <a href="#__unannotated__" target="_self">Unannotated id/symbols</a><p><h3><a name="biological_process">biological_process</a> (<a href="#top">top</a>)</h3><img id="img_biological_process" src="auxfiles/vlad.results.biological_process.png" usemap="#map_biological_process" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_biological_process">
+<area id="area_GO:0050865" shape="rect" href="#GO:0050865" coords="343,478,449,586"  alt="GO:0050865 regulation of cell activation (4.92e-04)" title="GO:0050865 regulation of cell activation (4.92e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050866" shape="rect" href="#GO:0050866" coords="332,640,460,768"  alt="GO:0050866 negative regulation of cell activation (2.14e-05)" title="GO:0050866 negative regulation of cell activation (2.14e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002694" shape="rect" href="#GO:0002694" coords="201,650,308,758"  alt="GO:0002694 regulation of leukocyte activation (4.32e-04)" title="GO:0002694 regulation of leukocyte activation (4.32e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050863" shape="rect" href="#GO:0050863" coords="104,1017,221,1135"  alt="GO:0050863 regulation of T cell activation (1.04e-04)" title="GO:0050863 regulation of T cell activation (1.04e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050868" shape="rect" href="#GO:0050868" coords="251,1198,384,1333"  alt="GO:0050868 negative regulation of T cell activation (5.73e-06)" title="GO:0050868 negative regulation of T cell activation (5.73e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042129" shape="rect" href="#GO:0042129" coords="99,1201,227,1329"  alt="GO:0042129 regulation of T cell proliferation (2.01e-05)" title="GO:0042129 regulation of T cell proliferation (2.01e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002695" shape="rect" href="#GO:0002695" coords="319,823,447,951"  alt="GO:0002695 negative regulation of leukocyte activation (1.89e-05)" title="GO:0002695 negative regulation of leukocyte activation (1.89e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001776" shape="rect" href="#GO:0001776" coords="9,311,121,423"  alt="GO:0001776 leukocyte homeostasis (2.52e-04)" title="GO:0001776 leukocyte homeostasis (2.52e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002260" shape="rect" href="#GO:0002260" coords="9,475,121,589"  alt="GO:0002260 lymphocyte homeostasis (2.27e-04)" title="GO:0002260 lymphocyte homeostasis (2.27e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050709" shape="rect" href="#GO:0050709" coords="484,646,599,762"  alt="GO:0050709 negative regulation of protein secretion (1.32e-04)" title="GO:0050709 negative regulation of protein secretion (1.32e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050710" shape="rect" href="#GO:0050710" coords="471,825,593,948"  alt="GO:0050710 negative regulation of cytokine secretion (4.43e-05)" title="GO:0050710 negative regulation of cytokine secretion (4.43e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002376" shape="rect" href="#GO:0002376" coords="149,161,229,241"  alt="GO:0002376 immune system process (1.47e-02)" title="GO:0002376 immune system process (1.47e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002682" shape="rect" href="#GO:0002682" coords="255,321,345,413"  alt="GO:0002682 regulation of immune system process (4.08e-03)" title="GO:0002682 regulation of immune system process (4.08e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002683" shape="rect" href="#GO:0002683" coords="145,473,263,591"  alt="GO:0002683 negative regulation of immune system process (9.14e-05)" title="GO:0002683 negative regulation of immune system process (9.14e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050794" shape="rect" href="#GO:0050794" coords="463,319,556,414"  alt="GO:0050794 regulation of cellular process (2.71e-03)" title="GO:0050794 regulation of cellular process (2.71e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048523" shape="rect" href="#GO:0048523" coords="473,496,545,568"  alt="GO:0048523 negative regulation of cellular process (3.24e-02)" title="GO:0048523 negative regulation of cellular process (3.24e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042127" shape="rect" href="#GO:0042127" coords="671,473,788,591"  alt="GO:0042127 regulation of cell proliferation (1.04e-04)" title="GO:0042127 regulation of cell proliferation (1.04e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032945" shape="rect" href="#GO:0032945" coords="608,1006,747,1146"  alt="GO:0032945 negative regulation of mononuclear cell proliferation (2.31e-06)" title="GO:0032945 negative regulation of mononuclear cell proliferation (2.31e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050672" shape="rect" href="#GO:0050672" coords="408,1195,547,1335"  alt="GO:0050672 negative regulation of lymphocyte proliferation (2.31e-06)" title="GO:0050672 negative regulation of lymphocyte proliferation (2.31e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008284" shape="rect" href="#GO:0008284" coords="911,647,1023,761"  alt="GO:0008284 positive regulation of cell proliferation (2.03e-04)" title="GO:0008284 positive regulation of cell proliferation (2.03e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042130" shape="rect" href="#GO:0042130" coords="245,1384,389,1528"  alt="GO:0042130 negative regulation of T cell proliferation (1.09e-06)" title="GO:0042130 negative regulation of T cell proliferation (1.09e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051249" shape="rect" href="#GO:0051249" coords="185,831,295,942"  alt="GO:0051249 regulation of lymphocyte activation (2.88e-04)" title="GO:0051249 regulation of lymphocyte activation (2.88e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051250" shape="rect" href="#GO:0051250" coords="389,1011,520,1141"  alt="GO:0051250 negative regulation of lymphocyte activation (1.33e-05)" title="GO:0051250 negative regulation of lymphocyte activation (1.33e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050670" shape="rect" href="#GO:0050670" coords="245,1015,365,1137"  alt="GO:0050670 regulation of lymphocyte proliferation (6.08e-05)" title="GO:0050670 regulation of lymphocyte proliferation (6.08e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050789" shape="rect" href="#GO:0050789" coords="359,156,449,247"  alt="GO:0050789 regulation of biological process (4.76e-03)" title="GO:0050789 regulation of biological process (4.76e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048519" shape="rect" href="#GO:0048519" coords="369,332,439,401"  alt="GO:0048519 negative regulation of biological process (4.54e-02)" title="GO:0048519 negative regulation of biological process (4.54e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048518" shape="rect" href="#GO:0048518" coords="580,310,692,423"  alt="GO:0048518 positive regulation of biological process (2.12e-04)" title="GO:0048518 positive regulation of biological process (2.12e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070664" shape="rect" href="#GO:0070664" coords="761,817,900,957"  alt="GO:0070664 negative regulation of leukocyte proliferation (2.47e-06)" title="GO:0070664 negative regulation of leukocyte proliferation (2.47e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008285" shape="rect" href="#GO:0008285" coords="767,643,887,765"  alt="GO:0008285 negative regulation of cell proliferation (5.44e-05)" title="GO:0008285 negative regulation of cell proliferation (5.44e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0065007" shape="rect" href="#GO:0065007" coords="361,6,447,93"  alt="GO:0065007 biological regulation (6.91e-03)" title="GO:0065007 biological regulation (6.91e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048872" shape="rect" href="#GO:0048872" coords="5,141,125,261"  alt="GO:0048872 homeostasis of number of cells (7.51e-05)" title="GO:0048872 homeostasis of number of cells (7.51e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0032944" shape="rect" href="#GO:0032944" coords="617,826,737,947"  alt="GO:0032944 regulation of mononuclear cell proliferation (6.21e-05)" title="GO:0032944 regulation of mononuclear cell proliferation (6.21e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070663" shape="rect" href="#GO:0070663" coords="623,643,743,765"  alt="GO:0070663 regulation of leukocyte proliferation (6.62e-05)" title="GO:0070663 regulation of leukocyte proliferation (6.62e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046006" shape="rect" href="#GO:0046006" coords="104,1397,221,1515"  alt="GO:0046006 regulation of activated T cell proliferation (8.96e-05)" title="GO:0046006 regulation of activated T cell proliferation (8.96e-05)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="cellular_component">cellular_component</a> (<a href="#top">top</a>)</h3><img id="img_cellular_component" src="auxfiles/vlad.results.cellular_component.png" usemap="#map_cellular_component" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_cellular_component">
+<area id="area_GO:0043228" shape="rect" href="#GO:0043228" coords="561,334,644,418"  alt="GO:0043228 non-membrane-bounded organelle (2.05e-01)" title="GO:0043228 non-membrane-bounded organelle (2.05e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043232" shape="rect" href="#GO:0043232" coords="572,473,655,557"  alt="GO:0043232 intracellular non-membrane-bounded organelle (2.05e-01)" title="GO:0043232 intracellular non-membrane-bounded organelle (2.05e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005730" shape="rect" href="#GO:0005730" coords="572,933,655,1016"  alt="GO:0005730 nucleolus (2.13e-01)" title="GO:0005730 nucleolus (2.13e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043292" shape="rect" href="#GO:0043292" coords="313,605,420,712"  alt="GO:0043292 contractile fiber (7.94e-02)" title="GO:0043292 contractile fiber (7.94e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005856" shape="rect" href="#GO:0005856" coords="651,619,731,699"  alt="GO:0005856 cytoskeleton (2.43e-01)" title="GO:0005856 cytoskeleton (2.43e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030017" shape="rect" href="#GO:0030017" coords="153,919,265,1031"  alt="GO:0030017 sarcomere (5.95e-02)" title="GO:0030017 sarcomere (5.95e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031674" shape="rect" href="#GO:0031674" coords="103,1093,220,1211"  alt="GO:0031674 I band (4.28e-02)" title="GO:0031674 I band (4.28e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005865" shape="rect" href="#GO:0005865" coords="449,1080,593,1224"  alt="GO:0005865 striated muscle thin filament (9.32e-03)" title="GO:0005865 striated muscle thin filament (9.32e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044422" shape="rect" href="#GO:0044422" coords="727,335,809,417"  alt="GO:0044422 organelle part (2.14e-01)" title="GO:0044422 organelle part (2.14e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044449" shape="rect" href="#GO:0044449" coords="61,760,171,869"  alt="GO:0044449 contractile fiber part (6.60e-02)" title="GO:0044449 contractile fiber part (6.60e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043233" shape="rect" href="#GO:0043233" coords="805,473,888,556"  alt="GO:0043233 organelle lumen (2.20e-01)" title="GO:0043233 organelle lumen (2.20e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044446" shape="rect" href="#GO:0044446" coords="699,473,781,557"  alt="GO:0044446 intracellular organelle part (2.02e-01)" title="GO:0044446 intracellular organelle part (2.02e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044444" shape="rect" href="#GO:0044444" coords="184,502,208,527"  alt="GO:0044444 cytoplasmic part (8.81e-01)" title="GO:0044444 cytoplasmic part (8.81e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048471" shape="rect" href="#GO:0048471" coords="153,615,239,702"  alt="GO:0048471 perinuclear region of cytoplasm (1.84e-01)" title="GO:0048471 perinuclear region of cytoplasm (1.84e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015629" shape="rect" href="#GO:0015629" coords="763,770,851,859"  alt="GO:0015629 actin cytoskeleton (1.66e-01)" title="GO:0015629 actin cytoskeleton (1.66e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005667" shape="rect" href="#GO:0005667" coords="797,931,885,1019"  alt="GO:0005667 transcription factor complex (1.78e-01)" title="GO:0005667 transcription factor complex (1.78e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030016" shape="rect" href="#GO:0030016" coords="195,761,301,869"  alt="GO:0030016 myofibril (7.30e-02)" title="GO:0030016 myofibril (7.30e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030018" shape="rect" href="#GO:0030018" coords="5,1273,125,1394"  alt="GO:0030018 Z disc (3.62e-02)" title="GO:0030018 Z disc (3.62e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070013" shape="rect" href="#GO:0070013" coords="805,617,888,700"  alt="GO:0070013 intracellular organelle lumen (2.19e-01)" title="GO:0070013 intracellular organelle lumen (2.19e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031981" shape="rect" href="#GO:0031981" coords="651,771,739,859"  alt="GO:0031981 nuclear lumen (1.79e-01)" title="GO:0031981 nuclear lumen (1.79e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005575" shape="rect" href="#GO:0005575" coords="696,5,840,53"  alt="GO:0005575 cellular_component (1.00e+00)" title="GO:0005575 cellular_component (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044464" shape="rect" href="#GO:0044464" coords="449,131,473,155"  alt="GO:0044464 cell part (8.91e-01)" title="GO:0044464 cell part (8.91e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031974" shape="rect" href="#GO:0031974" coords="807,102,887,183"  alt="GO:0031974 membrane-enclosed lumen (2.29e-01)" title="GO:0031974 membrane-enclosed lumen (2.29e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043234" shape="rect" href="#GO:0043234" coords="995,788,1048,841"  alt="GO:0043234 protein complex (5.41e-01)" title="GO:0043234 protein complex (5.41e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043226" shape="rect" href="#GO:0043226" coords="668,239,703,273"  alt="GO:0043226 organelle (7.78e-01)" title="GO:0043226 organelle (7.78e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044428" shape="rect" href="#GO:0044428" coords="499,620,576,697"  alt="GO:0044428 nuclear part (2.63e-01)" title="GO:0044428 nuclear part (2.63e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044430" shape="rect" href="#GO:0044430" coords="875,767,971,863"  alt="GO:0044430 cytoskeletal part (1.30e-01)" title="GO:0044430 cytoskeletal part (1.30e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044424" shape="rect" href="#GO:0044424" coords="513,245,535,267"  alt="GO:0044424 intracellular part (9.16e-01)" title="GO:0044424 intracellular part (9.16e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043229" shape="rect" href="#GO:0043229" coords="668,359,703,393"  alt="GO:0043229 intracellular organelle (7.75e-01)" title="GO:0043229 intracellular organelle (7.75e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005635" shape="rect" href="#GO:0005635" coords="427,765,525,864"  alt="GO:0005635 nuclear envelope (1.13e-01)" title="GO:0005635 nuclear envelope (1.13e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031965" shape="rect" href="#GO:0031965" coords="340,917,455,1032"  alt="GO:0031965 nuclear membrane (5.06e-02)" title="GO:0031965 nuclear membrane (5.06e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016020" shape="rect" href="#GO:0016020" coords="437,232,485,280"  alt="GO:0016020 membrane (5.98e-01)" title="GO:0016020 membrane (5.98e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005874" shape="rect" href="#GO:0005874" coords="968,929,1059,1020"  alt="GO:0005874 microtubule (1.58e-01)" title="GO:0005874 microtubule (1.58e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009897" shape="rect" href="#GO:0009897" coords="276,329,369,423"  alt="GO:0009897 external side of plasma membrane (1.36e-01)" title="GO:0009897 external side of plasma membrane (1.36e-01)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="molecular_function">molecular_function</a> (<a href="#top">top</a>)</h3><img id="img_molecular_function" src="auxfiles/vlad.results.molecular_function.png" usemap="#map_molecular_function" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_molecular_function">
+<area id="area_GO:0000978" shape="rect" href="#GO:0000978" coords="284,985,396,1098"  alt="GO:0000978 RNA polymerase II core promoter proximal region sequence-specific DNA binding (7.59e-03)" title="GO:0000978 RNA polymerase II core promoter proximal region sequence-specific DNA binding (7.59e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000976" shape="rect" href="#GO:0000976" coords="268,644,361,739"  alt="GO:0000976 transcription regulatory region sequence-specific DNA binding (3.22e-02)" title="GO:0000976 transcription regulatory region sequence-specific DNA binding (3.22e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000987" shape="rect" href="#GO:0000987" coords="222,816,330,925"  alt="GO:0000987 core promoter proximal region sequence-specific DNA binding (1.03e-02)" title="GO:0000987 core promoter proximal region sequence-specific DNA binding (1.03e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000977" shape="rect" href="#GO:0000977" coords="354,821,453,920"  alt="GO:0000977 RNA polymerase II regulatory region sequence-specific DNA binding (2.10e-02)" title="GO:0000977 RNA polymerase II regulatory region sequence-specific DNA binding (2.10e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001158" shape="rect" href="#GO:0001158" coords="32,815,143,926"  alt="GO:0001158 enhancer sequence-specific DNA binding (8.13e-03)" title="GO:0001158 enhancer sequence-specific DNA binding (8.13e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044212" shape="rect" href="#GO:0044212" coords="246,470,320,544"  alt="GO:0044212 transcription regulatory region DNA binding (1.22e-01)" title="GO:0044212 transcription regulatory region DNA binding (1.22e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001012" shape="rect" href="#GO:0001012" coords="385,642,483,741"  alt="GO:0001012 RNA polymerase II regulatory region DNA binding (2.15e-02)" title="GO:0001012 RNA polymerase II regulatory region DNA binding (2.15e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0035326" shape="rect" href="#GO:0035326" coords="5,637,114,746"  alt="GO:0035326 enhancer binding (1.03e-02)" title="GO:0035326 enhancer binding (1.03e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001159" shape="rect" href="#GO:0001159" coords="138,638,244,745"  alt="GO:0001159 core promoter proximal region DNA binding (1.30e-02)" title="GO:0001159 core promoter proximal region DNA binding (1.30e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000981" shape="rect" href="#GO:0000981" coords="1163,102,1285,225"  alt="GO:0000981 sequence-specific DNA binding RNA polymerase II transcription factor activity (2.85e-03)" title="GO:0000981 sequence-specific DNA binding RNA polymerase II transcription factor activity (2.85e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001077" shape="rect" href="#GO:0001077" coords="1257,282,1352,379"  alt="GO:0001077 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription (2.53e-02)" title="GO:0001077 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription (2.53e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015197" shape="rect" href="#GO:0015197" coords="1309,106,1423,221"  alt="GO:0015197 peptide transporter activity (5.43e-03)" title="GO:0015197 peptide transporter activity (5.43e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042826" shape="rect" href="#GO:0042826" coords="1206,644,1302,739"  alt="GO:0042826 histone deacetylase binding (3.01e-02)" title="GO:0042826 histone deacetylase binding (3.01e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019899" shape="rect" href="#GO:0019899" coords="1289,482,1336,532"  alt="GO:0019899 enzyme binding (4.09e-01)" title="GO:0019899 enzyme binding (4.09e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0035035" shape="rect" href="#GO:0035035" coords="1326,636,1435,747"  alt="GO:0035035 histone acetyltransferase binding (9.21e-03)" title="GO:0035035 histone acetyltransferase binding (9.21e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005515" shape="rect" href="#GO:0005515" coords="1026,295,1095,366"  alt="GO:0005515 protein binding (1.48e-01)" title="GO:0005515 protein binding (1.48e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051525" shape="rect" href="#GO:0051525" coords="1127,437,1265,577"  alt="GO:0051525 NFAT protein binding (5.44e-04)" title="GO:0051525 NFAT protein binding (5.44e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070742" shape="rect" href="#GO:0070742" coords="758,450,872,564"  alt="GO:0070742 C2H2 zinc finger domain binding (6.51e-03)" title="GO:0070742 C2H2 zinc finger domain binding (6.51e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019955" shape="rect" href="#GO:0019955" coords="1018,464,1103,550"  alt="GO:0019955 cytokine binding (5.47e-02)" title="GO:0019955 cytokine binding (5.47e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002039" shape="rect" href="#GO:0002039" coords="896,458,994,556"  alt="GO:0002039 p53 binding (2.31e-02)" title="GO:0002039 p53 binding (2.31e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003682" shape="rect" href="#GO:0003682" coords="1119,273,1233,388"  alt="GO:0003682 chromatin binding (6.30e-03)" title="GO:0003682 chromatin binding (6.30e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004896" shape="rect" href="#GO:0004896" coords="877,643,973,740"  alt="GO:0004896 cytokine receptor activity (2.74e-02)" title="GO:0004896 cytokine receptor activity (2.74e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004911" shape="rect" href="#GO:0004911" coords="926,804,1059,937"  alt="GO:0004911 interleukin-2 receptor activity (1.09e-03)" title="GO:0004911 interleukin-2 receptor activity (1.09e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004888" shape="rect" href="#GO:0004888" coords="654,467,734,547"  alt="GO:0004888 transmembrane signaling receptor activity (8.56e-02)" title="GO:0004888 transmembrane signaling receptor activity (8.56e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008158" shape="rect" href="#GO:0008158" coords="634,632,754,751"  alt="GO:0008158 hedgehog receptor activity (3.80e-03)" title="GO:0008158 hedgehog receptor activity (3.80e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008188" shape="rect" href="#GO:0008188" coords="510,641,611,742"  alt="GO:0008188 neuropeptide receptor activity (1.99e-02)" title="GO:0008188 neuropeptide receptor activity (1.99e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003677" shape="rect" href="#GO:0003677" coords="373,287,458,374"  alt="GO:0003677 DNA binding (5.76e-02)" title="GO:0003677 DNA binding (5.76e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008301" shape="rect" href="#GO:0008301" coords="344,435,487,579"  alt="GO:0008301 DNA bending activity (3.38e-04)" title="GO:0008301 DNA bending activity (3.38e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042923" shape="rect" href="#GO:0042923" coords="511,457,609,557"  alt="GO:0042923 neuropeptide binding (2.21e-02)" title="GO:0042923 neuropeptide binding (2.21e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008270" shape="rect" href="#GO:0008270" coords="806,282,901,379"  alt="GO:0008270 zinc ion binding (2.77e-02)" title="GO:0008270 zinc ion binding (2.77e-02)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005488" shape="rect" href="#GO:0005488" coords="1033,135,1088,191"  alt="GO:0005488 binding (3.14e-01)" title="GO:0005488 binding (3.14e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0004983" shape="rect" href="#GO:0004983" coords="503,813,617,928"  alt="GO:0004983 neuropeptide Y receptor activity (5.43e-03)" title="GO:0004983 neuropeptide Y receptor activity (5.43e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019976" shape="rect" href="#GO:0019976" coords="997,627,1124,756"  alt="GO:0019976 interleukin-2 binding (1.63e-03)" title="GO:0019976 interleukin-2 binding (1.63e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003674" shape="rect" href="#GO:0003674" coords="989,5,1132,53"  alt="GO:0003674 molecular_function (1.00e+00)" title="GO:0003674 molecular_function (1.00e+00)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="__unannotated__">Unannotated IDs</a></h3>
+<table border="0">
+<tr>
+<td><b>CL_0000902-up.xls</b><br/>
+<textarea rows="15" cols="18">0.295423778671877
+0.470608678868182
+0.520901388029
+0.526594483036625
+0.588648411487698
+0.676165516645018
+0.85440937907356
+0.979640221811963
+1.5827954686177
+10380719
+10469278
+10482528
+10514732
+10555174
+10555177
+10555197
+10565735
+10580077
+10583286
+10598178
+10598292
+10603328
+10603417
+14460
+14608
+16184
+17760
+17996
+2.09594110138825
+2.22897079076055
+2.54493902600505
+2.73337612391482
+20371
+21.108455976876
+21.6327910264349
+212108
+233544
+242585
+27.3479516503484
+28.2339249555322
+3.09515373046176
+3.20990727236038
+3.97456829109097
+3.99324925588308
+4.16044094370164
+4.32457394301581
+4.52705244231127
+434215
+53.0484070396723
+54638
+6.6159603322803
+6.88886856666542
+68897
+7.48726814037049
+83395
+FoldChange
+NA
+Stdv
+entrezIDs
+mgiID
+symbol</textarea>
+</td>
+</table>
+<span id="edgetypelegend" 
+		     class="edgetypelegend"
+	             style="left:0;top:0;display:none;" 
+		     onclick="hideEdgeTypeLegend();" >
+			 <table border="0"><tr>
+			 <td style="text-align:left;cursor:pointer;">[close]</td>
+			 <td style="text-align:center;"><b>Legend: Edge Types</b></td>
+			 <td style="text-align:right;"><a href="http://www.geneontology.org/GO.ontology.relations.shtml" target="_blank">(details)</a></td>
+			 </tr>
+		         <tr><td colspan="3"><img src="auxfiles/legend.gif" /></td></tr>
+			 </table>
+		     </span>
+</body></html>

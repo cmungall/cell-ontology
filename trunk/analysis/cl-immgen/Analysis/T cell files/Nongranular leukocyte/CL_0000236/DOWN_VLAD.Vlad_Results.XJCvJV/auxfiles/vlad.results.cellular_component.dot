@@ -1,0 +1,84 @@
+digraph "cellular_component" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">cellular_component</FONT></TD></TR><TR><TD BORDER="0">CL_0000236-down.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0071944" [ URL = "#GO:0071944", label = <<TABLE BORDER="0"><TR><TD>GO:0071944<BR/>cell periphery<BR/>(3.86e-01)</TD></TR></TABLE>>, width = 0.529674987137, shape = "box", fontsize = 5.0, height = 0.529674987137 ];
+"GO:0044444" [ URL = "#GO:0044444", label = "", width = 0.430721020452, shape = "box", height = 0.430721020452 ];
+"GO:0000267" [ URL = "#GO:0000267", label = <<TABLE BORDER="0"><TR><TD>GO:0000267<BR/>cell fraction<BR/>(1.45e-01)</TD></TR></TABLE>>, width = 0.746778620666, shape = "box", fontsize = 5.3768060688, height = 0.746778620666 ];
+"GO:0005575" [ URL = "#GO:0005575", label = <<TABLE BORDER="0"><TR><TD>GO:0005575<BR/>cellular_component</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0005622" [ URL = "#GO:0005622", label = "", width = 0.483825324445, shape = "box", height = 0.483825324445 ];
+"GO:0044425" [ URL = "#GO:0044425", label = "", width = 0.368400894118, shape = "box", height = 0.368400894118 ];
+"GO:0012505" [ URL = "#GO:0012505", label = <<TABLE BORDER="0"><TR><TD>GO:0012505<BR/>endomembrane system<BR/>(8.26e-02)</TD></TR></TABLE>>, width = 0.8473943801, shape = "box", fontsize = 6.10123953672, height = 0.8473943801 ];
+"GO:0005623" [ URL = "#GO:0005623", label = "", width = 0.208876834612, shape = "box", height = 0.208876834612 ];
+"GO:0032991" [ URL = "#GO:0032991", label = <<TABLE BORDER="0"><TR><TD>GO:0032991<BR/>macromolecular complex<BR/>(3.76e-01)</TD></TR></TABLE>>, width = 0.536612051893, shape = "box", fontsize = 5.0, height = 0.536612051893 ];
+"GO:0005829" [ URL = "#GO:0005829", label = <<TABLE BORDER="0"><TR><TD>GO:0005829<BR/>cytosol<BR/>(1.03e-01)</TD></TR></TABLE>>, width = 0.810101100667, shape = "box", fontsize = 5.8327279248, height = 0.810101100667 ];
+"GO:0005626" [ URL = "#GO:0005626", label = <<TABLE BORDER="0"><TR><TD>GO:0005626<BR/>insoluble<BR/>fraction<BR/>(1.13e-01)</TD></TR></TABLE>>, width = 0.792500814582, shape = "box", fontsize = 5.70600586499, height = 0.792500814582 ];
+"GO:0030904" [ URL = "#GO:0030904", label = <<TABLE BORDER="0"><TR><TD>GO:0030904<BR/>retromer complex<BR/>(3.74e-04)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0044464" [ URL = "#GO:0044464", label = "", width = 0.208876834612, shape = "box", height = 0.208876834612 ];
+"GO:0016020" [ URL = "#GO:0016020", label = <<TABLE BORDER="0"><TR><TD>GO:0016020<BR/>membrane<BR/>(2.40e-01)</TD></TR></TABLE>>, width = 0.644491273151, shape = "box", fontsize = 5.0, height = 0.644491273151 ];
+"GO:0005737" [ URL = "#GO:0005737", label = <<TABLE BORDER="0"><TR><TD>GO:0005737<BR/>cytoplasm<BR/>(2.40e-01)</TD></TR></TABLE>>, width = 0.644042485193, shape = "box", fontsize = 5.0, height = 0.644042485193 ];
+"GO:0044424" [ URL = "#GO:0044424", label = "", width = 0.496074599508, shape = "box", height = 0.496074599508 ];
+"GO:0043234" [ URL = "#GO:0043234", label = <<TABLE BORDER="0"><TR><TD>GO:0043234<BR/>protein complex<BR/>(3.18e-01)</TD></TR></TABLE>>, width = 0.579173269571, shape = "box", fontsize = 5.0, height = 0.579173269571 ];
+"GO:0005886" [ URL = "#GO:0005886", label = <<TABLE BORDER="0"><TR><TD>GO:0005886<BR/>plasma membrane<BR/>(3.77e-01)</TD></TR></TABLE>>, width = 0.535364986985, shape = "box", fontsize = 5.0, height = 0.535364986985 ];
+"GO:0005624" [ URL = "#GO:0005624", label = <<TABLE BORDER="0"><TR><TD>GO:0005624<BR/>membrane<BR/>fraction<BR/>(1.08e-01)</TD></TR></TABLE>>, width = 0.800827821548, shape = "box", fontsize = 5.76596031514, height = 0.800827821548 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+"GO:0005623" -> "GO:0044464";
+"GO:0016020" -> "GO:0044425";
+"GO:0005622" -> "GO:0044424";
+"GO:0012505" -> "GO:0030904";
+"GO:0071944" -> "GO:0005886";
+"GO:0005737" -> "GO:0044444";
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0044464" -> "GO:0044424";
+"GO:0044464" -> "GO:0005622";
+"GO:0044424" -> "GO:0044444";
+"GO:0005626" -> "GO:0005624";
+"GO:0016020" -> "GO:0005886";
+"GO:0044424" -> "GO:0005737";
+"GO:0005575" -> "GO:0032991";
+"GO:0044464" -> "GO:0012505";
+"GO:0044464" -> "GO:0044425";
+"GO:0044425" -> "GO:0030904";
+"GO:0044444" -> "GO:0005829";
+"GO:0044464" -> "GO:0071944";
+"GO:0044464" -> "GO:0000267";
+"GO:0044464" -> "GO:0016020";
+"GO:0032991" -> "GO:0043234";
+"GO:0005575" -> "GO:0005623";
+"GO:0000267" -> "GO:0005626";
+"GO:0043234" -> "GO:0030904";
+"GO:0005575" -> "GO:0044464";
+}
+}
+}

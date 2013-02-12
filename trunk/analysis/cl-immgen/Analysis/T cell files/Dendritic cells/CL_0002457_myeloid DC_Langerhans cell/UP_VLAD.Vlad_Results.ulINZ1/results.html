@@ -1,0 +1,1842 @@
+<html><head>
+<style type="text/css">       
+
+    body {        
+	background-color: MediumAquaMarine;
+    }
+
+    .zdark {
+	background-color: #bbbbbb;
+    }
+
+    .zlight {
+	background-color: #ffffff;
+    }
+
+    div.node-hilite {
+	position : absolute;
+	border : medium solid red;
+	display : none;
+    }
+
+    div.results {
+	width: 95%;
+	height: 480;
+	overflow: auto;
+    }
+
+    table.results {
+	border: thin solid black;
+    }
+
+    .label { 
+	font-weight: bold;
+	background-color: #333;
+	color: white;
+    }
+
+    table.results tr {
+    }
+
+    table.results th {
+	border-right: thin solid black;
+    }
+
+    table.results td {
+	border-top: thin solid black;
+	border-right: thin solid black;
+    }
+
+    table.results td.termlinks {
+	white-space: nowrap;
+    }
+
+    table.summary {
+	white-space:nowrap;
+	padding: 0px;
+	border-left   : thin solid gray;
+	border-bottom : thin solid gray;
+    }
+
+    table.summary td {
+	border-top : thin solid gray;
+	border-right : thin solid gray;
+    }
+
+    table.summary td:first-child {
+	background-color: #333;
+	color: white;
+    }
+
+    .edgetypelegend { 
+	 background-color:gray;
+	 padding:4px;
+	 position:absolute;
+    }
+
+</style>
+
+<script language="javascript">
+function submitForm(idlist){
+    var form = document.getElementById("_batch_link_form_");
+    form.IDSet.value = idlist;
+    form.submit();
+}
+function nodeClicked(areaElt,evt){
+    var h = areaElt.href;
+    var i = h.lastIndexOf('#');
+    if(i == -1)
+        return true;
+    var goid = h.substring(i+1);
+    var e = document.getElementById(goid);
+    if(e){
+        e.scrollIntoView()
+	evt.cancelBubble = true;
+        return false;
+    }
+    return true;
+}
+function findAreaNode(id){
+    return document.getElementById("area_"+id);
+}
+function findImgForArea(a){
+    var map = a.parentNode;
+    var mapname = map.name;
+    var imgid = "img_"+mapname.slice(4);
+    return document.getElementById(imgid);
+}
+function hilightNode(id){
+    var a = findAreaNode(id);
+    var d = window.nodeHilightDiv;
+    if(a){
+	var img = findImgForArea(a);
+	if(! img) return;
+	var coords = a.coords.split(",");
+	var x = parseInt(coords[0]);
+	var y = parseInt(coords[1]);
+	d.style.left = x + img.offsetLeft;
+	d.style.top  = y + img.offsetTop;
+	d.style.width = parseInt(coords[2]) - x;
+	d.style.height = parseInt(coords[3]) - y;
+	d.style.display = "block";
+	d.scrollIntoView();
+    }
+}
+function getWindowScroll(){
+    if(window.pageXOffset === undefined)
+	if(document.body.scrollLeft === undefined)
+	    return [document.documentElement.scrollLeft,
+	            document.documentElement.scrollTop];
+	else
+	    return [document.body.scrollLeft,
+	            document.body.scrollTop];
+    else 
+	return [window.pageXOffset,
+	        window.pageYOffset];
+}
+
+function showEdgeTypeLegend(evt){
+    var img = document.getElementById("edgetypelegend");
+    if(img){
+	var wscroll = getWindowScroll();
+	img.style.display = 'block';
+	img.style.left = evt.clientX + wscroll[0] + 5;
+	img.style.top  = evt.clientY + wscroll[1] + 5;
+	if( typeof(evt.stopPropagation) === "function" )
+	    evt.stopPropagation();
+    }
+}
+
+function hideEdgeTypeLegend(){
+    var img = document.getElementById("edgetypelegend");
+    if(img) img.style.display='none';
+}
+
+window.onload = function(){
+    window.nodeHilightDiv = document.createElement('div');
+    document.body.appendChild(window.nodeHilightDiv);
+    window.nodeHilightDiv.className = 'node-hilite';
+    window.nodeHilightDiv.onclick = function(){ window.nodeHilightDiv.style.display="none"; };
+}
+</script>
+</head><body>
+<form target="_blank" name="_gene_link_form_" id="_batch_link_form_" 
+      action="http://www.informatics.jax.org/javawi2/servlet/WIFetch"
+      method="post" enctype='multipart/form-data'>
+      <input type="hidden" name="page" value="batchSummary" />
+<input type="hidden" name="IDType" value="MGIMarker" />
+<input type="hidden" name="returnSet" value="Nomenclature" />
+<input type="hidden" name="returnSet" value="Location" />
+<input type="hidden" name="printFormat" value="toolbar" />
+<input type="hidden" name="IDSet" value="%s" />
+
+</form>
+<h1><img src="auxfiles/vlad_logo.gif" align="middle" /><a name="top">Vlad Results</a></h1>
+<table class="summary" cellspacing="0"><tr><td class="label">Vlad version:</td><td>v1.5</td></tr><tr><td class="label">Date:</td><td>Wed Aug 24 13:49:31 2011</td></tr><tr><td class="label">Run time:</td><td>43.84 sec</td></tr><tr><td class="label">Ontology file:</td><td>gene_ontology.obo</td></tr><tr><td class="label">Ontology date:</td><td>Mon Aug 22 19:30:00 2011</td></tr><tr><td class="label">Annotation file:</td><td>gene_association.mgi</td></tr><tr><td class="label">Annotation date:</td><td>???</td></tr><tr><td class="label">Analysis type:</td><td>enrichment</td></tr><tr><td class="label">Excluded evidence codes:</td><td>ND</td></tr><tr><td class="label">Number of query sets:</td><td>1</td></tr><tr><td class="label">Query set 1:</td><td>CL_0002457_myeloid DC_Langerhans cell-up.xls (n=359; 1546 not found)</td></tr><tr><td class="label">Universe set:</td><td>default (everything)</td></tr><tr><td class="label">Graph display:</td><td>Top 25 scoring terms and their ancestors. Interior nodes have been culled.</td></tr></table>
+<b>Jump to:</b> <a href="#biological_process" target="_self">biological_process</a> | <a href="#cellular_component" target="_self">cellular_component</a> | <a href="#molecular_function" target="_self">molecular_function</a> | <a href="#__unannotated__" target="_self">Unannotated id/symbols</a><p><h3><a name="biological_process">biological_process</a> (<a href="#top">top</a>)</h3><img id="img_biological_process" src="auxfiles/vlad.results.biological_process.png" usemap="#map_biological_process" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_biological_process">
+<area id="area_GO:0006928" shape="rect" href="#GO:0006928" coords="164,278,268,383"  alt="GO:0006928 cellular component movement (3.12e-06)" title="GO:0006928 cellular component movement (3.12e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048870" shape="rect" href="#GO:0048870" coords="16,456,128,568"  alt="GO:0048870 cell motility (4.61e-07)" title="GO:0048870 cell motility (4.61e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016477" shape="rect" href="#GO:0016477" coords="20,630,124,735"  alt="GO:0016477 cell migration (2.45e-06)" title="GO:0016477 cell migration (2.45e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008150" shape="rect" href="#GO:0008150" coords="679,5,823,53"  alt="GO:0008150 biological_process (1.00e+00)" title="GO:0008150 biological_process (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048856" shape="rect" href="#GO:0048856" coords="407,109,500,203"  alt="GO:0048856 anatomical structure development (3.73e-05)" title="GO:0048856 anatomical structure development (3.73e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0040011" shape="rect" href="#GO:0040011" coords="9,103,116,209"  alt="GO:0040011 locomotion (1.90e-06)" title="GO:0040011 locomotion (1.90e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050789" shape="rect" href="#GO:0050789" coords="1064,142,1091,170"  alt="GO:0050789 regulation of biological process (4.36e-01)" title="GO:0050789 regulation of biological process (4.36e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009611" shape="rect" href="#GO:0009611" coords="1115,108,1211,204"  alt="GO:0009611 response to wounding (2.14e-05)" title="GO:0009611 response to wounding (2.14e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008283" shape="rect" href="#GO:0008283" coords="911,117,988,195"  alt="GO:0008283 cell proliferation (8.12e-04)" title="GO:0008283 cell proliferation (8.12e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0051674" shape="rect" href="#GO:0051674" coords="28,275,140,387"  alt="GO:0051674 localization of cell (4.61e-07)" title="GO:0051674 localization of cell (4.61e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009987" shape="rect" href="#GO:0009987" coords="689,141,719,171"  alt="GO:0009987 cellular process (4.06e-01)" title="GO:0009987 cellular process (4.06e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022610" shape="rect" href="#GO:0022610" coords="743,101,852,211"  alt="GO:0022610 biological adhesion (1.12e-06)" title="GO:0022610 biological adhesion (1.12e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048731" shape="rect" href="#GO:0048731" coords="407,284,500,377"  alt="GO:0048731 system development (4.24e-05)" title="GO:0048731 system development (4.24e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009888" shape="rect" href="#GO:0009888" coords="524,259,668,403"  alt="GO:0009888 tissue development (3.56e-11)" title="GO:0009888 tissue development (3.56e-11)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009653" shape="rect" href="#GO:0009653" coords="292,285,383,376"  alt="GO:0009653 anatomical structure morphogenesis (7.06e-05)" title="GO:0009653 anatomical structure morphogenesis (7.06e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0007155" shape="rect" href="#GO:0007155" coords="743,276,852,385"  alt="GO:0007155 cell adhesion (9.08e-07)" title="GO:0007155 cell adhesion (9.08e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0042127" shape="rect" href="#GO:0042127" coords="1068,269,1191,393"  alt="GO:0042127 regulation of cell proliferation (1.56e-08)" title="GO:0042127 regulation of cell proliferation (1.56e-08)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0045682" shape="rect" href="#GO:0045682" coords="1059,628,1168,737"  alt="GO:0045682 regulation of epidermis development (1.03e-06)" title="GO:0045682 regulation of epidermis development (1.03e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030154" shape="rect" href="#GO:0030154" coords="693,476,765,548"  alt="GO:0030154 cell differentiation (2.38e-03)" title="GO:0030154 cell differentiation (2.38e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030855" shape="rect" href="#GO:0030855" coords="543,621,665,744"  alt="GO:0030855 epithelial cell differentiation (2.41e-08)" title="GO:0030855 epithelial cell differentiation (2.41e-08)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009913" shape="rect" href="#GO:0009913" coords="689,629,796,737"  alt="GO:0009913 epidermal cell differentiation (1.41e-06)" title="GO:0009913 epidermal cell differentiation (1.41e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008285" shape="rect" href="#GO:0008285" coords="1073,455,1185,569"  alt="GO:0008285 negative regulation of cell proliferation (3.84e-07)" title="GO:0008285 negative regulation of cell proliferation (3.84e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043616" shape="rect" href="#GO:0043616" coords="927,272,1044,389"  alt="GO:0043616 keratinocyte proliferation (1.06e-07)" title="GO:0043616 keratinocyte proliferation (1.06e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001525" shape="rect" href="#GO:0001525" coords="149,799,251,900"  alt="GO:0001525 angiogenesis (8.21e-06)" title="GO:0001525 angiogenesis (8.21e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0072359" shape="rect" href="#GO:0072359" coords="288,461,389,563"  alt="GO:0072359 circulatory system development (4.48e-06)" title="GO:0072359 circulatory system development (4.48e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008544" shape="rect" href="#GO:0008544" coords="789,455,901,569"  alt="GO:0008544 epidermis development (3.58e-07)" title="GO:0008544 epidermis development (3.58e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0072358" shape="rect" href="#GO:0072358" coords="276,631,377,734"  alt="GO:0072358 cardiovascular system development (4.48e-06)" title="GO:0072358 cardiovascular system development (4.48e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0002009" shape="rect" href="#GO:0002009" coords="417,631,519,734"  alt="GO:0002009 morphogenesis of an epithelium (5.18e-06)" title="GO:0002009 morphogenesis of an epithelium (5.18e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030216" shape="rect" href="#GO:0030216" coords="616,792,731,907"  alt="GO:0030216 keratinocyte differentiation (2.33e-07)" title="GO:0030216 keratinocyte differentiation (2.33e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0060429" shape="rect" href="#GO:0060429" coords="547,451,669,573"  alt="GO:0060429 epithelium development (2.73e-08)" title="GO:0060429 epithelium development (2.73e-08)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048646" shape="rect" href="#GO:0048646" coords="148,630,252,735"  alt="GO:0048646 anatomical structure formation involved in morphogenesis (2.64e-06)" title="GO:0048646 anatomical structure formation involved in morphogenesis (2.64e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0048729" shape="rect" href="#GO:0048729" coords="413,457,523,567"  alt="GO:0048729 tissue morphogenesis (1.11e-06)" title="GO:0048729 tissue morphogenesis (1.11e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043588" shape="rect" href="#GO:0043588" coords="820,631,921,734"  alt="GO:0043588 skin development (5.70e-06)" title="GO:0043588 skin development (5.70e-06)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="cellular_component">cellular_component</a> (<a href="#top">top</a>)</h3><img id="img_cellular_component" src="auxfiles/vlad.results.cellular_component.png" usemap="#map_cellular_component" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_cellular_component">
+<area id="area_GO:0044459" shape="rect" href="#GO:0044459" coords="71,661,173,763"  alt="GO:0044459 plasma membrane part (2.90e-04)" title="GO:0044459 plasma membrane part (2.90e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0016323" shape="rect" href="#GO:0016323" coords="78,824,166,912"  alt="GO:0016323 basolateral plasma membrane (2.07e-03)" title="GO:0016323 basolateral plasma membrane (2.07e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005913" shape="rect" href="#GO:0005913" coords="882,656,994,768"  alt="GO:0005913 cell-cell adherens junction (3.96e-05)" title="GO:0005913 cell-cell adherens junction (3.96e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043234" shape="rect" href="#GO:0043234" coords="441,993,481,1033"  alt="GO:0043234 protein complex (2.84e-01)" title="GO:0043234 protein complex (2.84e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0043256" shape="rect" href="#GO:0043256" coords="493,1107,589,1205"  alt="GO:0043256 laminin complex (5.46e-04)" title="GO:0043256 laminin complex (5.46e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005882" shape="rect" href="#GO:0005882" coords="361,1107,459,1205"  alt="GO:0005882 intermediate filament (4.21e-04)" title="GO:0005882 intermediate filament (4.21e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005610" shape="rect" href="#GO:0005610" coords="483,1253,598,1368"  alt="GO:0005610 laminin-5 complex (2.80e-05)" title="GO:0005610 laminin-5 complex (2.80e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005911" shape="rect" href="#GO:0005911" coords="749,288,893,432"  alt="GO:0005911 cell-cell junction (5.70e-08)" title="GO:0005911 cell-cell junction (5.70e-08)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070160" shape="rect" href="#GO:0070160" coords="787,505,865,583"  alt="GO:0070160 occluding junction (6.68e-03)" title="GO:0070160 occluding junction (6.68e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030057" shape="rect" href="#GO:0030057" coords="889,487,1003,601"  alt="GO:0030057 desmosome (2.40e-05)" title="GO:0030057 desmosome (2.40e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044421" shape="rect" href="#GO:0044421" coords="601,301,718,419"  alt="GO:0044421 extracellular region part (1.80e-05)" title="GO:0044421 extracellular region part (1.80e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005615" shape="rect" href="#GO:0005615" coords="481,493,582,595"  alt="GO:0005615 extracellular space (2.36e-04)" title="GO:0005615 extracellular space (2.36e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031012" shape="rect" href="#GO:0031012" coords="606,490,713,598"  alt="GO:0031012 extracellular matrix (8.08e-05)" title="GO:0031012 extracellular matrix (8.08e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0045095" shape="rect" href="#GO:0045095" coords="361,1261,459,1361"  alt="GO:0045095 keratin filament (3.38e-04)" title="GO:0045095 keratin filament (3.38e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005578" shape="rect" href="#GO:0005578" coords="605,657,714,767"  alt="GO:0005578 proteinaceous extracellular matrix (5.80e-05)" title="GO:0005578 proteinaceous extracellular matrix (5.80e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005575" shape="rect" href="#GO:0005575" coords="614,5,758,53"  alt="GO:0005575 cellular_component (1.00e+00)" title="GO:0005575 cellular_component (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0044464" shape="rect" href="#GO:0044464" coords="245,161,263,180"  alt="GO:0044464 cell part (8.23e-01)" title="GO:0044464 cell part (8.23e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005576" shape="rect" href="#GO:0005576" coords="510,101,649,240"  alt="GO:0005576 extracellular region (1.77e-07)" title="GO:0005576 extracellular region (1.77e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030054" shape="rect" href="#GO:0030054" coords="755,105,886,237"  alt="GO:0030054 cell junction (8.29e-07)" title="GO:0030054 cell junction (8.29e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0045111" shape="rect" href="#GO:0045111" coords="329,969,417,1058"  alt="GO:0045111 intermediate filament cytoskeleton (1.63e-03)" title="GO:0045111 intermediate filament cytoskeleton (1.63e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0071944" shape="rect" href="#GO:0071944" coords="54,291,190,429"  alt="GO:0071944 cell periphery (2.92e-07)" title="GO:0071944 cell periphery (2.92e-07)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019718" shape="rect" href="#GO:0019718" coords="214,319,294,401"  alt="GO:0019718 rough microsome (5.28e-03)" title="GO:0019718 rough microsome (5.28e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0009986" shape="rect" href="#GO:0009986" coords="318,315,406,405"  alt="GO:0009986 cell surface (1.65e-03)" title="GO:0009986 cell surface (1.65e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005605" shape="rect" href="#GO:0005605" coords="538,973,618,1053"  alt="GO:0005605 basal lamina (6.34e-03)" title="GO:0005605 basal lamina (6.34e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005886" shape="rect" href="#GO:0005886" coords="58,480,186,608"  alt="GO:0005886 plasma membrane (2.13e-06)" title="GO:0005886 plasma membrane (2.13e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005912" shape="rect" href="#GO:0005912" coords="1027,489,1137,599"  alt="GO:0005912 adherens junction (7.00e-05)" title="GO:0005912 adherens junction (7.00e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005604" shape="rect" href="#GO:0005604" coords="545,817,646,919"  alt="GO:0005604 basement membrane (2.31e-04)" title="GO:0005604 basement membrane (2.31e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0070161" shape="rect" href="#GO:0070161" coords="917,295,1047,425"  alt="GO:0070161 anchoring junction (1.24e-06)" title="GO:0070161 anchoring junction (1.24e-06)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="molecular_function">molecular_function</a> (<a href="#top">top</a>)</h3><img id="img_molecular_function" src="auxfiles/vlad.results.molecular_function.png" usemap="#map_molecular_function" 
+	            onclick="showEdgeTypeLegend(event);" />
+		    <br/><br/><map name="map_molecular_function">
+<area id="area_GO:0005509" shape="rect" href="#GO:0005509" coords="544,483,645,584"  alt="GO:0005509 calcium ion binding (1.72e-03)" title="GO:0005509 calcium ion binding (1.72e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0003674" shape="rect" href="#GO:0003674" coords="887,5,1031,53"  alt="GO:0003674 molecular_function (1.00e+00)" title="GO:0003674 molecular_function (1.00e+00)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005488" shape="rect" href="#GO:0005488" coords="331,109,435,214"  alt="GO:0005488 binding (1.08e-03)" title="GO:0005488 binding (1.08e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0000982" shape="rect" href="#GO:0000982" coords="768,101,888,221"  alt="GO:0000982 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity (1.37e-04)" title="GO:0000982 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity (1.37e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022891" shape="rect" href="#GO:0022891" coords="913,116,1004,207"  alt="GO:0022891 substrate-specific transmembrane transporter activity (6.24e-03)" title="GO:0022891 substrate-specific transmembrane transporter activity (6.24e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005007" shape="rect" href="#GO:0005007" coords="1028,113,1124,209"  alt="GO:0005007 fibroblast growth factor-activated receptor activity (3.60e-03)" title="GO:0005007 fibroblast growth factor-activated receptor activity (3.60e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005198" shape="rect" href="#GO:0005198" coords="1148,111,1249,212"  alt="GO:0005198 structural molecule activity (1.84e-03)" title="GO:0005198 structural molecule activity (1.84e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030246" shape="rect" href="#GO:0030246" coords="20,283,135,399"  alt="GO:0030246 carbohydrate binding (2.37e-04)" title="GO:0030246 carbohydrate binding (2.37e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0030247" shape="rect" href="#GO:0030247" coords="5,461,149,605"  alt="GO:0030247 polysaccharide binding (2.79e-06)" title="GO:0030247 polysaccharide binding (2.79e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0015180" shape="rect" href="#GO:0015180" coords="905,675,1004,775"  alt="GO:0015180 L-alanine transmembrane transporter activity (2.19e-03)" title="GO:0015180 L-alanine transmembrane transporter activity (2.19e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005275" shape="rect" href="#GO:0005275" coords="913,293,1009,389"  alt="GO:0005275 amine transmembrane transporter activity (3.76e-03)" title="GO:0005275 amine transmembrane transporter activity (3.76e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0022858" shape="rect" href="#GO:0022858" coords="905,483,1004,583"  alt="GO:0022858 alanine transmembrane transporter activity (2.19e-03)" title="GO:0022858 alanine transmembrane transporter activity (2.19e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005515" shape="rect" href="#GO:0005515" coords="327,285,439,397"  alt="GO:0005515 protein binding (4.13e-04)" title="GO:0005515 protein binding (4.13e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0019838" shape="rect" href="#GO:0019838" coords="173,487,267,580"  alt="GO:0019838 growth factor binding (4.53e-03)" title="GO:0019838 growth factor binding (4.53e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008157" shape="rect" href="#GO:0008157" coords="291,485,387,581"  alt="GO:0008157 protein phosphatase 1 binding (3.60e-03)" title="GO:0008157 protein phosphatase 1 binding (3.60e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001968" shape="rect" href="#GO:0001968" coords="411,479,520,588"  alt="GO:0001968 fibronectin binding (6.36e-04)" title="GO:0001968 fibronectin binding (6.36e-04)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001871" shape="rect" href="#GO:0001871" coords="159,269,303,413"  alt="GO:0001871 pattern binding (2.79e-06)" title="GO:0001871 pattern binding (2.79e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046872" shape="rect" href="#GO:0046872" coords="569,315,620,367"  alt="GO:0046872 metal ion binding (1.99e-01)" title="GO:0046872 metal ion binding (1.99e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001077" shape="rect" href="#GO:0001077" coords="644,291,743,391"  alt="GO:0001077 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription (2.28e-03)" title="GO:0001077 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription (2.28e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0031995" shape="rect" href="#GO:0031995" coords="172,677,268,773"  alt="GO:0031995 insulin-like growth factor II binding (3.60e-03)" title="GO:0031995 insulin-like growth factor II binding (3.60e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005254" shape="rect" href="#GO:0005254" coords="1039,483,1140,584"  alt="GO:0005254 chloride channel activity (1.72e-03)" title="GO:0005254 chloride channel activity (1.72e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005229" shape="rect" href="#GO:0005229" coords="1028,663,1151,787"  alt="GO:0005229 intracellular calcium activated chloride channel activity (6.99e-05)" title="GO:0005229 intracellular calcium activated chloride channel activity (6.99e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005253" shape="rect" href="#GO:0005253" coords="1040,292,1139,391"  alt="GO:0005253 anion channel activity (2.68e-03)" title="GO:0005253 anion channel activity (2.68e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0005539" shape="rect" href="#GO:0005539" coords="7,654,148,797"  alt="GO:0005539 glycosaminoglycan binding (3.85e-06)" title="GO:0005539 glycosaminoglycan binding (3.85e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0008201" shape="rect" href="#GO:0008201" coords="9,846,145,983"  alt="GO:0008201 heparin binding (9.26e-06)" title="GO:0008201 heparin binding (9.26e-06)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0001078" shape="rect" href="#GO:0001078" coords="767,280,889,403"  alt="GO:0001078 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in negative regulation of transcription (8.58e-05)" title="GO:0001078 RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in negative regulation of transcription (8.58e-05)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0046914" shape="rect" href="#GO:0046914" coords="669,513,709,553"  alt="GO:0046914 transition metal ion binding (4.04e-01)" title="GO:0046914 transition metal ion binding (4.04e-01)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0045340" shape="rect" href="#GO:0045340" coords="575,673,679,778"  alt="GO:0045340 mercury ion binding (1.11e-03)" title="GO:0045340 mercury ion binding (1.11e-03)" onclick="return nodeClicked(this,event);" />
+<area id="area_GO:0050897" shape="rect" href="#GO:0050897" coords="703,677,799,773"  alt="GO:0050897 cobalt ion binding (3.60e-03)" title="GO:0050897 cobalt ion binding (3.60e-03)" onclick="return nodeClicked(this,event);" />
+</map>
+<h3><a name="__unannotated__">Unannotated IDs</a></h3>
+<table border="0">
+<tr>
+<td><b>CL_0002457_myeloid DC_Langerhans cell-up.xls</b><br/>
+<textarea rows="15" cols="18">0.181745138487444
+0.192345966673953
+0.192553899368188
+0.195741098572094
+0.200577797844105
+0.200833268923261
+0.211241644541478
+0.233329880220917
+0.244558359154532
+0.247165478571793
+0.248061344781568
+0.265463175271285
+0.267078714241115
+0.273673857668067
+0.276091367569593
+0.277682303119792
+0.278299330859403
+0.280488987803692
+0.281334892087724
+0.286284319206384
+0.288374136861078
+0.292253769532212
+0.29697415205211
+0.297865552907874
+0.298797294438092
+0.306104980842279
+0.307025609162308
+0.307790755126461
+0.312363367402483
+0.315558702750911
+0.315628581718833
+0.317689174487839
+0.319945849043417
+0.323296300227961
+0.332491375241035
+0.335584890329322
+0.335924840111529
+0.336407175190623
+0.336668575592441
+0.337144533720773
+0.337322710295938
+0.340798706614577
+0.345193901539764
+0.349617782213754
+0.349959480805163
+0.353041861379482
+0.356039311423652
+0.356145724674393
+0.357419968662853
+0.359768455057722
+0.364063464542482
+0.366598997910917
+0.366682364984502
+0.368651892655346
+0.371033744773165
+0.372787597344984
+0.376536289353934
+0.379387755322785
+0.380525931466744
+0.388017795583866
+0.388364724328066
+0.393323039085895
+0.39512826796418
+0.398829310342272
+0.40147738816644
+0.404235491929598
+0.405185425196696
+0.405306118492681
+0.40588165606941
+0.413226092385398
+0.414231451705988
+0.421071317390668
+0.426869600306925
+0.429005168275585
+0.430331797510613
+0.431685325124737
+0.435204609749091
+0.448182722216589
+0.450070506056502
+0.455981731122427
+0.458165867807819
+0.465962472502145
+0.473899177023996
+0.475246281470756
+0.481626144650516
+0.482926583673743
+0.484292901001141
+0.486317278897597
+0.487116015110122
+0.491234989117244
+0.493915617623099
+0.495316641721619
+0.496888798860942
+0.497113296591252
+0.49772043502456
+0.500839096348041
+0.505404836817121
+0.513416279129838
+0.517604398444755
+0.517995404821549
+0.52219738211086
+0.523133633472417
+0.525474885860486
+0.526891547860321
+0.528334286828951
+0.529047673448321
+0.533494061201676
+0.537321902228882
+0.542676128457389
+0.548490891132921
+0.549508310286003
+0.552187356911969
+0.552258090838221
+0.559215695136613
+0.560467085531041
+0.561472209806231
+0.565590017198986
+0.566933144771737
+0.569185474407856
+0.58094386849745
+0.581698784843781
+0.597043456146036
+0.600968053465262
+0.601841119888267
+0.602858956847174
+0.617315081470788
+0.628543745299542
+0.630634110062714
+0.6323095683979
+0.64121197720732
+0.645478591690413
+0.648959158278593
+0.651339429175709
+0.652229064205762
+0.656281543403474
+0.65928206175983
+0.66294422451356
+0.663653875754028
+0.66645440570332
+0.66943043939836
+0.678654781049501
+0.679645529171387
+0.682667345405772
+0.697706251934492
+0.698555539898568
+0.699017642702649
+0.701680564908158
+0.714213590517577
+0.715971872086419
+0.726668609941922
+0.734655912313899
+0.737034045149027
+0.739665954991935
+0.746456935022187
+0.748818683200027
+0.750203116931538
+0.758338403980961
+0.76146593906026
+0.764301234066182
+0.773228356435038
+0.779626800824354
+0.789941264446144
+0.801609899404577
+0.802329867819771
+0.802658903120314
+0.816133603043758
+0.820240816207328
+0.823736336555614
+0.828614185372088
+0.834030309494501
+0.855079808102112
+0.862585166986745
+0.876301226332027
+0.877344429629243
+0.896119334027659
+0.896144041159348
+0.899565572574638
+0.900960688634475
+0.90270136893467
+0.904419460841685
+0.909272296630453
+0.932345362411711
+0.938232321484964
+0.942585957573783
+0.944574063537652
+0.947483791720803
+0.955651846782606
+0.955846669726872
+0.957946428816457
+0.967024488262959
+0.973635768534501
+0.979178545582865
+1.02600485360724
+1.02639098759893
+1.02965675325868
+1.03948407911601
+1.05346159442592
+1.0548871466085
+1.06298912095766
+1.06304493564114
+1.06542583490333
+1.0703037550944
+1.07209254798658
+1.09474336491181
+1.09530909554369
+1.09744438290938
+1.11029415062761
+1.11897256166607
+1.12841293892731
+1.14483643199732
+1.1513024674518
+1.16415445357737
+1.17256398491574
+1.18224278895523
+1.20750386815285
+1.21184738109267
+1.2119512142267
+1.21932802687148
+1.22306153487936
+1.26745606309633
+1.27041319983833
+1.29057096918629
+1.3084905531037
+1.31331736219083
+1.31617638386242
+1.34976360067921
+1.36122243398978
+1.36205598144035
+1.38338399533647
+1.38627337441
+1.38814266199317
+1.39503915880349
+1.41528214166434
+1.41946902972127
+1.43412077433564
+1.44028469426817
+1.44712770918603
+1.4485412647362
+1.45001309985332
+1.47677215591343
+1.48925256531612
+1.50309076223644
+1.51754998308989
+1.5283099019541
+1.53440287624931
+1.54085946650225
+1.55186185540698
+1.55640744692803
+1.56005779764254
+1.56887865404268
+1.57869530656828
+1.59188041063875
+1.59205428173918
+1.62864628036472
+1.63523634320274
+1.66654189437283
+1.69089334827707
+1.73353297972459
+1.76194084603511
+1.76316526405441
+1.76583252613984
+1.79060511970423
+1.80289413785106
+1.83457669014092
+1.84637298784176
+1.89104112151747
+1.89114552309495
+1.89137804887814
+1.89588854420463
+1.91452238267968
+1.93056342048513
+1.94079097371212
+1.95684767485344
+1.96490463357906
+1.98484959798779
+10.0081673504048
+10.0083861229325
+10.0377280266795
+10.058851746667
+10.1207546788249
+10.2976919895334
+10.314494538753
+10.3218184781456
+10.3629873143416
+10.3720778447139
+10.4221188582578
+10.4264501044438
+10.5071132626607
+10.5667954544484
+10.5953728386437
+10.7622198841955
+10.8132037082818
+10.8691769274172
+100038567
+100494
+101.614687247211
+101214
+101772
+102693
+10345016
+10345752
+10346298
+103466
+10346878
+10347036
+10347277
+10347888
+10349108
+10349147
+10349603
+10349953
+10351259
+10352294
+10352503
+10352514
+10352815
+10352827
+10352829
+10352838
+10353549
+10353934
+10357084
+10358027
+10358124
+10358787
+10359386
+10359851
+10360012
+10360398
+10361887
+10361918
+10362104
+10362186
+10362499
+10363173
+10364856
+10364888
+10365260
+10365518
+10366266
+10366446
+10367154
+10368577
+10368748
+10369388
+10370754
+10373358
+10373452
+10374777
+10375973
+10376490
+10376513
+10376733
+10376765
+10376803
+10378367
+10378568
+10378572
+10378754
+10379034
+10380403
+10382713
+10383289
+10383767
+10384051
+10384223
+10384539
+10385572
+10386020
+10386033
+10386400
+10386414
+10386455
+10386633
+10387368
+10387372
+10387505
+10389238
+10389786
+10390117
+10390748
+10390789
+10390831
+10391025
+10391052
+10391061
+10391066
+10396148
+10396952
+10397179
+10397332
+10398665
+103988
+10398885
+10400057
+10400072
+10400089
+10400095
+10400984
+10401149
+10401607
+10403281
+10404649
+10406626
+10407387
+10408241
+10408629
+10408798
+10408928
+10409118
+10409345
+10411126
+10411668
+10412260
+10413047
+10414065
+10416950
+10416952
+10416954
+10419082
+10419288
+10420413
+10423024
+10423770
+10424979
+10425283
+10425364
+10427026
+10428089
+10428707
+10429140
+10429691
+10431659
+10432785
+10432840
+10432852
+10433776
+10434815
+10435470
+10436608
+10437639
+10440019
+10440522
+10441270
+10441864
+10441902
+10442224
+10443463
+10443876
+10444554
+10444890
+10444957
+10445061
+10448307
+10450365
+10450501
+10450843
+10450930
+10451198
+10451372
+10454015
+10454030
+10454077
+10454113
+10454154
+10454601
+10455299
+10457205
+10457359
+10457669
+10458340
+10459071
+10459421
+10459455
+10460585
+10462195
+10462281
+10462442
+10464445
+10464754
+10465106
+10465772
+10466745
+10467842
+10468344
+10468668
+10469066
+10469404
+10469425
+10471129
+10474419
+10474972
+10475324
+10475653
+10475789
+10475800
+10476287
+10476301
+10476314
+10476740
+10478997
+10480621
+10483000
+10483546
+10484318
+10485131
+10485700
+10486197
+10487605
+10487879
+10487994
+10488147
+10488522
+10489364
+10489484
+10490384
+10492021
+10492522
+10493548
+10493794
+10493798
+10493850
+10494016
+10494351
+10494889
+10495675
+10496425
+10496490
+10496789
+10499394
+10499412
+10499536
+105000
+10500011
+10500122
+10500272
+10501222
+10501734
+10502552
+10502565
+10502638
+10502655
+10503244
+10503334
+10504838
+10504891
+10506767
+10507594
+10507671
+10508405
+10509204
+10510516
+10510574
+10510624
+10510643
+10511560
+10511694
+10511935
+10512156
+10512315
+10512465
+10512935
+10514049
+10514054
+10514939
+10516484
+10516765
+10517067
+10517213
+10517655
+10519693
+10519886
+10521111
+10522411
+10522467
+10523156
+10523168
+10523674
+10524353
+10525165
+10526133
+10526410
+10526961
+10528227
+10529819
+10531560
+10531707
+10532346
+10532524
+10533050
+10533569
+10534096
+10534395
+10534684
+10535095
+10535866
+10536794
+10536799
+10538932
+10539002
+10542200
+10542335
+10542791
+10543067
+10543959
+10544629
+10545168
+10545742
+10546066
+10550660
+10550980
+10551197
+10551359
+10551638
+10552044
+10552064
+10554034
+10557992
+10558687
+10558880
+10559820
+10561004
+10561204
+10561854
+10562223
+10562761
+10563377
+10564343
+10564704
+10564713
+10565204
+10566454
+10567564
+10568436
+10568536
+10568568
+10569278
+10569280
+10569618
+10570356
+10570741
+10570957
+10571036
+10572398
+10572635
+105732
+10573790
+10573956
+10574023
+10574259
+10575034
+10578904
+10580139
+10582275
+10583071
+10583090
+10584582
+10584604
+10587554
+10587746
+10588669
+10588691
+10588696
+10588701
+10590808
+10591884
+10592001
+10592044
+10592891
+10594762
+10595070
+10596951
+10597309
+10597573
+10597656
+10597758
+10597935
+10598976
+10599008
+10599855
+10600341
+10601044
+10601416
+10601492
+10602737
+10604337
+10606495
+10606640
+10606948
+10607950
+10608684
+10608716
+106878
+107351
+107449
+107508
+107515
+108100
+108151
+108767
+109042
+109332
+109620
+109685
+11.1175028241341
+11.1858078096689
+11.1969631860225
+11.2067943265342
+11.2136652642202
+110308
+114301
+114774
+11504
+11529
+11552
+11571
+11670
+116872
+116914
+116972
+11702
+11752
+118.886909953051
+11828
+11854
+11861
+11911
+11932
+12.283776083483
+12.3045904835905
+12.4466221063395
+12.4744129566715
+12.5302244792825
+12.6207395293992
+12.8622282984434
+12.8889986059355
+12.911790596329
+12.9602304515822
+12173
+12296
+12560
+12575
+12585
+12716
+12722
+12740
+12821
+12876
+12916
+12931
+13.0208454192721
+13.3205320722862
+13.6457043844731
+13.6487994330267
+13.6647201542171
+13.8450167095203
+13.8807190426399
+13.9141557269052
+13.9630136976316
+13.9872482172831
+13.9973998214891
+13052
+13088
+13214
+13507
+13510
+13512
+136.453259097886
+13636
+13684
+13710
+13726
+13731
+13875
+14.0482278534582
+14.0490728494818
+14.2783811698746
+14.3768328652218
+14004
+14066
+14181
+14183
+14184
+14283
+14299
+14302
+14313
+14528
+14579
+14609
+14620
+14677
+14718
+14766
+14863
+14915
+15.1217126483921
+15.3409753767768
+15.4563348199813
+15.9008873483952
+15117
+15200
+15507
+15586
+15937
+15982
+16.4840296217945
+16.6478115742601
+16.7010904346939
+16.7766625873953
+16.8023327904544
+16.8748857159394
+16007
+16008
+16009
+16153
+16178
+16400
+16420
+16564
+16646
+16661
+16664
+16665
+16666
+16667
+16678
+16681
+16776
+16780
+16782
+16858
+16905
+17.109725600339
+17.1127094192398
+17.3294560630548
+17.44251353613
+17.6709297745604
+17.7093999718295
+17.864337496279
+170442
+17133
+17135
+171388
+17178
+17254
+17304
+17356
+17384
+17392
+176.43904390276
+17750
+17756
+17988
+18.7664134486484
+180.737428056562
+18028
+18124
+18218
+18242
+18260
+183.312384628107
+18412
+18426
+18654
+18772
+18784
+18792
+19.2365193189515
+19.2703263662437
+19.8723046591625
+19.9499456993993
+19122
+19143
+19242
+192897
+194126
+19416
+194231
+2.00461062424772
+2.01135309569923
+2.05360779039087
+2.06688075093376
+2.0788100809059
+2.08576978239018
+2.08931295884916
+2.09257794252501
+2.09661810716384
+2.09932477880178
+2.10140371313622
+2.10524181152726
+2.10731950675637
+2.10757744051337
+2.1159679318368
+2.12595003659693
+2.13383121478637
+2.14272529921678
+2.16154209606053
+2.16317989560494
+2.16429786076356
+2.18666238179941
+2.19091496042059
+2.20235744162844
+2.21456102272897
+2.22985781622691
+2.24405376178581
+2.25291533720699
+2.25687251034314
+2.26967394443552
+2.27326413220841
+2.27612321888979
+2.27893039917631
+2.28748068422923
+2.28757823537462
+2.29147472769078
+2.30447072363157
+2.31190454967853
+2.33074764021441
+2.34122075688906
+2.34570116422208
+2.34730816216675
+2.38010264740576
+2.39041221211016
+2.39723005529408
+2.4011977771971
+2.41335205504598
+2.41972698581146
+2.42015120720811
+2.42911010698124
+2.43536308220961
+2.43667327786264
+2.44220790838379
+2.44768015497516
+2.45369127189424
+2.45569711669529
+2.47248686821907
+2.47754105549342
+2.49293635870428
+2.49481615630288
+2.50501134392715
+2.5101110533948
+2.52142387877266
+2.52256846372311
+2.52299201399298
+2.53062550401378
+2.55084291225663
+2.56518901289401
+2.57029254798748
+2.57439032653104
+2.58211510050573
+2.5835187446258
+2.61674975161802
+2.62012385143447
+2.62390110667652
+2.62838475770207
+2.63614984392409
+2.63959983454941
+2.64171425791135
+2.64334328193219
+2.65278397509981
+2.67207796021328
+2.68070136365838
+2.689558631082
+2.69530454559435
+2.71309378454698
+2.71677478608487
+2.72280446597052
+2.72390136482653
+2.73103099925243
+2.73743270239524
+2.7383455065926
+2.7494691080919
+2.75972313251013
+2.76513633612877
+2.76825879885718
+2.80001347310304
+2.80870327205145
+2.81110877853671
+2.81660171366895
+2.82066901927983
+2.82094720131412
+2.8215203521523
+2.8217089974477
+2.82563725151577
+2.83505460953528
+2.84114234455478
+2.88128661217784
+2.8892855457037
+2.89340734873803
+2.89767129261022
+2.91946599184294
+2.93045868880638
+2.93164279776402
+2.96243550477619
+2.96445874138007
+2.97142456988889
+2.99012926409237
+2.99249432864253
+20.1280422786136
+20.4160457652363
+20.4195028577758
+20.9816241025721
+20256
+20259
+20271
+20297
+20310
+20348
+20377
+20525
+20538
+20539
+20583
+20724
+20755
+207920
+208266
+20840
+208768
+208994
+20918
+209212
+20971
+21.1766279960263
+21.4021296716756
+21.4601786639718
+21.6044088747317
+21.689137680101
+21.8761485023477
+21.9845812392906
+212168
+21401
+21418
+21419
+21420
+215095
+215418
+216350
+216456
+216616
+216795
+216799
+216850
+217082
+217169
+217715
+217882
+21857
+21872
+21873
+21926
+21928
+21983
+22.3346890476101
+22.9237541187156
+22061
+22156
+22339
+223473
+22359
+225638
+22601
+226250
+22644
+226539
+226977
+228366
+228543
+228592
+228608
+229599
+229933
+23.1211001667833
+23.121204443148
+23.5255978790107
+23.8728006636999
+230157
+230779
+231293
+231506
+231602
+232431
+232853
+233011
+233724
+234076
+235135
+237038
+237313
+23807
+238257
+23827
+240095
+24082
+24109
+241639
+242608
+242785
+243262
+244757
+245595
+245827
+245884
+246049
+246278
+246788
+252973
+257632
+26.0643346353333
+26.7219899534471
+26388
+26397
+26458
+26556
+268291
+268417
+269016
+269608
+27.4987888732762
+27053
+27260
+27279
+28.203049548225
+29.3103792344505
+29.3270025391004
+29810
+3.0140864581698
+3.02141189442305
+3.02670341777297
+3.03467704457892
+3.05134065325867
+3.05831635634401
+3.07234254907064
+3.07608604660433
+3.08222242140208
+3.09598853176022
+3.09626578445832
+3.10263661325664
+3.11118093308475
+3.11821213027362
+3.13454789649252
+3.17443755955246
+3.17810666118936
+3.18003797685061
+3.20056808202522
+3.20353344183186
+3.23259321674844
+3.26358993118226
+3.26643783492244
+3.26895523170449
+3.30474834921841
+3.3056895862502
+3.31140708950288
+3.31980368809213
+3.32960671628604
+3.33012635062041
+3.33867469964061
+3.34556207013019
+3.34961997861923
+3.36133191328655
+3.38323446428932
+3.38683224992963
+3.393023519737
+3.40318807414418
+3.40351927211636
+3.43926110904197
+3.4428442479547
+3.44462050756782
+3.45714777068241
+3.47137457778047
+3.51279179093405
+3.52839386923362
+3.53816818698462
+3.59114766503765
+3.60075204965872
+3.60210988190188
+3.61673856547538
+3.63358759669424
+3.6393608986234
+3.65312980325054
+3.65590363038985
+3.66037986861055
+3.6986708804663
+3.71923953021672
+3.71942256909713
+3.74220597667518
+3.74485372262928
+3.74678646246992
+3.77563241711182
+3.80205747528296
+3.82423601693102
+3.82441485837687
+3.86500151037697
+3.87188364754448
+3.87382988112723
+3.91417596976427
+3.91924819459788
+3.92378755164356
+3.95231540809016
+3.952903642862
+3.96790828443337
+30.9205009207606
+30841
+30953
+31.078669538335
+31.3350040123532
+319266
+3230401D17Rik
+328121
+329727
+329831
+33.2134102574762
+33.4311979082034
+33.7737714071733
+333654
+35.4102426827024
+353169
+36.7153971844282
+37.0398900904783
+37.2032628763361
+38.4736206706983
+380712
+380755
+381066
+383548
+386454
+39.7833145171395
+4.02758235723992
+4.03443247784783
+4.04340698662137
+4.09033987471096
+4.12743361085222
+4.14883926857695
+4.15088678452308
+4.15519289855941
+4.16934776509115
+4.18597443740622
+4.19241534492507
+4.21117588869873
+4.22135539395109
+4.22583525651911
+4.23671155967634
+4.26846764842853
+4.27311574117006
+4.28846196290402
+4.29551374930598
+4.30459029101463
+4.31186764554461
+4.34455530365983
+4.38047560950903
+4.40835879594451
+4.416881092109
+4.44146485698111
+4.45212054086313
+4.45651319084954
+4.464102596154
+4.52069955641676
+4.54179241751091
+4.55592827849086
+4.57090941448796
+4.59486733620023
+4.60145586255662
+4.63593026068486
+4.63626942152704
+4.65124253134931
+4.65400373599488
+4.67308498917213
+4.7204952399671
+4.72570249468214
+4.73348759817013
+4.73712811885516
+4.74554811654633
+4.75637175888362
+4.75939709484314
+4.76753514609094
+4.79856352092507
+4.83378277036113
+4.86449517662305
+4.87669754307262
+4.90221637205212
+4.90587593120662
+4.90810762125165
+4.91527681626456
+4.92112234543905
+4.96875721503261
+4.973396068122
+4.97690077757357
+4.98359559910386
+4.98674936396775
+4.99346452253983
+40.9032669681747
+41.8384977805633
+41.9401993803694
+42.8924418652628
+43.6560552806918
+433261
+435653
+44.6155746156719
+44.7527650178188
+45.162341757822
+45.1639454488289
+48.0827368263447
+48.6368405648213
+5.00094154824687
+5.00161790674949
+5.06823893231818
+5.07206683737503
+5.07394513373022
+5.0802104866573
+5.09932416690509
+5.12598174578671
+5.12860330038517
+5.13439528562724
+5.17810634904029
+5.18366861415181
+5.22521405024462
+5.24993833437923
+5.26105530484591
+5.26619086789158
+5.30565716864233
+5.30721143799327
+5.33115584653694
+5.33721555280861
+5.42858262773604
+5.4306689910905
+5.48457754319993
+5.5124030499658
+5.54974188202237
+5.55035690215918
+5.58090012883031
+5.66091481792065
+5.68311817593375
+5.71556171012145
+5.83047044759965
+5.88180056977145
+5.91589855587587
+5.968840809408
+5.9907140889429
+50493
+50523
+50706
+50884
+51902
+52040
+52430
+53.5514272129374
+53603
+53868
+54139
+54200
+545975
+54670
+54723
+55942
+55948
+55963
+55987
+56.8292414756696
+56149
+56277
+56289
+56405
+56441
+56485
+56715
+56753
+56774
+57.0816374158887
+57436
+57748
+57905
+59012
+6.01789183338809
+6.0525907524362
+6.10211016114567
+6.11224086951637
+6.17302959498112
+6.24713603137084
+6.39953524534103
+6.4057074906694
+6.41566409539095
+6.45313879943877
+6.52762390614398
+6.57452856020693
+6.58243811366836
+6.59191655244462
+6.61429509906858
+6.644392980888
+6.67136981809402
+6.67531488207094
+6.69067449652422
+6.72492508135822
+6.73355640764058
+6.7609541443587
+6.78781008451145
+6.78956436481659
+6.79901151017804
+6.8102132625383
+6.81039850775053
+6.83169766180801
+6.84078106839857
+6.85313862749529
+6.9749753305477
+6.99653545412089
+633640
+64.2355269617589
+64058
+64074
+64661
+65086
+66.0921383512011
+66166
+66198
+66260
+66411
+666339
+66680
+66895
+67020
+67533
+67666
+677156
+67860
+67876
+68187
+68385
+68603
+68939
+69065
+69480
+69573
+69640
+69693
+7.13082223445001
+7.17345118711276
+7.3098806118398
+7.32119411252935
+7.48197606631921
+7.5155997961966
+7.52880086677364
+7.54865328448466
+7.61647772785979
+7.64051389825281
+7.68870698259657
+7.69844551945702
+7.70919987064612
+7.73268962904174
+7.75055815227292
+7.75771077093383
+7.77175927519087
+7.77854181403542
+7.78785340433634
+7.82856403927636
+7.92800024971295
+7.96191357865093
+70118
+70129
+70564
+71132
+71436
+71461
+71584
+71884
+71910
+71914
+71920
+72169
+72388
+72434
+72504
+72747
+73.2046613202509
+73712
+73884
+74155
+74167
+74186
+74309
+74325
+74450
+74472
+75568
+75607
+75706
+75739
+75746
+75869
+76282
+76886
+76974
+77125
+78177
+78826
+8.37874697847104
+8.40009384674965
+8.44082091782128
+8.48501759207523
+8.5219451453754
+8.58167696585834
+8.63886428997718
+8.70797233864479
+8.77511111410419
+8.94646236309962
+8.94834075701043
+8.98926943214884
+80796
+80797
+80888
+80914
+83.5601145499833
+83430
+9.031537142404
+9.20691591723934
+9.28740176938039
+9.38673135736923
+9.4829607342848
+9.49905259503529
+9.58364032375641
+9.58664441897748
+9.72483442715207
+9.79252402497677
+9.83112614415997
+9.84110599794528
+9.85280624631391
+9.89540451707285
+9.92474534927817
+9.93768780874457
+94249
+98238
+98845
+99730
+A130010J15Rik
+Bnc1
+FoldChange
+Gm5521
+H2
+M5
+MGI:1097164
+MGI:1913930
+MGI:2441776
+MGI:3645827
+NA
+Stdv
+entrezIDs
+mgiID
+symbol</textarea>
+</td>
+</table>
+<span id="edgetypelegend" 
+		     class="edgetypelegend"
+	             style="left:0;top:0;display:none;" 
+		     onclick="hideEdgeTypeLegend();" >
+			 <table border="0"><tr>
+			 <td style="text-align:left;cursor:pointer;">[close]</td>
+			 <td style="text-align:center;"><b>Legend: Edge Types</b></td>
+			 <td style="text-align:right;"><a href="http://www.geneontology.org/GO.ontology.relations.shtml" target="_blank">(details)</a></td>
+			 </tr>
+		         <tr><td colspan="3"><img src="auxfiles/legend.gif" /></td></tr>
+			 </table>
+		     </span>
+</body></html>

@@ -1,0 +1,69 @@
+digraph "biological_process" {
+graph [ bgcolor = "#FFFFFF", label = <<TABLE COLOR="black" BGCOLOR="white"><TR><TD COLSPAN="2" BGCOLOR="#D0D0D0"><FONT COLOR="black">biological_process</FONT></TD></TR><TR><TD BORDER="0">CL_0002506_CD103-positive DC-up.xls</TD></TR></TABLE>> ];
+node [ fontname = "Helvetica" ];
+
+subgraph "nodes" {
+
+node [ style = "filled", fixedsize = "true", width = 1, shape = "box", fontsize = 9, fillcolor = "#D0D0D0", fontcolor = "black", color = "black" ];
+
+"GO:0009987" [ URL = "#GO:0009987", label = "", width = 0.307639558303, shape = "box", height = 0.307639558303 ];
+"GO:0022610" [ URL = "#GO:0022610", label = <<TABLE BORDER="0"><TR><TD>GO:0022610<BR/>biological<BR/>adhesion<BR/>(4.08e-02)</TD></TR></TABLE>>, width = 1.18224911502, shape = "box", fontsize = 8.51219362814, height = 1.18224911502 ];
+"GO:0016337" [ URL = "#GO:0016337", label = <<TABLE BORDER="0"><TR><TD>GO:0016337<BR/>cell-cell<BR/>adhesion<BR/>(1.45e-02)</TD></TR></TABLE>>, width = 1.35916984707, shape = "box", fontsize = 9.7860228989, height = 1.35916984707 ];
+"GO:0051179" [ URL = "#GO:0051179", label = <<TABLE BORDER="0"><TR><TD>GO:0051179<BR/>localization<BR/>(2.13e-01)</TD></TR></TABLE>>, width = 0.82523075976, shape = "box", fontsize = 5.94166147027, height = 0.82523075976 ];
+"GO:0040011" [ URL = "#GO:0040011", label = <<TABLE BORDER="0"><TR><TD>GO:0040011<BR/>locomotion<BR/>(4.19e-02)</TD></TR></TABLE>>, width = 1.17745716742, shape = "box", fontsize = 8.47769160539, height = 1.17745716742 ];
+"GO:0002376" [ URL = "#GO:0002376", label = <<TABLE BORDER="0"><TR><TD>GO:0002376<BR/>immune system process<BR/>(6.15e-02)</TD></TR></TABLE>>, width = 1.10469466418, shape = "box", fontsize = 7.95380158208, height = 1.10469466418 ];
+"GO:0006928" [ URL = "#GO:0006928", label = <<TABLE BORDER="0"><TR><TD>GO:0006928<BR/>cellular<BR/>component<BR/>movement<BR/>(3.85e-02)</TD></TR></TABLE>>, width = 1.19311619959, shape = "box", fontsize = 8.59043663706, height = 1.19311619959 ];
+"GO:0008150" [ URL = "#GO:0008150", label = <<TABLE BORDER="0"><TR><TD>GO:0008150<BR/>biological_process</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8 ];
+"GO:0050900" [ URL = "#GO:0050900", label = <<TABLE BORDER="0"><TR><TD>GO:0050900<BR/>leukocyte<BR/>migration<BR/>(5.73e-03)</TD></TR></TABLE>>, width = 1.5, shape = "box", fontsize = 10.8, height = 1.5 ];
+"GO:0051674" [ URL = "#GO:0051674", label = <<TABLE BORDER="0"><TR><TD>GO:0051674<BR/>localization of cell<BR/>(3.08e-02)</TD></TR></TABLE>>, width = 1.23294738267, shape = "box", fontsize = 8.87722115521, height = 1.23294738267 ];
+"GO:0048870" [ URL = "#GO:0048870", label = <<TABLE BORDER="0"><TR><TD>GO:0048870<BR/>cell motility<BR/>(3.08e-02)</TD></TR></TABLE>>, width = 1.23294738267, shape = "box", fontsize = 8.87722115521, height = 1.23294738267 ];
+"GO:0007155" [ URL = "#GO:0007155", label = <<TABLE BORDER="0"><TR><TD>GO:0007155<BR/>cell adhesion<BR/>(4.04e-02)</TD></TR></TABLE>>, width = 1.18407367169, shape = "box", fontsize = 8.52533043614, height = 1.18407367169 ];
+"GO:0016477" [ URL = "#GO:0016477", label = <<TABLE BORDER="0"><TR><TD>GO:0016477<BR/>cell migration<BR/>(2.74e-02)</TD></TR></TABLE>>, width = 1.25317030501, shape = "box", fontsize = 9.02282619609, height = 1.25317030501 ];
+}
+subgraph "edges" {
+
+
+edge [ dir = "back", weight = 1 ];
+subgraph "regulates" {
+
+
+edge [ color = "cyan", arrowtail = "none" ];
+subgraph "positive" {
+
+
+edge [ color = "green", arrowtail = "vee" ];
+}
+subgraph "negative" {
+
+
+edge [ color = "red", arrowtail = "tee" ];
+}
+}
+subgraph "part_of" {
+
+
+edge [ color = "purple", arrowtail = "diamond", weight = 2.5 ];
+"GO:0051674" -> "GO:0048870";
+}
+subgraph "is_a" {
+
+
+edge [ color = "blue", arrowtail = "empty", weight = 5.0 ];
+"GO:0007155" -> "GO:0016337";
+"GO:0022610" -> "GO:0007155";
+"GO:0008150" -> "GO:0022610";
+"GO:0008150" -> "GO:0009987";
+"GO:0016477" -> "GO:0050900";
+"GO:0009987" -> "GO:0006928";
+"GO:0006928" -> "GO:0048870";
+"GO:0051179" -> "GO:0051674";
+"GO:0040011" -> "GO:0048870";
+"GO:0009987" -> "GO:0007155";
+"GO:0008150" -> "GO:0040011";
+"GO:0048870" -> "GO:0016477";
+"GO:0008150" -> "GO:0002376";
+"GO:0002376" -> "GO:0050900";
+"GO:0008150" -> "GO:0051179";
+}
+}
+}
