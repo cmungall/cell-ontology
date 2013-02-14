@@ -3,13 +3,15 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): cl-lastbuild.obo; data version: 2013-01-31; date: 04:01:2013 10:31
-- file 2 (new): cl-basic.obo; data version: 2013-02-07; date: 04:01:2013 10:31
+- file 1 (old): cl-lastbuild.obo; data version: 2013-02-07; date: 04:01:2013 10:31
+- file 2 (new): cl-basic.obo; data version: 2013-02-14; date: 04:01:2013 10:31
 
 NEW TERMS
 =========
 
-None
+ID	name	namespace
+CL:0012000	astrocyte of the forebrain	cell
+CL:0012001	neuron of the forebrain	cell
 
 
 OBSOLETIONS
@@ -29,41 +31,16 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	synonym	relationship	
-CL:0000199				1 D, 1 A		
-CL:0000340					1 A	
-CL:0000560			C			
-CL:0002217	C					
-CL:0002519		C				
-
-
-
-OTHER STANZA TYPES
-==================
-
-New Stanzas
-==========-
-
-Stanza type	ID	Name
-Typedef	dubious_for_taxon	dubious_for_taxon
-Typedef	has_relational_adjective	has_relational_adjective
-Typedef	homologous_to	homologous_to
-Typedef	homology_notes	homology_notes
-Typedef	immediate_transformation_of	immediate_transformation_of
-Typedef	never_in_taxon	never_in_taxon
-Typedef	pharyngeal_arch_number	pharyngeal arch number
-Typedef	present_in_taxon	present_in_taxon
-Typedef	seeAlso	see also
-Typedef	taxon_notes	taxon_notes
-
-
-
-Stanzas Edited
-==============
-
-Stanza type	ID	Name
-Typedef	has_part	has_part
-Typedef	spatially_disjoint_from	spatially_disjoint_from
+Term ID	def	comment	synonym	is_a	relationship	
+CL:0000124					1 A	
+CL:0000340					1 D	
+CL:0000681	C	A	1 A	1 D, 1 A	1 D, 1 A	
+CL:0002605				1 D, 1 A		
+CL:0002609				1 D, 1 A		
+CL:0002613				1 D, 1 A		
+CL:0002614				1 D, 1 A		
+CL:0005020	C	A				
+CL:0005022			1 A			
 
 
 
@@ -75,15 +52,15 @@ Term counts for the old and new files
 Ontology	Old file	New file	Change
 cl	30	30	
 	(28 defined)	(28 defined)	
-cell	1932	1932	
-	(1579 defined)	(1579 defined)	
+cell	1932	1934	+2
+	(1579 defined)	(1581 defined)	
 
 Obsolete	89	89	0
 	(4.3% of total)	 (4.3% of total)	(0.0%)
 
-Totals	1962	1962	0 (0.0%)
-	1607 (81.9%) defined	1607 (81.9%) defined	
-	2051 inc. obs	2051 inc. obs
+Totals	1962	1964	+2 (+0.1%)
+	1607 (81.9%) defined	1609 (81.9%) defined	
+	2051 inc. obs	2053 inc. obs
 
 
 
