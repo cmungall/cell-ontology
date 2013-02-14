@@ -75,6 +75,7 @@ synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: cl
 remark: $Revision: 1.113 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/RO_0002215> \"capable_of\"^^xsd:string)\n)
 
 [Term]
 id: CL:0000000
@@ -20135,6 +20136,13 @@ name: overlaps
 xref: RO:0002131
 
 [Typedef]
+id: RO:0002215
+name: capable_of
+namespace: CL
+def: "A relation between a material entity (such as a cell) and a process. This is a shortcut relation, translation rule for which is: capable_of P <-> bearer_of (some realized_by only P). Example: osteoclast capable of bone resorption." [GOC:cjm]
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
+
+[Typedef]
 id: UBPROP:0000001
 name: external_definition
 def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [UBERON:cjm]
@@ -20157,13 +20165,6 @@ id: bearer_of
 name: bearer of
 namespace: BFO
 xref: BFO:0000053
-
-[Typedef]
-id: capable_of
-name: capable_of
-namespace: CL
-def: "A relation between a material entity (such as a cell) and a process. This is a shortcut relation, translation rule for which is: capable_of P <-> bearer_of (some realized_by only P). Example: osteoclast capable of bone resorption." [GOC:cjm]
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
 
 [Typedef]
 id: decreased_in_magnitude_relative_to
