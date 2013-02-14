@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: 2013-02-07
+data-version: 2013-02-14
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -1833,6 +1833,7 @@ name: glial cell (sensu Nematoda and Protostomia)
 namespace: cell
 xref: FBbt:00005144
 is_a: CL:0000125 ! glial cell
+relationship: develops_from CL:0000340 ! glioblast (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000125
@@ -1868,9 +1869,9 @@ xref: BTO:0000099
 xref: FMA:54537
 is_a: CL:0000128 ! oligodendrocyte
 intersection_of: CL:0000126 ! macroglial cell
-intersection_of: has_part UBERON:0001023 ! dendrite
+intersection_of: has_part UBERON:0001023 ! obsolete dendrite
 intersection_of: part_of UBERON:0001017 ! central nervous system
-relationship: has_part UBERON:0001023 ! dendrite
+relationship: has_part UBERON:0001023 ! obsolete dendrite
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -3948,7 +3949,6 @@ name: glioblast (sensu Nematoda and Protostomia)
 namespace: cell
 is_a: CL:0000030 ! glioblast
 is_a: CL:0000130 ! neuron associated cell (sensu Nematoda and Protostomia)
-relationship: develops_from CL:0000340 ! glioblast (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000341
@@ -7508,9 +7508,11 @@ relationship: develops_from CL:0000222 ! mesodermal cell
 id: CL:0000681
 name: radial glial cell
 namespace: cell
-def: "A transient cell present only in the developing CNS. Functions as both a precursor cell and as a scaffold to support neuronal migration." [GOC:dph]
-is_a: CL:0000337 ! neuroblast (sensu Vertebrata)
-relationship: develops_from CL:0000133 ! neurectodermal cell
+def: "A cell present in the developing CNS. Functions as both a precursor cell and as a scaffold to support neuronal migration." [GOC:dph]
+comment: Unlike that of mammals, the brain of adult teleost fish exhibits an intense and widespread neurogenic activity as a result of the persistence of\nradial glial cells acting as neural progenitors throughout life.
+synonym: "forebrain radial glial cell" EXACT []
+is_a: CL:0000243 ! glial cell (sensu Vertebrata)
+relationship: develops_from CL:0000031 ! neuroblast
 
 [Term]
 id: CL:0000682
@@ -21392,7 +21394,7 @@ id: CL:0002605
 name: astrocyte of the cerebral cortex
 namespace: cell
 def: "An astrocyte of the cerebral cortex." [GOC:tfm]
-is_a: CL:0000127 ! astrocyte
+is_a: CL:0012000 ! astrocyte of the forebrain
 intersection_of: CL:0000127 ! astrocyte
 intersection_of: part_of UBERON:0000956 ! cerebral cortex
 relationship: part_of UBERON:0000956 ! cerebral cortex
@@ -21440,7 +21442,7 @@ def: "A CNS neuron of the cerebral cortex." [GOC:tfm]
 synonym: "cortical neuron" EXACT []
 xref: BTO:0004102
 xref: FMA:84104
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+is_a: CL:0012001 ! neuron of the forebrain
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: part_of UBERON:0000956 ! cerebral cortex
 relationship: part_of UBERON:0000956 ! cerebral cortex
@@ -21488,7 +21490,7 @@ id: CL:0002613
 name: striatum neuron
 namespace: cell
 def: "A neuron of the striatum." [GOC:tfm]
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+is_a: CL:0012001 ! neuron of the forebrain
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: part_of UBERON:0002435 ! striatum
 relationship: part_of UBERON:0002435 ! striatum
@@ -21500,7 +21502,7 @@ id: CL:0002614
 name: neuron of the substantia nigra
 namespace: cell
 def: "A neuron of the substantia nigra." [GOC:tfm]
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+is_a: CL:0012001 ! neuron of the forebrain
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: part_of UBERON:0002038 ! substantia nigra
 relationship: part_of UBERON:0002038 ! substantia nigra
@@ -22442,7 +22444,8 @@ is_a: CL:0005018 ! ghrelin secreting cell
 id: CL:0005020
 name: lymphangioblast
 namespace: cell
-def: "Lymphatic progenitor cells. Usually express Prox1, or prox1b." [CL:CVS]
+def: "Lymphatic progenitor cells. " [CL:CVS]
+comment: Usually express Prox1, or prox1b.
 is_a: CL:0000048 ! multi fate stem cell
 intersection_of: CL:0000048 ! multi fate stem cell
 intersection_of: derives_from UBERON:0004536 ! lymph vasculature
@@ -22465,6 +22468,7 @@ id: CL:0005022
 name: vascular lymphangioblast
 namespace: cell
 def: "Lymphatic progenitor cells, derived from the veins, that give rise to lymphatic endothelial cells." [CL:CVS]
+synonym: "parachordal lymphangioblast" NARROW []
 is_a: CL:0005020 ! lymphangioblast
 intersection_of: CL:0005020 ! lymphangioblast
 intersection_of: derives_from UBERON:0001638 ! vein
@@ -22713,6 +22717,30 @@ name: lugaro cell
 def: "An inhibitory GABAergic interneuron found in the cerebellar cortex." [GOC:nv]
 is_a: CL:0011005 ! GABAergic interneuron
 relationship: has_part UBERON:0002037 ! cerebellum
+
+[Term]
+id: CL:0012000
+name: astrocyte of the forebrain
+namespace: cell
+def: "An astrocyte of the forebrain." []
+synonym: "forebrain astrocyte" EXACT []
+is_a: CL:0000127 ! astrocyte
+intersection_of: CL:0000127 ! astrocyte
+intersection_of: part_of UBERON:0001890 ! forebrain
+relationship: part_of UBERON:0001890 ! forebrain
+created_by: tberardini
+
+[Term]
+id: CL:0012001
+name: neuron of the forebrain
+namespace: cell
+def: "A CNS neuron of the forebrain." []
+synonym: "forebrain neuron" EXACT []
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: part_of UBERON:0001890 ! forebrain
+relationship: part_of UBERON:0001890 ! forebrain
+created_by: tberardini
 
 [Term]
 id: CL:1000082
@@ -43212,29 +43240,6 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Anatomical structure that is an individual member of a species.[TAO]" xsd:string
 
 [Term]
-id: UBERON:0000470
-name: cell part
-namespace: uberon
-def: "Anatomical structure that is a direct part of the cell." [CARO:MAH]
-comment: todo - move metadata to GO and obsolete this class. Note the inconsistency between the usage of the label 'cell component' in GO and CARO
-subset: upper_level
-synonym: "cell component" RELATED [CARO:0000014]
-xref: AAO:0010271
-xref: BILA:0000014
-xref: CARO:0000014
-xref: FBbt:00007012
-xref: FMA:86454
-xref: GO:0044464
-xref: HAO:0000014
-xref: ncithesaurus:Cell_Part
-xref: NIF_Subcellular:sao-1337158144
-xref: OpenCyc:Mx4rwQwkcZwpEbGdrcN5Y29ycA
-xref: TGMA:0001834
-xref: UMLS:C1178969
-is_a: UBERON:0000061 ! anatomical structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-
-[Term]
 id: UBERON:0000471
 name: compound organ component
 namespace: uberon
@@ -44798,7 +44803,6 @@ def: "passage from the ovaries to the outside of the body[Wikipedia:Oviduct]." [
 comment: Usage notes: sometimes oviduct is used interchangeably with follaopian tube. Here they are different - the oviduct connects the gonad to the outside in a variety of animals. The mammal-class fallopian tube is derived from the mullerian duct and connects the gonads to the uterus. Taxon notes: in birds divided into infundibulum, magnum, isthmus, uterus, and vagina
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "salpinx" RELATED [BTO:0000980]
 synonym: "tuba uterina" RELATED [BTO:0000980]
 synonym: "tuba uterinae" RELATED [BTO:0000980]
 synonym: "uterine tube" EXACT []
@@ -45180,6 +45184,7 @@ xref: XAO:0003049
 xref: ZFA:0005345
 is_a: UBERON:0002384 ! connective tissue
 disjoint_from: UBERON:0003714 ! neural tissue
+property_value: has_relational_adjective "adipose" xsd:string
 property_value: homology_notes "Adipose tissue is unique to vertebrates. It is found in mostmammals, birds, reptiles and amphibians, and a variety is found in some species of fish. Furthermore, in insects the fat body found in larvae as well as in adults shares some homology with adipose tissue.[well established][VHOG]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Connective tissue in which fat is stored.[TAO]" xsd:string
@@ -45362,40 +45367,24 @@ property_value: UBPROP:0000001 "A portion of tissue which is a fasiculated group
 
 [Term]
 id: UBERON:0001023
-name: dendrite
+name: obsolete dendrite
 namespace: uberon
 def: "The region of a neuron receiving inputs from other neurons, typically a slender neurite, often branched. In insect neurons, this is often not a clear designation and often presynaptic sites co-extend with postsynaptic ones." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Dendrite]
-comment: TODO - use GO
+comment: Made obsolete as it was equivalent to GO class
 subset: uberon_slim
-xref: FBbt:00005110
-xref: FMA:67314
-xref: GAID:749
-xref: GO:0030425
-xref: MESH:A08.663.256
-xref: ncithesaurus:Dendrite
-xref: NIF_Subcellular:sao1211023249
-xref: OpenCyc:Mx4rviIdspwpEbGdrcN5Y29ycA
-xref: TGMA:0001373
-xref: UMLS:C0011305
-is_a: UBERON:0001024 ! neurite
 property_value: has_relational_adjective "dendritic" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-
-[Term]
-id: UBERON:0001024
-name: neurite
-namespace: uberon
-def: "One of the processes or extensions of a neuron, axon or dendrite or cell body fiber. // Cell appendage of the neuron which includes the axon and the dendrite." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Neurite]
-comment: TODO - use GO
-subset: uberon_slim
-xref: FBbt:00005113
-xref: FMA:61814
-xref: GAID:751
-xref: GO:0043005
-xref: MESH:A08.663.256.500
-xref: NIF_Subcellular:sao-867568886
-is_a: UBERON:0000470 ! cell part
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+is_obsolete: true
+consider: FBbt:00005110
+consider: FMA:67314
+consider: GAID:749
+consider: GO:0030425
+consider: MESH:A08.663.256
+consider: ncithesaurus:Dendrite
+consider: NIF_Subcellular:sao1211023249
+consider: OpenCyc:Mx4rviIdspwpEbGdrcN5Y29ycA
+consider: TGMA:0001373
+consider: UMLS:C0011305
 
 [Term]
 id: UBERON:0001032
@@ -49726,7 +49715,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0001773
 name: sclera
 namespace: uberon
-def: "The sclera, also known as the white part of the eye, is the opaque (usually white, though certain animals, such as horses and lizards, can have black sclera), fibrous, protective, outer layer of the eye containing collagen and elastic fiber. It is derived from the neural crest. In children, it is thinner and shows some of the underlying pigment, appearing slightly blue. In the elderly, however, fatty deposits on the sclera can make it appear slightly yellow. The sclera forms the posterior five sixths of the connective tissue coat of the globe. It is continuous with the dura mater and the cornea, and maintains the shape of the globe, offering resistance to internal and external forces, and provides an attachment for the extraocular muscle insertions. The sclera is perforated by plenty of nerves and vessels passing through the posterior scleral foramen, the hole that is formed by the optic nerve. At the optic disk the outer two-thirds of the sclera continues with the dura mater (outer coat of the brain) via the dural sheath of the optic nerve. The inner third joins with some choroidal tissue to form a plate (lamina cribrosa) across the optic nerve with perforations through which the optic fibers (fasciculi). The thickness of the sclera varies from 1mm at the posterior pole to 0.3 mm just behind the rectus muscle insertions. The sclera's blood vessels are mainly on the surface, and together with the conjunctiva (which lies on top) This is a thin layer covering the sclera. Along with the vessels of the conjunctiva, those of the sclera renders the inflamed eye bright red. [WP,unvetted]." [Wikipedia:Sclera]
+def: "Opaque fibrous outer layer of the eyeball[ZFA,Kardong,WP]." [Wikipedia:Sclera, ZFIN:ZDB-PUB-050701-15]
 comment: Development notes: Majority derives from NC that surrounds optic cup of neurectoderm; a small temporal portion develops from the mesoderm that contributes to striated extra-ocular muscles and vascular endothelia[Rada&Johnson]. Taxon notes: Multi-tissue structure that composes the opaque fibrous outer layer of the eye[ZFA] Seko et al demonstrate chondrogenic potential doi:10.1371/journal.pone.0003709 and identify this as connective tissue. Disease notes: implicated in rheumatoid arthritis. Structure notes: continuous with the dura mater and the cornea; The sclera forms the posterior five-sixths of the connective tissue coat of the globe. Taxon notes: in fish, reptiles and monotremes the connective tissue of the sclera is skeletal
 subset: uberon_slim
 subset: vertebrate_core
@@ -49754,6 +49743,7 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 relationship: part_of UBERON:0012430 ! tunica fibrosa of eyeball
 property_value: has_relational_adjective "scleral" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "The sclera, also known as the white part of the eye, is the opaque (usually white, though certain animals, such as horses and lizards, can have black sclera), fibrous, protective, outer layer of the eye containing collagen and elastic fiber. It is derived from the neural crest. In children, it is thinner and shows some of the underlying pigment, appearing slightly blue. In the elderly, however, fatty deposits on the sclera can make it appear slightly yellow. The sclera forms the posterior five sixths of the connective tissue coat of the globe. It is continuous with the dura mater and the cornea, and maintains the shape of the globe, offering resistance to internal and external forces, and provides an attachment for the extraocular muscle insertions. The sclera is perforated by plenty of nerves and vessels passing through the posterior scleral foramen, the hole that is formed by the optic nerve. At the optic disk the outer two-thirds of the sclera continues with the dura mater (outer coat of the brain) via the dural sheath of the optic nerve. The inner third joins with some choroidal tissue to form a plate (lamina cribrosa) across the optic nerve with perforations through which the optic fibers (fasciculi). The thickness of the sclera varies from 1mm at the posterior pole to 0.3 mm just behind the rectus muscle insertions. The sclera's blood vessels are mainly on the surface, and together with the conjunctiva (which lies on top) This is a thin layer covering the sclera. Along with the vessels of the conjunctiva, those of the sclera renders the inflamed eye bright red. [WP,unvetted][Wikipedia:Sclera]." xsd:string
 property_value: UBPROP:0000001 "The tough, usually white, outer coat of the eyeball, covering all the posterior surface and continuous anteriorly with the cornea. [TFD][VHOG]" xsd:string
 
 [Term]
@@ -54090,6 +54080,7 @@ synonym: "posterior gray horn of spinal cord" EXACT [FMA:256530]
 synonym: "posterior grey column of spinal cord" EXACT []
 synonym: "posterior horn of spinal cord" EXACT [Wikipedia:Posterior_horn_of_spinal_cord]
 synonym: "spinal cord dorsal horn" EXACT []
+synonym: "spinal cord dorsal horns" RELATED PLURAL []
 synonym: "spinal cord posterior horn" EXACT [NIF_GrossAnatomy:birnlex_2667]
 xref: BM:SpC-DH
 xref: EMAPA:18574
@@ -55634,6 +55625,7 @@ disjoint_from: UBERON:0002423 ! hepatobiliary system
 disjoint_from: UBERON:0004456 ! entire sense organ system
 relationship: develops_from UBERON:0003061 ! blood island
 relationship: part_of UBERON:0002193 ! hemolymphoid system
+property_value: has_relational_adjective "hematopoietic" xsd:string
 property_value: homology_notes "Zebrafish developmental hematopoiesis shows close correspondence to the development of the mammalian hematopoietic system and is regulated by conserved molecular pathways.[well established][VHOG]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Anatomical system that consists of the blood and blood forming tissues.[AAO]" xsd:string
@@ -56104,6 +56096,7 @@ is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0004456 ! entire sense organ system
 relationship: part_of UBERON:0001007 ! digestive system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "System responsible for the production and movement of bile[ZFIN:curator]." xsd:string
 
 [Term]
 id: UBERON:0002424
@@ -56247,6 +56240,7 @@ xref: ZFA:0000385
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0002193 ! hemolymphoid system
 relationship: part_of UBERON:0002405 ! immune system
+property_value: has_relational_adjective "lymphoid" xsd:string
 property_value: homology_notes "Tetrapods have evolved distinct lymphatic systems, in which lymphatic capillaries help drain most of the tissues of the body.[well established][VHOG]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Part of the circulatory system which consists of a series of vessels which collect blood (exclusive of erythrocytes) which seep through capillary walls and return it to the veins.[AAO]" xsd:string
@@ -57605,6 +57599,7 @@ is_a: UBERON:0004119 ! endoderm-derived structure
 relationship: develops_from UBERON:0007123 ! pharyngeal pouch 2
 relationship: part_of UBERON:0000949 ! endocrine system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "Portion of tissue part of the pharyngeal endoderm that is fated to become thyroid follicle[ZFIN:curator]." xsd:string
 
 [Term]
 id: UBERON:0003099
@@ -59019,9 +59014,11 @@ comment: http://en.wikipedia.org/wiki/Talk:Fallopian_tube#Homology
 subset: uberon_slim
 synonym: "fallopian tubes" RELATED []
 synonym: "female paramesonephric duct" RELATED [EHDAA2:0000504]
-synonym: "mammalian oviduct" RELATED [http://sourceforge.net/tracker/?func=detail&aid=3293337&group_id=36855&atid=440764]
+synonym: "mammalian oviduct" EXACT [http://sourceforge.net/tracker/?func=detail&aid=3293337&group_id=36855&atid=440764]
+synonym: "salpinges" BROAD PLURAL []
+synonym: "salpinx" BROAD []
 synonym: "tuba uterina" RELATED LATIN [Wikipedia:Fallopian_tube]
-synonym: "uterine tube" RELATED []
+synonym: "uterine tube (sensu Mammalia)" EXACT []
 xref: EFO:0000974
 xref: EHDAA2:0000504
 xref: EV:0100112
@@ -61731,6 +61728,7 @@ is_a: UBERON:0005423 ! developing anatomical structure
 relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0003068 ! axial mesoderm
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "Notochord rudiment[ZFIN:ZDB-PUB-961014-576]." xsd:string
 
 [Term]
 id: UBERON:0004894
@@ -64513,6 +64511,7 @@ is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001009 ! circulatory system
 relationship: part_of UBERON:0002465 ! lymphoid system
 relationship: part_of UBERON:0007798 ! vascular system
+property_value: has_relational_adjective "lymporeticular" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Part of the circulatory system which consists of a series of vessels which collect blood (exclusive of erythrocytes) which seep through capillary walls and return it to the veins.[AAO]" xsd:string
 
