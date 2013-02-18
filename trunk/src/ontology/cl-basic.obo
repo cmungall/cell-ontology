@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: 2013-02-14
+data-version: releases/2013-02-17
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -75,7 +75,6 @@ synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: cl
 remark: $Revision: 1.113 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/RO_0002215> \"capable_of\"^^xsd:string)\n)
 
 [Term]
 id: CL:0000000
@@ -1619,6 +1618,7 @@ id: CL:0000154
 name: protein secreting cell
 namespace: cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 
 [Term]
 id: CL:0000155
@@ -1682,6 +1682,7 @@ id: CL:0000161
 name: acid secreting cell
 namespace: cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 
 [Term]
 id: CL:0000162
@@ -1845,7 +1846,7 @@ is_a: CL:0000174 ! steroid hormone secreting cell
 id: CL:0000177
 name: testosterone secreting cell
 namespace: cell
-is_a: CL:0000174 ! steroid hormone secreting cell
+is_a: CL:0000593 ! androgen secreting cell
 
 [Term]
 id: CL:0000178
@@ -1859,6 +1860,7 @@ xref: BTO:0000755
 xref: EMAPA:29655
 xref: FMA:72297
 is_a: CL:0000177 ! testosterone secreting cell
+is_a: CL:0002320 ! connective tissue cell
 
 [Term]
 id: CL:0000179
@@ -3023,6 +3025,7 @@ namespace: cell
 synonym: "mucous cell" EXACT []
 xref: BTO:0003689
 is_a: CL:0000159 ! seromucus secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 
 [Term]
 id: CL:0000320
@@ -5321,6 +5324,7 @@ name: androgen secreting cell
 namespace: cell
 def: "A steroid hormone secreting cell that secretes androgen." [GOC:tfm]
 is_a: CL:0000174 ! steroid hormone secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 
 [Term]
 id: CL:0000594
@@ -6162,6 +6166,7 @@ namespace: cell
 def: "A columnar/cuboidal epithelial cell that secretes cerebrospinal fluid." [GOC:tfm]
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -12832,6 +12837,7 @@ def: "A D cell located in the colon." [GOC:tfm]
 xref: FMA:268744
 is_a: CL:0000502 ! type D enteroendocrine cell
 is_a: CL:0002658 ! glandular cell of the large intestine
+is_a: CL:1001516 ! intestinal enteroendocrine cell
 created_by: tmeehan
 creation_date: 2010-09-10T11:37:35Z
 
@@ -12928,6 +12934,7 @@ name: histamine secreting cell
 namespace: cell
 def: "A cell type that secretes histamine." [GOC:tfm]
 is_a: CL:0000457 ! biogenic amine secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 created_by: tmeehan
 creation_date: 2010-09-10T03:04:42Z
 
@@ -16514,7 +16521,7 @@ id: CL:0002624
 name: paneth cell of the appendix
 namespace: cell
 def: "A paneth cell of the appendix." [GOC:tfm]
-is_a: CL:0000510 ! paneth cell
+is_a: CL:0002658 ! glandular cell of the large intestine
 is_a: CL:1000405 ! epithelial cell of appendix
 created_by: tmeehan
 creation_date: 2011-03-15T09:38:18Z
@@ -16861,7 +16868,8 @@ name: glandular cell of the large intestine
 namespace: cell
 def: "A glandular epithelial cell of the large intestine." [GOC:tfm]
 xref: FMA:87194
-is_a: CL:0000150 ! glandular epithelial cell
+is_a: CL:0000510 ! paneth cell
+is_a: CL:0002253 ! epithelial cell of large intestine
 created_by: tmeehan
 creation_date: 2011-07-08T04:03:01Z
 
@@ -17256,6 +17264,7 @@ name: ghrelin secreting cell
 namespace: cell
 def: "A cell that secretes ghrelin, the peptide hormone that stimulates hunger." [CL:curator]
 is_a: CL:0000167 ! peptide hormone secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 
 [Term]
 id: CL:0005019
@@ -17932,8 +17941,6 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of large intestine." [GOC:tfm]
 xref: FMA:263054
 is_a: CL:0000160 ! goblet cell
-is_a: CL:0000510 ! paneth cell
-is_a: CL:0002253 ! epithelial cell of large intestine
 is_a: CL:0002658 ! glandular cell of the large intestine
 
 [Term]
@@ -20143,6 +20150,10 @@ def: "A relation between a material entity (such as a cell) and a process. This 
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
 
 [Typedef]
+id: RO:0002220
+name: adjacent_to
+
+[Typedef]
 id: UBPROP:0000001
 name: external_definition
 def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [UBERON:cjm]
@@ -20155,10 +20166,6 @@ name: axiom_lost_from_external_ontology
 def: "A textual description of an axiom loss in this ontology compared to an external ontology." [UBERON:cjm]
 xref: UBPROP:0000002
 is_metadata_tag: true
-
-[Typedef]
-id: adjacent_to
-name: adjacent_to
 
 [Typedef]
 id: bearer_of
@@ -20175,10 +20182,6 @@ comment: This relation is used to determine the 'directionality' of relative qua
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 is_transitive: true
 is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
-
-[Typedef]
-id: derives_from
-name: derives_from (UNDECLARED)
 
 [Typedef]
 id: develops_from
@@ -20283,13 +20286,6 @@ xref: RO:0002104
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
 
 [Typedef]
-id: has_quality
-name: has_quality
-namespace: RO
-alt_id: OBO_REL:0000029
-xref: OBO_REL:has_quality
-
-[Typedef]
 id: has_ratio_quality
 name: has_ratio_quality
 namespace: quality
@@ -20346,6 +20342,12 @@ comment: Association is weaker than correlation or proportionality. These relati
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 created_by: cjm
 creation_date: 2009-08-26T02:50:24Z
+
+[Typedef]
+id: is_count_of
+name: is count of
+namespace: uberon
+is_metadata_tag: true
 
 [Typedef]
 id: lacks_modification
@@ -20427,6 +20429,13 @@ namespace: gene_ontology
 xref: RO:0002213
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
+
+[Typedef]
+id: preceding_element_is
+name: preceding element is
+namespace: uberon
+def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [UBERON:cjm]
+is_metadata_tag: true
 
 [Typedef]
 id: present_in_taxon

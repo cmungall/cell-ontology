@@ -20,6 +20,7 @@ build/cl.obo: cl-edit.owl cl-relations.obo pr-minimal.obo
 	ontology-release-runner --repair-cardinality --outdir build --no-subsets --allow-overwrite --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< cl-relations.obo $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo pr-minimal.obo
 #	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix $(OBO)/CL_ --prefix $(OBO)/CP_ cl-edit.obo $(OBO)/uberon/basic.owl pr-core.obo $(OBO)/go.owl $(OBO)/pato.owl chebi_lite.obo
 .PRECIOUS: build/cl.obo
+build/cl.owl: build/cl.obo
 
 cl.obo: build/cl.obo
 	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
@@ -27,11 +28,14 @@ cl.obo: build/cl.obo
 cl.owl: build/cl.owl
 	cp $< $@
 
+cl-merged.ofn: build/cl.owl
+	owltools build/cl-merged.owl -o -f functional file://`pwd`/$@
+
 cl-basic.obo: build/cl-simple.obo
 	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
 cl-basic.owl: build/cl-simple.owl
-	cp $< $@
+		cp $< $@
 
 #cl-edit.owl: cl-edit.obo
 #	obolib-obo2owl -o $@ $<
@@ -49,6 +53,9 @@ bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
 
 fix-%: %
 	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
+
+cl.ofn: cl.owl
+	owltools $< -o -f functional file://`pwd`/$@
 
 # ----------------------------------------
 # Diffs

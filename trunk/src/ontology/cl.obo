@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: 2013-02-14
+data-version: releases/2013-02-17
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -75,7 +75,6 @@ synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: cl
 remark: $Revision: 1.113 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/RO_0002215> \"capable_of\"^^xsd:string)\n)
 
 [Term]
 id: CHEBI:23367
@@ -1085,11 +1084,11 @@ xref: BTO:0001663
 xref: FMA:70576
 is_a: CL:0000146 ! simple columnar epithelial cell
 is_a: CL:0000151 ! secretory cell
-relationship: adjacent_to UBERON:0001763 ! odontogenic papilla
 relationship: develops_from CL:0007000 ! preameloblast
 relationship: part_of UBERON:0005176 ! tooth enamel organ
 relationship: produces UBERON:0001752 ! enamel
 relationship: RO:0002215 GO:0097186 ! capable_of amelogenesis
+relationship: RO:0002220 UBERON:0001763 ! adjacent_to odontogenic papilla
 
 [Term]
 id: CL:0000060
@@ -2117,6 +2116,7 @@ def: "A cell capable of processing and presenting lipid and protein antigens to 
 comment: Note change of name; nearly all somatic cells can present antigens to T cells via MHC Class I complexes leading to effector responses, but professional antigen presenting cells constitutively express MHC Class II as well as costimulatory molecules, and thus can initiate immune responses via T cells.
 synonym: "APC" BROAD []
 is_a: CL:0000473 ! defensive cell
+relationship: RO:0002215 GO:0002504 ! capable_of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
 
 [Term]
 id: CL:0000146
@@ -2202,6 +2202,12 @@ id: CL:0000154
 name: protein secreting cell
 namespace: cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: RO:0002215 GO:0009306 ! capable_of protein secretion
+intersection_of: RO:0002215 GO:0009306 ! capable_of protein secretion
+relationship: RO:0002215 GO:0009306 ! capable_of protein secretion
 
 [Term]
 id: CL:0000155
@@ -2271,12 +2277,17 @@ xref: BTO:0001540
 xref: FMA:13148
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000319 ! mucus secreting cell
+relationship: RO:0002215 GO:0070254 ! capable_of mucus secretion
 
 [Term]
 id: CL:0000161
 name: acid secreting cell
 namespace: cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: RO:0002215 GO:0046717 ! capable_of acid secretion
+relationship: RO:0002215 GO:0046717 ! capable_of acid secretion
 
 [Term]
 id: CL:0000162
@@ -2469,7 +2480,7 @@ relationship: RO:0002215 GO:0045457 ! capable_of ecdysteroid secretion
 id: CL:0000177
 name: testosterone secreting cell
 namespace: cell
-is_a: CL:0000174 ! steroid hormone secreting cell
+is_a: CL:0000593 ! androgen secreting cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: RO:0002215 GO:0035936 ! capable_of testosterone secretion
 relationship: RO:0002215 GO:0035936 ! capable_of testosterone secretion
@@ -2486,6 +2497,7 @@ xref: BTO:0000755
 xref: EMAPA:29655
 xref: FMA:72297
 is_a: CL:0000177 ! testosterone secreting cell
+is_a: CL:0002320 ! connective tissue cell
 relationship: part_of UBERON:0005212 ! testis interstitial tissue
 
 [Term]
@@ -3767,6 +3779,11 @@ namespace: cell
 synonym: "mucous cell" EXACT []
 xref: BTO:0003689
 is_a: CL:0000159 ! seromucus secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: RO:0002215 GO:0070254 ! capable_of mucus secretion
+intersection_of: RO:0002215 GO:0070254 ! capable_of mucus secretion
 relationship: RO:0002215 GO:0070254 ! capable_of mucus secretion
 
 [Term]
@@ -6543,6 +6560,12 @@ name: androgen secreting cell
 namespace: cell
 def: "A steroid hormone secreting cell that secretes androgen." [GOC:tfm]
 is_a: CL:0000174 ! steroid hormone secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: RO:0002215 GO:0035935 ! capable_of androgen secretion
+intersection_of: RO:0002215 GO:0035935 ! capable_of androgen secretion
+relationship: RO:0002215 GO:0035935 ! capable_of androgen secretion
 
 [Term]
 id: CL:0000594
@@ -7232,6 +7255,7 @@ def: "A mucus-secreting cell, with numerous apical secretory vesicles containing
 synonym: "mucous neck cell" EXACT []
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000319 ! mucus secreting cell
+relationship: RO:0002215 GO:0070254 ! capable_of mucus secretion
 
 [Term]
 id: CL:0000652
@@ -7559,7 +7583,11 @@ namespace: cell
 def: "A columnar/cuboidal epithelial cell that secretes cerebrospinal fluid." [GOC:tfm]
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: RO:0002215 GO:0033326 ! capable_of cerebrospinal fluid secretion
 relationship: develops_from CL:0000333 ! migratory neural crest cell
+relationship: RO:0002215 GO:0033326 ! capable_of cerebrospinal fluid secretion
 
 [Term]
 id: CL:0000687
@@ -8600,6 +8628,7 @@ disjoint_from: CL:0000817 ! precursor B cell
 disjoint_from: CL:0000818 ! transitional stage B cell
 relationship: develops_from CL:0000818 ! transitional stage B cell
 relationship: has_completed GO:0002335 ! mature B cell differentiation
+relationship: RO:0002215 GO:0002504 ! capable_of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
 relationship: RO:0002215 GO:0042113 ! capable_of B cell activation
 
 [Term]
@@ -10115,16 +10144,16 @@ def: "A splenic macrophage found in the areas surrounding the white pulp of the 
 comment: Markers: Mouse: F4/80-, Dectin2-low, sialoadhesin+.
 is_a: CL:0000871 ! splenic macrophage
 intersection_of: CL:0000871 ! splenic macrophage
-intersection_of: adjacent_to UBERON:0001959 ! white pulp of spleen
 intersection_of: has_low_plasma_membrane_amount PR:000001806 ! C-type lectin domain family 6 member A
 intersection_of: has_plasma_membrane_part PR:000001931 ! sialoadhesin
 intersection_of: lacks_plasma_membrane_part PR:000001813 ! EGF-like module-containing mucin-like hormone receptor-like 1
 intersection_of: part_of UBERON:0001251 ! marginal zone of spleen
-relationship: adjacent_to UBERON:0001959 ! white pulp of spleen
+intersection_of: RO:0002220 UBERON:0001959 ! adjacent_to white pulp of spleen
 relationship: has_low_plasma_membrane_amount PR:000001806 ! C-type lectin domain family 6 member A
 relationship: has_plasma_membrane_part PR:000001931 ! sialoadhesin
 relationship: lacks_plasma_membrane_part PR:000001813 ! EGF-like module-containing mucin-like hormone receptor-like 1
 relationship: part_of UBERON:0001251 ! marginal zone of spleen
+relationship: RO:0002220 UBERON:0001959 ! adjacent_to white pulp of spleen
 
 [Term]
 id: CL:0000874
@@ -10314,12 +10343,12 @@ namespace: cell
 def: "A lymph node macrophage found in the subcapsular sinus of lymph nodes that participates in sensing, clearance, and antigen presentation of lymph-borne particulate antigens. This macrophage is capable of activating invaraint NKT cells and is CD169-positive." [GO_REF:0000031, GOC:tfm, PMID:14668803, PMID:17934446, PMID:20228797]
 is_a: CL:0000868 ! lymph node macrophage
 intersection_of: CL:0000868 ! lymph node macrophage
-intersection_of: adjacent_to UBERON:0002194 ! capsule of lymph node
 intersection_of: has_plasma_membrane_part PR:000001931 ! sialoadhesin
 intersection_of: RO:0002215 GO:0032816 ! capable_of positive regulation of natural killer cell activation
-relationship: adjacent_to UBERON:0002194 ! capsule of lymph node
+intersection_of: RO:0002220 UBERON:0002194 ! adjacent_to capsule of lymph node
 relationship: has_plasma_membrane_part PR:000001931 ! sialoadhesin
 relationship: RO:0002215 GO:0032816 ! capable_of positive regulation of natural killer cell activation
+relationship: RO:0002220 UBERON:0002194 ! adjacent_to capsule of lymph node
 
 [Term]
 id: CL:0000888
@@ -14681,6 +14710,11 @@ synonym: "epiniphrine secreting cell of the adrenal medulla" EXACT []
 xref: FMA:69322
 is_a: CL:0000336 ! adrenal medulla chromaffin cell
 is_a: CL:0000454 ! epinephrine secreting cell
+intersection_of: CL:0000336 ! adrenal medulla chromaffin cell
+intersection_of: part_of UBERON:0001236 ! adrenal medulla
+intersection_of: RO:0002215 GO:0048242 ! capable_of epinephrine secretion
+relationship: part_of UBERON:0001236 ! adrenal medulla
+relationship: RO:0002215 GO:0048242 ! capable_of epinephrine secretion
 created_by: tmeehan
 creation_date: 2010-07-14T09:41:42Z
 
@@ -16006,6 +16040,7 @@ def: "A simple columnar cell that populates the entire luminal surface including
 xref: FMA:62949
 is_a: CL:0000319 ! mucus secreting cell
 is_a: CL:0002180 ! mucous cell of stomach
+relationship: RO:0002215 GO:0070254 ! capable_of mucus secretion
 created_by: tmeehan
 creation_date: 2010-08-25T03:45:10Z
 
@@ -17024,6 +17059,7 @@ def: "A D cell located in the colon." [GOC:tfm]
 xref: FMA:268744
 is_a: CL:0000502 ! type D enteroendocrine cell
 is_a: CL:0002658 ! glandular cell of the large intestine
+is_a: CL:1001516 ! intestinal enteroendocrine cell
 created_by: tmeehan
 creation_date: 2010-09-10T11:37:35Z
 
@@ -17120,6 +17156,10 @@ name: histamine secreting cell
 namespace: cell
 def: "A cell type that secretes histamine." [GOC:tfm]
 is_a: CL:0000457 ! biogenic amine secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: RO:0002215 GO:0001821 ! capable_of histamine secretion
+relationship: RO:0002215 GO:0001821 ! capable_of histamine secretion
 created_by: tmeehan
 creation_date: 2010-09-10T03:04:42Z
 
@@ -18165,14 +18205,14 @@ synonym: "primitive erythrocyte" EXACT []
 synonym: "primitive erythroid cell" EXACT []
 is_a: CL:0002417 ! primitive erythroid lineage cell
 intersection_of: CL:0002417 ! primitive erythroid lineage cell
+intersection_of: bearer_of PATO:0000586 ! increased size
 intersection_of: has_part PR:000008467 ! hemoglobin subunit zeta
 intersection_of: has_part PR:000008857 ! hemoglobin subunit beta-1
-intersection_of: has_quality PATO:0000586 ! increased size
 intersection_of: part_of UBERON:0000922 ! embryo
+relationship: bearer_of PATO:0000586 ! increased size
 relationship: develops_from CL:0002361 ! primitive erythroid progenitor
 relationship: has_part PR:000008467 ! hemoglobin subunit zeta
 relationship: has_part PR:000008857 ! hemoglobin subunit beta-1
-relationship: has_quality PATO:0000586 ! increased size
 relationship: part_of UBERON:0000922 ! embryo
 created_by: tmeehan
 creation_date: 2010-09-22T09:27:05Z
@@ -18185,10 +18225,10 @@ def: "A primitive erythrocyte that has undergone enucleation. This cell type is 
 synonym: "megalocyte" EXACT []
 is_a: CL:0002417 ! primitive erythroid lineage cell
 intersection_of: CL:0002417 ! primitive erythroid lineage cell
+intersection_of: bearer_of PATO:0000586 ! increased size
 intersection_of: develops_from CL:0002355 ! primitive red blood cell
-intersection_of: has_quality PATO:0000586 ! increased size
+relationship: bearer_of PATO:0000586 ! increased size
 relationship: develops_from CL:0002355 ! primitive red blood cell
-relationship: has_quality PATO:0000586 ! increased size
 created_by: tmeehan
 creation_date: 2010-09-22T09:35:16Z
 
@@ -18215,10 +18255,10 @@ namespace: cell
 def: "Derived from the Greek word pyren (the pit of a stone fruit), this is a transient nucleated cell type that results from exclusion of the nucleus from the primitive erythrocyte." [GOC:tfm]
 is_a: CL:0002417 ! primitive erythroid lineage cell
 intersection_of: CL:0002417 ! primitive erythroid lineage cell
+intersection_of: bearer_of PATO:0000587 ! decreased size
 intersection_of: develops_from CL:0002355 ! primitive red blood cell
-intersection_of: has_quality PATO:0000587 ! decreased size
+relationship: bearer_of PATO:0000587 ! decreased size
 relationship: develops_from CL:0002355 ! primitive red blood cell
-relationship: has_quality PATO:0000587 ! decreased size
 created_by: tmeehan
 creation_date: 2010-09-22T10:02:37Z
 
@@ -19070,8 +19110,8 @@ def: "A double-positive, alpha-beta thymocyte that is small and not proliferatin
 synonym: "T.DP.sm.Th" EXACT []
 is_a: CL:0000809 ! double-positive, alpha-beta thymocyte
 intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
-intersection_of: has_quality PATO:0000587 ! decreased size
-relationship: has_quality PATO:0000587 ! decreased size
+intersection_of: bearer_of PATO:0000587 ! decreased size
+relationship: bearer_of PATO:0000587 ! decreased size
 created_by: tmeehan
 creation_date: 2010-10-21T01:59:06Z
 
@@ -19084,10 +19124,10 @@ synonym: "activated double-positive thymocyte" EXACT []
 synonym: "T.DPb.Th" EXACT []
 is_a: CL:0000809 ! double-positive, alpha-beta thymocyte
 intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
-intersection_of: has_quality PATO:0000586 ! increased size
+intersection_of: bearer_of PATO:0000586 ! increased size
 intersection_of: participates_in GO:0008283 ! cell proliferation
+relationship: bearer_of PATO:0000586 ! increased size
 relationship: develops_from CL:0002427 ! resting double-positive thymocyte
-relationship: has_quality PATO:0000586 ! increased size
 relationship: participates_in GO:0008283 ! cell proliferation
 created_by: tmeehan
 creation_date: 2010-10-21T01:59:11Z
@@ -19952,9 +19992,9 @@ def: "A trophoblast cell that has a large volume of cytoplasm, is polyploidy and
 synonym: "giant trophoblast cell" EXACT []
 is_a: CL:0000351 ! trophoblast cell
 intersection_of: CL:0000351 ! trophoblast cell
-intersection_of: has_quality PATO:0000586 ! increased size
+intersection_of: bearer_of PATO:0000586 ! increased size
 intersection_of: RO:0002215 GO:0001974 ! capable_of blood vessel remodeling
-relationship: has_quality PATO:0000586 ! increased size
+relationship: bearer_of PATO:0000586 ! increased size
 relationship: RO:0002215 GO:0001974 ! capable_of blood vessel remodeling
 created_by: tmeehan
 creation_date: 2010-12-06T02:55:24Z
@@ -21628,7 +21668,7 @@ id: CL:0002624
 name: paneth cell of the appendix
 namespace: cell
 def: "A paneth cell of the appendix." [GOC:tfm]
-is_a: CL:0000510 ! paneth cell
+is_a: CL:0002658 ! glandular cell of the large intestine
 is_a: CL:1000405 ! epithelial cell of appendix
 intersection_of: CL:0000510 ! paneth cell
 intersection_of: part_of UBERON:0001154 ! vermiform appendix
@@ -21994,6 +22034,9 @@ xref: FMA:86489
 xref: FMA:86548
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0002252 ! epithelial cell of esophagus
+intersection_of: CL:0000150 ! glandular epithelial cell
+intersection_of: part_of UBERON:0001043 ! esophagus
+relationship: part_of UBERON:0001043 ! esophagus
 created_by: tmeehan
 creation_date: 2011-07-08T03:55:57Z
 
@@ -22003,7 +22046,11 @@ name: glandular cell of the large intestine
 namespace: cell
 def: "A glandular epithelial cell of the large intestine." [GOC:tfm]
 xref: FMA:87194
-is_a: CL:0000150 ! glandular epithelial cell
+is_a: CL:0000510 ! paneth cell
+is_a: CL:0002253 ! epithelial cell of large intestine
+intersection_of: CL:0000150 ! glandular epithelial cell
+intersection_of: part_of UBERON:0000059 ! large intestine
+relationship: part_of UBERON:0000059 ! large intestine
 created_by: tmeehan
 creation_date: 2011-07-08T04:03:01Z
 
@@ -22431,6 +22478,10 @@ name: ghrelin secreting cell
 namespace: cell
 def: "A cell that secretes ghrelin, the peptide hormone that stimulates hunger." [CL:curator]
 is_a: CL:0000167 ! peptide hormone secreting cell
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
+intersection_of: RO:0002215 GO:0036321 ! capable_of ghrelin secretion
+relationship: RO:0002215 GO:0036321 ! capable_of ghrelin secretion
 
 [Term]
 id: CL:0005019
@@ -22449,8 +22500,8 @@ def: "Lymphatic progenitor cells. " [CL:CVS]
 comment: Usually express Prox1, or prox1b.
 is_a: CL:0000048 ! multi fate stem cell
 intersection_of: CL:0000048 ! multi fate stem cell
-intersection_of: derives_from UBERON:0004536 ! lymph vasculature
-relationship: derives_from UBERON:0004536 ! lymph vasculature
+intersection_of: RO:0002220 UBERON:0004536 ! adjacent_to lymph vasculature
+relationship: RO:0002220 UBERON:0004536 ! adjacent_to lymph vasculature
 created_by: Ceri
 creation_date: 2012-01-12T04:44:34Z
 
@@ -22472,8 +22523,8 @@ def: "Lymphatic progenitor cells, derived from the veins, that give rise to lymp
 synonym: "parachordal lymphangioblast" NARROW []
 is_a: CL:0005020 ! lymphangioblast
 intersection_of: CL:0005020 ! lymphangioblast
-intersection_of: derives_from UBERON:0001638 ! vein
-relationship: derives_from UBERON:0001638 ! vein
+intersection_of: RO:0002220 UBERON:0001638 ! adjacent_to vein
+relationship: RO:0002220 UBERON:0001638 ! adjacent_to vein
 created_by: Ceri
 creation_date: 2012-01-12T05:21:09Z
 
@@ -22484,9 +22535,9 @@ namespace: cell
 def: "Skeletogenic cell that has the potential to develop into an ameloblast. Located in the inner enamel epithelium, these cells elongate, their nuclei shift distally (away from the dental papilla), and their cytoplasm becomes filled with organelles needed for synthesis and secretion of enamel proteins." [GO_REF:0000034, PMCID:PMC2737325]
 comment: unsure of neural crest contribution. In VSAO we have develops_from CL:0000008
 is_a: CL:0000055 ! non-terminally differentiated cell
-relationship: adjacent_to UBERON:0001763 ! odontogenic papilla
 relationship: develops_from CL:0002077 ! ecto-epithelial cell
 relationship: part_of UBERON:0005176 ! tooth enamel organ
+relationship: RO:0002220 UBERON:0001763 ! adjacent_to odontogenic papilla
 created_by: haendel
 creation_date: 2012-06-15T01:27:01Z
 
@@ -23214,8 +23265,6 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of large intestine." [GOC:tfm]
 xref: FMA:263054
 is_a: CL:0000160 ! goblet cell
-is_a: CL:0000510 ! paneth cell
-is_a: CL:0002253 ! epithelial cell of large intestine
 is_a: CL:0002658 ! glandular cell of the large intestine
 intersection_of: CL:0000160 ! goblet cell
 intersection_of: part_of UBERON:0001278 ! epithelium of large intestine
@@ -26011,8 +26060,8 @@ namespace: cell
 def: "Nucleus with two or more lobes connected by a thin filament that contains no internal chromatin." [GOC:tfm]
 is_a: GO:0005634 ! nucleus
 intersection_of: GO:0005634 ! nucleus
-intersection_of: has_quality PATO:0001979 ! lobed
-relationship: has_quality PATO:0001979 ! lobed
+intersection_of: bearer_of PATO:0001979 ! lobed
+relationship: bearer_of PATO:0001979 ! lobed
 created_by: tmeehan
 creation_date: 2009-12-22T03:54:43Z
 
@@ -26033,8 +26082,8 @@ namespace: cell
 def: "Cytoplasm that exhibits molecular interaction for basic dyes under specific pH conditions." [GOC:tfm]
 is_a: GO:0005737 ! cytoplasm
 intersection_of: GO:0005737 ! cytoplasm
-intersection_of: has_quality PATO:0002094 ! basophilic
-relationship: has_quality PATO:0002094 ! basophilic
+intersection_of: bearer_of PATO:0002094 ! basophilic
+relationship: bearer_of PATO:0002094 ! basophilic
 created_by: tmeehan
 creation_date: 2009-12-22T04:24:54Z
 
@@ -26054,8 +26103,8 @@ namespace: cell
 def: "A nucleus size quality which is relatively high compared to the amount of cytoplasm present in the same cell." [GOC:tfm]
 is_a: GO:0005634 ! nucleus
 intersection_of: GO:0005634 ! nucleus
-intersection_of: has_quality PATO:0000586 ! increased size
-relationship: has_quality PATO:0000586 ! increased size
+intersection_of: bearer_of PATO:0000586 ! increased size
+relationship: bearer_of PATO:0000586 ! increased size
 created_by: tmeehan
 creation_date: 2009-12-23T10:53:24Z
 
@@ -26075,8 +26124,8 @@ namespace: cell
 def: "A concave nucleus shape where the indentation is smaller than half of the distance to the farthest nuclear margin." [GOC:tfm]
 is_a: GO:0005634 ! nucleus
 intersection_of: GO:0005634 ! nucleus
-intersection_of: has_quality PATO:0001871 ! reniform
-relationship: has_quality PATO:0001871 ! reniform
+intersection_of: bearer_of PATO:0001871 ! reniform
+relationship: bearer_of PATO:0001871 ! reniform
 created_by: tmeehan
 creation_date: 2009-12-23T02:31:25Z
 
@@ -26449,6 +26498,15 @@ synonym: "serotonin release" RELATED [GOC:tb]
 is_a: GO:0006837 ! serotonin transport
 is_a: GO:0023061 ! signal release
 is_a: GO:0032940 ! secretion by cell
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0001821
+name: histamine secretion
+namespace: biological_process
+def: "The regulated release of histamine by a cell or group of cells. It is formed by decarboxylation of histidine and it acts through receptors in smooth muscle and in secretory systems." [GOC:mah, ISBN:0198506732, ISBN:0781735149]
+is_a: GO:0046903 ! secretion
+is_a: GO:0051608 ! histamine transport
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Term]
@@ -30142,6 +30200,17 @@ is_a: GO:0051937 ! catecholamine transport
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Term]
+id: GO:0015893
+name: drug transport
+namespace: biological_process
+def: "The directed movement of a drug, a substance used in the diagnosis, treatment or prevention of a disease, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+subset: goslim_pir
+subset: gosubset_prok
+is_a: GO:0006810 ! transport
+relationship: part_of GO:0042493 ! response to drug
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
 id: GO:0016020
 name: membrane
 namespace: cellular_component
@@ -31750,6 +31819,15 @@ is_a: GO:0033151 ! V(D)J recombination
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Term]
+id: GO:0033326
+name: cerebrospinal fluid secretion
+namespace: biological_process
+def: "The regulated release of cerebrospinal fluid (CSF) from the choroid plexus of the lateral, third and fourth ventricles. The cerebrospinal fluid is a clear liquid that located within the ventricles, spinal canal, and subarachnoid spaces." [GOC:ln, http://users.ahsc.arizona.edu/davis/csf.htm, PMID:10716451]
+synonym: "CSF secretion" EXACT []
+is_a: GO:0007589 ! body fluid secretion
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
 id: GO:0033363
 name: secretory granule organization
 namespace: biological_process
@@ -32050,6 +32128,15 @@ id: GO:0036161
 name: calcitonin secretion
 namespace: biological_process
 def: "The regulated release of calcitonin, a peptide hormone that participates in calcium and phosphorus metabolism." [GOC:cjm, PR:000027222]
+is_a: GO:0030072 ! peptide hormone secretion
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0036321
+name: ghrelin secretion
+namespace: biological_process
+def: "The regulated release of ghrelin from a cell or organ. Ghrelin is a 28 amino acid hunger-stimulating peptide hormone." [GOC:cjm, PMID:14610293, Wikipedia:Ghrelin]
+synonym: "pancreatic ghrelin secretion" NARROW [GOC:cjm]
 is_a: GO:0030072 ! peptide hormone secretion
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
@@ -32398,6 +32485,19 @@ synonym: "gamma-delta T-cell differentiation" EXACT []
 synonym: "gamma-delta T-lymphocyte differentiation" EXACT []
 is_a: GO:0030217 ! T cell differentiation
 is_a: GO:0046629 ! gamma-delta T cell activation
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0042493
+name: response to drug
+namespace: biological_process
+alt_id: GO:0017035
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a drug stimulus. A drug is a substance used in the diagnosis, treatment or prevention of a disease." [GOC:jl]
+subset: goslim_candida
+subset: gosubset_prok
+synonym: "drug resistance" RELATED []
+synonym: "drug susceptibility/resistance" RELATED []
+is_a: GO:0042221 ! response to chemical stimulus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Term]
@@ -33330,6 +33430,16 @@ is_a: GO:0006955 ! immune response
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Term]
+id: GO:0045117
+name: azole transport
+namespace: biological_process
+def: "The directed movement of azoles, heterocyclic compounds found in many biologically important substances, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:go_curators, ISBN:3527307206, Wikipedia:Azole]
+is_a: GO:0015893 ! drug transport
+is_a: GO:0071702 ! organic substance transport
+is_a: GO:0071705 ! nitrogen compound transport
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
 id: GO:0045137
 name: development of primary sexual characteristics
 namespace: biological_process
@@ -33879,6 +33989,14 @@ namespace: biological_process
 def: "The establishment of the sex of a female organism by physical differentiation." [GOC:bf]
 is_a: GO:0007548 ! sex differentiation
 relationship: part_of GO:0007275 ! multicellular organismal development
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0046717
+name: acid secretion
+namespace: biological_process
+def: "The controlled release of acid by a cell or group of cells." [GOC:ai]
+is_a: GO:0046903 ! secretion
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Term]
@@ -35656,6 +35774,15 @@ synonym: "perception of stimulus" RELATED []
 synonym: "stimulus detection" EXACT []
 synonym: "stimulus sensing" RELATED []
 is_a: GO:0050896 ! response to stimulus
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+
+[Term]
+id: GO:0051608
+name: histamine transport
+namespace: biological_process
+def: "The directed movement of histamine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Histamine is a physiologically active amine, found in plant and animal tissue and released from mast cells as part of an allergic reaction in humans." [GOC:ai]
+is_a: GO:0006812 ! cation transport
+is_a: GO:0045117 ! azole transport
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Term]
@@ -43029,6 +43156,7 @@ xref: ncithesaurus:Endocervix
 xref: SCTID:264460007
 xref: UMLS:C0227837
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0005156 ! reproductive structure
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -46005,7 +46133,6 @@ xref: VHOG:0001188
 xref: XAO:0000167
 is_a: UBERON:0002368 ! endocrine gland
 relationship: part_of UBERON:0000949 ! endocrine system
-property_value: homologous_to ZFA:0001200
 property_value: homology_notes "The evolution of the tetrapods, and the shift from an aquatic to a terrestrial environment, was believed to have required new controls for regulating calcium homeostasis, and thus the evolution of parathyroid glands (...) both the tetrapod parathyroid and the gills of fish contribute to the regulation of extracellular calcium levels. It is therefore reasonable to suggest that the parathyroid gland evolved as a result of the transformation of the gills into the parathyroid glands of tetrapods and the transition from an aquatic to a terrestrial environment. This interpretation would also explain the positioning of the parathyroid gland within the pharynx in the tetrapod body. Were the parathyroid gland to have emerged de novo with the evolution of the tetrapods it could, as an endocrine organ, have been placed anywhere in the body and still exert its effect.[well established][VHOG]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Any one of several small structures, usually four, attached to the dorsal surfaces of the lateral lobes of the thyroid gland. [TFD][VHOG]" xsd:string
@@ -47691,8 +47818,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0001277
 name: intestinal epithelium
 namespace: uberon
-def: "Simple columnar epithelium that lines the intestine, sometimes pseudostratified, with absorptive brush-border cells and mucous goblet cells clearly visible. <a href='ZFIN_jump?record=ZDB-PUB-050209-3'>Crosnier et al. 2005</a>" [Wikipedia:Intestinal_epithelium, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The innermost membrane of the four coats of the intestinal wall, the other three being the submucosa, muscular layers, and serosa. (Berk et al., Gastroenterology, 4th ed, v.3, p1479)" [MESH:A03.492.411.369, Wikipedia:Intestinal_epithelium]
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "bowel epithelial tissue" EXACT [OBOL:automatic]
@@ -47703,7 +47829,7 @@ synonym: "epithelium of bowel" EXACT [OBOL:automatic]
 synonym: "epithelium of intestine" EXACT [OBOL:automatic]
 synonym: "intestine epithelial tissue" EXACT [OBOL:automatic]
 synonym: "intestine epithelium" RELATED []
-synonym: "villous epithelium" EXACT [ZFA:0005124]
+synonym: "villous epithelium" NARROW [ZFA:0005124]
 xref: BTO:0000781
 xref: FMA:17229
 xref: MA:0001536
@@ -49223,7 +49349,7 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 is_a: UBERON:0010912 ! subdivision of skeleton
 relationship: part_of UBERON:0011595 ! jaw region
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-property_value: UBPROP:0000001 "Skeletal and cartilaginous elements of the first pharyngeal arch.[TAO]" xsd:string
+property_value: UBPROP:0000001 "Skeletal and cartilage elements of the first pharyngeal arch.[TAO]" xsd:string
 
 [Term]
 id: UBERON:0001711
@@ -56453,7 +56579,7 @@ xref: ZFA:0001591
 is_a: UBERON:0001474 ! bone
 is_a: UBERON:0010363 ! endochondral element
 relationship: develops_from UBERON:0005863 ! cartilaginous condensation
-relationship: develops_from UBERON:0007844 ! cartilaginous element
+relationship: develops_from UBERON:0007844 ! cartilage element
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: seeAlso http://purl.obolibrary.org/obo/uberon/references/reference_0000009 xsd:anyURI
 property_value: UBPROP:0000001 "Replacement bone that forms within cartilage.[VSAO]" xsd:string
@@ -60215,7 +60341,6 @@ synonym: "smooth muscle tissue of pelvis of ureter" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of renal pelvis" EXACT [OBOL:automatic]
 xref: FMA:262022
 xref: MA:0002631
-is_a: UBERON:0005321 ! mesonephric smooth muscle tissue
 is_a: UBERON:0009919 ! ureter smooth muscle
 relationship: part_of UBERON:0001224 ! renal pelvis
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -60284,7 +60409,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0004288
 name: skeleton
 namespace: uberon
-def: "all the bones and/or cartilaginous elements in the body. Together with the articular system, this comprises the skeletal system." [FMA:23875, UBERON:cjm, Wikipedia:Skeleton]
+def: "all the bones and/or cartilage elements in the body. Together with the articular system, this comprises the skeletal system." [FMA:23875, UBERON:cjm, Wikipedia:Skeleton]
 comment: Note that the source FMA definition has been modified here to include cartilage skeletons. We may wish to introduce subclasses for bony/cartilage skeletons.
 subset: uberon_slim
 synonym: "set of all bones" EXACT []
@@ -61770,6 +61895,7 @@ name: articulation
 namespace: uberon
 def: "anatomical cluster that connects two or more adjacent skeletal elements or hardened body parts." []
 subset: grouping_class
+synonym: "joint" NARROW []
 xref: FBbt:00005811
 is_a: UBERON:0000477 ! anatomical cluster
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -62917,16 +63043,6 @@ is_a: UBERON:0001917 ! endothelium of artery
 is_a: UBERON:0005911 ! endo-epithelium
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: part_of UBERON:0002012 ! pulmonary artery
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-
-[Term]
-id: UBERON:0005321
-name: mesonephric smooth muscle tissue
-namespace: uberon
-def: "." [GO:0061214]
-is_a: UBERON:0001135 ! smooth muscle tissue
-is_a: UBERON:0006554 ! urinary system structure
-relationship: part_of UBERON:0002113 ! kidney
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -65699,14 +65815,14 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
 id: UBERON:0007844
-name: cartilaginous element
+name: cartilage element
 namespace: uberon
 def: "Skeletal element that is composed of cartilage tissue and may be permanent or transient." [VSAO:curator]
 comment: AO notes: TAO still mixes tissue and element
 subset: organ_slim
 synonym: "cartilage" RELATED [VSAO:0000000]
-synonym: "cartilage element" EXACT []
 synonym: "cartilage organ" EXACT [FMA:55107]
+synonym: "cartilaginous element" EXACT [UBERON:cjm]
 synonym: "chondrogenic element" EXACT [VSAO:0000000]
 xref: AAO:0011130
 xref: FMA:55107
@@ -67400,7 +67516,7 @@ namespace: uberon
 def: "A cartilage element that lies between two successive vertebral centra." [ISBN10:0073040584]
 xref: AAO:0000795
 is_a: UBERON:0004120 ! mesoderm-derived structure
-is_a: UBERON:0007844 ! cartilaginous element
+is_a: UBERON:0007844 ! cartilage element
 relationship: part_of UBERON:0001468 ! intervertebral joint
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Block of cartilage, which usually ossifies, that lies between successive vertebral centra.[AAO]" xsd:string
@@ -67981,6 +68097,10 @@ def: "A relation between a material entity (such as a cell) and a process. This 
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
 
 [Typedef]
+id: RO:0002220
+name: adjacent_to
+
+[Typedef]
 id: UBPROP:0000001
 name: external_definition
 def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [UBERON:cjm]
@@ -67993,10 +68113,6 @@ name: axiom_lost_from_external_ontology
 def: "A textual description of an axiom loss in this ontology compared to an external ontology." [UBERON:cjm]
 xref: UBPROP:0000002
 is_metadata_tag: true
-
-[Typedef]
-id: adjacent_to
-name: adjacent_to
 
 [Typedef]
 id: bearer_of
@@ -68015,10 +68131,6 @@ domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
 is_transitive: true
 is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
-
-[Typedef]
-id: derives_from
-name: derives_from (UNDECLARED)
 
 [Typedef]
 id: develops_from
@@ -68129,13 +68241,6 @@ xref: RO:0002104
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
 
 [Typedef]
-id: has_quality
-name: has_quality
-namespace: RO
-alt_id: OBO_REL:0000029
-xref: OBO_REL:has_quality
-
-[Typedef]
 id: has_ratio_quality
 name: has_ratio_quality
 namespace: quality
@@ -68197,6 +68302,12 @@ domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
 created_by: cjm
 creation_date: 2009-08-26T02:50:24Z
+
+[Typedef]
+id: is_count_of
+name: is count of
+namespace: uberon
+is_metadata_tag: true
 
 [Typedef]
 id: lacks_modification
@@ -68278,6 +68389,13 @@ namespace: gene_ontology
 xref: RO:0002213
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
+
+[Typedef]
+id: preceding_element_is
+name: preceding element is
+namespace: uberon
+def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [UBERON:cjm]
+is_metadata_tag: true
 
 [Typedef]
 id: present_in_taxon
