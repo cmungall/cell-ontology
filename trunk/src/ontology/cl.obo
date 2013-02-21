@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2013-02-17
+data-version: releases/2013-02-20
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -1444,7 +1444,7 @@ intersection_of: has_part PR:000007597 ! proto-oncogene c-Fos
 intersection_of: has_part PR:000011178 ! nuclear factor NF-kappa-B p100 subunit
 intersection_of: has_plasma_membrane_part PR:000001954 ! tumor necrosis factor receptor superfamily member 11A
 intersection_of: has_plasma_membrane_part PR:000002062 ! macrophage colony-stimulating factor 1 receptor
-intersection_of: part_of UBERON:0001474 ! bone
+intersection_of: part_of UBERON:0001474 ! bone element
 intersection_of: RO:0002215 GO:0045453 ! capable_of bone resorption
 relationship: develops_from CL:0000576 ! monocyte
 relationship: has_part PR:000001850 ! cathepsin K
@@ -1454,7 +1454,7 @@ relationship: has_part PR:000007597 ! proto-oncogene c-Fos
 relationship: has_part PR:000011178 ! nuclear factor NF-kappa-B p100 subunit
 relationship: has_plasma_membrane_part PR:000001954 ! tumor necrosis factor receptor superfamily member 11A
 relationship: has_plasma_membrane_part PR:000002062 ! macrophage colony-stimulating factor 1 receptor
-relationship: part_of UBERON:0001474 ! bone
+relationship: part_of UBERON:0001474 ! bone element
 relationship: RO:0002215 GO:0045453 ! capable_of bone resorption
 
 [Term]
@@ -2184,7 +2184,7 @@ relationship: RO:0002215 GO:0032940 ! capable_of secretion by cell
 id: CL:0000152
 name: exocrine cell
 namespace: cell
-def: "A cell of an exocrine gland, i.e. a gland that discharges its secretion via a duct." [ISBN:0198547684]
+def: "A cell of an exocrine gland; i.e. a gland that discharges its secretion via a duct." [ISBN:0198547684]
 xref: FMA:16014
 is_a: CL:0000151 ! secretory cell
 
@@ -3804,7 +3804,6 @@ synonym: "pneumonocyte" EXACT []
 xref: BTO:0000395
 xref: FMA:62499
 is_a: CL:0000082 ! epithelial cell of lung
-is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0002299 ! alveolus of lung
 relationship: part_of UBERON:0002299 ! alveolus of lung
@@ -4424,6 +4423,9 @@ id: CL:0000397
 name: ganglion interneuron
 namespace: cell
 is_a: CL:0000099 ! interneuron
+intersection_of: CL:0000099 ! interneuron
+intersection_of: part_of UBERON:0000045 ! ganglion
+relationship: part_of UBERON:0000045 ! ganglion
 
 [Term]
 id: CL:0000398
@@ -4460,6 +4462,9 @@ name: CNS interneuron
 namespace: cell
 is_a: CL:0000099 ! interneuron
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: CL:0000099 ! interneuron
+intersection_of: part_of UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
 id: CL:0000404
@@ -5412,6 +5417,10 @@ alt_id: CL:0000714
 def: "A precursor cell destined to differentiate into cardiac muscle cell." [GOC:tfm, MESH:A11.635.470]
 xref: FMA:84797
 is_a: CL:0000056 ! myoblast
+is_a: CL:0002494 ! cardiocyte
+intersection_of: CL:0000056 ! myoblast
+intersection_of: part_of UBERON:0001133 ! cardiac muscle tissue
+relationship: part_of UBERON:0001133 ! cardiac muscle tissue
 
 [Term]
 id: CL:0000514
@@ -5422,6 +5431,9 @@ synonym: "myoblast, smooth muscle" EXACT [MESH:D032390]
 synonym: "satellite cell" RELATED []
 xref: FMA:84798
 is_a: CL:0000056 ! myoblast
+intersection_of: CL:0000056 ! myoblast
+intersection_of: part_of UBERON:0001135 ! smooth muscle tissue
+relationship: part_of UBERON:0001135 ! smooth muscle tissue
 
 [Term]
 id: CL:0000515
@@ -6184,7 +6196,7 @@ relationship: part_of UBERON:0000948 ! heart
 id: CL:0000570
 name: parafollicular cell
 namespace: cell
-def: "A neuroepithelial cells that occurs singly or in small groups, close to the outer follicular borders but within the follicular basement membrane of the thyroid. Expresses a form of the neural cell adhesion molecule (N-CAM) on their surface. Secrets calcitonin, 5-hydroxytryptamine and dopamine." [GOC:tfm, ISBN:0517223651]
+def: "A neuroepithelial cells that occurs singly or in small groups, close to the outer follicular borders but within the follicular basement membrane of the thyroid. Expresses a form of the neural cell adhesion molecule (N-CAM) on their surface. Secretes calcitonin, 5-hydroxytryptamine and dopamine." [GOC:tfm, ISBN:0517223651]
 synonym: "C cell" EXACT []
 synonym: "C cell of thyroid gland" EXACT [FMA:68653]
 synonym: "clear cell of thyroid gland" EXACT [FMA:68653]
@@ -6199,11 +6211,13 @@ intersection_of: CL:0000710 ! neurecto-epithelial cell
 intersection_of: has_plasma_membrane_part PR:000001024 ! neural cell adhesion molecule 1
 intersection_of: RO:0002215 GO:0001820 ! capable_of serotonin secretion
 intersection_of: RO:0002215 GO:0014046 ! capable_of dopamine secretion
+intersection_of: RO:0002215 GO:0036161 ! capable_of calcitonin secretion
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 relationship: has_plasma_membrane_part PR:000001024 ! neural cell adhesion molecule 1
 relationship: part_of UBERON:0001747 ! parenchyma of thyroid gland
 relationship: RO:0002215 GO:0001820 ! capable_of serotonin secretion
 relationship: RO:0002215 GO:0014046 ! capable_of dopamine secretion
+relationship: RO:0002215 GO:0036161 ! capable_of calcitonin secretion
 
 [Term]
 id: CL:0000571
@@ -13017,8 +13031,8 @@ namespace: cell
 def: "A connective tissue cell found in bone." [GO_REF:0000034, GOC:add]
 is_a: CL:0000548 ! animal cell
 intersection_of: CL:0000548 ! animal cell
-intersection_of: part_of UBERON:0001474 ! bone
-relationship: part_of UBERON:0001474 ! bone
+intersection_of: part_of UBERON:0001474 ! bone element
+relationship: part_of UBERON:0001474 ! bone element
 created_by: adiehl
 creation_date: 2011-11-16T04:28:16Z
 
@@ -14542,7 +14556,7 @@ id: CL:0002071
 name: enterocyte of epithelium of large intestine
 namespace: cell
 def: "Columnar cell which populate the epithelium of large intestine and absorb water. This cell is the most numerous of the epithelial cell types in the large intestine; bear apical microvilli, contain secretory granules in their apical cytoplasm; secretion appears to be largely mucins, but is also rich in antibodies of the IgA type." [GOC:tfm, ISBN:0517223651]
-synonym: "columnar cell" EXACT []
+synonym: "columnar cell" BROAD []
 synonym: "columnar cell of the colon" EXACT []
 synonym: "vacuolar absorptive cell" EXACT []
 xref: BTO:0002484
@@ -14921,6 +14935,9 @@ namespace: cell
 def: "A specialised myocyte that lies between the sinoatrial node and the atrioventricular node and is involved in the conduction of electrical signals." [GOC:tfm, ISBN:0781729300]
 xref: FMA:223275
 is_a: CL:0002086 ! specialized cardiac myocyte
+intersection_of: CL:0000187 ! muscle cell
+intersection_of: part_of UBERON:0009966 ! internodal tract
+relationship: part_of UBERON:0009966 ! internodal tract
 created_by: tmeehan
 creation_date: 2010-08-23T11:24:11Z
 
@@ -15464,6 +15481,9 @@ namespace: cell
 def: "A stromal cell of the ovarian medulla." [GOC:tfm]
 xref: FMA:256171
 is_a: CL:0002132 ! stromal cell of ovary
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: part_of UBERON:0013192 ! ovarian medulla
+relationship: part_of UBERON:0013192 ! ovarian medulla
 created_by: tmeehan
 creation_date: 2010-08-23T12:12:17Z
 
@@ -15965,6 +15985,9 @@ synonym: "folliculostellate cell of pars anterior of adenohypophysis" EXACT []
 xref: FMA:83102
 is_a: CL:0000642 ! folliculostellate cell
 is_a: CL:0000710 ! neurecto-epithelial cell
+intersection_of: CL:0000642 ! folliculostellate cell
+intersection_of: part_of UBERON:0006964 ! pars distalis of adenohypophysis
+relationship: part_of UBERON:0006964 ! pars distalis of adenohypophysis
 created_by: tmeehan
 creation_date: 2010-08-25T03:10:10Z
 
@@ -16287,6 +16310,7 @@ namespace: cell
 alt_id: CL:1000386
 def: "A brush cell found in the epithelium of lobular bronchiole." [GOC:tfm]
 xref: FMA:263220
+is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:0002208 ! brush cell of bronchus
 intersection_of: CL:0002075 ! brush cell of trachebronchial tree
 intersection_of: part_of UBERON:0002051 ! epithelium of bronchiole
@@ -16857,6 +16881,9 @@ synonym: "stem cell of intestinal crypt of lieberkuhn" EXACT []
 xref: FMA:63379
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002563 ! intestinal epithelial cell
+intersection_of: CL:0000034 ! stem cell
+intersection_of: part_of UBERON:0001983 ! crypt of Lieberkuhn
+relationship: part_of UBERON:0001983 ! crypt of Lieberkuhn
 created_by: tmeehan
 creation_date: 2010-09-08T09:21:22Z
 
@@ -16924,6 +16951,9 @@ def: "An epithelial cell that regulates growth and differentiation of the overly
 xref: FMA:86490
 is_a: CL:0000499 ! stromal cell
 is_a: CL:0002149 ! epithelial cell of uterus
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: part_of UBERON:0001295 ! endometrium
+relationship: part_of UBERON:0001295 ! endometrium
 created_by: tmeehan
 creation_date: 2010-09-08T09:50:04Z
 
@@ -17825,7 +17855,6 @@ name: bronchial epithelial cell
 namespace: cell
 def: "An epithelial cell of the bronchus." [GOC:tfm]
 xref: BTO:0002922
-is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0002185 ! bronchus
@@ -17859,6 +17888,9 @@ namespace: cell
 def: "A ciliated cell of the bronchus." [GOC:tfm, PMID:18757316]
 is_a: CL:0002145 ! ciliated columnar cell of tracheobronchial tree
 is_a: CL:0002328 ! bronchial epithelial cell
+intersection_of: CL:0000064 ! ciliated cell
+intersection_of: part_of UBERON:0002185 ! bronchus
+relationship: part_of UBERON:0002185 ! bronchus
 created_by: tmeehan
 creation_date: 2010-09-20T02:21:12Z
 
@@ -17943,6 +17975,9 @@ def: "A prostate epithelial cell that is CD133-positive, CD44-positive, integrin
 synonym: "CD133-positive prostate epithelial cell" EXACT []
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002341 ! basal cell of prostate epithelium
+intersection_of: CL:0000034 ! stem cell
+intersection_of: part_of UBERON:0002367 ! prostate gland
+relationship: part_of UBERON:0002367 ! prostate gland
 created_by: tmeehan
 creation_date: 2010-09-20T03:21:06Z
 
@@ -20839,6 +20874,9 @@ name: fibroblast of mammary gland
 namespace: cell
 def: "A fibroblast that is part of the mammary gland." [GOC:tfm]
 is_a: CL:0000057 ! fibroblast
+intersection_of: CL:0000057 ! fibroblast
+intersection_of: part_of UBERON:0001911 ! mammary gland
+relationship: part_of UBERON:0001911 ! mammary gland
 created_by: tmeehan
 creation_date: 2011-02-28T05:18:38Z
 
@@ -21075,6 +21113,9 @@ name: central nervous system pericyte
 namespace: cell
 def: "A pericyte of the central nervous system." [GOC:tfm]
 is_a: CL:0000669 ! pericyte cell
+intersection_of: CL:0000669 ! pericyte cell
+intersection_of: part_of UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:0001017 ! central nervous system
 created_by: tmeehan
 creation_date: 2011-03-02T02:54:18Z
 
@@ -21775,8 +21816,10 @@ id: CL:0002634
 name: epithelial cell of anal column
 namespace: cell
 def: "An epithelial cell of the anal column." [GOC:tfm]
-is_a: CL:0000066 ! epithelial cell
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0002253 ! epithelial cell of large intestine
+intersection_of: CL:0000066 ! epithelial cell
+intersection_of: part_of UBERON:0009882 ! anal column
+relationship: part_of UBERON:0009882 ! anal column
 created_by: tmeehan
 creation_date: 2011-07-08T12:11:38Z
 
@@ -22095,6 +22138,9 @@ namespace: cell
 def: "A myocardial endocrine cell that is part of the atrium." [GOC:tfm]
 xref: FMA:83389
 is_a: CL:0002074 ! myocardial endocrine cell
+intersection_of: CL:0002074 ! myocardial endocrine cell
+intersection_of: part_of UBERON:0002081 ! cardiac atrium
+relationship: part_of UBERON:0002081 ! cardiac atrium
 created_by: tmeehan
 creation_date: 2011-07-11T02:45:39Z
 
@@ -22199,6 +22245,9 @@ name: tongue muscle cell
 namespace: cell
 def: "A skeletal muscle cell that is part of the tongue." [GOC:tfm, PMID:18816858]
 is_a: CL:0000188 ! skeletal muscle cell
+intersection_of: CL:0000187 ! muscle cell
+intersection_of: part_of UBERON:0001723 ! tongue
+relationship: part_of UBERON:0001723 ! tongue
 created_by: tmeehan
 creation_date: 2011-08-16T03:10:02Z
 
@@ -22314,6 +22363,9 @@ namespace: cell
 def: "A CNS interneuron located in the spinal cord." [CL:CVS]
 comment: Is_a interneuron, part_of UBERON:0002240.
 is_a: CL:0000402 ! CNS interneuron
+intersection_of: CL:0000099 ! interneuron
+intersection_of: part_of UBERON:0002240 ! spinal cord
+relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
 id: CL:0005001
@@ -23075,6 +23127,8 @@ namespace: cell
 def: "A fibroblast that is part of the areolar connective tissue." [GOC:tfm]
 xref: FMA:261279
 is_a: CL:0000057 ! fibroblast
+intersection_of: CL:0000057 ! fibroblast
+intersection_of: part_of UBERON:0006815 ! areolar connective tissue
 relationship: part_of UBERON:0006815 ! areolar connective tissue
 
 [Term]
@@ -23147,8 +23201,9 @@ def: "A fat cell that is part of the epicardial fat of right ventricle." [GOC:tf
 synonym: "epicardial adipocyte of right ventricle" EXACT [FMA:261297]
 synonym: "epicardial fat cell of right ventricle" EXACT [FMA:261297]
 xref: FMA:261297
-is_a: CL:0000136 ! fat cell
-is_a: CL:0002494 ! cardiocyte
+is_a: CL:1000309 ! epicardial adipocyte
+intersection_of: CL:1000309 ! epicardial adipocyte
+intersection_of: part_of UBERON:0002080 ! heart right ventricle
 relationship: part_of UBERON:0002080 ! heart right ventricle
 
 [Term]
@@ -23159,8 +23214,9 @@ def: "A fat cell that is part of the epicardial fat of left ventricle." [GOC:tfm
 synonym: "epicardial adipocyte of left ventricle" EXACT [FMA:261300]
 synonym: "epicardial fat cell of left ventricle" EXACT [FMA:261300]
 xref: FMA:261300
-is_a: CL:0000136 ! fat cell
-is_a: CL:0002494 ! cardiocyte
+is_a: CL:1000309 ! epicardial adipocyte
+intersection_of: CL:1000309 ! epicardial adipocyte
+intersection_of: part_of UBERON:0002084 ! heart left ventricle
 relationship: part_of UBERON:0002084 ! heart left ventricle
 
 [Term]
@@ -23224,9 +23280,11 @@ name: goblet cell of epithelium of intestinal villus
 namespace: cell
 def: "A goblet cell that is part of the epithelium of intestinal villus." [GOC:tfm]
 xref: FMA:263046
-is_a: CL:0000160 ! goblet cell
-is_a: CL:0000510 ! paneth cell
+is_a: CL:1000316 ! goblet cell of epithelium of small intestine
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: part_of UBERON:0013636 ! epithelium of intestinal villus
 relationship: part_of UBERON:0001213 ! intestinal villus
+relationship: part_of UBERON:0013636 ! epithelium of intestinal villus
 
 [Term]
 id: CL:1000318
@@ -23275,6 +23333,10 @@ synonym: "goblet cell of epithelium of pancreatic duct" EXACT [FMA:263058]
 xref: FMA:263058
 is_a: CL:0000069 ! branched duct epithelial cell
 is_a: CL:0000160 ! goblet cell
+is_a: CL:1001433 ! epithelial cell of exocrine pancreas
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: part_of UBERON:0009970 ! epithelium of pancreatic duct
+relationship: part_of UBERON:0009970 ! epithelium of pancreatic duct
 
 [Term]
 id: CL:1000323
@@ -23405,8 +23467,11 @@ name: enterocyte of epithelium of intestinal villus
 namespace: cell
 def: "An enterocyte that is part of the epithelium of intestinal villus." [GOC:tfm]
 xref: FMA:263088
-is_a: CL:0000584 ! enterocyte
+is_a: CL:1000334 ! enterocyte of epithelium of small intestine
+intersection_of: CL:0000584 ! enterocyte
+intersection_of: part_of UBERON:0013636 ! epithelium of intestinal villus
 relationship: part_of UBERON:0001213 ! intestinal villus
+relationship: part_of UBERON:0013636 ! epithelium of intestinal villus
 
 [Term]
 id: CL:1000337
@@ -23565,6 +23630,7 @@ name: basal cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A basal cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263126
+is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000349 ! basal cell of epithelium of bronchus
 intersection_of: CL:0002633 ! respiratory basal cell
 intersection_of: part_of UBERON:0002051 ! epithelium of bronchiole
@@ -23709,7 +23775,7 @@ name: transitional myocyte of anterior division of left branch of atrioventricul
 namespace: cell
 def: "A transitional myocyte that is part of the anterior division of left branch of atrioventricular bundle." [GOC:tfm]
 xref: FMA:263166
-is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
+is_a: CL:1000370 ! transitional myocyte of left branch of atrioventricular bundle
 relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
 
 [Term]
@@ -23718,7 +23784,7 @@ name: transitional myocyte of septal division of left branch of atrioventricular
 namespace: cell
 def: "A transitional myocyte that is part of the septal division of left branch of atrioventricular bundle." [GOC:tfm]
 xref: FMA:263168
-is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
+is_a: CL:1000370 ! transitional myocyte of left branch of atrioventricular bundle
 relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
 
 [Term]
@@ -23728,6 +23794,8 @@ namespace: cell
 def: "A transitional myocyte that is part of the left branch of atrioventricular bundle." [GOC:tfm]
 xref: FMA:263170
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
+intersection_of: CL:0002073 ! transitional myocyte
+intersection_of: part_of UBERON:0005986 ! left branch of atrioventricular bundle
 relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
 
 [Term]
@@ -23737,6 +23805,8 @@ namespace: cell
 def: "A transitional myocyte that is part of the right branch of atrioventricular bundle." [GOC:tfm]
 xref: FMA:263172
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
+intersection_of: CL:0002073 ! transitional myocyte
+intersection_of: part_of UBERON:0005987 ! right branch of atrioventricular bundle
 relationship: part_of UBERON:0005987 ! right branch of atrioventricular bundle
 
 [Term]
@@ -23761,7 +23831,7 @@ name: transitional myocyte of posterior division of left branch of atrioventricu
 namespace: cell
 def: "A transitional myocyte that is part of the posterior division of left branch of atrioventricular bundle." [GOC:tfm]
 xref: FMA:263178
-is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
+is_a: CL:1000370 ! transitional myocyte of left branch of atrioventricular bundle
 relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
 
 [Term]
@@ -23803,6 +23873,9 @@ namespace: cell
 def: "A type I vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263186
 is_a: CL:0002070 ! type I vestibular sensory cell
+intersection_of: CL:0002070 ! type I vestibular sensory cell
+intersection_of: part_of UBERON:0009969 ! stato-acoustic epithelium
+relationship: part_of UBERON:0009969 ! stato-acoustic epithelium
 
 [Term]
 id: CL:1000379
@@ -23829,6 +23902,8 @@ namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263192
 is_a: CL:0002070 ! type I vestibular sensory cell
+intersection_of: CL:0002070 ! type I vestibular sensory cell
+intersection_of: part_of UBERON:0006935 ! crista ampullaris neuroepithelium
 relationship: part_of UBERON:0006935 ! crista ampullaris neuroepithelium
 
 [Term]
@@ -23838,6 +23913,9 @@ namespace: cell
 def: "A type II vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263194
 is_a: CL:0002069 ! type II vestibular sensory cell
+intersection_of: CL:0002069 ! type II vestibular sensory cell
+intersection_of: part_of UBERON:0009969 ! stato-acoustic epithelium
+relationship: part_of UBERON:0009969 ! stato-acoustic epithelium
 
 [Term]
 id: CL:1000383
@@ -23864,6 +23942,9 @@ namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263200
 is_a: CL:0002069 ! type II vestibular sensory cell
+intersection_of: CL:0002069 ! type II vestibular sensory cell
+intersection_of: part_of UBERON:0006935 ! crista ampullaris neuroepithelium
+relationship: part_of UBERON:0006935 ! crista ampullaris neuroepithelium
 
 [Term]
 id: CL:1000391
@@ -23894,6 +23975,9 @@ def: "An endothelial cell that is part of the venous sinus of red pulp of spleen
 comment: todo - add logical definition to UBERON:0009967
 xref: FMA:62817
 is_a: CL:0002651 ! endothelial cell of venous sinus of spleen
+intersection_of: CL:0000115 ! endothelial cell
+intersection_of: part_of UBERON:0009967 ! spleen venous sinus
+relationship: part_of UBERON:0009967 ! spleen venous sinus
 
 [Term]
 id: CL:1000398
@@ -24093,6 +24177,9 @@ namespace: cell
 def: "A chromaffin cell that is part of the paraganglion." [GOC:tfm]
 xref: FMA:69335
 is_a: CL:0000166 ! chromaffin cell
+intersection_of: CL:0000166 ! chromaffin cell
+intersection_of: part_of UBERON:0012279 ! paraganglion
+relationship: part_of UBERON:0012279 ! paraganglion
 
 [Term]
 id: CL:1000426
@@ -24530,6 +24617,10 @@ namespace: cell
 def: "A transitional myocyte that is part of the internodal tract." [GOC:tfm]
 xref: FMA:83387
 is_a: CL:0002073 ! transitional myocyte
+is_a: CL:0002096 ! internodal tract myocyte
+intersection_of: CL:0002073 ! transitional myocyte
+intersection_of: part_of UBERON:0009966 ! internodal tract
+relationship: part_of UBERON:0009966 ! internodal tract
 
 [Term]
 id: CL:1000481
@@ -24561,6 +24652,10 @@ namespace: cell
 def: "A Purkinje myocyte that is part of the internodal tract." [GOC:tfm]
 xref: FMA:83392
 is_a: CL:0002068 ! Purkinje myocyte
+is_a: CL:0002096 ! internodal tract myocyte
+intersection_of: CL:0002068 ! Purkinje myocyte
+intersection_of: part_of UBERON:0009966 ! internodal tract
+relationship: part_of UBERON:0009966 ! internodal tract
 
 [Term]
 id: CL:1000484
@@ -25874,6 +25969,10 @@ id: CL:1001434
 name: olfactory bulb interneuron
 def: "A neuron residing in the olfactory bulb that serve to process and refine signals arising from olfactory sensory neurons" [PMID:18603310]
 is_a: CL:0000101 ! sensory neuron
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0012001 ! neuron of the forebrain
+intersection_of: CL:0000099 ! interneuron
+intersection_of: part_of UBERON:0002264 ! olfactory bulb
 relationship: part_of UBERON:0002264 ! olfactory bulb
 
 [Term]
@@ -25908,6 +26007,8 @@ name: sensory neuron of dorsal root ganglion
 def: "A sensory neuron of the dorsal root ganglia that senses body position and sends information about how much the muscle is stretched to the spinal cord." [MP:0004297]
 synonym: "proprioceptive neuron" EXACT [MP:0004297]
 is_a: CL:0009000 ! sensory neuron of spinal nerve
+intersection_of: CL:0000101 ! sensory neuron
+intersection_of: part_of UBERON:0000044 ! dorsal root ganglion
 relationship: part_of UBERON:0000044 ! dorsal root ganglion
 
 [Term]
@@ -26011,7 +26112,8 @@ id: CL:1001569
 name: hippocampal interneuron
 def: "An interneuron of the hippocampus." [GOC:pr]
 xref: FMA:84777
-is_a: CL:0000099 ! interneuron
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0002608 ! hippocampal neuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: part_of UBERON:0001954 ! Ammon's horn
 relationship: part_of UBERON:0001954 ! Ammon's horn
@@ -42187,6 +42289,42 @@ is_a: UBERON:0004923 ! organ component layer
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0000159
+name: anal canal
+namespace: uberon
+def: "The terminal part of the large intestine, continuous proximally with the rectum and distally terminates with the anus." [Wikipedia:Anal_canal]
+comment: Editor notes: requires alignment with EHDAA2 and complete developmental relationships
+subset: uberon_slim
+synonym: "anal canal" EXACT []
+synonym: "anal canal viewed anatomically" EXACT []
+synonym: "anal pad" RELATED []
+synonym: "anatomical anal canal" EXACT []
+synonym: "anus" RELATED []
+synonym: "canalis analis" RELATED LATIN [Wikipedia:Anal_canal]
+synonym: "canalis analis" RELATED [BTO:0001978]
+synonym: "cloaca" RELATED []
+synonym: "cloacal chamber" RELATED []
+synonym: "mesenteron" RELATED []
+synonym: "pars analis recti" RELATED [BTO:0001978]
+xref: BTO:0001978
+xref: EMAPA:18256
+xref: FMA:15703
+xref: galen:AnalCanal
+xref: http://upload.wikimedia.org/wikipedia/commons/1/17/Gray1078.png
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gray1078.png/200px-Gray1078.png
+xref: MA:0000330
+xref: ncithesaurus:Anal_Canal
+xref: SCTID:245438008
+xref: UMLS:C0227411
+is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+relationship: develops_from UBERON:0011272 ! embryonic skin basal layer
+relationship: part_of UBERON:0000059 ! large intestine
+relationship: part_of UBERON:0001353 ! anal region
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0000160
 name: intestine
 namespace: uberon
@@ -42221,6 +42359,21 @@ property_value: has_relational_adjective "intestinal" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Portion of the alimentary canal bounded anteriorly by the pyloric sphincter and posteriorly by the cloacal sphincter.[AAO]" xsd:string
 property_value: UBPROP:0000001 "The tract of the alimentary canal. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string
+
+[Term]
+id: UBERON:0000161
+name: orifice
+namespace: uberon
+def: "Anatomical conduit that connects two adjacent body spaces, surrounded by two or more subdivisions of two or more organs. Examples: right atrioventricular orifice, orifice of artery, hilum of kidney, porta hepatis[FMA,modified]." [FMA:3724]
+comment: in FMA, this is an anatomical conduit *space*, rather than anatomical conduit
+subset: upper_ontology_conflict
+synonym: "anatomical orifice" EXACT [FMA:3724]
+synonym: "anatomical ostium" EXACT [FMA:3724]
+synonym: "hilum" NARROW []
+xref: FMA:3724
+xref: SCTID:91837002
+is_a: UBERON:0004111 ! anatomical conduit
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
 id: UBERON:0000162
@@ -42359,6 +42512,26 @@ property_value: has_relational_adjective "oral" xsd:string
 property_value: homology_notes "Molecular and developmental cell lineage data suggest that the acoel mouth opening is homologous to the mouth of protostomes and deuterostomes and that the last common ancestor of the Bilateria (the 'urbilaterian') had only this single digestive opening.[well established][VHOG]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Cavity in which food is initially ingested and generally contains teeth, tongue and glands.[AAO]" xsd:string
+
+[Term]
+id: UBERON:0000166
+name: oral opening
+namespace: uberon
+def: "The orifice that connects the mouth to the exterio of the body." [http://purl.obolibrary.org/obo/uberon/references/reference_0000034]
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "mouth" RELATED INCONSISTENT []
+synonym: "oral fissure" EXACT [FMA:59806]
+synonym: "oral orifice" EXACT [FMA:59806]
+synonym: "oral part of face" RELATED []
+synonym: "subdivision of mouth" RELATED []
+xref: FMA:59806
+is_a: UBERON:0000161 ! orifice
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+relationship: part_of UBERON:0000165 ! mouth
+property_value: homology_notes " (...) mouth development is very similar in protostomes and 'basal' deuterostomes, whereas the chordate mouth seems to develop at a new position. Recent data for echinoderms and hemichordates further suggest that this change in mouth position may result from change in the influence of a conserved ectodermal patterning system on mouth development. It has been suggested that the mouths of vertebrates and urochordates may constitute a 'new' mouth.[well established][VHOG]" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
 id: UBERON:0000168
@@ -44212,7 +44385,7 @@ subset: vertebrate_core
 synonym: "anterior intestine" RELATED []
 synonym: "gaster" RELATED [BTO:0001307]
 synonym: "mesenteron" RELATED []
-synonym: "stomach" RELATED []
+synonym: "stomach chamber" NARROW []
 synonym: "Ventricular" RELATED LATIN [Wikipedia:Stomach]
 synonym: "ventriculus" RELATED []
 xref: AAO:0000579
@@ -44369,6 +44542,7 @@ disjoint_from: UBERON:0001007 ! digestive system
 disjoint_from: UBERON:0001008 ! excretory system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0001033 ! gustatory system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
@@ -44733,7 +44907,7 @@ xref: VSAO:0000101
 xref: XAO:0000171
 xref: ZFA:0001596
 is_a: UBERON:0004905 ! articulation
-disjoint_from: UBERON:0001474 ! bone
+disjoint_from: UBERON:0001474 ! bone element
 relationship: part_of UBERON:0004770 ! articular system
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Anatomical cluster that consists of two or more adjacent bones or cartilages, which may be interconnected by various types of tissue.[VSAO]" xsd:string
@@ -44788,6 +44962,7 @@ disjoint_from: UBERON:0001007 ! digestive system
 disjoint_from: UBERON:0001008 ! excretory system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0001033 ! gustatory system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
@@ -45095,6 +45270,7 @@ disjoint_from: UBERON:0001007 ! digestive system
 disjoint_from: UBERON:0001008 ! excretory system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0001033 ! gustatory system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
@@ -45158,6 +45334,7 @@ is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0001008 ! excretory system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0001033 ! gustatory system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
@@ -45215,6 +45392,7 @@ xref: ZFA:0000163
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0001033 ! gustatory system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
@@ -45246,6 +45424,7 @@ xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA
 xref: VHOG:0001248
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0001033 ! gustatory system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
@@ -45382,6 +45561,7 @@ xref: XAO:0000177
 xref: ZFA:0000396
 is_a: UBERON:0000467 ! anatomical system
 is_a: UBERON:0004121 ! ectoderm-derived structure
+disjoint_from: UBERON:0001033 ! gustatory system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
@@ -45539,6 +45719,42 @@ is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0004456 ! entire sense organ system
 property_value: homology_notes "An early step in the evolution of neural crest, therefore, may have been the origin of a specific dorsal neural cell population contributing to sensory processing; this would predate the divergence of the amphioxus and vertebrate lineages.[well established][VHOG]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0001033
+name: gustatory system
+namespace: uberon
+def: "A subset of the sensory system for the sensing of taste." [Wikipedia:Gustatory_system]
+comment: in ZFA and MA this is a subtype of sensory system. we should change sensory system to disambiguate parts and wholes
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "gustatory organ system" EXACT []
+synonym: "taste system" EXACT []
+xref: AAO:0010577
+xref: BILA:0000143
+xref: EFO:0000830
+xref: FMA:7194
+xref: MA:0002446
+xref: MAT:0000275
+xref: MIAA:0000275
+xref: NIF_GrossAnatomy:nlx_anat_090803
+xref: SCTID:423940004
+xref: TAO:0001101
+xref: XAO:0003197
+xref: ZFA:0001101
+is_a: UBERON:0000467 ! anatomical system
+disjoint_from: UBERON:0001434 ! skeletal system
+disjoint_from: UBERON:0002204 ! musculoskeletal system
+disjoint_from: UBERON:0002294 ! biliary system
+disjoint_from: UBERON:0002330 ! exocrine system
+disjoint_from: UBERON:0002390 ! hematopoietic system
+disjoint_from: UBERON:0002405 ! immune system
+disjoint_from: UBERON:0002416 ! integumental system
+disjoint_from: UBERON:0002423 ! hepatobiliary system
+disjoint_from: UBERON:0004456 ! entire sense organ system
+property_value: has_relational_adjective "gustatory" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "The sensory system used for the sense of taste.[AAO]" xsd:string
 
 [Term]
 id: UBERON:0001040
@@ -48169,6 +48385,40 @@ relationship: part_of UBERON:0002113 ! kidney
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0001295
+name: endometrium
+namespace: uberon
+def: "inner mucous membrane of the mammalian uterus." [Wikipedia:Endometrium]
+comment: Taxon notes: nimals that have estrous cycles reabsorb the endometrium if conception does not occur during that cycle. Animals that have menstrual cycles shed the endometrium through menstruation instead. AO notes: in FMA this is subdivided into basal and outer. In MA there is a single child term, endometrium epithelium
+subset: uberon_slim
+synonym: "tunica mucosa (endometrium)" EXACT [FMA:17742]
+synonym: "tunica mucosa uteri" EXACT LATIN [Wikipedia:Endometrium]
+synonym: "uterine endometrium" EXACT [BTO:0001422]
+xref: BTO:0001422
+xref: EFO:0000980
+xref: EMAPA:29917
+xref: EV:0100115
+xref: FMA:17742
+xref: GAID:377
+xref: http://upload.wikimedia.org/wikipedia/commons/6/66/Illu_cervix.jpg
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Illu_cervix.jpg/200px-Illu_cervix.jpg
+xref: MA:0000390
+xref: MAT:0000319
+xref: MESH:A05.360.319.679.490
+xref: MIAA:0000319
+xref: ncithesaurus:Endometrium
+xref: SCTID:278867007
+xref: UMLS:C0014180
+xref: VHOG:0001285
+is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0000459 ! uterine wall
+property_value: has_relational_adjective "endometrial" xsd:string
+property_value: homology_notes "The maternal part of the placenta (of eutherian mammals) is the vascularized and glandular uterine lining, or endometrium.[well established][VHOG]" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "The mucous membrane lining the uterus. [TFD][VHOG]" xsd:string
+
+[Term]
 id: UBERON:0001296
 name: myometrium
 namespace: uberon
@@ -48486,7 +48736,7 @@ xref: VSAO:0000027
 xref: XAO:0003060
 xref: ZFA:0000434
 is_a: UBERON:0000467 ! anatomical system
-disjoint_from: UBERON:0001474 ! bone
+disjoint_from: UBERON:0001474 ! bone element
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002294 ! biliary system
 disjoint_from: UBERON:0002330 ! exocrine system
@@ -48643,7 +48893,7 @@ property_value: UBPROP:0000001 "A vessel that contains or conveys lymph.[AAO]" x
 
 [Term]
 id: UBERON:0001474
-name: bone
+name: bone element
 namespace: uberon
 def: "Skeletal element that is composed of bone tissue[VSAO]." [VSAO:0000057, Wikipedia:Bone]
 comment: Alternate definition: Organ with cavitated organ parts, which primarily consists of compact (cortical) and cancellous bone, which surround bone marrow cavities; together with other bones, cartilages and joints, it constitutes the skeletal system. Examples: femur, sternum, maxilla, vertebra, talus[FMA]
@@ -48651,6 +48901,7 @@ subset: major_organ
 subset: organ_slim
 subset: uberon_slim
 subset: vertebrate_core
+synonym: "bone" EXACT []
 synonym: "bone element" EXACT [VSAO:0000057]
 synonym: "bone organ" EXACT []
 xref: AAO:0000047
@@ -49370,6 +49621,55 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: part_of UBERON:0000019 ! camera-type eye
 property_value: has_relational_adjective "palpebral" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0001723
+name: tongue
+namespace: uberon
+def: "The tongue is the movable, muscular organ on the floor of the mouth of most vertebrates, in many other mammals is the principal organ of taste, aids in the prehension of food, in swallowing, and in modifying the voice as in speech[GO]." [GO:0043586, Wikipedia:Tongue]
+comment: editor notes - in MA the tongue is part of the oral region, which in uberon is treated as the oral opening. consider revising oral opening - oral region equivalence. Taxon notes: Many species of fish have small folds at the base of their mouths that might informally be called tongues, but they lack a muscular structure like the true tongues found in most tetrapods. Development notes: The tongue has contributions from all pharyngeal arches which changes with time. The tongue initially begins as swelling rostral to foramen cecum, the median tongue bud.. tongue muscles derive from the somites - http://php.med.unsw.edu.au/embryology/index.php?title=Tongue_Development#Pharyngeal_Arch_Contributions
+subset: organ_slim
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "glossus" RELATED [Wikipedia:Tongue]
+xref: AAO:0010360
+xref: BTO:0001385
+xref: EFO:0000833
+xref: EHDAA2:0002062
+xref: EHDAA:9144
+xref: EMAPA:17185
+xref: EMAPA:18870
+xref: EV:0100058
+xref: FMA:54640
+xref: GAID:816
+xref: http://upload.wikimedia.org/wikipedia/commons/a/a6/Tongue.agr.jpg
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tongue.agr.jpg/200px-Tongue.agr.jpg
+xref: MA:0000347
+xref: MAT:0000040
+xref: MESH:A14.549.885
+xref: MIAA:0000040
+xref: ncithesaurus:Tongue
+xref: OpenCyc:Mx4rvVjmJ5wpEbGdrcN5Y29ycA_53KXLq9EdqAAAACs6hnmQ
+xref: SCTID:181226008
+xref: TAO:0005333
+xref: UMLS:C0040408
+xref: VHOG:0000419
+xref: XAO:0000446
+xref: ZFA:0005333
+is_a: UBERON:0000020 ! sense organ
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: develops_from UBERON:0008814 ! pharyngeal system
+relationship: immediate_transformation_of UBERON:0010056 ! future tongue
+relationship: part_of UBERON:0000165 ! mouth
+relationship: part_of UBERON:0001033 ! gustatory system
+property_value: has_relational_adjective "glossal" xsd:string
+property_value: has_relational_adjective "lingual" xsd:string
+property_value: homology_notes "Most adult amphibians have a tongue, as do all known reptiles, birds and mammals. Thus it is likely that the tongue appeared with the establishment of tetrapods and this structure seems to be related, to some extant, to the terrestrial lifestyle.[well established][VHOG]" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "A mobile mass of muscular tissue that is covered with mucous membrane, occupies much of the cavity of the mouth, forms part of its floor, bears the organ of taste, and assists in chewing and swallowing. [TFD][VHOG]" xsd:string
+property_value: UBPROP:0000001 "Muscular organ in the floor of the mouth.[FEED]" xsd:string
 
 [Term]
 id: UBERON:0001735
@@ -51122,6 +51422,7 @@ synonym: "lactiferous gland" EXACT [FMA:62088]
 synonym: "lobe of breast" EXACT []
 synonym: "lobe of mammary gland" EXACT []
 synonym: "mamma" RELATED [BTO:0000817]
+synonym: "mammae" RELATED PLURAL []
 xref: BTO:0000817
 xref: EFO:0000854
 xref: EMAPA:17759
@@ -51762,12 +52063,11 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
 id: UBERON:0001994
-name: hyaline cartilage
+name: hyaline cartilage tissue
 namespace: uberon
 def: "Cartilage (tissue) which consists of chondrocytes and collagen, the intercellular matrix of which is an amorphous gel with a perichondrium[FMA]." [FMA:64783, Wikipedia:Hyaline_cartilage]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "hyaline cartilage tissue" EXACT []
+synonym: "hyaline cartilage" EXACT []
 xref: FMA:64783
 xref: http://upload.wikimedia.org/wikipedia/commons/e/ee/Hypertrophic_Zone_of_Epiphyseal_Plate.jpg
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Gray292.png/200px-Gray292.png
@@ -55566,7 +55866,7 @@ xref: UMLS:C0005953
 xref: VHOG:0001218
 xref: XAO:0000123
 is_a: UBERON:0012429 ! hemopoietic tissue
-relationship: part_of UBERON:0001474 ! bone
+relationship: part_of UBERON:0001474 ! bone element
 relationship: part_of UBERON:0002390 ! hematopoietic system
 relationship: part_of UBERON:0002405 ! immune system
 property_value: homology_notes "The bone marrow is the hematopoietic organ in all vertebrates but fishes, in which hematopoiesis occurs in the kidney.[well established][VHOG]" xsd:string
@@ -56079,6 +56379,7 @@ def: "Skeletal tissue that is avascular, rich in glycosaminoglycans (GAGs) and t
 comment: Previous: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA]. an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." See also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage. // elements made from cartilage, cartilage-like, or chondroid tissues evolved in invertebrates[H&W]
 subset: uberon_slim
 subset: vertebrate_core
+synonym: "cartilage" RELATED []
 synonym: "cartilage tissue" EXACT [FMA:37377]
 synonym: "cartilages" RELATED [VHOG:0001207]
 synonym: "cartilaginous tissue" EXACT []
@@ -56430,7 +56731,7 @@ xref: VSAO:0000047
 xref: ZFA:0005621
 is_a: UBERON:0004755 ! skeletal tissue
 disjoint_from: UBERON:0005090 ! muscle structure
-relationship: part_of UBERON:0001474 ! bone
+relationship: part_of UBERON:0001474 ! bone element
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "Skeletal tissue with a collagen-rich extracellular matrix vascularized, mineralized with hydroxyapatite and typically including osteocytes located in lacunae that communicate with one another by cell processes (in canaliculi). Bone is deposited by osteoblasts.[VSAO]" xsd:string
 
@@ -56470,7 +56771,7 @@ xref: ncithesaurus:Long_Bone
 xref: OpenCyc:Mx4rv6axr5wpEbGdrcN5Y29ycA
 xref: SCTID:332709000
 xref: UMLS:C0222647
-is_a: UBERON:0001474 ! bone
+is_a: UBERON:0001474 ! bone element
 relationship: part_of UBERON:0002091 ! entire appendicular skeleton
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -56563,7 +56864,7 @@ xref: TAO:0001591
 xref: VSAO:0000145
 xref: XAO:0004018
 xref: ZFA:0001591
-is_a: UBERON:0001474 ! bone
+is_a: UBERON:0001474 ! bone element
 is_a: UBERON:0010363 ! endochondral element
 relationship: develops_from UBERON:0005863 ! cartilaginous condensation
 relationship: develops_from UBERON:0007844 ! cartilage element
@@ -60428,7 +60729,7 @@ property_value: UBPROP:0000001 "Anatomical cluster that consists of all the skel
 id: UBERON:0004290
 name: dermomyotome
 namespace: uberon
-def: "Epithelial sheet on the external surface of the somite that gives rise to trunk, muscle and dermis. Within the dermomyotome there is also a medio-lateral difference. The central region makes dermis, the mesenchymal connective tissue of the back skin. The medial region (closest to neural tube) makes epaxial muscle, and the lateral region (furthest from neural tube) makes hypaxial muscle." [http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?book=eurekah&part=A66768]
+def: "The bilaminar epithelium formed from the myotome and dermatome." [AEO:0000214]
 synonym: "dermamyotome" RELATED [VHOG:0000676]
 synonym: "dermomyotomes" RELATED PLURAL [VHOG:0000676]
 xref: AAO:0010572
@@ -60446,6 +60747,7 @@ relationship: develops_from UBERON:0002329 ! somite
 relationship: part_of UBERON:0000926 ! mesoderm
 property_value: homology_notes "Thus, representatives of the agnathan vertebrates, chondrichthyans, and sarcopterygians all have a layer of undifferentiated cells external to the embryonic myotome. In the amniotes, this external cell layer is the dermomyotome. The simplest interpretation of the similar position, morphology, and lack of myosin labeling is that a dermomyotome epithelium is a shared, ancestral vertebrate characteristic.[well established][VHOG]" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "Epithelial sheet on the external surface of the somite that gives rise to trunk, muscle and dermis. Within the dermomyotome there is also a medio-lateral difference. The central region makes dermis, the mesenchymal connective tissue of the back skin. The medial region (closest to neural tube) makes epaxial muscle, and the lateral region (furthest from neural tube) makes hypaxial muscle[http://www.ncbi.nlm.nih.gov/bookshelf/br.fcgi?book=eurekah&part=A66768]." xsd:string
 property_value: UBPROP:0000001 "Epithelial sheet on the external surface of the somite that gives rise to trunk, muscle and dermis.[TAO]" xsd:string
 property_value: UBPROP:0000001 "Portion of somites that gives rise to dermis and muscles.[AAO]" xsd:string
 
@@ -62363,10 +62665,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0005154
 name: epithelial cord
 namespace: uberon
-comment: TODO - add superclass of developing structure
+def: "A cord of epithelial cells without a lumen and usually several cells thick." [AEO:0000216]
 xref: AEO:0000216
 xref: EHDAA2:0004052
-is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0000486 ! multilaminar epithelium
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -63813,7 +64115,7 @@ id: UBERON:0005863
 name: cartilaginous condensation
 namespace: uberon
 def: "Cell condensation that is an aggregation of mesenchymal cells that are committed to differentiate into chondroblasts and chondrocytes." [GO:curator]
-comment: AO notes: isa cell condensation in VSAO
+comment: AO notes: isa cell condensation in VSAO; has_part chondroblast in AEO
 synonym: "cartilage condensation" EXACT [EMAPA:25353]
 synonym: "cartilagenous condensation" EXACT [EHDAA2:0003147]
 synonym: "chondrogenic condensation" EXACT [VSAO:0000092]
@@ -63978,7 +64280,7 @@ synonym: "bone organ zone" EXACT [FMA:10483]
 xref: FMA:10483
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004765 ! skeletal element
-relationship: part_of UBERON:0001474 ! bone
+relationship: part_of UBERON:0001474 ! bone element
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -64725,6 +65027,19 @@ is_a: UBERON:0006598 ! presumptive structure
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0006615
+name: venous sinus
+namespace: uberon
+def: "a large vein or channel for the circulation of venous blood" [http://medical-dictionary.thefreedictionary.com/venous+sinus]
+comment: todo - add subclasses
+xref: MA:0000070
+xref: ncithesaurus:Venous_Sinus
+xref: SCTID:341586007
+xref: UMLS:C0226504
+is_a: UBERON:0003920 ! venous blood vessel
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0006660
 name: muscle layer
 namespace: uberon
@@ -65139,6 +65454,40 @@ xref: BTO:0003082
 is_a: UBERON:0004804 ! oviduct epithelium
 relationship: part_of UBERON:0000995 ! uterus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0006964
+name: pars distalis of adenohypophysis
+namespace: uberon
+def: "The distal part of adenohypophysis: the part that makes up the main body of the gland." [Dorlands_Medical_Dictionary:MerckSource, Wikipedia:Pars_distalis]
+subset: vertebrate_core
+synonym: "anterior lobe" RELATED [MA:0000854]
+synonym: "pars anterior" BROAD [EHDAA2:0001416, MA:0000854, ZFA:0001195]
+synonym: "pars anterior of adenohypophysis" EXACT [FMA:74630]
+synonym: "pars distalis" RELATED [MA:0000854]
+synonym: "pars distalis (glandula pituitaria)" EXACT LATIN [FMA:74630, FMA:TA]
+synonym: "pars distalis adenohypophyseos" RELATED [BTO:0001787]
+synonym: "pars distalis adenohypophysis" EXACT LATIN [FMA:74630, FMA:TA]
+synonym: "pars distalis lobi anterioris hypophyseos" RELATED [BTO:0001787]
+synonym: "pars distalis of anterior lobe of pituitary gland" EXACT [FMA:74630]
+synonym: "pars glandularis" RELATED [MA:0000854]
+synonym: "pars glandularis of adenohypophysis" EXACT [FMA:74630]
+xref: AAO:0010542
+xref: BTO:0001787
+xref: EHDAA2:0001416
+xref: EHDAA:7532
+xref: EMAPA:17515
+xref: FMA:74630
+xref: MA:0000854
+xref: TAO:0001195
+xref: VHOG:0000244
+xref: ZFA:0001195
+is_a: UBERON:0010371 ! ecto-epithelium
+relationship: part_of UBERON:0002196 ! adenohypophysis
+property_value: homology_notes "It (the hypophysis) develops embryonically in all vertebrates from two ectodermal evaginations that meet and unite. An infundibulum grows ventrally from the diencephalon of the brain, and Rathke's pouch extends dorsally from the roof of the developing mouth, or stomodaeum. The infundibulum remains connected to the floor of the diencephalon, which becomes the hypothalamus, and gives rise to the part of the gland known as the neurohypophysis. (...) Rathke's pouch loses its connection with the stomodaeum in most adult vertebrates and gives rise to the rest of the gland, the adenohypophysis. (...) A well-developed hypophyseal system with functional connections to the hypothalamus is unique to craniates.[well established][VHOG]" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+property_value: UBPROP:0000001 "Region of the adenohypophysis which produces the follicle-stimulating hormone, luteinizing hormone, prolactin, thyrotropin, and adrenocorticotropin.[AAO]" xsd:string
+property_value: UBPROP:0000001 "The anterior part of the adenohypophysis. [TFD][VHOG]" xsd:string
 
 [Term]
 id: UBERON:0006965
@@ -65859,7 +66208,7 @@ name: head or neck bone
 namespace: uberon
 def: "A bone that is part of a craniocervical region." [OBOL:automatic]
 xref: MA:0000569
-is_a: UBERON:0001474 ! bone
+is_a: UBERON:0001474 ! bone element
 relationship: part_of UBERON:0007811 ! craniocervical region
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -65874,7 +66223,7 @@ xref: FMA:7477
 xref: ncithesaurus:Irregular_Bone
 xref: SCTID:421560006
 xref: UMLS:C0502414
-is_a: UBERON:0001474 ! bone
+is_a: UBERON:0001474 ! bone element
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -66702,6 +67051,24 @@ relationship: part_of UBERON:0003081 ! lateral plate mesoderm
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0009882
+name: anal column
+namespace: uberon
+def: "One of a number of vertical folds, produced by an infolding of the mucous membrane and some of the muscular tissue in the upper half of the lumen of the anal canal. They are named after Giovanni Battista Morgagni who also has several other eponyms named after himself[WP]" [Wikipedia:Anal_columns]
+synonym: "column of Morgagni" EXACT [FMA:15713]
+synonym: "columnae anales" RELATED LATIN [Wikipedia:Anal_columns]
+xref: FMA:15713
+xref: http://upload.wikimedia.org/wikipedia/commons/1/17/Gray1078.png
+xref: ncithesaurus:Anal_Column
+xref: SCTID:245444007
+xref: UMLS:C0227428
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+relationship: part_of UBERON:0000159 ! anal canal
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0009889
 name: secondary heart field
 namespace: uberon
@@ -66792,6 +67159,66 @@ disjoint_from: UBERON:0011814 ! non-neurogenic ectodermal placode
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0009966
+name: internodal tract
+namespace: uberon
+def: "Subdivision of conducting system of heart which consists of the anterior, middle and  posterior internodal tracts  beneath the endocardium of interatrial septum and above the attachment of the septal leaflet of tricuspid valve." [FMA:9479]
+comment: evidence is sparse [http://www.gpnotebook.co.uk/simplepage.cfm?ID=-483065798] There is some functional evidence for the existence of specialized conducting pathways within the atria (termed internodal tracts), although this is controversial[http://www.cvphysiology.com/Arrhythmias/A003.htm]. Editor note: include 3 subtypes?
+synonym: "interatrial conduction tract" EXACT []
+synonym: "internodal conduction tract" EXACT []
+synonym: "internodal fasciculus" EXACT [FMA:9479]
+synonym: "internodal tract muscle tissue" EXACT [FMA:9479]
+xref: FMA:9479
+is_a: UBERON:0002385 ! muscle tissue
+relationship: part_of UBERON:0002350 ! conducting system of heart
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0009967
+name: spleen venous sinus
+namespace: uberon
+comment: See comments for UBERON:0003910
+synonym: "sinus lienalis" EXACT LATIN [FMA:TA]
+synonym: "sinus splenicus" EXACT LATIN [FMA:TA]
+synonym: "splenic sinus" EXACT [FMA:62815]
+synonym: "venous sinus of red pulp of spleen" EXACT [FMA:62815]
+xref: FMA:62815
+xref: MA:0000761
+xref: ncithesaurus:Splenic_Sinus
+xref: UMLS:C1179415
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0003497 ! abdomen blood vessel
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0006615 ! venous sinus
+relationship: part_of UBERON:0001250 ! red pulp of spleen
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0009969
+name: stato-acoustic epithelium
+namespace: uberon
+comment: Editor note: required by CL
+xref: FMA:64804
+is_a: UBERON:0006934 ! sensory epithelium
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0009970
+name: epithelium of pancreatic duct
+namespace: uberon
+def: "An epithelium that is part of a pancreatic duct." [OBOL:automatic]
+comment: Editor note: in EHDAA2, the embryonic pancreatic ducts (dorsal, ventral) are classified as eithelial sacs, which would render them subclasses this
+synonym: "pancreatic duct epithelium" EXACT [FMA:67681]
+synonym: "pancreatic ductal epithelium" EXACT [FMA:67681]
+xref: EFO:0002556
+xref: FMA:67681
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+relationship: develops_from UBERON:0000924 ! ectoderm
+relationship: part_of UBERON:0007329 ! pancreatic duct
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0010009
 name: aggregate regional part of brain
 namespace: uberon
@@ -66868,6 +67295,21 @@ is_a: UBERON:0002365 ! exocrine gland
 is_a: UBERON:0003408 ! gland of gut
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: part_of UBERON:0000165 ! mouth
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0010056
+name: future tongue
+namespace: uberon
+def: "A compound organ that develops_into a tongue." [OBOL:automatic]
+xref: EHDAA2:0000696
+xref: EHDAA:2951
+is_a: UBERON:0003103 ! compound organ
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005423 ! developing anatomical structure
+relationship: part_of UBERON:0000166 ! oral opening
+relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
@@ -67445,6 +67887,8 @@ subset: vertebrate_core
 synonym: "articular cartilage" EXACT [MA:0000487]
 synonym: "cartilago articularis" EXACT [FMA:12264]
 synonym: "hyaline cartilage" RELATED [BTO:0001572]
+synonym: "joint-associated cartilage" RELATED [AEO:0000179]
+xref: AEO:0000179
 xref: BTO:0001572
 xref: EFO:0001902
 xref: FMA:12264
@@ -67455,7 +67899,7 @@ xref: MESH:A02.165.165
 xref: ncithesaurus:Articular_Cartilage
 xref: SCTID:305026006
 xref: UMLS:C0007303
-is_a: UBERON:0001994 ! hyaline cartilage
+is_a: UBERON:0001994 ! hyaline cartilage tissue
 relationship: part_of UBERON:0002217 ! synovial joint
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -67874,6 +68318,26 @@ relationship: develops_from UBERON:0000926 ! mesoderm
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0012279
+name: paraganglion
+namespace: uberon
+def: "Small bodies containing chromaffin cells occurring outside of the adrenal medulla, most commonly near the sympathetic ganglia and in organs such as the kidney, liver, heart and gonads." [MESH:A06.224.736, Wikipedia:Paraganglion]
+comment: Editors note: unrevised
+synonym: "chromaffin body" RELATED [MESH:A06.224.736]
+synonym: "chromaffin paraganglia" RELATED PLURAL [MESH:A06.224.736]
+synonym: "chromaffin paraganglion" RELATED [MESH:A06.224.736]
+xref: CALOHA:TS-2358
+xref: EMAPA:18223
+xref: FMA:15648
+xref: MESH:A06.224.736
+xref: ncithesaurus:Paraganglion
+xref: SCTID:329735008
+xref: UMLS:C0030419
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000949 ! endocrine system
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0012292
 name: embryonic cloacal fold
 namespace: uberon
@@ -67991,6 +68455,23 @@ relationship: part_of UBERON:0000916 ! abdomen
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
+id: UBERON:0013192
+name: ovarian medulla
+namespace: uberon
+def: "The medulla of ovary (or Zona vasculosa of Waldeyer) is a highly vascular stroma in the center of the ovary. It forms from embryonic mesenchyme and contains blood vessels, lymphatic vessels, and nerves. This stroma forms the tissue of the hilum by which the ovarian ligament is attached, and through which the blood vessels enter: it does not contain any ovarian follicles." [Wikipedia:Medulla_of_ovary]
+comment: composed of loose connective tissue that contains blood vessels, lymph vessels and nerves[NCIT]
+synonym: "medulla of ovary" EXACT [FMA:18616]
+synonym: "medulla ovarii (zona vasculosa)" EXACT [FMA:18616]
+synonym: "zona vasculosa of Waldeyer" RELATED [Wikipedia:Medulla_of_ovary]
+xref: FMA:18616
+xref: ncithesaurus:Ovarian_Medulla
+xref: UMLS:C0227879
+is_a: UBERON:0000958 ! medulla
+is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0000992 ! female gonad
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
 id: UBERON:0013515
 name: subdivision of uterine tube
 namespace: uberon
@@ -68010,6 +68491,19 @@ name: subdivision of tube
 namespace: uberon
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000025 ! tube
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0013636
+name: epithelium of intestinal villus
+namespace: uberon
+synonym: "intestinal villus epithelium" EXACT [FMA:63587]
+synonym: "villous epithelium" RELATED []
+synonym: "villus epithelium" RELATED []
+xref: FMA:63587
+is_a: UBERON:0001902 ! epithelium of small intestine
+relationship: part_of UBERON:0001213 ! intestinal villus
+relationship: part_of UBERON:0001902 ! epithelium of small intestine
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
