@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2013-02-20
+data-version: releases/2013-03-02
 date: 04:01:2013 10:31
 saved-by: haendel
 auto-generated-by: OBO-Edit 2.2
@@ -1867,12 +1867,7 @@ comment: Astrocytes are reportedly CD68-negative, CD121a-positive, CD184-positiv
 synonym: "astrocytic glia" EXACT []
 xref: BTO:0000099
 xref: FMA:54537
-is_a: CL:0000128 ! oligodendrocyte
-intersection_of: CL:0000126 ! macroglial cell
-intersection_of: has_part UBERON:0001023 ! obsolete dendrite
-intersection_of: part_of UBERON:0001017 ! central nervous system
-relationship: has_part UBERON:0001023 ! obsolete dendrite
-relationship: part_of UBERON:0001017 ! central nervous system
+is_a: CL:0000126 ! macroglial cell
 
 [Term]
 id: CL:0000128
@@ -21442,6 +21437,7 @@ name: astrocyte of the cerebellum
 namespace: cell
 def: "An astrocyte of the cerebellum." [GOC:tfm]
 is_a: CL:0000127 ! astrocyte
+is_a: CL:0000128 ! oligodendrocyte
 intersection_of: CL:0000127 ! astrocyte
 intersection_of: part_of UBERON:0002037 ! cerebellum
 relationship: part_of UBERON:0002037 ! cerebellum
@@ -21477,6 +21473,7 @@ name: astrocyte of the spinal cord
 namespace: cell
 def: "An astrocyte of the spinal cord." [GOC:tfm]
 is_a: CL:0000127 ! astrocyte
+is_a: CL:0000128 ! oligodendrocyte
 intersection_of: CL:0000127 ! astrocyte
 intersection_of: part_of UBERON:0002240 ! spinal cord
 relationship: part_of UBERON:0002240 ! spinal cord
@@ -22744,6 +22741,69 @@ created_by: haendel
 creation_date: 2012-12-30T12:43:15Z
 
 [Term]
+id: CL:0007017
+name: Stiftchenzellen
+def: "An epidermal cell with apical microvilli or a single apical projection have synaptic associations with nerve fibres in the epidermis. " [PMID:1087183]
+comment: Taxon specificity not yet fully known, but are known in anuran larvae but not in adults.
+is_a: CL:0000206 ! chemoreceptor cell
+relationship: has_part GO:0005902 ! microvillus
+relationship: part_of UBERON:0001003 ! epidermis
+created_by: haendel
+
+[Term]
+id: CL:0007018
+name: epidermal ciliary cell
+def: "Ciliated cell of the embryonic epidermis and functions in embryonic movements." [PMCID:PMC3046089]
+comment: Taxon specificity not clear -present in embryonic anurans.
+is_a: CL:0000064 ! ciliated cell
+is_a: CL:0002321 ! embryonic cell
+relationship: has_plasma_membrane_part GO:0005929 ! cilium
+relationship: part_of UBERON:0001003 ! epidermis
+created_by: haendel
+
+[Term]
+id: CL:0007019
+name: epidermal mucus secreting cell
+comment: taxon specificity not clear. Appears in early larval stages of anurans and persists after metamorphosis.
+is_a: CL:0000319 ! mucus secreting cell
+created_by: haendel
+
+[Term]
+id: CL:0007020
+name: bottle cell
+def: "Characteristic early embryonic cell with a bottle or flask shape that is first to migrate inwards at the blastopore during gastrulation in amphibians." [PMID:3197630]
+is_a: CL:0000007 ! early embryonic cell
+created_by: haendel
+
+[Term]
+id: CL:0007021
+name: alarm substance cell
+def: "Secretory cell that produces a chemical mixture that triggers antipredator behavior. The substance is released only upon disruption of the epidermis. [Behavior of teleost fishes, second edition, edited by Pitcher, 1992]" [ISBN-10:0412429403]
+synonym: "club cell" EXACT [ISBN-10:0412429403]
+is_a: CL:0000151 ! secretory cell
+is_a: CL:0000473 ! defensive cell
+relationship: part_of UBERON:0001003 ! epidermis
+relationship: RO:0002215 GO:0032940 ! capable_of secretion by cell
+created_by: haendel
+
+[Term]
+id: CL:0007022
+name: micropylar cell
+def: "A specialized pore forming cell of the follicle, located adjacent to the animal pole of the oocyte. The micropylar cell makes the single micropyle (pore) through the chorion through which the sperm fertilizes the egg." [PMID:18582455 , ZFA:0005239]
+synonym: "plug cell" EXACT []
+is_a: CL:0000548 ! animal cell
+is_a: UBERON:0001305 ! ovarian follicle
+created_by: haendel
+
+[Term]
+id: CL:0007023
+name: flask cell
+def: "Epidermal cell rich in mitochondria. In amphibians, appears during metamorphosis. " [DOI:10.1007/BF00717048]
+is_a: CL:0000003 ! native cell
+relationship: part_of UBERON:0001003 ! epidermis
+created_by: haendel
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -22816,6 +22876,7 @@ namespace: cell
 def: "An astrocyte of the forebrain." []
 synonym: "forebrain astrocyte" EXACT []
 is_a: CL:0000127 ! astrocyte
+is_a: CL:0000128 ! oligodendrocyte
 intersection_of: CL:0000127 ! astrocyte
 intersection_of: part_of UBERON:0001890 ! forebrain
 relationship: part_of UBERON:0001890 ! forebrain
@@ -45662,27 +45723,6 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 property_value: UBPROP:0000001 "A portion of tissue which is a fasiculated group of axons.[TAO]" xsd:string
 
 [Term]
-id: UBERON:0001023
-name: obsolete dendrite
-namespace: uberon
-def: "The region of a neuron receiving inputs from other neurons, typically a slender neurite, often branched. In insect neurons, this is often not a clear designation and often presynaptic sites co-extend with postsynaptic ones." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Dendrite]
-comment: Made obsolete as it was equivalent to GO class
-subset: uberon_slim
-property_value: has_relational_adjective "dendritic" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-is_obsolete: true
-consider: FBbt:00005110
-consider: FMA:67314
-consider: GAID:749
-consider: GO:0030425
-consider: MESH:A08.663.256
-consider: ncithesaurus:Dendrite
-consider: NIF_Subcellular:sao1211023249
-consider: OpenCyc:Mx4rviIdspwpEbGdrcN5Y29ycA
-consider: TGMA:0001373
-consider: UMLS:C0011305
-
-[Term]
 id: UBERON:0001032
 name: sensory system
 namespace: uberon
@@ -53050,13 +53090,14 @@ property_value: UBPROP:0000001 "The partition separating the right and left atri
 
 [Term]
 id: UBERON:0002091
-name: entire appendicular skeleton
+name: appendicular skeleton
 namespace: uberon
 def: "Subdivision of skeleton which which consists of all the  skeletal elements in in the pectoral and pelvic appendage complexes[cjm]." [UBERON:cjm, UBERONREF:0000003, Wikipedia:Appendicular_skeleton]
 comment: Note that ontologies differ in whether they treat the term appendicular skeleton as being the entire set of bones in the limbs, or whether the fore and hind limbs/fins are treated as seperate appendicular skeletons. Here we follow FMA, and treat the appendicular skeleton as the sum total of skeletal elements in the organism (this is evidenced by the fact that in FMA, skeleton of left/right upper/lower limb is part_of a appendicular skeleton, and subtypes of 'subdivision of appendicular skeleton'). We have separate classes such as 'skeleton of limb', and 'skeleton of hindlimb' for the 4 parts of the appendicular skeleton. In future the ZFA/TAO classes may be moved.
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "appendicular skeleton" EXACT []
+synonym: "entire appendicular skeleton" EXACT [http://purl.obolibrary.org/obo/uberon/tracker/59]
 synonym: "paired fin skeleton" NARROW SENSU []
 synonym: "skeleton appendiculare" RELATED LATIN [Wikipedia:Appendicular_skeleton]
 xref: AAO:0000747
@@ -56772,7 +56813,7 @@ xref: OpenCyc:Mx4rv6axr5wpEbGdrcN5Y29ycA
 xref: SCTID:332709000
 xref: UMLS:C0222647
 is_a: UBERON:0001474 ! bone element
-relationship: part_of UBERON:0002091 ! entire appendicular skeleton
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
