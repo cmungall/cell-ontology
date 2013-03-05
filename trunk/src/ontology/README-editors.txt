@@ -24,7 +24,7 @@ Setting up: Obtain ontology from svn (one time only):
 See instructions here:
 https://code.google.com/p/cell-ontology/source/checkout
 
-  svn checkout https://cell-ontology.googlecode.com/svn/trunk/ cell-ontology --username <USERNAME>
+  svn checkout https://cell-ontology.googlecode.com/svn/trunk/src/ontology cell-ontology --username <USERNAME>
 
 
 GETTING STARTED
