@@ -61,6 +61,7 @@ cl.ofn: cl.owl
 # Diffs
 # ----------------------------------------
 
+# full diff makes RSS as well
 diff: cl-basic.obo
 	cd diffs && rm cl-*diff* && make
 
