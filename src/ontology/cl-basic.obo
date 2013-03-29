@@ -1,8 +1,5 @@
 format-version: 1.2
-data-version: releases/2013-03-02
-date: 04:01:2013 10:31
-saved-by: haendel
-auto-generated-by: OBO-Edit 2.2
+data-version: releases/2013-03-29
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -72,8 +69,7 @@ synonymtypedef: PSI-MOD-label "Unique short label curated by PSI-MOD" EXACT
 synonymtypedef: SENSU "taxonomic disambiguation"
 synonymtypedef: SMILES "SMILES"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
-default-namespace: cl
-remark: $Revision: 1.113 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
+remark: See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
 
 [Term]
@@ -1322,7 +1318,7 @@ synonym: "neuroglial cell" EXACT []
 xref: BTO:0002606
 xref: FMA:54536
 is_a: CL:0000095 ! neuron associated cell
-relationship: develops_from CL:0000030 ! glioblast
+relationship: develops_from CL:0000030 {comment="It is unclear that all glial cells develop from a cell type called a glioblast. Radial glial cells develop from neuroepithelial cells and other types of glial cells develop from other precursors. Unless glioblast is meant to describe any cell that can give rise to a glial cell, this relationship needs further investigation."} ! glioblast
 
 [Term]
 id: CL:0000126
@@ -6113,9 +6109,9 @@ name: radial glial cell
 namespace: cell
 def: "A cell present in the developing CNS. Functions as both a precursor cell and as a scaffold to support neuronal migration." [GOC:dph]
 comment: Unlike that of mammals, the brain of adult teleost fish exhibits an intense and widespread neurogenic activity as a result of the persistence of\nradial glial cells acting as neural progenitors throughout life.
-synonym: "forebrain radial glial cell" EXACT []
+synonym: "forebrain radial glial cell" NARROW []
 is_a: CL:0000243 ! glial cell (sensu Vertebrata)
-relationship: develops_from CL:0000031 ! neuroblast
+relationship: develops_from CL:0000710 ! neurecto-epithelial cell
 
 [Term]
 id: CL:0000682
@@ -9759,6 +9755,7 @@ creation_date: 2011-11-16T04:28:16Z
 [Term]
 id: CL:0001039
 name: terminally differentiated osteoblast
+namespace: cl
 def: "Osteoblast that is terminally differentiated, located adjacent to acellular or cellular bone tissue within periosteum, and is capable of mineralizing the matrix." [VSAO:curator]
 xref: VSAO:0000116
 is_a: CL:0000062 ! osteoblast
@@ -9766,6 +9763,7 @@ is_a: CL:0000062 ! osteoblast
 [Term]
 id: CL:0001040
 name: non-terminally differentiated osteoblast
+namespace: cl
 def: "Osteoblast that is non-terminally differentiated and located in cellular bone tissue or under the periosteum in acellular bone." [VSAO:curator]
 comment: VSAO relationship simplified OBO_REL:integral_part_of VSAO:0000118
 xref: VSAO:0000117
@@ -17299,6 +17297,30 @@ created_by: Ceri
 creation_date: 2012-01-12T05:21:09Z
 
 [Term]
+id: CL:0005023
+name: branchiomotor neuron
+def: "Cranial motor neuron which innervates muscles derived from the branchial (pharyngeal) arches." []
+synonym: "branchi  motor neuron " EXACT []
+synonym: "special visceral motor neuron" EXACT []
+xref: PMID:14699587 
+is_a: CL:0015000 ! cranial motor neuron
+
+[Term]
+id: CL:0005024
+name: somatomotor neuron
+def: "Cranial motor neurons found in the midbrain and hindbrain that innervates muscles that control eye and tongue." []
+xref: PMID:14699587
+is_a: CL:0015000 ! cranial motor neuron
+
+[Term]
+id: CL:0005025
+name: visceromotor neuron
+def: "Cranial motor neurons are found in the hindbrain, and innervate parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems." []
+synonym: "general visceral motor neuron" EXACT []
+xref: PMID:14699587
+is_a: CL:0015000 ! cranial motor neuron
+
+[Term]
 id: CL:0007000
 name: preameloblast
 namespace: cell
@@ -17422,12 +17444,14 @@ creation_date: 2012-06-28T08:20:31Z
 [Term]
 id: CL:0007012
 name: non-terminally differentiated odontoblast
+namespace: cl
 def: "Odontoblast that non-terminally differentiated, located in the odontogenic papilla and dentine tissue, and transforms from a odontoblast cell." [GO_REF:0000034, PSPUB:0000170]
 is_a: CL:0000060 ! odontoblast
 
 [Term]
 id: CL:0007013
 name: terminally differentiated odontoblast
+namespace: cl
 def: "Odontoblast that is terminally differentiated and derived from an odontogenic papilla and associated with dentine." [GO_REF:0000034]
 is_a: CL:0000060 ! odontoblast
 
@@ -17574,6 +17598,12 @@ def: "An inhibitory GABAergic interneuron found in the cerebellar cortex." [GOC:
 is_a: CL:0011005 ! GABAergic interneuron
 
 [Term]
+id: CL:0011100
+name: galanergic neuron
+def: "Neuron that secretes the neurotransmitter galanin." [PMID: 23159249]
+is_a: CL:0000540 ! neuron
+
+[Term]
 id: CL:0012000
 name: astrocyte of the forebrain
 namespace: cell
@@ -17591,6 +17621,19 @@ def: "A CNS neuron of the forebrain." []
 synonym: "forebrain neuron" EXACT []
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 created_by: tberardini
+
+[Term]
+id: CL:0013000
+name: forebrain radial glial cell
+is_a: CL:0000681 ! radial glial cell
+
+[Term]
+id: CL:0015000
+name: cranial motor neuron
+def: "Motor neuron that innervate muscles that control eye, jaw, and facial movements of the vertebrate head and parasympathetic neurons that innervate certain glands and organs. " []
+synonym: "cranial motoneuron" EXACT []
+xref: PMID:14699587 \n
+is_a: CL:0000100 ! motor neuron
 
 [Term]
 id: CL:1000082
@@ -20060,6 +20103,7 @@ is_a: CL:0000083 ! epithelial cell of pancreas
 [Term]
 id: CL:1001434
 name: olfactory bulb interneuron
+namespace: cl
 def: "A neuron residing in the olfactory bulb that serve to process and refine signals arising from olfactory sensory neurons" [PMID:18603310]
 is_a: CL:0000101 ! sensory neuron
 is_a: CL:0000402 ! CNS interneuron
@@ -20068,6 +20112,7 @@ is_a: CL:0012001 ! neuron of the forebrain
 [Term]
 id: CL:1001435
 name: periglomerular cell
+namespace: cl
 def: "the small neuron in the glomerular layer of the olfactory bulb whose dendrites arborize within a glomerulus, where it receives synaptic input from olfactory receptor cell axon terminals, and also engages in dendrodendritic interactions with mitral and tufted cell dendrites; uses both GABA and dopamine as a neurotransmitter" [MP:0009943]
 synonym: "glomerular layer cell" EXACT [NIF_Cell:nifext_122]
 synonym: "olfactory bulb (accessory) glomerular layer cell" EXACT [NIF_Cell:nifext_122]
@@ -20081,18 +20126,21 @@ is_a: CL:1001434 ! olfactory bulb interneuron
 [Term]
 id: CL:1001436
 name: hair-tylotrich neuron
+namespace: cl
 def: "the subcutaneous mechanoreceptors that innervate tylotrich hair follicles" [MP:0000977]
 is_a: CL:0002487 ! cutaneous/subcutaneous mechanoreceptor cell
 
 [Term]
 id: CL:1001437
 name: hair-down neuron
+namespace: cl
 def: "the subcutaneous mechanoreceptors that innervate vellus hairs" [MP:0000979]
 is_a: CL:0002487 ! cutaneous/subcutaneous mechanoreceptor cell
 
 [Term]
 id: CL:1001451
 name: sensory neuron of dorsal root ganglion
+namespace: cl
 def: "A sensory neuron of the dorsal root ganglia that senses body position and sends information about how much the muscle is stretched to the spinal cord." [MP:0004297]
 synonym: "proprioceptive neuron" EXACT [MP:0004297]
 is_a: CL:0009000 ! sensory neuron of spinal nerve
@@ -20100,6 +20148,7 @@ is_a: CL:0009000 ! sensory neuron of spinal nerve
 [Term]
 id: CL:1001474
 name: medium spiny neuron
+namespace: cl
 def: "the inhibitory projection neurons located in the striatum that integrate glutamatergic signals arising from the cerebral cortex and thalamus" [MP:0008462]
 synonym: "medium-sized densely spiny neuron" RELATED [BTO:0004778]
 xref: BTO:0004778
@@ -20108,18 +20157,21 @@ is_a: CL:0000540 ! neuron
 [Term]
 id: CL:1001502
 name: mitral cell
+namespace: cl
 def: "the large glutaminergic nerve cells whose dendrites synapse with axons of the olfactory receptor neurons in the glomerular layer of the olfactory bulb, and whose axons pass centrally in the olfactory tract to the olfactory cortex" [MP:0009954]
 is_a: CL:1001434 ! olfactory bulb interneuron
 
 [Term]
 id: CL:1001503
 name: olfactory bulb tufted cell
+namespace: cl
 def: "the principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala" [MP:0009955]
 is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:1001505
 name: parvocellular neurosecretory cell
+namespace: cl
 def: "the secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system" [MP:0010125]
 is_a: CL:0000167 ! peptide hormone secreting cell
 is_a: CL:0000540 ! neuron
@@ -20127,12 +20179,14 @@ is_a: CL:0000540 ! neuron
 [Term]
 id: CL:1001509
 name: glycinergic neuron
+namespace: cl
 def: "the neurons that utilize glycine as a neurotransmitter" [MP:0010385]
 is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:1001516
 name: intestinal enteroendocrine cell
+namespace: cl
 def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract" [MP:0010802]
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000510 ! paneth cell
@@ -20140,6 +20194,7 @@ is_a: CL:0000510 ! paneth cell
 [Term]
 id: CL:1001517
 name: stomach enteroendocrine cell
+namespace: cl
 def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the stomach" [MP:0010803]
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0002659 ! glandular cell of stomach
@@ -20147,18 +20202,21 @@ is_a: CL:0002659 ! glandular cell of stomach
 [Term]
 id: CL:1001561
 name: vomeronasal sensory neuron
+namespace: cl
 def: "chemosensitive cells that innervate the vomernasal organ epithelium and are responsible for receiving and transmitting pheromone signals" [MP:0011679]
 is_a: CL:0000101 ! sensory neuron
 
 [Term]
 id: CL:1001566
 name: bronchioalveolar stem cells
+namespace: cl
 def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and Clara cells in response to lung injury." [MP:0011691]
 is_a: CL:0000034 ! stem cell
 
 [Term]
 id: CL:1001567
 name: lung endothelial cell
+namespace: cl
 synonym: "endothelial cell of lung" RELATED []
 synonym: "pulmonary vessel endothelial cell" RELATED []
 is_a: CL:0000082 ! epithelial cell of lung
@@ -20167,6 +20225,7 @@ is_a: CL:0002139 ! endothelial cell of vascular tree
 [Term]
 id: CL:1001568
 name: pulmonary artery endothelial cell
+namespace: cl
 synonym: "PAEC cell" RELATED [BTO:0001141]
 xref: BTO:0001141
 is_a: CL:1000413 ! endothelial cell of artery
@@ -20174,6 +20233,7 @@ is_a: CL:1000413 ! endothelial cell of artery
 [Term]
 id: CL:1001569
 name: hippocampal interneuron
+namespace: cl
 def: "An interneuron of the hippocampus." [GOC:pr]
 xref: FMA:84777
 is_a: CL:0000402 ! CNS interneuron
@@ -20182,6 +20242,7 @@ is_a: CL:0002608 ! hippocampal neuron
 [Term]
 id: CL:1001571
 name: hippocampal pyramidal neuron
+namespace: cl
 def: "A pyramidal cell of the hippocampus." [GOC:pr, PMID:19342486]
 synonym: "hippocampus (CA) pyramidal cell" EXACT [NIF_Cell:sao131261273]
 synonym: "hippocampus (CA) pyramidal neuron" EXACT [NIF_Cell:sao131261273]
@@ -20193,6 +20254,7 @@ is_a: CL:0002608 ! hippocampal neuron
 [Typedef]
 id: RO:0002131
 name: overlaps
+namespace: cl
 xref: RO:0002131
 
 [Typedef]
@@ -20205,10 +20267,12 @@ expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://p
 [Typedef]
 id: RO:0002220
 name: adjacent_to
+namespace: cl
 
 [Typedef]
 id: UBPROP:0000001
 name: external_definition
+namespace: cl
 def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [UBERON:cjm]
 xref: UBPROP:0000001
 is_metadata_tag: true
@@ -20216,6 +20280,7 @@ is_metadata_tag: true
 [Typedef]
 id: UBPROP:0000002
 name: axiom_lost_from_external_ontology
+namespace: cl
 def: "A textual description of an axiom loss in this ontology compared to an external ontology." [UBERON:cjm]
 xref: UBPROP:0000002
 is_metadata_tag: true
@@ -20271,6 +20336,7 @@ is_class_level: true
 [Typedef]
 id: has_completed
 name: has_completed
+namespace: cl
 
 [Typedef]
 id: has_cross_section
@@ -20371,7 +20437,7 @@ is_metadata_tag: true
 id: immediate_transformation_of
 name: immediate_transformation_of
 namespace: uberon
-synonym: "direct_transformation_of" EXACT [UBERON:cjm]
+synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: http://semanticscience.org/resource/SIO_000658
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -20422,6 +20488,7 @@ expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (htt
 [Typedef]
 id: located_in
 name: located_in
+namespace: cl
 
 [Typedef]
 id: negatively_regulates
@@ -20463,16 +20530,18 @@ is_transitive: true
 [Typedef]
 id: participates_in
 name: participates in
+namespace: cl
 xref: BFO:0000056
 
 [Typedef]
 id: pharyngeal_arch_number
 name: pharyngeal arch number
 namespace: uberon
-def: "x pharyngeal_arch_number N if and only if (i) x is a pharyngeal arch, and (ii) x is ancestrally pharyngeal arch number N in a series of pharyngeal arches repeated along a antero-posterior axis, with arch_number 1 being the mandibular arch." [UBERON:cjm]
+def: "x pharyngeal_arch_number N if and only if (i) x is a pharyngeal arch, and (ii) x is ancestrally pharyngeal arch number N in a series of pharyngeal arches repeated along a antero-posterior axis, with arch_number 1 being the mandibular arch." [https://orcid.org/0000-0002-6601-2165]
 comment: Note that gill arch N = PA N-2. the term branchial_arch is ambiguous.
-property_value: is_count_of UBERON:0002539
-property_value: preceding_element_is BSPO:0000096
+xref: UBPROP:0000103
+property_value: UBPROP:0000100 UBERON:0002539
+property_value: UBPROP:0000101 BSPO:0000096
 is_metadata_tag: true
 
 [Typedef]
@@ -20508,6 +20577,7 @@ xref: RO:0003000
 [Typedef]
 id: realized_by
 name: realized by
+namespace: cl
 xref: BFO:0000054
 
 [Typedef]
@@ -20536,6 +20606,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 [Typedef]
 id: secretes
 name: secretes
+namespace: cl
 
 [Typedef]
 id: seeAlso
@@ -20554,6 +20625,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 [Typedef]
 id: spatially_disjoint_from
 name: spatially_disjoint_from
+namespace: cl
 namespace: uberon
 def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
 synonym: "non_overlapping_with" EXACT []
