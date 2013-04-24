@@ -4,8 +4,10 @@ PRE-EDIT CHECKLIST
 Do you have an ID range in the idranges file (cl-idranges.owl),
 in this directory). If not, get one from the head curator.
 
-Ensure that you have Protege configured to generate new IRIs in your
-own range. Note that if you edit multiple files, you need to check this every time to ensure that the proper settings are in place.
+Ensure that you have Protege configured to generate new URIs in your
+own range. Note that if you edit multiple files, you need to check this every time to ensure that the proper settings are in place. CL URIs should look like this:
+http://purl.obolibrary.org/obo/CL_0000473
+Do a test to ensure that the ID generator is working properly.
 
 A word of caution about protege auto-id functionality. Protege will allow reuse of a URI in your range according to the numbering scheme. It will keep track of what you did during last session, but *does not check* for use of the URI before assigning it (doh!!). Therefore, if you added any IDs in your range prior to the switch to OWL, protege will not know not to start from the beginning. Some tips to check to see where you are in your range: Go to the view menu, click "render by label (rdf:id)", and then use the search box to search for things starting within your range, such as CL_0007 for Melissa's range. If you have IDs in your range already, you may wish to set Protege at the next unused ID in your range rather than the beginning of the range. It should then remember it for next time, though you should double check.
 
