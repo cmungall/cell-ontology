@@ -1,9 +1,10 @@
 format-version: 1.2
-data-version: releases/2013-03-29
+data-version: 2013-04-20/cl-merged.owl
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
 subsetdef: cell_quality "cell_quality"
+subsetdef: Cross_product_review "Involved_in"
 subsetdef: cyclostome_subset "cyclostome structures"
 subsetdef: defined_by_ordinal_series "classes that are defined by relative position counting from first in a series of elements along an axis in an individual organism rather than by strict homology"
 subsetdef: developmental_classification "developmental_classification"
@@ -13,6 +14,8 @@ subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropria
 subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
 subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to be checked"
 subsetdef: functional_classification "functional_classification"
+subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
+subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_aspergillus "Aspergillus GO slim"
 subsetdef: goslim_candida "Candida GO slim"
 subsetdef: goslim_generic "Generic GO slim"
@@ -79,6 +82,7 @@ namespace: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:mah]
 comment: The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one).
 subset: ubprop:upper_level
+xref: CALOHA:TS-2035
 xref: FMA:68646
 xref: GO:0005623
 xref: KUPO:0000002
@@ -232,6 +236,7 @@ name: spermatocyte
 namespace: cell
 def: "A male germ cell that develops from spermatogonia. The euploid primary spermatocytes undergo meiosis and give rise to the haploid secondary spermatocytes which in turn give rise to spermatids." [GOC:tfm, MESH:A05.360.490.890.880]
 xref: BTO:0001275
+xref: CALOHA:TS-0951
 xref: EMAPA:31484
 xref: FBbt:00004936
 xref: FMA:84049
@@ -247,6 +252,7 @@ namespace: cell
 def: "A male germ cell that develops from the haploid secondary spermatocytes. Without further division, spermatids undergo structural changes and give rise to spermatozoa." [MESH:A05.360.490.890.860]
 synonym: "nematoblast" EXACT []
 xref: BTO:0001274
+xref: CALOHA:TS-0950
 xref: EMAPA:31486
 xref: FBbt:00004942
 xref: FMA:72294
@@ -266,6 +272,7 @@ synonym: "spermatozoid" EXACT []
 synonym: "spermatozoon" EXACT []
 xref: BTO:0001277
 xref: BTO:0002046
+xref: CALOHA:TS-0949
 xref: FBbt:00004954
 xref: FMA:67338
 xref: WBbt:0006798
@@ -279,6 +286,7 @@ name: spermatogonium
 namespace: cell
 def: "An euploid male germ cell of an early stage of spermatogenesis." [MESH:A05.360.490.890.900]
 xref: BTO:0000958
+xref: CALOHA:TS-2193
 xref: EMAPA:31482
 xref: FBbt:00004935
 xref: FMA:72291
@@ -309,6 +317,7 @@ namespace: cell
 def: "A female germ cell that has entered meiosis." [GOC:tfm, ISBN:0721662544]
 synonym: "oogonium" RELATED []
 xref: BTO:0000964
+xref: CALOHA:TS-0711
 xref: FBbt:00004886
 xref: FMA:18644
 xref: WBbt:0006797
@@ -332,6 +341,7 @@ synonym: "mature oocyte" EXACT []
 synonym: "ovum" EXACT []
 xref: BTO:0000369
 xref: BTO:0003801
+xref: CALOHA:TS-2191
 xref: FBbt:00000034
 xref: FMA:67343
 xref: MA:0000388
@@ -413,6 +423,7 @@ id: CL:0000034
 name: stem cell
 namespace: cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A11.872]
+xref: CALOHA:TS-2086
 xref: FMA:63368
 is_a: CL:0000003 ! native cell
 
@@ -443,6 +454,7 @@ synonym: "colony forming unit hematopoietic" RELATED []
 synonym: "hemopoietic stem cell" EXACT []
 synonym: "HSC" EXACT []
 xref: BTO:0000725
+xref: CALOHA:TS-0448
 xref: FMA:70337
 xref: FMA:86475
 xref: VHOG:0001485
@@ -486,6 +498,7 @@ synonym: "CFU-M" RELATED []
 synonym: "colony forming unit macrophage" RELATED []
 synonym: "colony forming unit monocyte" RELATED []
 synonym: "monocyte stem cell" RELATED []
+xref: CALOHA:TS-1195
 xref: FMA:83553
 is_a: CL:0002194 ! monopoietic cell
 relationship: develops_from CL:0002009 ! macrophage dendritic cell progenitor
@@ -528,6 +541,7 @@ synonym: "mature basophil leukocyte" EXACT []
 synonym: "polymorphonuclear leucocyte" BROAD []
 synonym: "polymorphonuclear leukocyte" BROAD []
 xref: BTO:0001026
+xref: CALOHA:TS-0688
 is_a: CL:0000767 ! basophil
 is_a: CL:0002242 ! nucleate cell
 is_a: CL:0002274 ! histamine secreting cell
@@ -557,6 +571,7 @@ def: "Neural stem cell is characterized as an undifferentiated cell that origina
 synonym: "neural stem cell" EXACT []
 synonym: "NSC" EXACT []
 xref: BTO:0002881
+xref: CALOHA:TS-2360
 xref: FMA:86684
 is_a: CL:0000048 ! multi fate stem cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
@@ -662,6 +677,7 @@ name: myoblast
 namespace: cell
 def: "A precursor cell of the myogenic lineage that develops from the mesoderm. They undergo proliferation, migrate to their various sites, and then differentiate into the appropriate form of myocytes." [GOC:tfm, MESH:A11.635]
 xref: BTO:0000222
+xref: CALOHA:TS-0650
 xref: FBbt:00005083
 xref: FMA:70335
 xref: VHOG:0001529
@@ -675,6 +691,7 @@ namespace: cell
 def: "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped." [http://en.wikipedia.org/wiki/Fibroblast, ISBN:0517223651, MESH:A11.329.228, MESH:D005347]
 comment: These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.
 xref: BTO:0000452
+xref: CALOHA:TS-0362
 xref: FMA:63877
 xref: VHOG:0001482
 is_a: CL:0002320 ! connective tissue cell
@@ -715,6 +732,7 @@ namespace: cell
 def: "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell." [GO_REF:0000034, ISBN:0618947256]
 comment: legacy def: One of the cells forming the outer surface of dental pulp that produces tooth dentin.
 xref: BTO:0001769
+xref: CALOHA:TS-0696
 xref: FMA:62999
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002159 ! general ecto-epithelial cell
@@ -728,6 +746,7 @@ alt_id: CL:0000859
 def: "Skeletogenic cell that produces cementum (a bony substance that covers the root of a tooth), is part of the odontogenic papilla, and develops from a precementoblast cell." [GO_REF:0000034, ISBN:0781733901]
 comment: Legacy def: A cell of ectomesenchymal origin that aids in the formation the cementum layer on the roots of teeth.
 synonym: "cementum secreting cell" EXACT []
+xref: CALOHA:TS-1164
 xref: FMA:63002
 is_a: CL:0000062 ! osteoblast
 is_a: CL:0000151 ! secretory cell
@@ -740,6 +759,7 @@ namespace: cell
 def: "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell." [GO_REF:0000034, MESH:A11.329.629]
 comment: non-encoded relationships from VSAO - capable_of_producing VSAO:0000020
 xref: BTO:0001593
+xref: CALOHA:TS-0720
 xref: FMA:66780
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002320 ! connective tissue cell
@@ -783,6 +803,7 @@ namespace: cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:A11.436]
 synonym: "epitheliocyte" EXACT []
 xref: BTO:0000414
+xref: CALOHA:TS-2026
 xref: CARO:0000077
 xref: FBbt:00000124
 xref: FMA:66768
@@ -860,6 +881,7 @@ is_a: CL:0002371 ! somatic cell
 id: CL:0000076
 name: squamous epithelial cell
 namespace: cell
+xref: CALOHA:TS-1249
 is_a: CL:0000066 ! epithelial cell
 
 [Term]
@@ -933,6 +955,7 @@ synonym: "T lymphocyte" EXACT []
 synonym: "T-cell" EXACT []
 synonym: "T-lymphocyte" EXACT []
 xref: BTO:0000782
+xref: CALOHA:TS-1001
 xref: FMA:62870
 xref: VHOG:0001479
 is_a: CL:0000542 ! lymphocyte
@@ -1007,6 +1030,7 @@ def: "A specialized phagocytic cell associated with the absorption and removal o
 comment: Morphology: Highly vesicular; markers: Surface: RANK, cFMS (MCSF receptor); Secreted: cathepsin K and TRAP (tartate resistant acid phosphatase); transcription factors: PU.1, cFOS, MITF, NFkB (p52); role or process: tissue remodelling: bone resorption; lineage: hematopoietic, myeloid.
 synonym: "chondroclast" RELATED []
 xref: BTO:0000968
+xref: CALOHA:TS-0721
 xref: FMA:66781
 is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0001035 ! bone cell
@@ -1030,6 +1054,7 @@ synonym: "granular leukocyte" EXACT []
 synonym: "polymorphonuclear leukocyte" EXACT []
 xref: BTO:0000539
 xref: BTO:0001026
+xref: CALOHA:TS-0422
 xref: FMA:62854
 is_a: CL:0000081 ! blood cell
 is_a: CL:0000766 ! myeloid leukocyte
@@ -1076,6 +1101,7 @@ synonym: "labrocyte" EXACT [ISBN:0721601464]
 synonym: "mastocyte" EXACT [ISBN:0721601464]
 synonym: "tissue basophil" RELATED [ISBN:068340007X]
 xref: BTO:0000830
+xref: CALOHA:TS-0603
 xref: FMA:66784
 is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0002274 ! histamine secreting cell
@@ -1236,6 +1262,7 @@ def: "An endothelial cell comprises the outermost layer or lining of anatomical 
 comment: From FMA: 9.07.2001: Endothelial cell has always been classified as a kind of epithelial cell, specifically a squamous cell but that is not true. First, endothelial cell can either be squamous or cuboidal (e.g. high-endothelial cell) and secondly, it has different embryological derivation (mesodermal) than a true epithelial cell (ectodermal and endodermal). The basis for present classification is the fact that it comprises the outermost layer or lining of anatomical structures (location-based) but a better structural basis for the differentia is the cytoskeleton of the cell. Endothelial cell has vimentin filaments while an epithelial cell has keratin filaments. [Onard].
 synonym: "endotheliocyte" EXACT []
 xref: BTO:0001176
+xref: CALOHA:TS-0278
 xref: FMA:66772
 is_a: CL:0000213 ! lining cell
 is_a: CL:0002078 ! meso-epithelial cell
@@ -1282,6 +1309,7 @@ def: "The output neuron of the cerebellar cortex." [MESH:A08.186.211.132.810.428
 synonym: "Purkinje neuron" EXACT []
 synonym: "Purkinje's cell" EXACT []
 xref: BTO:0001011
+xref: CALOHA:TS-0845
 xref: FMA:67969
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000527 ! efferent neuron
@@ -1316,6 +1344,7 @@ def: "A non-neuronal cell of the nervous system. They not only provide physical 
 synonym: "neuroglia" RELATED []
 synonym: "neuroglial cell" EXACT []
 xref: BTO:0002606
+xref: CALOHA:TS-0415
 xref: FMA:54536
 is_a: CL:0000095 ! neuron associated cell
 relationship: develops_from CL:0000030 {comment="It is unclear that all glial cells develop from a cell type called a glioblast. Radial glial cells develop from neuroepithelial cells and other types of glial cells develop from other precursors. Unless glioblast is meant to describe any cell that can give rise to a glial cell, this relationship needs further investigation."} ! glioblast
@@ -1327,6 +1356,7 @@ namespace: cell
 def: "A neuroglial cell of ectodermal origin, i.e., the astrocytes and oligodendrocytes considered together." [GOC:tfm, ISBN:0721662544]
 synonym: "macrogliocyte" EXACT []
 xref: BTO:0000771
+xref: CALOHA:TS-2027
 xref: FMA:54538
 is_a: CL:0000243 ! glial cell (sensu Vertebrata)
 relationship: develops_from CL:0000339 ! glioblast (sensu Vertebrata)
@@ -1339,6 +1369,7 @@ def: "A class of large neuroglial (macroglial) cells in the central nervous syst
 comment: Astrocytes are reportedly CD68-negative, CD121a-positive, CD184-positive, CD192-positive, CRF-positive, EGFR-positive, GFAP-positive, GLUT1-positive, MBP-negative, and NGFR-positive.
 synonym: "astrocytic glia" EXACT []
 xref: BTO:0000099
+xref: CALOHA:TS-0060
 xref: FMA:54537
 is_a: CL:0000126 ! macroglial cell
 
@@ -1351,6 +1382,7 @@ comment: Oligodendrocytes are reportedly MDP-positive and CD4-negative.
 synonym: "oligodendroglia" RELATED []
 synonym: "OLs" EXACT [PMID:8734446]
 xref: BTO:0000962
+xref: CALOHA:TS-0709
 xref: FMA:54540
 is_a: CL:0000126 ! macroglial cell
 relationship: develops_from CL:0002453 ! oligodendrocyte precursor cell
@@ -1393,6 +1425,7 @@ id: CL:0000132
 name: corneal endothelial cell
 namespace: cell
 def: "Cell of the single layer of large flattened cells covering the surface of the cornea." [GOC:tfm, MESH:A09.371.060.067.31]
+xref: CALOHA:TS-0172
 xref: FMA:70614
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0000710 ! neurecto-epithelial cell
@@ -1451,6 +1484,7 @@ def: "A fat-storing cell found mostly in the abdominal cavity and subcutaneous t
 synonym: "adipocyte" EXACT []
 synonym: "adipose cell" EXACT []
 xref: BTO:0000443
+xref: CALOHA:TS-0012
 xref: FMA:63880
 is_a: CL:0000325 ! stuff accumulating cell
 is_a: CL:0002320 ! connective tissue cell
@@ -1464,6 +1498,7 @@ def: "A mature osteoblast that has become embedded in the bone matrix. They occu
 comment: VSAO relationship simplified OBO_REL:integral_part_of VSAO:0000118
 synonym: "bone cell" BROAD []
 xref: BTO:0002038
+xref: CALOHA:TS-1167
 xref: FMA:66779
 xref: VSAO:0000124
 is_a: CL:0001035 ! bone cell
@@ -1476,6 +1511,7 @@ namespace: cell
 def: "Skeletogenic cell that is terminally differentiated, secretes an avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell." [GO_REF:0000034, MESH:A11.329.171]
 synonym: "cartilage cell" EXACT []
 xref: BTO:0000249
+xref: CALOHA:TS-0138
 xref: FMA:66782
 is_a: CL:0000153 ! GAG secreting cell
 is_a: CL:0000667 ! collagen secreting cell
@@ -1560,6 +1596,7 @@ alt_id: CL:0000572
 def: "A pigment cell derived from the neural crest. Contains melanin-filled pigment granules, which gives a brown to black appearance." [SANBI:mhl]
 synonym: "melanophore" NARROW []
 xref: BTO:0000847
+xref: CALOHA:TS-0613
 xref: FMA:70545
 xref: VHOG:0001679
 is_a: CL:0000147 ! pigment cell
@@ -1578,6 +1615,7 @@ id: CL:0000150
 name: glandular epithelial cell
 namespace: cell
 def: "A specialized epithelial cell that is capable of synthesizing and secreting certain biomolecules." [GOC:tfm]
+xref: CALOHA:TS-2085
 xref: FMA:86494
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000151 ! secretory cell
@@ -1851,6 +1889,7 @@ comment: Note that the Amphibian Anatomy Ontology (AA) has a class 'leydig cells
 synonym: "interstitial cell" BROAD []
 synonym: "interstitial cell of Leydig" EXACT []
 xref: BTO:0000755
+xref: CALOHA:TS-1150
 xref: EMAPA:29655
 xref: FMA:72297
 is_a: CL:0000177 ! testosterone secreting cell
@@ -1881,6 +1920,7 @@ namespace: cell
 def: "The main structural component of the liver. They are specialized epithelial cells that are organized into interconnected plates called lobules. Majority of cell population of liver, polygonal in shape, arranged in plates or trabeculae between sinusoids; may have single nucleus or binucleated." [GOC:tfm, http://en.wikipedia.org/wiki/Hepatocyte, ISBN:0412046911, MESH:A11.436.348, PMID:19717280]
 comment: Hepatocytes are reportedly MHC Class I-positive and MHC Class II-positive.
 xref: BTO:0000575
+xref: CALOHA:TS-0454
 xref: FMA:14515
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000181 ! metabolising cell
@@ -1904,6 +1944,7 @@ def: "Contractile cells resembling smooth muscle cells that are present in gland
 synonym: "basket epithelial cell" EXACT []
 synonym: "myoepitheliocyte" EXACT []
 xref: BTO:0002309
+xref: CALOHA:TS-2379
 xref: FMA:67799
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000183 ! contractile cell
@@ -1929,6 +1970,7 @@ synonym: "muscle fiber" EXACT []
 synonym: "myocyte" EXACT []
 xref: BTO:0000888
 xref: BTO:0000902
+xref: CALOHA:TS-2032
 xref: FBbt:00005074
 xref: FMA:67328
 xref: WBbt:0003675
@@ -1944,6 +1986,7 @@ name: skeletal muscle cell
 namespace: cell
 def: "A somatic cell located in skeletal muscle." [GOC:tfm]
 xref: BTO:0004392
+xref: CALOHA:TS-2158
 xref: FMA:9727
 is_a: CL:0000187 ! muscle cell
 
@@ -1977,6 +2020,7 @@ synonym: "non-striated muscle cell" EXACT []
 synonym: "SMCs" EXACT [PMID:9315361]
 synonym: "smooth muscle fiber" EXACT []
 xref: BTO:0004576
+xref: CALOHA:TS-2159
 xref: FMA:14072
 is_a: CL:0000187 ! muscle cell
 relationship: develops_from CL:0000514 ! smooth muscle myoblast
@@ -2117,6 +2161,7 @@ name: photoreceptor cell
 namespace: cell
 def: "A cell specialized to detect and transduce light." [MESH:A08.663.650.650]
 xref: BTO:0001060
+xref: CALOHA:TS-0868
 xref: FBbt:00004211
 xref: FMA:86740
 is_a: CL:0000006 ! neuronal receptor cell
@@ -2151,6 +2196,7 @@ def: "A meso-epithelial cell that lies between the cartilaginous fibers in the s
 synonym: "hyaluronic acid secreting cell" EXACT []
 synonym: "synoviocyte" EXACT []
 xref: BTO:0003652
+xref: CALOHA:TS-0995
 xref: FMA:66786
 is_a: CL:0000153 ! GAG secreting cell
 is_a: CL:0000213 ! lining cell
@@ -2169,6 +2215,7 @@ name: Sertoli cell
 namespace: cell
 def: "A supporting cell projecting inward from the basement membrane of seminiferous tubules. They surround and nourish the developing male germ cells and secrete androgen binding protein. Their tight junctions with the spermatogonia and spermatocytes provide a blood-testis barrier." [MESH:A05.360.444.849.789]
 xref: BTO:0001238
+xref: CALOHA:TS-0922
 xref: FMA:72298
 xref: VHOG:0001348
 is_a: CL:0000511 ! androgen binding protein secreting cell
@@ -2189,6 +2236,7 @@ def: "A neuroglial cell of the peripheral nervous system which forms the insulat
 synonym: "neurilemmal cell" EXACT []
 synonym: "peripheral neuroglial cell" BROAD []
 synonym: "Schwann cell" BROAD []
+xref: CALOHA:TS-0898
 xref: FMA:62121
 is_a: CL:0000217 ! insulating cell
 is_a: CL:0000328 ! myelin accumulating cell
@@ -2317,6 +2365,7 @@ def: "A red blood cell. In mammals, mature erythrocytes are biconcave disks cont
 synonym: "RBC" EXACT []
 synonym: "red blood cell" EXACT []
 xref: BTO:0000424
+xref: CALOHA:TS-0290
 xref: FMA:81100
 is_a: CL:0000081 ! blood cell
 is_a: CL:0000329 ! oxygen accumulating cell
@@ -2333,6 +2382,7 @@ synonym: "anucleate thrombocyte" EXACT []
 synonym: "blood platelet" EXACT []
 synonym: "enucleate thrombocyte" EXACT []
 xref: BTO:0000132
+xref: CALOHA:TS-0803
 xref: FMA:62851
 is_a: CL:0000081 ! blood cell
 is_a: CL:0000225 ! anucleate cell
@@ -2359,6 +2409,7 @@ def: "A mononuclear phagocyte present in variety of tissues, typically different
 comment: Morphology: Diameter 30_M-80 _M, abundant cytoplasm, low N/C ratio, eccentric nucleus. Irregular shape with pseudopods, highly adhesive. Contain vacuoles and phagosomes, may contain azurophilic granules; markers: Mouse & Human: CD68, in most cases CD11b. Mouse: in most cases F4/80+; role or process: immune, antigen presentation, & tissue remodelling; lineage: hematopoietic, myeloid.
 synonym: "histiocyte" EXACT []
 xref: BTO:0000801
+xref: CALOHA:TS-0587
 xref: FMA:63261
 xref: FMA:83585
 is_a: CL:0000234 ! phagocyte
@@ -2374,6 +2425,7 @@ synonym: "B lymphocyte" EXACT []
 synonym: "B-cell" EXACT []
 synonym: "B-lymphocyte" EXACT []
 xref: BTO:0000776
+xref: CALOHA:TS-0068
 xref: FMA:62869
 xref: VHOG:0001480
 is_a: CL:0000945 ! lymphocyte of B lineage
@@ -2863,6 +2915,7 @@ namespace: cell
 def: "A mature sexual reproductive cell having a single set of unpaired chromosomes." [GOC:tfm, ISBN:0721662544]
 synonym: "haploid germ cell" RELATED []
 synonym: "haploid nucleated cell" EXACT []
+xref: CALOHA:TS-0395
 xref: FBbt:00005412
 xref: FMA:18649
 is_a: CL:0000413 ! haploid cell
@@ -2962,6 +3015,7 @@ comment: Keratinocytes are reportedly CDw210a-negative, CDw210b-positive, CD281-
 synonym: "keratinized cell of epidermis" EXACT []
 synonym: "malpighian cell" EXACT []
 xref: BTO:0000667
+xref: CALOHA:TS-0500
 xref: FMA:62879
 is_a: CL:0000237 ! keratinizing barrier epithelial cell
 is_a: CL:0000362 ! epidermal cell
@@ -3043,6 +3097,7 @@ def: "An epithelial cell that lines the peripheral gas exchange region of the lu
 synonym: "alveolar epithelial cell" EXACT []
 synonym: "pneumonocyte" EXACT []
 xref: BTO:0000395
+xref: CALOHA:TS-2168
 xref: FMA:62499
 is_a: CL:0000082 ! epithelial cell of lung
 
@@ -3353,6 +3408,7 @@ def: "An epithelial cell of the integument (the outer layer of an organism)." [F
 synonym: "cell of epidermis" EXACT [FMA:62411]
 synonym: "epithelial cell of skin" NARROW [FMA:62411]
 xref: BTO:0001470
+xref: CALOHA:TS-0283
 xref: FMA:62411
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0002159 ! general ecto-epithelial cell
@@ -3680,6 +3736,7 @@ id: CL:0000408
 name: male gamete
 namespace: cell
 xref: BTO:0001277
+xref: CALOHA:TS-0949
 is_a: CL:0000015 ! male germ cell
 is_a: CL:0000300 ! gamete
 
@@ -3980,6 +4037,7 @@ synonym: "parathyroid gland chief cell" EXACT []
 synonym: "parathyroid hormone secreting cell" EXACT []
 synonym: "principal cell of parathyroid gland" EXACT []
 xref: BTO:0004712
+xref: CALOHA:TS-2140
 xref: FMA:69078
 is_a: CL:0000167 ! peptide hormone secreting cell
 is_a: CL:0002260 ! epithelial cell of parathyroid gland
@@ -3998,6 +4056,7 @@ def: "Fat cells with light coloration and few mitochondria. They contain a scant
 synonym: "white adipocyte" RELATED []
 synonym: "white adipose cell" EXACT []
 synonym: "white fat cell" EXACT []
+xref: CALOHA:TS-1119
 xref: FMA:83434
 is_a: CL:0000136 ! fat cell
 relationship: develops_from CL:0002334 ! preadipocyte
@@ -4009,6 +4068,7 @@ namespace: cell
 def: "A cell from the thermogenic form of adipose tissue found in newborns of many species, including humans, and in hibernating mammals. Brown fat is capable of rapid liberation of energy and seems to be important in the maintenance of body temperature immediately after birth and upon waking from hibernation." [MESH:A10.165.114.322]
 synonym: "brown adipocyte" EXACT []
 synonym: "brown adipose cell" EXACT []
+xref: CALOHA:TS-0099
 xref: FMA:83435
 is_a: CL:0000136 ! fat cell
 relationship: develops_from CL:0002335 ! brown preadipocyte
@@ -4021,6 +4081,7 @@ def: "A cell of hematopoietic origin, typically resident in particular tissues, 
 synonym: "interdigitating cell" RELATED []
 synonym: "veiled cell" RELATED []
 xref: BTO:0002042
+xref: CALOHA:TS-0194
 xref: FMA:83036
 is_a: CL:0000738 ! leukocyte
 disjoint_from: CL:0000542 ! lymphocyte
@@ -4040,6 +4101,7 @@ comment: Originally described in the dendritic cell ontology (DC_CL:0000021 )(PM
 synonym: "Langerhans' cell" EXACT []
 synonym: "LC" EXACT []
 xref: BTO:0000705
+xref: CALOHA:TS-2375
 xref: FMA:63072
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0000763 ! myeloid cell
@@ -4338,6 +4400,7 @@ synonym: "CD4-positive helper T lymphocyte" EXACT []
 synonym: "CD4-positive helper T-cell" EXACT []
 synonym: "CD4-positive helper T-lymphocyte" EXACT []
 synonym: "CD4-positive T-helper cell" EXACT []
+xref: CALOHA:TS-1146
 xref: FMA:70572
 is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
 is_a: CL:0000912 ! helper T cell
@@ -4411,6 +4474,7 @@ namespace: cell
 def: "A supporting cell for the developing female gamete in the ovary of mammals. They develop from the coelomic epithelial cells of the gonadal ridge. Granulosa cells form a single layer around the mammalian oocyte in the primordial ovarian follicle and advance to form a multilayered cumulus oophorus surrounding the ovum in the Graafian follicle. The major functions of granulosa cells include the production of steroids and LH receptors." [MESH:A05.360.319.114.630.535.200]
 synonym: "granulosa cell of ovary" EXACT []
 xref: BTO:0000542
+xref: CALOHA:TS-0729
 xref: FMA:18718
 is_a: CL:0000174 ! steroid hormone secreting cell
 is_a: CL:0002174 ! follicular cell of ovary
@@ -4734,6 +4798,7 @@ def: "The basic cellular unit of nervous tissue. Each neuron consists of a body,
 comment: These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.
 synonym: "nerve cell" EXACT []
 xref: BTO:0000938
+xref: CALOHA:TS-0683
 xref: FBbt:00005106
 xref: FMA:54527
 xref: VHOG:0001483
@@ -4762,6 +4827,7 @@ namespace: cell
 def: "A lymphocyte is a leukocyte commonly found in the blood and lymph that has the characteristics of a large nucleus, a neutral staining cytoplasm, and prominent heterochromatin." [GOC:add, ISBN:0683073696, ISBN:0781735149]
 comment: Editors note: consider adding taxon constraint to vertebrata (PMID:18025161)
 xref: BTO:0000775
+xref: CALOHA:TS-0583
 xref: FMA:62863
 xref: VHOG:0001535
 is_a: CL:0002087 ! nongranular leukocyte
@@ -4904,6 +4970,7 @@ synonym: "MkP" EXACT [PMID:21116988]
 synonym: "promegacaryocyte" RELATED []
 synonym: "promegakaryocyte" RELATED []
 xref: BTO:0001164
+xref: CALOHA:TS-0610
 xref: FMA:84235
 is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0000050 ! megakaryocyte-erythroid progenitor cell
@@ -4931,6 +4998,7 @@ synonym: "megacaryocyte" EXACT []
 synonym: "megalocaryocyte" EXACT []
 synonym: "megalokaryocyte" EXACT []
 xref: BTO:0000843
+xref: CALOHA:TS-0611
 xref: FMA:83555
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002092 ! bone marrow cell
@@ -4961,6 +5029,7 @@ name: reticulocyte
 namespace: cell
 def: "An immature erythrocyte that changes the protein composition of its plasma membrane by exosome formation and extrusion. The types of protein removed differ between species though removal of the transferrin receptor is apparent in mammals and birds." [GOC:add, GOC:tfm, PMID:15946868, PMID:2037622]
 xref: BTO:0001173
+xref: CALOHA:TS-0864
 is_a: CL:0000764 ! erythroid lineage cell
 relationship: develops_from CL:0000552 ! orthochromatic erythroblast
 
@@ -5109,6 +5178,7 @@ name: retinal cone cell
 namespace: cell
 def: "One of the two photoreceptor cell types in the vertebrate retina. In cones the photopigment is in invaginations of the cell membrane of the outer segment. Cones are less sensitive to light than rods, but they provide vision with higher spatial and temporal acuity, and the combination of signals from cones with different pigments allows color vision." [MESH:A08.663.650.650.670.100]
 xref: BTO:0001036
+xref: CALOHA:TS-0866
 xref: FMA:67748
 is_a: CL:0000287 ! eye photoreceptor cell
 relationship: develops_from CL:0002672 ! retinal progenitor cell
@@ -5129,6 +5199,7 @@ alt_id: CL:1000431
 def: "An epithelial cell of the cornea." [GOC:tfm]
 synonym: "epithelial cell of cornea" EXACT [FMA:70551]
 xref: BTO:0004298
+xref: CALOHA:TS-0173
 xref: FMA:70551
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0002159 ! general ecto-epithelial cell
@@ -5140,6 +5211,7 @@ namespace: cell
 def: "Myeloid mononuclear recirculating leukocyte that can act as a precursor of tissue macrophages, osteoclasts and some populations of tissue dendritic cells." [GO_REF:0000031, MESH:A11.118.637.555.652]
 comment: Morphology: Mononuclear cell, diameter, 14 to 20 _M, N/C ratio 2:1-1:1. Nucleus may appear in variety of shapes: round, kidney, lobulated, or convoluted. Fine azurophilic granules present; markers: CD11b (shared with other myeloid cells), human: CD14, mouse: F4/80-mid,GR1-low; location: Blood, but can be recruited into tissues; role or process: immune & tissue remodelling; lineage: hematopoietic, myeloid.
 xref: BTO:0000876
+xref: CALOHA:TS-0638
 xref: FMA:62864
 is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0002087 ! nongranular leukocyte
@@ -5221,6 +5293,7 @@ comment: Markers: Mouse: F4/80mid, CD11b-/low, CD11c+, CD68+, sialoadhesin+, dec
 synonym: "dust cell" EXACT []
 synonym: "MF.Lu" RELATED []
 xref: BTO:0000802
+xref: CALOHA:TS-0030
 xref: FMA:83023
 is_a: CL:0000864 ! tissue-resident macrophage
 
@@ -5414,6 +5487,7 @@ name: retinal rod cell
 namespace: cell
 def: "One of the two photoreceptor cell types of the vertebrate retina. In rods the photopigment is in stacks of membranous disks separate from the outer cell membrane. Rods are more sensitive to light than cones, but rod mediated vision has less spatial and temporal resolution than cone vision." [MESH:A08.663.650.650.670.650]
 xref: BTO:0001024
+xref: CALOHA:TS-0870
 xref: FMA:67747
 is_a: CL:0000287 ! eye photoreceptor cell
 relationship: develops_from CL:0002672 ! retinal progenitor cell
@@ -5589,6 +5663,7 @@ synonym: "NK cell" EXACT []
 synonym: "null cell" BROAD []
 xref: BTO:0000914
 xref: BTO:0004716
+xref: CALOHA:TS-0664
 xref: FMA:63147
 xref: FMA:83601
 xref: VHOG:0001697
@@ -5675,6 +5750,7 @@ synonym: "lipocyte" RELATED []
 synonym: "perisinusoidal cell" EXACT []
 synonym: "vitamin A-storing cells" RELATED [PMID:12808230]
 xref: BTO:0002741
+xref: CALOHA:TS-0452
 xref: FMA:67763
 is_a: CL:0000057 ! fibroblast
 is_a: CL:0000327 ! extracellular matrix secreting cell
@@ -5843,6 +5919,7 @@ name: mesangial cell
 namespace: cell
 def: "A cell type that encapsulates the capillaries and venules in the kidney. This cell secretes mesangial matrix that provides the structural support for the capillaries." [GOC:tfm, http://www.copewithcytokines.de/cope.cgi?key=mesangial%20cells]
 xref: BTO:0000853
+xref: CALOHA:TS-0617
 xref: FMA:70972
 is_a: CL:0000669 ! pericyte cell
 relationship: develops_from CL:0000134 ! mesenchymal cell
@@ -5907,6 +5984,7 @@ name: primary spermatocyte
 namespace: cell
 def: "A diploid cell that has derived from a spermatogonium and can subsequently begin meiosis and divide into two haploid secondary spermatocytes." [GOC:tfm, ISBN:0721662544]
 xref: BTO:0001115
+xref: CALOHA:TS-2194
 xref: FMA:72292
 is_a: CL:0000017 ! spermatocyte
 
@@ -5916,6 +5994,7 @@ name: secondary spermatocyte
 namespace: cell
 def: "One of the two haploid cells into which a primary spermatocyte divides, and which in turn gives origin to spermatids." [GOC:tfm, ISBN:0721662544]
 xref: BTO:0000709
+xref: CALOHA:TS-2195
 xref: FBbt:00004941
 xref: FMA:72293
 is_a: CL:0000017 ! spermatocyte
@@ -6427,6 +6506,7 @@ id: CL:0000723
 name: somatic stem cell
 namespace: cell
 def: "A stem cell that can give rise to cell types of the body other than those of the germ-line." [GO:0048103]
+xref: CALOHA:TS-2086
 xref: FMA:63368
 is_a: CL:0000034 ! stem cell
 is_a: CL:0002371 ! somatic cell
@@ -6529,6 +6609,7 @@ name: striated muscle cell
 namespace: cell
 def: "Muscle cell which has as its direct parts myofilaments organized into sarcomeres." [GOC:tfm, ISBN:0721662544]
 xref: BTO:0002916
+xref: CALOHA:TS-2157
 xref: FMA:86936
 is_a: CL:0000187 ! muscle cell
 
@@ -6541,6 +6622,7 @@ synonym: "immune cell" EXACT []
 synonym: "leucocyte" EXACT []
 synonym: "white blood cell" EXACT []
 xref: BTO:0000751
+xref: CALOHA:TS-0549
 xref: FMA:62852
 is_a: CL:0000219 ! motile cell
 is_a: CL:0000988 ! hematopoietic cell
@@ -6608,6 +6690,7 @@ synonym: "cardiocyte" BROAD []
 synonym: "cardiomyocyte" EXACT []
 synonym: "heart muscle cell" EXACT []
 xref: BTO:0001539
+xref: CALOHA:TS-0115
 xref: FMA:14067
 is_a: CL:0000737 ! striated muscle cell
 is_a: CL:0002494 ! cardiocyte
@@ -6755,6 +6838,7 @@ name: myeloid cell
 namespace: cell
 def: "A cell of the monocyte, granulocyte, mast cell, megakaryocyte, or erythroid lineage." [GOC:add]
 xref: BTO:0001441
+xref: CALOHA:TS-0647
 is_a: CL:0000988 ! hematopoietic cell
 relationship: develops_from CL:0000049 ! common myeloid progenitor
 
@@ -6766,6 +6850,7 @@ alt_id: CL:0002156
 def: "A immature or mature cell in the lineage leading to and including erythrocytes." [GOC:add, GOC:tfm]
 comment: Note that in FMA erythropoietic cells are types of nucleated erythrocytes and thus don't include erythrocytes.
 synonym: "erythropoietic cell" EXACT []
+xref: CALOHA:TS-0290
 xref: FMA:62845
 xref: FMA:83516
 is_a: CL:0000763 ! myeloid cell
@@ -6777,6 +6862,7 @@ namespace: cell
 def: "A nucleated precursor of an erythrocyte that lacks hematopoietic lineage markers." [GOC:add, ISBN:0721601464, PMID:18174176]
 synonym: "normoblast" EXACT []
 xref: BTO:0001571
+xref: CALOHA:TS-0289
 xref: FMA:83504
 is_a: CL:0000764 ! erythroid lineage cell
 is_a: CL:0002242 ! nucleate cell
@@ -6802,6 +6888,7 @@ synonym: "basophilic leukocyte" EXACT []
 synonym: "polymorphonuclear leucocyte" BROAD []
 synonym: "polymorphonuclear leukocyte" BROAD []
 xref: BTO:0000129
+xref: CALOHA:TS-0073
 xref: FMA:62862
 is_a: CL:0000094 ! granulocyte
 
@@ -6848,6 +6935,7 @@ synonym: "eosinophilic leukocyte" EXACT []
 synonym: "polymorphonuclear leucocyte" BROAD []
 synonym: "polymorphonuclear leukocyte" BROAD []
 xref: BTO:0000399
+xref: CALOHA:TS-0279
 xref: FMA:62861
 is_a: CL:0000094 ! granulocyte
 
@@ -6899,6 +6987,7 @@ synonym: "polymorphonuclear neutrophil" BROAD []
 synonym: "polynuclear neutrophilic leucocyte" BROAD []
 synonym: "polynuclear neutrophilic leukocyte" BROAD []
 xref: BTO:0000130
+xref: CALOHA:TS-0688
 xref: FMA:62860
 is_a: CL:0000094 ! granulocyte
 
@@ -7142,6 +7231,7 @@ synonym: "killer T cell" BROAD []
 synonym: "killer T lymphocyte" BROAD []
 synonym: "killer T-cell" BROAD []
 synonym: "killer T-lymphocyte" BROAD []
+xref: CALOHA:TS-0190
 xref: FMA:70573
 is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
 is_a: CL:0000910 ! cytotoxic T cell
@@ -7441,6 +7531,7 @@ namespace: cell
 def: "A precursor B cell is a B cell with the phenotype CD10-positive." [GO_REF:0000031, GOC:rhs, GOC:tfm]
 synonym: "pre-B cell" EXACT []
 xref: BTO:0001133
+xref: CALOHA:TS-0819
 is_a: CL:0000236 ! B cell
 disjoint_from: CL:0000826 ! pro-B cell
 
@@ -7679,6 +7770,7 @@ id: CL:0000836
 name: promyelocyte
 namespace: cell
 def: "A precursor in the granulocytic series, being a cell intermediate in development between a myeloblast and myelocyte, that has distinct nucleoli, a nuclear-to-cytoplasmic ratio of 5:1 to 3:1, and containing a few primary cytoplasmic granules. Markers for this cell are fucosyltransferase FUT4-positive, CD33-positive, integrin alpha-M-negative, low affinity immunoglobulin gamma Fc region receptor III-negative, and CD24-negative." [GOC:add, GOC:amm, GOC:tfm, http://www.cap.org, ISBN:0721601464]
+xref: CALOHA:TS-0825
 xref: FMA:83530
 is_a: CL:0002191 ! granulocytopoietic cell
 is_a: CL:0002242 ! nucleate cell
@@ -7693,6 +7785,7 @@ comment: Markers differ between mouse and human.
 synonym: "hemopoietic progenitor cell" EXACT []
 synonym: "MPP" EXACT []
 xref: BTO:0000725
+xref: CALOHA:TS-0448
 is_a: CL:0000988 ! hematopoietic cell
 disjoint_from: CL:0002032 ! hematopoietic oligopotent progenitor cell
 relationship: develops_from CL:0000037 ! hematopoietic stem cell
@@ -7705,6 +7798,7 @@ def: "A progenitor cell restricted to the lymphoid lineage." [GOC:add, GOC:tfm]
 comment: Note that this is a class of cell types, not an identified single cell type.
 synonym: "lymphoid progenitor cell" BROAD []
 xref: BTO:0004731
+xref: CALOHA:TS-2025
 xref: FMA:70338
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 disjoint_from: CL:0000839 ! myeloid lineage restricted progenitor cell
@@ -7717,6 +7811,7 @@ def: "A progenitor cell restricted to the myeloid lineage." [GOC:add, GOC:tfm, P
 comment: Note that this is a class of cell types, not an identified single cell type.
 synonym: "myeloid progenitor cell" BROAD []
 xref: BTO:0004730
+xref: CALOHA:TS-2099
 xref: FMA:70339
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 
@@ -7746,6 +7841,7 @@ namespace: cell
 def: "A leukocyte with a single non-segmented nucleus in the mature form." [GOC:add]
 synonym: "peripheral blood mononuclear cell" NARROW []
 xref: BTO:0000878
+xref: CALOHA:TS-0768
 xref: FMA:86713
 is_a: CL:0000226 ! single nucleate cell
 is_a: CL:0002087 ! nongranular leukocyte
@@ -8187,6 +8283,7 @@ synonym: "immature T-cell" BROAD []
 synonym: "immature T-lymphocyte" BROAD []
 synonym: "thymic lymphocyte" EXACT []
 xref: BTO:0001372
+xref: CALOHA:TS-1042
 xref: FMA:72202
 xref: XAO:0003159
 is_a: CL:0002420 ! immature T cell
@@ -8418,6 +8515,7 @@ synonym: "cytotoxic T lymphocyte" EXACT []
 synonym: "cytotoxic T-cell" EXACT []
 synonym: "cytotoxic T-lymphocyte" EXACT []
 xref: BTO:0000289
+xref: CALOHA:TS-0190
 xref: FMA:70573
 is_a: CL:0000911 ! effector T cell
 
@@ -8934,6 +9032,7 @@ comment: pre-B-II cell are also reportedly CD19-positive, CD22-positive, CD38-po
 synonym: "pre-B-lymphocyte" EXACT []
 synonym: "pre-BII cell" EXACT []
 xref: BTO:0001133
+xref: CALOHA:TS-0819
 is_a: CL:0000817 ! precursor B cell
 disjoint_from: CL:0000956 ! pre-B-I cell
 relationship: develops_from CL:0000826 ! pro-B cell
@@ -9295,6 +9394,7 @@ synonym: "haematopoietic cell" EXACT []
 synonym: "haemopoietic cell" EXACT []
 synonym: "hemopoietic cell" EXACT []
 xref: BTO:0000574
+xref: CALOHA:TS-2017
 xref: FMA:70366
 xref: FMA:83598
 is_a: CL:0000548 ! animal cell
@@ -9645,6 +9745,7 @@ namespace: cell
 def: "CD133-positive hematopoietic stem cell is a hematopoietic stem cell that is CD34-positive, CD90-positive, and CD133-positive." [GO_REF:0000031, GOC:add, GOC:amm, GOC:tfm, PMID:10430905, PMID:11750107, PMID:16551251, PMID:20024907, PMID:9389721]
 comment: Cell markers are associated with human hematopoietic stem cells. Originally described in the dendritic cell ontology (DC_CL:0000035)(PMID:19243617).
 synonym: "CD133-positive hematopoietic stem cell" EXACT [PMID:16140871]
+xref: CALOHA:TS-0448
 xref: FMA:86475
 is_a: CL:0000037 ! hematopoietic stem cell
 
@@ -11428,6 +11529,7 @@ comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive
 synonym: "cubodial endothelial cell of vascular tree" NARROW []
 synonym: "vascular endothelial cell" EXACT []
 xref: BTO:0001854
+xref: CALOHA:TS-1106
 xref: FMA:67755
 is_a: CL:0000115 ! endothelial cell
 created_by: tmeehan
@@ -11485,6 +11587,7 @@ name: capillary endothelial cell
 namespace: cell
 def: "An endothelial cell found in capillaries." [GOC:tfm]
 xref: BTO:0004956
+xref: CALOHA:TS-0112
 xref: FMA:67756
 is_a: CL:0000071 ! blood vessel endothelial cell
 created_by: tmeehan
@@ -11529,6 +11632,7 @@ name: dental pulp cell
 namespace: cell
 def: "A cell found within the dental pulp." [GOC:tfm, PMID:11087820]
 xref: BTO:0000339
+xref: CALOHA:TS-0195
 xref: FMA:87170
 is_a: CL:0002159 ! general ecto-epithelial cell
 is_a: CL:0002320 ! connective tissue cell
@@ -12208,6 +12312,7 @@ synonym: "type 1 muscle cell" EXACT []
 synonym: "type 1 muscle fiber" EXACT []
 synonym: "type I muscle fiber" EXACT []
 xref: BTO:0001812
+xref: CALOHA:TS-0940
 xref: FMA:84413
 xref: MESH:A02.633.565.700
 is_a: CL:0000189 ! slow muscle cell
@@ -12712,6 +12817,7 @@ id: CL:0002255
 name: stromal cell of endometrium
 namespace: cell
 def: "An epithelial cell that regulates growth and differentiation of the overlying epithelium." [GOC:tfm, PMID:11331626]
+xref: CALOHA:TS-1266
 xref: FMA:86490
 is_a: CL:0000499 ! stromal cell
 is_a: CL:0002149 ! epithelial cell of uterus
@@ -12751,6 +12857,7 @@ synonym: "follicular cell of thyroid gland" EXACT []
 synonym: "principal cell of thyroid gland" EXACT []
 synonym: "thyroid gland follicular cell" EXACT []
 xref: BTO:0003736
+xref: CALOHA:TS-1285
 xref: FMA:68782
 is_a: CL:0002257 ! epithelial cell of thyroid gland
 created_by: tmeehan
@@ -13157,6 +13264,7 @@ synonym: "epithelial cell of thymus gland" EXACT []
 synonym: "epithelial reticular cell" EXACT []
 synonym: "epithelial reticular cell of thymus" EXACT []
 synonym: "thymic epithelial cell" EXACT []
+xref: CALOHA:TS-1040
 xref: FMA:72208
 is_a: CL:0002076 ! endo-epithelial cell
 created_by: tmeehan
@@ -13399,6 +13507,7 @@ namespace: cell
 def: "An ecto-epithelial cell of the prostate gland that secretes hormones." [GOC:tfm]
 synonym: "glandular cell of prostate" EXACT []
 synonym: "neuro-epithelial cell of prostate gland" EXACT []
+xref: CALOHA:TS-1280
 xref: FMA:74390
 xref: FMA:86774
 is_a: CL:0000150 ! glandular epithelial cell
@@ -13462,6 +13571,7 @@ id: CL:0002319
 name: neural cell
 namespace: cell
 def: "A cell that is part of the nervous system." [GOC:tfm, ISBN:0618947256]
+xref: CALOHA:TS-2040
 xref: FMA:70333
 is_a: CL:0000548 ! animal cell
 is_a: CL:0002371 ! somatic cell
@@ -13474,6 +13584,7 @@ name: connective tissue cell
 namespace: cell
 alt_id: CL:1000406
 def: "A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone." [GOC:tfm, ISBN:0618947256]
+xref: CALOHA:TS-2096
 xref: FMA:63875
 is_a: CL:0000548 ! animal cell
 is_a: CL:0002371 ! somatic cell
@@ -13485,6 +13596,7 @@ id: CL:0002321
 name: embryonic cell
 namespace: cell
 def: "A cell of the embryo." [FMA:0618947256]
+xref: CALOHA:TS-0263
 xref: FMA:82840
 xref: FMA:82841
 xref: WBbt:0007028
@@ -13500,6 +13612,7 @@ def: "A stem cell of embryonic origin." [GOC:dsd, GOC:tfm, ISBN:068340007X, PMID
 comment: This is an in vitro cell type and may be removed in future releases. These cells are reportedly SSEA-4-positive, CD73-negative, and CD324-positive.
 synonym: "ESC" EXACT []
 xref: BTO:0001086
+xref: CALOHA:TS-0263
 xref: FMA:82841
 is_a: CL:0000034 ! stem cell
 is_a: CL:0002321 ! embryonic cell
@@ -14518,6 +14631,7 @@ namespace: cell
 def: "A T cell that has not completed T cell selection." [GOC:tfm]
 synonym: "immature T-cell" EXACT []
 xref: BTO:0001372
+xref: CALOHA:TS-1042
 is_a: CL:0000084 ! T cell
 created_by: tmeehan
 creation_date: 2010-10-12T01:56:17Z
@@ -14537,6 +14651,7 @@ id: CL:0002422
 name: enucleated reticulocyte
 namespace: cell
 def: "A reticulocyte lacking a nucleus and showing a basophilic reticulum under vital staining due to the presence of ribosomes." [GOC:tfm, ISBN:0-12203-052-4, ISBN:0721601464]
+xref: CALOHA:TS-0864
 xref: FMA:66785
 is_a: CL:0000558 ! reticulocyte
 created_by: tmeehan
@@ -15275,6 +15390,7 @@ def: "A cell located in the heart, including both muscle and non muscle cells." 
 comment: From Onard of the FMA: Cardiac muscle cell or cardiac myocyte is a striated muscle cell. Cardiocyte on the other hand is any cell in the heart which includes cells other than muscle cells (e.g. endothelial cell of endocardium). Unless there is a consensus among anatomists that cardiocytes refer only to muscle cells, we will treat them as a general class of cells in the heart.
 synonym: "heart cell" EXACT []
 xref: BTO:0001539
+xref: CALOHA:TS-0115
 xref: FMA:83808
 xref: FMA:84791
 is_a: CL:0000548 ! animal cell
@@ -15772,6 +15888,7 @@ name: aortic endothelial cell
 namespace: cell
 def: "An arterial endothelial cell that is part of the aorta endothelium." [GOC:tfm]
 xref: BTO:0003245
+xref: CALOHA:TS-0047
 is_a: CL:1000413 ! endothelial cell of artery
 created_by: tmeehan
 creation_date: 2011-02-28T03:54:42Z
@@ -15855,6 +15972,7 @@ name: fibroblast of lung
 namespace: cell
 def: "A fibroblast that is part of lung." [GOC:tfm]
 xref: BTO:0000764
+xref: CALOHA:TS-0575
 is_a: CL:0000057 ! fibroblast
 created_by: tmeehan
 creation_date: 2011-02-28T05:11:03Z
@@ -16044,6 +16162,7 @@ name: Schwann cell
 namespace: cell
 def: "A glial cell that ensheathes axons of neuron in the peripheral nervous system and are necessary for their maintainance and function." [GOC:tfm]
 xref: BTO:0001220
+xref: CALOHA:TS-0898
 is_a: CL:0000243 ! glial cell (sensu Vertebrata)
 created_by: tmeehan
 creation_date: 2011-03-02T01:19:27Z
@@ -16477,6 +16596,7 @@ name: skin fibroblast
 namespace: cell
 def: "A fibroblast of skin." [GOC:tfm]
 xref: BTO:0001255
+xref: CALOHA:TS-0935
 is_a: CL:0000057 ! fibroblast
 created_by: tmeehan
 creation_date: 2011-03-14T12:31:49Z
@@ -16870,6 +16990,7 @@ id: CL:0002659
 name: glandular cell of stomach
 namespace: cell
 def: "A glandular epithelial cell that is part of the stomach." [GOC:tfm]
+xref: CALOHA:TS-1284
 xref: FMA:86554
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0002178 ! epithelial cell of stomach
@@ -17551,6 +17672,46 @@ synonym: "spinal sensory neuron" EXACT []
 is_a: CL:0000101 ! sensory neuron
 
 [Term]
+id: CL:0009001
+name: compound eye retinal cell
+def: "Any cell in the compound eye, a light sensing organ composed of ommatidia." []
+xref: GOC:pr
+xref: PMID:12021768
+is_a: CL:0002371 ! somatic cell
+
+[Term]
+id: CL:0009002
+name: inflammatory cell
+def: "Any cell participating in the inflammatory response to a foreign substance, e.g. neutrophil, macrophage." []
+xref: GOC:pr
+xref: http://en.wikipedia.org/wiki/Inflammatory_response
+is_a: CL:0002371 ! somatic cell
+
+[Term]
+id: CL:0009003
+name: larval midgut cell
+def: "Any cell in the midgut (middle subdivision of a digestive tract) of a larva." []
+xref: GOC:pr
+xref: http://en.wikipedia.org/wiki/Insect#Midgut
+is_a: CL:0002371 ! somatic cell
+
+[Term]
+id: CL:0009004
+name: retinal cell
+def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." []
+xref: GOC:pr
+xref: PMID:10702418
+is_a: CL:0002371 ! somatic cell
+
+[Term]
+id: CL:0009005
+name: salivary gland cell
+def: "Any cell in a salivary gland." []
+xref: GOC:pr
+xref: http://en.wikipedia.org/wiki/Salivary_gland
+is_a: CL:0002371 ! somatic cell
+
+[Term]
 id: CL:0011000
 name: dorsal horn interneuron
 def: "A CNS interneuron located in the dorsal horn of the spinal cord." [GOC:nv]
@@ -17602,6 +17763,12 @@ id: CL:0011100
 name: galanergic neuron
 def: "Neuron that secretes the neurotransmitter galanin." [PMID: 23159249]
 is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:0011101
+name: chorionic trophoblast cell
+def: "Cells of the uterine chorion that acquire specialized structural and/or functional features that characterize chorionic trophoblasts. These cells will migrate towards the spongiotrophoblast layer and give rise to syncytiotrophoblasts of the labyrinthine layer." [GOC:NV]
+is_a: CL:0000351 ! trophoblast cell
 
 [Term]
 id: CL:0012000
@@ -18693,6 +18860,7 @@ name: myoepithelial cell of lactiferous gland
 namespace: cell
 def: "A myoepithelial cell that is part of the mammary gland." [GOC:tfm]
 synonym: "basal cell of lactiferous duct" EXACT [FMA:67800]
+xref: CALOHA:TS-2378
 xref: FMA:67800
 is_a: CL:0000185 ! myoepithelial cell
 is_a: CL:0002327 ! mammary epithelial cell
@@ -18983,6 +19151,7 @@ name: melanocyte of skin
 namespace: cell
 def: "A melanocyte that is part of the skin of body." [GOC:tfm]
 synonym: "skin melanocyte" EXACT [FMA:72144]
+xref: CALOHA:TS-2374
 xref: FMA:72144
 is_a: CL:0000148 ! melanocyte
 
@@ -20251,6 +20420,318 @@ xref: SAO:sao131261273
 is_a: CL:0000598 ! pyramidal cell
 is_a: CL:0002608 ! hippocampal neuron
 
+[Term]
+id: CL:1001572
+name: colon endothelial cell
+def: "Vascular endothelium found in colon blood vessels." [NPX:PDR]
+synonym: "colon endothelial cells" RELATED PLURAL [CALOHA:TS-2397]
+synonym: "colonic endothelial cell" RELATED [CALOHA:TS-2397]
+xref: CALOHA:TS-2397
+is_a: CL:0000115 ! endothelial cell
+
+[Term]
+id: CL:1001573
+name: nasopharyngeal epithelial cell
+def: "Cell of the nasopharyngeal epithelium." [NPX:PDR]
+synonym: "nasopharynx respiratory epithelial cells" RELATED [CALOHA:TS-2398]
+xref: CALOHA:TS-2398
+is_a: CL:0000066 ! epithelial cell
+
+[Term]
+id: CL:1001575
+name: uterine cervix squamous cell
+def: "Squamous cell of uterine cervix epithelium." [NPX:PDR]
+synonym: "cervix squamous cell" RELATED [CALOHA:TS-1251]
+synonym: "cervix squamous epithelial cell" RELATED [CALOHA:TS-1251]
+synonym: "cervix, uterine squamous epithelial cells" RELATED [CALOHA:TS-1251]
+synonym: "uterine cervix squamous epithelial cell" RELATED [CALOHA:TS-1251]
+synonym: "uterine cervix squamous epithelial cells" RELATED [CALOHA:TS-1251]
+xref: CALOHA:TS-1251
+is_a: CL:0000076 ! squamous epithelial cell
+
+[Term]
+id: CL:1001576
+name: oral mucosa squamous cell
+def: "Squamous cell of oral epithelium." [NPX:PDR]
+synonym: "oral cavity mucosa squamous cell" RELATED [CALOHA:TS-1252]
+synonym: "oral cavity mucosa squamous epithelial cell" RELATED [CALOHA:TS-1252]
+synonym: "oral mucosa squamous epithelial cell" RELATED [CALOHA:TS-1252]
+synonym: "oral mucosa squamous epithelial cells" RELATED [CALOHA:TS-1252]
+xref: CALOHA:TS-1252
+is_a: CL:0000076 ! squamous epithelial cell
+
+[Term]
+id: CL:1001577
+name: tonsil squamous cell
+def: "Squamous cell of tonsil epithelium." [NPX:PDR]
+synonym: "tonsil squamous epithelial cell" RELATED [CALOHA:TS-1253]
+synonym: "tonsil squamous epithelial cells" RELATED [CALOHA:TS-1253]
+synonym: "tonsillar squamous cell" RELATED [CALOHA:TS-1253]
+synonym: "tonsillar squamous epithelial cell" RELATED [CALOHA:TS-1253]
+xref: CALOHA:TS-1253
+is_a: CL:0000076 ! squamous epithelial cell
+
+[Term]
+id: CL:1001578
+name: vagina squamous cell
+def: "Squamous cell of vaginal epithelium." [NPX:PDR]
+synonym: "vagina squamous epithelial cell" RELATED [CALOHA:TS-1254]
+synonym: "vagina squamous epithelial cells" RELATED [CALOHA:TS-1254]
+synonym: "vaginal squamous cell" RELATED [CALOHA:TS-1254]
+synonym: "vaginal squamous epithelial cell" RELATED [CALOHA:TS-1254]
+xref: CALOHA:TS-1254
+is_a: CL:0000076 ! squamous epithelial cell
+
+[Term]
+id: CL:1001579
+name: cerebral cortex glial cell
+def: "Glial cell of cerebral cortex." [NPX:PDR]
+synonym: "brain cortex glial cell" RELATED [CALOHA:TS-1256]
+synonym: "cerebral cortex glial cells" RELATED [CALOHA:TS-1256]
+synonym: "cerebrum cortex glial cell" RELATED [CALOHA:TS-1256]
+xref: CALOHA:TS-1256
+is_a: CL:0000125 ! glial cell
+
+[Term]
+id: CL:1001580
+name: hippocampus glial cell
+def: "Glial cell of hippocampus." [NPX:PDR]
+synonym: "hippocampal glial cell" RELATED [CALOHA:TS-1257]
+synonym: "hippocampus glial cells" RELATED [CALOHA:TS-1257]
+synonym: "hippocampus neuroglial cell" RELATED [CALOHA:TS-1257]
+xref: CALOHA:TS-1257
+is_a: CL:0000125 ! glial cell
+
+[Term]
+id: CL:1001581
+name: lateral ventricle glial cell
+def: "Glial cell of lateral ventricle." [NPX:PDR]
+synonym: "lateral ventricle glial cells" RELATED [CALOHA:TS-1258]
+xref: CALOHA:TS-1258
+is_a: CL:0000125 ! glial cell
+
+[Term]
+id: CL:1001582
+name: lateral ventricle neuron
+def: "Neuron of lateral ventricle." [NPX:PDR]
+synonym: "lateral ventricle neural cell" RELATED [CALOHA:TS-1261]
+synonym: "lateral ventricle neuronal cell" RELATED [CALOHA:TS-1261]
+synonym: "lateral ventricle neuronal cells" RELATED [CALOHA:TS-1261]
+xref: CALOHA:TS-1261
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:1001583
+name: breast adipocyte
+def: "Adipocytes found in the subcutaneous adipose tissue of breast. The breast consists of three main components, the skin, the subcutaneous adipose tissue and the functional glandular tissue that comprises both parenchyma and stroma." [HPA:Breast]
+synonym: "breast adipocytes" RELATED [CALOHA:TS-2377]
+xref: CALOHA:TS-2377
+is_a: CL:0000136 ! fat cell
+
+[Term]
+id: CL:1001585
+name: appendix glandular cell
+def: "Glandular cell of appendix epithelium. Example: Goblet cells; enterocytes or absorptive cells; enteroendocrine and M cells." [NPX:PDR]
+synonym: "appendix glandular cells" RELATED [CALOHA:TS-1271]
+synonym: "caecal appendix glandular cell" RELATED [CALOHA:TS-1271]
+synonym: "cecal appendix glandular cell" RELATED [CALOHA:TS-1271]
+synonym: "vermiform appendix glandular cell" RELATED [CALOHA:TS-1271]
+xref: CALOHA:TS-1271
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001586
+name: mammary gland glandular cell
+def: "Glandular cell of mammary epithelium. Example: glandular cells of large and intermediate ducts, glandular cells in terminal ducts." [NPX:PDR;HPA\:HPA]
+synonym: "breast glandular cell" RELATED [CALOHA:TS-1272]
+synonym: "breast glandular cells" RELATED [CALOHA:TS-1272]
+synonym: "mammary glandular cell" RELATED [CALOHA:TS-1272]
+xref: CALOHA:TS-1272
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001587
+name: uterine cervix glandular cell
+def: "Glandular cell of uterine cervix epithelium." [NPX:PDR]
+synonym: "cervix glandular cell" RELATED [CALOHA:TS-1273]
+synonym: "cervix, uterine glandular cell" RELATED [CALOHA:TS-1273]
+synonym: "cervix, uterine glandular cells" RELATED [CALOHA:TS-1273]
+xref: CALOHA:TS-1273
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001588
+name: colon glandular cell
+def: "Glandular cell of colon epithelium. Example: Goblet cells; enterocytes or absorptive cells; enteroendocrine and M cells." [NPX:PDR]
+synonym: "colon glandular cells" RELATED [CALOHA:TS-1274]
+xref: CALOHA:TS-1274
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001589
+name: duodenum glandular cell
+def: "Glandular cell of duodenal epithelium. Example: Enterocytes, Goblet cells, enteroendocrine cells; Paneth cells; M cells; Brunner's gland cell." [NPX:PDR]
+synonym: "duodenum glandular cells" RELATED [CALOHA:TS-1275]
+xref: CALOHA:TS-1275
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001590
+name: epididymis glandular cell
+def: "Glandular cell of epididymal epithelium." [NPX:PDR]
+synonym: "epididymal glandular cell" RELATED [CALOHA:TS-1276]
+synonym: "epididymis glandular cells" RELATED [CALOHA:TS-1276]
+xref: CALOHA:TS-1276
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001591
+name: oviduct glandular cell
+def: "Glandular cell of oviduct epithelium. Example: peg cells, ciliated cells." [NPX:PDR;HPA\:HPA]
+synonym: "fallopian tube glandular cell" RELATED [CALOHA:TS-1277]
+synonym: "fallopian tube glandular cells" RELATED [CALOHA:TS-1277]
+synonym: "uterine tube glandular cell" RELATED [CALOHA:TS-1277]
+xref: CALOHA:TS-1277
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001592
+name: gall bladder glandular cell
+def: "Glandular cell of gall bladder epithelium." [NPX:PDR]
+synonym: "gall bladder glandular cells" RELATED [CALOHA:TS-1278]
+synonym: "gallbladder glandular cell" RELATED [CALOHA:TS-1278]
+synonym: "gallbladder glandular cells" RELATED [CALOHA:TS-1278]
+xref: CALOHA:TS-1278
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001593
+name: parathyroid glandular cell
+def: "Glandular cell of parathyroid epithelium. Example: Parathyroid chief cell and parathyroid oxyphil cells." [NPX:PDR;HPA\:HPA]
+synonym: "parathyroid gland glandular cell" RELATED [CALOHA:TS-1279]
+synonym: "parathyroid gland glandular cells" RELATED [CALOHA:TS-1279]
+xref: CALOHA:TS-1279
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001595
+name: rectum glandular cell
+def: "Glandular cell of rectal epithelium. Example: Goblet cell; enterocytes or absorptive cells; enteroendocrine and M cells." [NPX:PDR]
+synonym: "rectal glandular cell" RELATED [CALOHA:TS-1281]
+synonym: "rectum glandular cells" RELATED [CALOHA:TS-1281]
+xref: CALOHA:TS-1281
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001596
+name: salivary gland glandular cell
+def: "Glandular cell of salivary gland. Example: Serous cells, mucous cells, cuboidal epithelial cells of the intercalated ducts, simple cuboidal epithelium of the striated ducts, epithelial cells of excretory ducts." [NPX:PDR;HPA\:HPA]
+synonym: "salivary gland glandular cells" RELATED [CALOHA:TS-1282]
+xref: CALOHA:TS-1282
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001597
+name: seminal vesicle glandular cell
+def: "Glandular cell of seminal vesicle epithelium." [NPX:PDR]
+synonym: "seminal vesicle glandular cells" RELATED [CALOHA:TS-1283]
+xref: CALOHA:TS-1283
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001598
+name: small intestine glandular cell
+def: "A glandular cell found in the epithelium of the small intestine. Example: Enterocytes, Goblet cells, enteroendocrine cells; Paneth cells; M cells; Somatostatin-secreting Cells (D-cells) ." [NCI_Thesaurus:Small_Intestinal_Glandular_Cell;NPX\:PDR]
+synonym: "small bowel glandular cell" RELATED [CALOHA:TS-1286]
+synonym: "small intestinal glandular cell" RELATED [CALOHA:TS-1286]
+synonym: "small intestine glandular cells" RELATED [CALOHA:TS-1286]
+xref: CALOHA:TS-1286
+xref: FMA:86928
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001599
+name: pancreas exocrine glandular cell
+def: "Glandular cell of exocrine pancreas epithelium. Example: pancreatic acinar cell, glandular cells in pancreatic canaliculi, glandular cells in pancreatic ducts." [NPX:PDR;HPA\:HPA]
+synonym: "exocrine pancreas glandular cell" RELATED [CALOHA:TS-1242]
+synonym: "pancreas exocrine glandular cells" RELATED [CALOHA:TS-1242]
+xref: BTO:0000028
+xref: CALOHA:TS-1242
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001601
+name: adrenal gland glandular cell
+def: "Hormone secreting cell located in the cortex of adrenal gland. Glandular cells in the adrenal cortex secrete mineralocorticoids, glucocorticoids and androgens." [NPX:PDR]
+synonym: "adrenal gland glandular cells" RELATED [CALOHA:TS-2177]
+synonym: "adrenal glandular cell" RELATED [CALOHA:TS-2177]
+synonym: "suprarenal gland glandular cell" RELATED [CALOHA:TS-2177]
+xref: CALOHA:TS-2177
+is_a: CL:0000150 ! glandular epithelial cell
+
+[Term]
+id: CL:1001602
+name: cerebral cortex endothelial cell
+def: "Endothelial cells forming the walls of the capillaries within the cerebral cortex." [NPX:PDR]
+synonym: "cerebral cortex endothelial cells" RELATED [CALOHA:TS-2372]
+synonym: "endothelial cells of cerebral cortex" RELATED [CALOHA:TS-2372]
+xref: CALOHA:TS-2372
+is_a: CL:0000115 ! endothelial cell
+
+[Term]
+id: CL:1001603
+name: lung macrophage
+def: "Circulating macrophages and tissue macrophages (alveolar macrophages) of lung." [NPX:PDR;HPA\:HPA]
+synonym: "lung macrophages" RELATED [CALOHA:TS-0576]
+xref: CALOHA:TS-0576
+is_a: CL:0000235 ! macrophage
+
+[Term]
+id: CL:1001606
+name: foreskin keratinocyte
+def: "Keratinocyte from foreskin." [NPX:PDR]
+xref: CALOHA:TS-0385
+is_a: CL:0000312 ! keratinocyte
+
+[Term]
+id: CL:1001607
+name: articular chondrocyte
+def: "Chondrocyte forming the hyaline cartilage found in joints." [NPX:PDR]
+xref: CALOHA:TS-0056
+is_a: CL:0000138 ! chondrocyte
+
+[Term]
+id: CL:1001608
+name: foreskin fibroblast
+def: "Fibroblast from foreskin." [NPX:PDR]
+xref: CALOHA:TS-0384
+is_a: CL:0002620 ! skin fibroblast
+
+[Term]
+id: CL:1001609
+name: muscle fibroblast
+def: "Fibroblast from muscle organ." [NPX:PDR]
+xref: CALOHA:TS-0643
+is_a: CL:0000057 ! fibroblast
+
+[Term]
+id: CL:1001610
+name: bone marrow hematopoietic cell
+def: "Hematopoietic cells resident in the bone marrow. Include: hematopoietic stem cells (lymphoid stem cells and myeloid stem cells) and the precursor cells for thrombocytes, erythrocytes, basophils, neutrophils, eosinophils, monocytes and lymphocytes." [NPX:PDR]
+synonym: "bone marrow hematopoietic cells" RELATED [CALOHA:TS-2109]
+synonym: "bone marrow poietic cells" RELATED [CALOHA:TS-2109]
+xref: CALOHA:TS-2109
+is_a: CL:0000988 ! hematopoietic cell
+
+[Term]
+id: CL:1001611
+name: cerebellar neuron
+def: "Neuron of the cerebellum." [NPX:PDR]
+synonym: "cerebellum neuron" RELATED [CALOHA:TS-2359]
+xref: CALOHA:TS-2359
+xref: FMA:84665
+is_a: CL:0000540 ! neuron
+
 [Typedef]
 id: RO:0002131
 name: overlaps
@@ -20466,6 +20947,7 @@ creation_date: 2009-08-26T02:50:24Z
 id: is_count_of
 name: is count of
 namespace: uberon
+xref: UBPROP:0000100
 is_metadata_tag: true
 
 [Typedef]
@@ -20540,8 +21022,8 @@ namespace: uberon
 def: "x pharyngeal_arch_number N if and only if (i) x is a pharyngeal arch, and (ii) x is ancestrally pharyngeal arch number N in a series of pharyngeal arches repeated along a antero-posterior axis, with arch_number 1 being the mandibular arch." [https://orcid.org/0000-0002-6601-2165]
 comment: Note that gill arch N = PA N-2. the term branchial_arch is ambiguous.
 xref: UBPROP:0000103
-property_value: UBPROP:0000100 UBERON:0002539
-property_value: UBPROP:0000101 BSPO:0000096
+property_value: is_count_of UBERON:0002539
+property_value: preceding_element_is BSPO:0000096
 is_metadata_tag: true
 
 [Typedef]
@@ -20556,7 +21038,8 @@ is_a: regulates ! regulates
 id: preceding_element_is
 name: preceding element is
 namespace: uberon
-def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [UBERON:cjm]
+def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000101
 is_metadata_tag: true
 
 [Typedef]
@@ -20602,6 +21085,8 @@ name: results_in
 namespace: gene_ontology
 comment: This relation is currently used to connect two regulation processes p1 and p2, such that if r1 regulates p1 and r2 regulates p2, and r1 results_in r2 then the regulation of p1 is required for the regulation of p2. For an example of use, see GO:0035958 'regulation of glyoxylate cycle by regulation of transcription from RNA polymerase II promoter'. Note that a precise definition of this relation is under discussion. After it has been formalized it will be added to RO, where it will have a RO ID. Note that the existing identifier and label are subject to change.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
+created_by: cjm
+creation_date: 2012-03-14T10:35:44Z
 
 [Typedef]
 id: secretes
