@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2013-06-03
+data-version: releases/2013-06-23
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -12,6 +12,7 @@ subsetdef: disjointness_axiom_removed "A class which has a weakened disjointness
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropriately linked"
 subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
+subsetdef: efo_slim "EFO slim"
 subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to be checked"
 subsetdef: functional_classification "functional_classification"
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
@@ -180,7 +181,7 @@ id: CL:0000010
 name: cultured cell
 namespace: cell
 def: "A cell in vitro that is or has been maintained or propagated as part of a cell culture." [ReO:mhb]
-comment: Covers cells actively being cultured or stored in a quiescent state for future use. The class has been re-labeled to 'cultured cell' instead of 'cell line cell', as this class intends to cover cultured cells of multicellular and unicellular organisms, and both immortal and mortal cultured cells. 'Cell line' has different meanings to different people, in some cases referring to a culture that has been passaged, and in others referring to cultures that are immortal. 'Cell line cell' is included, however, as a narrow synonym.
+comment: Note that this class was re-labeled to 'cultured cell' instead of 'cell line cell', as it intent was clarified to cover any cultured cells of multicellular and unicellular organisms. This includes cells actively being cultured, or cells that have been cultured but are stored in a quiescent state for future use. In having been cultured, cells must establish homeostasis and often replicate in a foreign environment. Accomodation of this stress initiates a selection of cells fit for such challenges, wherein necessary adaptive biochemical and.or genetic changes can occur. These changes can set them apart from the in vivo cells from which they derive, and such changes will typically accumulate and change over increasing time in culture. 
 synonym: "cell line cell" NARROW []
 is_a: CL:0000578 ! experimentally modified cell in vitro
 
@@ -937,6 +938,8 @@ id: CL:0000083
 name: epithelial cell of pancreas
 namespace: cell
 def: "An epithelial cell of the pancreas." [GOC:tfm]
+synonym: "pancreas epithelial cell" EXACT []
+synonym: "pancreatic epithelial cell" EXACT []
 xref: BTO:0000028
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
@@ -9844,8 +9847,8 @@ is_a: CL:0002608 ! hippocampal neuron
 id: CL:0001034
 name: cell in vitro
 namespace: cell
-def: "A cell that has been removed from a natural environment, and placed in a controlled artificial environment for use in some investigation. Includes multicellular organism cells removed from an organism, and unicellular organisms removed from a natural environment." [ReO:mhb]
-comment: 'In vitro', translating literally to 'in glass', typically refers to a controlled, often sterile, laboratory setting where cells or other specimens are placed by some agent for the purpose of studying or manipulating them as part of some research investigation. This term is intended to contrast with 'native', which refers to cells or other biological entities that are found in a natural setting.
+def: "A cell that is maintained or propagated in a controlled artificial environment for use in an investigation." [ReO:mhb]
+comment: 'In vitro', translating literally to 'in glass', typically refers to a controlled, often sterile, laboratory setting where cells or other specimens are placed by some agent for the purpose of studying or manipulating them as part of some research investigation. 'In vitro' is intended to contrast with 'native',which refers to cells or other biological entities that are found in a natural setting. It describes unicellular organisms removed from a natural environement and multicellular organism cells removed from an organism, or cells derived in culture from such displaced cells.
 is_a: CL:0000000 ! cell
 created_by: haendel
 creation_date: 2012-01-12T09:58:38Z
@@ -16023,10 +16026,11 @@ creation_date: 2011-02-28T05:22:27Z
 
 [Term]
 id: CL:0002558
-name: fibroblast of villous mesenchymal
+name: fibroblast of villous mesenchyme
 namespace: cell
-def: "A fibroblast that is part of villous mesenchymal." [GOC:tfm]
+def: "A fibroblast that is part of villous mesenchyme." [GOC:tfm]
 is_a: CL:0000057 ! fibroblast
+is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
 creation_date: 2011-02-28T05:24:28Z
 
@@ -17811,7 +17815,7 @@ is_a: CL:0011005 ! GABAergic interneuron
 [Term]
 id: CL:0011100
 name: galanergic neuron
-def: "Neuron that secretes the neurotransmitter galanin." [PMID: 23159249]
+def: "Neuron that secretes the neurotransmitter galanin." [PMID:23159249]
 is_a: CL:0000540 ! neuron
 
 [Term]
