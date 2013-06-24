@@ -35,7 +35,8 @@ cl-basic.obo: build/cl-simple.obo
 	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
 cl-basic.owl: build/cl-simple.owl
-		cp $< $@
+	owltools $< --set-ontology-id $(OBO)/cl/cl-basic.owl -o file://`pwd`/$@
+#	perl -npe 's@cl-simple.owl@cl-basic.owl@' $< > $@
 
 #cl-edit.owl: cl-edit.obo
 #	obolib-obo2owl -o $@ $<
