@@ -1,62 +1,42 @@
 OBO=http://purl.obolibrary.org/obo
+USECAT= --catalog-xml catalog-v001.xml
 
 all: release
 
 release: cl.obo cl.owl cl-basic.obo cl-basic.owl diff
 
-# PR mireots CHEBI, but is not always in sync, which causes problems for Oort (e.g. different defs in two version).
-# only use core PR info
-# (todo: make thispart of Oort)
-#extsubset/pr-core.obo: extsubset/pr.obo
-#	obo-grep.pl  -r 'id: PR:' $< > $@
+# ----------------------------------------
+# BUILD
+# ----------------------------------------
 
-pr-minimal.obo: extsubset/pr-simple.obo
-##	obo-grep.pl -r Term $< | grep -v ^relationship: > $@
-	owltools $< --make-subset-by-properties // -o -f obo $@
-extsubset/pr-simple.obo:
-	cd extsubset && ontology-release-runner --repair-cardinality --force --no-subsets --reasoner elk --simple http://purl.obolibrary.org/obo/pr.obo
-
-build/cl.obo: cl-edit.owl cl-relations.obo pr-minimal.obo
-	ontology-release-runner --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< cl-relations.obo $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo pr-minimal.obo
-#	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix $(OBO)/CL_ --prefix $(OBO)/CP_ cl-edit.obo $(OBO)/uberon/basic.owl pr-core.obo $(OBO)/go.owl $(OBO)/pato.owl chebi_lite.obo
-.PRECIOUS: build/cl.obo
-build/cl.owl: build/cl.obo
-
-cl.obo: build/cl.obo
-	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
-
+build/cl.owl: cl-edit.owl
+	ontology-release-runner $(USECAT) --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
 cl.owl: build/cl.owl
 	cp $< $@
-
-cl-merged.ofn: build/cl.owl
-	owltools build/cl-merged.owl -o -f functional file://`pwd`/$@
-
+cl.obo: build/cl.owl
+	owltools $(USECAT) $< --merge-imports-closure -o -f obo $@
 cl-basic.obo: build/cl-simple.obo
-	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
-
+	cp $< $@
 cl-basic.owl: build/cl-simple.owl
-	owltools $< --set-ontology-id $(OBO)/cl/cl-basic.owl -o file://`pwd`/$@
-#	perl -npe 's@cl-simple.owl@cl-basic.owl@' $< > $@
+	cp $< $@
 
-#cl-edit.owl: cl-edit.obo
-#	obolib-obo2owl -o $@ $<
+# ----------------------------------------
+# Regenerate imports
+# ----------------------------------------
 
-bridge/cl-bridge-to-uberon.owl: cl.owl
-	owltools $< --extract-bridge-ontologies -d $* -s cl -x -o -f obo $@/no-bridge.obo
-bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
-	owltools $< -o -f obo $@
+CL_IMPORTS_BASE_URI = $(OBO)/cl/imports
+IMPORTS = pato uberon chebi pr go
 
-# OLD:
-#bridge/cl-bridge-to-uberon.obo: cl.obo
-#	blip-findall -i $< "parent(X,part_of,Y),id_idspace(X,'CL'),id_idspace(Y,'UBERON')" -select X-Y -label -use_tabs -no_pred | sort -u | tbl2obolinks.pl --rel part_of - > $@.tmp && cat $@.tmp part_of.obo > $@
-#bridge/cl-bridge-to-%.owl: bridge/cl-bridge-to-%.obo
-#	owltools $< -o file://`pwd`/$@
+all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS))
+t: 
+	echo $(patsubst %, imports/%_import.owl,$(IMPORTS))
 
-fix-%: %
-	util/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
+imports/%_import.owl: cl-edit.owl mirror/%.owl
+	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --extract-mingraph --make-subset-by-properties  BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o file://`pwd`/$@
 
-cl.ofn: cl.owl
-	owltools $< -o -f functional file://`pwd`/$@
+# clone remote ontology locally
+mirror/%.owl:
+	wget $(OBO)/$*.owl -O $@
 
 # ----------------------------------------
 # Diffs
@@ -80,6 +60,17 @@ minidiff: build/cl.obo
 #cl-lastbuild.obo: cl-basic.obo
 #	cp $< $@
 
+
+
+# ----------------------------------------
+# EXPERIMENTAL
+# ----------------------------------------
+
+bridge/cl-bridge-to-uberon.owl: cl.owl
+	owltools $< --extract-bridge-ontologies -d $* -s cl -x -o -f obo $@/no-bridge.obo
+bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
+	owltools $< -o -f obo $@
+
 # ----------------------------------------
 # Legacy copy to cvs
 # ----------------------------------------
@@ -91,12 +82,3 @@ publish_to_cvs: release re-sync
 re-sync:
 	cp cl-basic.obo $(CVS_DIR)/cell.obo && cp cl-merged.obo $(CVS_DIR)/cell.edit.obo
 
-# ----------------------------------------
-# Sync with main repo in CVS (temporary)
-# ----------------------------------------
-
-# the primary editors version
-# (todo - make this live) DONE!!
-#cl-edit.obo:
-#	wget http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/anatomy/cell_type/cell.edit.obo -O $@ && perl -i ../tools/fix-obo-header.pl cl-edit.obo $@
-#	cp cell.edit.obo $@
