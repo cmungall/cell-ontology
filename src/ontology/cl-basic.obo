@@ -1,79 +1,9 @@
 format-version: 1.2
-data-version: releases/2013-06-23
-subsetdef: abnormal_slim "Abnormal/normal slim"
-subsetdef: absent_slim "Absent/present slim"
-subsetdef: attribute_slim "Attribute slim"
-subsetdef: cell_quality "cell_quality"
-subsetdef: Cross_product_review "Involved_in"
-subsetdef: cyclostome_subset "cyclostome structures"
-subsetdef: defined_by_ordinal_series "classes that are defined by relative position counting from first in a series of elements along an axis in an individual organism rather than by strict homology"
-subsetdef: developmental_classification "developmental_classification"
-subsetdef: disjointness_axiom_removed "A class which has a weakened disjointness axiom, to avoid inconsistency. These are kept separately in the uberon_disjoint_from_strict ontology."
-subsetdef: disposition_slim "Disposition slim"
-subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropriately linked"
-subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
-subsetdef: efo_slim "EFO slim"
-subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to be checked"
-subsetdef: functional_classification "functional_classification"
-subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
-subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
-subsetdef: goslim_aspergillus "Aspergillus GO slim"
-subsetdef: goslim_candida "Candida GO slim"
-subsetdef: goslim_generic "Generic GO slim"
-subsetdef: goslim_goa "GOA and proteome slim"
-subsetdef: goslim_metagenomics "Metagenomics GO slim"
-subsetdef: goslim_pir "PIR GO slim"
-subsetdef: goslim_plant "Plant GO slim"
-subsetdef: goslim_pombe "Fission yeast GO slim"
-subsetdef: goslim_yeast "Yeast GO slim"
-subsetdef: gosubset_prok "Prokaryotic GO subset"
-subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
-subsetdef: high_level_annotation_qc "High-level terms not to be used for direct annotation"
-subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
-subsetdef: inherited_grouping_class "A grouping class that originates in two or more separate anatomical ontologies. Includes 'region of X' type terms"
-subsetdef: loose_concept "loose concept"
-subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord, peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
-subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
-subsetdef: mf_needs_review "Catalytic activity terms in need of attention"
-subsetdef: mpath_slim "Pathology slim"
-subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
-subsetdef: organ_slim "organs, excluding individual muscles and skeletal elements"
-subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
-subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
-subsetdef: scalar_slim "Scalar slim"
-subsetdef: termgenie_unvetted "Terms created by TermGenie that do not follow a template and require additional vetting by editors"
-subsetdef: uberon_slim "Uberon slim - somewhat arbitrary subset that excludes obscure terms and deep compositional terms"
+data-version: releases/2013-08-10
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
-subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
-subsetdef: unvetted ""
-subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
-subsetdef: upper_ontology_conflict "Terms in this subset group together terms from different anatomy ontologies that have conflicting upper ontology/CARO assignments. For example, in FMA the naris is immaterial and in ZFA it is an organism subdivision."
-subsetdef: value_slim "Value slim"
-subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
-subsetdef: vessel_or_tree "A term classified differently in FMA due to its treatment of branching structures - to be reviewed and revised by editors"
-subsetdef: virus_checked "Viral overhaul terms"
-synonymtypedef: ABBREVIATION "abbreviation"
-synonymtypedef: ATTRIBUTION_REQUIRED "expert consultation and attribution required"
-synonymtypedef: BRAND_NAME "BRAND NAME"
-synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged"
-synonymtypedef: DEVELOPMENTAL "developmental term"
-synonymtypedef: DUBIOUS "dubious or contested synonym"
-synonymtypedef: FORMULA "FORMULA"
-synonymtypedef: HOMOLOGY "a synonym made on the basis of a possibly homologous structure in another species"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
-synonymtypedef: InChI "InChI"
-synonymtypedef: InChIKey "InChIKey"
-synonymtypedef: INCONSISTENT "indicates that a synonym is used in an inconsistent or confusing way, typically between species"
-synonymtypedef: INN "INN"
-synonymtypedef: IUPAC_NAME "IUPAC NAME"
 synonymtypedef: LATIN "latin term"
-synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PLURAL "plural term"
-synonymtypedef: PRO-short-label "Unique short label for PRO terms for display purposes" EXACT
-synonymtypedef: PSI-MOD-label "Unique short label curated by PSI-MOD" EXACT
-synonymtypedef: SENSU "taxonomic disambiguation"
-synonymtypedef: SMILES "SMILES"
-synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 remark: See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
 
@@ -96,7 +26,7 @@ xref: XAO:0003012
 id: CL:0000001
 name: primary cultured cell
 namespace: cell
-def: "A cultured cell that is freshly isolated from some source organism and not yet passaged." [ReO:mhb]
+def: "A cultured cell that is freshly isolated from a organismal source, or derives in culture from such a cell prior to the culture being passaged." [ReO:mhb]
 comment: Covers cells actively being cultured or stored in a quiescent state for future use.
 synonym: "primary cell culture cell" EXACT []
 synonym: "primary cell line cell" RELATED []
@@ -106,13 +36,14 @@ is_a: CL:0000010 ! cultured cell
 
 [Term]
 id: CL:0000002
-name: immortal cell line cell
+name: obsolete immortal cell line cell
 namespace: cell
 def: "A cell line cell that is expected to be capable of an unlimited number of divisions, and is thus able to support indefinite growth/propagation in vitro as part of a immortal cell line." [ReO:mhb]
-comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+comment: Obsoleted in July 2013 and replaced by the CLO 'immortal cell line cell' class, as a result of CLO-OBI-CL alignment efforts.\n\nCovers cells actively being cultured or stored in a quiescent state for future use.
 synonym: "continuous cell line cell" EXACT []
 synonym: "permanent cell line cell" EXACT []
-is_a: CL:0007014 ! cell line cell
+is_obsolete: true
+replaced_by: CLO:0000019
 
 [Term]
 id: CL:0000003
@@ -182,7 +113,6 @@ name: cultured cell
 namespace: cell
 def: "A cell in vitro that is or has been maintained or propagated as part of a cell culture." [ReO:mhb]
 comment: Note that this class was re-labeled to 'cultured cell' instead of 'cell line cell', as it intent was clarified to cover any cultured cells of multicellular and unicellular organisms. This includes cells actively being cultured, or cells that have been cultured but are stored in a quiescent state for future use. In having been cultured, cells must establish homeostasis and often replicate in a foreign environment. Accomodation of this stress initiates a selection of cells fit for such challenges, wherein necessary adaptive biochemical and.or genetic changes can occur. These changes can set them apart from the in vivo cells from which they derive, and such changes will typically accumulate and change over increasing time in culture. 
-synonym: "cell line cell" NARROW []
 is_a: CL:0000578 ! experimentally modified cell in vitro
 
 [Term]
@@ -501,6 +431,7 @@ synonym: "colony forming unit monocyte" RELATED []
 synonym: "monocyte stem cell" RELATED []
 xref: CALOHA:TS-1195
 xref: FMA:83553
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002194 ! monopoietic cell
 relationship: develops_from CL:0002009 ! macrophage dendritic cell progenitor
 
@@ -1931,8 +1862,7 @@ is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000181 ! metabolising cell
 is_a: CL:0000417 ! endopolyploid cell
 is_a: CL:0002371 ! somatic cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
-relationship: develops_from CL:0000223 ! endodermal cell
+relationship: develops_from CL:0005026 ! hepatoblast
 
 [Term]
 id: CL:0000183
@@ -2000,7 +1930,7 @@ id: CL:0000189
 name: slow muscle cell
 namespace: cell
 def: "A muscle cell that develops tension more slowly than a fast-twitch fiber." [GOC:tfm, ISBN:0323052908]
-synonym: "slow muscle fiber" EXACT [ISBN:0815316208]
+synonym: "slow muscle fiber" RELATED [ISBN:0815316208]
 xref: FMA:84448
 is_a: CL:0002372 ! myotube
 relationship: develops_from CL:0000857 ! slow muscle myoblast
@@ -2102,8 +2032,6 @@ synonym: "cochlear hair cell" EXACT []
 synonym: "inner ear hair cell" EXACT [GO:0060119]
 synonym: "inner ear receptor cell" EXACT [GO:0060119]
 xref: FMA:62364
-is_a: CL:0000068 ! duct epithelial cell
-is_a: CL:0001035 ! bone cell
 is_a: CL:0002374 ! ear hair cell
 is_a: CL:0002491 ! auditory epithelial cell
 
@@ -4108,6 +4036,7 @@ synonym: "LC" EXACT []
 xref: BTO:0000705
 xref: CALOHA:TS-2375
 xref: FMA:63072
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0000763 ! myeloid cell
 
@@ -4977,6 +4906,7 @@ synonym: "promegakaryocyte" RELATED []
 xref: BTO:0001164
 xref: CALOHA:TS-0610
 xref: FMA:84235
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0000050 ! megakaryocyte-erythroid progenitor cell
 
@@ -5024,7 +4954,7 @@ synonym: "granulocyte-macrophage progenitor" EXACT [ISBN:0721601464, PMCID:PMC22
 synonym: "granulocyte/monocyte precursor" EXACT []
 synonym: "granulocyte/monocyte progenitor" EXACT []
 is_a: CL:0000763 ! myeloid cell
-is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
+is_a: CL:0001012 ! CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor
 is_a: CL:1001610 ! bone marrow hematopoietic cell
 relationship: develops_from CL:0000049 ! common myeloid progenitor
 
@@ -5046,6 +4976,7 @@ def: "A precursor in the monocytic series, being a cell intermediate in developm
 comment: Morphology: Mononuclear cell, diameter 14-18 _M, fine azurophilic granules; markers: CD11b (shared with many other myeloid cells); location: Adult: bone marrow; Fetal: Liver, Yolk Sac; role or process: hematopoiesis, monocyte development; lineage: hematopoietic, myeloid.
 xref: BTO:0004657
 xref: FMA:83551
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002194 ! monopoietic cell
 relationship: develops_from CL:0000040 ! monoblast
 
@@ -5557,6 +5488,7 @@ synonym: "CFU-Eo" RELATED []
 synonym: "colony forming unit eosinophil" RELATED []
 synonym: "EoP" EXACT [PMCID:PMC2212039, PMCID:PMC2626675]
 synonym: "eosinophil stem cell" RELATED []
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 
@@ -5581,6 +5513,7 @@ synonym: "BaP" EXACT []
 synonym: "basophilic stem cell" RELATED []
 synonym: "CFU-Bas" RELATED []
 synonym: "colony forming unit basophil" RELATED []
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0002028 ! basophil mast progenitor cell
 
@@ -7073,6 +7006,7 @@ synonym: "interdigitating cell" BROAD []
 synonym: "mDC" EXACT []
 synonym: "veiled cell" BROAD []
 xref: BTO:0004721
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0000576 ! monocyte
 relationship: develops_from CL:0000763 ! myeloid cell
@@ -7703,6 +7637,7 @@ namespace: cell
 def: "A progenitor cell of the thrombocyte, a nucleated blood cell involved in coagulation typically seen in birds and other non-mammalian vertebrates." [GOC:add, GOC:tfm, PMID:7758949]
 comment: Note that this is a non-mammalian cell type.
 is_a: CL:0000226 ! single nucleate cell
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0000050 ! megakaryocyte-erythroid progenitor cell
 
@@ -7733,6 +7668,7 @@ synonym: "CFU-Mast " RELATED []
 synonym: "CFU-MC" RELATED []
 synonym: "colony forming unit mast cell" RELATED []
 synonym: "MCP" EXACT []
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0002028 ! basophil mast progenitor cell
 
@@ -7759,6 +7695,7 @@ name: neutrophil progenitor cell
 namespace: cell
 def: "A progenitor cell of the neutrophil lineage." [GOC:add, GOC:tfm, ISBN:0721601464]
 synonym: "neutrophil stem cell" RELATED []
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 
@@ -7769,6 +7706,7 @@ namespace: cell
 def: "The most primitive precursor in the granulocytic series, having fine, evenly distributed chromatin, several nucleoli, a high nuclear-to-cytoplasmic ration (5:1-7:1), and a nongranular basophilic cytoplasm. They reside in the bone marrow." [GOC:add, http://en.wikipedia.org/wiki/Myeloblast, http://www.cap.org, ISBN:0721601464]
 xref: BTO:0000187
 xref: FMA:83524
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
@@ -7780,6 +7718,7 @@ namespace: cell
 def: "A precursor in the granulocytic series, being a cell intermediate in development between a myeloblast and myelocyte, that has distinct nucleoli, a nuclear-to-cytoplasmic ratio of 5:1 to 3:1, and containing a few primary cytoplasmic granules. Markers for this cell are fucosyltransferase FUT4-positive, CD33-positive, integrin alpha-M-negative, low affinity immunoglobulin gamma Fc region receptor III-negative, and CD24-negative." [GOC:add, GOC:amm, GOC:tfm, http://www.cap.org, ISBN:0721601464]
 xref: CALOHA:TS-0825
 xref: FMA:83530
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000835 ! myeloblast
@@ -7829,6 +7768,7 @@ name: immature conventional dendritic cell
 namespace: cell
 def: "An immature cell of the conventional dendritic cell lineage, characterized by high levels of antigen uptake via endocytosis, macropinocytosis, and phagocytosis, and typically found resident in the tissues. Markers for this cell are CD80-low, CD86-low, and MHC-II-low." [GOC:add, GOC:tfm, PMID:9521319]
 synonym: "immature myeloid dendritic cell" NARROW []
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0001029 ! common dendritic progenitor
 
@@ -7839,6 +7779,7 @@ namespace: cell
 def: "A mature cell of the conventional dendritic cell lineage, characterized by a high capacity for antigen presentation and typically found in a lymph node." [GOC:add, GOC:tfm, PMID:9521319]
 synonym: "mature myeloid dendritic cell" NARROW []
 xref: FMA:83038
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0000840 ! immature conventional dendritic cell
 
@@ -9446,6 +9387,7 @@ name: immature CD11c-low plasmacytoid dendritic cell
 namespace: cell
 def: "Immature CD11c-low plasmacytoid dendritic cell is a CD11c-low plasmacytoid dendritic cell that is CD80-low and CD86-low." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
 comment: Originally described in the dendritic cell ontology (DC_CL:0000006)(PMID:19243617).
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 relationship: develops_from CL:0001029 ! common dendritic progenitor
 
@@ -9455,6 +9397,7 @@ name: mature CD11c-low plasmacytoid dendritic cell
 namespace: cell
 def: "Mature CD11c-low plasmacytoid dendritic cell is a CD11c-low plasmacytoid dendritic cell that is CD83-high and is CD80-positive, CD86-positive, and MHCII-positive." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
 comment: Originally described in the dendritic cell ontology (DC_CL:0000007)(PMID:19243617).
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 relationship: develops_from CL:0000992 ! immature CD11c-low plasmacytoid dendritic cell
 
@@ -9502,6 +9445,7 @@ def: "CD8_alpha-negative CD11b-negative dendritic cell is a conventional dendrit
 comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000011)(PMID:19243617).
 synonym: "DC.8-4-11b-" EXACT []
 synonym: "triple negative dendritic cell" EXACT []
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 
@@ -9512,6 +9456,7 @@ namespace: cell
 def: "CD8_alpha-negative CD11b-positive dendritic cell is a conventional dendritic cell that is CD11b-positive, CD4-positive and is CD205-negative and CD8_alpha-negative." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
 comment: Defined as having a disposition to secreting anti-inflammatory cytokines. These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000012)(PMID:19243617).
 synonym: "DC.4+" EXACT []
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0002465 ! CD11b-positive dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 
@@ -9522,6 +9467,7 @@ namespace: cell
 def: "CD8_alpha-positive CD11b-negative dendritic cell is a conventional dendritic cell that is CD11b-negative, CD4-negative and is CD205-positive and CD8_alpha-positive." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
 comment: Cells are defined as having a disposition to secreting inflammatory cytokines. Originally described in the dendritic cell ontology (DC_CL:0000013)(PMID:19243617).
 synonym: "DC.8+" EXACT []
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 
@@ -9723,6 +9669,7 @@ synonym: "CD10-positive common lymphocyte precursor" EXACT []
 synonym: "CD10-positive common lymphocyte progenitor" EXACT []
 synonym: "CD10-positive common lymphoid precursor" EXACT []
 is_a: CL:0000051 ! common lymphoid progenitor
+is_a: CL:0000995 ! CD34-positive, CD38-positive common myeloid progenitor OR CD34-positive, CD38-positive common lymphoid progenitor
 disjoint_from: CL:0001025 ! Kit-positive, Sca1-positive common lymphoid progenitor
 relationship: develops_from CL:0002043 ! CD34-positive, CD38-negative multipotent progenitor cell
 
@@ -9733,6 +9680,8 @@ namespace: cell
 def: "CD115-positive monocyte is a monocyte that is CD115-positive and CD11b-positive." [GO_REF:0000031, GOC:add, GOC:amm, PMID:17952047]
 comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000033)(PMID:19243617).
 is_a: CL:0000576 ! monocyte
+is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
+is_a: CL:0001019 ! CD115-positive monocyte OR common dendritic progenitor
 relationship: develops_from CL:0002001 ! CD34-positive, CD38-positive granulocyte monocyte progenitor
 
 [Term]
@@ -9743,6 +9692,7 @@ def: "A common myeloid progenitor that is Kit-positive and CD34-positive, Il7ra-
 comment: Markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000034)(PMID:19243617).
 synonym: "CD117-positive common myeloid precursor" BROAD []
 is_a: CL:0000049 ! common myeloid progenitor
+is_a: CL:0001030 ! CD117-positive common myeloid progenitor OR CD217-positive common lymphoid progenitor
 disjoint_from: CL:0001026 ! CD34-positive, CD38-positive common myeloid progenitor
 relationship: develops_from CL:0002035 ! Slamf1-negative multipotent progenitor cell
 
@@ -9767,6 +9717,7 @@ synonym: "CD217-positive common lymphocyte precursor" EXACT []
 synonym: "CD217-positive common lymphocyte progenitor" EXACT []
 synonym: "CD217-positive common lymphoid precursor" EXACT []
 is_a: CL:0000051 ! common lymphoid progenitor
+is_a: CL:0001030 ! CD117-positive common myeloid progenitor OR CD217-positive common lymphoid progenitor
 relationship: develops_from CL:0000936 ! early lymphoid progenitor
 
 [Term]
@@ -9777,6 +9728,7 @@ def: "A common myeloid progenitor that is CD34-positive, CD38-positive, IL3ra-lo
 comment: Markers are associated with human cell type. Originally described in the dendritic cell ontology (DC_CL:0000038)(PMID:19243617).
 synonym: "CD71-positive common myeloid precursor" NARROW []
 is_a: CL:0000049 ! common myeloid progenitor
+is_a: CL:0000995 ! CD34-positive, CD38-positive common myeloid progenitor OR CD34-positive, CD38-positive common lymphoid progenitor
 relationship: develops_from CL:0002043 ! CD34-positive, CD38-negative multipotent progenitor cell
 
 [Term]
@@ -9787,6 +9739,7 @@ def: "CD7-negative lymphoid progenitor cell is a lymphoid progenitor cell that i
 comment: These markers are associated with human cells. Originally described in the dendritic cell ontology (DC_CL:0000039)(PMID:19243617).
 synonym: "CD7-negative lymphoid precursor" EXACT []
 is_a: CL:0000051 ! common lymphoid progenitor
+is_a: CL:0001012 ! CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor
 relationship: develops_from CL:0001021 ! CD34-positive, CD38-positive common lymphoid progenitor
 
 [Term]
@@ -9808,7 +9761,8 @@ comment: Surface markers are for mouse cells. Originally described in the dendri
 synonym: "CDP" EXACT [PMID:21219184]
 synonym: "common dendritic precursor" EXACT []
 synonym: "pro-DCs" EXACT [PMID:21219184]
-is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
+is_a: CL:0000763 ! myeloid cell
+is_a: CL:0001019 ! CD115-positive monocyte OR common dendritic progenitor
 relationship: develops_from CL:0002009 ! macrophage dendritic cell progenitor
 
 [Term]
@@ -10027,6 +9981,7 @@ name: macrophage dendritic cell progenitor
 namespace: cell
 def: "A progenitor cell that can give rise to plasmacytoid and myeloid dendritic cells, and to monocytes and macrophages." [GOC:tfm, PMID:19273628]
 synonym: "MDP" EXACT []
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 created_by: tmeehan
@@ -10037,6 +9992,7 @@ id: CL:0002010
 name: pre-conventional dendritic cell
 namespace: cell
 def: "A lin-negative, MHC-II-negative, CD11c-positive, FLT3-positive cell with intermediate expression of SIRP-alpha." [GOC:tfm]
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 relationship: develops_from CL:0001029 ! common dendritic progenitor
 created_by: tmeehan
@@ -10237,6 +10193,7 @@ namespace: cell
 def: "A cell type that can give rise to basophil and mast cells. This cell is CD34-positive, CD117-positive, CD125-positive, FceRIa-negative, and T1/ST2-negative, and expresses Gata-1, Gata-2, C/EBPa" [GOC:ak, GOC:dsd, GOC:tfm, PMCID:PMC1312421]
 comment: There may be an intermediate cell type. These cells also CD13-positive, CD16-positive, CD32-positive, and integrin beta 7-positive. Transcription factors: GATA1-positive, MCP-1-positive, mitf-positive, PU.1-positive, and CEBP/a-low.
 synonym: "BMCP" EXACT []
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 created_by: tmeehan
@@ -11891,7 +11848,6 @@ namespace: cell
 def: "A long, spindle-shaped supporting cells arranged in parallel rows that secretes components of the tectorial membrane and potassium ions into the endolymph." [GOC:tfm, MP:0004482, PMID:2111803]
 synonym: "interdental cell" EXACT []
 xref: FMA:79797
-is_a: CL:0000068 ! duct epithelial cell
 is_a: CL:0002315 ! supporting cell of cochlea
 created_by: tmeehan
 creation_date: 2010-08-25T02:02:48Z
@@ -12096,6 +12052,7 @@ name: metamyelocyte
 namespace: cell
 def: "A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a myelocyte and a band form cell. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare." [GOC:tfm, http://en.wikipedia.org/wiki/Metamyelocyte, ISBN:0721601464]
 xref: FMA:83541
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0002193 ! myelocyte
 created_by: tmeehan
@@ -12108,6 +12065,7 @@ namespace: cell
 def: "A cell type that is the first of the maturation stages of the granulocytic leukocytes normally found in the bone marrow. Granules are seen in the cytoplasm. The nuclear material of the myelocyte is denser than that of the myeloblast but lacks a definable membrane. The cell is flat and contains increasing numbers of granules as maturation progresses." [GOC:tfm, http://en.wikipedia.org/wiki/Myelocyte, ISBN:0323052908]
 xref: BTO:0000734
 xref: FMA:83525
+is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000836 ! promyelocyte
 created_by: tmeehan
@@ -15070,6 +15028,7 @@ id: CL:0002461
 name: CD103-positive dendritic cell
 namespace: cell
 def: "A conventional dendritic cell that is CD103-positive. This cell type is usually found in non-lymphoid tissue." [GOC:tfm, http://www.immgen.org/index_content.html]
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 created_by: tmeehan
@@ -15080,6 +15039,7 @@ id: CL:0002462
 name: adipose dendritic cell
 namespace: cell
 def: "A F4/80-negative dendritic cell located in adipose tissue." [GOC:tfm, http://www.immgen.org/index_content.html]
+is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
@@ -15319,7 +15279,6 @@ id: CL:0002486
 name: strial intermediate cell
 namespace: cell
 def: "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ." [GOC:tfm, MP:0000048]
-is_a: CL:0000068 ! duct epithelial cell
 is_a: CL:0000148 ! melanocyte
 is_a: CL:0002491 ! auditory epithelial cell
 created_by: tmeehan
@@ -15359,7 +15318,6 @@ id: CL:0002490
 name: organ of Corti supporting cell
 namespace: cell
 def: "A supporting cell of the organ of Corti." [GOC:tfm, MP:0004300]
-is_a: CL:0000068 ! duct epithelial cell
 is_a: CL:0002315 ! supporting cell of cochlea
 created_by: tmeehan
 creation_date: 2010-12-06T03:09:01Z
@@ -15388,7 +15346,6 @@ name: strial basal cell
 namespace: cell
 def: "A polarized cell that is juxtaposed to fibrocytes in the underlying spiral ligament. This cell type secretes potassium ions derived from fibrocytes through gap junctions." [GOC:tfm, MP:0004365]
 comment: Basal cells form a multi-layered epithelial barrier that separates the extracellular spaces of the stria vascularis and the spiral ligament[PMID:18353863]
-is_a: CL:0000068 ! duct epithelial cell
 is_a: CL:0002491 ! auditory epithelial cell
 created_by: tmeehan
 creation_date: 2010-12-06T03:26:53Z
@@ -17459,6 +17416,12 @@ xref: PMID:14699587
 is_a: CL:0015000 ! cranial motor neuron
 
 [Term]
+id: CL:0005026
+name: hepatoblast
+def: "Multi fate stem cell that gives rise to to both hepatocytes and cholangiocytes as descendants." [PMID:18356246, PMID:20483998 ]
+is_a: CL:0000048 ! multi fate stem cell
+
+[Term]
 id: CL:0007000
 name: preameloblast
 namespace: cell
@@ -17596,24 +17559,26 @@ is_a: CL:0000060 ! odontoblast
 
 [Term]
 id: CL:0007014
-name: cell line cell
+name: obsolete cell line cell
 namespace: cell
 def: "A cultured cell that has been passaged at least one time in culture." [ReO:mhb]
-comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+comment: Obsoleted in July 2013 and replaced by the CLO 'cell line cell' class, as a result of CLO-OBI-CL alignment efforts.\n\nCovers cells actively being cultured or stored in a quiescent state for future use.
 synonym: "passaged cultured cell" EXACT []
-is_a: CL:0000010 ! cultured cell
+is_obsolete: true
+replaced_by: CLO:0000001
 created_by: haendel
 creation_date: 2012-11-28T11:54:59Z
 
 [Term]
 id: CL:0007015
-name: mortal cell line cell
+name: obsolete mortal cell line cell
 namespace: cell
 def: "A cell line cell that is expected to be capable of replicating a limited number of times in culture before undergoing senescence. Mortal cell line cells cannot be propagated indefinitely (as immortal cell line cells can)." [ReO:mhb]
-comment: Covers cells actively being cultured or stored in a quiescent state for future use.
+comment: Obsoleted in July 2013 and replaced by the CLO 'mortal cell line cell' class, as a result of CLO-OBI-CL alignment efforts.\n\nCovers cells actively being cultured or stored in a quiescent state for future use.
 synonym: "finite cell line cell" EXACT []
 synonym: "primary cell line cell" RELATED []
-is_a: CL:0007014 ! cell line cell
+is_obsolete: true
+replaced_by: CLO:0000018
 created_by: haendel
 creation_date: 2012-11-28T11:56:20Z
 
@@ -17733,7 +17698,7 @@ is_a: CL:0002371 ! somatic cell
 id: CL:0010001
 name: stromal cell of bone marrow
 def: "a stromal cell that is part_of a bone marrow" []
-synonym: "\"bone marrow stromal cell\"^^xsd:string" EXACT []
+synonym: "bone marrow stromal cell" EXACT []
 is_a: CL:0000499 ! stromal cell
 is_a: CL:0002092 ! bone marrow cell
 created_by: GOC:cjm
@@ -17742,7 +17707,7 @@ created_by: GOC:cjm
 id: CL:0010002
 name: epithelial cell of umbilical artery
 def: "a epithelial cell that is part_of a umbilical artery" []
-synonym: "\"umbilical artery epithelial cell\"^^xsd:string" EXACT []
+synonym: "umbilical artery epithelial cell" EXACT []
 is_a: CL:0000066 ! epithelial cell
 created_by: GOC:cjm
 
@@ -17751,7 +17716,7 @@ id: CL:0010003
 name: epithelial cell of alveolus of lung
 def: "a epithelial cell that is part_of a alveolus of lung" []
 comment: May be merged with pneumocyte in future
-synonym: "\"alveolus of lung epithelial cell\"^^xsd:string" EXACT []
+synonym: "alveolus of lung epithelial cell" EXACT []
 is_a: CL:0000082 ! epithelial cell of lung
 created_by: GOC:cjm
 
@@ -17759,7 +17724,7 @@ created_by: GOC:cjm
 id: CL:0010004
 name: mononuclear cell of bone marrow
 def: "a mononuclear cell that is part_of a bone marrow" []
-synonym: "\"bone marrow mononuclear cell\"^^xsd:string" EXACT []
+synonym: "bone marrow mononuclear cell" EXACT []
 is_a: CL:0000842 ! mononuclear cell
 is_a: CL:1001610 ! bone marrow hematopoietic cell
 created_by: GOC:cjm
@@ -18351,7 +18316,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of jejunum." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of jejunum" EXACT []
 xref: FMA:263065
-is_a: CL:1000495 ! small intestine goblet cell
+is_a: CL:1000317 ! intestinal villus goblet cell
 
 [Term]
 id: CL:1000326
@@ -18360,7 +18325,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of ileum." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of ileum" EXACT []
 xref: FMA:263067
-is_a: CL:1000495 ! small intestine goblet cell
+is_a: CL:1000317 ! intestinal villus goblet cell
 
 [Term]
 id: CL:1000327
@@ -18445,7 +18410,8 @@ name: enterocyte of epithelium of duodenal gland
 namespace: cell
 def: "An enterocyte that is part of the epithelium of duodenal gland." [GOC:tfm]
 xref: FMA:263092
-is_a: CL:1000334 ! enterocyte of epithelium of small intestine
+is_a: CL:0000584 ! enterocyte
+is_a: CL:0002254 ! epithelial cell of small intestine
 
 [Term]
 id: CL:1000338
@@ -18469,7 +18435,6 @@ name: enterocyte of epithelium proper of duodenum
 namespace: cell
 def: "An enterocyte that is part of the epithelium proper of duodenum." [GOC:tfm]
 xref: FMA:263098
-is_a: CL:1000337 ! enterocyte of epithelium of duodenal gland
 is_a: CL:1000339 ! enterocyte of epithelium proper of small intestine
 
 [Term]
@@ -18618,7 +18583,7 @@ name: microfold cell of epithelium proper of jejunum
 namespace: cell
 def: "A M cell that is part of the epithelium proper of jejunum." [GOC:tfm]
 xref: FMA:263136
-is_a: CL:1000353 ! microfold cell of epithelium of small intestine
+is_a: CL:1000354 ! microfold cell of epithelium of intestinal villus
 
 [Term]
 id: CL:1000358
@@ -18626,7 +18591,7 @@ name: microfold cell of epithelium proper of ileum
 namespace: cell
 def: "A M cell that is part of the epithelium proper of ileum." [GOC:tfm]
 xref: FMA:263138
-is_a: CL:1000353 ! microfold cell of epithelium of small intestine
+is_a: CL:1000354 ! microfold cell of epithelium of intestinal villus
 
 [Term]
 id: CL:1000359
@@ -19438,9 +19403,9 @@ name: cholangiocyte
 namespace: cell
 def: "An epithelial cell that is part of the bile duct. Cholangiocytes contribute to bile secretion via net release of bicarbonate and water. They are cuboidal epithelium in the small interlobular bile ducts, but become columnar and mucus secreting in larger bile ducts approaching the porta hepatis and the extrahepatic ducts." [GOC:tfm, PMID:16550043, PMID:18356246]
 synonym: "epithelial cell of bile duct" EXACT []
-synonym: "hepatoblast" EXACT []
 xref: FMA:86481
 is_a: CL:0000069 ! branched duct epithelial cell
+relationship: develops_from CL:0005026 ! hepatoblast
 
 [Term]
 id: CL:1000489
@@ -20863,168 +20828,55 @@ is_a: CL:0000540 ! neuron
 [Typedef]
 id: RO:0002131
 name: overlaps
-namespace: cl
 xref: RO:0002131
 
 [Typedef]
 id: RO:0002215
 name: capable_of
-namespace: CL
 def: "A relation between a material entity (such as a cell) and a process. This is a shortcut relation, translation rule for which is: capable_of P <-> bearer_of (some realized_by only P). Example: osteoclast capable of bone resorption." [GOC:cjm]
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
 
 [Typedef]
 id: RO:0002220
 name: adjacent_to
-namespace: cl
-
-[Typedef]
-id: UBPROP:0000001
-name: external_definition
-namespace: cl
-def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [UBERON:cjm]
-xref: UBPROP:0000001
-is_metadata_tag: true
-
-[Typedef]
-id: UBPROP:0000002
-name: axiom_lost_from_external_ontology
-namespace: cl
-def: "A textual description of an axiom loss in this ontology compared to an external ontology." [UBERON:cjm]
-xref: UBPROP:0000002
-is_metadata_tag: true
 
 [Typedef]
 id: bearer_of
 name: bearer of
-namespace: BFO
-xref: BFO:0000053
-
-[Typedef]
-id: decreased_in_magnitude_relative_to
-name: decreased_in_magnitude_relative_to
-namespace: quality
-def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-comment: This relation is used to determine the 'directionality' of relative qualities such as 'decreased strength', relative to the parent type, 'strength'.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
 
 [Typedef]
 id: develops_from
 name: develops_from
-namespace: RO
 xref: RO:0002202
-
-[Typedef]
-id: different_in_magnitude_relative_to
-name: different_in_magnitude_relative_to
-namespace: quality
-def: "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-
-[Typedef]
-id: directly_associated_with
-name: directly_associated_with
-namespace: quality
-def: "q1 directly_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 increases if the magnitude of q2 is increased, or the magnitude of q1 decreases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
-comment: Example: 'Lewy bodies increased number related to dystrophic neurite increased number' (from annotation of PMID:8740227 in http://ccdb.ucsd.edu/1.0/NDPO.owl#ndpo_404). Here the increase in the number of lewy bodies is directly_associated_with the increase in the number of dystrophic neurites.\nAssociation is weaker than correlation or proportionality. These relations may be later added to PATO.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-created_by: cjm
-creation_date: 2009-08-26T02:50:08Z
-
-[Typedef]
-id: dubious_for_taxon
-name: dubious_for_taxon
-namespace: uberon
-def: "S dubious_for_taxon T if it is probably the case that no instances of S can be found in any instance of T." [UBERON:cjm]
-comment: this relation lacks a strong logical interpretation, but can be used in place of never_in_taxon where it is desirable to state that the definition of the class is too strict for the taxon under consideration, but placing a never_in_taxon link would result in a chain of inconsistencies that will take time to resolve. Example: metencephalon in teleost
-is_metadata_tag: true
-is_class_level: true
-
-[Typedef]
-id: fma_set_term
-name: fma_set_term
-namespace: uberon
-comment: FMA has terms like 'set of X'. In general we do not include set-of terms in uberon, but provide a mapping between the singular form and the FMA set term
-is_metadata_tag: true
 
 [Typedef]
 id: has_completed
 name: has_completed
-namespace: cl
-
-[Typedef]
-id: has_cross_section
-name: has_cross_section
-namespace: quality
-def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." [PATOC:CJM]
-comment: Example: a spherical object has the quality of being spherical, and the spherical quality has_cross_section round.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-
-[Typedef]
-id: has_dividend_quality
-name: has_dividend_quality
-namespace: quality
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-is_a: has_ratio_quality ! has_ratio_quality
-
-[Typedef]
-id: has_divisor_quality
-name: has_divisor_quality
-namespace: quality
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-is_a: has_ratio_quality ! has_ratio_quality
 
 [Typedef]
 id: has_high_plasma_membrane_amount
 name: has_high_plasma_membrane_amount
-namespace: RO
 def: "A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al *PMID:19243617)." [PMID:19243617]
 
 [Typedef]
 id: has_low_plasma_membrane_amount
 name: has_low_plasma_membrane_amount
-namespace: RO
 def: "A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al *PMID:19243617)." [PMID:19243617]
-
-[Typedef]
-id: has_modification
-name: has_modification
-namespace: RO
 
 [Typedef]
 id: has_not_completed
 name: has_not_completed
-namespace: RO
 
 [Typedef]
 id: has_part
 name: has_part
-namespace: quality
-def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
-comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
-xref: BFO:0000051
-xref: OBO_REL:has_part
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl/cl-relations.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 is_transitive: true
-inverse_of: part_of ! part_of
 
 [Typedef]
 id: has_plasma_membrane_part
 name: has_plasma_membrane_part
-namespace: RO
 def: "Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part." [PMID:19243617]
-xref: RO:0002104
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
-
-[Typedef]
-id: has_ratio_quality
-name: has_ratio_quality
-namespace: quality
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Typedef]
 id: has_relational_adjective
@@ -21035,205 +20887,69 @@ xref: UBPROP:0000007
 is_metadata_tag: true
 
 [Typedef]
-id: homologous_in
-name: homologous_in
-namespace: uberon
-comment: Status: experimental
-is_metadata_tag: true
-
-[Typedef]
-id: homologous_to
-name: homologous_to
-namespace: uberon
-is_metadata_tag: true
-
-[Typedef]
-id: homology_notes
-name: homology_notes
-namespace: uberon
-def: "Notes on the homology status of this class." [UBERON:cjm]
-comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
-xref: UBPROP:0000003
-is_metadata_tag: true
-
-[Typedef]
 id: immediate_transformation_of
 name: immediate_transformation_of
-namespace: uberon
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: http://semanticscience.org/resource/SIO_000658
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Typedef]
-id: increased_in_magnitude_relative_to
-name: increased_in_magnitude_relative_to
-namespace: quality
-def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-comment: This relation is used to determine the 'directionality' of relative qualities such as 'increased strength', relative to the parent type, 'strength'.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
-
-[Typedef]
-id: inversely_associated_with
-name: inversely_associated_with
-namespace: quality
-def: "q1 inversely_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 decreases if the magnitude of q2 is increased, or the magnitude of q1 increases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
-comment: Association is weaker than correlation or proportionality. These relations may be later added to PATO.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-created_by: cjm
-creation_date: 2009-08-26T02:50:24Z
-
-[Typedef]
-id: is_count_of
-name: is count of
-namespace: uberon
-xref: UBPROP:0000100
-is_metadata_tag: true
-
-[Typedef]
-id: lacks_modification
-name: lacks_modification
-namespace: RO
-
-[Typedef]
 id: lacks_part
 name: lacks_part
-namespace: RO
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 ?Y" []
 
 [Typedef]
 id: lacks_plasma_membrane_part
 name: lacks_plasma_membrane_part
-namespace: RO
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
 
 [Typedef]
 id: located_in
 name: located_in
-namespace: cl
 
 [Typedef]
 id: negatively_regulates
 name: negatively_regulates
-namespace: gene_ontology
-xref: RO:0002212
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
-
-[Typedef]
-id: never_in_taxon
-name: never_in_taxon
-namespace: uberon
-def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [PMID:20973947]
-xref: RO:0002161
-expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
-is_metadata_tag: true
-is_class_level: true
 
 [Typedef]
 id: occurs_in
 name: occurs in
-namespace: gene_ontology
-xref: BFO:0000066
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 transitive_over: part_of ! part_of
 
 [Typedef]
 id: part_of
 name: part_of
-namespace: bfo
-xref: BFO:0000050
-xref: OBO_REL:part_of
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl/cl-relations.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_transitive: true
+inverse_of: has_part ! has_part
 
 [Typedef]
 id: participates_in
 name: participates in
-namespace: cl
-xref: BFO:0000056
-
-[Typedef]
-id: pharyngeal_arch_number
-name: pharyngeal arch number
-namespace: uberon
-def: "x pharyngeal_arch_number N if and only if (i) x is a pharyngeal arch, and (ii) x is ancestrally pharyngeal arch number N in a series of pharyngeal arches repeated along a antero-posterior axis, with arch_number 1 being the mandibular arch." [https://orcid.org/0000-0002-6601-2165]
-comment: Note that gill arch N = PA N-2. the term branchial_arch is ambiguous.
-xref: UBPROP:0000103
-property_value: is_count_of UBERON:0002539
-property_value: preceding_element_is BSPO:0000096
-is_metadata_tag: true
 
 [Typedef]
 id: positively_regulates
 name: positively_regulates
-namespace: gene_ontology
-xref: RO:0002213
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_a: regulates ! regulates
-
-[Typedef]
-id: preceding_element_is
-name: preceding element is
-namespace: uberon
-def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [https://orcid.org/0000-0002-6601-2165]
-xref: UBPROP:0000101
-is_metadata_tag: true
-
-[Typedef]
-id: present_in_taxon
-name: present_in_taxon
-namespace: uberon
-def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [UBERON:cjm]
-synonym: "applicable for taxon" EXACT []
-is_metadata_tag: true
-is_class_level: true
 
 [Typedef]
 id: produces
 name: produces
-namespace: RO
-xref: RO:0003000
 
 [Typedef]
 id: realized_by
 name: realized by
-namespace: cl
-xref: BFO:0000054
-
-[Typedef]
-id: reciprocal_of
-name: reciprocal_of
-namespace: quality
-def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." [PATOC:CJM]
-comment: There are frequently two ways to state the same thing: we can say 'spermatocyte lacks asters' or 'asters absent from spermatocyte'. In this case the quality is 'lacking all parts of type' - it is a (relational) quality of the spermatocyte, and it is with respect to instances of 'aster'. One of the popular requirements of PATO is that it continue to support 'absent', so we need to relate statements which use this quality to the 'lacking all parts of type' quality.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Typedef]
 id: regulates
 name: regulates
-namespace: gene_ontology
-xref: RO:0002211
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 transitive_over: part_of ! part_of
 
 [Typedef]
-id: results_in
-name: results_in
-namespace: gene_ontology
-comment: This relation is currently used to connect two regulation processes p1 and p2, such that if r1 regulates p1 and r2 regulates p2, and r1 results_in r2 then the regulation of p1 is required for the regulation of p2. For an example of use, see GO:0035958 'regulation of glyoxylate cycle by regulation of transcription from RNA polymerase II promoter'. Note that a precise definition of this relation is under discussion. After it has been formalized it will be added to RO, where it will have a RO ID. Note that the existing identifier and label are subject to change.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-created_by: cjm
-creation_date: 2012-03-14T10:35:44Z
-
-[Typedef]
 id: secretes
 name: secretes
-namespace: cl
 
 [Typedef]
 id: seeAlso
@@ -21241,37 +20957,4 @@ name: see also
 namespace: uberon
 xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
 is_metadata_tag: true
-
-[Typedef]
-id: similar_in_magnitude_relative_to
-name: similar_in_magnitude_relative_to
-namespace: quality
-def: "q1 similar_in_magnitude_relative_to q2 if and only if magnitude(q1) =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-
-[Typedef]
-id: spatially_disjoint_from
-name: spatially_disjoint_from
-namespace: cl
-namespace: uberon
-def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
-synonym: "non_overlapping_with" EXACT []
-synonym: "shares_no_parts_with" EXACT []
-expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
-is_metadata_tag: true
-is_class_level: true
-
-[Typedef]
-id: taxon_notes
-name: taxon_notes
-namespace: uberon
-xref: UBPROP:0000008
-is_metadata_tag: true
-
-[Typedef]
-id: towards
-name: towards
-namespace: quality
-comment: Relation binding a relational quality or disposition to the relevant type of entity.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 

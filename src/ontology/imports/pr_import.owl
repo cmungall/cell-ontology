@@ -1,11 +1,35 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/cl/imports/pr_import.owl#"
-     xml:base="http://purl.obolibrary.org/obo/cl/imports/pr_import.owl"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/cl/imports/imports/pr_import.owl#"
+     xml:base="http://purl.obolibrary.org/obo/cl/imports/imports/pr_import.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/imports/pr_import.owl"/>
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/imports/imports/pr_import.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand"/>
     
 
 
@@ -17,6 +41,42 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33708 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33708">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino-acid residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_FiatObjectPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0032991 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0032991">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macromolecular complex</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0043234 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043234">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein complex</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MOD_00693 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOD_00693">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glycosylated residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002968"/>
+    </owl:Class>
     
 
 
@@ -213,6 +273,15 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000001084">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 alpha chain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000001085 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000001085">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 beta chain</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
     </owl:Class>
     
@@ -1415,6 +1484,42 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PR_000002689 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000002689">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45R unmodified form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001014"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000002690 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000002690">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45RA unmodified form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001015"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000002692 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000002692">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45RO unmodified form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001017"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000002968 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000002968">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">post-translationally modified amino-acid residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025513"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PR_000002972 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000002972">
@@ -1463,17 +1568,8 @@
     <!-- http://purl.obolibrary.org/obo/PR_000002980 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000002980">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte antigen 6C</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte antigen 6C2</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002976"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PR_000002981 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000002981">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte antigen 76</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
     </owl:Class>
     
 
@@ -1492,6 +1588,15 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000003455">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclear receptor ROR-gamma isoform 2</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001902"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000003456 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000003456">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclear receptor ROR-gamma isoform 2 unmodified form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000003455"/>
     </owl:Class>
     
 
@@ -1847,6 +1952,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PR_000013206 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000013206">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone marrow proteoglycan</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PR_000014046 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000014046">
@@ -1896,6 +2010,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018263">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino acid chain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_Object"/>
     </owl:Class>
     
 
@@ -1909,11 +2024,785 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PR_000018300 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018300">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD19 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001002"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018302 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018302">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018304 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018304">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018306 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018306">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018308 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018308">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-2, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001008"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018310 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018310">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-E, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018311 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018311">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-E proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018315 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018315">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-M, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001012"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018317 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018317">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-X, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001013"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018321 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018321">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD3 epsilon, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001020"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018325 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018325">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neural cell adhesion molecule 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001024"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018327 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018327">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte antigen 75, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001026"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018333 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018333">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD2 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001083"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018335 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018335">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 alpha chain, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001084"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018337 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018337">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 beta chain, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001085"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018380 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018380">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD48 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001308"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018381 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018381">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD48 molecule proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018383 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018383">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD83 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001310"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018389 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018389">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-selectin, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001318"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018390 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018390">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-selectin proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018392 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018392">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SLAM family member 5, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001319"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018405 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018405">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoembryonic antigen-related cell adhesion molecule 8, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001332"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018406 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018406">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoembryonic antigen-related cell adhesion molecule 8 proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018413 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018413">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complement receptor type 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001337"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018415 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018415">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complement receptor type 2, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001338"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018420 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018420">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endoglin, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001345"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018444 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018444">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-2 receptor subunit alpha, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001380"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018446 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018446">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-2 receptor subunit beta, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001381"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018477 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018477">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD80 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001438"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018481 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018481">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epithelial cadherin proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018492 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018492">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glycophorin-A, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001460"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018496 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018496">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high affinity immunoglobulin gamma Fc receptor I, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001465"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018508 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018508">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low affinity immunoglobulin gamma Fc region receptor II, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001479"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018523 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018523">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5&apos;-nucleotidase, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001800"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018524 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018524">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5&apos;-nucleotidase proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018537 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018537">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD7 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001836"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018539 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018539">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD5, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001839"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018541 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018541">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell-specific surface glycoprotein CD28, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001841"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018545 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018545">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thy-1 membrane glycoprotein, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001843"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018546 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018546">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thy-1 membrane glycoprotein proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018547 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018547">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cathepsin K proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018555 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018555">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-5 receptor subunit alpha, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001867"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018559 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018559">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-7 receptor subunit alpha, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001869"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018567 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018567">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leukosialin, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001879"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018568 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018568">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low affinity immunoglobulin epsilon Fc receptor proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018574 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018574">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD14 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001889"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018575">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD14 molecule proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018580 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018580">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">natural killer cell receptor 2B4, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001896"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018590 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018590">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">platelet glycoprotein Ib alpha chain, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001907"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018591 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018591">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">platelet glycoprotein Ib alpha chain proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018594 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018594">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scavenger receptor cysteine-rich type 1 protein M130 proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018596 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018596">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sialoadhesin, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001931"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018598 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018598">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">signal transducer CD24, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001932"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018600 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018600">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tartrate-resistant acid phosphatase type 5, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001937"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018603 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018603">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transferrin receptor protein 1 proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018606">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tumor necrosis factor ligand superfamily member 5 proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018620 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018620">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD27 molecule, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001963"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018626 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018626">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tyrosine-protein phosphatase non-receptor type substrate 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001968"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018628 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018628">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">urokinase plasminogen activator surface receptor, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001969"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018692 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018692">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD1a, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002025"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018694 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018694">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD1d, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002028"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018704 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018704">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complement component C1q receptor, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002037"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018720 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018720">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thrombomodulin, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002105"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018773 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018773">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte antigen 6A-2/6E-1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002979"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018775 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018775">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte antigen 6C2, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000002980"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018819 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018819">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perforin-1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000003466"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000019802 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000019802">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eosinophil peroxidase proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000019856 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000019856">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high affinity immunoglobulin epsilon receptor subunit alpha, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000007431"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020288 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020288">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-17 receptor B, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000008982"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020295 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020295">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-1 receptor-like 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000008994"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020328 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020328">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-IIb, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009127"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020329 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020329">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-IIb proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020333 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020333">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha-4, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009129"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020347 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020347">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin beta-7, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009143"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020444 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020444">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neutrophil gelatinase-associated lipocalin, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009725"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020496 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020496">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lactotransferrin, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020497 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020497">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lactotransferrin proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020630 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020630">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myeloperoxidase, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000010543"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020631 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020631">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myeloperoxidase proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020735 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020735">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclear factor NF-kappa-B p100 subunit proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000021081 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000021081">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone marrow proteoglycan, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000013206"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PR_000021082 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000021082">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone marrow proteoglycan proteolytic cleavage product</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000021271 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000021271">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-secretory ribonuclease, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000014046"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000021273 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000021273">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eosinophil cationic protein, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000014047"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000021935 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000021935">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immature protein part</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_FiatObjectPart"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000022003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000022003">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone marrow proteoglycan isoform 1</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000013206"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000022004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000022004">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone marrow proteoglycan isoform 1 unmodified form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000022003"/>
     </owl:Class>
     
 
@@ -1931,6 +2820,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025402">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T cell receptor co-receptor CD8</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043234"/>
     </owl:Class>
     
 
@@ -1940,6 +2830,81 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025403">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 alpha chain isoform 1</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001084"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025405 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025405">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 beta chain isoform 1</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001085"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025406 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025406">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 alpha chain isoform 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018335"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025403"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025407 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025407">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 beta chain isoform 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018337"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025405"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025408 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025408">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 alpha chain isoform 1, signal peptide removed glycosylated form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025406"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025409 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025409">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cell surface glycoprotein CD8 beta chain isoform 1, signal peptide removed glycosylated form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025407"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025455 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025455">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD2 molecule proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025466 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025466">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone marrow proteoglycan isoform 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000021081"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000022003"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025513 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025513">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">modified amino-acid residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33708"/>
     </owl:Class>
     
 
@@ -1959,6 +2924,150 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrin alpha lacking A domain</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025796"/>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025805 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025805">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45R, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001014"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018306"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025806 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025806">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45RA, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001015"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018306"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025808 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025808">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45RO, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001017"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018306"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025813 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025813">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45R, signal peptide removed glycosylated form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025805"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025814 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025814">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45RA, signal peptide removed glycosylated form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025806"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000025816 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025816">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor-type tyrosine-protein phosphatase C isoform CD45RO, signal peptide removed glycosylated form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000025808"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000026631 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000026631">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transmembrane emp24 domain-containing protein 1, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000016401"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000026712 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000026712">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granzyme B, signal peptide removed form</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000003499"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000418 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000418">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">signal_peptide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000021935"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/snap_FiatObjectPart -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/snap_FiatObjectPart">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fiat_object_part</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_MaterialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/snap_MaterialEntity -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/snap_MaterialEntity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material_entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/snap_Object -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/snap_Object">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_MaterialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pr#derives_from">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives_from</rdfs:label>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives_from</oboInOwl:shorthand>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives_from</oboInOwl:hasDbXref>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pr#has_part">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</oboInOwl:shorthand>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</oboInOwl:hasDbXref>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pr#part_of">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/pr#lacks_part">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lacks_part</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lacks_part</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lacks_part</oboInOwl:shorthand>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000002981">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte antigen 76</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
 
 

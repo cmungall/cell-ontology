@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/cl/imports/chebi_import.owl#"
-     xml:base="http://purl.obolibrary.org/obo/cl/imports/chebi_import.owl"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/cl/imports/imports/chebi_import.owl#"
+     xml:base="http://purl.obolibrary.org/obo/cl/imports/imports/chebi_import.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/imports/chebi_import.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/imports/imports/chebi_import.owl"/>
     
 
 
@@ -57,6 +57,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25367 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25367">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36357"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_25806 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25806">
@@ -70,16 +79,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26195">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyphenol</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33822"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_33243 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33243">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">natural product</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50860"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33853"/>
     </owl:Class>
     
 
@@ -111,11 +111,39 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33595 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33595">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cyclic compound</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25367"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_33608 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33608">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrogen molecular entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33674"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33655 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33655">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aromatic compound</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33595"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33659 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33659">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic aromatic compound</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33655"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33832"/>
     </owl:Class>
     
 
@@ -148,6 +176,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33832 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33832">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic cyclic compound</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33595"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_72695"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33853 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33853">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenols</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33659"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33822"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_36357 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36357">
@@ -171,6 +219,16 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50860">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic molecular entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33582"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_72695 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_72695">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic molecule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25367"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50860"/>
     </owl:Class>
 </rdf:RDF>
 

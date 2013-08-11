@@ -3,11 +3,14 @@ USECAT= --catalog-xml catalog-v001.xml
 
 all: release
 
-release: cl.obo cl.owl cl-basic.obo cl-basic.owl diff
+release: cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
 
 # ----------------------------------------
 # BUILD
 # ----------------------------------------
+
+# This is a standard OORT build
+# We add a custom step to unfold the import closure in the obo version, because obo does not handle imports well
 
 build/cl.owl: cl-edit.owl
 	ontology-release-runner $(USECAT) --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
@@ -20,23 +23,50 @@ cl-basic.obo: build/cl-simple.obo
 cl-basic.owl: build/cl-simple.owl
 	cp $< $@
 
+%-obocheck: %.obo
+	obo2obo $< -o $@
+
 # ----------------------------------------
 # Regenerate imports
 # ----------------------------------------
+# Uses OWLAPI Module Extraction code
 
+# Type 'make imports/X_import.owl' whenever you wish to refresh the import for an ontology X. This is when:
+#
+#  1. X has changed and we want to include these changes
+#  2. We have added onr or more new IRI from X into cl-edit.owl
+#  3. We have removed references to one or more IRIs in X from cl-edit.owl
+#
+# You should NOT edit these files directly, changes will be overwritten.
+#
+# If you want to add something to these, edit cl-edit.owl and add an axiom with a IRI from X. You don't need to add any information about X.
+
+# Base URI for local subset imports
 CL_IMPORTS_BASE_URI = $(OBO)/cl/imports
+
+# Ontology dependencies
+# We don't include clo, as this is currently not working
 IMPORTS = pato uberon chebi pr go
 
+# Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS))
-t: 
-	echo $(patsubst %, imports/%_import.owl,$(IMPORTS))
 
+KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
+
+# Create an import module using the OWLAPI module extraction code via OWLTools.
+# We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
+# After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
 imports/%_import.owl: cl-edit.owl mirror/%.owl
-	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --extract-mingraph --make-subset-by-properties  BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o file://`pwd`/$@
+	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --extract-mingraph --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o file://`pwd`/$@
 
 # clone remote ontology locally
 mirror/%.owl:
-	wget $(OBO)/$*.owl -O $@
+	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/$*.owl -o $@
+mirror/uberon.owl:
+	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
+mirror/clo.owl:
+	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
+.PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
 # Diffs
