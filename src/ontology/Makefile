@@ -18,10 +18,10 @@ cl.owl: build/cl.owl
 	cp $< $@
 cl.obo: build/cl.owl
 	owltools $(USECAT) $< --merge-imports-closure -o -f obo $@
-cl-basic.obo: build/cl-simple.obo
-	cp $< $@
 cl-basic.owl: build/cl-simple.owl
-	cp $< $@
+	owltools $< --set-ontology-id $(OBO)/cl/$@ -o $@
+cl-basic.obo: cl-basic.owl
+	owltools $< -o -f obo $@
 
 %-obocheck: %.obo
 	obo2obo $< -o $@
@@ -59,7 +59,7 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
 imports/%_import.owl: cl-edit.owl mirror/%.owl
 	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --extract-mingraph --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o file://`pwd`/$@
 
-# clone remote ontology locally
+# clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl:
 	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/$*.owl -o $@
 mirror/uberon.owl:
