@@ -1760,6 +1760,7 @@ synonym: "alpha cell of iselt of Langerhans" EXACT []
 synonym: "pancreatic alpha cell" EXACT []
 xref: BTO:0000990
 xref: FMA:70585
+is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0002067 ! type A enterocrine cell
 relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
 
@@ -2086,6 +2087,7 @@ synonym: "taste bud cell" EXACT []
 xref: FMA:67910
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0000206 ! chemoreceptor cell
+is_a: CL:0000362 ! epidermal cell
 is_a: CL:0002076 ! endo-epithelial cell
 
 [Term]
@@ -4475,6 +4477,7 @@ xref: FMA:67609
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000506 ! enkephalin secreting cell
 is_a: CL:0000509 ! gastrin secreting cell
+is_a: CL:0002180 ! mucous cell of stomach
 
 [Term]
 id: CL:0000509
@@ -5167,6 +5170,7 @@ is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000166 ! chromaffin cell
 is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000506 ! enkephalin secreting cell
+is_a: CL:0002251 ! epithelial cell of alimentary canal
 
 [Term]
 id: CL:0000578
@@ -7894,6 +7898,7 @@ name: neuromast mantle cell
 namespace: cell
 def: "Neuromast mantle cell is a non-sensory cell. Neuromast mantle cells surround the neuromast support cells and neuromast hair cells, separating the neuromast from the epidermis, and secrete cupula in which the ciliary bundles of all the hair cells are embedded." [ISBN:0125296509]
 is_a: CL:0000151 ! secretory cell
+disjoint_from: CL:0000855 ! sensory hair cell
 
 [Term]
 id: CL:0000852
@@ -7901,6 +7906,7 @@ name: neuromast support cell
 namespace: cell
 def: "Neuromast support cell is a non-sensory cell of the neuromast that extend between the sensory hair cells from the basement membrane to the apical surface; neuromast support cells are surrounded by neuromast mantle cells." [ISBN:0125296509]
 is_a: CL:0000630 ! supportive cell
+disjoint_from: CL:0000855 ! sensory hair cell
 
 [Term]
 id: CL:0000853
@@ -11813,6 +11819,7 @@ name: basal cell of olfactory epithelium
 namespace: cell
 alt_id: CL:1000395
 def: "An epithelial cell located on the basal lamina of the olfactory epithelium." [GOC:tfm, PMID:7143026]
+synonym: "horizontal basal call" BROAD []
 xref: FMA:62303
 is_a: CL:0002167 ! olfactory epithelial cell
 created_by: tmeehan
@@ -13135,6 +13142,7 @@ synonym: "type 3 taste cell" EXACT []
 xref: FMA:67940
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0000209 ! taste receptor cell
+is_a: CL:1000428 ! stem cell of epidermis
 created_by: tmeehan
 creation_date: 2010-09-13T10:57:21Z
 
@@ -13897,6 +13905,7 @@ id: CL:0002353
 name: fetal liver hematopoietic progenitor cell
 namespace: cell
 def: "A hematopoietic stem cell that resides in the fetal liver. In mice, this cell type is first observed at E10.5. This cell type is MHC-positive, HSA-positive, AA4.1-positive, CD45-positive, Sca-1 positive, CD150-positive, CD48-negative and CD244-negative." [GOC:tfm, ISBN:978-1-60327-346-6, PMID:16569764]
+is_a: CL:0002195 ! hepatic stem cell
 is_a: CL:0002352 ! gestational hematopoietic stem cell
 created_by: tmeehan
 creation_date: 2010-09-22T09:08:32Z
@@ -13907,6 +13916,7 @@ name: yolk sac hematopoietic stem cell
 namespace: cell
 def: "A hematopoietic stem found in the yolk sac. In mice, this cell type is Sca-1-negative, CD45-negative, MHC-negative, HSA-positive, AA4.1-positive, CD44-positive." [doi:10.1097/MOH.0b013e3282f97ae1, GOC:tfm]
 synonym: "hemangioblast precursor" EXACT []
+is_a: CL:0000349 ! extraembryonic cell
 is_a: CL:0002352 ! gestational hematopoietic stem cell
 created_by: tmeehan
 creation_date: 2010-09-22T09:08:34Z
@@ -13961,6 +13971,7 @@ id: CL:0002359
 name: placental hematopoietic stem cell
 namespace: cell
 def: "A hematopoietic stem cell of the placenta. This cell type is first observed E10.5 This cell type may give rise to fetal liver hematopoietic stem cells." [GOC:tfm, ISBN:978-1-60327-346-6]
+is_a: CL:0000349 ! extraembryonic cell
 is_a: CL:0002352 ! gestational hematopoietic stem cell
 created_by: tmeehan
 creation_date: 2010-09-22T10:30:02Z
@@ -15442,8 +15453,9 @@ namespace: cell
 def: "An enteroendocrine cell of the small intestine that secretes motilin." [GOC:tfm, PMID:15153415]
 synonym: "Mo enteroendocrine cell" BROAD []
 xref: FMA:63420
-is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0002272 ! motilin secreting cell
+is_a: CL:1001516 ! intestinal enteroendocrine cell
+is_a: CL:1001598 ! small intestine glandular cell
 created_by: tmeehan
 creation_date: 2010-12-07T03:55:49Z
 
@@ -17828,6 +17840,7 @@ def: "Astrocyte-like radial glial cell that extends vertically throughout the re
 synonym: "Muller glia " EXACT []
 synonym: "MÌ?ller cell" EXACT []
 is_a: CL:0000681 ! radial glial cell
+is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0011108
@@ -17835,6 +17848,41 @@ name: colon epithelial cell
 def: "Epithelial cell that is part of the colon epithelium. " []
 synonym: "colonic epithelial cell" EXACT []
 is_a: CL:0002253 ! epithelial cell of large intestine
+
+[Term]
+id: CL:0011109
+name: hypocretin-secreting neuron
+def: "A neuron that releases hypocretin as a neurotransmitter." [PMID:23848055]
+synonym: "orexin" EXACT []
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:0011110
+name: histaminergic neuron
+def: "Neuron that secretes histamine." [PMID:22677810]
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:0011111
+name: gonadotropin releasing neuron
+def: "Neuroendocrine cells that are born in the nasal placode during embryonic development and migrate through the nose and forebrain to the hypothalamus, where they regulate reproduction." [PMID:21828096]
+synonym: "GnRH neuron" EXACT []
+synonym: "GnRH-secreting neuron" EXACT []
+is_a: CL:0011112 ! magnocellular neurosecretory cell
+
+[Term]
+id: CL:0011112
+name: magnocellular neurosecretory cell
+def: "Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland." [PMID:10711808]
+is_a: CL:0000167 ! peptide hormone secreting cell
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:0011113
+name: spiral ganglion neuron
+def: "Neuron found in the spriral ganglion." []
+is_a: CL:0000540 ! neuron
+is_a: CL:0001035 ! bone cell
 
 [Term]
 id: CL:0012000
@@ -20418,8 +20466,7 @@ id: CL:1001505
 name: parvocellular neurosecretory cell
 namespace: cl
 def: "the secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system" [MP:0010125]
-is_a: CL:0000167 ! peptide hormone secreting cell
-is_a: CL:0000540 ! neuron
+is_a: CL:0011112 ! magnocellular neurosecretory cell
 
 [Term]
 id: CL:1001509

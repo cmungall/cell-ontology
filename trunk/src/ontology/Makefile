@@ -64,6 +64,10 @@ mirror/%.owl:
 	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/$*.owl -o $@
 mirror/uberon.owl:
 	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
+mirror/pr.obo:
+	wget $(OBO)/pr.obo -O $@.tmp && obo-grep.pl -r 'id: PR:' $@.tmp > $@
+mirror/pr.owl: mirror/pr.obo
+	owltools $< --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
 mirror/clo.owl:
 	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
 .PRECIOUS: mirror/%.owl
