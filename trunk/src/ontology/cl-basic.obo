@@ -505,6 +505,7 @@ xref: BTO:0002881
 xref: CALOHA:TS-2360
 xref: FMA:86684
 is_a: CL:0000048 ! multi fate stem cell
+is_a: CL:0002319 ! neural cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
 
 [Term]
@@ -1239,6 +1240,8 @@ id: CL:0000121
 name: Purkinje cell
 namespace: cell
 def: "The output neuron of the cerebellar cortex." [MESH:A08.186.211.132.810.428.200.212.600]
+synonym: "cerebellar Purkinje cell" EXACT []
+synonym: "cerebellum Purkinje cell" EXACT []
 synonym: "Purkinje neuron" EXACT []
 synonym: "Purkinje's cell" EXACT []
 xref: BTO:0001011
@@ -4518,8 +4521,7 @@ namespace: cell
 alt_id: CL:0000714
 def: "A precursor cell destined to differentiate into cardiac muscle cell." [GOC:tfm, MESH:A11.635.470]
 xref: FMA:84797
-is_a: CL:0000056 ! myoblast
-is_a: CL:0002494 ! cardiocyte
+is_a: CL:0010021 ! cardiac myoblast
 
 [Term]
 id: CL:0000514
@@ -5118,7 +5120,7 @@ def: "One of the two photoreceptor cell types in the vertebrate retina. In cones
 xref: BTO:0001036
 xref: CALOHA:TS-0866
 xref: FMA:67748
-is_a: CL:0000287 ! eye photoreceptor cell
+is_a: CL:0010009 ! camera type eye photoreceptor cell
 relationship: develops_from CL:0002672 ! retinal progenitor cell
 
 [Term]
@@ -5429,7 +5431,7 @@ def: "One of the two photoreceptor cell types of the vertebrate retina. In rods 
 xref: BTO:0001024
 xref: CALOHA:TS-0870
 xref: FMA:67747
-is_a: CL:0000287 ! eye photoreceptor cell
+is_a: CL:0010009 ! camera type eye photoreceptor cell
 relationship: develops_from CL:0002672 ! retinal progenitor cell
 
 [Term]
@@ -5746,6 +5748,7 @@ xref: FMA:83089
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000166 ! chromaffin cell
 is_a: CL:0000167 ! peptide hormone secreting cell
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000638
@@ -6336,6 +6339,7 @@ synonym: "epithelial cell of choroid plexus" EXACT []
 xref: FMA:70549
 is_a: CL:0000065 ! ependymal cell
 is_a: CL:0000627 ! transporting cell
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000707
@@ -6655,6 +6659,7 @@ name: retinal bipolar neuron
 namespace: cell
 def: "A bipolar neuron found in the retina and having connections with photoreceptors cells and neurons in the inner plexiform layer." [PMID:14689473]
 is_a: CL:0000103 ! bipolar neuron
+is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0000749
@@ -7898,6 +7903,7 @@ name: neuromast mantle cell
 namespace: cell
 def: "Neuromast mantle cell is a non-sensory cell. Neuromast mantle cells surround the neuromast support cells and neuromast hair cells, separating the neuromast from the epidermis, and secrete cupula in which the ciliary bundles of all the hair cells are embedded." [ISBN:0125296509]
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0002319 ! neural cell
 disjoint_from: CL:0000855 ! sensory hair cell
 
 [Term]
@@ -7906,6 +7912,7 @@ name: neuromast support cell
 namespace: cell
 def: "Neuromast support cell is a non-sensory cell of the neuromast that extend between the sensory hair cells from the basement membrane to the apical surface; neuromast support cells are surrounded by neuromast mantle cells." [ISBN:0125296509]
 is_a: CL:0000630 ! supportive cell
+is_a: CL:0002319 ! neural cell
 disjoint_from: CL:0000855 ! sensory hair cell
 
 [Term]
@@ -8120,6 +8127,7 @@ namespace: cell
 def: "A tissue-resident macrophage found in the central nervous system." [GO_REF:0000031, PMID:16322748]
 synonym: "CNS macrophage" EXACT []
 is_a: CL:0000864 ! tissue-resident macrophage
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000879
@@ -10543,7 +10551,7 @@ namespace: cell
 def: "A resident monocyte that is Gr-1 low, CD43-positive, and CX3CR1-positive." [GOC:tfm, PMID:8890901]
 comment: Markers are associated with mice. The Gr epitope is used to describe this cell type is found on both Ly6c and Ly6g. However, its the Ly6c that is considered the specific marker, and thus used in the cross-product. Also, this cell-type is sometimes described as being Gr1-negative.
 is_a: CL:0000875 ! non-classical monocyte
-is_a: CL:0001022 ! CD115-positive monocyte
+is_a: CL:0002398 ! Gr1-positive, CD43-positive monocyte
 relationship: develops_from CL:0002398 ! Gr1-positive, CD43-positive monocyte
 created_by: tmeehan
 creation_date: 2010-06-05T08:25:44Z
@@ -11204,7 +11212,7 @@ id: CL:0002110
 name: B220-low CD38-positive naive B cell
 namespace: cell
 def: "A B220-low CD38-positive naive B cell is a CD38-positive naive B cell that has the phenotype B220-low, CD38-positive, surface IgD-positive, surface IgM-positive, and CD27-negative, that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
-is_a: CL:0002101 ! CD38-positive naive B cell
+is_a: CL:0002109 ! B220-positive CD38-positive naive B cell
 
 [Term]
 id: CL:0002111
@@ -11232,7 +11240,7 @@ id: CL:0002113
 name: B220-low CD38-negative unswitched memory B cell
 namespace: cell
 def: "A B220-low CD38-negative unswitched memory B cell is a CD38-negative unswitched memory B cell that has the phenotype B220-low, CD38-negative, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
-is_a: CL:0002111 ! CD38-negative unswitched memory B cell
+is_a: CL:0002112 ! B220-positive CD38-negative unswitched memory B cell
 
 [Term]
 id: CL:0002114
@@ -11260,7 +11268,7 @@ id: CL:0002116
 name: B220-low CD38-positive unswitched memory B cell
 namespace: cell
 def: "A B220-low CD38-positive unswitched memory B cell is a CD38-positive unswitched memory B cell that has the phenotype B220-low, CD38-positive, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
-is_a: CL:0002114 ! CD38-positive unswitched memory B cell
+is_a: CL:0002115 ! B220-positive CD38-positive unswitched memory B cell
 
 [Term]
 id: CL:0002117
@@ -11316,7 +11324,7 @@ id: CL:0002123
 name: B220-low CD38-positive IgG-negative class switched memory B cell
 namespace: cell
 def: "A B220-low CD38-positive IgG-negative memory B cell is a CD38-positive IgG-negative class switched memory B cell that lacks IgG on the cell surface with the phenotype B220-low, CD38-positive, and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
-is_a: CL:0002119 ! CD38-positive IgG-negative class switched memory B cell
+is_a: CL:0002122 ! B220-positive CD38-positive IgG-negative class switched memory B cell
 
 [Term]
 id: CL:0002124
@@ -11822,6 +11830,7 @@ def: "An epithelial cell located on the basal lamina of the olfactory epithelium
 synonym: "horizontal basal call" BROAD []
 xref: FMA:62303
 is_a: CL:0002167 ! olfactory epithelial cell
+is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2010-08-26T01:58:54Z
 
@@ -11915,6 +11924,7 @@ synonym: "folliculostellate cell of pars anterior of adenohypophysis" EXACT []
 xref: FMA:83102
 is_a: CL:0000642 ! folliculostellate cell
 is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2010-08-25T03:10:10Z
 
@@ -13875,8 +13885,7 @@ def: "An endothelial cell that lines the intracavitary lumen of the heart, separ
 synonym: "endocardial endothelial cell" EXACT []
 synonym: "endothelial cell of endocardium" EXACT [FMA:75621]
 xref: FMA:75621
-is_a: CL:0000115 ! endothelial cell
-is_a: CL:0002494 ! cardiocyte
+is_a: CL:0010008 ! cardiac endothelial cell
 created_by: tmeehan
 creation_date: 2010-09-21T04:33:05Z
 
@@ -15281,6 +15290,7 @@ name: retinal melanocyte
 namespace: cell
 def: "A melanocyte of the retina. This cell type is distinct from pigmented retinal epithelium." [GOC:tfm, MP:0010190]
 is_a: CL:0000148 ! melanocyte
+is_a: CL:0009004 ! retinal cell
 created_by: tmeehan
 creation_date: 2010-12-03T03:25:32Z
 
@@ -15525,6 +15535,7 @@ id: CL:0002509
 name: CD103-positive, langerin-positive lymph node dendritic cell
 namespace: cell
 def: "A langerin-positive lymph node dendritic cell that is CD103-positive and CD11b-low." [GOC:tfm, http://www.immgen.org/index_content.html]
+is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 is_a: CL:0002461 ! CD103-positive dendritic cell
 is_a: CL:0002507 ! langerin-positive lymph node dendritic cell
 created_by: tmeehan
@@ -15535,6 +15546,7 @@ id: CL:0002510
 name: CD103-negative, langerin-positive lymph node dendritic cell
 namespace: cell
 def: "A langerin-positive lymph node dendritic cell that is CD103-negative and CD11b-high." [GOC:tfm, http://www.immgen.org/index_content.html]
+is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 is_a: CL:0002507 ! langerin-positive lymph node dendritic cell
 created_by: tmeehan
 creation_date: 2011-01-21T02:11:14Z
@@ -15544,6 +15556,7 @@ id: CL:0002511
 name: CD11b-low, CD103-negative, langerin-negative lymph node dendritic cell
 namespace: cell
 def: "A langerin-negative lymph node dendritic cell that is CD103-negative and CD11b-low." [GOC:tfm, http://www.immgen.org/index_content.html]
+is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 is_a: CL:0002508 ! langerin-negative, CD103-negative lymph node dendritic cell
 created_by: tmeehan
 creation_date: 2011-01-21T02:22:15Z
@@ -15553,6 +15566,7 @@ id: CL:0002512
 name: CD11b-high, CD103-negative, langerin-negative lymph node dendritic cell
 namespace: cell
 def: "A langerin-negative lymph node dendritic cell that is CD103-negative and CD11b-high." [GOC:tfm, http://www.immgen.org/index_content.html]
+is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 is_a: CL:0002508 ! langerin-negative, CD103-negative lymph node dendritic cell
 created_by: tmeehan
 creation_date: 2011-01-21T02:16:21Z
@@ -15917,6 +15931,7 @@ name: fibroblast of choroid plexus
 namespace: cell
 def: "A fibroblast that is part of the choroid plexus." [GOC:tfm]
 is_a: CL:0000057 ! fibroblast
+is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2011-02-28T05:01:39Z
 
@@ -16162,6 +16177,7 @@ name: central nervous system pericyte
 namespace: cell
 def: "A pericyte of the central nervous system." [GOC:tfm]
 is_a: CL:0000669 ! pericyte cell
+is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2011-03-02T02:54:18Z
 
@@ -16252,6 +16268,7 @@ name: retinal blood vessel endothelial cell
 namespace: cell
 def: "A blood vessel endothelial cell that is part of the retina." [GOC:tfm]
 is_a: CL:0000071 ! blood vessel endothelial cell
+is_a: CL:0009004 ! retinal cell
 created_by: tmeehan
 creation_date: 2011-03-06T03:28:27Z
 
@@ -16264,7 +16281,7 @@ xref: BTO:0004910
 xref: FMA:75802
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000149 ! visual pigment cell
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0009004 ! retinal cell
 created_by: tmeehan
 creation_date: 2011-03-06T03:37:09Z
 
@@ -16292,6 +16309,7 @@ name: smooth muscle cell of the brain vasculature
 namespace: cell
 def: "A vascular associated smooth muscle cell of the brain vasculature." [GOC:tfm]
 is_a: CL:0000359 ! vascular associated smooth muscle cell
+is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:20Z
 
@@ -16472,6 +16490,7 @@ def: "A CNS neuron of the cerebral cortex." [GOC:tfm]
 synonym: "cortical neuron" EXACT []
 xref: BTO:0004102
 xref: FMA:84104
+is_a: CL:0010012 ! cerebral cortex neuron
 is_a: CL:0012001 ! neuron of the forebrain
 created_by: tmeehan
 creation_date: 2011-03-06T07:37:08Z
@@ -17271,8 +17290,8 @@ synonym: "KA cell" EXACT []
 synonym: "KA interneuron" EXACT [PMID:15539490]
 synonym: "KA neuron" EXACT [PMID:9634146]
 synonym: "Kolmer-Agduhr cell" EXACT []
-is_a: CL:0000617 ! GABAergic neuron
 is_a: CL:0005000 ! spinal cord interneuron
+is_a: CL:0011005 ! GABAergic interneuron
 
 [Term]
 id: CL:0005008
@@ -17741,6 +17760,73 @@ is_a: CL:1001610 ! bone marrow hematopoietic cell
 created_by: GOC:cjm
 
 [Term]
+id: CL:0010005
+name: atrioventricular bundle cell
+def: "A specialized cardiomyocyte that transmit signals from the AV node to the cardiac Purkinje fibers." [GOC:mtg_heart]
+synonym: "AV bundle cell" EXACT []
+is_a: CL:0010007 ! His-Purkinje system cell
+
+[Term]
+id: CL:0010006
+name: cardiac blood vessel endothelial cell
+is_a: CL:0000071 ! blood vessel endothelial cell
+is_a: CL:0010008 ! cardiac endothelial cell
+
+[Term]
+id: CL:0010007
+name: His-Purkinje system cell
+is_a: CL:0000000 ! cell
+
+[Term]
+id: CL:0010008
+name: cardiac endothelial cell
+is_a: CL:0000115 ! endothelial cell
+is_a: CL:0002494 ! cardiocyte
+
+[Term]
+id: CL:0010009
+name: camera type eye photoreceptor cell
+is_a: CL:0000287 ! eye photoreceptor cell
+is_a: CL:0009004 ! retinal cell
+
+[Term]
+id: CL:0010010
+name: cerebellar stellate cell
+is_a: CL:0000122 ! stellate cell
+is_a: CL:1001611 ! cerebellar neuron
+
+[Term]
+id: CL:0010011
+name: cerebral cortex GABAergic interneuron
+def: "a GABAergic neuron that is part_of a cerebral cortex" []
+is_a: CL:0000617 ! GABAergic neuron
+is_a: CL:0010012 ! cerebral cortex neuron
+
+[Term]
+id: CL:0010012
+name: cerebral cortex neuron
+def: "a neuron that is part_of a cerebral cortex" []
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:0010020
+name: cardiac glial cell
+is_a: CL:0000125 ! glial cell
+is_a: CL:0002494 ! cardiocyte
+
+[Term]
+id: CL:0010021
+name: cardiac myoblast
+is_a: CL:0000056 ! myoblast
+is_a: CL:0002494 ! cardiocyte
+
+[Term]
+id: CL:0010022
+name: cardiac neuron
+is_a: CL:0000540 ! neuron
+is_a: CL:0002494 ! cardiocyte
+
+[Term]
 id: CL:0011000
 name: dorsal horn interneuron
 def: "A CNS interneuron located in the dorsal horn of the spinal cord." [GOC:nv]
@@ -18121,7 +18207,7 @@ def: "A mesothelial cell that is part of the dura mater." [GOC:tfm]
 synonym: "squamous mesothelial cell of dura mater" EXACT [FMA:256516]
 xref: FMA:256516
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:1000299
@@ -18630,7 +18716,7 @@ name: microfold cell of epithelium proper of jejunum
 namespace: cell
 def: "A M cell that is part of the epithelium proper of jejunum." [GOC:tfm]
 xref: FMA:263136
-is_a: CL:1000354 ! microfold cell of epithelium of intestinal villus
+is_a: CL:1000353 ! microfold cell of epithelium of small intestine
 
 [Term]
 id: CL:1000358
@@ -18638,7 +18724,7 @@ name: microfold cell of epithelium proper of ileum
 namespace: cell
 def: "A M cell that is part of the epithelium proper of ileum." [GOC:tfm]
 xref: FMA:263138
-is_a: CL:1000354 ! microfold cell of epithelium of intestinal villus
+is_a: CL:1000353 ! microfold cell of epithelium of small intestine
 
 [Term]
 id: CL:1000359
@@ -19401,6 +19487,7 @@ def: "A transitional myocyte that is part of the atrioventricular bundle." [GOC:
 xref: FMA:83388
 xref: FMA:83885
 is_a: CL:0002073 ! transitional myocyte
+is_a: CL:0010005 ! atrioventricular bundle cell
 
 [Term]
 id: CL:1000482
@@ -19426,6 +19513,7 @@ namespace: cell
 def: "A Purkinje myocyte that is part of the atrioventricular bundle." [GOC:tfm]
 xref: FMA:83393
 is_a: CL:0002068 ! Purkinje myocyte
+is_a: CL:0010005 ! atrioventricular bundle cell
 
 [Term]
 id: CL:1000486
@@ -20815,6 +20903,7 @@ synonym: "cerebral cortex endothelial cells" RELATED [CALOHA:TS-2372]
 synonym: "endothelial cells of cerebral cortex" RELATED [CALOHA:TS-2372]
 xref: CALOHA:TS-2372
 is_a: CL:0000115 ! endothelial cell
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:1001603
@@ -20902,12 +20991,14 @@ name: has_completed
 [Typedef]
 id: has_high_plasma_membrane_amount
 name: has_high_plasma_membrane_amount
-def: "A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al *PMID:19243617)." [PMID:19243617]
+def: "A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617)." [PMID:19243617]
+is_a: has_plasma_membrane_part ! has_plasma_membrane_part
 
 [Typedef]
 id: has_low_plasma_membrane_amount
 name: has_low_plasma_membrane_amount
-def: "A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al *PMID:19243617)." [PMID:19243617]
+def: "A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617)." [PMID:19243617]
+is_a: has_plasma_membrane_part ! has_plasma_membrane_part
 
 [Typedef]
 id: has_not_completed
@@ -20922,6 +21013,7 @@ is_transitive: true
 id: has_plasma_membrane_part
 name: has_plasma_membrane_part
 def: "Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part." [PMID:19243617]
+is_a: has_part ! has_part
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
 
 [Typedef]
