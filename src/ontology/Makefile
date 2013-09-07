@@ -12,8 +12,9 @@ release: cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck d
 # This is a standard OORT build
 # We add a custom step to unfold the import closure in the obo version, because obo does not handle imports well
 
+# TODO: allow-equivalent-pairs is there for the CL:cell vs GO:cell
 build/cl.owl: cl-edit.owl
-	ontology-release-runner $(USECAT) --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
+	ontology-release-runner $(USECAT) --allow-equivalent-pairs --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
 cl.owl: build/cl.owl
 	cp $< $@
 cl.obo: build/cl.owl
@@ -57,7 +58,7 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
 imports/%_import.owl: cl-edit.owl mirror/%.owl
-	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --extract-mingraph --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o file://`pwd`/$@
+	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o file://`pwd`/$@
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl:
@@ -95,6 +96,13 @@ minidiff: build/cl.obo
 #	cp $< $@
 
 
+
+# ----------------------------------------
+# REPORTING
+# ----------------------------------------
+
+cl-to-pr.txt: cl.obo
+	blip-findall -i $< "parent(X,R,Y),id_idspace(X,'CL'),id_idspace(Y,'PR')" -select "p(X,R,Y)" -label -no_pred > $@
 
 # ----------------------------------------
 # EXPERIMENTAL
