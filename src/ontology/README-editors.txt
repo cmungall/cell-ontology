@@ -26,7 +26,7 @@ Setting up: Obtain ontology from svn (one time only):
 See instructions here:
 https://code.google.com/p/cell-ontology/source/checkout
 
-  svn checkout https://cell-ontology.googlecode.com/svn/trunk/src/ontology cell-ontology --username <USERNAME>
+  svn checkout https://cell-ontology.googlecode.com/svn/trunk/src/ontology 	cell-ontology --username <USERNAME>
 
 
 GETTING STARTED
@@ -41,10 +41,9 @@ svn update
 
 Then, open the file cl-edit.owl in Protege
 
-NOTE: If you get an error in the opening that says "org.xml.sax.SAXParseException: XML document structures must start and end within the same entity." this is an error in reading files from SourceForge. Don't worry about it, just simply wait a few minutes and try again with a fresh opening of Protege.
+NOTE: If you get an error in the opening that says "org.xml.sax.SAXParseException: XML document structures must start and end within the same entity." this is an error in reading files from the web. Don't worry about it, just simply wait a few minutes and try again with a fresh opening of Protege.
 
-Switch on the Elk reasoner (see how to get plugins above). If you are making changes, be sure to
-synchronize the reasoner.
+Switch on the Elk reasoner (see how to get plugins above). If you are making changes, be sure to synchronize the reasoner.
 
 Edit the ontology in protege:
 
@@ -141,6 +140,22 @@ You can check on the build here:
   http://build.berkeleybop.org/job/build-cl/
   
 Check for errors in the report, send an email to curators if you cannot determine what the error is.
+
+MIREOTING
+---------
+Sometimes you may wish to reference a class from another ontology in the context of editing CL, and the term may not yet be mireoted. You can currently pull in a new term from GO, Uberon, Chebi, CLO, PATO or PR. 
+
+1. Identify the class to be included, and copy the URI (for example, look in Ontobee or open file in separate Protege instance and do control U to copy the URI). Note the superclass(es) of the class.
+
+2. Whilst editing CL, change the "Active Ontology" file in the top header to the import file that will house the new class, for example, uberon_import.owl
+
+3. Add a new class under the appropriate superclass in the import file, change the URI by doing control U and pasting the URI as per above. Make sure to add the label as an annotation so that you can find the class later.
+
+4. Save the file (note that you should save in RDF/XML with the "use XML entities" NOT checked in the Preferences/Save tab.
+
+5. Do a Diff to make sure you are saving in the proper file format.
+
+*6. Advanced editors with Owltools - run "make imports", for example, make imports/uberon_import.owl  in the CL ontology directory. This will pull in the closure and add the metadata.
 
 CHECKLIST
 ---------
