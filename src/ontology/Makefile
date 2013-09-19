@@ -14,7 +14,7 @@ release: cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck d
 
 # TODO: allow-equivalent-pairs is there for the CL:cell vs GO:cell
 build/cl.owl: cl-edit.owl
-	ontology-release-runner $(USECAT) --allow-equivalent-pairs --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
+	ontology-release-runner $(USECAT) --ignore-selected-equivalent-pairs 'CL:0000000' --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
 cl.owl: build/cl.owl
 	cp $< $@
 cl.obo: build/cl.owl
