@@ -389,7 +389,7 @@ xref: FMA:70337
 xref: FMA:86475
 xref: VHOG:0001485
 is_a: CL:0000048 ! multi fate stem cell
-is_a: CL:0000988 ! hematopoietic cell
+is_a: CL:0008001 ! hematopoietic precursor cell
 relationship: develops_from CL:0000566 ! angioblastic mesenchymal cell
 
 [Term]
@@ -614,7 +614,7 @@ xref: FBbt:00005083
 xref: FMA:70335
 xref: VHOG:0001529
 is_a: CL:0000680 ! muscle precursor cell
-relationship: develops_from CL:0000355 ! muscle stem cell
+relationship: develops_from CL:0000355 ! skeletal muscle stem cell
 
 [Term]
 id: CL:0000057
@@ -1926,7 +1926,7 @@ def: "A somatic cell located in skeletal muscle." [GOC:tfm]
 xref: BTO:0004392
 xref: CALOHA:TS-2158
 xref: FMA:9727
-is_a: CL:0000187 ! muscle cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:0000189
@@ -1935,7 +1935,7 @@ namespace: cell
 def: "A muscle cell that develops tension more slowly than a fast-twitch fiber." [GOC:tfm, ISBN:0323052908]
 synonym: "slow muscle fiber" RELATED [ISBN:0815316208]
 xref: FMA:84448
-is_a: CL:0002372 ! myotube
+is_a: CL:0008002 ! skeletal muscle fiber
 relationship: develops_from CL:0000857 ! slow muscle myoblast
 
 [Term]
@@ -1944,7 +1944,7 @@ name: fast muscle cell
 namespace: cell
 def: "A muscle cell that can develop high tension rapidly. It is usually innervated by a single alpha neuron ." [GOC:tfm, ISBN:0323052908]
 synonym: "glycolytic muscle fiber" EXACT []
-is_a: CL:0002372 ! myotube
+is_a: CL:0008002 ! skeletal muscle fiber
 relationship: develops_from CL:0000858 ! fast muscle myoblast
 
 [Term]
@@ -1960,7 +1960,8 @@ synonym: "smooth muscle fiber" EXACT []
 xref: BTO:0004576
 xref: CALOHA:TS-2159
 xref: FMA:14072
-is_a: CL:0000187 ! muscle cell
+is_a: CL:0008000 ! non-striated muscle cell
+is_a: CL:0008007 ! visceral muscle cell
 relationship: develops_from CL:0000514 ! smooth muscle myoblast
 
 [Term]
@@ -1968,8 +1969,7 @@ id: CL:0000193
 name: cardiac muscle cell (sensu Arthopoda)
 namespace: cell
 alt_id: CL:0000466
-def: "A striated muscle cell found in the heart. They develop from cardiac myoblasts." [MESH:A11.620.500]
-is_a: CL:0000228 ! multinucleate cell
+def: "A striated muscle cell of an arthropod heart that participates in heart contraction." [MESH:A11.620.500]
 is_a: CL:0000746 ! cardiac muscle cell
 relationship: develops_from CL:0000465 ! cardioblast (sensu Arthropoda)
 
@@ -1990,8 +1990,7 @@ is_obsolete: true
 id: CL:0000196
 name: flight muscle cell
 namespace: cell
-is_a: CL:0000187 ! muscle cell
-is_a: CL:0000228 ! multinucleate cell
+is_a: CL:0008003 ! somatic muscle myotube
 
 [Term]
 id: CL:0000197
@@ -2245,13 +2244,14 @@ def: "A cell that lacks a nucleus." [FB:ma]
 synonym: "non-nucleated cell" EXACT []
 xref: FMA:68647
 is_a: CL:0000003 ! native cell
+disjoint_from: CL:0002242 ! nucleate cell
 
 [Term]
 id: CL:0000226
 name: single nucleate cell
 namespace: cell
 def: "A cell with a single nucleus." [FB:ma, GOC:tfm]
-is_a: CL:0000003 ! native cell
+is_a: CL:0002242 ! nucleate cell
 
 [Term]
 id: CL:0000227
@@ -2269,7 +2269,7 @@ synonym: "syncytial cell" EXACT []
 synonym: "syncytium" EXACT []
 xref: AEO:0000203
 xref: WBbt:0008074
-is_a: CL:0000003 ! native cell
+is_a: CL:0002242 ! nucleate cell
 
 [Term]
 id: CL:0000229
@@ -3289,11 +3289,12 @@ is_a: CL:0000048 ! multi fate stem cell
 
 [Term]
 id: CL:0000355
-name: muscle stem cell
+name: skeletal muscle stem cell
 namespace: cell
 def: "A multifate stem cell found in skeletal muscle than can differentiate into many different cell types. Distinct cell type from satellite cell." [PMID:18282570]
 xref: FMA:86767
 is_a: CL:0000048 ! multi fate stem cell
+is_a: CL:0000188 ! skeletal muscle cell
 
 [Term]
 id: CL:0000356
@@ -3956,6 +3957,8 @@ is_a: CL:0000167 ! peptide hormone secreting cell
 id: CL:0000444
 name: obliquely striated muscle cell
 namespace: cell
+def: "A muscle cell in which the fibers are organised into sarcomeres but in which adjacent myofibrils are offset from each other, producing an oblique banding pattern." [GOC:DOS, PMID:8720463]
+comment: Examples include the somatic muscles of nemotodes and cephalopods.
 is_a: CL:0000737 ! striated muscle cell
 
 [Term]
@@ -4127,7 +4130,7 @@ id: CL:0000465
 name: cardioblast (sensu Arthropoda)
 namespace: cell
 xref: FBbt:00001666
-is_a: CL:0000513 ! cardiac muscle myoblast
+is_a: CL:0010021 ! cardiac myoblast
 
 [Term]
 id: CL:0000467
@@ -4521,7 +4524,9 @@ namespace: cell
 alt_id: CL:0000714
 def: "A precursor cell destined to differentiate into cardiac muscle cell." [GOC:tfm, MESH:A11.635.470]
 xref: FMA:84797
+is_a: CL:0002494 ! cardiocyte
 is_a: CL:0010021 ! cardiac myoblast
+relationship: RO:0002203 CL:0000746 ! develops into cardiac muscle cell
 
 [Term]
 id: CL:0000514
@@ -4532,6 +4537,7 @@ synonym: "myoblast, smooth muscle" EXACT [MESH:D032390]
 synonym: "satellite cell" RELATED []
 xref: FMA:84798
 is_a: CL:0000056 ! myoblast
+relationship: RO:0002203 CL:0000192 ! develops into smooth muscle cell
 
 [Term]
 id: CL:0000515
@@ -4541,6 +4547,7 @@ def: "A myoblast that differentiates into skeletal muscle fibers." [SANBI:mhl]
 synonym: "skeletal myoblast" EXACT []
 xref: FMA:84799
 is_a: CL:0000056 ! myoblast
+relationship: RO:0002203 CL:0008002 ! develops into skeletal muscle fiber
 
 [Term]
 id: CL:0000516
@@ -4996,7 +5003,6 @@ synonym: "band form" BROAD []
 synonym: "rod neutrophil" EXACT []
 synonym: "stab cell" BROAD []
 is_a: CL:0000776 ! immature neutrophil
-is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000582 ! neutrophilic metamyelocyte
 
 [Term]
@@ -5222,7 +5228,6 @@ synonym: "juvenile neutrophil" EXACT []
 xref: FMA:84197
 is_a: CL:0000776 ! immature neutrophil
 is_a: CL:0002192 ! metamyelocyte
-is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000580 ! neutrophilic myelocyte
 
 [Term]
@@ -5348,6 +5353,7 @@ namespace: cell
 def: "An erythrocyte lacking a nucleus." [GOC:add, GOC:tfm]
 synonym: "RBC" BROAD []
 synonym: "red blood cell" BROAD []
+is_a: CL:0000225 ! anucleate cell
 is_a: CL:0000232 ! erythrocyte
 relationship: develops_from CL:0002422 ! enucleated reticulocyte
 
@@ -5584,7 +5590,9 @@ is_obsolete: true
 id: CL:0000621
 name: fusion competent myoblast
 namespace: cell
+def: "A myoblast that is committed to a myotube-specific program of differentiation but not yet fused. It undergoes very limited additional proliferation. After fusion, it will take on a muscle identity specified by a `muscle founder cell` (CL:0008006)." [PMID:22274696]
 is_a: CL:0000056 ! myoblast
+relationship: RO:0002203 CL:0008003 ! develops into somatic muscle myotube
 
 [Term]
 id: CL:0000622
@@ -6127,6 +6135,7 @@ namespace: cell
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002371 ! somatic cell
 relationship: develops_from CL:0000222 ! mesodermal cell
+relationship: RO:0002203 CL:0000187 ! develops into muscle cell
 
 [Term]
 id: CL:0000681
@@ -6560,6 +6569,7 @@ xref: BTO:0002916
 xref: CALOHA:TS-2157
 xref: FMA:86936
 is_a: CL:0000187 ! muscle cell
+disjoint_from: CL:0008000 ! non-striated muscle cell
 
 [Term]
 id: CL:0000738
@@ -6631,7 +6641,8 @@ id: CL:0000746
 name: cardiac muscle cell
 namespace: cell
 alt_id: FMA:83808
-def: "Cardiac muscle cells are striated muscle cells that are responsible for heart contraction. In mammals, the contractile fiber resembles those of skeletal muscle but are only one third as large in diameter, are richer in sarcoplasm, and contain centrally located instead of peripheral nuclei." [GOC:mtg_cardiacconduct_nov11, GOC:tfm, ISBN:0323052908]
+def: "Cardiac muscle cells are striated muscle cells that are responsible for heart contraction. In mammals, the contractile fiber resembles those of skeletal muscle but are only one third as large in diameter, are richer in sarcoplasm, and contain centrally located instead of peripheral nuclei." [GOC:mtg_cardiacconduct_nov11, GOC:tfm, ISBN:0323052908, PMID:22426062, PMID:4711263]
+comment: This class encompasses the muscle cells responsible for heart* contraction in both vertebrates and arthropods.  The ultrastucture of a wide range of arthropod heart cells has been examined including spiders, horseshoe crabs, crustaceans (see Sherman, 1973 and refs therein) and insects (see Lehmacher et al (2012) and refs therein).  According to these refs, the cells participating in heart contraction in all cases are transversely striated.  Insects hearts additionally contain ostial cells, also transversely striated muscle cells, but which do not participate in heart contraction.
 synonym: "cardiac muscle fiber" EXACT [GO:0048739]
 synonym: "cardiac myocyte" EXACT []
 synonym: "cardiocyte" BROAD []
@@ -6849,6 +6860,7 @@ def: "Any of the immature forms of a basophil, in which basophilic specific gran
 synonym: "immature basophilic leucocyte" EXACT []
 synonym: "immature basophilic leukocyte" EXACT []
 is_a: CL:0000767 ! basophil
+is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000830 ! basophilic promyelocyte
 
 [Term]
@@ -6859,7 +6871,6 @@ def: "A basophil precursor in the granulocytic series, being a cell intermediate
 xref: FMA:84198
 is_a: CL:0000768 ! immature basophil
 is_a: CL:0002192 ! metamyelocyte
-is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000614 ! basophilic myelocyte
 
 [Term]
@@ -6868,7 +6879,6 @@ name: band form basophil
 namespace: cell
 def: "A late basophilic metamyelocyte in which the nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature basophil." [GOC:add, http://www.cap.org, ISBN:0721601464, PMID:18466030]
 is_a: CL:0000768 ! immature basophil
-is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000769 ! basophilic metamyelocyte
 
 [Term]
@@ -6897,6 +6907,7 @@ synonym: "immature eosinocyte" EXACT []
 synonym: "immature eosinophilic leucocyte" EXACT []
 synonym: "immature eosinophilic leukocyte" EXACT []
 is_a: CL:0000771 ! eosinophil
+is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000833 ! eosinophilic promyelocyte
 
 [Term]
@@ -6906,7 +6917,6 @@ namespace: cell
 def: "A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a eosinophilic myelocyte and a band form eosinophil. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare. Markers are integrin alpha-M-positive, fucosyltransferase FUT4-positive, low affinity immunoglobulin gamma Fc region receptor III-positive, CD33-positive, CD24-positive and aminopeptidase N-negative." [GOC:add, GOC:tfm, ISBN:0721601464, PMID:19622087]
 is_a: CL:0000772 ! immature eosinophil
 is_a: CL:0002192 ! metamyelocyte
-is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000612 ! eosinophilic myelocyte
 
 [Term]
@@ -6915,7 +6925,6 @@ name: band form eosinophil
 namespace: cell
 def: "A late eosinophilic metamyelocyte in which the nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature basophil." [GOC:add, GOC:tfm, http://www.cap.org, ISBN:0721601464, PMID:19622087]
 is_a: CL:0000772 ! immature eosinophil
-is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000773 ! eosinophilic metamyelocyte
 
 [Term]
@@ -6951,6 +6960,7 @@ synonym: "immature neutrophil leucocyte" EXACT []
 synonym: "immature neutrophil leukocyte" EXACT []
 synonym: "immature neutrophilic leucocyte" EXACT []
 is_a: CL:0000775 ! neutrophil
+is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000564 ! neutrophilic promyelocyte
 
 [Term]
@@ -7093,7 +7103,7 @@ id: CL:0000788
 name: naive B cell
 namespace: cell
 def: "A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD27-negative and that has not yet been activated by antigen in the periphery." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:19447676, PMID:20081059, PMID:20839338, PMID:20933013]
-comment: NaÌøve B-cells are also reportedly CD10-negative, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD25-negative, CD27-negative, CD34-negative, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD80-negative, CD81-positive, CD84-positive, CD86-negative, CD95-negative, CD138-negative, CD150-positive, CD184/CXCR4-positive, CD185/CXCR5-positive, CD196/CCR6-positive, CD200-positive, CD229-positive, CD243-positive, CD289-positive, CD290-positive, CD352-positive, MHCII/HLA-DR-positive, cadherin 9-positive, and sIgH-positive, Transcription factors: Pax5-positive, ETS1-positive, FOXO1A-positive, KLF4-positive, KLF9-positive, MiTF-positive, OBF1-positive, PLZF-positive, and SpiB-positive.
+comment: NaÃƒÂ¯ve B-cells are also reportedly CD10-negative, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD25-negative, CD27-negative, CD34-negative, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD80-negative, CD81-positive, CD84-positive, CD86-negative, CD95-negative, CD138-negative, CD150-positive, CD184/CXCR4-positive, CD185/CXCR5-positive, CD196/CCR6-positive, CD200-positive, CD229-positive, CD243-positive, CD289-positive, CD290-positive, CD352-positive, MHCII/HLA-DR-positive, cadherin 9-positive, and sIgH-positive, Transcription factors: Pax5-positive, ETS1-positive, FOXO1A-positive, KLF4-positive, KLF9-positive, MiTF-positive, OBF1-positive, PLZF-positive, and SpiB-positive.
 synonym: "naive B lymphocyte" EXACT []
 synonym: "naive B-cell" EXACT []
 synonym: "naive B-lymphocyte" EXACT []
@@ -7138,7 +7148,8 @@ relationship: develops_from CL:0000790 ! immature alpha-beta T cell
 id: CL:0000792
 name: CD4-positive, CD25-positive, alpha-beta regulatory T cell
 namespace: cell
-def: "A CD4-positive, CD25-positive, alpha-beta T cell that regulates overall immune responses as well as the responses of other T cell subsets through direct cell-cell contact and cytokine release." [GOC:add, GOC:tfm, ISBN:0781735149, PMID:19464985]
+def: "A CD4-positive, CD25-positive, alpha-beta T cell that regulates overall immune responses as well as the responses of other T cell subsets through direct cell-cell contact and cytokine release." [GOC:add, GOC:tfm, ISBN:0781735149, PMID:19464985, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'Treg'.  The inclusion of CD127lo in the logical definition is compatible with both human and mouse T cells of this subtype.
 synonym: "CD4-positive, CD25-positive, alpha-beta regulatory T lymphocyte" EXACT []
 synonym: "CD4-positive, CD25-positive, alpha-beta regulatory T-cell" EXACT []
 synonym: "CD4-positive, CD25-positive, alpha-beta regulatory T-lymphocyte" EXACT []
@@ -7146,6 +7157,7 @@ synonym: "suppressor T cell" BROAD []
 synonym: "suppressor T lymphocyte" BROAD []
 synonym: "suppressor T-cell" BROAD []
 synonym: "suppressor T-lymphocyte" BROAD []
+synonym: "Treg" BROAD [PMID:22343568]
 xref: FMA:84070
 is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
 is_a: CL:0000815 ! regulatory T cell
@@ -7219,7 +7231,6 @@ synonym: "CD8-positive, alpha-beta intraepithelial T-cell" EXACT []
 synonym: "CD8-positive, alpha-beta intraepithelial T-lymphocyte" EXACT []
 synonym: "IEL" BROAD []
 synonym: "intraepithelial lymphocyte" BROAD []
-is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
 is_a: CL:0000797 ! alpha-beta intraepithelial T cell
 
 [Term]
@@ -7741,7 +7752,7 @@ synonym: "hemopoietic progenitor cell" EXACT []
 synonym: "MPP" EXACT []
 xref: BTO:0000725
 xref: CALOHA:TS-0448
-is_a: CL:0000988 ! hematopoietic cell
+is_a: CL:0008001 ! hematopoietic precursor cell
 disjoint_from: CL:0002032 ! hematopoietic oligopotent progenitor cell
 relationship: develops_from CL:0000037 ! hematopoietic stem cell
 
@@ -7957,6 +7968,7 @@ name: slow muscle myoblast
 namespace: cell
 def: "A skeletal muscle myoblast that differentiates into slow muscle fibers." [SANBI:mhl]
 is_a: CL:0000515 ! skeletal muscle myoblast
+relationship: RO:0002203 CL:0000189 ! develops into slow muscle cell
 
 [Term]
 id: CL:0000858
@@ -7964,6 +7976,7 @@ name: fast muscle myoblast
 namespace: cell
 def: "A skeletal muscle myoblast that differentiates into fast muscle fibers." [SANBI:mhl]
 is_a: CL:0000515 ! skeletal muscle myoblast
+relationship: RO:0002203 CL:0000190 ! develops into fast muscle cell
 
 [Term]
 id: CL:0000860
@@ -8269,8 +8282,9 @@ relationship: develops_from CL:0002425 ! early T lineage precursor
 id: CL:0000895
 name: naive thymus-derived CD4-positive, alpha-beta T cell
 namespace: cell
-def: "An antigen inexperienced CD4-positive, alpha-beta T cell with the phenotype CCR7-positive, CD127-positive and CD62L-positive. This cell type develops in the thymus. This cell type is also described as being CD25-negative, CD62L-high, and CD44-low." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, PMID:19100699]
-comment: These cells have not been exposed to antigen following thymic T-cell selection; found in blood and secondary lymphoid organs.
+def: "An antigen inexperienced CD4-positive, alpha-beta T cell with the phenotype CCR7-positive, CD127-positive and CD62L-positive. This cell type develops in the thymus. This cell type is also described as being CD25-negative, CD62L-high, and CD44-low." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, PMID:19100699, PMID:22343568]
+comment: These cells have not been exposed to antigen following thymic T-cell selection; found in blood and secondary lymphoid organs. This cell type is compatible with the HIPC Lyoplate markers for 'naive CD4+ T cell', but includes additional markers known to be expressed on naive CD4+ T cells.
+synonym: "naive CD4+ T cell" BROAD [PMID:22343568]
 synonym: "naive thymus-derived CD4-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "naive thymus-derived CD4-positive, alpha-beta T-cell" EXACT []
 synonym: "naive thymus-derived CD4-positive, alpha-beta T-lymphocyte" EXACT []
@@ -8394,11 +8408,13 @@ relationship: develops_from CL:0000809 ! double-positive, alpha-beta thymocyte
 id: CL:0000904
 name: central memory CD4-positive, alpha-beta T cell
 namespace: cell
-def: "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam]
+def: "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'central memory CD4+ T cell', but includes additional markers known to be expressed on central memory CD4+ T cells.
 synonym: "central CD4-positive, alpha-beta memory T cell" EXACT []
 synonym: "central CD4-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "central CD4-positive, alpha-beta memory T-cell" EXACT []
 synonym: "central CD4-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "central memory CD4+ T cell" BROAD [PMID:22343568]
 synonym: "central memory CD4-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "central memory CD4-positive, alpha-beta T-cell" EXACT []
 synonym: "central memory CD4-positive, alpha-beta T-lymphocyte" EXACT []
@@ -8408,11 +8424,13 @@ is_a: CL:0000897 ! CD4-positive, alpha-beta memory T cell
 id: CL:0000905
 name: effector memory CD4-positive, alpha-beta T cell
 namespace: cell
-def: "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm]
+def: "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'effector memory CD4+ T cell', but includes additional markers known to be expressed on effector memory CD4+ T cells.
 synonym: "effector CD4-positive, alpha-beta memory T cell" EXACT []
 synonym: "effector CD4-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "effector CD4-positive, alpha-beta memory T-cell" EXACT []
 synonym: "effector CD4-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "effector memory CD4+ T cell" BROAD [PMID:22343568]
 synonym: "effector memory CD4-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "effector memory CD4-positive, alpha-beta T-cell" EXACT []
 synonym: "effector memory CD4-positive, alpha-beta T-lymphocyte" EXACT []
@@ -8654,7 +8672,6 @@ synonym: "CD4-positive type I NK T-cell" EXACT []
 synonym: "CD4-positive type I NK T-lymphocyte" EXACT []
 synonym: "CD4-positive type I NKT cell" EXACT []
 synonym: "NKT.4+.SP" NARROW []
-is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
 is_a: CL:0000921 ! type I NK T cell
 
 [Term]
@@ -8678,7 +8695,7 @@ synonym: "activated CD4-positive type I NK T lymphocyte" EXACT []
 synonym: "activated CD4-positive type I NK T-cell" EXACT []
 synonym: "activated CD4-positive type I NK T-lymphocyte" EXACT []
 synonym: "activated CD4-positive type I NKT cell" EXACT []
-is_a: CL:0000492 ! CD4-positive helper T cell
+is_a: CL:0000912 ! helper T cell
 is_a: CL:0000923 ! CD4-positive type I NK T cell
 relationship: develops_from CL:0000923 ! CD4-positive type I NK T cell
 
@@ -8692,7 +8709,7 @@ synonym: "CD4-positive type I NK T lymphocyte secreting interferon-gamma" EXACT 
 synonym: "CD4-positive type I NK T-cell secreting interferon-gamma" EXACT []
 synonym: "CD4-positive type I NK T-lymphocyte secreting interferon-gamma" EXACT []
 synonym: "CD4-positive type I NKT cell secreting interferon-gamma" EXACT []
-is_a: CL:0000492 ! CD4-positive helper T cell
+is_a: CL:0000912 ! helper T cell
 is_a: CL:0000923 ! CD4-positive type I NK T cell
 relationship: develops_from CL:0000925 ! activated CD4-positive type I NK T cell
 
@@ -8706,7 +8723,7 @@ synonym: "CD4-positive type I NK T lymphocyte secreting interleukin-4" EXACT []
 synonym: "CD4-positive type I NK T-cell secreting interleukin-4" EXACT []
 synonym: "CD4-positive type I NK T-lymphocyte secreting interleukin-4" EXACT []
 synonym: "CD4-positive type I NKT cell secreting interleukin-4" EXACT []
-is_a: CL:0000492 ! CD4-positive helper T cell
+is_a: CL:0000912 ! helper T cell
 is_a: CL:0000923 ! CD4-positive type I NK T cell
 relationship: develops_from CL:0000925 ! activated CD4-positive type I NK T cell
 
@@ -9883,6 +9900,81 @@ is_a: CL:0000492 ! CD4-positive helper T cell
 relationship: develops_from CL:0000896 ! activated CD4-positive, alpha-beta T cell
 
 [Term]
+id: CL:0001043
+name: activated CD4-positive, alpha-beta T cell, human
+namespace: cell
+def: "A recently activated CD4-positive, alpha-beta T cell with the phenotype HLA-DRA-positive, CD38-positive, CD69-positive, CD62L-negative, CD127-negative, and CD25-positive." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'activated CD4+ T cell', but includes via logical inference from its parent additional markers known to be expressed on activated CD4+ T cells.  The inclusion of HLA-DRA in the definition restricts this definition to human activated CD4+ T cells, as activated mouse T cells do not express MHC class II.
+synonym: "activated CD4+ T cell" BROAD [PMID:22343568]
+synonym: "activated CD4-positive, alpha-beta T lymphocyte, human" EXACT []
+synonym: "activated CD4-positive, alpha-beta T-cell, human" EXACT []
+synonym: "activated CD4-positive, alpha-beta T-lymphocyte, human" EXACT []
+is_a: CL:0000896 ! activated CD4-positive, alpha-beta T cell
+
+[Term]
+id: CL:0001044
+name: effector CD4-positive, alpha-beta T cell
+namespace: cell
+def: "A CD4-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive." [GOC:add, PMID:22343568]
+synonym: "effector CD4+ T cell" BROAD [PMID:22343568]
+synonym: "effector CD4-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "effector CD4-positive, alpha-beta T-cell" EXACT []
+synonym: "effector CD4-positive, alpha-beta T-lymphocyte" EXACT []
+synonym: "This cell type is compatible with the HIPC Lyoplate markers for 'effector CD4+ T cell'.  The functional characteristics of this cell type currently undefined in CL, which affects its proper placement within the hierarchy." EXACT []
+is_a: CL:0000791 ! mature alpha-beta T cell
+is_a: CL:0000911 ! effector T cell
+
+[Term]
+id: CL:0001045
+name: naive CCR4-positive regulatory T cell
+namespace: cell
+def: "A naive regulatory T cell with the phenotype CD4-positive, CD25-positive, CD127lo, CCR4-positive, and CD45RO-negative." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'naive CCR4+ Treg'.  The definition is valid for human; its applicability for mouse and other species is unknown.
+synonym: "naive CCR4+ Treg" EXACT [PMID:22343568]
+synonym: "naive CCR4-positive regulatory T lymphocyte" EXACT []
+synonym: "naive CCR4-positive regulatory T-cell" EXACT []
+synonym: "naive CCR4-positive regulatory T-lymphocyte" EXACT []
+is_a: CL:0001047 ! CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell
+is_a: CL:0002677 ! naive regulatory T cell
+
+[Term]
+id: CL:0001046
+name: memory CCR4-positive regulatory T cell
+namespace: cell
+def: "A memory regulatory T cell with phenotype CD4-positive, CD25-positive, CD127lo, CCR4-positive, and CD45RO-positive." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'memory CCR4+ Treg'.  The definition is valid for human; its applicability for mouse and other species is unknown.
+synonym: "memory CCR4+ Treg" EXACT [PMID:22343568]
+synonym: "memory CCR4-positive regulatory T lymphocyte" EXACT []
+synonym: "memory CCR4-positive regulatory T-cell" EXACT []
+synonym: "memory CCR4-positive regulatory T-lymphocyte" EXACT []
+is_a: CL:0001047 ! CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell
+is_a: CL:0002678 ! memory regulatory T cell
+
+[Term]
+id: CL:0001047
+name: CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell
+namespace: cell
+def: "A CD4-positive, CD25-positive, alpha-beta regulatory T cell with the additional phenotype CCR4-positive." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'CCR4+ Treg'.  The definition is valid for human; its applicability for mouse and other species is unknown.
+synonym: "CCR+ Treg" EXACT [PMID:22343568]
+synonym: "CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T lymphocyte" EXACT []
+synonym: "CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-cell" EXACT []
+synonym: "CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-lymphocyte" EXACT []
+is_a: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
+
+[Term]
+id: CL:0001048
+name: activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell
+namespace: cell
+def: "A CD4-positive, CD25-positive, CCR4-positive, alpha-beta T regulatory cell with the phenotype HLA-DRA-positive, indicating recent activation." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'activated CCR4+ Treg'.  The inclusion of HLA-DRA in the definition restricts this definition to human activated CD4+ T cells, as activated mouse T cells do not express MHC class II.
+synonym: "activated CCR4+ Treg" EXACT [PMID:22343568]
+synonym: "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T lymphocyte" EXACT []
+synonym: "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-cell" EXACT []
+synonym: "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-lymphocyte" EXACT []
+is_a: CL:0001047 ! CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell
+
+[Term]
 id: CL:0001658
 name: visual pigment cell (sensu Nematoda and Protostomia)
 namespace: cell
@@ -10238,7 +10330,7 @@ id: CL:0002031
 name: hematopoietic lineage restricted progenitor cell
 namespace: cell
 def: "A hematopoietic progenitor cell that is capable of developing into only one lineage of hematopoietic cells." [GOC:tfm, PMID:19022770]
-is_a: CL:0000988 ! hematopoietic cell
+is_a: CL:0008001 ! hematopoietic precursor cell
 disjoint_from: CL:0002032 ! hematopoietic oligopotent progenitor cell
 relationship: develops_from CL:0002032 ! hematopoietic oligopotent progenitor cell
 created_by: tmeehan
@@ -10249,7 +10341,7 @@ id: CL:0002032
 name: hematopoietic oligopotent progenitor cell
 namespace: cell
 def: "A hematopoietic oligopotent progenitor cell that has the ability to differentiate into limited cell types but lacks lineage cell markers and self renewal capabilities. Cell lacks hematopoeitic lineage markers." [GOC:tfm, PMID:19022770]
-is_a: CL:0000988 ! hematopoietic cell
+is_a: CL:0008001 ! hematopoietic precursor cell
 relationship: develops_from CL:0000837 ! hematopoietic multipotent progenitor cell
 created_by: tmeehan
 creation_date: 2010-01-06T03:43:27Z
@@ -11051,7 +11143,7 @@ creation_date: 2010-08-24T01:37:44Z
 id: CL:0002098
 name: regular cardiac myocyte
 namespace: cell
-def: "A cardiac myocyte that is connected together by transverse intercalated discs at a regular interval." [GOC:tfm]
+def: "A cardiac myocyte that is connected to other cardiac myocytes by transverse intercalated discs (GO:0014704) at a regular interval." [GOC:tfm]
 synonym: "regular cardiac muscle cell" EXACT []
 synonym: "regular cardiac muscle fiber" EXACT []
 xref: FMA:67967
@@ -12277,7 +12369,7 @@ def: "A slow muscle cell that contains high levels of myoglobin and oxygen stori
 synonym: "oxidative muscle fiber" EXACT []
 synonym: "red muscle fiber" EXACT []
 xref: FMA:84448
-is_a: CL:0002372 ! myotube
+is_a: CL:0008002 ! skeletal muscle fiber
 created_by: tmeehan
 creation_date: 2010-09-02T03:20:03Z
 
@@ -12364,7 +12456,7 @@ name: intermediate muscle cell
 namespace: cell
 def: "An intermediate muscle cell that has characteristics of both fast and slow muscle cells." [GOC:tfm]
 xref: FMA:84450
-is_a: CL:0002372 ! myotube
+is_a: CL:0008002 ! skeletal muscle fiber
 created_by: tmeehan
 creation_date: 2010-09-02T03:51:17Z
 
@@ -13609,7 +13701,7 @@ creation_date: 2010-09-15T03:44:35Z
 id: CL:0002323
 name: amniocyte
 namespace: cell
-def: "A cell of aåÊfetusåÊwhich is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface." [BFO:0000066, GOC:tfm, PMID:3211847]
+def: "A cell of aÃ‚Â fetusÃ‚Â which is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface." [BFO:0000066, GOC:tfm, PMID:3211847]
 xref: BTO:0000066
 is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
@@ -13717,7 +13809,7 @@ creation_date: 2010-09-20T02:25:25Z
 id: CL:0002334
 name: preadipocyte
 namespace: cell
-def: "An undifferentiatedåÊfibroblaståÊthat can be stimulated to form a fat cell." [GOC:tfm, PMID:18793119]
+def: "An undifferentiatedÃ‚Â fibroblastÃ‚Â that can be stimulated to form a fat cell." [GOC:tfm, PMID:18793119]
 xref: BTO:0001107
 is_a: CL:0000057 ! fibroblast
 created_by: tmeehan
@@ -13893,7 +13985,7 @@ creation_date: 2010-09-21T04:33:05Z
 id: CL:0002351
 name: progenitor cell of endocrine pancreas
 namespace: cell
-def: "A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 andåÊIsl-1." [GOC:tfm, PMID:20025937, PMID:20217494]
+def: "A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 andÃ‚Â Isl-1." [GOC:tfm, PMID:20025937, PMID:20217494]
 synonym: "pancreatic endocrine progenitor" EXACT []
 synonym: "pancreatic islet progenitor cell" EXACT []
 is_a: CL:0000048 ! multi fate stem cell
@@ -14019,7 +14111,7 @@ creation_date: 2010-09-22T01:40:44Z
 id: CL:0002363
 name: keratocyte
 namespace: cell
-def: "A keratocyte is a specialized fibroblaståÊresiding in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisåÊcornealåÊlayer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
+def: "A keratocyte is a specialized fibroblastÃ‚Â residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisÃ‚Â cornealÃ‚Â layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
 synonym: "corneal fibroblast" EXACT []
 synonym: "corneal keratocyte" EXACT []
 is_a: CL:0000005 ! fibroblast neural crest derived
@@ -14064,7 +14156,7 @@ creation_date: 2010-09-23T03:46:34Z
 id: CL:0002367
 name: trabecular meshwork cell
 namespace: cell
-def: "A cell that lines the trabecular meshwork, which is an area of tissue in theåÊeyeåÊlocated around the base of theåÊcornea, near theåÊciliary body, and is responsible for draining theåÊaqueous humoråÊfrom the eye via theåÊanterior chamberåÊ(the chamber on the front of the eye covered by the cornea). This cell may play a role in regulating intraocular pressure." [GOC:tfm, PMID:14500801]
+def: "A cell that lines the trabecular meshwork, which is an area of tissue in theÃ‚Â eyeÃ‚Â located around the base of theÃ‚Â cornea, near theÃ‚Â ciliary body, and is responsible for draining theÃ‚Â aqueous humorÃ‚Â from the eye via theÃ‚Â anterior chamberÃ‚Â (the chamber on the front of the eye covered by the cornea). This cell may play a role in regulating intraocular pressure." [GOC:tfm, PMID:14500801]
 synonym: "trabeculocyte" EXACT []
 is_a: CL:0000115 ! endothelial cell
 created_by: tmeehan
@@ -14118,14 +14210,11 @@ id: CL:0002372
 name: myotube
 namespace: cell
 alt_id: CL:0000369
-def: "A myotube is a multinucleated cells that is formed when proliferating myoblasts exit the cell cycle, differentiate and fuse." [GOC:tfm, ISBN:0323052908]
+def: "A transversely striated, synctial muscle cell, formed by the fusion of myoblasts." [GOC:dos, GOC:tfm, ISBN:0323052908, PMID:22274696]
 synonym: "myotubule" EXACT []
 synonym: "single cell sarcomere" EXACT []
-synonym: "skeletal muscle fiber" EXACT []
-is_a: CL:0000188 ! skeletal muscle cell
 is_a: CL:0000228 ! multinucleate cell
 is_a: CL:0000737 ! striated muscle cell
-relationship: develops_from CL:0000515 ! skeletal muscle myoblast
 created_by: tmeehan
 creation_date: 2010-09-24T01:13:01Z
 
@@ -14640,6 +14729,7 @@ namespace: cell
 def: "A reticulocyte lacking a nucleus and showing a basophilic reticulum under vital staining due to the presence of ribosomes." [GOC:tfm, ISBN:0-12203-052-4, ISBN:0721601464]
 xref: CALOHA:TS-0864
 xref: FMA:66785
+is_a: CL:0000225 ! anucleate cell
 is_a: CL:0000558 ! reticulocyte
 created_by: tmeehan
 creation_date: 2010-10-15T09:24:08Z
@@ -17142,7 +17232,7 @@ id: CL:0002673
 name: tongue muscle cell
 namespace: cell
 def: "A skeletal muscle cell that is part of the tongue." [GOC:tfm, PMID:18816858]
-is_a: CL:0000188 ! skeletal muscle cell
+is_a: CL:0008002 ! skeletal muscle fiber
 created_by: tmeehan
 creation_date: 2011-08-16T03:10:02Z
 
@@ -17181,6 +17271,9 @@ name: naive regulatory T cell
 namespace: cell
 def: "A regulatory T cell that has not encountered antigen." [GOC:tfm]
 comment: This cell type has been described as CD45RA-negative, but this doesn't fit with our current definition of naive T cell.
+synonym: "naive regulatory T lymphocyte" EXACT []
+synonym: "naive regulatory T-cell" EXACT []
+synonym: "naive regulatory T-lymphocyte" EXACT []
 is_a: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
 is_a: CL:0000898 ! naive T cell
 created_by: tmeehan
@@ -17440,10 +17533,10 @@ is_a: CL:0015000 ! cranial motor neuron
 [Term]
 id: CL:0005025
 name: visceromotor neuron
-def: "Cranial motor neurons are found in the hindbrain, and innervate parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems." []
+def: "Visceromotor motor neurons are found in the hindbrain, and innervate parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems." []
 synonym: "general visceral motor neuron" EXACT []
 xref: PMID:14699587
-is_a: CL:0015000 ! cranial motor neuron
+is_a: CL:0000100 ! motor neuron
 
 [Term]
 id: CL:0005026
@@ -17678,6 +17771,73 @@ is_a: CL:0000003 ! native cell
 created_by: haendel
 
 [Term]
+id: CL:0008000
+name: non-striated muscle cell
+def: "Any muscle cell in which the fibers are not organised into sarcomeres." [GOC:DOS]
+is_a: CL:0000187 ! muscle cell
+
+[Term]
+id: CL:0008001
+name: hematopoietic precursor cell
+def: "Any hematopoietic cell that is a precursor of some other hematopoietic cell type." [GOC:dos]
+is_a: CL:0000988 ! hematopoietic cell
+
+[Term]
+id: CL:0008002
+name: skeletal muscle fiber
+def: "A transversely striated, synctial cell of skeletal muscle. It is formed when proliferating myoblasts exit the cell cycle, differentiate and fuse." [GOC:tfm, ISBN:0323052908]
+is_a: CL:0000188 ! skeletal muscle cell
+is_a: CL:0002372 ! myotube
+relationship: develops_from CL:0000515 ! skeletal muscle myoblast
+
+[Term]
+id: CL:0008003
+name: somatic muscle myotube
+def: "A myotube that is part of some somatic muscle.  Examples include arthropod somatic muscle cells." [PMID:22274696, PMID:8720463]
+is_a: CL:0002372 ! myotube
+is_a: CL:0008004 ! somatic muscle cell
+
+[Term]
+id: CL:0008004
+name: somatic muscle cell
+def: "A muscle cell that is part of some somatic muscle." [GOC:dos]
+is_a: CL:0000187 ! muscle cell
+
+[Term]
+id: CL:0008005
+name: obliquely striated somatic muscle cell
+def: "A somatic muscle cell that is oblquely striated.  Examples include the somatic muscles of nematodes." [PMID:8720463]
+is_a: CL:0000228 ! multinucleate cell
+is_a: CL:0000444 ! obliquely striated muscle cell
+is_a: CL:0008004 ! somatic muscle cell
+
+[Term]
+id: CL:0008006
+name: muscle founder cell
+def: "A myoblast that detemines the properties (size, shape and attachment to the epidermis) of a `somatic muscle myotube` (CL:0008003) .  It develops into a somatic muscle myotube via fusion with `fusion component myoblasts` (CL:0000621)." [PMID:22274696]
+is_a: CL:0000056 ! myoblast
+relationship: RO:0002203 CL:0008003 ! develops into somatic muscle myotube
+
+[Term]
+id: CL:0008007
+name: visceral muscle cell
+def: "A muscle cell that is part of some visceral muscle" [GOC:dos]
+is_a: CL:0000187 ! muscle cell
+
+[Term]
+id: CL:0008008
+name: striated visceral muscle cell
+def: "A visceral muscle cell that is striated.  Examples include the visceral muscle cells of arhtropods." [GOC:dos]
+is_a: CL:0000737 ! striated muscle cell
+is_a: CL:0008007 ! visceral muscle cell
+
+[Term]
+id: CL:0008009
+name: transversely striated visceral muscle cell
+def: "A visceral muscle that is transversely striated.  Examples include the visceral muscle cells of arthropods." [GOC:dos]
+is_a: CL:0008008 ! striated visceral muscle cell
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -17818,7 +17978,7 @@ is_a: CL:0002494 ! cardiocyte
 id: CL:0010021
 name: cardiac myoblast
 is_a: CL:0000056 ! myoblast
-is_a: CL:0002494 ! cardiocyte
+relationship: RO:0002203 CL:0000746 ! develops into cardiac muscle cell
 
 [Term]
 id: CL:0010022
@@ -17872,7 +18032,9 @@ is_a: CL:0000617 ! GABAergic neuron
 id: CL:0011006
 name: lugaro cell
 def: "An inhibitory GABAergic interneuron found in the cerebellar cortex." [GOC:nv]
+is_a: CL:0000402 ! CNS interneuron
 is_a: CL:0011005 ! GABAergic interneuron
+is_a: CL:1001611 ! cerebellar neuron
 
 [Term]
 id: CL:0011100
@@ -17924,7 +18086,7 @@ id: CL:0011107
 name: Muller cell
 def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.\n" [PMID:21911394]
 synonym: "Muller glia " EXACT []
-synonym: "MÌ?ller cell" EXACT []
+synonym: "MÃƒÂ¼ller cell" EXACT []
 is_a: CL:0000681 ! radial glial cell
 is_a: CL:0009004 ! retinal cell
 
@@ -20948,8 +21110,8 @@ def: "Hematopoietic cells resident in the bone marrow. Include: hematopoietic st
 synonym: "bone marrow hematopoietic cells" RELATED [CALOHA:TS-2109]
 synonym: "bone marrow poietic cells" RELATED [CALOHA:TS-2109]
 xref: CALOHA:TS-2109
-is_a: CL:0000988 ! hematopoietic cell
 is_a: CL:0002092 ! bone marrow cell
+is_a: CL:0008001 ! hematopoietic precursor cell
 
 [Term]
 id: CL:1001611
@@ -20964,6 +21126,12 @@ is_a: CL:0000540 ! neuron
 id: RO:0002131
 name: overlaps
 xref: RO:0002131
+
+[Typedef]
+id: RO:0002203
+name: develops into
+is_transitive: true
+inverse_of: develops_from ! develops_from
 
 [Typedef]
 id: RO:0002215
