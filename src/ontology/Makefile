@@ -3,7 +3,7 @@ USECAT= --catalog-xml catalog-v001.xml
 
 all: release
 
-release: cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
+release: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
 
 # ----------------------------------------
 # BUILD
@@ -28,9 +28,10 @@ cl-basic.obo: cl-basic.owl
 %-obocheck: %.obo
 	obo2obo $< -o $@
 
+bridge-checks: cl-bridge-to-zfa-check.txt
 # do 'grep UNSAT' to check for success
 cl-bridge-to-%-check.txt: cl-edit.owl
-	owltools --use-catalog $< $(OBO)/zfa.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@
+	owltools --use-catalog $< $(OBO)/zfa.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.fail && mv $@.fail $@
 
 # ----------------------------------------
 # Regenerate imports
