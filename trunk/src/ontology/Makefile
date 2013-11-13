@@ -29,8 +29,8 @@ cl-basic.obo: cl-basic.owl
 	obo2obo $< -o $@
 
 # do 'grep UNSAT' to check for success
-cl-bridge-to-%-check.txt: cl.owl
-	owltools --use-catalog $(OBO)/zfa.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl $< --run-reasoner -r elk -u > $@
+cl-bridge-to-%-check.txt: cl-edit.owl
+	owltools --use-catalog $< $(OBO)/zfa.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@
 
 # ----------------------------------------
 # Regenerate imports
