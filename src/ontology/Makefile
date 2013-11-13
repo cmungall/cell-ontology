@@ -29,7 +29,9 @@ cl-basic.obo: cl-basic.owl
 	obo2obo $< -o $@
 
 bridge-checks: cl-bridge-to-zfa-check.txt
+
 # do 'grep UNSAT' to check for success
+# use cl-plus-zfa.owl to check for errors
 cl-bridge-to-%-check.txt: cl-edit.owl
 	owltools --use-catalog $< $(OBO)/zfa.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.fail && mv $@.fail $@
 
