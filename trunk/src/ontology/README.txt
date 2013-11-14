@@ -1,6 +1,11 @@
 cl ontology repository
 ======================
 
+To find out more, visit
+
+ * The website - http://cellontology.org
+ * The google code site - http://cell-ontology.googlecode.com
+
 ontology/
   cl           Core public ontology release
                 * pre-reasoned

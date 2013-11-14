@@ -263,7 +263,7 @@ relationship: develops_from CL:0000670 ! primordial germ cell
 
 [Term]
 id: CL:0000025
-name: egg
+name: egg cell
 namespace: cell
 def: "A female gamete where meiosis has progressed to metaphase II and is able to participate in fertilization." [GOC:tfm, ISBN:0721662544]
 synonym: "mature oocyte" EXACT []
@@ -274,9 +274,8 @@ xref: CALOHA:TS-2191
 xref: FBbt:00000034
 xref: FMA:67343
 xref: MA:0000388
-is_a: CL:0000023 ! oocyte
 is_a: CL:0000675 ! female gamete
-relationship: develops_from CL:0000655 ! secondary oocyte
+relationship: develops_from CL:0000023 ! oocyte
 
 [Term]
 id: CL:0000026
@@ -416,7 +415,6 @@ def: "A cell that is within the developmental lineage of gametes and is able to 
 comment: Originally this term had some plant germ line cell children.
 subset: ubprop:upper_level
 is_a: CL:0000548 ! animal cell
-disjoint_from: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:0000040
@@ -536,9 +534,6 @@ synonym: "myeloid stem cell" RELATED [ISBN:0878932437]
 synonym: "pluripotent stem cell (bone marrow)" RELATED [ISBN:0878932437]
 xref: BTO:0004730
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
-disjoint_from: CL:0000050 ! megakaryocyte-erythroid progenitor cell
-disjoint_from: CL:0000051 ! common lymphoid progenitor
-disjoint_from: CL:0000557 ! granulocyte monocyte progenitor cell
 
 [Term]
 id: CL:0000050
@@ -555,8 +550,6 @@ synonym: "megakaryocyte/erythroid progenitor cell" EXACT []
 synonym: "MEP" EXACT []
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
-disjoint_from: CL:0000557 ! granulocyte monocyte progenitor cell
-disjoint_from: CL:0002009 ! macrophage dendritic cell progenitor
 relationship: develops_from CL:0000049 ! common myeloid progenitor
 
 [Term]
@@ -893,8 +886,6 @@ xref: CALOHA:TS-1001
 xref: FMA:62870
 xref: VHOG:0001479
 is_a: CL:0000542 ! lymphocyte
-disjoint_from: CL:0000623 ! natural killer cell
-disjoint_from: CL:0000945 ! lymphocyte of B lineage
 relationship: develops_from CL:0000827 ! pro-T cell
 
 [Term]
@@ -1068,8 +1059,8 @@ is_a: CL:0000540 ! neuron
 id: CL:0000100
 name: motor neuron
 namespace: cell
-def: "An efferent neuron that passes from the central nervous system or a ganglion toward or to a muscle and conducts an impulse that causes movement." [MESH:A08.663.655.500, PMID:16875686]
-synonym: "anterior horn cell" EXACT []
+def: "An efferent neuron that passes from the central nervous system or a ganglion toward or to a muscle and conducts an impulse that causes or inhibits movement." [MESH:A08.663.655.500, PMID:16875686]
+synonym: "anterior horn cell" NARROW []
 synonym: "motoneuron" EXACT []
 xref: BTO:0000312
 xref: FMA:83617
@@ -1141,6 +1132,7 @@ def: "A neuron that uses acetylcholine as a vesicular neurotransmitter." [GOC:tf
 xref: BTO:0004902
 xref: FMA:84796
 xref: WBbt:0006840
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -2244,7 +2236,6 @@ def: "A cell that lacks a nucleus." [FB:ma]
 synonym: "non-nucleated cell" EXACT []
 xref: FMA:68647
 is_a: CL:0000003 ! native cell
-disjoint_from: CL:0002242 ! nucleate cell
 
 [Term]
 id: CL:0000226
@@ -2358,7 +2349,7 @@ relationship: develops_from CL:0000576 ! monocyte
 id: CL:0000236
 name: B cell
 namespace: cell
-def: "A lymphocyte of B lineage with the phenotype CD19-positive and capable of B cell mediated immunity." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+def: "A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
 synonym: "B lymphocyte" EXACT []
 synonym: "B-cell" EXACT []
 synonym: "B-lymphocyte" EXACT []
@@ -2514,7 +2505,6 @@ id: CL:0000255
 name: eukaryotic cell
 namespace: cell
 is_a: CL:0000003 ! native cell
-disjoint_from: CL:0000520 ! prokaryotic cell
 
 [Term]
 id: CL:0000256
@@ -4024,7 +4014,6 @@ xref: BTO:0002042
 xref: CALOHA:TS-0194
 xref: FMA:83036
 is_a: CL:0000738 ! leukocyte
-disjoint_from: CL:0000542 ! lymphocyte
 
 [Term]
 id: CL:0000452
@@ -4595,7 +4584,6 @@ id: CL:0000521
 name: fungal cell
 namespace: cell
 is_a: CL:0000255 ! eukaryotic cell
-disjoint_from: CL:0000548 ! animal cell
 
 [Term]
 id: CL:0000522
@@ -4777,7 +4765,6 @@ xref: FMA:62863
 xref: VHOG:0001535
 is_a: CL:0002087 ! nongranular leukocyte
 is_a: CL:0002242 ! nucleate cell
-disjoint_from: CL:0000766 ! myeloid leukocyte
 relationship: develops_from CL:0000051 ! common lymphoid progenitor
 
 [Term]
@@ -4799,10 +4786,12 @@ is_a: CL:0000199 ! mechanoreceptor cell
 id: CL:0000545
 name: T-helper 1 cell
 namespace: cell
-def: "A CD4-positive, alpha-beta T cell that has the phenotype T-bet-positive and produces interferon-gamma." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:19375293, PMID:20303875]
+def: "A CD4-positive, alpha-beta T cell that has the phenotype T-bet-positive, CXCR3-positive, CCR6-negative, and is capable of producing interferon-gamma." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:19375293, PMID:20303875, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'Th1 CD4+ T cell', but its logical definition includes additional known characteristics of T-helper 1 T cells.
 synonym: "helper T cell type 1" EXACT []
 synonym: "T helper cells type 1" EXACT [PMID:9419219]
 synonym: "T(H)-1 cell" EXACT []
+synonym: "Th1 CD4+ T cell" EXACT [PMID:22343568]
 synonym: "Th1 cell" EXACT []
 synonym: "Th1 T cell" EXACT []
 synonym: "Th1 T lymphocyte" EXACT []
@@ -4817,7 +4806,8 @@ relationship: develops_from CL:0000896 ! activated CD4-positive, alpha-beta T ce
 id: CL:0000546
 name: T-helper 2 cell
 namespace: cell
-def: "A CD4-positive, alpha-beta T cell that has the phenotype GATA-3-positive and produces interleukin-4." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:19375293, PMID:20103781]
+def: "A CD4-positive, alpha-beta T cell that has the phenotype GATA-3-positive, CXCR3-negative, CCR6-negative, and is capable of producing interleukin-4." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:19375293, PMID:20103781, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'non-Th1/Th17 CD4+ T cell' (see CL:0001051), but includes the additional necessary and sufficient conditions to allow classification as a T-helper 2 T cell.
 synonym: "helper T cell type 2" EXACT []
 synonym: "T helper cells type 2" EXACT [PMID:9419219]
 synonym: "T(H)-2 cell" EXACT []
@@ -4829,6 +4819,7 @@ synonym: "Th2 T-lymphocyte" EXACT []
 xref: BTO:0001679
 xref: FMA:84385
 is_a: CL:0000492 ! CD4-positive helper T cell
+is_a: CL:0001051 ! CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell
 relationship: develops_from CL:0000896 ! activated CD4-positive, alpha-beta T cell
 
 [Term]
@@ -4948,7 +4939,6 @@ xref: CALOHA:TS-0611
 xref: FMA:83555
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:1001610 ! bone marrow hematopoietic cell
-disjoint_from: CL:0000764 ! erythroid lineage cell
 relationship: develops_from CL:0000553 ! megakaryocyte progenitor cell
 
 [Term]
@@ -5563,6 +5553,7 @@ def: "A neuron that uses GABA as a vesicular neurotransmitter" [GOC:tfm]
 synonym: "GABA-ergic neuron" EXACT []
 xref: FMA:84788
 xref: WBbt:0005190
+is_a: CL:0000161 ! acid secreting cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -5631,7 +5622,6 @@ synonym: "CD4-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "CD4-positive, alpha-beta T-cell" EXACT []
 synonym: "CD4-positive, alpha-beta T-lymphocyte" EXACT []
 is_a: CL:0000791 ! mature alpha-beta T cell
-disjoint_from: CL:0000625 ! CD8-positive, alpha-beta T cell
 
 [Term]
 id: CL:0000625
@@ -6126,6 +6116,7 @@ id: CL:0000679
 name: glutamatergic neuron
 namespace: cell
 xref: WBbt:0006829
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -6300,6 +6291,7 @@ synonym: "dopaminergic cell" EXACT []
 xref: BTO:0004032
 xref: FMA:84787
 xref: WBbt:0006746
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -6569,7 +6561,6 @@ xref: BTO:0002916
 xref: CALOHA:TS-2157
 xref: FMA:86936
 is_a: CL:0000187 ! muscle cell
-disjoint_from: CL:0008000 ! non-striated muscle cell
 
 [Term]
 id: CL:0000738
@@ -7065,9 +7056,6 @@ synonym: "mature B lymphocyte" EXACT []
 synonym: "mature B-cell" EXACT []
 synonym: "mature B-lymphocyte" EXACT []
 is_a: CL:0000236 ! B cell
-disjoint_from: CL:0000816 ! immature B cell
-disjoint_from: CL:0000817 ! precursor B cell
-disjoint_from: CL:0000818 ! transitional stage B cell
 relationship: develops_from CL:0000818 ! transitional stage B cell
 
 [Term]
@@ -7102,8 +7090,8 @@ is_a: CL:0000785 ! mature B cell
 id: CL:0000788
 name: naive B cell
 namespace: cell
-def: "A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD27-negative and that has not yet been activated by antigen in the periphery." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:19447676, PMID:20081059, PMID:20839338, PMID:20933013]
-comment: NaÃƒÂ¯ve B-cells are also reportedly CD10-negative, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD25-negative, CD27-negative, CD34-negative, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD80-negative, CD81-positive, CD84-positive, CD86-negative, CD95-negative, CD138-negative, CD150-positive, CD184/CXCR4-positive, CD185/CXCR5-positive, CD196/CCR6-positive, CD200-positive, CD229-positive, CD243-positive, CD289-positive, CD290-positive, CD352-positive, MHCII/HLA-DR-positive, cadherin 9-positive, and sIgH-positive, Transcription factors: Pax5-positive, ETS1-positive, FOXO1A-positive, KLF4-positive, KLF9-positive, MiTF-positive, OBF1-positive, PLZF-positive, and SpiB-positive.
+def: "A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD20-positive, CD27-negative and that has not yet been activated by antigen in the periphery." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:19447676, PMID:20081059, PMID:20839338, PMID:20933013, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'naive B cell'. Per DSD: Naive B cells are also reportedly CD10-negative, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD25-negative, CD27-negative, CD34-negative, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD80-negative, CD81-positive, CD84-positive, CD86-negative, CD95-negative, CD138-negative, CD150-positive, CD184/CXCR4-positive, CD185/CXCR5-positive, CD196/CCR6-positive, CD200-positive, CD229-positive, CD243-positive, CD289-positive, CD290-positive, CD352-positive, MHCII/HLA-DR-positive, cadherin 9-positive, and sIgH-positive, Transcription factors: Pax5-positive, ETS1-positive, FOXO1A-positive, KLF4-positive, KLF9-positive, MiTF-positive, OBF1-positive, PLZF-positive, and SpiB-positive.
 synonym: "naive B lymphocyte" EXACT []
 synonym: "naive B-cell" EXACT []
 synonym: "naive B-lymphocyte" EXACT []
@@ -7119,7 +7107,6 @@ synonym: "alpha-beta T lymphocyte" EXACT []
 synonym: "alpha-beta T-cell" EXACT []
 synonym: "alpha-beta T-lymphocyte" EXACT []
 is_a: CL:0000084 ! T cell
-disjoint_from: CL:0000798 ! gamma-delta T cell
 
 [Term]
 id: CL:0000790
@@ -7436,7 +7423,6 @@ synonym: "memory T-cell" EXACT []
 synonym: "memory T-lymphocyte" EXACT []
 xref: BTO:0003435
 is_a: CL:0002419 ! mature T cell
-disjoint_from: CL:0000898 ! naive T cell
 
 [Term]
 id: CL:0000814
@@ -7494,7 +7480,6 @@ synonym: "pre-B cell" EXACT []
 xref: BTO:0001133
 xref: CALOHA:TS-0819
 is_a: CL:0000236 ! B cell
-disjoint_from: CL:0000826 ! pro-B cell
 
 [Term]
 id: CL:0000818
@@ -7586,8 +7571,6 @@ comment: In mouse the NKR are Ly49 molecules and in human these cells express KI
 synonym: "immature NK cell" EXACT []
 synonym: "p-NK" RELATED [PMID:12457618]
 is_a: CL:0000623 ! natural killer cell
-disjoint_from: CL:0000824 ! mature natural killer cell
-disjoint_from: CL:0000937 ! pre-natural killer cell
 relationship: develops_from CL:0000937 ! pre-natural killer cell
 
 [Term]
@@ -7599,8 +7582,6 @@ synonym: "LAK cell" BROAD [PMID:14685782]
 synonym: "lymphokine activated killer cell" BROAD [PMID:14685782]
 synonym: "mature NK cell" EXACT []
 is_a: CL:0000623 ! natural killer cell
-disjoint_from: CL:0002338 ! CD56-positive, CD161-positive immature natural killer cell
-disjoint_from: CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
 relationship: develops_from CL:0000823 ! immature natural killer cell
 
 [Term]
@@ -7753,7 +7734,6 @@ synonym: "MPP" EXACT []
 xref: BTO:0000725
 xref: CALOHA:TS-0448
 is_a: CL:0008001 ! hematopoietic precursor cell
-disjoint_from: CL:0002032 ! hematopoietic oligopotent progenitor cell
 relationship: develops_from CL:0000037 ! hematopoietic stem cell
 
 [Term]
@@ -7767,7 +7747,6 @@ xref: BTO:0004731
 xref: CALOHA:TS-2025
 xref: FMA:70338
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
-disjoint_from: CL:0000839 ! myeloid lineage restricted progenitor cell
 
 [Term]
 id: CL:0000839
@@ -7915,7 +7894,6 @@ namespace: cell
 def: "Neuromast mantle cell is a non-sensory cell. Neuromast mantle cells surround the neuromast support cells and neuromast hair cells, separating the neuromast from the epidermis, and secrete cupula in which the ciliary bundles of all the hair cells are embedded." [ISBN:0125296509]
 is_a: CL:0000151 ! secretory cell
 is_a: CL:0002319 ! neural cell
-disjoint_from: CL:0000855 ! sensory hair cell
 
 [Term]
 id: CL:0000852
@@ -7924,7 +7902,6 @@ namespace: cell
 def: "Neuromast support cell is a non-sensory cell of the neuromast that extend between the sensory hair cells from the basement membrane to the apical surface; neuromast support cells are surrounded by neuromast mantle cells." [ISBN:0125296509]
 is_a: CL:0000630 ! supportive cell
 is_a: CL:0002319 ! neural cell
-disjoint_from: CL:0000855 ! sensory hair cell
 
 [Term]
 id: CL:0000853
@@ -8309,7 +8286,7 @@ relationship: develops_from CL:0000895 ! naive thymus-derived CD4-positive, alph
 id: CL:0000897
 name: CD4-positive, alpha-beta memory T cell
 namespace: cell
-def: "CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122- high." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149]
+def: "CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149]
 synonym: "CD4-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "CD4-positive, alpha-beta memory T-cell" EXACT []
 synonym: "CD4-positive, alpha-beta memory T-lymphocyte" EXACT []
@@ -8332,11 +8309,13 @@ is_a: CL:0002419 ! mature T cell
 id: CL:0000899
 name: T-helper 17 cell
 namespace: cell
-def: "CD4-positive, alpha-beta T cell with the phenotype RORgamma-t-positive that produces IL-17." [GO_REF:0000031, GOC:add, GOC:pam, PMID:20303875, PMID:20969597]
+def: "CD4-positive, alpha-beta T cell with the phenotype RORgamma-t-positive, CXCR3-negative, CCR6-positive, and capable of producing IL-17." [GO_REF:0000031, GOC:add, GOC:pam, PMID:20303875, PMID:20969597, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'Th17 CD4+ T cell', but its logical definition includes additional known characteristics of T-helper 17 T cells.
 synonym: "helper T cell type 17" EXACT []
 synonym: "IL-17-producing CD4+ T helper" EXACT []
 synonym: "T helper cells type 17" EXACT []
 synonym: "T(H)-17 cell" EXACT []
+synonym: "Th17 CD4+ T cell" EXACT [PMID:22343568]
 synonym: "Th17 cell" EXACT []
 synonym: "Th17 T cell" EXACT []
 synonym: "Th17 T lymphocyte" EXACT []
@@ -8349,8 +8328,9 @@ relationship: develops_from CL:0000896 ! activated CD4-positive, alpha-beta T ce
 id: CL:0000900
 name: naive thymus-derived CD8-positive, alpha-beta T cell
 namespace: cell
-def: "A CD8-positive, alpha-beta T cell that has not experienced activation via antigen contact and has the phenotype CD45RA-positive, CCR7-positive and CD127-positive. This cell type is also described as being CD25-negative, CD62L-high and CD44-low." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149]
-comment: Additional markers in human are CD45RA. This cell traffics in secondary lymphoid organs and blood.
+def: "A CD8-positive, alpha-beta T cell that has not experienced activation via antigen contact and has the phenotype CD45RA-positive, CCR7-positive and CD127-positive. This cell type is also described as being CD25-negative, CD62L-high and CD44-low." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149, PMID:22343568]
+comment: This cell traffics in secondary lymphoid organs and blood.  This cell type is compatible with the HIPC Lyoplate markers for 'naive CD8+ T cell', but includes additional markers known to be expressed on naive CD8+ T cells.
+synonym: "naive CD8+ T cell" BROAD [PMID:22343568]
 synonym: "naive thymus-dervied CD8-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "naive thymus-dervied CD8-positive, alpha-beta T-cell" EXACT []
 synonym: "naive thymus-dervied CD8-positive, alpha-beta T-lymphocyte" EXACT []
@@ -8449,13 +8429,15 @@ relationship: develops_from CL:0000900 ! naive thymus-derived CD8-positive, alph
 
 [Term]
 id: CL:0000907
-name: central memory CD8 positive, alpha-beta T cell
+name: central memory CD8-positive, alpha-beta T cell
 namespace: cell
-def: "A CD8-positive, alpha beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:20146720]
+def: "CD8-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:20146720, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'central memory CD8+ T cell', but includes additional markers known to be expressed on central memory CD8+ T cells.
 synonym: "central CD8-positive, alpha-beta memory T cell" EXACT []
 synonym: "central CD8-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "central CD8-positive, alpha-beta memory T-cell" EXACT []
 synonym: "central CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "central memory CD8+ T cell" BROAD [PMID:22343568]
 synonym: "central memory CD8-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "central memory CD8-positive, alpha-beta T-cell" EXACT []
 synonym: "central memory CD8-positive, alpha-beta T-lymphocyte" EXACT []
@@ -8477,7 +8459,7 @@ relationship: develops_from CL:0000906 ! activated CD8-positive, alpha-beta T ce
 id: CL:0000909
 name: CD8-positive, alpha-beta memory T cell
 namespace: cell
-def: "A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122- high." [GO_REF:0000031, GOC:tfm, PMID:20146720]
+def: "A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:tfm, PMID:20146720]
 synonym: "CD8-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "CD8-positive, alpha-beta memory T-cell" EXACT []
 synonym: "CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
@@ -8525,11 +8507,13 @@ is_a: CL:0000911 ! effector T cell
 id: CL:0000913
 name: effector memory CD8-positive, alpha-beta T cell
 namespace: cell
-def: "A CD8-positive, alpha beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, PMID:20146720]
+def: "CD8-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, PMID:20146720, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'effector memory CD8+ T cell', but includes additional markers known to be expressed on effector memory CD8+ T cells.
 synonym: "effector CD8-positive, alpha-beta memory T cell" EXACT []
 synonym: "effector CD8-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "effector CD8-positive, alpha-beta memory T-cell" EXACT []
 synonym: "effector CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "effector memory CD8+ T cell" BROAD [PMID:22343568]
 synonym: "effector memory CD8-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "effector memory CD8-positive, alpha-beta T-cell" EXACT []
 synonym: "effector memory CD8-positive, alpha-beta T-lymphocyte" EXACT []
@@ -8575,8 +8559,10 @@ relationship: develops_from CL:0002401 ! mature dendritic epithelial T cell prec
 id: CL:0000917
 name: Tc1 cell
 namespace: cell
-def: "A CD8-positive, alpha-beta positive T cell expressing T-bet and eomesodermin and secreting interferon-gamma." [GO_REF:0000031, GOC:add, GOC:pam, PMID:9914231]
+def: "A CD8-positive, alpha-beta positive T cell that has the phenotype T-bet-positive, eomesodermin-positive, CXCR3-positive, CCR6-negative, and is capable of producing interferon-gamma." [GO_REF:0000031, GOC:add, GOC:pam, PMID:22343568, PMID:9914231]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'Tc1 CD8+ T cell', but its logical definition includes additional known characteristics of Tc1 T cells.
 synonym: "T-cytotoxic T cell type 1" EXACT []
+synonym: "Tc1 CD8+ T cell" EXACT [PMID:22343568]
 synonym: "Tc1 T cell" EXACT []
 synonym: "Tc1 T lymphocyte" EXACT []
 synonym: "Tc1 T-cell" EXACT []
@@ -8591,6 +8577,7 @@ id: CL:0000918
 name: Tc2 cell
 namespace: cell
 def: "A CD8-positive, alpha-beta positive T cell expressing GATA-3 and secreting IL-4." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:9914231]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'non-Tc1/Tc17 CD8+ T cell' (see CL:0001052), but includes the additional necessary and sufficient conditions to allow classification as a Tc2 T cell.
 synonym: "T-cytotoxic T cell type 2" EXACT []
 synonym: "Tc2 T cell" EXACT []
 synonym: "Tc2 T lymphocyte" EXACT []
@@ -8599,6 +8586,7 @@ synonym: "Tc2 T-lymphocyte" EXACT []
 xref: BTO:0004794
 xref: FMA:84794
 is_a: CL:0000908 ! CD8-positive, alpha-beta cytokine secreting effector T cell
+is_a: CL:0001052 ! CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell
 
 [Term]
 id: CL:0000919
@@ -8851,8 +8839,6 @@ def: "Cell committed to natural killer cell lineage that has the phenotype CD122
 comment: These cells are also reportedly CD7-low, CD10-negative, CD45RA-positive, alpha-4-beta-7 integrin-high.
 synonym: "pre-NK cell" EXACT []
 is_a: CL:0000623 ! natural killer cell
-disjoint_from: CL:0002338 ! CD56-positive, CD161-positive immature natural killer cell
-disjoint_from: CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
 
 [Term]
 id: CL:0000938
@@ -8862,7 +8848,6 @@ def: "NK cell that has the phenotype CD56-bright, CD16-negative, and CD84-positi
 comment: Markers are associated with human cell types.
 synonym: "CD56-bright cytokine secreting NK cell" EXACT []
 is_a: CL:0000824 ! mature natural killer cell
-disjoint_from: CL:0000939 ! cytotoxic CD56-dim natural killer cell
 
 [Term]
 id: CL:0000939
@@ -8926,7 +8911,7 @@ id: CL:0000945
 name: lymphocyte of B lineage
 namespace: cell
 def: "A lymphocyte of B lineage is a lymphocyte that expresses CD19 on the cell surface. An additional defining characteristic is the commitment to express an immunoglobulin complex." [GO_REF:0000031, GOC:add, GOC:rhs, GOC:tfm, ISBN:0781735149]
-comment: Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).
+comment: Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).
 is_a: CL:0000542 ! lymphocyte
 relationship: develops_from CL:0000826 ! pro-B cell
 
@@ -9013,7 +8998,6 @@ synonym: "pre-BII cell" EXACT []
 xref: BTO:0001133
 xref: CALOHA:TS-0819
 is_a: CL:0000817 ! precursor B cell
-disjoint_from: CL:0000956 ! pre-B-I cell
 relationship: develops_from CL:0000826 ! pro-B cell
 
 [Term]
@@ -9163,7 +9147,7 @@ comment: Bm5 B cells are also reportedly CD10-positive, CD23-negative, CD38-nega
 synonym: "Bm5 B lymphocyte" EXACT []
 synonym: "Bm5 B-cell" EXACT []
 synonym: "Bm5 B-lymphocyte" EXACT []
-is_a: CL:0000787 ! memory B cell
+is_a: CL:0001053 ! IgD-negative memory B cell
 relationship: develops_from CL:0000966 ! Bm4 B cell
 
 [Term]
@@ -9196,8 +9180,9 @@ is_a: CL:0000785 ! mature B cell
 id: CL:0000970
 name: unswitched memory B cell
 namespace: cell
-def: "An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive and/or IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative." [GO_REF:0000031, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013]
-comment: Unswitched memory B cells are also reportedly CD48-positive, CD84-positive, CD229-positive, and CD352-positive.
+def: "An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive, IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'IgD+ memory B cell'. Per DSD: Unswitched memory B cells are also reportedly CD48-positive, CD84-positive, CD229-positive, and CD352-positive.
+synonym: "IgD+ memory B cell" BROAD [PMID:22343568]
 synonym: "unswitched memory B lymphocyte" EXACT []
 synonym: "unswitched memory B-cell" EXACT []
 synonym: "unswitched memory B-lymphocyte" EXACT []
@@ -9217,14 +9202,14 @@ synonym: "memory IgM B cell" EXACT []
 synonym: "memory IgM B lymphocyte" EXACT []
 synonym: "memory IgM B-cell" EXACT []
 synonym: "memory IgM B-lymphocyte" EXACT []
-is_a: CL:0000970 ! unswitched memory B cell
+is_a: CL:0001053 ! IgD-negative memory B cell
 
 [Term]
 id: CL:0000972
 name: class switched memory B cell
 namespace: cell
-def: "A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are usually CD27-positive and have either IgG, IgE, or IgA on the cell surface." [GO_REF:0000031, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013]
-comment: Class switched memory B cells are also reportedly CD48-positive, CD229-positive, and CD352-positive.
+def: "A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are CD27-positive and have either IgG, IgE, or IgA on the cell surface." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013, PMID:9295047]
+comment: Per DSD: Class switched memory B cells are also reportedly CD48-positive, CD229-positive, and CD352-positive.
 synonym: "class switched memory B lymphocyte" EXACT []
 synonym: "class switched memory B-cell" EXACT []
 synonym: "class switched memory B-lymphocyte" EXACT []
@@ -9320,7 +9305,7 @@ synonym: "dn memory B-lymphocyte" EXACT []
 synonym: "double negative memory B lymphocyte" EXACT []
 synonym: "double negative memory B-cell" EXACT []
 synonym: "double negative memory B-lymphocyte" EXACT []
-is_a: CL:0000787 ! memory B cell
+is_a: CL:0001053 ! IgD-negative memory B cell
 
 [Term]
 id: CL:0000982
@@ -9577,7 +9562,6 @@ comment: Cell markers are associated with mouse hematopoietic stem cell. Origina
 synonym: "LSK stem cell" EXACT []
 synonym: "Sca1-positive hematopoietic stem cell" EXACT []
 is_a: CL:0000037 ! hematopoietic stem cell
-disjoint_from: CL:0001024 ! CD34-positive, CD38-negative hematopoietic stem cell
 
 [Term]
 id: CL:0001009
@@ -9700,7 +9684,6 @@ synonym: "CD10-positive common lymphocyte progenitor" EXACT []
 synonym: "CD10-positive common lymphoid precursor" EXACT []
 is_a: CL:0000051 ! common lymphoid progenitor
 is_a: CL:0000995 ! CD34-positive, CD38-positive common myeloid progenitor OR CD34-positive, CD38-positive common lymphoid progenitor
-disjoint_from: CL:0001025 ! Kit-positive, Sca1-positive common lymphoid progenitor
 relationship: develops_from CL:0002043 ! CD34-positive, CD38-negative multipotent progenitor cell
 
 [Term]
@@ -9723,7 +9706,6 @@ comment: Markers are associated with mouse cells. Originally described in the de
 synonym: "CD117-positive common myeloid precursor" BROAD []
 is_a: CL:0000049 ! common myeloid progenitor
 is_a: CL:0001030 ! CD117-positive common myeloid progenitor OR CD217-positive common lymphoid progenitor
-disjoint_from: CL:0001026 ! CD34-positive, CD38-positive common myeloid progenitor
 relationship: develops_from CL:0002035 ! Slamf1-negative multipotent progenitor cell
 
 [Term]
@@ -9973,6 +9955,63 @@ synonym: "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regul
 synonym: "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-cell" EXACT []
 synonym: "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-lymphocyte" EXACT []
 is_a: CL:0001047 ! CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell
+
+[Term]
+id: CL:0001049
+name: activated CD8-positive, alpha-beta T cell, human
+namespace: cell
+def: "A recently activated CD8-positive, alpha-beta T cell with the phenotype HLA-DRA-positive, CD38-positive, CD69-positive, CD62L-negative, CD127-negative, CCR7-negative, and CD25-positive." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'activated CD8+ T cell', but includes via logical inference from its parent additional markers known to be expressed on activated CD8+ T cells.  The inclusion of HLA-DRA in the definition restricts this definition to human activated CD8+ T cells, as activated mouse T cells do not express MHC class II.
+synonym: "activated CD8+ T cell" BROAD [PMID:22343568]
+synonym: "activated CD8-positive, alpha-beta T lymphocyte, human" EXACT []
+synonym: "activated CD8-positive, alpha-beta T-cell, human" EXACT []
+synonym: "activated CD8-positive, alpha-beta T-lymphocyte, human" EXACT []
+is_a: CL:0000906 ! activated CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0001050
+name: effector CD8-positive, alpha-beta T cell
+namespace: cell
+def: "A CD8-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'effector CD8+ T cell'.  The functional characteristics of this cell type currently undefined in CL, which affects its proper placement within the hierarchy.
+synonym: "effector CD8+ T cell" BROAD [PMID:22343568]
+synonym: "effector CD8-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "effector CD8-positive, alpha-beta T-cell" EXACT []
+synonym: "effector CD8-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000791 ! mature alpha-beta T cell
+is_a: CL:0000911 ! effector T cell
+
+[Term]
+id: CL:0001051
+name: CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell
+namespace: cell
+def: "A CD4-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-negative." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'non-Th1/Th17 CD4+ T cell'.  Cells of this phenotype may include T-helper 2 T cells and some naive CD4+ T cells.
+synonym: "CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T lymphocyte" EXACT []
+synonym: "CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T-cell" EXACT []
+synonym: "CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T-lymphocyte" EXACT []
+synonym: "non-Th1/Th17 CD4+ T cell" BROAD [PMID:22343568]
+is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
+
+[Term]
+id: CL:0001052
+name: CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell
+namespace: cell
+def: "A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-negative." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'non-Tc1/Tc17 CD8+ T cell'.  Cells of this phenotype may include Tc2 T cells and some naive CD8+ T cells.
+synonym: "CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T lymphocyte" EXACT []
+synonym: "CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T-cell" EXACT []
+synonym: "CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T-lymphocyte" EXACT []
+synonym: "non-Tc1/Tc17 CD8+ T cell" BROAD [PMID:22343568]
+is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0001053
+name: IgD-negative memory B cell
+def: "A memory B cell that lacks expression of surface IgD." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'IgD- memory B cell'.  The majority of these cells are class-switched, though some are IgM-positive.
+synonym: "IgD- memory B cell" EXACT [PMID:22343568]
+is_a: CL:0000787 ! memory B cell
 
 [Term]
 id: CL:0001658
@@ -10331,7 +10370,6 @@ name: hematopoietic lineage restricted progenitor cell
 namespace: cell
 def: "A hematopoietic progenitor cell that is capable of developing into only one lineage of hematopoietic cells." [GOC:tfm, PMID:19022770]
 is_a: CL:0008001 ! hematopoietic precursor cell
-disjoint_from: CL:0002032 ! hematopoietic oligopotent progenitor cell
 relationship: develops_from CL:0002032 ! hematopoietic oligopotent progenitor cell
 created_by: tmeehan
 creation_date: 2010-01-06T03:43:20Z
@@ -10390,7 +10428,6 @@ def: "A hematopoietic progenitor that has some limited self-renewal capability. 
 comment: Markers are associated with mouse cells.
 synonym: "KSL cell" EXACT []
 is_a: CL:0000837 ! hematopoietic multipotent progenitor cell
-disjoint_from: CL:0002043 ! CD34-positive, CD38-negative multipotent progenitor cell
 relationship: develops_from CL:0002033 ! short term hematopoietic stem cell
 created_by: tmeehan
 creation_date: 2010-01-08T11:16:35Z
@@ -11272,6 +11309,7 @@ id: CL:0002107
 name: IgD-negative CD38-positive IgG memory B cell
 namespace: cell
 def: "An IgD-negative CD38-positive IgG memory B cell is a CD38-positive IgG-positive that has class switched and lacks expression of IgD on the cell surface with the phenotype IgD-negative, CD38-positive, and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0001053 ! IgD-negative memory B cell
 is_a: CL:0002105 ! CD38-positive IgG memory B cell
 
 [Term]
@@ -11280,6 +11318,7 @@ name: CD38-negative IgG memory B cell
 namespace: cell
 def: "A CD38-negative IgG memory B cell is a IgG-positive class switched memory B cell that has class switched and expresses IgG on the cell surface with the phenotype CD38-negative, IgD-negative, and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
 is_a: CL:0000979 ! IgG memory B cell
+is_a: CL:0001053 ! IgD-negative memory B cell
 
 [Term]
 id: CL:0002109
@@ -11466,8 +11505,9 @@ creation_date: 2010-08-20T02:14:25Z
 id: CL:0002128
 name: Tc17 cell
 namespace: cell
-def: "A CD8-positive, alpha-beta positive T cell with the phenotype CCR6-positive, CCR5-high, CD45RA-negative, and secreting IL-17 and some IFNg." [GOC:dsd, GOC:tfm, PMID:19201830]
-comment: Found in the CD27-positive CD28-positive or CD27-negative CD28-positive fractions with the phenotype CCR4-negative and CCR7-negative.
+def: "A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-positive, CCR5-high, CD45RA-negative, and capable of producing IL-17 and some IFNg." [GOC:add, GOC:dsd, GOC:tfm, PMID:19201830, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'Tc17 CD8+ T cell', but its logical definition includes additional known characteristics of Tc17 T cells.  Found in the CD27-positive, CD28-positive or CD27-negative, CD28-positive fractions with the phenotype CCR4-negative and CCR7-negative (this sentence not part of definition).
+synonym: "Tc17 CD8+ T cell" EXACT [PMID:22343568]
 synonym: "Tc17 T cell" EXACT []
 synonym: "Tc17 T lymphocyte" EXACT []
 synonym: "Tc17 T-cell" EXACT []
@@ -13701,7 +13741,7 @@ creation_date: 2010-09-15T03:44:35Z
 id: CL:0002323
 name: amniocyte
 namespace: cell
-def: "A cell of aÃ‚Â fetusÃ‚Â which is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface." [BFO:0000066, GOC:tfm, PMID:3211847]
+def: "A cell of aåÊfetusåÊwhich is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface." [BFO:0000066, GOC:tfm, PMID:3211847]
 xref: BTO:0000066
 is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
@@ -13809,7 +13849,7 @@ creation_date: 2010-09-20T02:25:25Z
 id: CL:0002334
 name: preadipocyte
 namespace: cell
-def: "An undifferentiatedÃ‚Â fibroblastÃ‚Â that can be stimulated to form a fat cell." [GOC:tfm, PMID:18793119]
+def: "An undifferentiatedåÊfibroblaståÊthat can be stimulated to form a fat cell." [GOC:tfm, PMID:18793119]
 xref: BTO:0001107
 is_a: CL:0000057 ! fibroblast
 created_by: tmeehan
@@ -13985,7 +14025,7 @@ creation_date: 2010-09-21T04:33:05Z
 id: CL:0002351
 name: progenitor cell of endocrine pancreas
 namespace: cell
-def: "A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 andÃ‚Â Isl-1." [GOC:tfm, PMID:20025937, PMID:20217494]
+def: "A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 andåÊIsl-1." [GOC:tfm, PMID:20025937, PMID:20217494]
 synonym: "pancreatic endocrine progenitor" EXACT []
 synonym: "pancreatic islet progenitor cell" EXACT []
 is_a: CL:0000048 ! multi fate stem cell
@@ -14111,7 +14151,7 @@ creation_date: 2010-09-22T01:40:44Z
 id: CL:0002363
 name: keratocyte
 namespace: cell
-def: "A keratocyte is a specialized fibroblastÃ‚Â residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisÃ‚Â cornealÃ‚Â layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
+def: "A keratocyte is a specialized fibroblaståÊresiding in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisåÊcornealåÊlayer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
 synonym: "corneal fibroblast" EXACT []
 synonym: "corneal keratocyte" EXACT []
 is_a: CL:0000005 ! fibroblast neural crest derived
@@ -14156,7 +14196,7 @@ creation_date: 2010-09-23T03:46:34Z
 id: CL:0002367
 name: trabecular meshwork cell
 namespace: cell
-def: "A cell that lines the trabecular meshwork, which is an area of tissue in theÃ‚Â eyeÃ‚Â located around the base of theÃ‚Â cornea, near theÃ‚Â ciliary body, and is responsible for draining theÃ‚Â aqueous humorÃ‚Â from the eye via theÃ‚Â anterior chamberÃ‚Â (the chamber on the front of the eye covered by the cornea). This cell may play a role in regulating intraocular pressure." [GOC:tfm, PMID:14500801]
+def: "A cell that lines the trabecular meshwork, which is an area of tissue in theåÊeyeåÊlocated around the base of theåÊcornea, near theåÊciliary body, and is responsible for draining theåÊaqueous humoråÊfrom the eye via theåÊanterior chamberåÊ(the chamber on the front of the eye covered by the cornea). This cell may play a role in regulating intraocular pressure." [GOC:tfm, PMID:14500801]
 synonym: "trabeculocyte" EXACT []
 is_a: CL:0000115 ! endothelial cell
 created_by: tmeehan
@@ -17526,16 +17566,17 @@ is_a: CL:0015000 ! cranial motor neuron
 [Term]
 id: CL:0005024
 name: somatomotor neuron
-def: "Cranial motor neurons found in the midbrain and hindbrain that innervates muscles that control eye and tongue." []
-xref: PMID:14699587
-is_a: CL:0015000 ! cranial motor neuron
+def: "A motor neuron that innervates a skeletal muscle.  These motor neurons are all excitatory and cholinergic." []
+synonym: "somatic motor neuron" EXACT []
+is_a: CL:0000108 ! cholinergic neuron
+is_a: CL:0008014 ! excitatory motor neuron
 
 [Term]
 id: CL:0005025
 name: visceromotor neuron
-def: "Visceromotor motor neurons are found in the hindbrain, and innervate parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems." []
+def: "A motor neuron that synapses to parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems." []
+comment: Note that these neurons do not synapse directly onto muscles
 synonym: "general visceral motor neuron" EXACT []
-xref: PMID:14699587
 is_a: CL:0000100 ! motor neuron
 
 [Term]
@@ -17838,6 +17879,34 @@ def: "A visceral muscle that is transversely striated.  Examples include the vis
 is_a: CL:0008008 ! striated visceral muscle cell
 
 [Term]
+id: CL:0008010
+name: cranial somatomotor neuron
+def: "A cranial motor neuron whose soma is located in the midbrain andor hindbrain and which innervates the skeletal muscles of the eye or tongue." [PMID:14699587]
+is_a: CL:0005024 ! somatomotor neuron
+is_a: CL:0015000 ! cranial motor neuron
+
+[Term]
+id: CL:0008013
+name: cranial visceromotor neuron
+def: " A visceromotor motor neuron whose soma is located in the hindbrain, and which synapses to parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles of the head." [PMID:14699587]
+is_a: CL:0005025 ! visceromotor neuron
+is_a: CL:0015000 ! cranial motor neuron
+
+[Term]
+id: CL:0008014
+name: excitatory motor neuron
+def: "A motor neuron that is capable of directly inducing muscle contraction." []
+comment: In vertebrates, all motor neurons are excitatory, but various types of inhibitory motor neurons exist in invertebrates.
+is_a: CL:0000100 ! motor neuron
+
+[Term]
+id: CL:0008015
+name: inhibitory motor neuron
+def: "A motor neuron that is capable of directly inhibiting muscle contraction." []
+comment: In vertebrates, all motor neurons are excitatory, but various types of inhibitory motor neurons exist in invertebrates.
+is_a: CL:0000100 ! motor neuron
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -18086,7 +18155,7 @@ id: CL:0011107
 name: Muller cell
 def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.\n" [PMID:21911394]
 synonym: "Muller glia " EXACT []
-synonym: "MÃƒÂ¼ller cell" EXACT []
+synonym: "MÌ?ller cell" EXACT []
 is_a: CL:0000681 ! radial glial cell
 is_a: CL:0009004 ! retinal cell
 
@@ -18108,7 +18177,8 @@ is_a: CL:0000540 ! neuron
 id: CL:0011110
 name: histaminergic neuron
 def: "Neuron that secretes histamine." [PMID:22677810]
-is_a: CL:0000540 ! neuron
+is_a: CL:0002274 ! histamine secreting cell
+is_a: CL:0011112 ! magnocellular neurosecretory cell
 
 [Term]
 id: CL:0011111
@@ -20723,6 +20793,7 @@ id: CL:1001509
 name: glycinergic neuron
 namespace: cl
 def: "the neurons that utilize glycine as a neurotransmitter" [MP:0010385]
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -21110,8 +21181,8 @@ def: "Hematopoietic cells resident in the bone marrow. Include: hematopoietic st
 synonym: "bone marrow hematopoietic cells" RELATED [CALOHA:TS-2109]
 synonym: "bone marrow poietic cells" RELATED [CALOHA:TS-2109]
 xref: CALOHA:TS-2109
+is_a: CL:0000988 ! hematopoietic cell
 is_a: CL:0002092 ! bone marrow cell
-is_a: CL:0008001 ! hematopoietic precursor cell
 
 [Term]
 id: CL:1001611
@@ -21121,6 +21192,14 @@ synonym: "cerebellum neuron" RELATED [CALOHA:TS-2359]
 xref: CALOHA:TS-2359
 xref: FMA:84665
 is_a: CL:0000540 ! neuron
+
+[Typedef]
+id: RO:0002120
+name: synapsed to
+
+[Typedef]
+id: RO:0002130
+name: has synaptic terminal in
 
 [Typedef]
 id: RO:0002131
