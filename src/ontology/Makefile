@@ -15,13 +15,13 @@ release: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-ba
 # TODO: allow-equivalent-pairs is there for the CL:cell vs GO:cell
 build/cl.owl: cl-edit.owl
 	ontology-release-runner $(USECAT) --ignore-selected-equivalent-pairs 'CL:0000000' --repair-cardinality --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
-build/cl.obo: build/cl.owl
+build/%: build/cl.owl
 cl.owl: build/cl.owl
 	cp $< $@
 cl.obo: build/cl.owl
 	owltools $(USECAT) $< --merge-imports-closure -o -f obo $@
 cl-basic.owl: build/cl-simple.owl
-	owltools $< --set-ontology-id $(OBO)/cl/$@ -o $@
+	owltools $< --remove-axioms -t DisjointClasses --set-ontology-id $(OBO)/cl/$@ -o $@
 cl-basic.obo: cl-basic.owl
 	owltools $< -o -f obo $@
 
