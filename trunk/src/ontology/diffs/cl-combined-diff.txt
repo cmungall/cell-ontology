@@ -10,15 +10,11 @@ NEW TERMS
 =========
 
 ID	name	namespace
-CL:0001049	activated CD8-positive, alpha-beta T cell, human	cell
-CL:0001050	effector CD8-positive, alpha-beta T cell	cell
-CL:0001051	CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell	cell
-CL:0001052	CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell	cell
-CL:0001053	IgD-negative memory B cell	
-CL:0008010	cranial somatomotor neuron	
-CL:0008013	cranial visceromotor neuron	
-CL:0008014	excitatory motor neuron	
-CL:0008015	inhibitory motor neuron	
+CL:0001054	CD14-positive monocyte	cell
+CL:0001055	CD14-positive, CD16-low monocyte	cell
+CL:0001056	dendritic cell, human	cell
+CL:0001057	myeloid dendritic cell, human	cell
+CL:0001058	plasmacytoid dendritic cell, human	cell
 
 
 OBSOLETIONS
@@ -38,88 +34,120 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	synonym	xref	is_a	disjoint_from	relationship	
-CL:0000025	C					1 D		1 D, 1 A	
-CL:0000039							1 D		
-CL:0000049							3 D		
-CL:0000050							2 D		
-CL:0000084							2 D		
-CL:0000100		C		1 D, 1 A					
-CL:0000108						1 A			
-CL:0000225							1 D		
-CL:0000236		C							
-CL:0000255							1 D		
-CL:0000451							1 D		
-CL:0000521							1 D		
-CL:0000542							1 D		
-CL:0000545		C	A	1 A					
-CL:0000546		C	A			1 A			
-CL:0000556							1 D		
-CL:0000617						1 A			
-CL:0000624							1 D		
-CL:0000679						1 A			
-CL:0000700						1 A			
-CL:0000737							1 D		
-CL:0000785							3 D		
-CL:0000788		C	C						
-CL:0000789							1 D		
-CL:0000813							1 D		
-CL:0000817							1 D		
-CL:0000823							2 D		
-CL:0000824							2 D		
-CL:0000837							1 D		
-CL:0000838							1 D		
-CL:0000851							1 D		
-CL:0000852							1 D		
-CL:0000897		C							
-CL:0000899		C	A	1 A					
-CL:0000900			C	1 A					
-CL:0000907	C	C	A	1 A					
-CL:0000909		C							
-CL:0000913		C	A	1 A					
-CL:0000917		C	A	1 A					
-CL:0000918			A			1 A			
-CL:0000937							2 D		
-CL:0000938							1 D		
-CL:0000945			C						
-CL:0000955							1 D		
-CL:0000967						1 D, 1 A			
-CL:0000970		C	C	1 A					
-CL:0000971						1 D, 1 A			
-CL:0000972		C	C						
-CL:0000981						1 D, 1 A			
-CL:0001008							1 D		
-CL:0001021							1 D		
-CL:0001023							1 D		
-CL:0002031							1 D		
-CL:0002036							1 D		
-CL:0002107						1 A			
-CL:0002108						1 A			
-CL:0002128		C	C	1 A					
-CL:0002323		C							
-CL:0002334		C							
-CL:0002351		C							
-CL:0002363		C							
-CL:0002367		C							
-CL:0005024		C		1 A	1 D	1 D, 2 A			
-CL:0005025		C	A		1 D				
-CL:0011107				1 D, 1 A					
-CL:0011110						1 D, 2 A			
-CL:1001509						1 A			
-CL:1001610						1 D, 1 A			
-
-
-
-OTHER STANZA TYPES
-==================
-
-New Stanzas
-==========-
-
-Stanza type	ID	Name
-Typedef	RO:0002120	synapsed to
-Typedef	RO:0002130	has synaptic terminal in
-
+Term ID	name	namespace	def	comment	synonym	is_a	relationship	
+CL:0000002			C					
+CL:0000004	C		C					
+CL:0000009	C							
+CL:0000012	C							
+CL:0000013	C							
+CL:0000045	C							
+CL:0000046	C							
+CL:0000063	C		C					
+CL:0000070	C							
+CL:0000074	C							
+CL:0000093	C							
+CL:0000144	C		C					
+CL:0000156	C							
+CL:0000194	C							
+CL:0000195	C							
+CL:0000220	C							
+CL:0000224	C		C					
+CL:0000229	C							
+CL:0000230	C							
+CL:0000231	C							
+CL:0000245	C							
+CL:0000248	C							
+CL:0000250	C							
+CL:0000252	C							
+CL:0000254	C							
+CL:0000258	C							
+CL:0000260	C							
+CL:0000262	C							
+CL:0000264	C							
+CL:0000266	C							
+CL:0000268	C							
+CL:0000270	C							
+CL:0000272	C							
+CL:0000276	C							
+CL:0000277			C					
+CL:0000278	C							
+CL:0000280	C							
+CL:0000282	C							
+CL:0000284	C							
+CL:0000288	C							
+CL:0000290	C							
+CL:0000292	C							
+CL:0000294	C							
+CL:0000296	C							
+CL:0000297	C							
+CL:0000298	C							
+CL:0000299	C							
+CL:0000302	C							
+CL:0000303	C							
+CL:0000304	C							
+CL:0000305	C							
+CL:0000316	C		C					
+CL:0000320	C							
+CL:0000330	C							
+CL:0000331	C							
+CL:0000332	C							
+CL:0000344	C							
+CL:0000363	C							
+CL:0000364	C							
+CL:0000366	C							
+CL:0000368	C							
+CL:0000370	C							
+CL:0000375	C							
+CL:0000399	C							
+CL:0000400	C							
+CL:0000414	C		C					
+CL:0000433	C							
+CL:0000455	C							
+CL:0000472	C							
+CL:0000475	C							
+CL:0000491	C							
+CL:0000493	C							
+CL:0000522	C		C					
+CL:0000537	C							
+CL:0000538	C							
+CL:0000539	C		C					
+CL:0000543	C							
+CL:0000585	C							
+CL:0000610	C							
+CL:0000616	C		C					
+CL:0000620	C		C					
+CL:0000668			C					
+CL:0000672	C							
+CL:0000685	C							
+CL:0000698	C							
+CL:0000818				A	1 A			
+CL:0000860			C					
+CL:0000875			C				1 A	
+CL:0000938	C			C	3 A			
+CL:0000939	C		C	C	7 A			
+CL:0000980				C				
+CL:0001048	C							
+CL:0001053		A						
+CL:0002057			C	C	2 A	1 A		
+CL:0002245	C		C					
+CL:0002276	C		C					
+CL:0002323			C					
+CL:0002334			C					
+CL:0002351			C					
+CL:0002367			C					
+CL:0002392	C							
+CL:0002393							1 A	
+CL:0002396					1 A	1 A		
+CL:0002397			C	C	1 A	1 D, 1 A	1 D	
+CL:0005016	C							
+CL:0005017	C							
+CL:0007014			C					
+CL:0007015			C					
+CL:0011107					1 D, 1 A			
+CL:1000316			C					
+CL:1000319			C					
+CL:1000328			C					
+CL:1001583			C					
 
 
 
@@ -131,17 +159,17 @@ Term counts for the old and new files
 Ontology	Old file	New file	Change
 cl	22	22	
 	(20 defined)	(20 defined)	
-unknown	98	103	+5
-	(88 defined)	(93 defined)	
-cell	1934	1938	+4
-	(1584 defined)	(1588 defined)	
+unknown	103	102	-1
+	(93 defined)	(92 defined)	
+cell	1938	1944	+6
+	(1588 defined)	(1594 defined)	
 
 Obsolete	96	96	0
-	(4.5% of total)	 (4.4% of total)	(0.0%)
+	(4.4% of total)	 (4.4% of total)	(0.0%)
 
-Totals	2054	2063	+9 (+0.4%)
-	1692 (82.4%) defined	1701 (82.5%) defined	
-	2150 inc. obs	2159 inc. obs
+Totals	2063	2068	+5 (+0.2%)
+	1701 (82.5%) defined	1706 (82.5%) defined	
+	2159 inc. obs	2164 inc. obs
 
 
 
@@ -156,85 +184,56 @@ Totals	2054	2063	+9 (+0.4%)
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-CL:0000100 : motor neuron   
-OLD: An efferent neuron that passes from the central nervous system or a ganglion toward or to a muscle and conducts an impulse that causes movement.
-NEW: An efferent neuron that passes from the central nervous system or a ganglion toward or to a muscle and conducts an impulse that causes or inhibits movement.
+CL:0000316 : obsolete ray initial   
+(was ray initial)
+OLD: Obsolete. Use PO:0000082 from Plant Ontology instead. OBSOLETE, use term from Plant Ontology. A meristemic ray cell in the vascular cambium that gives rise to ray cells of the secondary xylem and secondary phloem.
+NEW: Obsolete. Use PO:0000082 from Plant Ontology instead. A meristemic ray cell in the vascular cambium that gives rise to ray cells of the secondary xylem and secondary phloem.
 
 
-CL:0000236 : B cell   
-OLD: A lymphocyte of B lineage with the phenotype CD19-positive and capable of B cell mediated immunity.
-NEW: A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.
+CL:0000860 : classical monocyte   
+OLD: A type of monocyte that responds rapidly to microbial stimuli by secreting cytokines and antimicrobial factors. This cell type is characterized by high expression of CCR2 in both rodents and humans, and of being larger size than non-classical monocytes.
+NEW: A monocyte that responds rapidly to microbial stimuli by secreting cytokines and antimicrobial factors and which is characterized by high expression of CCR2 in both rodents and humans, negative for the lineage markers CD3, CD19, and CD20, and of larger size than non-classical monocytes.
 
 
-CL:0000545 : T-helper 1 cell   
-OLD: A CD4-positive, alpha-beta T cell that has the phenotype T-bet-positive and produces interferon-gamma.
-NEW: A CD4-positive, alpha-beta T cell that has the phenotype T-bet-positive, CXCR3-positive, CCR6-negative, and is capable of producing interferon-gamma.
+CL:0000875 : non-classical monocyte   
+OLD: Subset of monocytes characterized by low expression of CCR2, low responsiveness to monocyte chemoattractant CCL2/MCP1, low phagocytic activity, but increased co-stimulatory activity. May also play a role in tissue repair.
+NEW: A type of monocyte characterized by low expression of CCR2, low responsiveness to monocyte chemoattractant CCL2/MCP1, low phagocytic activity, and decrease size relative to classical monocytes, but increased co-stimulatory activity. May also play a role in tissue repair.
 
 
-CL:0000546 : T-helper 2 cell   
-OLD: A CD4-positive, alpha-beta T cell that has the phenotype GATA-3-positive and produces interleukin-4.
-NEW: A CD4-positive, alpha-beta T cell that has the phenotype GATA-3-positive, CXCR3-negative, CCR6-negative, and is capable of producing interleukin-4.
+CL:0000939 : CD16-positive, CD56-dim natural killer cell   
+(was cytotoxic CD56-dim natural killer cell)
+OLD: A mature natural killer cell that has the phenotype CD56-low and CD16-positive and is capable of cytotoxic function and cytokine production.
+NEW: A mature natural killer cell that has the phenotype CD56-low, CD16-positive and which is capable of cytotoxicity and cytokine production.
 
 
-CL:0000788 : naive B cell   
-OLD: A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD27-negative and that has not yet been activated by antigen in the periphery.
-NEW: A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD20-positive, CD27-negative and that has not yet been activated by antigen in the periphery.
+CL:0002057 : CD14-positive, CD16-negative classical monocyte   
+OLD: A monocyte that is CD14-positive, CD16-negative, CD64-positive, CD163-positive,
+NEW: A classical monocyte that is CD14-positive, CD16-negative, CD64-positive, CD163-positive.
 
 
-CL:0000897 : CD4-positive, alpha-beta memory T cell   
-OLD: CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122- high.
-NEW: CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.
+CL:0002323 : amniocyte   
+OLD: A cell of aÂ fetusÂ which is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface.
+NEW: A cell of a fetus which is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface.
 
 
-CL:0000899 : T-helper 17 cell   
-OLD: CD4-positive, alpha-beta T cell with the phenotype RORgamma-t-positive that produces IL-17.
-NEW: CD4-positive, alpha-beta T cell with the phenotype RORgamma-t-positive, CXCR3-negative, CCR6-positive, and capable of producing IL-17.
+CL:0002334 : preadipocyte   
+OLD: An undifferentiatedÂ fibroblastÂ that can be stimulated to form a fat cell.
+NEW: An undifferentiated fibroblast that can be stimulated to form a fat cell.
 
 
-CL:0000907 : central memory CD8-positive, alpha-beta T cell   
-(was central memory CD8 positive, alpha-beta T cell)
-OLD: A CD8-positive, alpha beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RO-positive, and CD25-negative.
-NEW: CD8-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative.
+CL:0002351 : progenitor cell of endocrine pancreas   
+OLD: A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 andÂ Isl-1.
+NEW: A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 and Isl-1.
 
 
-CL:0000909 : CD8-positive, alpha-beta memory T cell   
-OLD: A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122- high.
-NEW: A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.
+CL:0002367 : trabecular meshwork cell   
+OLD: A cell that lines the trabecular meshwork, which is an area of tissue in theÂ eyeÂ located around the base of theÂ cornea, near theÂ ciliary body, and is responsible for draining theÂ aqueous humorÂ from the eye via theÂ anterior chamberÂ (the chamber on the front of the eye covered by the cornea). This cell may play a role in regulating intraocular pressure.
+NEW: A cell that lines the trabecular meshwork, which is an area of tissue in the eye located around the base of the cornea, near the ciliary body, and is responsible for draining the aqueous humor from the eye via the anterior chamber (the chamber on the front of the eye covered by the cornea). This cell may play a role in regulating intraocular pressure.
 
 
-CL:0000913 : effector memory CD8-positive, alpha-beta T cell   
-OLD: A CD8-positive, alpha beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RO-positive, and CD25-negative.
-NEW: CD8-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative.
-
-
-CL:0000917 : Tc1 cell   
-OLD: A CD8-positive, alpha-beta positive T cell expressing T-bet and eomesodermin and secreting interferon-gamma.
-NEW: A CD8-positive, alpha-beta positive T cell that has the phenotype T-bet-positive, eomesodermin-positive, CXCR3-positive, CCR6-negative, and is capable of producing interferon-gamma.
-
-
-CL:0000970 : unswitched memory B cell   
-OLD: An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive and/or IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative.
-NEW: An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive, IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative.
-
-
-CL:0000972 : class switched memory B cell   
-OLD: A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are usually CD27-positive and have either IgG, IgE, or IgA on the cell surface.
-NEW: A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are CD27-positive and have either IgG, IgE, or IgA on the cell surface.
-
-
-CL:0002128 : Tc17 cell   
-OLD: A CD8-positive, alpha-beta positive T cell with the phenotype CCR6-positive, CCR5-high, CD45RA-negative, and secreting IL-17 and some IFNg.
-NEW: A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-positive, CCR5-high, CD45RA-negative, and capable of producing IL-17 and some IFNg.
-
-
-CL:0005024 : somatomotor neuron   
-OLD: Cranial motor neurons found in the midbrain and hindbrain that innervates muscles that control eye and tongue.
-NEW: A motor neuron that innervates a skeletal muscle.  These motor neurons are all excitatory and cholinergic.
-
-
-CL:0005025 : visceromotor neuron   
-OLD: Visceromotor motor neurons are found in the hindbrain, and innervate parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems.
-NEW: A motor neuron that synapses to parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems.
+CL:0002397 : CD14-positive, CD16-positive monocyte   
+OLD: An intermediate monocyte that is CD14-positive, CD16-positive.
+NEW: A CD14-positive monocyte that is also CD16-positive and CCR2-negative.
 
 
 
