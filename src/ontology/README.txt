@@ -59,4 +59,3 @@ You will need:
 
   export PATH="$PATH:/Applications/OBO-Edit2"
 
-
