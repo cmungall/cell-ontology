@@ -3,10 +3,7 @@ USECAT= --catalog-xml catalog-v001.xml
 
 all: release
 
-release: cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
-
-##USE THIS WHEN ZFIN FIXED:
-##release: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
+release: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
 
 # ----------------------------------------
 # BUILD
