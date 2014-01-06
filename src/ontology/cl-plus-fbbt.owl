@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rdf:RDF
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  >
+  <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/cl-plus-fbbt.owl">
+    <dc:creator xml:lang="en">CL editors</dc:creator>
+    <dc:title xml:lang="en">CL importer for CL+FBbt</dc:title>
+    <dc:description xml:lang="en">
+      This is an ontology that collects the CL, plus the Drosophila
+      anatomy ontology (FBbt), plus bridge axioms. One of the main
+      purposes of this ontology is to check for consistency between
+      CL and FBbt
+    </dc:description>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fbbt.owl"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/fbbt.owl"/>
+  </owl:Ontology>
+</rdf:RDF>
