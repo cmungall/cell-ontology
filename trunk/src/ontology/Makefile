@@ -1,7 +1,7 @@
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
 
-all: release
+all: all_imports release
 
 release: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
 
@@ -28,7 +28,10 @@ cl-basic.obo: cl-basic.owl
 %-obocheck: %.obo
 	obo2obo $< -o $@
 
-bridge-checks: cl-bridge-to-zfa-check.txt
+#SSAOS= zfa xao fbbt
+#SSAOS= zfa
+SSAOS= xao fbbt
+bridge-checks: $(patsubst %,cl-bridge-to-%-check.txt,$(SSAOS))
 
 # do 'grep UNSAT' to check for success
 # use cl-plus-zfa.owl to check for errors

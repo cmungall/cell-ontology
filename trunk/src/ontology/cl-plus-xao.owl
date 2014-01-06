@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<rdf:RDF
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  >
+  <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/cl-plus-zfa.owl">
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/bridge/collected-zebrafish</foaf:homepage>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://build.berkeleybop.org/job/check-uberon-zfa</foaf:homepage>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000027</rdfs:seeAlso>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://genomebiology.com/2012/13/1/R5</rdfs:seeAlso>
+    <dc:creator xml:lang="en">CL editors</dc:creator>
+    <dc:title xml:lang="en">CL importer for CL+ZFA</dc:title>
+    <dc:description xml:lang="en">
+      This is an ontology that collects the CL, plus the Zebrafish
+      anatomy ontology (ZFA), plus bridge axioms. One of the main
+      purposes of this ontology is to check for consistency between
+      CL and ZFA
+    </dc:description>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-xao.owl"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/xao.owl"/>
+  </owl:Ontology>
+</rdf:RDF>
