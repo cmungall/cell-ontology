@@ -6,8 +6,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
-Import(<http://purl.obolibrary.org/obo/cl/imports/clo_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/go_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/clo_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/pr_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/pato_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>)
@@ -530,7 +530,6 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/CL_0000056> "BTO:0000222"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/CL_0000056> "CALOHA:TS-0650"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/CL_0000056> <http://purl.obolibrary.org/obo/CL_0000680>)
-SubClassOf(<http://purl.obolibrary.org/obo/CL_0000056> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002202> <http://purl.obolibrary.org/obo/CL_0000355>))
 Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000057>))
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0517223651"^^xsd:string) Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MESH:A11.329.228"^^xsd:string) Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MESH:D005347"^^xsd:string) Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "http://en.wikipedia.org/wiki/Fibroblast"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/CL_0000057> "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped."^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/CL_0000057> "cell"^^xsd:string)
@@ -3662,6 +3661,7 @@ AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0000515> "skel
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/CL_0000515> "cell"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/CL_0000515> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002203> <http://purl.obolibrary.org/obo/CL_0008002>) <http://purl.obolibrary.org/obo/CL_0000056>))
 SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#is_inferred> "true"^^xsd:string) <http://purl.obolibrary.org/obo/CL_0000515> <http://purl.obolibrary.org/obo/CL_0000056>)
+SubClassOf(<http://purl.obolibrary.org/obo/CL_0000515> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002202> <http://purl.obolibrary.org/obo/CL_0000355>))
 Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000516>))
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/CL_0000516> "FMA:54550"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/CL_0000516> "cell"^^xsd:string)
