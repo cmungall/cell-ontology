@@ -1,4 +1,5 @@
 #!/usr/bin/perl -w
+# this is a copy of the script in obo-grep.pl
 
 use strict;
 my %tag_h=();

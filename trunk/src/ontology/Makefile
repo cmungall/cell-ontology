@@ -80,7 +80,7 @@ mirror/%.owl:
 mirror/uberon.owl:
 	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
 mirror/pr.obo:
-	wget $(OBO)/pr.obo -O $@.tmp && obo-grep.pl -r 'id: PR:' $@.tmp > $@
+	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
 mirror/pr.owl: mirror/pr.obo
 	owltools $< --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
 mirror/clo.owl:
@@ -126,6 +126,14 @@ bridge/cl-bridge-to-uberon.owl: cl.owl
 	owltools $< --extract-bridge-ontologies -d $* -s cl -x -o -f obo $@/no-bridge.obo
 bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
 	owltools $< -o -f obo $@
+
+NIF = http://ontology.neuinfo.org/NIF
+NIFBM = $(NIF)/BiomaterialEntities
+imports/nif_import.owl:
+	owltools $(NIFBM)/NIF-Cell.owl $(NIF)/nif.owl --extract-module -s $(NIFBM)/NIF-Cell.owl -c --set-ontology-id $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
+
+mirror/NIF-Cell.owl:
+	owltools  $(NIFBM)/NIF-Cell.owl  --remove-imports-declarations --add-imports-declarations $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
 
 # ----------------------------------------
 # Legacy copy to cvs
