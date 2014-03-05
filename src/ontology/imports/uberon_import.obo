@@ -1,5 +1,6 @@
 format-version: 1.2
 ontology: cl/imports/imports/uberon_import
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
 id: UBERON:0000002
@@ -1264,6 +1265,22 @@ synonym: "set of muscles of body" EXACT []
 synonym: "vertebrate muscular system" EXACT []
 is_a: UBERON:0000467 ! anatomical system
 relationship: BFO:0000050 UBERON:0002204 ! musculoskeletal system
+
+[Term]
+id: UBERON:0000395
+name: cochlear ganglion
+def: "group of nerve cells that serve the sense of hearing by sending a representation of sound from the cochlea to the brain. The cell bodies of the spiral ganglion neurons are found in the spiral structure of the cochlea[WP]. the group of nerve cell bodies that conveys auditory sensation from the organ of Corti to the hindbrain and resides on the cochlear part of the vestibulocochlear nerve (eighth cranial nerve)[MP]." []
+synonym: "Corti's ganglion" EXACT []
+synonym: "ganglion cochlearis" RELATED []
+synonym: "ganglion of Corti" EXACT []
+synonym: "ganglion spirale" RELATED []
+synonym: "ganglion spirale cochleae" RELATED []
+synonym: "spiral ganglion" EXACT []
+synonym: "spiral ganglion of cochlea" RELATED []
+synonym: "vestibulocochlear VIII ganglion cochlear component" EXACT []
+is_a: UBERON:0001714 ! cranial ganglion
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0002827 ! auditory ganglion
 
 [Term]
 id: UBERON:0000397
@@ -6502,6 +6519,17 @@ relationship: BFO:0000050 UBERON:0002097 ! skin of body
 relationship: BFO:0000050 UBERON:0002199 ! integument
 
 [Term]
+id: UBERON:0002069
+name: stratum granulosum of epidermis
+def: "A layer of the epidermis found between the stratum corneum (and possibly stratum lucidum) and stratum spinosum.[1] In this layer, keratinocytes are now called granular cells, and contain keratohyalin and lamellar granules." []
+synonym: "epidermis granular layer" RELATED []
+synonym: "epidermis stratum granulosum" EXACT []
+synonym: "granular layer of epidermis" EXACT []
+synonym: "stratum granulosum" EXACT []
+is_a: UBERON:0013754 ! layer of skin
+relationship: BFO:0000050 UBERON:0001003 ! epidermis
+
+[Term]
 id: UBERON:0002072
 name: hypodermis
 def: "Lowermost layer of the integumentary system in vertebrates. Types of cells that are found in the hypodermis are fibroblasts, adipose cells, and macrophages. It is derived from the mesoderm, but unlike the dermis, it is not derived from the dermatome region of the mesoderm. The hypodermis is used mainly for fat storage[WP]." []
@@ -8596,6 +8624,23 @@ intersection_of: BFO:0000050 UBERON:0001776 ! optic choroid
 relationship: BFO:0000050 UBERON:0001776 ! optic choroid
 
 [Term]
+id: UBERON:0002450
+name: decidua
+def: "Uterine lining (endometrium) during a pregnancy, which forms the maternal part of the placenta. It is formed under the influence of progesterone and forms highly-characteristic cells." []
+synonym: "decidous membrane" EXACT []
+synonym: "decidua basalis" RELATED []
+synonym: "endometrium" RELATED []
+synonym: "maternal decidual layer" RELATED []
+synonym: "placenta maternal decidual layer" RELATED []
+synonym: "uterine decidua" RELATED []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0005156 ! reproductive structure
+is_a: UBERON:0014404 ! female anatomical structure
+relationship: BFO:0000050 UBERON:0001987 ! placenta
+relationship: RO:0002202 UBERON:0000459 ! uterine wall
+
+[Term]
 id: UBERON:0002456
 name: internal thoracic artery
 def: "In human anatomy, the internal thoracic artery (ITA), previously known as the internal mammary artery (a name still common among surgeons), is an artery that supplies the anterior chest wall and the breasts. It is a paired artery, with one running along each side of the sternum, to continue after its bifurcation as the superior epigastric and musculophrenic arteries. [WP,unvetted]." []
@@ -9096,6 +9141,29 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 intersection_of: UBERON:0000481 ! multi-tissue structure
 intersection_of: BFO:0000050 UBERON:0001893 ! telencephalon
 relationship: BFO:0000050 UBERON:0001893 ! telencephalon
+
+[Term]
+id: UBERON:0002827
+name: auditory ganglion
+synonym: "acoustic ganglion" RELATED []
+synonym: "acoustic ganglion VIII" EXACT []
+synonym: "acoustico-vestibular VIII ganglion" EXACT []
+synonym: "auditory ganglion" EXACT []
+synonym: "ganglion VIII" EXACT []
+synonym: "gVIII" EXACT []
+synonym: "nucleus nervi oculomotorii ventrolateralis" RELATED []
+synonym: "nucleus nervi oculomotorii, pars ventralis" RELATED []
+synonym: "SAG" BROAD []
+synonym: "statoacoustic (VIII) ganglion" EXACT []
+synonym: "statoacoustic ganglia" EXACT []
+synonym: "statoacoustic VIII ganglion" RELATED []
+synonym: "vestibulocochlear VIII ganglion" EXACT []
+is_a: UBERON:0001714 ! cranial ganglion
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0002105 ! vestibulo-auditory system
+relationship: RO:0002202 UBERON:0003249 ! epithelium of otic placode
+relationship: RO:0002202 UBERON:0005565 ! facio-acoustic neural crest
+relationship: RO:0002202 UBERON:0012175 ! acoustico-facial VII-VIII ganglion complex
 
 [Term]
 id: UBERON:0002835
@@ -12646,6 +12714,15 @@ is_a: UBERON:0012275 ! meso-epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0002370 ! thymus
 relationship: BFO:0000050 UBERON:0002370 ! thymus
+
+[Term]
+id: UBERON:0003849
+name: mesencephalic neural crest
+def: "A neural crest that has_potential_to_developmentally_contribute_to a midbrain." []
+synonym: "mesencephalic neural crest" EXACT []
+synonym: "neural crest midbrain" EXACT []
+is_a: UBERON:0002342 ! neural crest
+is_a: UBERON:0003099 ! cranial neural crest
 
 [Term]
 id: UBERON:0003852
@@ -19257,6 +19334,16 @@ is_a: UBERON:0005156 ! reproductive structure
 relationship: BFO:0000050 UBERON:0000990 ! reproductive system
 
 [Term]
+id: UBERON:0005565
+name: facio-acoustic neural crest
+def: "Cranial neural crest that gives rise to the facio-acoustic ganglion." []
+synonym: "facio acoustic neural crest" EXACT []
+is_a: UBERON:0003099 ! cranial neural crest
+is_a: UBERON:0007213 ! mesenchyme derived from head neural crest
+is_a: UBERON:0007530 ! migrating mesenchyme population
+relationship: RO:0002202 UBERON:0003849 ! mesencephalic neural crest
+
+[Term]
 id: UBERON:0005594
 name: head somite
 def: "Somite located in the head region, caudal to the otic vesicle" []
@@ -20162,6 +20249,14 @@ synonym: "rostral rhombic lip" RELATED []
 is_a: UBERON:0001048 ! primordium
 relationship: BFO:0000050 UBERON:0002028 ! hindbrain
 relationship: BFO:0000050 UBERON:0010092 ! future metencephalon
+
+[Term]
+id: UBERON:0006232
+name: facio-acoustic VII-VIII preganglion complex
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0001714 ! cranial ganglion
+relationship: RO:0002202 UBERON:0005565 ! facio-acoustic neural crest
 
 [Term]
 id: UBERON:0006235
@@ -24768,6 +24863,16 @@ relationship: BFO:0000050 UBERON:0000922 ! embryo
 id: UBERON:0012069
 name: epithelium-associated lymphoid tissue
 is_a: UBERON:0001744 ! lymphoid tissue
+
+[Term]
+id: UBERON:0012175
+name: acoustico-facial VII-VIII ganglion complex
+synonym: "facio-acoustic ganglion complex VII-VIII" EXACT []
+synonym: "facio-acoustic VII-VIII ganglion complex" RELATED []
+is_a: UBERON:0001714 ! cranial ganglion
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: RO:0002202 UBERON:0003051 ! ear vesicle
+relationship: RO:0002202 UBERON:0006232 ! facio-acoustic VII-VIII preganglion complex
 
 [Term]
 id: UBERON:0012239
