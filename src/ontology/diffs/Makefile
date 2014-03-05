@@ -6,24 +6,24 @@ OWLSRC = ../$(ONT).owl
 LAST = $(OBO)/$(ONT).obo
 OWLLAST = $(OBO)/$(ONT).owl
 
-TXTS = cl-obo-diff.txt cl-def-diff.txt
+TXTS = $(ONT)-obo-diff.txt $(ONT)-def-diff.txt
 
-all: cl-obo-diff.html cl-def-diff.html cl-combined-diff.txt
+all: $(ONT)-obo-diff.html $(ONT)-def-diff.html $(ONT)-combined-diff.txt
 allplus: all $(ONT)-diff.md
 
-cl-obo-diff.html: cl-lastbuild.obo $(SRC)
-	compare-obo-files.pl --config 'html/ontology_name=Cell Ontology' --rss-path . -f1 $< -f2 $(SRC) -m $(TGTS) -o cl-obo-diff
-cl-def-diff.html: cl-lastbuild.obo $(SRC)
-	compare-defs.pl --config 'html/ontology_name=Cell Ontology' --rss-path . -f1 $< -f2 $(SRC) -m $(TGTS) -o cl-def-diff
+$(ONT)-obo-diff.html: $(ONT)-lastbuild.obo $(SRC)
+	compare-obo-files.pl --config 'html/ontology_name=Cell Ontology' --rss-path . -f1 $< -f2 $(SRC) -m $(TGTS) -o $(ONT)-obo-diff
+$(ONT)-def-diff.html: $(ONT)-lastbuild.obo $(SRC)
+	compare-defs.pl --config 'html/ontology_name=Cell Ontology' --rss-path . -f1 $< -f2 $(SRC) -m $(TGTS) -o $(ONT)-def-diff
 
-cl-obo-diff.txt: cl-obo-diff.html
-cl-def-diff.txt: cl-def-diff.html
+$(ONT)-obo-diff.txt: $(ONT)-obo-diff.html
+$(ONT)-def-diff.txt: $(ONT)-def-diff.html
 
-cl-combined-diff.txt:  $(TXTS)
+$(ONT)-combined-diff.txt:  $(TXTS)
 	cat $(TXTS) > $@
 
-cl-lastbuild.obo: $(SRC)
-	wget $(OBO)/cl-basic.obo -O $@
+$(ONT)-lastbuild.obo: $(SRC)
+	wget $(OBO)/$(ONT)-basic.obo -O $@
 $(ONT)-lastbuild.owl: $(SRC)
 	wget $(OWLLAST) -O $@ && touch $@
 
