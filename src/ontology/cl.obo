@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2014-03-05
+data-version: releases/2014-03-11
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: LATIN "latin term"
@@ -24758,15 +24758,10 @@ is_obsolete: true
 
 [Term]
 id: CL:1000319
-name: ureter epithelial cell
+name: obsolete goblet cell of epithelium proper of small intestine
 namespace: cell
 def: "OBSOLETE: A goblet cell that is part of the epithelium proper of small intestine." [GOC:tfm]
 xref: FMA:263052
-is_a: CL:0000066 ! epithelial cell
-is_a: CL:1000601 ! ureteral cell
-intersection_of: CL:0000066 ! epithelial cell
-intersection_of: part_of UBERON:0000056 ! ureter
-relationship: part_of UBERON:0000056 ! ureter
 is_obsolete: true
 
 [Term]
@@ -26653,7 +26648,7 @@ name: ureter urothelial cell
 namespace: cell
 xref: KUPO:0001117
 is_a: CL:0000731 {is_inferred="true"} ! urothelial cell
-is_a: CL:1000319 ! ureter epithelial cell
+is_a: CL:1000601 {is_inferred="true"} ! ureteral cell
 intersection_of: CL:0000731 ! urothelial cell
 intersection_of: part_of UBERON:0001254 ! urothelium of ureter
 relationship: part_of UBERON:0001254 ! urothelium of ureter
@@ -26666,7 +26661,7 @@ xref: KUPO:0001119
 is_a: CL:0000115 ! endothelial cell
 is_a: CL:0000134 ! mesenchymal cell
 is_a: CL:0002503 ! adventitial cell
-is_a: CL:1000319 ! ureter epithelial cell
+is_a: CL:1000601 {is_inferred="true"} ! ureteral cell
 intersection_of: CL:1000601 ! ureteral cell
 intersection_of: part_of UBERON:0001252 ! adventitia of ureter
 relationship: part_of UBERON:0001252 ! adventitia of ureter
