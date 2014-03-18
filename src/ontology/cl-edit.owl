@@ -6,8 +6,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
-Import(<http://purl.obolibrary.org/obo/cl/imports/go_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/clo_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/go_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/pr_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/pato_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>)
@@ -183,6 +183,7 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynony
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/CL_0000019> "spermatozoid"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/CL_0000019> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000408> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0030317>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0048240>)))
 SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#is_inferred> "true"^^xsd:string) <http://purl.obolibrary.org/obo/CL_0000019> <http://purl.obolibrary.org/obo/CL_0000408>)
+SubClassOf(<http://purl.obolibrary.org/obo/CL_0000019> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002104> <http://purl.obolibrary.org/obo/GO_0005929>))
 SubClassOf(<http://purl.obolibrary.org/obo/CL_0000019> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002202> <http://purl.obolibrary.org/obo/CL_0000018>))
 Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000020>))
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/CL_0000020> "FBbt:00004935"^^xsd:string)
