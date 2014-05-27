@@ -75,11 +75,11 @@ imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl:
-	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/$*.owl -o $@
-mirror/uberon.owl:
+mirror/%.owl: cl-edit.owl
+	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS)  -o $@
+mirror/uberon.owl: cl-edit.owl
 	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
-mirror/pr.obo:
+mirror/pr.obo: cl-edit.owl
 	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
 mirror/pr.owl: mirror/pr.obo
 	owltools $< --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
@@ -127,13 +127,29 @@ bridge/cl-bridge-to-uberon.owl: cl.owl
 bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
 	owltools $< -o -f obo $@
 
+# ----------------------------------------
+# NIF
+# ----------------------------------------
+
 NIF = http://ontology.neuinfo.org/NIF
 NIFBM = $(NIF)/BiomaterialEntities
+
+## A module that consists of all portions of other NIFSTD ontologies depended on by NIF-Cell
 imports/nif_import.owl:
 	owltools $(NIFBM)/NIF-Cell.owl $(NIF)/nif.owl --extract-module -s $(NIFBM)/NIF-Cell.owl -c --set-ontology-id $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
 
+## A rewritten version of NIF-Cell that uses the importer above
 mirror/NIF-Cell.owl:
 	owltools  $(NIFBM)/NIF-Cell.owl  --remove-imports-declarations --add-imports-declarations $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
+
+mirror/NIF-Cell-Merged.owl: mirror/NIF-Cell.owl
+	owltools --use-catalog $< --merge-imports-closure -o -f ofn $@  
+
+imports/nif_cell.owl: mirror/NIF-Cell-Merged.owl
+	./util/fix-nif-uris.pl $< > $@.tmp && mv $@.tmp $@
+
+neuro-cl.owl: cl-plus-nif.owl imports/nif_cell.owl
+	owltools --use-catalog $< --merge-imports-closure --remove-axioms -t DisjointClasses --reasoner elk --merge-equivalence-sets -s UBERON 10 -s GO 9 -s CL 9 -s PR 8 -l UBERON 10 -l GO 9 -l CL 9 -d UBERON 10 -d GO 9 -d CL 9 --set-ontology-id $(OBO)/cl/$@ -o -f ofn $@ >& $@.LOG
 
 # ----------------------------------------
 # Legacy copy to cvs
