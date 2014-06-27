@@ -79,8 +79,8 @@ id: CL:0000006
 name: neuronal receptor cell
 namespace: cell
 synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
+is_a: CL:0000101 ! sensory neuron
 is_a: CL:0000197 ! receptor cell
-is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000007
@@ -302,7 +302,7 @@ relationship: develops_from CL:0000333 ! migratory neural crest cell
 id: CL:0000028
 name: CNS neuron (sensu Nematoda and Protostomia)
 namespace: cell
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 relationship: develops_from CL:0000338 ! neuroblast (sensu Nematoda and Protostomia)
 
 [Term]
@@ -1067,6 +1067,7 @@ xref: BTO:0000312
 xref: FMA:83617
 xref: WBbt:0005409
 is_a: CL:0000527 ! efferent neuron
+relationship: RO:0002120 CL:0000187 ! synapsed to muscle cell
 
 [Term]
 id: CL:0000101
@@ -1123,7 +1124,7 @@ name: autonomic neuron
 namespace: cell
 def: "A neruon whose cell body is within an autonomic ganglion." [GOC:tfm]
 xref: FMA:80121
-is_a: CL:0000540 ! neuron
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:0000108
@@ -1206,7 +1207,7 @@ is_a: CL:0000540 ! neuron
 id: CL:0000117
 name: CNS neuron (sensu Vertebrata)
 namespace: cell
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 relationship: develops_from CL:0000337 ! neuroblast (sensu Vertebrata)
 
 [Term]
@@ -1703,7 +1704,7 @@ relationship: develops_from CL:0000333 ! migratory neural crest cell
 id: CL:0000167
 name: peptide hormone secreting cell
 namespace: cell
-is_a: CL:0000163 ! endocrine cell
+is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000168
@@ -1787,7 +1788,7 @@ relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
 id: CL:0000174
 name: steroid hormone secreting cell
 namespace: cell
-is_a: CL:0000163 ! endocrine cell
+is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000175
@@ -2007,7 +2008,7 @@ name: mechanoreceptor cell
 namespace: cell
 def: "A cell specialized to transduce mechanical stimuli and relay that information centrally in the nervous system." [MESH:A08.800.550.700.500]
 synonym: "mechanoreceptor" RELATED [MP:0000972]
-is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000101 ! sensory neuron
 
 [Term]
 id: CL:0000200
@@ -2027,6 +2028,7 @@ synonym: "cochlear hair cell" EXACT []
 synonym: "inner ear hair cell" EXACT [GO:0060119]
 synonym: "inner ear receptor cell" EXACT [GO:0060119]
 xref: FMA:62364
+is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0002374 ! ear hair cell
 is_a: CL:0002491 ! auditory epithelial cell
 
@@ -2034,6 +2036,7 @@ is_a: CL:0002491 ! auditory epithelial cell
 id: CL:0000203
 name: gravity sensitive cell
 namespace: cell
+is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000199 ! mechanoreceptor cell
 
 [Term]
@@ -2054,7 +2057,7 @@ id: CL:0000206
 name: chemoreceptor cell
 namespace: cell
 def: "A cell specialized to detect chemical substances and relay that information centrally in the nervous system. Chemoreceptors may monitor external stimuli, as in taste and olfaction, or internal stimuli, such as the concentrations of oxygen and carbon dioxide in the blood." [MESH:A08.800.550.700.120]
-is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000101 ! sensory neuron
 
 [Term]
 id: CL:0000207
@@ -2080,6 +2083,7 @@ namespace: cell
 def: "A cell type found in the spherical or ovoid clusters of receptor cells found mainly in the epithelium of the tongue and constituting the end organs of the sense of taste." [GOC:tfm, ISBN:0618947256]
 synonym: "taste bud cell" EXACT []
 xref: FMA:67910
+is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0000206 ! chemoreceptor cell
 is_a: CL:0000362 ! epidermal cell
@@ -2986,6 +2990,7 @@ name: sebum secreting cell
 namespace: cell
 def: "A cell secreting sebun, an oily substance secreted by sebaceous glands, composed of keratin, fat, and cellular debris." [MESH:A12.200.702]
 is_a: CL:0000151 ! secretory cell
+is_a: CL:2000021 ! sebaceous gland native cell
 
 [Term]
 id: CL:0000318
@@ -3480,6 +3485,7 @@ id: CL:0000381
 name: neurosecretory neuron
 namespace: cell
 xref: FBbt:00005130
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000527 ! efferent neuron
 
 [Term]
@@ -3902,7 +3908,7 @@ id: CL:0000438
 name: luteinizing hormone secreting cell
 namespace: cell
 def: "A peptide hormone secreting cell pituitary that produces luteinizing hormone." [GOC:tfm]
-is_a: CL:0000163 ! endocrine cell
+is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000439
@@ -4243,7 +4249,7 @@ id: CL:0000482
 name: juvenile hormone secreting cell
 namespace: cell
 def: "An endocrine cell that secretes juvenile hormone." [GO:tfm]
-is_a: CL:0000163 ! endocrine cell
+is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000483
@@ -5864,6 +5870,7 @@ id: CL:0000650
 name: mesangial cell
 namespace: cell
 def: "A cell type that encapsulates the capillaries and venules in the kidney. This cell secretes mesangial matrix that provides the structural support for the capillaries." [GOC:tfm, http://www.copewithcytokines.de/cope.cgi?key=mesangial%20cells]
+synonym: "kidney mesangial cell" EXACT []
 xref: BTO:0000853
 xref: CALOHA:TS-0617
 xref: FMA:70972
@@ -5921,7 +5928,7 @@ def: "A secondary oocyte is an oocyte that has not completed meiosis II." [GOC:t
 synonym: "primary oogonium" RELATED []
 xref: BTO:0003094
 xref: FMA:18646
-is_a: CL:0000023 ! oocyte
+is_a: CL:0000654 ! primary oocyte
 relationship: develops_from CL:0000654 ! primary oocyte
 
 [Term]
@@ -6118,7 +6125,7 @@ id: CL:0000679
 name: glutamatergic neuron
 namespace: cell
 xref: WBbt:0006829
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000161 ! acid secreting cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -6191,6 +6198,7 @@ relationship: develops_from CL:0000333 ! migratory neural crest cell
 id: CL:0000687
 name: R1 photoreceptor cell
 namespace: cell
+synonym: "R1 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
 
@@ -6213,6 +6221,7 @@ is_a: CL:0000163 ! endocrine cell
 id: CL:0000690
 name: R2 photoreceptor cell
 namespace: cell
+synonym: "R2 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
 
@@ -6243,6 +6252,7 @@ is_a: CL:0000691 ! stellate interneuron
 id: CL:0000694
 name: R3 photoreceptor cell
 namespace: cell
+synonym: "R3 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
 
@@ -6268,6 +6278,7 @@ is_a: CL:0000167 ! peptide hormone secreting cell
 id: CL:0000697
 name: R4 photoreceptor cell
 namespace: cell
+synonym: "R4 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
 
@@ -6293,7 +6304,7 @@ synonym: "dopaminergic cell" EXACT []
 xref: BTO:0004032
 xref: FMA:84787
 xref: WBbt:0006746
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000163 ! endocrine cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -6307,6 +6318,7 @@ is_a: CL:0000630 ! supportive cell
 id: CL:0000702
 name: R5 photoreceptor cell
 namespace: cell
+synonym: "R5 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
 
@@ -6329,6 +6341,7 @@ is_a: CL:0000071 ! blood vessel endothelial cell
 id: CL:0000705
 name: R6 photoreceptor cell
 namespace: cell
+synonym: "R6 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
 
@@ -6348,6 +6361,7 @@ is_a: CL:0002319 ! neural cell
 id: CL:0000707
 name: R7 photoreceptor cell
 namespace: cell
+synonym: "R7 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000494 ! UV sensitive photoreceptor cell
 
@@ -6358,11 +6372,13 @@ namespace: cell
 def: "Stromal cell that forms the internal covering of the vertebrate brain and produces ECM for this and the choroid plexus." [JB:jb]
 synonym: "leptomemingeal cell" RELATED []
 is_a: CL:0000327 ! extracellular matrix secreting cell
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000709
 name: R8 photoreceptor cell
 namespace: cell
+synonym: "R8 cell" EXACT []
 is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
 
@@ -6424,27 +6440,28 @@ is_a: CL:0000100 ! motor neuron
 
 [Term]
 id: CL:0000718
-name: cone cell (sensu Endopterygota)
+name: compound eye cone cell
 namespace: cell
+synonym: "cone cell (sensu Endopterygota)" RELATED []
 is_a: CL:0000306 ! crystallin accumulating cell
 
 [Term]
 id: CL:0000719
 name: posterior cone cell (sensu Endopterygota)
 namespace: cell
-is_a: CL:0000718 ! cone cell (sensu Endopterygota)
+is_a: CL:0000718 ! compound eye cone cell
 
 [Term]
 id: CL:0000720
 name: anterior cone cell (sensu Endopterygota)
 namespace: cell
-is_a: CL:0000718 ! cone cell (sensu Endopterygota)
+is_a: CL:0000718 ! compound eye cone cell
 
 [Term]
 id: CL:0000721
 name: equatorial cone cell (sensu Endopterygota)
 namespace: cell
-is_a: CL:0000718 ! cone cell (sensu Endopterygota)
+is_a: CL:0000718 ! compound eye cone cell
 
 [Term]
 id: CL:0000722
@@ -7889,6 +7906,7 @@ synonym: "5-hydroxytryptamine neuron" EXACT []
 synonym: "serotinergic neuron" RELATED []
 xref: FBbt:00005133
 xref: WBbt:0006837
+is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -7942,6 +7960,7 @@ name: neuromast hair cell
 namespace: cell
 def: "Neuromast hair cell is a hair cell that acts as a sensory receptor of the neuromast; it is morphologically polarized as a result of the relative position of the single kinocilium and the clusters of stereocilia on its apical surface." [SANBI:mhl]
 is_a: CL:0000855 ! sensory hair cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:0000857
@@ -9821,7 +9840,7 @@ id: CL:0001033
 name: hippocampal granule cell
 namespace: cell
 def: "Granule cell that is part of the hippocampus." [GOC:mah]
-is_a: CL:0001032 ! cortical granule cell
+is_a: CL:0000120 ! granule cell
 is_a: CL:0002608 ! hippocampal neuron
 
 [Term]
@@ -12630,7 +12649,7 @@ creation_date: 2010-10-07T01:58:00Z
 
 [Term]
 id: CL:0002219
-name: anchoring trophoblasts
+name: anchoring trophoblast
 namespace: cell
 def: "A trophoblast found at the junction of the placenta. This cell type makes a unique fibronectin-trophouteronectin junction that helps mediate attachment of the placenta to the uterus. This cell type is also found junction of the chorion layer of the external membranes and the decidua." [GOC:tfm, http://www.med.yale.edu/obgyn/kliman/placenta/articles/EOR_Placenta/Trophtoplacenta.html]
 is_a: CL:0000351 ! trophoblast cell
@@ -13413,6 +13432,7 @@ comment: There is debate about the exact lineage of these cell types from this p
 synonym: "taste bud basal cell" BROAD []
 synonym: "type 4 taste cell" EXACT []
 xref: FMA:62380
+is_a: CL:0000034 ! stem cell
 is_a: CL:0000209 ! taste receptor cell
 created_by: tmeehan
 creation_date: 2010-09-13T10:57:29Z
@@ -13846,7 +13866,7 @@ creation_date: 2010-09-15T03:44:35Z
 id: CL:0002323
 name: amniocyte
 namespace: cell
-def: "A cell of aÊfetus which is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface." [BFO:0000066, GOC:tfm, PMID:3211847]
+def: "A cell of aÂ fetus which is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface." [BFO:0000066, GOC:tfm, PMID:3211847]
 xref: BTO:0000066
 is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
@@ -14257,7 +14277,7 @@ creation_date: 2010-09-22T01:40:44Z
 id: CL:0002363
 name: keratocyte
 namespace: cell
-def: "A keratocyte is a specialized fibroblaståÊresiding in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisåÊcornealåÊlayer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
+def: "A keratocyte is a specialized fibroblastÃ‚Â residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisÃ‚Â cornealÃ‚Â layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." [GOC:tfm, ISBN:978-0-7020-2958-5]
 synonym: "corneal fibroblast" EXACT []
 synonym: "corneal keratocyte" EXACT []
 is_a: CL:0000005 ! fibroblast neural crest derived
@@ -15479,7 +15499,7 @@ name: nasal mucosa goblet cell
 namespace: cell
 def: "A goblet cell located in the nasal epithelium." [GOC:cjm, GOC:tfm]
 xref: MP:0002262
-is_a: CL:0000160 ! goblet cell
+is_a: CL:0002370 ! respiratory goblet cell
 created_by: tmeehan
 creation_date: 2010-12-03T03:03:02Z
 
@@ -16106,6 +16126,7 @@ namespace: cell
 alt_id: CL:1000393
 def: "An endothelial cell that is part of the vein." [GOC:tfm]
 synonym: "endothelial cell of vein" EXACT []
+synonym: "venous endothelial cell" EXACT []
 xref: FMA:62104
 xref: KUPO:0001099
 is_a: CL:0000071 ! blood vessel endothelial cell
@@ -16424,6 +16445,7 @@ name: perineural cell
 namespace: cell
 def: "A myofibroblast that lies in the connective tissue of the spinal cord that has a distinctly lamellar arrangement." [GO:tfm, http://en.wikipedia.org/wiki/Perineurium]
 is_a: CL:0000186 ! myofibroblast cell
+is_a: CL:0002319 ! neural cell
 is_a: CL:0002320 ! connective tissue cell
 created_by: tmeehan
 creation_date: 2011-03-02T03:03:58Z
@@ -16676,7 +16698,7 @@ creation_date: 2011-03-06T06:57:27Z
 id: CL:0002604
 name: astrocyte of the hippocampus
 namespace: cell
-is_a: CL:0002605 ! astrocyte of the cerebral cortex
+is_a: CL:0012000 ! astrocyte of the forebrain
 is_a: CL:1001580 ! hippocampus glial cell
 created_by: tmeehan
 creation_date: 2011-03-06T06:57:33Z
@@ -16697,7 +16719,7 @@ name: astrocyte of the spinal cord
 namespace: cell
 def: "An astrocyte of the spinal cord." [GOC:tfm]
 is_a: CL:0000127 ! astrocyte
-is_a: CL:0000128 ! oligodendrocyte
+is_a: CL:2000025 ! spinal cord oligodendrocyte
 created_by: tmeehan
 creation_date: 2011-03-06T07:11:26Z
 
@@ -16715,7 +16737,7 @@ id: CL:0002608
 name: hippocampal neuron
 namespace: cell
 def: "A neuron of the hippocampus." [GOC:tfm]
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:0012001 ! neuron of the forebrain
 created_by: tmeehan
 creation_date: 2011-03-06T07:31:49Z
 
@@ -17627,7 +17649,7 @@ name: pancreatic epsilon cell
 namespace: cell
 def: "Ghrelin secreting cells found in the found in the exocrine pancreas." [PMID:14970313]
 comment: In mammals the endocrine pancreas is called the Islets of Langerhans.
-synonym: "pancreatic e cell" EXACT []
+synonym: "pancreatic E cell" EXACT []
 is_a: CL:0005018 ! ghrelin secreting cell
 
 [Term]
@@ -18018,6 +18040,7 @@ name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
 synonym: "spinal sensory neuron" EXACT []
 is_a: CL:0000101 ! sensory neuron
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:0009001
@@ -18134,15 +18157,16 @@ is_a: CL:1001611 ! cerebellar neuron
 [Term]
 id: CL:0010011
 name: cerebral cortex GABAergic interneuron
-def: "a GABAergic neuron that is part_of a cerebral cortex" []
-is_a: CL:0000617 ! GABAergic neuron
-is_a: CL:0010012 ! cerebral cortex neuron
+def: "a GABAergic interneuron that is part_of a cerebral cortex" []
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:0011005 ! GABAergic interneuron
 
 [Term]
 id: CL:0010012
 name: cerebral cortex neuron
 def: "a neuron that is part_of a cerebral cortex" []
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:0010020
@@ -18175,6 +18199,7 @@ id: CL:0011001
 name: spinal cord motor neuron
 def: "A motor neuron that passes from the spinal cord toward or to a muscle and conducts an impulse that causes movement." [GOC:nv]
 is_a: CL:0000100 ! motor neuron
+is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:0011002
@@ -18185,10 +18210,12 @@ is_a: CL:0011001 ! spinal cord motor neuron
 
 [Term]
 id: CL:0011003
-name: magnocellular neurosecretory cell
+name: magnocellular neurosecretory cell (duplicate class)
 def: "A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that secretes the hormones oxytocin and vasopressin." [GOC:nv, MP:0009467]
 synonym: "magnocellular neuron" EXACT []
 is_a: CL:0000381 ! neurosecretory neuron
+is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:2000030 ! hypothalamus native cell
 
 [Term]
 id: CL:0011004
@@ -18240,14 +18267,15 @@ is_a: CL:0000107 ! autonomic neuron
 id: CL:0011104
 name: interplexiform cell
 def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer." [PMID:12771169]
-comment: Need to MIREOT retinal inner nuclear layer
 is_a: CL:0000099 ! interneuron
+is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0011105
 name: dopamanergic interplexiform cell
 def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer, using dopamine. " [PMID:12771169]
-comment: Need to MIREOT retinal inner nuclear layer (part_of)
+comment: This type of cell is found in Danio rerio.
+is_a: CL:0000700 ! dopaminergic neuron
 is_a: CL:0011104 ! interplexiform cell
 
 [Term]
@@ -18255,6 +18283,7 @@ id: CL:0011106
 name: GABAnergic interplexiform cell
 def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer using GABA. " [PMID:12771169]
 comment: Need to MIREOT retinal inner nuclear layer (part of)
+is_a: CL:0011005 ! GABAergic interneuron
 is_a: CL:0011104 ! interplexiform cell
 
 [Term]
@@ -18262,7 +18291,7 @@ id: CL:0011107
 name: Muller cell
 def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.\n" [PMID:21911394]
 synonym: "Muller glia " EXACT []
-synonym: "MŸller cell" EXACT []
+synonym: "MÃ¼ller cell" EXACT []
 is_a: CL:0000681 ! radial glial cell
 is_a: CL:0009004 ! retinal cell
 
@@ -18278,14 +18307,15 @@ id: CL:0011109
 name: hypocretin-secreting neuron
 def: "A neuron that releases hypocretin as a neurotransmitter." [PMID:23848055]
 synonym: "orexin" EXACT []
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0011110
 name: histaminergic neuron
 def: "Neuron that secretes histamine." [PMID:22677810]
+is_a: CL:0000540 ! neuron
 is_a: CL:0002274 ! histamine secreting cell
-is_a: CL:0011112 ! magnocellular neurosecretory cell
 
 [Term]
 id: CL:0011111
@@ -18293,14 +18323,14 @@ name: gonadotropin releasing neuron
 def: "Neuroendocrine cells that are born in the nasal placode during embryonic development and migrate through the nose and forebrain to the hypothalamus, where they regulate reproduction." [PMID:21828096]
 synonym: "GnRH neuron" EXACT []
 synonym: "GnRH-secreting neuron" EXACT []
-is_a: CL:0011112 ! magnocellular neurosecretory cell
+is_a: CL:0000381 ! neurosecretory neuron
 
 [Term]
 id: CL:0011112
 name: magnocellular neurosecretory cell
 def: "Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland." [PMID:10711808]
 is_a: CL:0000167 ! peptide hormone secreting cell
-is_a: CL:0000540 ! neuron
+is_a: CL:0000381 ! neurosecretory neuron
 
 [Term]
 id: CL:0011113
@@ -18343,12 +18373,12 @@ is_a: CL:0000100 ! motor neuron
 [Term]
 id: CL:1000001
 name: retrotrapezoid nucleus neuron
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:1000022
 name: mesonephric nephron tubule epithelial cell
-is_a: CL:1000494 ! epithelial cell of renal tubule
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:1000042
@@ -18386,12 +18416,12 @@ is_a: CL:0000357 ! stratified epithelial stem cell
 [Term]
 id: CL:1000090
 name: pronephric nephron tubule epithelial cell
-is_a: CL:1000494 ! epithelial cell of renal tubule
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:1000123
 name: metanephric nephron tubule epithelial cell
-is_a: CL:1000494 ! epithelial cell of renal tubule
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:1000143
@@ -18458,7 +18488,7 @@ is_a: CL:1000050 ! lateral line nerve glial cell
 [Term]
 id: CL:1000245
 name: posterior lateral line ganglion neuron
-is_a: CL:0000540 ! neuron
+is_a: CL:2000031 ! lateral line ganglion neuron
 
 [Term]
 id: CL:1000271
@@ -18575,8 +18605,8 @@ namespace: cell
 def: "A smooth muscle cell that is part of the sigmoid colon." [GOC:tfm]
 synonym: "non-striated muscle fiber of sigmoid colon" EXACT [FMA:17521]
 xref: FMA:17521
-is_a: CL:0000540 ! neuron
 is_a: CL:1000280 ! smooth muscle cell of colon
+is_a: CL:2000031 ! lateral line ganglion neuron
 
 [Term]
 id: CL:1000286
@@ -19191,6 +19221,7 @@ namespace: cell
 def: "A transitional myocyte that is part of the interatrial septum." [GOC:tfm]
 xref: FMA:263152
 is_a: CL:0002073 ! transitional myocyte
+is_a: CL:2000022 ! cardiac septum native cell
 
 [Term]
 id: CL:1000362
@@ -19199,6 +19230,7 @@ namespace: cell
 def: "A transitional myocyte that is part of the interventricular septum." [GOC:tfm]
 xref: FMA:263154
 is_a: CL:0002073 ! transitional myocyte
+is_a: CL:2000022 ! cardiac septum native cell
 
 [Term]
 id: CL:1000363
@@ -19311,6 +19343,7 @@ namespace: cell
 def: "A Purkinje myocyte that is part of the interventricular septum." [GOC:tfm]
 xref: FMA:263182
 is_a: CL:0002068 ! Purkinje myocyte
+is_a: CL:2000022 ! cardiac septum native cell
 
 [Term]
 id: CL:1000377
@@ -19328,6 +19361,7 @@ namespace: cell
 def: "A type I vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263186
 is_a: CL:0002070 ! type I vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000379
@@ -19336,6 +19370,7 @@ namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263188
 is_a: CL:0002070 ! type I vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000380
@@ -19344,6 +19379,7 @@ namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263190
 is_a: CL:0002070 ! type I vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000381
@@ -19352,6 +19388,7 @@ namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263192
 is_a: CL:0002070 ! type I vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000382
@@ -19360,6 +19397,7 @@ namespace: cell
 def: "A type II vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263194
 is_a: CL:0002069 ! type II vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000383
@@ -19368,6 +19406,7 @@ namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263196
 is_a: CL:0002069 ! type II vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000384
@@ -19376,6 +19415,7 @@ namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263198
 is_a: CL:0002069 ! type II vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000385
@@ -19384,6 +19424,7 @@ namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263200
 is_a: CL:0002069 ! type II vestibular sensory cell
+is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000391
@@ -19458,6 +19499,7 @@ synonym: "AV node cardiac muscle cell" EXACT [GOC:pr]
 synonym: "AV node cell" EXACT [GOC:pr]
 xref: FMA:67106
 is_a: CL:0002072 ! nodal myocyte
+is_a: CL:2000022 ! cardiac septum native cell
 
 [Term]
 id: CL:1000411
@@ -19575,6 +19617,7 @@ id: CL:1000426
 name: chromaffin cell of adrenal gland
 namespace: cell
 def: "A chromaffin cell that is part of the adrenal gland." [GOC:tfm]
+synonym: "adrenal chromaffin cell" EXACT [GO:0061104]
 xref: FMA:69794
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000166 ! chromaffin cell
@@ -19936,6 +19979,7 @@ namespace: cell
 def: "A myocardial endocrine cell that is part of the interventricular septum." [GOC:tfm]
 xref: FMA:83390
 is_a: CL:0002074 ! myocardial endocrine cell
+is_a: CL:2000022 ! cardiac septum native cell
 
 [Term]
 id: CL:1000483
@@ -20029,9 +20073,9 @@ is_a: CL:1000491 ! mesothelial cell of pleura
 
 [Term]
 id: CL:1000494
-name: epithelial cell of renal tubule
+name: nephron tubule epithelial cell
 namespace: cell
-def: "An epithelial cell that is part of the renal tubule." [GOC:tfm]
+def: "An epithelial cell that is part of a nephron tubule." [GOC:tfm]
 synonym: "kidney tubule epithelial cell" EXACT []
 xref: FMA:86785
 xref: KUPO:0001022
@@ -20063,7 +20107,6 @@ id: CL:1000500
 name: kidney interstitial cell
 namespace: cell
 xref: KUPO:0001013
-is_a: CL:0002320 ! connective tissue cell
 is_a: CL:1000497 ! kidney cell
 
 [Term]
@@ -20185,7 +20228,7 @@ name: kidney cortex tubule cell
 namespace: cell
 xref: KUPO:0001024
 is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000494 ! epithelial cell of renal tubule
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:1000616
@@ -20205,6 +20248,7 @@ is_a: CL:1000504 ! kidney medulla cell
 id: CL:1000618
 name: juxtaglomerular complex cell
 namespace: cell
+synonym: "juxtaglomerulus cell" EXACT [GO:0072052]
 xref: KUPO:0001028
 is_a: CL:0002681 ! kidney cortical cell
 
@@ -20253,7 +20297,6 @@ id: CL:1000695
 name: kidney interstitial alternatively activated macrophage
 namespace: cell
 xref: KUPO:0001106
-is_a: CL:0000864 ! tissue-resident macrophage
 is_a: CL:0000890 ! alternatively activated macrophage
 is_a: CL:1000500 ! kidney interstitial cell
 
@@ -20263,7 +20306,6 @@ name: kidney interstitial inflammatory macrophage
 namespace: cell
 xref: KUPO:0001107
 is_a: CL:0000863 ! inflammatory macrophage
-is_a: CL:0000864 ! tissue-resident macrophage
 is_a: CL:1000500 ! kidney interstitial cell
 
 [Term]
@@ -20272,7 +20314,6 @@ name: kidney interstitial suppressor macrophage
 namespace: cell
 xref: KUPO:0001108
 is_a: CL:0000862 ! suppressor macrophage
-is_a: CL:0000864 ! tissue-resident macrophage
 is_a: CL:1000500 ! kidney interstitial cell
 
 [Term]
@@ -20500,7 +20541,7 @@ id: CL:1000909
 name: kidney loop of henle epithelial cell
 namespace: cell
 xref: KUPO:0001047
-is_a: CL:1000494 ! epithelial cell of renal tubule
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:1000979
@@ -20972,8 +21013,9 @@ name: medium spiny neuron
 namespace: cl
 def: "the inhibitory projection neurons located in the striatum that integrate glutamatergic signals arising from the cerebral cortex and thalamus" [MP:0008462]
 synonym: "medium-sized densely spiny neuron" RELATED [BTO:0004778]
+synonym: "striatal medium spiny neuron" EXACT [GO:0021773]
 xref: BTO:0004778
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:1001502
@@ -20987,21 +21029,24 @@ id: CL:1001503
 name: olfactory bulb tufted cell
 namespace: cl
 def: "the principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala" [MP:0009955]
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:1001505
 name: parvocellular neurosecretory cell
 namespace: cl
 def: "the secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system" [MP:0010125]
-is_a: CL:0011112 ! magnocellular neurosecretory cell
+is_a: CL:0000167 ! peptide hormone secreting cell
+is_a: CL:0000381 ! neurosecretory neuron
+is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:2000030 ! hypothalamus native cell
 
 [Term]
 id: CL:1001509
 name: glycinergic neuron
 namespace: cl
 def: "the neurons that utilize glycine as a neurotransmitter" [MP:0010385]
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000161 ! acid secreting cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -21157,7 +21202,7 @@ synonym: "hippocampal glial cell" RELATED [CALOHA:TS-1257]
 synonym: "hippocampus glial cells" RELATED [CALOHA:TS-1257]
 synonym: "hippocampus neuroglial cell" RELATED [CALOHA:TS-1257]
 xref: CALOHA:TS-1257
-is_a: CL:1001579 ! cerebral cortex glial cell
+is_a: CL:0000125 ! glial cell
 
 [Term]
 id: CL:1001581
@@ -21175,7 +21220,7 @@ synonym: "lateral ventricle neural cell" RELATED [CALOHA:TS-1261]
 synonym: "lateral ventricle neuronal cell" RELATED [CALOHA:TS-1261]
 synonym: "lateral ventricle neuronal cells" RELATED [CALOHA:TS-1261]
 xref: CALOHA:TS-1261
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:1001583
@@ -21399,7 +21444,7 @@ def: "Neuron of the cerebellum." [NPX:PDR]
 synonym: "cerebellum neuron" RELATED [CALOHA:TS-2359]
 xref: CALOHA:TS-2359
 xref: FMA:84665
-is_a: CL:0000540 ! neuron
+is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:2000000
@@ -21458,6 +21503,309 @@ def: "Any germinal center B cell that is part of a tonsil." [GOC:TermGenie]
 is_a: CL:0000844 ! germinal center B cell
 created_by: TermGenie
 creation_date: 2014-03-28T21:35:33Z
+
+[Term]
+id: CL:2000007
+name: articular chondrocyte of knee joint
+namespace: cell
+def: "Chondrocyte forming the hyaline cartilage found in the knee joint." [GOC:TermGenie]
+is_a: CL:1001607 ! articular chondrocyte
+created_by: TermGenie
+creation_date: 2014-06-04T14:40:11Z
+
+[Term]
+id: CL:2000008
+name: microvascular endothelial cell
+namespace: cell
+def: "Any blood vessel endothelial cell that is part of a microvascular endothelium." [GOC:TermGenie]
+is_a: CL:0000071 ! blood vessel endothelial cell
+created_by: TermGenie
+creation_date: 2014-06-04T15:07:42Z
+
+[Term]
+id: CL:2000009
+name: obsolete microvascular endothelium blood vessel endothelial cell
+namespace: cell
+def: "Any blood vessel endothelial cell that is part of a microvascular endothelium." [GOC:TermGenie]
+is_obsolete: true
+replaced_by: CL:2000008
+created_by: TermGenie
+creation_date: 2014-06-04T15:09:18Z
+
+[Term]
+id: CL:2000010
+name: dermis blood vessel endothelial cell
+namespace: cell
+def: "Any blood vessel endothelial cell that is part of a dermis." [GOC:TermGenie]
+is_a: CL:0000071 ! blood vessel endothelial cell
+created_by: TermGenie
+creation_date: 2014-06-04T15:12:06Z
+
+[Term]
+id: CL:2000011
+name: dermis lymphatic vessel endothelial cell
+namespace: cell
+def: "Any endothelial cell of lymphatic vessel that is part of a dermis." [GOC:TermGenie]
+is_a: CL:0002138 ! endothelial cell of lymphatic vessel
+created_by: TermGenie
+creation_date: 2014-06-04T15:15:08Z
+
+[Term]
+id: CL:2000012
+name: fibroblast of pedal digit skin
+namespace: cell
+def: "Any skin fibroblast that is part of a pedal digit skin." [GOC:TermGenie]
+is_a: CL:0002620 ! skin fibroblast
+created_by: TermGenie
+creation_date: 2014-06-04T15:16:44Z
+
+[Term]
+id: CL:2000013
+name: fibroblast of skin of abdomen
+namespace: cell
+def: "Any skin fibroblast that is part of a skin of abdomen." [GOC:TermGenie]
+is_a: CL:0002620 ! skin fibroblast
+created_by: TermGenie
+creation_date: 2014-06-04T15:18:16Z
+
+[Term]
+id: CL:2000014
+name: fibroblast of upper leg skin
+namespace: cell
+def: "Any skin fibroblast that is part of a upper leg skin." [GOC:TermGenie]
+is_a: CL:0002620 ! skin fibroblast
+created_by: TermGenie
+creation_date: 2014-06-04T15:19:44Z
+
+[Term]
+id: CL:2000015
+name: fibroblast of arm
+namespace: cell
+def: "Any skin fibroblast that is part of a arm." [GOC:TermGenie]
+is_a: CL:0002620 ! skin fibroblast
+created_by: TermGenie
+creation_date: 2014-06-04T15:29:06Z
+
+[Term]
+id: CL:2000016
+name: lung microvascular endothelial cell
+namespace: cell
+def: "Any lung endothelial cell that is part of a microvascular endothelium." [GOC:TermGenie]
+is_a: CL:1001567 ! lung endothelial cell
+created_by: TermGenie
+creation_date: 2014-06-04T16:00:56Z
+
+[Term]
+id: CL:2000017
+name: fibroblast of peridontal ligament
+namespace: cell
+def: "Any fibroblast that is part of a periodontal ligament." [GOC:TermGenie]
+is_a: CL:0002556 ! fibroblast of periodontium
+is_a: CL:1000307 ! fibroblast of dense regular elastic tissue
+created_by: TermGenie
+creation_date: 2014-06-04T16:50:33Z
+
+[Term]
+id: CL:2000018
+name: endothelial cell of coronary artery
+namespace: cell
+def: "Any endothelial cell of artery that is part of a coronary artery." [GOC:TermGenie]
+is_a: CL:0010006 ! cardiac blood vessel endothelial cell
+is_a: CL:1000413 ! endothelial cell of artery
+created_by: TermGenie
+creation_date: 2014-06-04T17:08:47Z
+
+[Term]
+id: CL:2000019
+name: compound eye photoreceptor cell
+namespace: cell
+def: "Any photoreceptor cell that is part of a compound eye." [GOC:TermGenie]
+is_a: CL:0000287 ! eye photoreceptor cell
+created_by: TermGenie
+creation_date: 2014-06-24T23:16:45Z
+
+[Term]
+id: CL:2000020
+name: inner cell mass native cell
+namespace: cell
+def: "Any native cell that is part of a inner cell mass." [GOC:TermGenie]
+is_a: CL:0000003 ! native cell
+created_by: TermGenie
+creation_date: 2014-06-24T23:16:53Z
+
+[Term]
+id: CL:2000021
+name: sebaceous gland native cell
+namespace: cell
+def: "Any native cell that is part of a sebaceous gland." [GOC:TermGenie]
+is_a: CL:0000003 ! native cell
+created_by: TermGenie
+creation_date: 2014-06-24T23:17:00Z
+
+[Term]
+id: CL:2000022
+name: cardiac septum native cell
+namespace: cell
+def: "Any native cell that is part of a cardiac septum." [GOC:TermGenie]
+is_a: CL:0000003 ! native cell
+created_by: TermGenie
+creation_date: 2014-06-24T23:17:07Z
+
+[Term]
+id: CL:2000023
+name: spinal cord ventral column interneuron
+namespace: cell
+def: "Any interneuron that is part of a spinal cord ventral column." [GOC:TermGenie]
+is_a: CL:0005000 ! spinal cord interneuron
+created_by: TermGenie
+creation_date: 2014-06-25T00:23:36Z
+
+[Term]
+id: CL:2000024
+name: spinal cord medial motor column neuron
+namespace: cell
+def: "Any neuron that is part of a spinal cord medial motor column." [GOC:TermGenie]
+is_a: CL:2000029 ! central nervous system neuron
+created_by: TermGenie
+creation_date: 2014-06-25T00:23:43Z
+
+[Term]
+id: CL:2000025
+name: spinal cord oligodendrocyte
+namespace: cell
+def: "Any oligodendrocyte that is part of a spinal cord." [GOC:TermGenie]
+is_a: CL:0000128 ! oligodendrocyte
+created_by: TermGenie
+creation_date: 2014-06-25T00:23:50Z
+
+[Term]
+id: CL:2000026
+name: cerebellum Golgi cell
+namespace: cell
+def: "Any Golgi cell that is part of a cerebellum." [GOC:TermGenie]
+is_a: CL:0000119 ! Golgi cell
+is_a: CL:1001611 ! cerebellar neuron
+created_by: TermGenie
+creation_date: 2014-06-25T00:23:57Z
+
+[Term]
+id: CL:2000027
+name: cerebellum basket cell
+namespace: cell
+def: "Any basket cell that is part of a cerebellum." [GOC:TermGenie]
+is_a: CL:0000118 ! basket cell
+is_a: CL:1001611 ! cerebellar neuron
+created_by: TermGenie
+creation_date: 2014-06-25T00:24:03Z
+
+[Term]
+id: CL:2000028
+name: cerebellum glutamatergic neuron
+namespace: cell
+def: "Any glutamatergic neuron that is part of a cerebellum." [GOC:TermGenie]
+is_a: CL:0000679 ! glutamatergic neuron
+is_a: CL:1001611 ! cerebellar neuron
+created_by: TermGenie
+creation_date: 2014-06-25T00:24:10Z
+
+[Term]
+id: CL:2000029
+name: central nervous system neuron
+namespace: cell
+def: "Any neuron that is part of a central nervous system." [GOC:TermGenie]
+is_a: CL:0000540 ! neuron
+created_by: TermGenie
+creation_date: 2014-06-25T01:17:43Z
+
+[Term]
+id: CL:2000030
+name: hypothalamus native cell
+namespace: cell
+def: "Any native cell that is part of a hypothalamus." [GOC:TermGenie]
+is_a: CL:0002319 ! neural cell
+created_by: TermGenie
+creation_date: 2014-06-25T01:17:50Z
+
+[Term]
+id: CL:2000031
+name: lateral line ganglion neuron
+namespace: cell
+def: "Any neuron that is part of a lateral line ganglion." [GOC:TermGenie]
+is_a: CL:2000032 ! peripheral nervous system neuron
+created_by: TermGenie
+creation_date: 2014-06-25T01:17:57Z
+
+[Term]
+id: CL:2000032
+name: peripheral nervous system neuron
+namespace: cell
+def: "Any neuron that is part of a peripheral nervous system." [GOC:TermGenie]
+is_a: CL:0000540 ! neuron
+created_by: TermGenie
+creation_date: 2014-06-25T02:28:17Z
+
+[Term]
+id: CL:2000033
+name: limb basal cell of epidermis
+namespace: cell
+def: "Any basal cell of epidermis that is part of a limb." [GOC:TermGenie]
+is_a: CL:0002187 ! basal cell of epidermis
+created_by: TermGenie
+creation_date: 2014-06-25T02:28:25Z
+
+[Term]
+id: CL:2000034
+name: anterior lateral line neuromast hair cell
+namespace: cell
+def: "Any neuromast hair cell that is part of a anterior lateral line." [GOC:TermGenie]
+is_a: CL:0000856 ! neuromast hair cell
+created_by: TermGenie
+creation_date: 2014-06-25T03:44:37Z
+
+[Term]
+id: CL:2000035
+name: anterior lateral line neuromast mantle cell
+namespace: cell
+def: "Any neuromast mantle cell that is part of a anterior lateral line." [GOC:TermGenie]
+is_a: CL:0000851 ! neuromast mantle cell
+created_by: TermGenie
+creation_date: 2014-06-25T03:44:44Z
+
+[Term]
+id: CL:2000036
+name: anterior lateral line neuromast support cell
+namespace: cell
+def: "Any neuromast support cell that is part of a anterior lateral line." [GOC:TermGenie]
+is_a: CL:0000852 ! neuromast support cell
+created_by: TermGenie
+creation_date: 2014-06-25T03:44:51Z
+
+[Term]
+id: CL:2000037
+name: posterior lateral line neuromast hair cell
+namespace: cell
+def: "Any neuromast hair cell that is part of a posterior lateral line." [GOC:TermGenie]
+is_a: CL:0000856 ! neuromast hair cell
+created_by: TermGenie
+creation_date: 2014-06-25T03:44:57Z
+
+[Term]
+id: CL:2000038
+name: posterior lateral line neuromast mantle cell
+namespace: cell
+def: "Any neuromast mantle cell that is part of a posterior lateral line." [GOC:TermGenie]
+is_a: CL:0000851 ! neuromast mantle cell
+created_by: TermGenie
+creation_date: 2014-06-25T03:45:04Z
+
+[Term]
+id: CL:2000039
+name: posterior lateral line neuromast support cell
+namespace: cell
+def: "Any neuromast support cell that is part of a posterior lateral line." [GOC:TermGenie]
+is_a: CL:0000852 ! neuromast support cell
+created_by: TermGenie
+creation_date: 2014-06-25T03:45:11Z
 
 [Typedef]
 id: RO:0002120
