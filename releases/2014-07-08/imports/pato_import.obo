@@ -1,0 +1,294 @@
+format-version: 1.2
+ontology: cl/imports/imports/pato_import
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/pato/releases/2014-04-09/pato.owl
+
+[Term]
+id: PATO:0000001
+name: quality
+
+[Term]
+id: PATO:0000050
+name: life span
+is_a: PATO:0000165 ! time
+
+[Term]
+id: PATO:0000051
+name: morphology
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000052
+name: shape
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000068
+name: qualitative
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0000069
+name: deviation(from_normal)
+is_a: PATO:0000068 ! qualitative
+
+[Term]
+id: PATO:0000117
+name: size
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000165
+name: time
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000261
+name: maturity
+is_a: PATO:0001995 ! organismal quality
+
+[Term]
+id: PATO:0000406
+name: curved
+is_a: PATO:0001591 ! curvature
+
+[Term]
+id: PATO:0000586
+name: increased size
+is_a: PATO:0000117 ! size
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0000587
+name: decreased size
+is_a: PATO:0000117 ! size
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001018
+name: physical quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001367
+name: lobate
+is_a: PATO:0001925 ! surface feature shape
+
+[Term]
+id: PATO:0001374
+name: ploidy
+is_a: PATO:0001396 ! cellular quality
+
+[Term]
+id: PATO:0001375
+name: haploid
+is_a: PATO:0001393 ! euploid
+
+[Term]
+id: PATO:0001393
+name: euploid
+is_a: PATO:0001374 ! ploidy
+
+[Term]
+id: PATO:0001394
+name: diploid
+is_a: PATO:0001393 ! euploid
+
+[Term]
+id: PATO:0001396
+name: cellular quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001397
+name: cellular potency
+is_a: PATO:0001396 ! cellular quality
+
+[Term]
+id: PATO:0001400
+name: unipotent
+is_a: PATO:0001397 ! cellular potency
+
+[Term]
+id: PATO:0001401
+name: oligopotent
+is_a: PATO:0001397 ! cellular potency
+
+[Term]
+id: PATO:0001402
+name: multipotent
+is_a: PATO:0001397 ! cellular potency
+
+[Term]
+id: PATO:0001404
+name: nucleate quality
+is_a: PATO:0001396 ! cellular quality
+
+[Term]
+id: PATO:0001405
+name: anucleate
+is_a: PATO:0001404 ! nucleate quality
+
+[Term]
+id: PATO:0001406
+name: binucleate
+is_a: PATO:0001908 ! multinucleate
+
+[Term]
+id: PATO:0001407
+name: mononucleate
+is_a: PATO:0002505 ! nucleated
+
+[Term]
+id: PATO:0001410
+name: striated
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001501
+name: immature
+is_a: PATO:0000261 ! maturity
+
+[Term]
+id: PATO:0001591
+name: curvature
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001604
+name: decreased life span
+is_a: PATO:0000050 ! life span
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001789
+name: domed
+is_a: PATO:0000406 ! curved
+
+[Term]
+id: PATO:0001857
+name: concave
+is_a: PATO:0002005 ! concavity
+
+[Term]
+id: PATO:0001871
+name: reniform
+is_a: PATO:0002008 ! concave 3-D shape
+
+[Term]
+id: PATO:0001873
+name: cylindrical
+is_a: PATO:0002007 ! convex 3-D shape
+
+[Term]
+id: PATO:0001874
+name: discoid
+is_a: PATO:0001873 ! cylindrical
+
+[Term]
+id: PATO:0001908
+name: multinucleate
+is_a: PATO:0002505 ! nucleated
+
+[Term]
+id: PATO:0001925
+name: surface feature shape
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001979
+name: lobed
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001995
+name: organismal quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0002005
+name: concavity
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002007
+name: convex 3-D shape
+is_a: PATO:0002266 ! 3-D shape
+
+[Term]
+id: PATO:0002008
+name: concave 3-D shape
+is_a: PATO:0002266 ! 3-D shape
+relationship: BFO:0000051 PATO:0001857 ! concave
+
+[Term]
+id: PATO:0002039
+name: biconcave
+is_a: PATO:0001857 ! concave
+
+[Term]
+id: PATO:0002070
+name: affinity
+is_a: PATO:0002182 ! molecular quality
+
+[Term]
+id: PATO:0002094
+name: basophilic
+is_a: PATO:0002070 ! affinity
+
+[Term]
+id: PATO:0002182
+name: molecular quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0002266
+name: 3-D shape
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002300
+name: increased quality
+is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002301
+name: decreased quality
+is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002303
+name: decreased object quality
+is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0002301 ! decreased quality
+
+[Term]
+id: PATO:0002305
+name: increased object quality
+is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0002300 ! increased quality
+
+[Term]
+id: PATO:0002478
+name: transversely striated
+is_a: PATO:0001410 ! striated
+
+[Term]
+id: PATO:0002479
+name: obliquely striated
+is_a: PATO:0001410 ! striated
+
+[Term]
+id: PATO:0002505
+name: nucleated
+is_a: PATO:0001404 ! nucleate quality
+
+[Term]
+id: PATO:0002506
+name: alobate
+is_a: PATO:0001925 ! surface feature shape
+
