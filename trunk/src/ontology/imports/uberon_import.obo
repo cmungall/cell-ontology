@@ -67,7 +67,7 @@ relationship: RO:0002202 UBERON:0000924 ! ectoderm
 [Term]
 id: UBERON:0000009
 name: submucosa
-def: "A layer of dense irregular connective tissue in the gastrointestinal tract that supports the mucosa, as well as joins the mucosa to the bulk of underlying smooth muscle (fibers running circularly within layer of longitudinal muscle). [WP,unvetted]." []
+def: "A layer of dense irregular connective tissue that lines organs and supports the mucosa, as well as joins the mucosa to the bulk of underlying smooth muscle. [WP,unvetted]." []
 synonym: "organ submucosa" EXACT []
 synonym: "region of submucosa" EXACT []
 synonym: "submucosa of organ" EXACT []
@@ -142,7 +142,7 @@ relationship: RO:0002202 UBERON:0003923 ! dorsal pancreatic bud
 [Term]
 id: UBERON:0000017
 name: exocrine pancreas
-def: "The part of the pancrease that is part of the exocrine system and which produces and store zymogens of digestive enzymes, such as chymotrypsinogen and trypsinogen in the acinar cells [GO]." []
+def: "The part of the pancreas that is part of the exocrine system and which produces and store zymogens of digestive enzymes, such as chymotrypsinogen and trypsinogen in the acinar cells [GO]." []
 synonym: "exocrine component of pancreas" RELATED []
 synonym: "exocrine pancreas" EXACT []
 synonym: "exocrine part of pancreas" RELATED []
@@ -533,6 +533,7 @@ def: "the organs associated with producing offspring in the gender that produces
 synonym: "genitalia of male organism" EXACT []
 synonym: "male genital organ" RELATED []
 synonym: "male genital system" EXACT []
+synonym: "male genital tract" RELATED []
 synonym: "male genitalia" EXACT []
 synonym: "male genitals" EXACT []
 synonym: "male organism genitalia" EXACT []
@@ -813,6 +814,7 @@ id: UBERON:0000160
 name: intestine
 def: "Segment of the alimentary canal extending from the stomach to the anus and, in humans and other mammals, consists of two segments, the small intestine and the large intestine." []
 synonym: "bowel" EXACT []
+synonym: "intestinal tract" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: BFO:0000050 UBERON:0005409 ! gastrointestinal system
 
@@ -914,7 +916,7 @@ name: amniotic fluid
 def: "Amniotic fluid is a bodily fluid consisting of watery liquid surrounding and cushioning a growing fetus within the amnion. It allows the fetus to move freely without the walls of the uterus being too tight against its body. Buoyancy is also provided.  The composition of the fluid changes over the course of gestation. Initially, amniotic fluid is similar to maternal plasma, mainly water with electrolytes. As the fetus develops, proteins, carbohydrates, lipids, phospholipids originating from the lungs, fetal cells, and urea are deposited in the fluid." []
 synonym: "acqua amnii" RELATED []
 synonym: "liquor amnii" RELATED []
-is_a: UBERON:0000463 ! portion of organism substance
+is_a: UBERON:0000463 ! organism substance
 
 [Term]
 id: UBERON:0000178
@@ -932,8 +934,9 @@ id: UBERON:0000179
 name: haemolymphatic fluid
 def: "Circulating fluid that is part of the hemolymphoid system. Blood, lymph, interstitial fluid or its analogs." []
 synonym: "blood or blood analog" RELATED []
+synonym: "circulating fluid" RELATED []
 is_a: UBERON:0006314 ! bodily fluid
-intersection_of: UBERON:0000463 ! portion of organism substance
+intersection_of: UBERON:0000463 ! organism substance
 intersection_of: BFO:0000050 UBERON:0002193 ! hemolymphoid system
 relationship: BFO:0000050 UBERON:0002193 ! hemolymphoid system
 
@@ -1170,6 +1173,7 @@ is_a: UBERON:0004923 ! organ component layer
 id: UBERON:0000349
 name: limbic system
 def: "A set of midline structures surrounding the brainstem of the mammalian brain, originally described anatomically, e.g., hippocampal formation, amygdala, hypothalamus, cingulate cortex. Although the original designation was anatomical, the limbic system has come to be associated with the system in the brain subserving emotional functions. As such, it is very poorly defined and doesn't correspond closely to the anatomical meaning any longer. [BirnLex]. including the hippocampus, amygdala, anterior thalamic nuclei, and limbic cortex, which support a variety of functions including emotion, behavior, long term memory, and olfaction [Wikipedia]." []
+synonym: "visceral brain" RELATED []
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0001890 ! forebrain
@@ -1256,7 +1260,7 @@ relationship: BFO:0000050 UBERON:0002420 ! basal ganglion
 [Term]
 id: UBERON:0000376
 name: hindlimb stylopod
-def: "In humans the thigh is the area between the pelvis and the knee. Anatomically, it is part of the lower limb. The single bone in the thigh is called the femur. This bone is very thick and strong (due to the high proportion of cortical bone), and forms a ball and socket joint at the hip, and a condylar joint at the knee. [WP,unvetted]." []
+def: "The part of the hindlimb between pelvis and the knee, corresponding to the femur." []
 synonym: "femur" RELATED []
 synonym: "hind limb stylopod" EXACT []
 synonym: "hind limb stylopodium" EXACT []
@@ -1448,7 +1452,7 @@ relationship: BFO:0000050 UBERON:0002185 ! bronchus
 [Term]
 id: UBERON:0000412
 name: dermal papilla
-def: "small, nipple-like extensions (or interdigitations) of the dermis into the epidermis. They can be observed at the surface of the skin in hands and feet as epidermal or papillary ridges (colloquially known as fingerprints). The dermal papillae nourishes all hair follicles and bring food and oxygen to the lower layers of epidermal cells. The pattern of ridges they produce in hands and feet are inherited features that are developed before birth. They remain unaltered (except size) throughout life, and are therefore used for fingerprints. The dermal papillae are part of the uppermost layer of the dermis, the papillary dermis, and the ridges they form greatly increase the surface area between the dermis and epidermis. Because the dermis' main function is to support the epidermis, this greatly increases the exchange of oxygen, nutrients, and waste products between these two layers. Additionally, the increase in surface area prevent the dermal and epidermal layers from separating from each others by strengthening the junction between them. With age, the papillae tend to flatten and sometimes increase in numbers. Dermal papillae also play a pivotal role in hair formation, growth and, cycling" []
+def: "A small, nipple-like interdigitation of the dermis into the epidermis." []
 synonym: "dermal papilla cell" RELATED []
 synonym: "dermal papillae" EXACT []
 synonym: "DPC" RELATED []
@@ -1561,7 +1565,7 @@ relationship: BFO:0000050 UBERON:0000995 ! uterus
 
 [Term]
 id: UBERON:0000463
-name: portion of organism substance
+name: organism substance
 def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." []
 synonym: "body fluid or substance" EXACT []
 synonym: "body substance" EXACT []
@@ -1619,6 +1623,7 @@ id: UBERON:0000471
 name: compound organ component
 def: "Multi-tissue structure that is part of a compound organ." []
 is_a: UBERON:0000481 ! multi-tissue structure
+relationship: BFO:0000050 UBERON:0003103 ! compound organ
 
 [Term]
 id: UBERON:0000473
@@ -1668,6 +1673,7 @@ id: UBERON:0000474
 name: female reproductive system
 def: "The organs of the female reproductive system." []
 synonym: "female genital system" RELATED []
+synonym: "female genital tract" RELATED []
 synonym: "female genitalia" RELATED []
 synonym: "female organism genitalia" EXACT []
 synonym: "female organism reproductive system" EXACT []
@@ -2092,10 +2098,12 @@ name: reproductive system
 def: "Anatomical system that has as its parts the organs concerned with reproduction." []
 synonym: "animal reproductive system" RELATED []
 synonym: "genital system" RELATED []
+synonym: "genital tract" RELATED []
 synonym: "genitalia" RELATED []
 synonym: "Geschlechtsorgan" RELATED []
 synonym: "organa genitalia" RELATED []
 synonym: "reproductive tissue" RELATED []
+synonym: "reproductive tract" RELATED []
 synonym: "systemata genitalia" RELATED []
 is_a: UBERON:0000467 ! anatomical system
 is_a: UBERON:0004120 ! mesoderm-derived structure
@@ -2241,7 +2249,7 @@ is_a: UBERON:0000467 ! anatomical system
 [Term]
 id: UBERON:0001008
 name: renal system
-def: "The renal system in an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products. In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels[GO]." []
+def: "The renal system in an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products.." []
 synonym: "excretory system" EXACT []
 synonym: "renal or urinary system" RELATED []
 synonym: "renal system" EXACT []
@@ -2401,7 +2409,7 @@ relationship: BFO:0000050 UBERON:0002330 ! exocrine system
 [Term]
 id: UBERON:0001045
 name: midgut
-def: "Middle subdivision of a digestive tract[CJM]. In vertebrates: The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO]. In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." []
+def: "Middle subdivision of a digestive tract[CJM]. In vertebrates: The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO]." []
 synonym: "mesenteron" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
 
@@ -3008,8 +3016,8 @@ synonym: "submucous layer of stomach" RELATED []
 synonym: "tela submucosa (gaster)" EXACT []
 synonym: "tela submucosa ventriculi" RELATED []
 synonym: "ventriculus submucosa" EXACT []
-is_a: UBERON:0000009 ! submucosa
 is_a: UBERON:0009034 ! stomach region
+is_a: UBERON:0018257 ! submucosa of digestive tract
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: BFO:0000050 UBERON:0000945 ! stomach
 relationship: BFO:0000050 UBERON:0000945 ! stomach
@@ -3772,7 +3780,7 @@ is_a: UBERON:0009842 ! acinus
 intersection_of: UBERON:0009842 ! acinus
 intersection_of: BFO:0000050 UBERON:0000017 ! exocrine pancreas
 relationship: BFO:0000050 UBERON:0000017 ! exocrine pancreas
-relationship: BFO:0000050 UBERON:0007324 ! pancreatic lobe
+relationship: BFO:0000050 UBERON:0007324 ! pancreatic lobule
 
 [Term]
 id: UBERON:0001264
@@ -3868,6 +3876,7 @@ id: UBERON:0001281
 name: hepatic sinusoid
 def: "Wide thin-walled blood vessels in the liver. In mammals they have neither veinous or arterial markers." []
 synonym: "hepatic sinusoids" RELATED []
+synonym: "liver hepatic sinusoids" EXACT []
 synonym: "liver sinusoid" EXACT []
 synonym: "liver sinusoidal blood vessel" EXACT []
 synonym: "sinusoid of liver" EXACT []
@@ -3972,7 +3981,7 @@ relationship: BFO:0000050 UBERON:0005164 ! ascending limb of loop of Henle
 [Term]
 id: UBERON:0001292
 name: distal convoluted tubule
-def: "the first segment of the nephron lying just downstream from the loop of Henle, immediately after the macula densa. Among other functions, in humans it is responsible for the reabsorption of about 5% of filtered sodium via the thiazide-sensitive Na-Cl symporter." []
+def: "the first segment of the nephron lying just downstream from the loop of Henle, immediately after the macula densa." []
 synonym: "distal convoluted renal tubule" EXACT []
 synonym: "second convoluted tubule" RELATED []
 synonym: "tubulus contortus distalis" EXACT []
@@ -4079,10 +4088,9 @@ relationship: RO:0002202 UBERON:0003074 ! mesonephric duct
 [Term]
 id: UBERON:0001305
 name: ovarian follicle
-def: "Ovarian follicles are the basic units of female reproductive biology, each of which is composed of roughly spherical aggregations of cells found in the ovary. They contain a single oocyte (aka ovum or egg). These structures are periodically initiated to grow and develop, culminating in ovulation of usually a single competent oocyte in humans. These eggs/ova are only developed once every menstrual cycle (e.g. once a month in humans)[WP]." []
+def: "A spherical aggregation of cells in the ovary that contains a single oocyte[WP,modified]." []
 synonym: "egg follicle" RELATED []
 synonym: "follicle of ovary" EXACT []
-synonym: "follicle of ovary viewed macroscopically" EXACT []
 synonym: "folliculi ovarici primarii" RELATED []
 synonym: "folliculi ovarici vesiculosi" RELATED []
 synonym: "ovary follicle" EXACT []
@@ -4123,7 +4131,7 @@ synonym: "pelvis muscle" EXACT []
 synonym: "pelvis muscle organ" EXACT []
 is_a: UBERON:0003833 ! abdominal segment muscle
 is_a: UBERON:0005179 ! pelvic region element
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002355 ! pelvis
 relationship: BFO:0000050 UBERON:0002355 ! pelvis
 
@@ -4315,7 +4323,7 @@ synonym: "muscle of upper/lower leg" EXACT []
 synonym: "muscle organ of leg" EXACT []
 synonym: "skeletal muscle of leg" EXACT []
 is_a: UBERON:0003663 ! hindlimb muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0000978 ! leg
 relationship: BFO:0000050 UBERON:0000978 ! leg
 relationship: BFO:0000050 UBERON:0004466 ! musculature of leg
@@ -4654,7 +4662,7 @@ relationship: BFO:0000050 UBERON:0001434 ! skeletal system
 [Term]
 id: UBERON:0001485
 name: knee joint
-def: "The knee joint joins the thigh with the leg and consists of two articulations: one between the femur and tibia, and one between the femur and patella. It is the largest and most complicated joint in the human body. The knee is a mobile trocho-ginglymus (i.e. a pivotal hinge joint), which permits flexion and extension as well as a slight medial and lateral rotation. Since in humans the knee supports nearly the whole weight of the body, it is the joint most vulnerable both to acute injury and the development of osteoarthritis. [WP,unvetted]." []
+def: "The knee joint joins the thigh with the leg and consists of two articulations: one between the femur and tibia, and one between the femur and patella. It is the largest and most complicated joint in the human body. The knee is a mobile trocho-ginglymus (i.e. a pivotal hinge joint), which permits flexion and extension as well as a slight medial and lateral rotation[WP,unvetted]." []
 synonym: "articulatio genus" RELATED []
 synonym: "joint of knee" EXACT []
 is_a: UBERON:0003840 ! hindlimb joint
@@ -4740,7 +4748,7 @@ synonym: "muscle organ of lower extremity distal free limb segment" EXACT []
 synonym: "muscle organ of terminal segment of free lower limb" EXACT []
 synonym: "terminal segment of free lower limb muscle organ" EXACT []
 is_a: UBERON:0003663 ! hindlimb muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002387 ! pes
 relationship: BFO:0000050 UBERON:0002387 ! pes
 relationship: BFO:0000050 UBERON:0004488 ! musculature of pes
@@ -4756,7 +4764,7 @@ synonym: "arm skeletal muscle tissue" EXACT []
 synonym: "muscle of upper arm or lower arm" EXACT []
 synonym: "upper arm / lower arm muscle" EXACT []
 is_a: UBERON:0003662 ! forelimb muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0001460 ! arm
 relationship: BFO:0000050 UBERON:0001460 ! arm
 relationship: BFO:0000050 UBERON:0004474 ! musculature of arm
@@ -4797,7 +4805,7 @@ synonym: "proximal segment of free upper limb autopod muscle organ" EXACT []
 synonym: "proximal segment of free upper limb distal free limb segment muscle organ" EXACT []
 synonym: "terminal segment of free upper limb muscle organ" EXACT []
 is_a: UBERON:0003662 ! forelimb muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002398 ! manus
 relationship: BFO:0000050 UBERON:0002398 ! manus
 relationship: BFO:0000050 UBERON:0004489 ! musculature of manus
@@ -5036,7 +5044,7 @@ relationship: BFO:0000050 UBERON:0001769 ! iris
 [Term]
 id: UBERON:0001607
 name: sphincter pupillae
-def: "The iris sphincter muscle (pupillary sphincter, circular muscle of iris, circular fibers) is a muscle in the part of the eye called the iris. It encircles the eye, appropriate to its function as a constrictor. It is found in vertebrates and some cephalopods. In humans, it functions to constrict the pupil in bright light or during accommodation. Its dimensions are about 0.75 mm wide by 0.15 mm thick. It is controlled by parasympathetic fibers that originate from the Edinger-Westphal nucleus, travel along the oculomotor nerve (CN III), synapse in the ciliary ganglion, and then enter the eye via the short ciliary nerves. Initially, all the myocytes are of the smooth muscle type, but much later in life, so that ultimately most cells are of the striated muscle type. [WP,unvetted]." []
+def: "A sphincter muscle that is part of the iris." []
 synonym: "circular fibers" RELATED []
 synonym: "constrictor pupillae" RELATED []
 synonym: "iris constrictor" RELATED []
@@ -5576,18 +5584,19 @@ relationship: RO:0002202 UBERON:0007213 ! mesenchyme derived from head neural cr
 
 [Term]
 id: UBERON:0001774
-name: muscle of trunk
-def: "Muscle organ which is a part of the trunk. Examples: external intercostal muscle, external oblique, levator ani." []
+name: skeletal muscle of trunk
+def: "A skeletal muscle organ that is part of the trunk region." []
 synonym: "body musculature" EXACT []
+synonym: "muscle of trunk" EXACT []
 synonym: "muscle organ of torso" EXACT []
 synonym: "muscle organ of trunk" EXACT []
 synonym: "torso muscle organ" EXACT []
 synonym: "trunk muscle" EXACT []
 synonym: "trunk muscle organ" EXACT []
 synonym: "trunk musculature" EXACT []
-is_a: UBERON:0001630 ! muscle organ
 is_a: UBERON:0005177 ! trunk region element
-intersection_of: UBERON:0001630 ! muscle organ
+is_a: UBERON:0014892 ! skeletal muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002100 ! trunk
 relationship: BFO:0000050 UBERON:0002100 ! trunk
 relationship: BFO:0000050 UBERON:0004479 ! musculature of trunk
@@ -5703,7 +5712,7 @@ is_a: UBERON:0015808 ! eye epithelium
 [Term]
 id: UBERON:0001785
 name: cranial nerve
-def: "Cranial nerves are nerves that emerge directly from the brain, in contrast to spinal nerves, which emerge from segments of the spinal cord. In humans, there are traditionally twelve pairs of cranial nerves. Only the first and the second pair emerge from the cerebrum; the remaining ten pairs emerge from the brainstem[WP]." []
+def: "Cranial nerves are nerves that emerge directly from the brain, in contrast to spinal nerves, which emerge from segments of the spinal cord." []
 synonym: "cranial nerves" RELATED []
 synonym: "cranial neural tree organ" EXACT []
 synonym: "nervus cranialis" RELATED []
@@ -5836,7 +5845,7 @@ relationship: RO:0002202 UBERON:0000076 ! external ectoderm
 [Term]
 id: UBERON:0001820
 name: sweat gland
-def: "Sweat glands are exocrine glands, found in the skin of all mammal species, that are used for body temperature regulation. In humans a system of apocrine - and merocrine sweat glands is the main method of cooling. Many other mammals rely on panting or other means as a primary source of cooling, but still use sweat glands to aid in body temperature regulation. Sweat also serves a purpose of increasing friction on the palms of hands or the pads of paws. Both apocrine and merocrine sweat glands contain myoepithelial cells (from Greek myo-, 'muscle'), specialized epithelial cells located between the gland cells and the underlying basal lamina. Myoepithelial cell contractions squeeze the gland and discharge the accumulated secretions. The secretory activities of the gland cells and the contractions of myoepithelial cells are controlled by both the autonomic nervous system and by the circulating hormones. Additionally, ceruminous glands, which produce ear wax, and mammary glands, which produce milk, are frequently considered to be modified sweat glands. [WP,unvetted]." []
+def: "Sweat glands are exocrine glands, found in the skin of all mammal species, that are used for body temperature regulation. Both apocrine and merocrine sweat glands contain myoepithelial cells  specialized epithelial cells located between the gland cells and the underlying basal lamina. Myoepithelial cell contractions squeeze the gland and discharge the accumulated secretions. The secretory activities of the gland cells and the contractions of myoepithelial cells are controlled by both the autonomic nervous system and by the circulating hormones. [WP,unvetted]." []
 synonym: "glandula sudorifera" RELATED []
 synonym: "sudoriferous gland" RELATED []
 synonym: "sudoriparous gland" RELATED []
@@ -6624,7 +6633,7 @@ synonym: "tela submucosa esophagi" EXACT []
 synonym: "tela submucosa oesophageae" EXACT []
 synonym: "tela submucosa oesophagi" RELATED []
 synonym: "tela submucosa of esophagus" EXACT []
-is_a: UBERON:0000009 ! submucosa
+is_a: UBERON:0018257 ! submucosa of digestive tract
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: BFO:0000050 UBERON:0001043 ! esophagus
 relationship: BFO:0000050 UBERON:0001043 ! esophagus
@@ -6636,7 +6645,7 @@ name: substance of tooth
 def: "Body substance in solid state produced by odontoblasts, amyloblasts or cementoblasts.[FMA]" []
 synonym: "portion of substance of tooth" EXACT []
 synonym: "tooth substance" EXACT []
-is_a: UBERON:0000463 ! portion of organism substance
+is_a: UBERON:0000463 ! organism substance
 relationship: BFO:0000050 UBERON:0001091 ! calcareous tooth
 
 [Term]
@@ -6735,6 +6744,7 @@ name: blood vessel
 def: "A vessel through which blood circulates in the body." []
 synonym: "region of vascular tree organ" EXACT []
 synonym: "vas sanguineum" RELATED []
+synonym: "vascular element" BROAD []
 synonym: "vascular tree organ region" EXACT []
 is_a: UBERON:0000055 ! vessel
 is_a: UBERON:0004120 ! mesoderm-derived structure
@@ -7225,8 +7235,8 @@ synonym: "subtegumental tissue" RELATED []
 synonym: "superficial fascia" RELATED []
 synonym: "tela subcutanea" RELATED []
 synonym: "vertebrate hypodermis" EXACT []
-is_a: UBERON:0002384 ! connective tissue
 is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0013754 ! integumentary system layer
 relationship: BFO:0000050 UBERON:0002199 ! integument
 relationship: RO:0002202 UBERON:0000926 ! mesoderm
 
@@ -7235,7 +7245,7 @@ id: UBERON:0002073
 name: hair follicle
 def: "a tube-like opening in the epidermis where the hair shaft develops and into which the sebaceous glands open[GO]." []
 synonym: "folliculus pili" RELATED []
-is_a: UBERON:0000025 ! tube
+is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0001003 ! skin epidermis
@@ -7494,7 +7504,7 @@ is_a: UBERON:0001032 ! sensory system
 [Term]
 id: UBERON:0002106
 name: spleen
-def: "Organ found in virtually all vertebrate animals with important roles in regard to red blood cells and the immune system. In humans, it is located in the left upper quadrant of the abdomen. It removes old red blood cells and holds a reserve in case of hemorrhagic shock, especially in animals like horses (not in humans), while recycling iron. It synthesizes antibodies in its white pulp and removes, from blood and lymph node circulation, antibody-coated bacteria along with antibody-coated blood cells." []
+def: "Organ found in virtually all vertebrate animals with important roles in regard to red blood cells and the immune system." []
 synonym: "lien" RELATED []
 is_a: UBERON:0004177 ! hemopoietic organ
 is_a: UBERON:0005057 ! immune organ
@@ -7713,6 +7723,7 @@ relationship: BFO:0000050 UBERON:0002037 ! cerebellum
 id: UBERON:0002165
 name: endocardium
 def: "The endocardium is an anatomical structure comprised of an endothelium and an extracellular matrix that forms the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber[FMA]." []
+synonym: "endocardial lining" EXACT []
 synonym: "endocardial tissue" EXACT []
 synonym: "heart endocardial tissue" RELATED []
 synonym: "heart endocardium" EXACT []
@@ -8201,7 +8212,7 @@ is_a: UBERON:0009623 ! spinal nerve root
 [Term]
 id: UBERON:0002264
 name: olfactory bulb
-def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO]. Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract. In most vertebrates, the olfactory bulb is the most rostral (forward) part of the brain. In humans, however, the olfactory bulb is on the inferior (bottom) side of the brain. The olfactory bulb is supported and protected by the cribriform plate which in mammals, separates it from the olfactory epithelium, and which is perforated by olfactory nerve axons. The bulb is divided into two distinct structures, the main olfactory bulb, and the accessory olfactory bulb[WP]." []
+def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO].." []
 synonym: "bulbus olfactorius" EXACT []
 synonym: "bulbus olfactorius" RELATED []
 synonym: "bulbus olfactorius (Morgagni)" RELATED []
@@ -8310,7 +8321,6 @@ synonym: "canalis centralis" EXACT []
 synonym: "central canal" EXACT []
 synonym: "central canal of spinal cord" EXACT []
 synonym: "central canal, spinal cord/medulla" RELATED []
-synonym: "neural lumen" RELATED []
 synonym: "spinal cord central canal" EXACT []
 synonym: "ventricle of spinal cord" EXACT []
 is_a: UBERON:0004111 ! anatomical conduit
@@ -8560,9 +8570,9 @@ def: "A muscle organ that is part of a back [Automatically generated definition]
 synonym: "back muscle" EXACT []
 synonym: "back muscle organ" EXACT []
 synonym: "muscle organ of back" EXACT []
-is_a: UBERON:0001774 ! muscle of trunk
+is_a: UBERON:0001774 ! skeletal muscle of trunk
 is_a: UBERON:0005174 ! dorsal region element
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0001137 ! dorsum
 relationship: BFO:0000050 UBERON:0001137 ! dorsum
 relationship: BFO:0000050 UBERON:0004469 ! musculature of back
@@ -8759,6 +8769,7 @@ synonym: "heart myocardium" EXACT []
 synonym: "muscle of heart" EXACT []
 is_a: UBERON:0005983 ! heart layer
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0018260 ! layer of muscle tissue
 relationship: BFO:0000050 UBERON:0000383 ! musculature of body
 relationship: BFO:0000050 UBERON:0000948 ! heart
 
@@ -8956,6 +8967,7 @@ id: UBERON:0002370
 name: thymus
 def: "Anatomical structure of largely lymphoid tissue that functions in cell-mediated immunity by being the site where T cells develop." []
 synonym: "thymus gland" EXACT []
+synonym: "thymus organ" EXACT []
 is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0002368 ! endocrine gland
 is_a: UBERON:0004177 ! hemopoietic organ
@@ -9003,7 +9015,6 @@ synonym: "muscle of head" EXACT []
 synonym: "muscle organ of adult head" EXACT []
 synonym: "muscle organ of head" EXACT []
 synonym: "musculus caput" EXACT []
-is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0010959 ! craniocervical muscle
 relationship: BFO:0000050 UBERON:0000033 ! head
 relationship: BFO:0000050 UBERON:0004461 ! musculature of head
@@ -9019,7 +9030,7 @@ synonym: "neck (volume) muscle organ" EXACT []
 synonym: "neck muscle" EXACT []
 synonym: "neck muscle organ" EXACT []
 is_a: UBERON:0010959 ! craniocervical muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0000974 ! neck
 relationship: BFO:0000050 UBERON:0000974 ! neck
 relationship: BFO:0000050 UBERON:0004465 ! musculature of neck
@@ -9035,7 +9046,7 @@ synonym: "abdominal wall muscle" EXACT []
 synonym: "muscle organ of abdomen" EXACT []
 is_a: UBERON:0003833 ! abdominal segment muscle
 is_a: UBERON:0005172 ! abdomen element
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0000916 ! abdomen
 relationship: BFO:0000050 UBERON:0000916 ! abdomen
 relationship: BFO:0000050 UBERON:0002343 ! abdomen musculature
@@ -9108,7 +9119,7 @@ relationship: BFO:0000050 UBERON:5002389 ! manual digit plus metapodial segment
 [Term]
 id: UBERON:0002390
 name: hematopoietic system
-def: "Anatomical system that is involved in the production of hematopoietic cells. In humans this is primarily the bone marrow, spleen, tonsils, and lymph nodes." []
+def: "Anatomical system that is involved in the production of hematopoietic cells." []
 synonym: "Blutbildungssystem" RELATED []
 synonym: "haematological system" EXACT []
 synonym: "haematopoietic system" RELATED []
@@ -9399,7 +9410,7 @@ synonym: "musculus thoracicus" EXACT []
 synonym: "thoracic muscle" EXACT []
 is_a: UBERON:0003830 ! thoracic segment muscle
 is_a: UBERON:0005175 ! chest organ
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0001443 ! chest
 relationship: BFO:0000050 UBERON:0001443 ! chest
 relationship: BFO:0000050 UBERON:0004472 ! musculature of chest
@@ -9539,7 +9550,7 @@ is_a: UBERON:0014907 ! intersomitic vessel
 [Term]
 id: UBERON:0002465
 name: lymphoid system
-def: "The lymphatic system in vertebrates is a network of conduits that carry a clear fluid called lymph. It also includes the lymphoid tissue through which the lymph travels. Lymphoid tissue is found in many organs, particularly the lymph nodes, and in the lymphoid follicles associated with the digestive system such as the tonsils. The system also includes all the structures dedicated to the circulation and production of lymphocytes, which includes the spleen, thymus, bone marrow and the lymphoid tissue associated with the digestive system (Wikipedia)." []
+def: "The lymphatic system in vertebrates is a network of conduits that carry a clear fluid called lymph. It also includes the lymphoid tissue through which the lymph travels. Lymphoid tissue is found in many organs, particularly the lymph nodes, and in the lymphoid follicles associated with the digestive system such as the tonsils. The system also includes all the structures dedicated to the circulation and production of lymphocytes, which includes the spleen, thymus, bone marrow and the lymphoid tissue associated with the digestive system[WP]." []
 synonym: "lymphatic circulatory system" RELATED []
 synonym: "lymphatic system" NARROW []
 synonym: "systema lymphoideum" RELATED []
@@ -9794,8 +9805,8 @@ name: limb segment
 def: "A major subdivision of a mature or developing limb, including both skeletal elements (or the mesenchyme that gives rise to the skeletal elements) and associated tissues, such as muscle, connective tissue, integument. Examples: autopod region, zeugopod region, stylopod region, metapodial region, arm region. Excludes the limb girdles." []
 synonym: "extremity part" RELATED []
 synonym: "free limb segment" EXACT []
-synonym: "limb region" EXACT []
-synonym: "region of limb" EXACT []
+synonym: "limb region" RELATED []
+synonym: "region of limb" RELATED []
 synonym: "segment of limb" EXACT []
 synonym: "subdivision of limb" EXACT []
 is_a: UBERON:0010538 ! paired limb/fin segment
@@ -10248,6 +10259,7 @@ synonym: "presumptive somite mesoderm" RELATED []
 synonym: "PSM" RELATED []
 synonym: "segmental plate" EXACT []
 synonym: "somitogenic mesoderm" RELATED []
+synonym: "somitomeric mesoderm" RELATED []
 synonym: "unsegmented mesenchyme" RELATED []
 synonym: "unsegmented paraxial mesoderm" EXACT []
 is_a: UBERON:0005423 ! developing anatomical structure
@@ -14511,7 +14523,7 @@ synonym: "muscle organ of toe" EXACT []
 synonym: "terminal segment of free lower limb digit muscle organ" EXACT []
 synonym: "toe muscle organ" EXACT []
 is_a: UBERON:0001498 ! muscle of pes
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0001466 ! pedal digit
 relationship: BFO:0000050 UBERON:0001466 ! pedal digit
 
@@ -14520,10 +14532,10 @@ id: UBERON:0003661
 name: limb muscle
 def: "A muscle organ that is part of a limb [Automatically generated definition]." []
 synonym: "limb muscle organ" EXACT []
-synonym: "limb skeletal muscle" RELATED []
+synonym: "limb skeletal muscle" EXACT []
 synonym: "muscle organ of limb" EXACT []
-is_a: UBERON:0001630 ! muscle organ
-intersection_of: UBERON:0001630 ! muscle organ
+is_a: UBERON:0014892 ! skeletal muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002101 ! limb
 relationship: BFO:0000050 UBERON:0002101 ! limb
 relationship: BFO:0000050 UBERON:0004480 ! musculature of limb
@@ -14544,7 +14556,7 @@ synonym: "upper limb skeletal muscle" EXACT []
 synonym: "wing muscle" NARROW []
 is_a: UBERON:0003661 ! limb muscle
 is_a: UBERON:0014794 ! pectoral appendage muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002102 ! forelimb
 relationship: BFO:0000050 UBERON:0002102 ! forelimb
 relationship: BFO:0000050 UBERON:0004481 ! musculature of upper limb
@@ -14567,7 +14579,7 @@ synonym: "muscle organ of inferior member" EXACT []
 synonym: "muscle organ of lower extremity" EXACT []
 is_a: UBERON:0003661 ! limb muscle
 is_a: UBERON:0014795 ! pelvic appendage muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002103 ! hindlimb
 relationship: BFO:0000050 UBERON:0002103 ! hindlimb
 relationship: BFO:0000050 UBERON:0004482 ! musculature of lower limb
@@ -14592,7 +14604,7 @@ synonym: "muscle organ of hand digit" EXACT []
 synonym: "muscle organ of terminal segment of free upper limb digit" EXACT []
 synonym: "terminal segment of free upper limb digit muscle organ" EXACT []
 is_a: UBERON:0001500 ! muscle of manus
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002389 ! manual digit
 relationship: BFO:0000050 UBERON:0002389 ! manual digit
 
@@ -14704,7 +14716,7 @@ relationship: RO:0002202 UBERON:0009847 ! prostate field
 [Term]
 id: UBERON:0003822
 name: forelimb stylopod
-def: "A stylopod that is part of a forelimb [Automatically generated definition]." []
+def: "The part of the forelimb between pectoral region and the elbow, corresponding to the humerus." []
 synonym: "arm" RELATED []
 synonym: "brachial region" EXACT []
 synonym: "brachium" EXACT []
@@ -14790,17 +14802,14 @@ relationship: BFO:0000050 UBERON:0002417 ! abdominal segment of trunk
 [Term]
 id: UBERON:0003829
 name: urethra muscle
-def: "A muscle organ that is part of a urethra [Automatically generated definition]." []
-synonym: "muscle layer of urethra" RELATED []
-synonym: "muscle organ of urethra" EXACT []
-synonym: "muscular coat of urethra" EXACT []
-synonym: "muscular layer of urethra" EXACT []
-synonym: "urethra muscle organ" EXACT []
+def: "A muscle structure that is part of a urethra [Automatically generated definition]." []
+synonym: "muscle organ of urethra" NARROW []
+synonym: "urethra muscle organ" NARROW []
 synonym: "urethral muscle layer" RELATED []
-is_a: UBERON:0001630 ! muscle organ
 is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005090 ! muscle structure
 is_a: UBERON:0006554 ! urinary system structure
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0005090 ! muscle structure
 intersection_of: BFO:0000050 UBERON:0000057 ! urethra
 relationship: BFO:0000050 UBERON:0000057 ! urethra
 
@@ -14811,9 +14820,9 @@ def: "A muscle organ that is part of a thorax [Automatically generated definitio
 synonym: "muscle organ of thorax" EXACT []
 synonym: "thorax muscle organ" EXACT []
 synonym: "upper body muscle" RELATED []
-is_a: UBERON:0001774 ! muscle of trunk
+is_a: UBERON:0001774 ! skeletal muscle of trunk
 is_a: UBERON:0005181 ! thoracic segment organ
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0000915 ! thoracic segment of trunk
 relationship: BFO:0000050 UBERON:0000915 ! thoracic segment of trunk
 relationship: BFO:0000050 UBERON:0004464 ! musculature of thorax
@@ -14842,7 +14851,8 @@ synonym: "muscle organ of esophagus" EXACT []
 synonym: "muscle organ of gullet" EXACT []
 synonym: "muscle organ of oesophagus" EXACT []
 synonym: "oesophagus muscle organ" EXACT []
-is_a: UBERON:0003830 ! thoracic segment muscle
+is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0005181 ! thoracic segment organ
 is_a: UBERON:0013765 ! digestive system element
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: BFO:0000050 UBERON:0001043 ! esophagus
@@ -14855,9 +14865,9 @@ name: abdominal segment muscle
 def: "A muscle organ that is part of an abdominal segment of trunk [Automatically generated definition]." []
 synonym: "abdominal segment of trunk muscle organ" EXACT []
 synonym: "muscle organ of abdominal segment of trunk" EXACT []
-is_a: UBERON:0001774 ! muscle of trunk
+is_a: UBERON:0001774 ! skeletal muscle of trunk
 is_a: UBERON:0005173 ! abdominal segment element
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002417 ! abdominal segment of trunk
 relationship: BFO:0000050 UBERON:0002417 ! abdominal segment of trunk
 
@@ -15337,7 +15347,7 @@ relationship: RO:0002202 UBERON:0000925 ! endoderm
 [Term]
 id: UBERON:0003922
 name: pancreatic epithelial bud
-def: "The embryonic pancreas develops from two separate anlagen in the foregut epithelium, one dorsal and two ventral pancreatic buds[PMID]. In humans, an embryonic structure that is an outgrowth of the duodenum during embryogenesis - joins together to form the adult pancreas[WP]." []
+def: "The embryonic pancreas develops from two separate anlagen in the foregut epithelium, one dorsal and two ventral pancreatic buds[PMID]." []
 synonym: "pancreatic anlage" RELATED []
 synonym: "pancreatic bud" EXACT []
 synonym: "pancreatic buds" EXACT []
@@ -16331,12 +16341,16 @@ relationship: BFO:0000050 UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0004219
-name: urethra smooth muscle
+name: urethra smooth muscle layer
 def: "A portion of smooth muscle tissue that is part of a urethra [Automatically generated definition]." []
 synonym: "involuntary muscle of urethra" EXACT []
+synonym: "muscle layer of urethra" EXACT []
+synonym: "muscular coat of urethra" EXACT []
+synonym: "muscular layer of urethra" EXACT []
 synonym: "non-striated muscle of urethra" EXACT []
 synonym: "smooth muscle of urethra" EXACT []
 synonym: "smooth muscle tissue of urethra" EXACT []
+synonym: "tunica muscularis urethrae" EXACT []
 synonym: "urethra involuntary muscle" EXACT []
 synonym: "urethra non-striated muscle" EXACT []
 synonym: "urethra smooth muscle tissue" EXACT []
@@ -16963,7 +16977,7 @@ synonym: "muscle of thigh" EXACT []
 synonym: "thigh muscle" EXACT []
 synonym: "upper leg muscle" EXACT []
 is_a: UBERON:0001383 ! muscle of leg
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0000376 ! hindlimb stylopod
 relationship: BFO:0000050 UBERON:0000376 ! hindlimb stylopod
 relationship: BFO:0000050 UBERON:0004463 ! musculature of hindlimb stylopod
@@ -16991,7 +17005,7 @@ synonym: "skeletal muscle of upper arm" RELATED []
 synonym: "upper arm muscle" EXACT []
 synonym: "wing stylopod muscle" NARROW []
 is_a: UBERON:0001499 ! muscle of arm
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0003822 ! forelimb stylopod
 relationship: BFO:0000050 UBERON:0003822 ! forelimb stylopod
 relationship: BFO:0000050 UBERON:0014791 ! musculature of forelimb stylopod
@@ -17352,8 +17366,8 @@ relationship: BFO:0000050 UBERON:0002422 ! fourth ventricle
 id: UBERON:0004277
 name: eye muscle
 def: "A muscle that is part of the eye region." []
+is_a: UBERON:0001630 ! muscle organ
 is_a: UBERON:0004121 ! ectoderm-derived structure
-is_a: UBERON:0010959 ! craniocervical muscle
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: BFO:0000050 UBERON:0000019 ! camera-type eye
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
@@ -17494,6 +17508,7 @@ is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0015787 ! upper respiratory conduit
 relationship: BFO:0000050 UBERON:0000922 ! embryo
 relationship: BFO:0000050 UBERON:0002539 ! pharyngeal arch
 relationship: BFO:0000050 UBERON:0007303 ! pharyngeal vasculature
@@ -18143,17 +18158,17 @@ relationship: BFO:0000050 UBERON:0004663 ! aorta wall
 
 [Term]
 id: UBERON:0004665
-name: seminal vesicle muscle layer
-def: "A portion of muscle tissue that is part of a seminal vesicle [Automatically generated definition]." []
+name: muscular coat of seminal vesicle
+def: "A muscular coat that is part of a seminal vesicle [Automatically generated definition]." []
 synonym: "muscle layer of seminal vesicle" EXACT []
 synonym: "muscular coat of seminal gland" EXACT []
 synonym: "muscular layer of seminal gland" EXACT []
 synonym: "tunica muscularis (Vesicula seminalis)" EXACT []
 synonym: "tunica muscularis glandulae vesiculosae" EXACT []
 is_a: UBERON:0005156 ! reproductive structure
-is_a: UBERON:0006660 ! muscle layer
+is_a: UBERON:0006660 ! muscular coat
 is_a: UBERON:0014403 ! male anatomical structure
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0000998 ! seminal vesicle
 relationship: BFO:0000050 UBERON:0000998 ! seminal vesicle
 
@@ -19641,6 +19656,8 @@ id: UBERON:0004921
 name: subdivision of digestive tract
 def: "A proximal-distal subdivision of the digestive tract." []
 synonym: "alimentary system subdivision" RELATED []
+synonym: "intestinal tract" RELATED []
+synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED []
 is_a: UBERON:0013522 ! subdivision of tube
 relationship: BFO:0000050 UBERON:0001555 ! digestive tract
@@ -19664,6 +19681,7 @@ synonym: "submucous layer of pharynx" RELATED []
 synonym: "tela submucosa pharyngis" EXACT []
 is_a: UBERON:0004119 ! endoderm-derived structure
 is_a: UBERON:0004777 ! respiratory system submucosa
+is_a: UBERON:0018257 ! submucosa of digestive tract
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: BFO:0000050 UBERON:0001042 ! chordate pharynx
 relationship: BFO:0000050 UBERON:0001042 ! chordate pharynx
@@ -20669,6 +20687,7 @@ relationship: BFO:0000050 UBERON:0005061 ! neural groove
 id: UBERON:0005068
 name: neural rod
 def: "a solid rod of neurectoderm derived from the neural keel. The neural rod is roughly circular in cross section. Neural rod formation occurs during primary neurulation in teleosts[GO]. An intermediate stage in the development of the central nervous system present during the segmentation period; the neural rod is roughly cylindrical in shape, forms from the neural keel, and is not yet hollowed out into the neural tube[ZFIN]." []
+synonym: "neural tube rod" RELATED []
 is_a: UBERON:0016879 ! future central nervous system
 relationship: BFO:0000050 UBERON:0000922 ! embryo
 relationship: RO:0002202 UBERON:0007135 ! neural keel
@@ -23688,7 +23707,7 @@ id: UBERON:0006314
 name: bodily fluid
 def: "Liquid components of living organisms. includes fluids that are excreted or secreted from the body as well as body water that normally is not." []
 synonym: "body fluid" EXACT []
-is_a: UBERON:0000463 ! portion of organism substance
+is_a: UBERON:0000463 ! organism substance
 
 [Term]
 id: UBERON:0006331
@@ -23957,9 +23976,9 @@ synonym: "tunica muscularis (Tuba uterina)" EXACT []
 synonym: "tunica muscularis tubae uterinae" EXACT []
 synonym: "uterine tubal muscularis" EXACT []
 is_a: UBERON:0005156 ! reproductive structure
-is_a: UBERON:0006660 ! muscle layer
+is_a: UBERON:0006660 ! muscular coat
 is_a: UBERON:0014404 ! female anatomical structure
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0003889 ! fallopian tube
 relationship: BFO:0000050 UBERON:0003889 ! fallopian tube
 
@@ -23980,9 +23999,9 @@ id: UBERON:0006646
 name: muscle layer of epididymis
 def: "A muscle layer that is part of a epididymis." []
 is_a: UBERON:0005156 ! reproductive structure
-is_a: UBERON:0006660 ! muscle layer
+is_a: UBERON:0006660 ! muscular coat
 is_a: UBERON:0014403 ! male anatomical structure
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0001301 ! epididymis
 relationship: BFO:0000050 UBERON:0001301 ! epididymis
 
@@ -24009,15 +24028,15 @@ synonym: "muscular coat of vagina" EXACT []
 synonym: "tunica muscularis vaginae" EXACT []
 synonym: "vaginal muscularis" EXACT []
 is_a: UBERON:0005156 ! reproductive structure
-is_a: UBERON:0006660 ! muscle layer
+is_a: UBERON:0006660 ! muscular coat
 is_a: UBERON:0014404 ! female anatomical structure
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0000996 ! vagina
 relationship: BFO:0000050 UBERON:0000996 ! vagina
 
 [Term]
 id: UBERON:0006660
-name: muscle layer
+name: muscular coat
 def: "A region of muscle in many organs in the vertebrate body, adjacent to the submucosa membrane. It is responsible for gut movement such as peristalsis." []
 synonym: "muscular coat" RELATED []
 synonym: "muscular layer" EXACT []
@@ -24029,7 +24048,7 @@ synonym: "transverse muscular fibers" RELATED []
 synonym: "tunica externa" RELATED []
 synonym: "tunica muscularis" EXACT []
 synonym: "tunica muscularis" RELATED []
-is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0018260 ! layer of muscle tissue
 
 [Term]
 id: UBERON:0006686
@@ -24102,6 +24121,7 @@ is_a: UBERON:0000483 ! epithelium
 id: UBERON:0006815
 name: areolar connective tissue
 def: "Loose connective tissue located at the outer and inner layers of organs. Examples: submucosal connective tissue, tunica adventitia of artery, papillary dermis, superficial fascia of dorsum of hand.[FMA]" []
+synonym: "areolar tissue" RELATED []
 synonym: "loose areolar connective tissue" EXACT []
 synonym: "loose connective tissue" RELATED []
 is_a: UBERON:0011825 ! loose connective tissue
@@ -24150,8 +24170,8 @@ relationship: BFO:0000050 UBERON:0006853 ! renal cortex tubule
 
 [Term]
 id: UBERON:0006855
-name: ureter muscle layer
-def: "A muscle layer that is part of a ureter." []
+name: muscular coat of ureter
+def: "A muscular coat that is part of a ureter." []
 synonym: "muscular coat of ureter" EXACT []
 synonym: "muscular layer of ureter" EXACT []
 synonym: "muscularis of ureter" EXACT []
@@ -24160,8 +24180,8 @@ synonym: "tunica muscularis ureteris" EXACT []
 synonym: "ureteral smooth muscle layer" RELATED []
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0006554 ! urinary system structure
-is_a: UBERON:0006660 ! muscle layer
-intersection_of: UBERON:0006660 ! muscle layer
+is_a: UBERON:0006660 ! muscular coat
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0000056 ! ureter
 relationship: BFO:0000050 UBERON:0000056 ! ureter
 relationship: BFO:0000050 UBERON:0009916 ! wall of ureter
@@ -24859,7 +24879,8 @@ relationship: BFO:0000050 UBERON:0005309 ! pronephric nephron
 
 [Term]
 id: UBERON:0007324
-name: pancreatic lobe
+name: pancreatic lobule
+def: "A dense accumulation of exocrine glands in the pancreas often surrounding islets of Langerhans." []
 synonym: "lobulus pancreaticus" EXACT []
 synonym: "pancreas lobe" EXACT []
 synonym: "pancreatic lobule" EXACT []
@@ -25076,10 +25097,21 @@ is_a: UBERON:0003104 ! mesenchyme
 id: UBERON:0007589
 name: ciliated columnar oviduct epithelium
 def: "A ciliated columnar epithelium that is part of a oviduct." []
-synonym: "uterine tube epithelium" EXACT []
+synonym: "epithelium of uterine tube" RELATED []
+synonym: "uterine tube epithelium" RELATED []
 is_a: UBERON:0004804 ! oviduct epithelium
 is_a: UBERON:0007592 ! ciliated columnar epithelium
 intersection_of: UBERON:0007592 ! ciliated columnar epithelium
+intersection_of: BFO:0000050 UBERON:0000993 ! oviduct
+relationship: BFO:0000050 UBERON:0000993 ! oviduct
+
+[Term]
+id: UBERON:0007590
+name: cuboidal oviduct epithelium
+def: "A cuboidal epithelium that is part of a oviduct." []
+is_a: UBERON:0004804 ! oviduct epithelium
+is_a: UBERON:0010077 ! cuboidal epithelium
+intersection_of: UBERON:0010077 ! cuboidal epithelium
 intersection_of: BFO:0000050 UBERON:0000993 ! oviduct
 relationship: BFO:0000050 UBERON:0000993 ! oviduct
 
@@ -25460,7 +25492,7 @@ relationship: BFO:0000050 UBERON:0001728 ! nasopharynx
 [Term]
 id: UBERON:0008338
 name: plantar part of pes
-def: "The sole is the bottom of the foot. In humans is the sole of the foot anatomically referred to as the plantar aspect. The equivalent surface in ungulates is the hoof." []
+def: "The sole is the bottom of the foot." []
 synonym: "pelma" RELATED []
 synonym: "planta" EXACT []
 synonym: "planta" RELATED []
@@ -25474,6 +25506,9 @@ synonym: "sole of the foot" RELATED []
 synonym: "soles of the feet" RELATED []
 is_a: UBERON:0005445 ! segment of pes
 is_a: UBERON:0008837 ! palmar/plantar part of autopod
+intersection_of: UBERON:0008837 ! palmar/plantar part of autopod
+intersection_of: BFO:0000050 UBERON:0002387 ! pes
+relationship: BFO:0000050 UBERON:0002387 ! pes
 
 [Term]
 id: UBERON:0008339
@@ -25748,9 +25783,9 @@ synonym: "muscularis externa of stomach" EXACT []
 synonym: "tunica muscularis (gaster)" EXACT []
 synonym: "tunica muscularis gastris" EXACT []
 is_a: UBERON:0004222 ! stomach smooth muscle
-is_a: UBERON:0006660 ! muscle layer
 is_a: UBERON:0009034 ! stomach region
-intersection_of: UBERON:0006660 ! muscle layer
+is_a: UBERON:0018261 ! muscular coat of digestive tract
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0001167 ! wall of stomach
 relationship: BFO:0000050 UBERON:0001167 ! wall of stomach
 relationship: BFO:0000050 UBERON:0004222 ! stomach smooth muscle
@@ -25805,12 +25840,14 @@ is_a: UBERON:0010368 ! pulmonary lobule
 [Term]
 id: UBERON:0008876
 name: hypodermis skeletal muscle layer
-def: "the skeletal muscle layer in the superficial fascia" []
+def: "Any skeletal muscle organ in the hypodermis / superficial fascia" []
 synonym: "hypodermal muscle layer" EXACT []
 synonym: "hypodermis muscle layer" EXACT []
-synonym: "panniculus carnosus" RELATED []
-is_a: UBERON:0001134 ! skeletal muscle tissue
-intersection_of: UBERON:0001134 ! skeletal muscle tissue
+synonym: "panniculus carnosus" NARROW []
+synonym: "superficial fascia muscular layer" EXACT []
+is_a: UBERON:0004253 ! skin muscle
+is_a: UBERON:0014892 ! skeletal muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002072 ! hypodermis
 relationship: BFO:0000050 UBERON:0002072 ! hypodermis
 
@@ -26341,7 +26378,7 @@ id: UBERON:0009566
 name: intestinal submucosa
 def: "A submucosa that is part of a intestine." []
 synonym: "submucosa of intestine" EXACT []
-is_a: UBERON:0000009 ! submucosa
+is_a: UBERON:0018257 ! submucosa of digestive tract
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: BFO:0000050 UBERON:0000160 ! intestine
 relationship: BFO:0000050 UBERON:0000160 ! intestine
@@ -26370,6 +26407,8 @@ name: head paraxial mesoderm
 def: "Bilateral mesenchymal mesoderm parallel and immediately adjacent to the neural tube/notochord; it generates a subset of extra-ocular, and other head, muscles." []
 synonym: "cephalic paraxial mesoderm" EXACT []
 synonym: "head paraxial mesenchyme" EXACT []
+synonym: "somitomere" RELATED []
+synonym: "somitomeric mesoderm" RELATED []
 is_a: UBERON:0006904 ! head mesenchyme from mesoderm
 relationship: BFO:0000050 UBERON:0003077 ! paraxial mesoderm
 relationship: BFO:0000050 UBERON:0005253 ! head mesenchyme
@@ -26795,7 +26834,7 @@ is_a: UBERON:0006554 ! urinary system structure
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: BFO:0000050 UBERON:0000056 ! ureter
 relationship: BFO:0000050 UBERON:0000056 ! ureter
-relationship: BFO:0000050 UBERON:0006855 ! ureter muscle layer
+relationship: BFO:0000050 UBERON:0006855 ! muscular coat of ureter
 
 [Term]
 id: UBERON:0009920
@@ -28026,8 +28065,8 @@ synonym: "muscle of pelvic girdle and leg" RELATED []
 synonym: "pelvic girdle and hind limb muscles" EXACT []
 synonym: "pelvic girdle or hind limb muscle" NARROW []
 synonym: "pelvic girdle or posterior limb muscle" NARROW []
-is_a: UBERON:0001630 ! muscle organ
-intersection_of: UBERON:0001630 ! muscle organ
+is_a: UBERON:0014892 ! skeletal muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0010709 ! pelvic complex
 relationship: BFO:0000050 UBERON:0010709 ! pelvic complex
 relationship: BFO:0000050 UBERON:0014792 ! musculature of pelvic complex
@@ -28041,8 +28080,8 @@ synonym: "muscle of pectoral girdle and wing" NARROW []
 synonym: "muscle of upper limb" NARROW []
 synonym: "pectoral girdle and fore limb muscles" EXACT []
 synonym: "upper limb muscle" NARROW []
-is_a: UBERON:0001630 ! muscle organ
-intersection_of: UBERON:0001630 ! muscle organ
+is_a: UBERON:0014892 ! skeletal muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0010708 ! pectoral complex
 relationship: BFO:0000050 UBERON:0010708 ! pectoral complex
 relationship: BFO:0000050 UBERON:0014793 ! musculature of pectoral complex
@@ -28072,8 +28111,8 @@ name: craniocervical muscle
 def: "A muscle organ that is part of a craniocervical region." []
 synonym: "muscle of head and neck" RELATED []
 synonym: "muscle of head or neck" EXACT []
-is_a: UBERON:0001630 ! muscle organ
-intersection_of: UBERON:0001630 ! muscle organ
+is_a: UBERON:0014892 ! skeletal muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0007811 ! craniocervical region
 relationship: BFO:0000050 UBERON:0007811 ! craniocervical region
 relationship: BFO:0000050 UBERON:0008229 ! craniocervical region musculature
@@ -28277,7 +28316,7 @@ synonym: "muscular layer of large intestine" EXACT []
 synonym: "muscularis externa of large intestine" EXACT []
 synonym: "tunica muscularis intestini crassi" EXACT []
 is_a: UBERON:0012367 ! muscle layer of intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0000059 ! large intestine
 relationship: BFO:0000050 UBERON:0000059 ! large intestine
 relationship: BFO:0000050 UBERON:0001169 ! wall of large intestine
@@ -28293,7 +28332,7 @@ synonym: "small intestine muscularis propria" EXACT []
 synonym: "tunica muscularis (intestinum tenue)" EXACT []
 synonym: "tunica muscularis intestini tenuis" EXACT []
 is_a: UBERON:0012367 ! muscle layer of intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0002108 ! small intestine
 relationship: BFO:0000050 UBERON:0001168 ! wall of small intestine
 relationship: BFO:0000050 UBERON:0002108 ! small intestine
@@ -28340,6 +28379,12 @@ def: "A bone that is part of a autopod region. Note that this incudes the carpal
 is_a: UBERON:0002428 ! limb bone
 is_a: UBERON:0015063 ! autopod endochondral element
 relationship: RO:0002202 UBERON:0015064 ! autopod cartilage
+
+[Term]
+id: UBERON:0011252
+name: scent gland
+def: "Scent glands are exocrine glands found in most mammals. They produce semi-viscous secretions which contain pheromones and other semiochemical compounds. These odor-messengers indicate information such as status, territory marking, mood, and sexual power. The odor may be subliminal—not consciously detectable. Though it is not their primary function, the salivary glands may also function as scent glands in some animals." []
+is_a: UBERON:0002365 ! exocrine gland
 
 [Term]
 id: UBERON:0011270
@@ -28641,8 +28686,8 @@ synonym: "muscular coat of oesophagus" EXACT []
 synonym: "muscular layer of oesophagus" EXACT []
 synonym: "tunica muscularis esophagi" EXACT []
 synonym: "tunica muscularis oesophageae" EXACT []
-is_a: UBERON:0006660 ! muscle layer
-intersection_of: UBERON:0006660 ! muscle layer
+is_a: UBERON:0018261 ! muscular coat of digestive tract
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0001043 ! esophagus
 relationship: BFO:0000050 UBERON:0001043 ! esophagus
 relationship: BFO:0000050 UBERON:0001096 ! wall of esophagus
@@ -28913,14 +28958,17 @@ relationship: BFO:0000050 UBERON:0000949 ! endocrine system
 
 [Term]
 id: UBERON:0012281
-name: perianal gland
-def: "A gland located in the area around the anus." []
+name: perianal sebaceous gland
+def: "A holocrine gland that is part of the pilosebaceous unit of a hair located in the area around the anus." []
 synonym: "circumanal gland" RELATED []
 synonym: "perianal gland" RELATED []
-is_a: UBERON:0002365 ! exocrine gland
-intersection_of: UBERON:0002365 ! exocrine gland
+is_a: UBERON:0015251 ! modified sebaceous gland
+is_a: UBERON:0016852 ! skin scent gland
+intersection_of: UBERON:0001821 ! sebaceous gland
 intersection_of: BFO:0000050 UBERON:0001353 ! anal region
+intersection_of: BFO:0000050 UBERON:0011932 ! pilosebaceous unit
 relationship: BFO:0000050 UBERON:0001353 ! anal region
+relationship: BFO:0000050 UBERON:0011932 ! pilosebaceous unit
 
 [Term]
 id: UBERON:0012292
@@ -29009,7 +29057,7 @@ is_a: UBERON:0002365 ! exocrine gland
 [Term]
 id: UBERON:0012354
 name: acropodium region
-def: "The segment of the autopod that consists of the digits." []
+def: "The segment of the autopod that is distal to the metapodial region and consists of the digits." []
 synonym: "acropodial limb segment" EXACT []
 synonym: "acropodial region" EXACT []
 synonym: "acropodial segment of autopod" EXACT []
@@ -29020,7 +29068,7 @@ relationship: BFO:0000050 UBERON:0012140 ! digitopodium region
 [Term]
 id: UBERON:0012355
 name: manual acropodium region
-def: "The segment of the manus that consists of the manual digits." []
+def: "The segment of the manus that is distal to the metacarpal region and consists of the manual digits (fingers)." []
 synonym: "acropodial hindlimb segment" EXACT []
 synonym: "acropodial region of manus" EXACT []
 synonym: "acropodial segment of manus" EXACT []
@@ -29047,7 +29095,7 @@ relationship: BFO:0000050 UBERON:0012141 ! manual digitopodium region
 [Term]
 id: UBERON:0012356
 name: pedal acropodium region
-def: "The segment of the pes that consists of the pedal digits." []
+def: "The segment of the pes that is distal to the metatarsal region and consists of the pedal digits (toes)." []
 synonym: "acropodial forelimb segment" EXACT []
 synonym: "acropodial region of pes" EXACT []
 synonym: "acropodial segment of pes" EXACT []
@@ -29123,8 +29171,8 @@ def: "A muscle layer that is part of an intestine." []
 synonym: "intestinal muscularis propria" EXACT []
 synonym: "muscularis externa of intestine" EXACT []
 synonym: "smooth muscle of intestine" RELATED []
-is_a: UBERON:0006660 ! muscle layer
-intersection_of: UBERON:0006660 ! muscle layer
+is_a: UBERON:0018261 ! muscular coat of digestive tract
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0000160 ! intestine
 relationship: BFO:0000050 UBERON:0000160 ! intestine
 relationship: BFO:0000050 UBERON:0001262 ! wall of intestine
@@ -29137,7 +29185,7 @@ synonym: "muscularis externa of jejunum" EXACT []
 synonym: "muscularis propria of jejunum" RELATED []
 synonym: "smooth muscle of jejunum" RELATED []
 is_a: UBERON:0011201 ! muscle layer of small intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0002115 ! jejunum
 relationship: BFO:0000050 UBERON:0002115 ! jejunum
 
@@ -29154,8 +29202,8 @@ synonym: "tunica musculari vesicae" EXACT []
 synonym: "tunica muscularis (vesica urinaria)" EXACT []
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0006554 ! urinary system structure
-is_a: UBERON:0006660 ! muscle layer
-intersection_of: UBERON:0006660 ! muscle layer
+is_a: UBERON:0006660 ! muscular coat
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0001255 ! urinary bladder
 relationship: BFO:0000050 UBERON:0001255 ! urinary bladder
 relationship: BFO:0000050 UBERON:0001256 ! wall of urinary bladder
@@ -29306,8 +29354,8 @@ name: submucosa of cloaca
 def: "A submucosa that is part of a cloaca [Automatically generated definition]." []
 synonym: "cloaca submucosa" EXACT []
 synonym: "cloacal submucosa" EXACT []
-is_a: UBERON:0000009 ! submucosa
 is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0018257 ! submucosa of digestive tract
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: BFO:0000050 UBERON:0000162 ! cloaca
 relationship: BFO:0000050 UBERON:0000162 ! cloaca
@@ -29332,8 +29380,8 @@ name: muscle layer of cloaca
 synonym: "muscularis externa of cloaca" EXACT []
 synonym: "smooth muscle of cloaca" RELATED []
 is_a: UBERON:0004120 ! mesoderm-derived structure
-is_a: UBERON:0006660 ! muscle layer
-intersection_of: UBERON:0006660 ! muscle layer
+is_a: UBERON:0018261 ! muscular coat of digestive tract
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0000162 ! cloaca
 relationship: BFO:0000050 UBERON:0000162 ! cloaca
 
@@ -29356,20 +29404,21 @@ synonym: "muscularis externa of duodenum" EXACT []
 synonym: "muscularis propria of duodenum" RELATED []
 synonym: "smooth muscle of duodenum" RELATED []
 is_a: UBERON:0011201 ! muscle layer of small intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0002114 ! duodenum
 relationship: BFO:0000050 UBERON:0002114 ! duodenum
 
 [Term]
 id: UBERON:0012489
 name: muscle layer of colon
+synonym: "colon muscularis" RELATED []
 synonym: "colonic muscularis propria" EXACT []
 synonym: "muscular coat of colon" EXACT []
 synonym: "muscular layer of colon" EXACT []
 synonym: "muscularis externa of colon" EXACT []
 synonym: "tunica muscularis coli" EXACT []
 is_a: UBERON:0011198 ! muscle layer of large intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0001155 ! colon
 relationship: BFO:0000050 UBERON:0001155 ! colon
 
@@ -29384,7 +29433,7 @@ synonym: "muscularis externa of anal canal" EXACT []
 synonym: "muscularis propria of anal canal" EXACT []
 is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0011198 ! muscle layer of large intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0000159 ! anal canal
 relationship: BFO:0000050 UBERON:0000159 ! anal canal
 
@@ -29550,10 +29599,7 @@ relationship: BFO:0000050 UBERON:0001711 ! eyelid
 [Term]
 id: UBERON:0013231
 name: sebaceous gland of eyelid
-def: "Glands of Zeis are unilobar sebaceous glands located on the margin of the eyelid. The glands of Zeis service the eyelash. These glands produce an oily substance that is issued through the excretory ducts of the sebaceous lobule into the middle portion of the hair follicle. In the same area of the eyelid, near the base of the eyelashes are sweat glands called the 'glands of Moll'. If eyelashes are not kept clean, conditions such as folliculitis may take place, and if the sebaceous gland becomes infected, it can lead to abscesses and styes. The glands of Zeis are named after German ophthalmologist Eduard Zeis (1807b68)." []
-synonym: "ciliary sebaceous gland of eyelid" EXACT []
-synonym: "gland of Zeis" EXACT []
-synonym: "gland of Zeiss" EXACT []
+def: "Any of the sebaceous glands that are in the eyelid. Examples: gland of Zeis (services eyelashes), gland of Meibom (tarsal gland - unconnected to eyelids)." []
 is_a: UBERON:0003484 ! eye sebaceous gland
 is_a: UBERON:0013229 ! eyelid gland
 intersection_of: UBERON:0001821 ! sebaceous gland
@@ -29952,7 +29998,7 @@ synonym: "muscularis externa of ileum" EXACT []
 synonym: "muscularis propria of ileum" RELATED []
 synonym: "smooth muscle of ileum" RELATED []
 is_a: UBERON:0011201 ! muscle layer of small intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0002116 ! ileum
 relationship: BFO:0000050 UBERON:0002116 ! ileum
 
@@ -30170,7 +30216,7 @@ id: UBERON:0014794
 name: pectoral appendage muscle
 def: "A muscle organ that is part of a pectoral appendage (forelimb or pectoral fin)." []
 is_a: UBERON:0010891 ! pectoral complex muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0004710 ! pectoral appendage
 relationship: BFO:0000050 UBERON:0004710 ! pectoral appendage
 relationship: BFO:0000050 UBERON:0007269 ! pectoral appendage musculature
@@ -30180,7 +30226,7 @@ id: UBERON:0014795
 name: pelvic appendage muscle
 def: "A muscle organ that is part of a pelvic appendage (hindlimb or pelvic fin)." []
 is_a: UBERON:0010890 ! pelvic complex muscle
-intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0004709 ! pelvic appendage
 relationship: BFO:0000050 UBERON:0004709 ! pelvic appendage
 relationship: BFO:0000050 UBERON:0007270 ! pelvic appendage musculature
@@ -30204,6 +30250,7 @@ def: "A muscle organ that consists of skeletal muscle tissue ensheathed in epimy
 synonym: "skeletal muscle" BROAD []
 is_a: UBERON:0001630 ! muscle organ
 is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: BFO:0000050 UBERON:0018254 ! skeletal musculature
 relationship: RO:0002202 UBERON:0003082 ! myotome
 
 [Term]
@@ -30388,6 +30435,11 @@ intersection_of: BFO:0000050 UBERON:0002544 ! digit
 relationship: BFO:0000050 UBERON:0002544 ! digit
 
 [Term]
+id: UBERON:0015251
+name: modified sebaceous gland
+is_a: UBERON:0001821 ! sebaceous gland
+
+[Term]
 id: UBERON:0015410
 name: heart plus pericardium
 synonym: "heart/pericardium" EXACT []
@@ -30437,7 +30489,8 @@ relationship: BFO:0000050 UBERON:0001837 ! duct of salivary gland
 
 [Term]
 id: UBERON:0015783
-name: muscle layer in fatty layer of subcutaneous tissue
+name: smooth muscle layer in fatty layer of subcutaneous tissue
+synonym: "muscle layer in fatty layer of subcutaneous tissue" EXACT []
 is_a: UBERON:0001135 ! smooth muscle tissue
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: BFO:0000050 UBERON:0002072 ! hypodermis
@@ -30446,9 +30499,12 @@ relationship: BFO:0000050 UBERON:0002072 ! hypodermis
 [Term]
 id: UBERON:0015787
 name: upper respiratory conduit
-synonym: "Respiratory conduit" EXACT []
+def: "Any anatomical conduit which is part of the upper respiratory tract" []
+synonym: "respiratory conduit" RELATED []
 is_a: UBERON:0004111 ! anatomical conduit
 is_a: UBERON:0004119 ! endoderm-derived structure
+intersection_of: UBERON:0004111 ! anatomical conduit
+intersection_of: BFO:0000050 UBERON:0001557 ! upper respiratory tract
 relationship: BFO:0000050 UBERON:0001557 ! upper respiratory tract
 
 [Term]
@@ -30867,6 +30923,27 @@ relationship: BFO:0000050 UBERON:0006208 ! auditory hillocks
 relationship: RO:0002202 UBERON:0003066 ! pharyngeal arch 2
 
 [Term]
+id: UBERON:0016852
+name: skin scent gland
+def: "A scent gland that is part of the skin" []
+synonym: "cutaneous scent gland" EXACT []
+is_a: UBERON:0002419 ! skin gland
+is_a: UBERON:0011252 ! scent gland
+intersection_of: UBERON:0011252 ! scent gland
+intersection_of: BFO:0000050 UBERON:0002097 ! skin of body
+relationship: BFO:0000050 UBERON:0002097 ! skin of body
+
+[Term]
+id: UBERON:0016853
+name: interdigital gland
+def: "A skin gland found in the interdigital region of some mammals" []
+synonym: "interdigital sinus" EXACT []
+is_a: UBERON:0016852 ! skin scent gland
+intersection_of: UBERON:0016852 ! skin scent gland
+intersection_of: BFO:0000050 UBERON:0012140 ! digitopodium region
+relationship: BFO:0000050 UBERON:0012140 ! digitopodium region
+
+[Term]
 id: UBERON:0016879
 name: future central nervous system
 def: "Primordium that develops into the central nervous system" []
@@ -30948,7 +31025,7 @@ synonym: "rectal muscularis propria" EXACT []
 synonym: "tunica muscularis (rectum)" EXACT []
 synonym: "tunica muscularis recti" EXACT []
 is_a: UBERON:0011198 ! muscle layer of large intestine
-intersection_of: UBERON:0006660 ! muscle layer
+intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0001052 ! rectum
 relationship: BFO:0000050 UBERON:0001052 ! rectum
 
@@ -30973,6 +31050,81 @@ is_a: UBERON:0003566 ! head connective tissue
 intersection_of: UBERON:0000211 ! ligament
 intersection_of: BFO:0000050 UBERON:0001756 ! middle ear
 relationship: BFO:0000050 UBERON:0001756 ! middle ear
+
+[Term]
+id: UBERON:0018226
+name: pulmonary part of lymphatic system
+synonym: "pulmonary lymphatic chain" EXACT []
+is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004119 ! endoderm-derived structure
+intersection_of: UBERON:0000477 ! anatomical cluster
+intersection_of: BFO:0000050 UBERON:0002048 ! lung
+intersection_of: BFO:0000050 UBERON:0006558 ! lymphatic part of lymphoid system
+relationship: BFO:0000050 UBERON:0002048 ! lung
+relationship: BFO:0000050 UBERON:0006558 ! lymphatic part of lymphoid system
+
+[Term]
+id: UBERON:0018227
+name: pulmonary lymphatic vessel
+synonym: "lymphatic vessel of lung" EXACT []
+is_a: UBERON:0003456 ! respiratory system lymphatic vessel
+is_a: UBERON:0018226 ! pulmonary part of lymphatic system
+intersection_of: UBERON:0001473 ! lymphatic vessel
+intersection_of: BFO:0000050 UBERON:0002048 ! lung
+relationship: BFO:0000050 UBERON:0002048 ! lung
+relationship: BFO:0000050 UBERON:0018226 ! pulmonary part of lymphatic system
+
+[Term]
+id: UBERON:0018234
+name: stroma of pancreas
+synonym: "pancreatic stroma" EXACT []
+is_a: UBERON:0003891 ! stroma
+intersection_of: UBERON:0003891 ! stroma
+intersection_of: BFO:0000050 UBERON:0001264 ! pancreas
+relationship: BFO:0000050 UBERON:0001264 ! pancreas
+
+[Term]
+id: UBERON:0018235
+name: capsule of pancreas
+def: "A capsule that divides the parenchyma of the pancreas into lobes and lobules" []
+synonym: "pancreatic capsule" EXACT []
+is_a: UBERON:0003893 ! capsule
+intersection_of: UBERON:0003893 ! capsule
+intersection_of: BFO:0000050 UBERON:0001264 ! pancreas
+relationship: BFO:0000050 UBERON:0001264 ! pancreas
+
+[Term]
+id: UBERON:0018254
+name: skeletal musculature
+is_a: UBERON:0000480 ! anatomical group
+relationship: BFO:0000050 UBERON:0000383 ! musculature of body
+
+[Term]
+id: UBERON:0018257
+name: submucosa of digestive tract
+def: "Any portion of submucosa that lines the digestive tract." []
+is_a: UBERON:0000009 ! submucosa
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: BFO:0000050 UBERON:0001555 ! digestive tract
+relationship: BFO:0000050 UBERON:0001555 ! digestive tract
+
+[Term]
+id: UBERON:0018260
+name: layer of muscle tissue
+def: "Any organ component layer that consists of muscle tissue." []
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0018261
+name: muscular coat of digestive tract
+synonym: "muscular layer of digestive tract" RELATED []
+synonym: "muscularis externa of digestive tract" RELATED []
+synonym: "tunica externa of digestive tract" RELATED []
+synonym: "tunica muscularis of digestive tract" EXACT []
+is_a: UBERON:0006660 ! muscular coat
+intersection_of: UBERON:0006660 ! muscular coat
+intersection_of: BFO:0000050 UBERON:0001555 ! digestive tract
+relationship: BFO:0000050 UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:1000021
