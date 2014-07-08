@@ -601,7 +601,7 @@ is_a: CL:0000003 ! native cell
 id: CL:0000056
 name: myoblast
 namespace: cell
-def: "A precursor cell of the myogenic lineage that develops from the mesoderm. They undergo proliferation, migrate to their various sites, and then differentiate into the appropriate form of myocytes." [GOC:tfm, MESH:A11.635]
+def: "A cell that is commited to differentiating into a muscle cell.  Embryonic myoblasts develop from the mesoderm. They undergo proliferation, migrate to their various sites, and then differentiate into the appropriate form of myocytes.  Myoblasts also occur as transient populations of cells in muscles undergoing repair." [GOC:tfm, MESH:A11.635, PMID:21849021]
 xref: BTO:0000222
 xref: CALOHA:TS-0650
 xref: FBbt:00005083
@@ -1218,9 +1218,16 @@ is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 
 [Term]
 id: CL:0000119
-name: Golgi cell
+name: cerebellar Golgi cell
 namespace: cell
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+def: "Large intrinsic neuron located in the granule layer of the cerebellar cortex that extends its dendrites into the molecular layer where they receive contact from parallel fibers. The axon of the Golgi cell enters ramifies densely in the granule layer and enters into a complex arrangement with mossy fiber terminals and granule cell dendrites to form the cerebellar glomerulus. Llinas, Walton and Lang. In The Synaptic Organization of the Brain. 5th ed. 2004." [] {comment="NIF_Cell:sao1415726815"}
+synonym: "cerebellar Golgi neuron" EXACT []
+synonym: "cerebellum Golgi cell" EXACT []
+synonym: "Golgi cell" EXACT []
+synonym: "Golgi neuron" EXACT []
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0011005 ! GABAergic interneuron
+is_a: CL:1001611 ! cerebellar neuron
 
 [Term]
 id: CL:0000120
@@ -1243,6 +1250,7 @@ xref: CALOHA:TS-0845
 xref: FMA:67969
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000527 ! efferent neuron
+is_a: CL:1001611 ! cerebellar neuron
 
 [Term]
 id: CL:0000122
@@ -1914,7 +1922,7 @@ relationship: develops_from CL:0000056 ! myoblast
 
 [Term]
 id: CL:0000188
-name: skeletal muscle cell
+name: cell of skeletal muscle
 namespace: cell
 def: "A somatic cell located in skeletal muscle." [GOC:tfm]
 xref: BTO:0004392
@@ -2025,8 +2033,8 @@ def: "A mechanoreceptor cell located in the inner ear that is sensitive to audit
 comment: In mammals these cells are located in the organ of Corti.
 synonym: "auditory receptor cell" EXACT []
 synonym: "cochlear hair cell" EXACT []
-synonym: "inner ear hair cell" EXACT [GO:0060119]
-synonym: "inner ear receptor cell" EXACT [GO:0060119]
+synonym: "inner ear hair cell" RELATED [GO:0060119]
+synonym: "inner ear receptor cell" RELATED [GO:0060119]
 xref: FMA:62364
 is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0002374 ! ear hair cell
@@ -2063,11 +2071,13 @@ is_a: CL:0000101 ! sensory neuron
 id: CL:0000207
 name: olfactory receptor cell
 namespace: cell
+synonym: "odorant receptor cell" EXACT []
 synonym: "olfactory receptor neuron" EXACT []
 synonym: "olfactory sensory neuron" EXACT []
 synonym: "Schultze's cell" EXACT []
 xref: BTO:0004185
 xref: FMA:67860
+xref: Wikipedia:Olfactory_receptor_neuron
 is_a: CL:0000206 ! chemoreceptor cell
 
 [Term]
@@ -3285,12 +3295,13 @@ is_a: CL:0000048 ! multi fate stem cell
 
 [Term]
 id: CL:0000355
-name: skeletal muscle stem cell
+name: multi-potent skeletal muscle stem cell
 namespace: cell
-def: "A multifate stem cell found in skeletal muscle than can differentiate into many different cell types. Distinct cell type from satellite cell." [PMID:18282570]
+def: "A multifate stem cell found in skeletal muscle than can differentiate into many different cell types, including muscle. Distinct cell type from satellite cell." [PMID:18282570]
+comment: Multi-potency demonstrated ex vivo.  At the time of writing, it is unclear whether the endogenous population differentiates into multiple cell types in vivo.
 xref: FMA:86767
 is_a: CL:0000048 ! multi fate stem cell
-is_a: CL:0000188 ! skeletal muscle cell
+is_a: CL:0000188 ! cell of skeletal muscle
 
 [Term]
 id: CL:0000356
@@ -4083,10 +4094,12 @@ is_a: CL:0000457 ! biogenic amine secreting cell
 
 [Term]
 id: CL:0000459
-name: norepinephrin secreting cell
+name: noradrenergic cell
 namespace: cell
 def: "A cell capable of producting norepiniphrine. Norepiniphrine is a catecholamine with multiple roles including as a hormone and a neurotransmitter. In addition, epiniphrine is synthesized from norepiniphrine by the actions of the phenylethanolamine N-methyltransferase enzyme." [GOC:tfm, ISBN:068340007X]
-synonym: "noradrenalin secreting cell" EXACT []
+synonym: "noradrenaline secreting cell" EXACT []
+synonym: "norepinephrin secreting cell" EXACT []
+synonym: "norepinephrine secreting cell" EXACT []
 is_a: CL:0000457 ! biogenic amine secreting cell
 
 [Term]
@@ -4543,7 +4556,7 @@ def: "A myoblast that differentiates into skeletal muscle fibers." [SANBI:mhl]
 synonym: "skeletal myoblast" EXACT []
 xref: FMA:84799
 is_a: CL:0000056 ! myoblast
-relationship: develops_from CL:0000355 ! skeletal muscle stem cell
+relationship: develops_from CL:0000355 ! multi-potent skeletal muscle stem cell
 relationship: RO:0002203 CL:0008002 ! develops into skeletal muscle fiber
 
 [Term]
@@ -5339,9 +5352,9 @@ is_a: CL:0000174 ! steroid hormone secreting cell
 id: CL:0000594
 name: skeletal muscle satellite cell
 namespace: cell
-def: "An elongated, spindle-shaped, quiescent myoblast that are located between the basal lamina and the plasmalemma of the muscle fibres. They are thought to play a role in muscle repair and regeneration." [GOC:tfm, MESH:A11.635.500.700]
-is_a: CL:0000035 ! single fate stem cell
-is_a: CL:0000188 ! skeletal muscle cell
+def: "An elongated, spindle-shaped, cell that is located between the basal lamina and the plasmalemma of a muscle fiber. These cells are mostly quiescent, but upon activation they divide to produce cells that generate new muscle fibers." [GOC:tfm, MESH:A11.635.500.700, PMID:21849021, PMID:23303905]
+comment: Skeletal muscle satellite cells are not traditionally referred to as myoblasts.  They are a heterogeneous population whose division, following activiation, contributes to the formation of skeletal muscle fibers and to maintenance of the satellite muscle cell population.
+is_a: CL:0000188 ! cell of skeletal muscle
 is_a: CL:0000680 ! muscle precursor cell
 
 [Term]
@@ -5590,7 +5603,7 @@ id: CL:0000621
 name: fusion competent myoblast
 namespace: cell
 def: "A myoblast that is committed to a myotube-specific program of differentiation but not yet fused. It undergoes very limited additional proliferation. After fusion, it will take on a muscle identity specified by a `muscle founder cell` (CL:0008006)." [PMID:22274696]
-is_a: CL:0000056 ! myoblast
+is_a: CL:0008018 ! somatic muscle myoblast
 relationship: RO:0002203 CL:0008003 ! develops into somatic muscle myotube
 
 [Term]
@@ -7495,7 +7508,8 @@ id: CL:0000817
 name: precursor B cell
 namespace: cell
 def: "A precursor B cell is a B cell with the phenotype CD10-positive." [GO_REF:0000031, GOC:rhs, GOC:tfm]
-synonym: "pre-B cell" EXACT []
+comment: Representation needs to be aligned with GO
+synonym: "pre-B cell" RELATED []
 xref: BTO:0001133
 xref: CALOHA:TS-0819
 is_a: CL:0000236 ! B cell
@@ -11126,7 +11140,7 @@ def: "A chromaffin cell of the adrenal medulla that produces norepinephrine." [G
 synonym: "noradrenergic chromaffin cell" EXACT []
 xref: FMA:69321
 is_a: CL:0000336 ! adrenal medulla chromaffin cell
-is_a: CL:0000459 ! norepinephrin secreting cell
+is_a: CL:0000459 ! noradrenergic cell
 created_by: tmeehan
 creation_date: 2010-07-14T10:12:24Z
 
@@ -15855,7 +15869,7 @@ namespace: cell
 def: "An interrenal chromaffin cell found in teleosts that contain heterogeneous vesicles with electron-dense granules located asymmetrically within the vesicular membrane." [GOC:MH, GOC:tfm, PMID:12668625]
 synonym: "interrenal noradrenaline type cell" EXACT []
 synonym: "type n interrenal cell" EXACT []
-is_a: CL:0000459 ! norepinephrin secreting cell
+is_a: CL:0000459 ! noradrenergic cell
 is_a: CL:0002516 ! interrenal chromaffin cell
 created_by: tmeehan
 creation_date: 2011-02-08T10:11:55Z
@@ -16719,7 +16733,6 @@ name: astrocyte of the spinal cord
 namespace: cell
 def: "An astrocyte of the spinal cord." [GOC:tfm]
 is_a: CL:0000127 ! astrocyte
-is_a: CL:2000025 ! spinal cord oligodendrocyte
 created_by: tmeehan
 creation_date: 2011-03-06T07:11:26Z
 
@@ -17955,7 +17968,7 @@ is_a: CL:0000988 ! hematopoietic cell
 id: CL:0008002
 name: skeletal muscle fiber
 def: "A transversely striated, synctial cell of skeletal muscle. It is formed when proliferating myoblasts exit the cell cycle, differentiate and fuse." [GOC:tfm, ISBN:0323052908]
-is_a: CL:0000188 ! skeletal muscle cell
+is_a: CL:0000188 ! cell of skeletal muscle
 is_a: CL:0002372 ! myotube
 relationship: develops_from CL:0000515 ! skeletal muscle myoblast
 
@@ -17984,7 +17997,7 @@ is_a: CL:0008004 ! somatic muscle cell
 id: CL:0008006
 name: muscle founder cell
 def: "A myoblast that detemines the properties (size, shape and attachment to the epidermis) of a `somatic muscle myotube` (CL:0008003) .  It develops into a somatic muscle myotube via fusion with `fusion component myoblasts` (CL:0000621)." [PMID:22274696]
-is_a: CL:0000056 ! myoblast
+is_a: CL:0008018 ! somatic muscle myoblast
 relationship: RO:0002203 CL:0008003 ! develops into somatic muscle myotube
 
 [Term]
@@ -18014,6 +18027,19 @@ is_a: CL:0005024 ! somatomotor neuron
 is_a: CL:0015000 ! cranial motor neuron
 
 [Term]
+id: CL:0008011
+name: skeletal muscle satellite stem cell
+def: "A skeletal muscle satellite cell that undergoes asymetric division - retaining its identity while budding off a daughter cell that differentiate into components of a skeletal muscle fiber." [PMID:23303905]
+is_a: CL:0000035 ! single fate stem cell
+is_a: CL:0000594 ! skeletal muscle satellite cell
+
+[Term]
+id: CL:0008012
+name: quiescent skeletal muscle satellite cell
+def: "A skeletal muscle satellite cell that is mitotically quiescent.  Satellite cells typically remain in this state until activated following muscle damage." [PMID:21849021, PMID:23303905]
+is_a: CL:0000594 ! skeletal muscle satellite cell
+
+[Term]
 id: CL:0008013
 name: cranial visceromotor neuron
 def: " A visceromotor motor neuron whose soma is located in the hindbrain, and which synapses to parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles of the head." [PMID:14699587]
@@ -18035,6 +18061,28 @@ comment: In vertebrates, all motor neurons are excitatory, but various types of 
 is_a: CL:0000100 ! motor neuron
 
 [Term]
+id: CL:0008016
+name: activated skeletal muscle satellite cell
+def: "A skeletal muscle cell that has become mitotically active - typically following muscle damage." [PMID:21849021, PMID:23303905]
+is_a: CL:0000594 ! skeletal muscle satellite cell
+relationship: develops_from CL:0008012 {comment="More accurately - transformation_of ?"} ! quiescent skeletal muscle satellite cell
+
+[Term]
+id: CL:0008017
+name: skeletal muscle myoblast in skeletal muscle
+def: "A skeletal muscle myoblast that is part of a skeletal mucle.  These cells are formed following acivation and division of skeletal muscle satellite cells. They form a transient population that is lost when they fuse as to form skeletal muscle fibers." []
+is_a: CL:0000188 ! cell of skeletal muscle
+is_a: CL:0000515 ! skeletal muscle myoblast
+relationship: RO:0002203 CL:0008002 ! develops into skeletal muscle fiber
+
+[Term]
+id: CL:0008018
+name: somatic muscle myoblast
+def: "A myoblast that is commited to developing into a somatic muscle." []
+is_a: CL:0000056 ! myoblast
+relationship: RO:0002203 CL:0008003 ! develops into somatic muscle myotube
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -18048,7 +18096,7 @@ name: compound eye retinal cell
 def: "Any cell in the compound eye, a light sensing organ composed of ommatidia." []
 xref: GOC:pr
 xref: PMID:12021768
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0009002
@@ -18235,6 +18283,7 @@ is_a: CL:0000617 ! GABAergic neuron
 id: CL:0011006
 name: lugaro cell
 def: "An inhibitory GABAergic interneuron found in the cerebellar cortex." [GOC:nv]
+synonym: "Lugaro cell" EXACT []
 is_a: CL:0000402 ! CNS interneuron
 is_a: CL:0011005 ! GABAergic interneuron
 is_a: CL:1001611 ! cerebellar neuron
@@ -18437,8 +18486,11 @@ is_a: CL:0000663 ! valve cell
 
 [Term]
 id: CL:1000155
-name: malpighian tubule stellate cell
-is_a: CL:0000122 ! stellate cell
+name: Malpighian tubule stellate cell
+def: "A specialized epithelial secretory cell that moves chloride ions and water across the tubule epithelium." [GO:0061330]
+synonym: "Malpighian tubule Type II cell" EXACT [FBbt:00005797]
+xref: FBbt:00005797
+is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:1000182
@@ -18822,7 +18874,7 @@ is_a: CL:1000313 ! gastric goblet cell
 
 [Term]
 id: CL:1000315
-name: endocardial cushion cell
+name: principal gastric gland goblet cell
 namespace: cell
 def: "A goblet cell that is part of the epithelium of principal gastric gland." [GOC:tfm]
 synonym: "goblet cell of epithelium of principal gastric gland" EXACT []
@@ -18865,7 +18917,7 @@ is_obsolete: true
 
 [Term]
 id: CL:1000320
-name: axial mesoderm cell
+name: large intestine goblet cell
 namespace: cell
 def: "A goblet cell that is part of the epithelium of large intestine." [GOC:tfm]
 synonym: "goblet cell of epithelium of large intestine" EXACT []
@@ -18879,7 +18931,7 @@ name: large intestine crypt goblet cell
 namespace: cell
 def: "A goblet cell that is part of the epithelium of crypt of lieberkuhn of large intestine." [GOC:tfm]
 xref: FMA:263056
-is_a: CL:1000320 ! axial mesoderm cell
+is_a: CL:1000320 ! large intestine goblet cell
 
 [Term]
 id: CL:1000322
@@ -18936,7 +18988,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of appendix." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of appendix" EXACT []
 xref: FMA:263069
-is_a: CL:1000320 ! axial mesoderm cell
+is_a: CL:1000320 ! large intestine goblet cell
 is_a: CL:1001585 ! appendix glandular cell
 
 [Term]
@@ -21491,7 +21543,7 @@ id: CL:2000005
 name: brain macroglial cell
 namespace: cell
 def: "Any macroglial cell that is part of a brain." [GOC:TermGenie]
-is_a: CL:0000128 ! oligodendrocyte
+is_a: CL:0000126 ! macroglial cell
 created_by: TermGenie
 creation_date: 2014-03-28T21:35:27Z
 
@@ -21680,11 +21732,10 @@ creation_date: 2014-06-25T00:23:50Z
 
 [Term]
 id: CL:2000026
-name: cerebellum Golgi cell
+name: obsolete cerebellum Golgi cell
 namespace: cell
 def: "Any Golgi cell that is part of a cerebellum." [GOC:TermGenie]
-is_a: CL:0000119 ! Golgi cell
-is_a: CL:1001611 ! cerebellar neuron
+is_obsolete: true
 created_by: TermGenie
 creation_date: 2014-06-25T00:23:57Z
 
