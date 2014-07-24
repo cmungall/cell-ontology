@@ -33,10 +33,17 @@ cl-basic.obo: cl-basic.owl
 SSAOS= xao fbbt
 bridge-checks: $(patsubst %,cl-bridge-to-%-check.txt,$(SSAOS))
 
+# TIP: to include explanations, do this:
+#    make bridge-checks REASONER_ARGS="-e"
+# WARNING: even with Elk, this can sometimes take an inordinate amount of time.
+#          it is recommended that this is only set in test environments, never in production/Jenkins.
+#          you may want to ctrl-C to quit the process after a while and look at the first few issues with "grep UNSAT"
+REASONER_ARGS =
+
 # do 'grep UNSAT' to check for success
 # use cl-plus-zfa.owl to check for errors
 cl-bridge-to-%-check.txt: cl-edit.owl
-	owltools --use-catalog $< $(OBO)/$*.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.fail && mv $@.fail $@
+	owltools --use-catalog $< $(OBO)/$*.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u $(REASONER_ARGS) > $@.fail && mv $@.fail $@
 
 # ----------------------------------------
 # Regenerate imports
