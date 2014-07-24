@@ -36,7 +36,7 @@ bridge-checks: $(patsubst %,cl-bridge-to-%-check.txt,$(SSAOS))
 # do 'grep UNSAT' to check for success
 # use cl-plus-zfa.owl to check for errors
 cl-bridge-to-%-check.txt: cl-edit.owl
-	owltools --use-catalog $< $(OBO)/zfa.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.fail && mv $@.fail $@
+	owltools --use-catalog $< $(OBO)/$*.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.fail && mv $@.fail $@
 
 # ----------------------------------------
 # Regenerate imports
