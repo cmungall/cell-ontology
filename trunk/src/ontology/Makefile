@@ -122,8 +122,24 @@ minidiff: build/cl.obo
 # REPORTING
 # ----------------------------------------
 
+# TODO: replace with SPARQL
 cl-to-pr.txt: cl.obo
 	blip-findall -i $< "parent(X,R,Y),id_idspace(X,'CL'),id_idspace(Y,'PR')" -select "p(X,R,Y)" -label -no_pred > $@
+
+reports/cl-%.csv: cl.owl sparql/%.sparql
+	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
+
+#reports/part-of-cl-to-ma.csv: cl-plus-ma-merged.owl sparql/multispecies-part-of.sparql
+#	arq --data $< --query $(word 2,$^) --results csv > $@.tmp && mv $@.tmp $@
+
+reports/direct-part-of-cl-to-ma.tsv: cl-plus-ma-merged.obo
+	blip-findall -i $< "parent(C,part_of,U),id_idspace(C,'CL'),genus(A,U),id_idspace(A,'MA')" -select "p(C,U,A)" -label -use_tabs -no_pred > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
+
+
+%-merged.owl: %.owl
+	owltools $(USECAT) $< --merge-imports-closure -o $@
+%-merged.obo: %-merged.owl
+	owltools $< -o -f obo --no-check $@
 
 # ----------------------------------------
 # EXPERIMENTAL
