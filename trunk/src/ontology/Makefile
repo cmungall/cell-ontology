@@ -45,6 +45,9 @@ REASONER_ARGS =
 cl-bridge-to-%-check.txt: cl-edit.owl
 	owltools --use-catalog $< $(OBO)/$*.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u $(REASONER_ARGS) > $@.fail && mv $@.fail $@
 
+cl-bridge-to-%-explanations.txt: cl-edit.owl
+	owltools --use-catalog $< $(OBO)/$*.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u -e $(REASONER_ARGS) > $@
+
 # ----------------------------------------
 # Regenerate imports
 # ----------------------------------------
@@ -61,7 +64,7 @@ cl-bridge-to-%-check.txt: cl-edit.owl
 # If you want to add something to these, edit cl-edit.owl and add an axiom with a IRI from X. You don't need to add any information about X.
 
 # Base URI for local subset imports
-CL_IMPORTS_BASE_URI = $(OBO)/cl/imports
+CL_IMPORTS_BASE_URI = $(OBO)/cl
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
@@ -75,8 +78,8 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
-imports/%_import.owl: cl-edit.owl mirror/%.owl
-	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
+imports/%_import.owl: cl-edit.owl mirror/%.owl imports/%_seed.owl
+	OWLTOOLS_MEMORY=12G owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties $(KEEPRELS)  --remove-annotation-assertions -l -s --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
 
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
@@ -92,6 +95,8 @@ mirror/pr.owl: mirror/pr.obo
 	owltools $< --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
 mirror/clo.owl:
 	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
+mirror/ncbitaxon.owl:
+	wget $(OBO)/ncbitaxon.owl -O $@
 .PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
@@ -153,6 +158,14 @@ bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
 # ----------------------------------------
 # NIF
 # ----------------------------------------
+
+# Note: there is a distinction between NIF_Cell, an OWL Ontology that
+# was part of NIFSTD, and the cell types in Neurolex.  NIF_Cell is no
+# longer maintained; the cell types in Neurolex appear to have been
+# seeded from NIF_Cell, with subsequent edits done on NIF_Cell.
+#
+# For ongoing work in translating Neurolex into OWL, see:
+# https://github.com/cmungall/nlx-pl
 
 NIF = http://ontology.neuinfo.org/NIF
 NIFBM = $(NIF)/BiomaterialEntities
