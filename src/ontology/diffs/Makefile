@@ -27,4 +27,4 @@ $(ONT)-lastbuild.owl: $(SRC)
 	wget $(OWLLAST) -O $@ && touch $@
 
 $(ONT)-diff.md: $(ONT)-lastbuild.owl $(OWLSRC)
-	owljs-diff -o $@ $< $(OWLSRC) 
+	owljs-diff -C ../catalog-v001.xml -o $@ $< $(OWLSRC) 
