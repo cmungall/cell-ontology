@@ -28,9 +28,10 @@ cl-basic.obo: cl-basic.owl
 %-obocheck: %.obo
 	obo2obo $< -o $@
 
+SSAOS= zfa xao
 #SSAOS= zfa xao fbbt
 #SSAOS= zfa
-SSAOS= xao fbbt
+#SSAOS= xao fbbt
 bridge-checks: $(patsubst %,cl-bridge-to-%-check.txt,$(SSAOS))
 
 # TIP: to include explanations, do this:
