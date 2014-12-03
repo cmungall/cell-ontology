@@ -6,13 +6,13 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
-Import(<http://purl.obolibrary.org/obo/cl/imports/go_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/clo_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/go_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/pr_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/pato_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>)
-Import(<http://purl.obolibrary.org/obo/cl/imports/chebi_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/ncbitaxon_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/chebi_import.owl>)
 Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo."^^xsd:string)
 
 Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000000>))
@@ -1316,10 +1316,9 @@ AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#has
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/CL_0000148> "CALOHA:TS-0613"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/CL_0000148> "BTO:0000847"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0000148> "melanocyte"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/CL_0000148> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0042470>) <http://purl.obolibrary.org/obo/CL_0000147>))
+EquivalentClasses(<http://purl.obolibrary.org/obo/CL_0000148> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000147> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0042470>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002202> <http://purl.obolibrary.org/obo/CL_0000541>)))
 SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#is_inferred> "true"^^xsd:string) <http://purl.obolibrary.org/obo/CL_0000148> <http://purl.obolibrary.org/obo/CL_0000147>)
 SubClassOf(<http://purl.obolibrary.org/obo/CL_0000148> <http://purl.obolibrary.org/obo/CL_0002371>)
-SubClassOf(<http://purl.obolibrary.org/obo/CL_0000148> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002202> <http://purl.obolibrary.org/obo/CL_0000541>))
 Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000149>))
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0000149> "visual pigment cell"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/CL_0000149> "cell"^^xsd:string)
