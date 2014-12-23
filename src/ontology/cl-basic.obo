@@ -272,7 +272,7 @@ synonym: "ovum" EXACT []
 xref: BTO:0000369
 xref: BTO:0003801
 xref: CALOHA:TS-2191
-xref: FBbt:00000034
+xref: FBbt:00057012
 xref: FMA:67343
 xref: MA:0000388
 is_a: CL:0000675 ! female gamete
@@ -355,7 +355,6 @@ namespace: cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A11.872]
 xref: CALOHA:TS-2086
 xref: FMA:63368
-is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000035
@@ -388,7 +387,7 @@ xref: CALOHA:TS-0448
 xref: FMA:70337
 xref: FMA:86475
 xref: VHOG:0001485
-is_a: CL:0000048 ! multi fate stem cell
+is_a: CL:0000723 ! somatic stem cell
 is_a: CL:0008001 ! hematopoietic precursor cell
 relationship: develops_from CL:0000566 ! angioblastic mesenchymal cell
 
@@ -396,7 +395,7 @@ relationship: develops_from CL:0000566 ! angioblastic mesenchymal cell
 id: CL:0000038
 name: erythroid progenitor cell
 namespace: cell
-def: "A progenitor cell committed to the erythroid lineage. This cell is ter119-positive but lacks expression of other hematopoietic lineage markers (lin-negative)." [GOC:add, ISBN:0721601464]
+def: "A progenitor cell committed to the erythroid lineage." [GOC:add, ISBN:0721601464]
 synonym: "BFU-E" RELATED []
 synonym: "blast forming unit erythroid" RELATED []
 synonym: "burst forming unit erythroid" RELATED []
@@ -517,7 +516,8 @@ synonym: "multifate stem cell" EXACT []
 synonym: "multipotent cell" EXACT []
 synonym: "multipotent stem cell" EXACT []
 xref: FMA:84789
-is_a: CL:0000723 ! somatic stem cell
+is_a: CL:0000034 ! stem cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:0000049
@@ -595,7 +595,6 @@ comment: define using PATO mulit-potent or oligopotent?
 synonym: "blast cell" EXACT []
 xref: BTO:0000125
 xref: FMA:84782
-is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0000056
@@ -620,7 +619,7 @@ xref: CALOHA:TS-0362
 xref: FMA:63877
 xref: VHOG:0001482
 is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: develops_from CL:0000134 ! mesenchymal stem cell
 
 [Term]
 id: CL:0000058
@@ -922,6 +921,7 @@ is_a: CL:0000086 ! germ line stem cell (sensu Nematoda and Protostomia)
 id: CL:0000089
 name: male germ line stem cell (sensu Vertebrata)
 namespace: cell
+synonym: "spermatogonial stem cell" EXACT [PMID:19948499]
 is_a: CL:0000016 ! male germ line stem cell
 is_a: CL:0000085 ! germ line stem cell (sensu Vertebrata)
 
@@ -946,6 +946,7 @@ synonym: "stellate cell of von Kupffer" EXACT []
 synonym: "von Kupffer cell" EXACT []
 xref: BTO:0000685
 xref: FMA:14656
+is_a: CL:0000182 ! hepatocyte
 is_a: CL:0000864 ! tissue-resident macrophage
 
 [Term]
@@ -1379,7 +1380,7 @@ is_a: CL:0000221 ! ectodermal cell
 
 [Term]
 id: CL:0000134
-name: mesenchymal cell
+name: mesenchymal stem cell
 namespace: cell
 alt_id: CL:0002452
 def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. This cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
@@ -1426,7 +1427,7 @@ xref: CALOHA:TS-0012
 xref: FMA:63880
 is_a: CL:0000325 ! stuff accumulating cell
 is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: develops_from CL:0000134 ! mesenchymal stem cell
 
 [Term]
 id: CL:0000137
@@ -1462,7 +1463,7 @@ namespace: cell
 def: "Skeletogenic cell that secretes dentine matrix, is derived from odontogenic papilla. Embedded in dentine tissue, and is the transformation of a non-terminally differentiated odontoblast cell." [GO_REF:0000034]
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000060 ! odontoblast
-relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: develops_from CL:0000134 ! mesenchymal stem cell
 
 [Term]
 id: CL:0000141
@@ -1538,7 +1539,7 @@ xref: CALOHA:TS-0613
 xref: FMA:70545
 xref: VHOG:0001679
 is_a: CL:0000147 ! pigment cell
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0002371 ! somatic cell
 relationship: develops_from CL:0000541 ! melanoblast
 
 [Term]
@@ -2999,6 +3000,7 @@ id: CL:0000317
 name: sebum secreting cell
 namespace: cell
 def: "A cell secreting sebun, an oily substance secreted by sebaceous glands, composed of keratin, fat, and cellular debris." [MESH:A12.200.702]
+synonym: "sebocyte" EXACT []
 is_a: CL:0000151 ! secretory cell
 is_a: CL:2000021 ! sebaceous gland native cell
 
@@ -3055,7 +3057,7 @@ is_a: CL:0000154 ! protein secreting cell
 id: CL:0000324
 name: metanephric mesenchyme stem cell
 namespace: cell
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 relationship: develops_from CL:0000222 ! mesodermal cell
 
 [Term]
@@ -3124,7 +3126,6 @@ def: "A cell derived from the specialized ectoderm flanking each side of the emb
 xref: FMA:86667
 is_a: CL:0000219 ! motile cell
 is_a: CL:0002321 ! embryonic cell
-relationship: develops_from CL:0000133 ! neurectodermal cell
 relationship: develops_from CL:0007004 ! premigratory neural crest cell
 
 [Term]
@@ -3141,7 +3142,7 @@ id: CL:0000335
 name: mesenchyme condensation cell
 namespace: cell
 def: "A mesenchymal cell in embryonic development found in a contracting mass and that gives rise to osteoprogenitors." [GOC:tfm, PMID:5025404]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0008019 ! mesenchymal cell
 
 [Term]
 id: CL:0000336
@@ -3218,8 +3219,9 @@ is_obsolete: true
 id: CL:0000345
 name: dental papilla cell
 namespace: cell
-def: "A small mass of condensed mesenchyme in the enamel organ; it differentiates into the dentin and dental pulp." [GOC:tfm, ISBN:0721662544]
-is_a: CL:0000134 ! mesenchymal cell
+def: "A mesenchymal cell that is part of a small mass of condensed mesenchyme in the enamel organ; it differentiates into the dentin and dental pulp." [GOC:tfm, ISBN:0721662544]
+comment: Merge with odontoblast?
+is_a: CL:0008019 ! mesenchymal cell
 relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
 [Term]
@@ -3227,7 +3229,8 @@ id: CL:0000346
 name: hair follicle dermal papilla cell
 namespace: cell
 def: "A specialized mesenchymal cell that resides in the dermal papilla located at the bottom of hair follicles. This cell plays a pivotal roles in hair formation, growth, and cycling." [GOC:tfm, PMID:9893172]
-is_a: CL:0000134 ! mesenchymal cell
+comment: Are these really all stem cells?
+is_a: CL:0000134 ! mesenchymal stem cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -3257,6 +3260,7 @@ is_a: CL:0002371 ! somatic cell
 id: CL:0000350
 name: amnioserosal cell
 namespace: cell
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000349 ! extraembryonic cell
 
 [Term]
@@ -3511,8 +3515,8 @@ is_a: CL:0000378 ! support cell (sensu Nematoda and Protostomia)
 id: CL:0000383
 name: nephrogenic mesenchyme stem cell
 namespace: cell
-is_a: CL:0000134 ! mesenchymal cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
+relationship: develops_from CL:0000134 ! mesenchymal stem cell
 
 [Term]
 id: CL:0000384
@@ -4408,7 +4412,7 @@ def: "A connective tissue cell of an organ found in the loose connective tissue.
 xref: BTO:0002064
 xref: FMA:83624
 is_a: CL:0002320 ! connective tissue cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: develops_from CL:0000134 ! mesenchymal stem cell
 
 [Term]
 id: CL:0000500
@@ -4771,7 +4775,7 @@ comment: Derived from UBERON:0002342 neural crest.
 xref: BTO:0003217
 xref: FMA:83377
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0002371 ! somatic cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -5013,7 +5017,7 @@ synonym: "band cell" BROAD []
 synonym: "band form" BROAD []
 synonym: "rod neutrophil" EXACT []
 synonym: "stab cell" BROAD []
-is_a: CL:0000776 ! immature neutrophil
+is_a: CL:0000096 ! mature neutrophil
 relationship: develops_from CL:0000582 ! neutrophilic metamyelocyte
 
 [Term]
@@ -5076,8 +5080,8 @@ def: "A mesenchymal stem cell capable of developing into blood vessel endotheliu
 comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive, CD309-positive, and TAL1-positive.
 synonym: "angioblast" EXACT []
 synonym: "chondroplast" EXACT []
-is_a: CL:0000134 ! mesenchymal cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
+relationship: develops_from CL:0000134 ! mesenchymal stem cell
 
 [Term]
 id: CL:0000567
@@ -5099,10 +5103,9 @@ is_a: CL:0000165 ! neuroendocrine cell
 id: CL:0000569
 name: cardiac mesenchymal cell
 namespace: cell
-def: "A mesenchymal cell found in the developing heart." [PMID:18816864]
-is_a: CL:0000134 ! mesenchymal cell
-is_a: CL:0002494 ! cardiocyte
-relationship: develops_from CL:0000011 ! migratory trunk neural crest cell
+def: "A mesenchymal cell found in the developing heart and that develops into some part of the heart.  These cells derive from intra- and extra-cardiac sources, including the endocardium, epicardium, neural crest, and second heart field." [PMID:18816864]
+is_a: CL:0008019 ! mesenchymal cell
+relationship: RO:0002203 CL:0002494 ! develops into cardiocyte
 
 [Term]
 id: CL:0000570
@@ -5253,6 +5256,7 @@ xref: BTO:0000802
 xref: CALOHA:TS-0030
 xref: FMA:83023
 is_a: CL:0000864 ! tissue-resident macrophage
+is_a: CL:0010003 ! epithelial cell of alveolus of lung
 is_a: CL:1001603 ! lung macrophage
 
 [Term]
@@ -5353,7 +5357,7 @@ id: CL:0000594
 name: skeletal muscle satellite cell
 namespace: cell
 def: "An elongated, spindle-shaped, cell that is located between the basal lamina and the plasmalemma of a muscle fiber. These cells are mostly quiescent, but upon activation they divide to produce cells that generate new muscle fibers." [GOC:tfm, MESH:A11.635.500.700, PMID:21849021, PMID:23303905]
-comment: Skeletal muscle satellite cells are not traditionally referred to as myoblasts.  They are a heterogeneous population whose division, following activiation, contributes to the formation of skeletal muscle fibers and to maintenance of the satellite muscle cell population.
+comment: Skeletal muscle satellite cells are not traditionally referred to as myoblasts.  They are a heterogeneous population whose division, following activiation, contributes to the formation of skeletal muscle fibers and to maintenance of the skeletal muscle statelite cell population.
 is_a: CL:0000188 ! cell of skeletal muscle
 is_a: CL:0000680 ! muscle precursor cell
 
@@ -5883,12 +5887,13 @@ id: CL:0000650
 name: mesangial cell
 namespace: cell
 def: "A cell type that encapsulates the capillaries and venules in the kidney. This cell secretes mesangial matrix that provides the structural support for the capillaries." [GOC:tfm, http://www.copewithcytokines.de/cope.cgi?key=mesangial%20cells]
+comment: Do all of these cells really develop from some mesenchymal stem cell?
 synonym: "kidney mesangial cell" EXACT []
 xref: BTO:0000853
 xref: CALOHA:TS-0617
 xref: FMA:70972
 is_a: CL:0000669 ! pericyte cell
-relationship: develops_from CL:0000134 ! mesenchymal cell
+relationship: develops_from CL:0000134 ! mesenchymal stem cell
 
 [Term]
 id: CL:0000651
@@ -6620,6 +6625,7 @@ synonym: "RGC" EXACT []
 xref: BTO:0001800
 xref: FMA:67765
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0000741
@@ -6653,11 +6659,13 @@ is_a: CL:0000138 ! chondrocyte
 
 [Term]
 id: CL:0000745
-name: horizontal cell
+name: retina horizontal cell
 namespace: cell
 def: "A neuron that laterally connects other neurons in the inner nuclear layer of the retina." [ISBN:0195088433]
+synonym: "horizontal cell" EXACT []
 xref: BTO:0004120
 is_a: CL:0000099 ! interneuron
+is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0000746
@@ -6993,8 +7001,7 @@ namespace: cell
 def: "A tissue-resident macrophage of the renal glomerular mesangium involved in the disposal and degradation of filtration residues, presentation of antigen to T cells and in tissue remodeling." [GOC:add, GOC:tfm, ISBN:0702022918, ISBN:3540536663, PMID:1600140, PMID:16146841]
 synonym: "mesangial cell" BROAD []
 is_a: CL:0000864 ! tissue-resident macrophage
-is_a: CL:0002681 ! kidney cortical cell
-is_a: CL:1000500 ! kidney interstitial cell
+is_a: CL:1000742 ! glomerular mesangial cell
 
 [Term]
 id: CL:0000778
@@ -7500,7 +7507,7 @@ synonym: "immature B lymphocyte" EXACT []
 synonym: "immature B-cell" EXACT []
 synonym: "immature B-lymphocyte" EXACT []
 synonym: "newly formed B cell" EXACT [ISBN:781735149]
-is_a: CL:0000817 ! precursor B cell
+is_a: CL:0000236 ! B cell
 relationship: develops_from CL:0000954 ! small pre-B-II cell
 
 [Term]
@@ -7810,6 +7817,7 @@ id: CL:0000841
 name: mature conventional dendritic cell
 namespace: cell
 def: "A mature cell of the conventional dendritic cell lineage, characterized by a high capacity for antigen presentation and typically found in a lymph node." [GOC:add, GOC:tfm, PMID:9521319]
+synonym: "mature dendritic cell" BROAD [] {comment="GOC:add"}
 synonym: "mature myeloid dendritic cell" NARROW []
 xref: FMA:83038
 is_a: CL:0000766 ! myeloid leukocyte
@@ -7871,6 +7879,7 @@ synonym: "MZ B lymphocyte" EXACT []
 synonym: "MZ B-cell" EXACT []
 synonym: "MZ B-lymphocyte" EXACT []
 is_a: CL:0000785 ! mature B cell
+is_a: CL:2000074 ! splenocyte
 
 [Term]
 id: CL:0000846
@@ -8097,6 +8106,7 @@ def: "A secondary lymphoid organ macrophage found in the spleen." [GO_REF:000003
 comment: Role or process: immune, clearance of apoptotic and senescent cells.
 xref: FMA:83026
 is_a: CL:0000867 ! secondary lymphoid organ macrophage
+is_a: CL:2000074 ! splenocyte
 
 [Term]
 id: CL:0000872
@@ -8590,6 +8600,7 @@ synonym: "dendritic epidermal T lymphocyte" EXACT []
 synonym: "dendritic epidermal T-cell" EXACT []
 synonym: "dendritic epidermal T-lymphocyte" EXACT []
 synonym: "DETC" EXACT []
+is_a: CL:0000362 ! epidermal cell
 is_a: CL:0000800 ! mature gamma-delta T cell
 relationship: develops_from CL:0002401 ! mature dendritic epithelial T cell precursor
 
@@ -10147,6 +10158,20 @@ is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
 relationship: develops_from CL:0000913 ! effector memory CD8-positive, alpha-beta T cell
 
 [Term]
+id: CL:0001066
+name: erythroid progenitor cell, mammalian
+namespace: cell
+def: "A progenitor cell committed to the erythroid lineage. This cell is ter119-positive but lacks expression of other hematopoietic lineage markers (lin-negative)." [GOC:add, ISBN:0721601464]
+synonym: "BFU-E" RELATED []
+synonym: "blast forming unit erythroid" RELATED []
+synonym: "burst forming unit erythroid" RELATED []
+synonym: "CFU-E" RELATED []
+synonym: "colony forming unit erythroid" RELATED []
+synonym: "erythroid stem cell" RELATED []
+xref: BTO:0004911
+is_a: CL:0000038 ! erythroid progenitor cell
+
+[Term]
 id: CL:0001658
 name: visual pigment cell (sensu Nematoda and Protostomia)
 namespace: cell
@@ -10160,7 +10185,7 @@ name: Kit-positive erythroid progenitor cell
 namespace: cell
 def: "An erythroid progenitor cell is Kit-positive, Ly6A-negative, CD41-negative, CD127-negative, and CD123-negative. This cell type is also described as being lin-negative, Kit-positive, CD150-negative, CD41-negative, CD105-positive, and FcgR-negative." [GOC:ak, GOC:tfm, http://www.immgen.org/index_content.html, PMID:19805084]
 comment: Markers found on mouse cells.
-is_a: CL:0000038 ! erythroid progenitor cell
+is_a: CL:0001066 ! erythroid progenitor cell, mammalian
 relationship: develops_from CL:0002006 ! Kit-positive, CD34-negative megakaryocyte erythroid progenitor cell
 created_by: tmeehan
 creation_date: 2010-04-26T10:14:16Z
@@ -10194,7 +10219,7 @@ namespace: cell
 def: "An erythroid progenitor cell that is CD34-positive and is GlyA-negative." [GOC:ak, GOC:tfm, PMID:19621348]
 comment: Cell markers associated with human cells.
 xref: FMA:83517
-is_a: CL:0000038 ! erythroid progenitor cell
+is_a: CL:0001066 ! erythroid progenitor cell, mammalian
 relationship: develops_from CL:0002005 ! CD34-positive, CD38-positive megakaryocyte erythroid progenitor cell
 created_by: tmeehan
 creation_date: 2010-04-26T10:14:30Z
@@ -10783,6 +10808,7 @@ namespace: cell
 def: "An immature B cell that is CD38-negative, CD10-low, CD21-low, and CD22-high." [GOC:tfm, PMID:18432934]
 comment: Markers are associated with human cell type.
 is_a: CL:0000816 ! immature B cell
+is_a: CL:0000817 ! precursor B cell
 relationship: develops_from CL:0002053 ! CD22-positive, CD38-low small pre-B cell
 created_by: tmeehan
 creation_date: 2010-04-28T03:19:14Z
@@ -12150,6 +12176,7 @@ xref: KUPO:0001033
 is_a: CL:0000650 ! mesangial cell
 is_a: CL:1000500 ! kidney interstitial cell
 is_a: CL:1000618 ! juxtaglomerular complex cell
+is_a: CL:1000746 ! glomerular cell
 is_a: CL:1001318 ! renal interstitial pericyte
 created_by: tmeehan
 creation_date: 2010-08-25T02:20:55Z
@@ -13422,7 +13449,6 @@ synonym: "type 3 taste cell" EXACT []
 xref: FMA:67940
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0000209 ! taste receptor cell
-is_a: CL:1000428 ! stem cell of epidermis
 created_by: tmeehan
 creation_date: 2010-09-13T10:57:21Z
 
@@ -13665,6 +13691,7 @@ xref: FMA:62125
 xref: FMA:70981
 xref: KUPO:0001055
 is_a: CL:0002078 ! meso-epithelial cell
+is_a: CL:1000494 ! nephron tubule epithelial cell
 is_a: CL:1000615 ! kidney cortex tubule cell
 
 [Term]
@@ -13678,6 +13705,7 @@ xref: FMA:70973
 xref: KUPO:0001044
 is_a: CL:0000239 ! brush border epithelial cell
 is_a: CL:0002078 ! meso-epithelial cell
+is_a: CL:1000494 ! nephron tubule epithelial cell
 is_a: CL:1000615 ! kidney cortex tubule cell
 
 [Term]
@@ -14021,7 +14049,6 @@ def: "A stem cell located in the bulge of the hair follicle that can give rise t
 synonym: "bulge keratinocyte" EXACT []
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0000312 ! keratinocyte
-is_a: CL:1000428 ! stem cell of epidermis
 created_by: tmeehan
 creation_date: 2010-09-20T03:07:03Z
 
@@ -14186,7 +14213,6 @@ id: CL:0002353
 name: fetal liver hematopoietic progenitor cell
 namespace: cell
 def: "A hematopoietic stem cell that resides in the fetal liver. In mice, this cell type is first observed at E10.5. This cell type is MHC-positive, HSA-positive, AA4.1-positive, CD45-positive, Sca-1 positive, CD150-positive, CD48-negative and CD244-negative." [GOC:tfm, ISBN:978-1-60327-346-6, PMID:16569764]
-is_a: CL:0002195 ! hepatic stem cell
 is_a: CL:0002352 ! gestational hematopoietic stem cell
 created_by: tmeehan
 creation_date: 2010-09-22T09:08:32Z
@@ -15278,6 +15304,7 @@ id: CL:0002457
 name: epidermal Langerhans cell
 namespace: cell
 def: "A Langerhans cell that is in the epidermis and is CD45-positive, MHCII-positive, and CD11b-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
+is_a: CL:0000362 ! epidermal cell
 is_a: CL:0000453 ! Langerhans cell
 is_a: CL:0002465 ! CD11b-positive dendritic cell
 created_by: tmeehan
@@ -15551,6 +15578,7 @@ id: CL:0002484
 name: epithelial melanocyte
 namespace: cell
 def: "A melanocyte that produces pigment in the epithelium." [GOC:tfm, MP:0009388]
+comment: The text defintion reference to the MP term appears to reference an epidermal melanocyte term. This term represents any melanocyte in any epithelium. 
 is_a: CL:0000148 ! melanocyte
 created_by: tmeehan
 creation_date: 2010-12-03T03:17:14Z
@@ -15570,7 +15598,7 @@ id: CL:0002486
 name: strial intermediate cell
 namespace: cell
 def: "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ." [GOC:tfm, MP:0000048]
-is_a: CL:0000148 ! melanocyte
+is_a: CL:0002484 ! epithelial melanocyte
 is_a: CL:0002491 ! auditory epithelial cell
 created_by: tmeehan
 creation_date: 2010-12-03T03:29:15Z
@@ -15677,6 +15705,7 @@ synonym: "IEL" EXACT []
 synonym: "intraepithelial T cell" EXACT []
 synonym: "intraepithelial T-cell" EXACT []
 is_a: CL:0002419 ! mature T cell
+is_a: CL:0002563 ! intestinal epithelial cell
 created_by: tmeehan
 creation_date: 2010-12-07T09:54:50Z
 
@@ -15768,7 +15797,9 @@ name: liver CD103-negative dendritic cell
 namespace: cell
 def: "A CD11b-positive dendritic cell that is CD11b-high, CD45-positive, MHC-II-positive and CD103-negative." [GOC:tfm, http:http\://www.immgen.org/index_content.html]
 synonym: "DC.103-11b+.Lv" EXACT []
+is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
+is_a: CL:2000055 ! liver dendritic cell
 created_by: tmeehan
 creation_date: 2011-01-21T01:27:41Z
 
@@ -15778,8 +15809,10 @@ name: liver CD103-positive dendritic cell
 namespace: cell
 def: "A CD11b-positive dendritic cell that is CD11b-low, CD45-positive, MHC-II-high and CD103-positive that is located in the liver." [GOC:tfm, http:http\://www.immgen.org/index_content.html]
 synonym: "DC.103+11b-.Lv" EXACT []
+is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 is_a: CL:0002461 ! CD103-positive dendritic cell
+is_a: CL:2000055 ! liver dendritic cell
 created_by: tmeehan
 creation_date: 2011-01-21T01:27:45Z
 
@@ -16074,9 +16107,10 @@ creation_date: 2011-02-24T08:20:08Z
 
 [Term]
 id: CL:0002536
-name: amniotic epithelial cell
+name: epithelial cell of amnion
 namespace: cell
 def: "An epithelial cell that is part of the amnion." [GOC:tfm]
+synonym: "amniotic epithelial cell" EXACT []
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
@@ -16088,7 +16122,7 @@ name: amnion mesenchymal stem cell
 namespace: cell
 def: "A mesenchymal stem cell of the amnion membrane." [GOC:tfm, PMID:20446274, PMID:21339039]
 synonym: "amniotic membrane stem cell" EXACT []
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
 creation_date: 2011-02-28T12:44:24Z
@@ -16118,7 +16152,7 @@ id: CL:0002540
 name: mesenchymal stem cell of the bone marrow
 namespace: cell
 def: "A mesenchymal stem cell that is part of the bone marrow." [GOC:tfm]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0002092 ! bone marrow cell
 created_by: tmeehan
 creation_date: 2011-02-28T01:47:47Z
@@ -16128,7 +16162,7 @@ id: CL:0002541
 name: chorionic membrane mesenchymal stem cell
 namespace: cell
 def: "A mesenchymal stem cell of the chorionic membrane." [GOC:tfm]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
 creation_date: 2011-02-28T03:04:35Z
@@ -16189,9 +16223,10 @@ creation_date: 2011-02-28T04:43:41Z
 
 [Term]
 id: CL:0002548
-name: cardiac fibroblast
+name: fibroblast of cardiac tissue
 namespace: cell
 def: "A fibroblast that is part of the heart." [GOC:tfm]
+synonym: "cardiac fibroblast" EXACT []
 is_a: CL:0000057 ! fibroblast
 is_a: CL:0002494 ! cardiocyte
 created_by: tmeehan
@@ -16209,7 +16244,7 @@ creation_date: 2011-02-28T05:01:39Z
 
 [Term]
 id: CL:0002550
-name: fibroblast of the conjuctiva
+name: fibroblast of the conjunctiva
 namespace: cell
 def: "A fibroblast that is part of the conjuctiva of the eye." [GOC:tfm]
 is_a: CL:0000057 ! fibroblast
@@ -16389,7 +16424,7 @@ id: CL:0002569
 name: mesenchymal stem cell of umbilical cord
 namespace: cell
 def: "A mesenchymal stem cell of the umbilical cord." [GOC:tfm]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0000349 ! extraembryonic cell
 created_by: tmeehan
 creation_date: 2011-03-01T09:55:12Z
@@ -16399,7 +16434,7 @@ id: CL:0002570
 name: mesenchymal stem cell of adipose
 namespace: cell
 def: "A mesenchymal stem cell of adipose tissue." [GOC:tfm]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 created_by: tmeehan
 creation_date: 2011-03-01T09:57:17Z
 
@@ -16408,7 +16443,7 @@ id: CL:0002571
 name: hepatic mesenchymal stem cell
 namespace: cell
 def: "A mesenchymal stem cell of liver." [GOC:tfm]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0002195 ! hepatic stem cell
 created_by: tmeehan
 creation_date: 2011-03-01T09:58:51Z
@@ -16418,7 +16453,7 @@ id: CL:0002572
 name: vertebral mesenchymal stem cell
 namespace: cell
 def: "A mesenchymal stem cell of the vertebrae." [GOC:tfm]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0001035 ! bone cell
 created_by: tmeehan
 creation_date: 2011-03-01T10:40:27Z
@@ -17060,7 +17095,7 @@ name: amniotic stem cell
 namespace: cell
 def: "An amniotic stem cell is a mesenchymalstem cell extracted from amniotic fluid. Amniotic stem cells are able to differentiate into various tissue type such as skin, cartilage, cardiac tissue, nerves, muscle, and bone" [GOC:tfm, PMID:20942606]
 comment: Not clear to me if amniotic stem cell is a different cell type from amnion mesenchymal stem cells. They are treated as distinct in the literature as isolations methods are different, so I will keep them as separate terms for now.
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0002323 ! amniocyte
 created_by: tmeehan
 creation_date: 2011-06-21T03:55:39Z
@@ -17680,7 +17715,7 @@ id: CL:0005021
 name: mesenchymal lymphangioblast
 namespace: cell
 def: "Mesenchymal derived lymphatic progenitor cells that give rise to the superficial lymphatics." [PMID:15624319, PMID:18430230]
-is_a: CL:0000134 ! mesenchymal cell
+is_a: CL:0000134 ! mesenchymal stem cell
 is_a: CL:0005020 ! lymphangioblast
 created_by: Ceri
 creation_date: 2012-01-12T05:01:22Z
@@ -17773,6 +17808,7 @@ name: premigratory neural crest cell
 namespace: cell
 def: "Cell that is part of the neural crest region of the neuroepithelium, prior to migration. Note that not all premigratory neural crest cells may become migratory neural crest cells." [UBERONREF:0000002]
 is_a: CL:0000003 ! native cell
+relationship: develops_from CL:0000133 ! neurectodermal cell
 created_by: haendel
 creation_date: 2012-06-27T08:27:35Z
 
@@ -17903,6 +17939,7 @@ name: Stiftchenzellen
 def: "An epidermal cell with apical microvilli or a single apical projection have synaptic associations with nerve fibres in the epidermis. " [PMID:1087183]
 comment: Taxon specificity not yet fully known, but are known in anuran larvae but not in adults.
 is_a: CL:0000206 ! chemoreceptor cell
+is_a: CL:0000362 ! epidermal cell
 created_by: haendel
 
 [Term]
@@ -17911,6 +17948,7 @@ name: epidermal ciliary cell
 def: "Ciliated cell of the embryonic epidermis and functions in embryonic movements." [PMCID:PMC3046089]
 comment: Taxon specificity not clear -present in embryonic anurans.
 is_a: CL:0000064 ! ciliated cell
+is_a: CL:0000362 ! epidermal cell
 is_a: CL:0002321 ! embryonic cell
 created_by: haendel
 
@@ -18029,14 +18067,14 @@ is_a: CL:0015000 ! cranial motor neuron
 [Term]
 id: CL:0008011
 name: skeletal muscle satellite stem cell
-def: "A skeletal muscle satellite cell that undergoes asymetric division - retaining its identity while budding off a daughter cell that differentiate into components of a skeletal muscle fiber." [PMID:23303905]
+def: "A skeletal muscle satellite cell that divides by stem cell division.  A proportion of this population undergoes symmetric stem cell division, producing two skeletal muscle satellite stem cells. The rest undergo asymmetric stem cell division - retaining their identity while budding off a daughter cell that differentiates into an adult skeletal muscle myoblast." [PMID:23303905]
 is_a: CL:0000035 ! single fate stem cell
 is_a: CL:0000594 ! skeletal muscle satellite cell
 
 [Term]
 id: CL:0008012
 name: quiescent skeletal muscle satellite cell
-def: "A skeletal muscle satellite cell that is mitotically quiescent.  Satellite cells typically remain in this state until activated following muscle damage." [PMID:21849021, PMID:23303905]
+def: "A skeletal muscle satellite cell that is mitotically quiescent.  These cells are wedge shaped and have a large nuclear to cytoplasmic ratio with few organelles, a small nucleus and condensed interphase chromatin. Satellite cells typically remain in this state until activated following muscle damage." [PMID:21849021, PMID:23303905]
 is_a: CL:0000594 ! skeletal muscle satellite cell
 
 [Term]
@@ -18069,8 +18107,10 @@ relationship: develops_from CL:0008012 {comment="More accurately - transformatio
 
 [Term]
 id: CL:0008017
-name: skeletal muscle myoblast in skeletal muscle
-def: "A skeletal muscle myoblast that is part of a skeletal mucle.  These cells are formed following acivation and division of skeletal muscle satellite cells. They form a transient population that is lost when they fuse as to form skeletal muscle fibers." []
+name: adult skeletal muscle myoblast
+def: "A skeletal muscle myoblast that is part of a skeletal mucle.  These cells are formed following acivation and division of skeletal muscle satellite cells. They form a transient population that is lost when they fuse to form skeletal muscle fibers." [PMID:23303905]
+comment: The vast majority of these cells develop from skeletal muscle satellite cells, although there are some reports of other origins.
+synonym: "myogenic precursor cell" BROAD [PMID:23303905]
 is_a: CL:0000188 ! cell of skeletal muscle
 is_a: CL:0000515 ! skeletal muscle myoblast
 relationship: RO:0002203 CL:0008002 ! develops into skeletal muscle fiber
@@ -18081,6 +18121,33 @@ name: somatic muscle myoblast
 def: "A myoblast that is commited to developing into a somatic muscle." []
 is_a: CL:0000056 ! myoblast
 relationship: RO:0002203 CL:0008003 ! develops into somatic muscle myotube
+
+[Term]
+id: CL:0008019
+name: mesenchymal cell
+def: "A non-polarised cell precursor cell that is part of some mesenchyme, is associated with the cell matrix but is not connected to other cells and is capable of migration." []
+synonym: "mesenchyme cell" EXACT []
+is_a: CL:0000219 ! motile cell
+is_a: CL:0002371 ! somatic cell
+
+[Term]
+id: CL:0008020
+name: skeletal muscle satellite myogenic cell
+def: "A skeletal muscle satellite cell that undergoes symmetric division to produce two adult skeleltal muscle myoblasts." [GOC:dos, PMID:23303905]
+is_a: CL:0000594 ! skeletal muscle satellite cell
+relationship: RO:0002203 CL:0008017 ! develops into adult skeletal muscle myoblast
+
+[Term]
+id: CL:0008021
+name: anterior lateral line ganglion neuron
+is_a: CL:2000031 ! lateral line ganglion neuron
+
+[Term]
+id: CL:0008022
+name: endocardial cushion cell
+def: "A mesenchymal cell of the endocardial cushion.   These cells develop via an epithelial to mesenchymal transition when endocardial cells break cell-to-cell contacts and migrate into the cardiac jelly. Cells from this population form the heart septa and valves." [PMID:18816864]
+is_a: CL:0000569 ! cardiac mesenchymal cell
+is_a: CL:0002494 ! cardiocyte
 
 [Term]
 id: CL:0009000
@@ -18316,6 +18383,7 @@ is_a: CL:0000107 ! autonomic neuron
 id: CL:0011104
 name: interplexiform cell
 def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer." [PMID:12771169]
+comment: Need to MIREOT retinal inner nuclear layer (part of)
 is_a: CL:0000099 ! interneuron
 is_a: CL:0009004 ! retinal cell
 
@@ -18331,7 +18399,7 @@ is_a: CL:0011104 ! interplexiform cell
 id: CL:0011106
 name: GABAnergic interplexiform cell
 def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer using GABA. " [PMID:12771169]
-comment: Need to MIREOT retinal inner nuclear layer (part of)
+comment: This type of cell is found in many mammals.
 is_a: CL:0011005 ! GABAergic interneuron
 is_a: CL:0011104 ! interplexiform cell
 
@@ -18388,6 +18456,13 @@ def: "Neuron found in the spriral ganglion." []
 is_a: CL:0000540 ! neuron
 
 [Term]
+id: CL:0011114
+name: segmented neutrophil of bone marrow
+def: "A segmented neutrophilic cell of the bone marrow reserve pool that expresses CD11b (integrin alpha-M) and high levels of CD16 (low affinity immunoglobulin gamma Fc region receptor III) on its cell surface." [PMID:11138622, PMID:15514007]
+is_a: CL:0000096 ! mature neutrophil
+is_a: CL:1001610 ! bone marrow hematopoietic cell
+
+[Term]
 id: CL:0012000
 name: astrocyte of the forebrain
 namespace: cell
@@ -18427,7 +18502,7 @@ is_a: CL:2000029 ! central nervous system neuron
 [Term]
 id: CL:1000022
 name: mesonephric nephron tubule epithelial cell
-is_a: CL:1000494 ! nephron tubule epithelial cell
+is_a: CL:1000507 ! kidney tubule cell
 
 [Term]
 id: CL:1000042
@@ -18465,12 +18540,12 @@ is_a: CL:0000357 ! stratified epithelial stem cell
 [Term]
 id: CL:1000090
 name: pronephric nephron tubule epithelial cell
-is_a: CL:1000494 ! nephron tubule epithelial cell
+is_a: CL:1000507 ! kidney tubule cell
 
 [Term]
 id: CL:1000123
 name: metanephric nephron tubule epithelial cell
-is_a: CL:1000494 ! nephron tubule epithelial cell
+is_a: CL:1000507 ! kidney tubule cell
 
 [Term]
 id: CL:1000143
@@ -18658,7 +18733,6 @@ def: "A smooth muscle cell that is part of the sigmoid colon." [GOC:tfm]
 synonym: "non-striated muscle fiber of sigmoid colon" EXACT [FMA:17521]
 xref: FMA:17521
 is_a: CL:1000280 ! smooth muscle cell of colon
-is_a: CL:2000031 ! lateral line ganglion neuron
 
 [Term]
 id: CL:1000286
@@ -18820,6 +18894,7 @@ def: "A fat cell that is part of the epicardial fat." [GOC:tfm]
 synonym: "adipocyte of epicardial fat" EXACT [FMA:261293]
 synonym: "epicardial fat cell" EXACT [FMA:261293]
 xref: FMA:261293
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000136 ! fat cell
 is_a: CL:0002494 ! cardiocyte
 
@@ -19412,6 +19487,7 @@ name: type 1 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263186
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19421,6 +19497,7 @@ name: type 1 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263188
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19430,6 +19507,7 @@ name: type 1 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263190
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19439,6 +19517,7 @@ name: type 1 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263192
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19448,6 +19527,7 @@ name: type 2 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263194
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19457,6 +19537,7 @@ name: type 2 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263196
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19466,6 +19547,7 @@ name: type 2 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263198
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19475,6 +19557,7 @@ name: type 2 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263200
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19504,6 +19587,7 @@ def: "An endothelial cell that is part of the venous sinus of red pulp of spleen
 comment: todo - add logical definition to UBERON:0009967
 xref: FMA:62817
 is_a: CL:0002651 ! endothelial cell of venous sinus of spleen
+is_a: CL:2000053 ! splenic endothelial cell
 
 [Term]
 id: CL:1000398
@@ -19873,7 +19957,6 @@ synonym: "epithelial cell of renal collecting tubule" EXACT [FMA:70982]
 xref: FMA:70982
 xref: KUPO:0001059
 is_a: CL:0000072 ! non-branched duct epithelial cell
-is_a: CL:1000449 ! epithelial cell of nephron
 is_a: CL:1001225 ! kidney collecting duct cell
 
 [Term]
@@ -19909,6 +19992,7 @@ namespace: cell
 def: "A chromaffin cell that is part of the ovary." [GOC:tfm]
 xref: FMA:74319
 is_a: CL:0000166 ! chromaffin cell
+is_a: CL:2000064 ! ovarian surface epithelial cell
 
 [Term]
 id: CL:1000466
@@ -20023,6 +20107,7 @@ xref: FMA:83388
 xref: FMA:83885
 is_a: CL:0002073 ! transitional myocyte
 is_a: CL:0010005 ! atrioventricular bundle cell
+is_a: CL:2000046 ! ventricular cardiac muscle cell
 
 [Term]
 id: CL:1000482
@@ -20050,6 +20135,7 @@ def: "A Purkinje myocyte that is part of the atrioventricular bundle." [GOC:tfm]
 xref: FMA:83393
 is_a: CL:0002068 ! Purkinje myocyte
 is_a: CL:0010005 ! atrioventricular bundle cell
+is_a: CL:2000046 ! ventricular cardiac muscle cell
 
 [Term]
 id: CL:1000486
@@ -20085,6 +20171,7 @@ namespace: cell
 def: "A reticular cell that is part of the splenic cord." [GOC:tfm]
 xref: FMA:86497
 is_a: CL:0000432 ! reticular cell
+is_a: CL:2000051 ! splenic fibroblast
 
 [Term]
 id: CL:1000490
@@ -20128,10 +20215,10 @@ id: CL:1000494
 name: nephron tubule epithelial cell
 namespace: cell
 def: "An epithelial cell that is part of a nephron tubule." [GOC:tfm]
+comment: This needs to be further defined as a juxtamedullary nephron. Will request the juxtamedullary nephron tubule class from UBERON.
 synonym: "kidney tubule epithelial cell" EXACT []
 xref: FMA:86785
 xref: KUPO:0001022
-is_a: CL:1000449 ! epithelial cell of nephron
 is_a: CL:1000507 ! kidney tubule cell
 
 [Term]
@@ -20181,7 +20268,7 @@ id: CL:1000507
 name: kidney tubule cell
 namespace: cell
 xref: KUPO:0001020
-is_a: CL:1000497 ! kidney cell
+is_a: CL:1000449 ! epithelial cell of nephron
 
 [Term]
 id: CL:1000510
@@ -20219,7 +20306,7 @@ id: CL:1000549
 name: kidney cortex collecting duct epithelial cell
 namespace: cell
 xref: KUPO:0001063
-is_a: CL:0002681 ! kidney cortical cell
+is_a: CL:0002584 ! renal cortical epithelial cell
 is_a: CL:1001225 ! kidney collecting duct cell
 
 [Term]
@@ -20280,7 +20367,7 @@ name: kidney cortex tubule cell
 namespace: cell
 xref: KUPO:0001024
 is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000494 ! nephron tubule epithelial cell
+is_a: CL:1000507 ! kidney tubule cell
 
 [Term]
 id: CL:1000616
@@ -20415,7 +20502,6 @@ name: ureter adventitial cell
 namespace: cell
 xref: KUPO:0001119
 is_a: CL:0000115 ! endothelial cell
-is_a: CL:0000134 ! mesenchymal cell
 is_a: CL:0002503 ! adventitial cell
 is_a: CL:1000601 ! ureteral cell
 
@@ -20424,7 +20510,6 @@ id: CL:1000714
 name: kidney cortex collecting duct principal cell
 namespace: cell
 xref: KUPO:0001130
-is_a: CL:0002584 ! renal cortical epithelial cell
 is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
 is_a: CL:1001431 ! kidney collecting duct principal cell
 
@@ -20433,7 +20518,6 @@ id: CL:1000715
 name: kidney cortex collecting duct intercalated cell
 namespace: cell
 xref: KUPO:0001131
-is_a: CL:0002584 ! renal cortical epithelial cell
 is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
 is_a: CL:1001432 ! kidney collecting duct intercalated cell
 
@@ -20509,6 +20593,7 @@ id: CL:1000768
 name: kidney connecting tubule epithelial cell
 namespace: cell
 xref: KUPO:0001058
+is_a: CL:1000494 ! nephron tubule epithelial cell
 is_a: CL:1000615 ! kidney cortex tubule cell
 
 [Term]
@@ -20925,7 +21010,7 @@ name: kidney collecting duct cell
 namespace: cell
 xref: KUPO:0001012
 xref: Wikipedia:Kidney_collecting_duct_cell
-is_a: CL:1000497 ! kidney cell
+is_a: CL:1000449 ! epithelial cell of nephron
 
 [Term]
 id: CL:1001285
@@ -21469,6 +21554,7 @@ is_a: CL:0000138 ! chondrocyte
 id: CL:1001608
 name: foreskin fibroblast
 def: "Fibroblast from foreskin." [NPX:PDR]
+synonym: "BJ fibroblast" EXACT []
 xref: CALOHA:TS-0384
 is_a: CL:0002620 ! skin fibroblast
 
@@ -21504,7 +21590,6 @@ name: epidermal melanocyte
 namespace: cell
 def: "Any melanocyte that is part of a epidermis." [GOC:TermGenie]
 comment: These cells are found primarily, but not exclusively, in primates including humans
-is_a: CL:0000362 ! epidermal cell
 is_a: CL:0002484 ! epithelial melanocyte
 is_a: CL:1000458 ! melanocyte of skin
 created_by: TermGenie
@@ -21857,6 +21942,449 @@ def: "Any neuromast support cell that is part of a posterior lateral line." [GOC
 is_a: CL:0000852 ! neuromast support cell
 created_by: TermGenie
 creation_date: 2014-06-25T03:45:11Z
+
+[Term]
+id: CL:2000040
+name: bladder microvascular endothelial cell
+namespace: cell
+def: "Any microvascular endothelial cell that is part of a urinary bladder." [GOC:TermGenie]
+is_a: CL:1001319 ! bladder cell
+is_a: CL:2000008 ! microvascular endothelial cell
+created_by: TermGenie
+creation_date: 2014-07-09T00:04:47Z
+
+[Term]
+id: CL:2000041
+name: dermis microvascular lymphatic vessel endothelial cell
+namespace: cell
+def: "Any dermis lymphatic vessel endothelial cell that is part of a microvascular endothelium." [GOC:TermGenie]
+is_a: CL:2000011 ! dermis lymphatic vessel endothelial cell
+created_by: TermGenie
+creation_date: 2014-07-09T00:09:54Z
+
+[Term]
+id: CL:2000042
+name: embryonic fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a embryo." [GOC:TermGenie]
+is_a: CL:0000057 ! fibroblast
+created_by: TermGenie
+creation_date: 2014-07-09T00:12:00Z
+
+[Term]
+id: CL:2000043
+name: brain pericyte
+namespace: cell
+def: "Any pericyte cell that is part of a brain." [GOC:TermGenie]
+is_a: CL:0002575 ! central nervous system pericyte
+created_by: TermGenie
+creation_date: 2014-07-09T00:18:22Z
+
+[Term]
+id: CL:2000044
+name: brain microvascular endothelial cell
+namespace: cell
+def: "Any microvascular endothelial cell that is part of a brain." [GOC:TermGenie]
+is_a: CL:0002319 ! neural cell
+is_a: CL:2000008 ! microvascular endothelial cell
+created_by: TermGenie
+creation_date: 2014-07-09T00:24:53Z
+
+[Term]
+id: CL:2000045
+name: foreskin melanocyte
+namespace: cell
+def: "Any melanocyte that is part of a prepuce of penis." [GOC:TermGenie]
+is_a: CL:0000148 ! melanocyte
+created_by: TermGenie
+creation_date: 2014-07-09T00:45:07Z
+
+[Term]
+id: CL:2000046
+name: ventricular cardiac muscle cell
+namespace: cell
+def: "Any cardiac muscle cell that is part of a cardiac ventricle." [GOC:TermGenie]
+is_a: CL:0000746 ! cardiac muscle cell
+created_by: TermGenie
+creation_date: 2014-08-12T20:50:28Z
+
+[Term]
+id: CL:2000047
+name: brainstem motor neuron
+namespace: cell
+def: "Any motor neuron that is part of a brainstem." [GOC:TermGenie]
+is_a: CL:0000100 ! motor neuron
+is_a: CL:2000029 ! central nervous system neuron
+created_by: TermGenie
+creation_date: 2014-10-02T23:52:53Z
+
+[Term]
+id: CL:2000049
+name: primary motor cortex pyramidal cell
+namespace: cell
+def: "Any pyramidal cell that is part of a primary motor cortex." [GOC:TermGenie]
+comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
+is_a: CL:0000598 ! pyramidal cell
+created_by: TermGenie
+creation_date: 2014-10-06T17:39:04Z
+
+[Term]
+id: CL:2000050
+name: obsolete retina retinal ganglion cell
+namespace: cell
+def: "Any retinal ganglion cell that is part of a retina." [GOC:TermGenie]
+comment: http://www.ncbi.nlm.nih.gov/pubmed/2889210
+is_obsolete: true
+created_by: TermGenie
+creation_date: 2014-10-06T17:43:59Z
+
+[Term]
+id: CL:2000051
+name: splenic fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a spleen." [GOC:TermGenie]
+is_a: CL:0000057 ! fibroblast
+created_by: TermGenie
+creation_date: 2014-10-06T18:58:47Z
+
+[Term]
+id: CL:2000052
+name: umbilical artery endothelial cell
+namespace: cell
+def: "Any endothelial cell of artery that is part of a umbilical cord." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=8010
+is_a: CL:0000349 ! extraembryonic cell
+is_a: CL:1000413 ! endothelial cell of artery
+created_by: TermGenie
+creation_date: 2014-10-06T19:01:48Z
+
+[Term]
+id: CL:2000053
+name: splenic endothelial cell
+namespace: cell
+def: "Any endothelial cell that is part of a spleen." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=5500
+is_a: CL:0000115 ! endothelial cell
+created_by: TermGenie
+creation_date: 2014-10-06T19:06:04Z
+
+[Term]
+id: CL:2000054
+name: hepatic pit cell
+namespace: cell
+def: "Any lymphocyte that is part of a hepatic sinusoid." [GOC:TermGenie]
+comment: http://www.ncbi.nlm.nih.gov/pubmed/9408963
+is_a: CL:0000182 ! hepatocyte
+is_a: CL:0000542 ! lymphocyte
+created_by: TermGenie
+creation_date: 2014-10-06T19:08:51Z
+
+[Term]
+id: CL:2000055
+name: liver dendritic cell
+namespace: cell
+def: "Any dendritic cell that is part of a liver." [GOC:TermGenie]
+comment: http://www.jleukbio.org/content/66/2/322.abstract
+is_a: CL:0000451 ! dendritic cell
+created_by: TermGenie
+creation_date: 2014-10-06T19:16:11Z
+
+[Term]
+id: CL:2000056
+name: Meynert cell
+namespace: cell
+def: "Any pyramidal cell that is part of a regional part of cerebral cortex." [GOC:TermGenie]
+is_a: CL:0000598 ! pyramidal cell
+is_a: CL:0002609 ! neuron of cerebral cortex
+created_by: TermGenie
+creation_date: 2014-10-06T19:20:41Z
+
+[Term]
+id: CL:2000057
+name: femural osteoblast
+namespace: cell
+def: "Any osteoblast that is part of a femur." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=4610
+is_a: CL:0000062 ! osteoblast
+created_by: TermGenie
+creation_date: 2014-10-06T19:29:45Z
+
+[Term]
+id: CL:2000058
+name: calvarial osteoblast
+namespace: cell
+def: "Any osteoblast that is part of a skull." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=4600
+is_a: CL:0000062 ! osteoblast
+created_by: TermGenie
+creation_date: 2014-10-06T19:48:30Z
+
+[Term]
+id: CL:2000059
+name: prostate gland microvascular endothelial cell
+namespace: cell
+def: "Any microvascular endothelial cell that is part of a prostate gland." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=4400
+is_a: CL:2000008 ! microvascular endothelial cell
+created_by: TermGenie
+creation_date: 2014-10-07T17:46:27Z
+
+[Term]
+id: CL:2000060
+name: placental villous trophoblast
+namespace: cell
+def: "Any trophoblast cell that is part of a placenta." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7120
+is_a: CL:0000351 ! trophoblast cell
+created_by: TermGenie
+creation_date: 2014-10-07T17:48:27Z
+
+[Term]
+id: CL:2000061
+name: placental amniotic mesenchymal stromal cell
+namespace: cell
+def: "Any mesenchymal stem cell that is part of a placenta." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7140
+is_a: CL:0000134 ! mesenchymal stem cell
+is_a: CL:0000349 ! extraembryonic cell
+created_by: TermGenie
+creation_date: 2014-10-07T17:51:11Z
+
+[Term]
+id: CL:2000062
+name: placental villus capillary endothelial cell
+namespace: cell
+def: "Any capillary endothelial cell that is part of a placenta." [GOC:TermGenie]
+comment: http://www.ncbi.nlm.nih.gov/books/NBK53245/
+is_a: CL:0002144 ! capillary endothelial cell
+is_a: CL:0002577 ! placental epithelial cell
+created_by: TermGenie
+creation_date: 2014-10-07T17:55:56Z
+
+[Term]
+id: CL:2000063
+name: ovarian fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a female gonad." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7330
+is_a: CL:0000057 ! fibroblast
+created_by: TermGenie
+creation_date: 2014-10-07T17:57:42Z
+
+[Term]
+id: CL:2000064
+name: ovarian surface epithelial cell
+namespace: cell
+def: "Any epithelial cell that is part of a female gonad." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7310
+is_a: CL:0000066 ! epithelial cell
+created_by: TermGenie
+creation_date: 2014-10-07T17:59:13Z
+
+[Term]
+id: CL:2000065
+name: ovarian microvascular endothelial cell
+namespace: cell
+def: "Any microvascular endothelial cell that is part of a female urethra." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7300
+is_a: CL:1000296 ! epithelial cell of urethra
+is_a: CL:2000008 ! microvascular endothelial cell
+created_by: TermGenie
+creation_date: 2014-10-07T18:18:01Z
+
+[Term]
+id: CL:2000066
+name: cardiac ventricle fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a cardiac ventricle." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=6310
+is_a: CL:0002548 ! fibroblast of cardiac tissue
+created_by: TermGenie
+creation_date: 2014-10-07T18:35:38Z
+
+[Term]
+id: CL:2000067
+name: cardiac atrium fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a cardiac atrium." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=6320
+is_a: CL:0002548 ! fibroblast of cardiac tissue
+created_by: TermGenie
+creation_date: 2014-10-07T18:36:54Z
+
+[Term]
+id: CL:2000068
+name: pericardium fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a pericardium." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=6430
+is_a: CL:0000057 ! fibroblast
+is_a: CL:0000066 ! epithelial cell
+created_by: TermGenie
+creation_date: 2014-10-07T18:38:06Z
+
+[Term]
+id: CL:2000069
+name: gallbladder fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a gallbladder." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=5430
+is_a: CL:0000057 ! fibroblast
+created_by: TermGenie
+creation_date: 2014-10-07T18:41:43Z
+
+[Term]
+id: CL:2000070
+name: optic choroid fibroblast
+namespace: cell
+def: "Any fibroblast that is part of a optic choroid." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=6620
+is_a: CL:0000057 ! fibroblast
+created_by: TermGenie
+creation_date: 2014-10-07T18:50:43Z
+
+[Term]
+id: CL:2000071
+name: mammary microvascular endothelial cell
+namespace: cell
+def: "Any microvascular endothelial cell that is part of a breast." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7600
+is_a: CL:2000008 ! microvascular endothelial cell
+created_by: TermGenie
+creation_date: 2014-10-07T19:55:30Z
+
+[Term]
+id: CL:2000072
+name: adipose microvascular endothelial cell
+namespace: cell
+def: "Any microvascular endothelial cell that is part of a adipose tissue." [GOC:TermGenie]
+comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7200
+is_a: CL:0002320 ! connective tissue cell
+is_a: CL:2000008 ! microvascular endothelial cell
+created_by: TermGenie
+creation_date: 2014-10-07T22:13:45Z
+
+[Term]
+id: CL:2000073
+name: migratory cardiac neural crest cell
+namespace: cell
+def: "Any migratory neural crest cell that is part of a cardiac neural crest." [GOC:TermGenie]
+is_a: CL:0000333 ! migratory neural crest cell
+created_by: TermGenie
+creation_date: 2014-11-05T01:18:43Z
+
+[Term]
+id: CL:2000074
+name: splenocyte
+namespace: cell
+def: "Any leukocyte that is part of a spleen." [GOC:TermGenie]
+comment: Splenocytes is a vague term that refers to any one of the different white blood cell types in the spleen. This name is seen many references as such and is not explained further, necessitating a need for this terminology.
+is_a: CL:0000738 ! leukocyte
+created_by: TermGenie
+creation_date: 2014-11-05T01:26:50Z
+
+[Term]
+id: CL:2000075
+name: anterior visceral endoderm cell
+namespace: cell
+def: "Any endodermal cell that is part of a anterior visceral endoderm." [GOC:TermGenie]
+is_a: CL:0000223 ! endodermal cell
+created_by: TermGenie
+creation_date: 2014-11-05T01:34:13Z
+
+[Term]
+id: CL:2000076
+name: hindlimb stylopod vein endothelial cell
+namespace: cell
+def: "Any vein endothelial cell that is part of a hindlimb stylopod." [GOC:TermGenie]
+is_a: CL:0002543 ! vein endothelial cell
+created_by: TermGenie
+creation_date: 2014-12-02T18:40:47Z
+
+[Term]
+id: CL:2000077
+name: skeletal muscle tissue of pectoralis major striated muscle cell
+namespace: cell
+def: "Any striated muscle cell that is part of a skeletal muscle tissue of pectoralis major." [GOC:TermGenie]
+is_a: CL:0000737 ! striated muscle cell
+created_by: TermGenie
+creation_date: 2014-12-02T18:48:17Z
+
+[Term]
+id: CL:2000078
+name: placental pericyte
+namespace: cell
+def: "Any pericyte cell that is part of a placenta." [GOC:TermGenie]
+is_a: CL:0000349 ! extraembryonic cell
+is_a: CL:0000669 ! pericyte cell
+created_by: TermGenie
+creation_date: 2014-12-02T18:51:03Z
+
+[Term]
+id: CL:2000079
+name: mesenchymal stem cell of femoral bone marrow
+namespace: cell
+def: "Any mesenchymal stem cell of the bone marrow that is part of a femur." [GOC:TermGenie]
+is_a: CL:0002540 ! mesenchymal stem cell of the bone marrow
+created_by: TermGenie
+creation_date: 2014-12-02T19:07:31Z
+
+[Term]
+id: CL:2000080
+name: mesenchymal stem cell of abdominal adipose
+namespace: cell
+def: "Any mesenchymal stem cell of adipose that is part of a abdomen." [GOC:TermGenie]
+is_a: CL:0002570 ! mesenchymal stem cell of adipose
+created_by: TermGenie
+creation_date: 2014-12-02T19:10:34Z
+
+[Term]
+id: CL:2000081
+name: melanocyte of skin of face
+namespace: cell
+def: "Any melanocyte of skin that is part of a skin of face." [GOC:TermGenie]
+is_a: CL:1000458 ! melanocyte of skin
+created_by: TermGenie
+creation_date: 2014-12-02T19:10:40Z
+
+[Term]
+id: CL:2000082
+name: melanocyte of foreskin
+namespace: cell
+def: "Any melanocyte of skin that is part of a skin of prepuce of penis." [GOC:TermGenie]
+is_a: CL:1000458 ! melanocyte of skin
+is_a: CL:2000045 ! foreskin melanocyte
+created_by: TermGenie
+creation_date: 2014-12-02T19:10:45Z
+
+[Term]
+id: CL:2000083
+name: hair follicle dermal papilla cell of scalp
+namespace: cell
+def: "Any hair follicle dermal papilla cell that is part of a scalp." [GOC:TermGenie]
+is_a: CL:0000346 ! hair follicle dermal papilla cell
+created_by: TermGenie
+creation_date: 2014-12-02T19:10:50Z
+
+[Term]
+id: CL:2000084
+name: conjunctiva goblet cell
+namespace: cell
+def: "Any goblet cell that is part of a conjunctiva." [GOC:TermGenie]
+is_a: CL:0000160 ! goblet cell
+is_a: CL:1000432 ! conjunctival epithelial cell
+created_by: TermGenie
+creation_date: 2014-12-02T19:28:38Z
+
+[Term]
+id: CL:2000085
+name: mononuclear cell of umbilical cord
+namespace: cell
+def: "Any mononuclear cell that is part of a umbilical cord." [GOC:TermGenie]
+is_a: CL:0000349 ! extraembryonic cell
+is_a: CL:0000842 ! mononuclear cell
+created_by: TermGenie
+creation_date: 2014-12-02T20:14:16Z
 
 [Typedef]
 id: RO:0002120
