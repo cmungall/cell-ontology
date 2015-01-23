@@ -355,6 +355,7 @@ namespace: cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A11.872]
 xref: CALOHA:TS-2086
 xref: FMA:63368
+is_a: CL:0011115 ! precursor cell
 
 [Term]
 id: CL:0000035
@@ -551,6 +552,7 @@ synonym: "megakaryocyte/erythroid progenitor cell" EXACT []
 synonym: "MEP" EXACT []
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
+is_a: CL:0011115 ! precursor cell
 relationship: develops_from CL:0000049 ! common myeloid progenitor
 
 [Term]
@@ -570,6 +572,7 @@ synonym: "ELP" RELATED []
 synonym: "lymphoid stem cell" RELATED []
 synonym: "lymphopoietic stem cell" RELATED []
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
+is_a: CL:0011115 ! precursor cell
 
 [Term]
 id: CL:0000052
@@ -595,6 +598,7 @@ comment: define using PATO mulit-potent or oligopotent?
 synonym: "blast cell" EXACT []
 xref: BTO:0000125
 xref: FMA:84782
+is_a: CL:0011115 ! precursor cell
 
 [Term]
 id: CL:0000056
@@ -946,7 +950,6 @@ synonym: "stellate cell of von Kupffer" EXACT []
 synonym: "von Kupffer cell" EXACT []
 xref: BTO:0000685
 xref: FMA:14656
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0000864 ! tissue-resident macrophage
 
 [Term]
@@ -1746,6 +1749,7 @@ xref: ncithesaurus:Beta_Cell
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000168 ! insulin secreting cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
 
 [Term]
@@ -1768,6 +1772,7 @@ xref: BTO:0000990
 xref: FMA:70585
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0002067 ! type A enterocrine cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
 
 [Term]
@@ -1791,13 +1796,14 @@ xref: BTO:0000803
 xref: FMA:70587
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000502 ! type D enteroendocrine cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
 
 [Term]
 id: CL:0000174
 name: steroid hormone secreting cell
 namespace: cell
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000163 ! endocrine cell
 
 [Term]
 id: CL:0000175
@@ -3923,7 +3929,7 @@ id: CL:0000438
 name: luteinizing hormone secreting cell
 namespace: cell
 def: "A peptide hormone secreting cell pituitary that produces luteinizing hormone." [GOC:tfm]
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000163 ! endocrine cell
 
 [Term]
 id: CL:0000439
@@ -4156,6 +4162,7 @@ synonym: "adrenocorticotrophic hormone secreting cell" EXACT []
 synonym: "corticotrophin hormone secreting cell" EXACT []
 synonym: "corticotropin hormone secreting cell" EXACT []
 synonym: "corticotropin secreting cell" EXACT [GO:0051458]
+is_a: CL:0000163 ! endocrine cell
 is_a: CL:0000167 ! peptide hormone secreting cell
 
 [Term]
@@ -4266,7 +4273,7 @@ id: CL:0000482
 name: juvenile hormone secreting cell
 namespace: cell
 def: "An endocrine cell that secretes juvenile hormone." [GO:tfm]
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000163 ! endocrine cell
 
 [Term]
 id: CL:0000483
@@ -4981,6 +4988,7 @@ synonym: "granulocyte/monocyte precursor" EXACT []
 synonym: "granulocyte/monocyte progenitor" EXACT []
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0001012 ! CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor
+is_a: CL:0011115 ! precursor cell
 is_a: CL:1001610 ! bone marrow hematopoietic cell
 relationship: develops_from CL:0000049 ! common myeloid progenitor
 
@@ -5175,6 +5183,7 @@ xref: CALOHA:TS-0638
 xref: FMA:62864
 is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0002087 ! nongranular leukocyte
+is_a: CL:0011115 ! precursor cell
 relationship: develops_from CL:0000559 ! promonocyte
 
 [Term]
@@ -5256,8 +5265,6 @@ xref: BTO:0000802
 xref: CALOHA:TS-0030
 xref: FMA:83023
 is_a: CL:0000864 ! tissue-resident macrophage
-is_a: CL:0010003 ! epithelial cell of alveolus of lung
-is_a: CL:1001603 ! lung macrophage
 
 [Term]
 id: CL:0000584
@@ -6193,7 +6200,7 @@ id: CL:0000684
 name: littoral cell of liver
 namespace: cell
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0000182 ! hepatocyte
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:0000685
@@ -6322,7 +6329,7 @@ synonym: "dopaminergic cell" EXACT []
 xref: BTO:0004032
 xref: FMA:84787
 xref: WBbt:0006746
-is_a: CL:0000163 ! endocrine cell
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -6857,6 +6864,7 @@ xref: CALOHA:TS-0289
 xref: FMA:83504
 is_a: CL:0000764 ! erythroid lineage cell
 is_a: CL:0002242 ! nucleate cell
+is_a: CL:0011115 ! precursor cell
 relationship: develops_from CL:0000547 ! proerythroblast
 
 [Term]
@@ -7001,7 +7009,6 @@ namespace: cell
 def: "A tissue-resident macrophage of the renal glomerular mesangium involved in the disposal and degradation of filtration residues, presentation of antigen to T cells and in tissue remodeling." [GOC:add, GOC:tfm, ISBN:0702022918, ISBN:3540536663, PMID:1600140, PMID:16146841]
 synonym: "mesangial cell" BROAD []
 is_a: CL:0000864 ! tissue-resident macrophage
-is_a: CL:1000742 ! glomerular mesangial cell
 
 [Term]
 id: CL:0000778
@@ -7789,6 +7796,7 @@ xref: BTO:0004731
 xref: CALOHA:TS-2025
 xref: FMA:70338
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
+is_a: CL:0011115 ! precursor cell
 
 [Term]
 id: CL:0000839
@@ -7801,6 +7809,7 @@ xref: BTO:0004730
 xref: CALOHA:TS-2099
 xref: FMA:70339
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
+is_a: CL:0011115 ! precursor cell
 
 [Term]
 id: CL:0000840
@@ -7929,8 +7938,8 @@ synonym: "5-hydroxytryptamine neuron" EXACT []
 synonym: "serotinergic neuron" RELATED []
 xref: FBbt:00005133
 xref: WBbt:0006837
+is_a: CL:0000381 ! neurosecretory neuron
 is_a: CL:0000458 ! serotonin secreting cell
-is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000851
@@ -8600,7 +8609,6 @@ synonym: "dendritic epidermal T lymphocyte" EXACT []
 synonym: "dendritic epidermal T-cell" EXACT []
 synonym: "dendritic epidermal T-lymphocyte" EXACT []
 synonym: "DETC" EXACT []
-is_a: CL:0000362 ! epidermal cell
 is_a: CL:0000800 ! mature gamma-delta T cell
 relationship: develops_from CL:0002401 ! mature dendritic epithelial T cell precursor
 
@@ -8878,6 +8886,7 @@ synonym: "GMLP" RELATED [PMID:18371378]
 synonym: "LMPP" EXACT []
 synonym: "lymphoid-primed multipotent progenitor" EXACT []
 is_a: CL:0000837 ! hematopoietic multipotent progenitor cell
+is_a: CL:0011115 ! precursor cell
 relationship: develops_from CL:0002035 ! Slamf1-negative multipotent progenitor cell
 
 [Term]
@@ -10136,6 +10145,7 @@ synonym: "multipotential myeloid stem cell" RELATED [ISBN:0878932437]
 synonym: "myeloid stem cell" RELATED [ISBN:0878932437]
 synonym: "pluripotent stem cell (bone marrow)" RELATED [ISBN:0878932437]
 is_a: CL:0000049 ! common myeloid progenitor
+is_a: CL:0011115 ! precursor cell
 
 [Term]
 id: CL:0001060
@@ -10285,6 +10295,7 @@ def: "A progenitor cell that can give rise to plasmacytoid and myeloid dendritic
 synonym: "MDP" EXACT []
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
+is_a: CL:0011115 ! precursor cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 created_by: tmeehan
 creation_date: 2010-01-19T02:51:58Z
@@ -13331,6 +13342,7 @@ xref: BTO:0000805
 xref: FMA:70588
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000696 ! PP cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 created_by: tmeehan
 creation_date: 2010-09-10T03:30:31Z
 
@@ -15304,7 +15316,6 @@ id: CL:0002457
 name: epidermal Langerhans cell
 namespace: cell
 def: "A Langerhans cell that is in the epidermis and is CD45-positive, MHCII-positive, and CD11b-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
-is_a: CL:0000362 ! epidermal cell
 is_a: CL:0000453 ! Langerhans cell
 is_a: CL:0002465 ! CD11b-positive dendritic cell
 created_by: tmeehan
@@ -15705,7 +15716,6 @@ synonym: "IEL" EXACT []
 synonym: "intraepithelial T cell" EXACT []
 synonym: "intraepithelial T-cell" EXACT []
 is_a: CL:0002419 ! mature T cell
-is_a: CL:0002563 ! intestinal epithelial cell
 created_by: tmeehan
 creation_date: 2010-12-07T09:54:50Z
 
@@ -15797,9 +15807,7 @@ name: liver CD103-negative dendritic cell
 namespace: cell
 def: "A CD11b-positive dendritic cell that is CD11b-high, CD45-positive, MHC-II-positive and CD103-negative." [GOC:tfm, http:http\://www.immgen.org/index_content.html]
 synonym: "DC.103-11b+.Lv" EXACT []
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
-is_a: CL:2000055 ! liver dendritic cell
 created_by: tmeehan
 creation_date: 2011-01-21T01:27:41Z
 
@@ -15809,10 +15817,8 @@ name: liver CD103-positive dendritic cell
 namespace: cell
 def: "A CD11b-positive dendritic cell that is CD11b-low, CD45-positive, MHC-II-high and CD103-positive that is located in the liver." [GOC:tfm, http:http\://www.immgen.org/index_content.html]
 synonym: "DC.103+11b-.Lv" EXACT []
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 is_a: CL:0002461 ! CD103-positive dendritic cell
-is_a: CL:2000055 ! liver dendritic cell
 created_by: tmeehan
 creation_date: 2011-01-21T01:27:45Z
 
@@ -16133,7 +16139,6 @@ name: intrahepatic bile duct epithelial cell
 namespace: cell
 def: "An epithelial cell of the intrahepatic portion of the bile duct." [GOC:tfm]
 is_a: CL:0000069 ! branched duct epithelial cell
-is_a: CL:0000182 ! hepatocyte
 created_by: tmeehan
 creation_date: 2011-02-28T01:20:20Z
 
@@ -18150,6 +18155,20 @@ is_a: CL:0000569 ! cardiac mesenchymal cell
 is_a: CL:0002494 ! cardiocyte
 
 [Term]
+id: CL:0008023
+name: cardiac fibroblast
+comment: Duplicate term.
+is_obsolete: true
+replaced_by: CL:0002548
+
+[Term]
+id: CL:0008024
+name: pancreatic endocrine cell
+namespace: cell
+def: "An endocrine cell that is part of the pancreas." [GOC:dos]
+is_a: CL:0000163 ! endocrine cell
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -18431,7 +18450,7 @@ is_a: CL:0000540 ! neuron
 id: CL:0011110
 name: histaminergic neuron
 def: "Neuron that secretes histamine." [PMID:22677810]
-is_a: CL:0000540 ! neuron
+is_a: CL:0000381 ! neurosecretory neuron
 is_a: CL:0002274 ! histamine secreting cell
 
 [Term]
@@ -18440,6 +18459,7 @@ name: gonadotropin releasing neuron
 def: "Neuroendocrine cells that are born in the nasal placode during embryonic development and migrate through the nose and forebrain to the hypothalamus, where they regulate reproduction." [PMID:21828096]
 synonym: "GnRH neuron" EXACT []
 synonym: "GnRH-secreting neuron" EXACT []
+is_a: CL:0000163 ! endocrine cell
 is_a: CL:0000381 ! neurosecretory neuron
 
 [Term]
@@ -18461,6 +18481,13 @@ name: segmented neutrophil of bone marrow
 def: "A segmented neutrophilic cell of the bone marrow reserve pool that expresses CD11b (integrin alpha-M) and high levels of CD16 (low affinity immunoglobulin gamma Fc region receptor III) on its cell surface." [PMID:11138622, PMID:15514007]
 is_a: CL:0000096 ! mature neutrophil
 is_a: CL:1001610 ! bone marrow hematopoietic cell
+
+[Term]
+id: CL:0011115
+name: precursor cell
+def: "A cell that, by division or terminal differentiation, can give rise to other cell types." [GOC:dos]
+comment: Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell. 
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0012000
@@ -19596,7 +19623,6 @@ namespace: cell
 def: "An endothelial cell that is part of the hepatic sinusoid." [GOC:tfm]
 synonym: "endotheliocyte of hepatic sinusoid" EXACT [FMA:62911]
 xref: FMA:62911
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002262 ! endothelial cell of sinusoid
 
 [Term]
@@ -22072,11 +22098,9 @@ creation_date: 2014-10-06T19:06:04Z
 id: CL:2000054
 name: hepatic pit cell
 namespace: cell
-def: "Any lymphocyte that is part of a hepatic sinusoid." [GOC:TermGenie]
-comment: http://www.ncbi.nlm.nih.gov/pubmed/9408963
-is_a: CL:0000182 ! hepatocyte
-is_a: CL:0000542 ! lymphocyte
-created_by: TermGenie
+def: "A large, granular, liver specific natural killer cell that adheres to the endothelial cells of the hepatic sinusoid." [GOC:dos, PMID:9408963]
+comment: Pit cells are named for the presence of large cytoplasmic granules that resemble pits (pips) of fruit.
+is_a: CL:0000623 ! natural killer cell
 creation_date: 2014-10-06T19:08:51Z
 
 [Term]

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2014-12-22
+data-version: releases/2015-01-23
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: LATIN "latin term"
@@ -539,7 +539,7 @@ namespace: cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A11.872]
 xref: CALOHA:TS-2086
 xref: FMA:63368
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000003 ! native cell
 intersection_of: RO:0002215 GO:0017145 ! capable_of stem cell division
 relationship: RO:0002215 GO:0017145 ! capable_of stem cell division
@@ -851,7 +851,7 @@ synonym: "megakaryocyte/erythroid progenitor cell" EXACT []
 synonym: "MEP" EXACT []
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 {is_inferred="true"} ! hematopoietic oligopotent progenitor cell
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0002032 ! hematopoietic oligopotent progenitor cell
 intersection_of: RO:0002215 GO:0030218 ! capable_of erythrocyte differentiation
 intersection_of: RO:0002215 GO:0030219 ! capable_of megakaryocyte differentiation
@@ -878,7 +878,7 @@ synonym: "ELP" RELATED []
 synonym: "lymphoid stem cell" RELATED []
 synonym: "lymphopoietic stem cell" RELATED []
 is_a: CL:0002032 {is_inferred="true"} ! hematopoietic oligopotent progenitor cell
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0002032 ! hematopoietic oligopotent progenitor cell
 intersection_of: RO:0002215 GO:0030098 ! capable_of lymphocyte differentiation
 relationship: RO:0002215 GO:0030098 ! capable_of lymphocyte differentiation
@@ -907,7 +907,7 @@ comment: define using PATO mulit-potent or oligopotent?
 synonym: "blast cell" EXACT []
 xref: BTO:0000125
 xref: FMA:84782
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 relationship: RO:0002215 GO:0030154 ! capable_of cell differentiation
 
 [Term]
@@ -1063,6 +1063,7 @@ xref: WBbt:0003672
 is_a: CL:0000548 ! animal cell
 intersection_of: CL:0000548 ! animal cell
 intersection_of: part_of UBERON:0000483 ! epithelium
+disjoint_from: CL:0000738 ! leukocyte
 relationship: part_of UBERON:0000483 ! epithelium
 
 [Term]
@@ -1304,20 +1305,19 @@ synonym: "stellate cell of von Kupffer" EXACT []
 synonym: "von Kupffer cell" EXACT []
 xref: BTO:0000685
 xref: FMA:14656
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0000864 {is_inferred="true"} ! tissue-resident macrophage
 intersection_of: CL:0000864 ! tissue-resident macrophage
 intersection_of: has_low_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 intersection_of: has_plasma_membrane_part PR:000001813 ! EGF-like module-containing mucin-like hormone receptor-like 1
 intersection_of: has_plasma_membrane_part PR:000001925 ! scavenger receptor cysteine-rich type 1 protein M130
 intersection_of: has_plasma_membrane_part PR:000002064 ! macrosialin
-intersection_of: part_of UBERON:0001281 ! hepatic sinusoid
+intersection_of: located_in UBERON:0001281 ! hepatic sinusoid
 intersection_of: RO:0002215 GO:0034102 ! capable_of erythrocyte clearance
 relationship: has_low_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 relationship: has_plasma_membrane_part PR:000001813 ! EGF-like module-containing mucin-like hormone receptor-like 1
 relationship: has_plasma_membrane_part PR:000001925 ! scavenger receptor cysteine-rich type 1 protein M130
 relationship: has_plasma_membrane_part PR:000002064 ! macrosialin
-relationship: part_of UBERON:0001281 ! hepatic sinusoid
+relationship: located_in UBERON:0001281 ! hepatic sinusoid
 relationship: RO:0002215 GO:0034102 ! capable_of erythrocyte clearance
 
 [Term]
@@ -2233,9 +2233,9 @@ synonym: "endocrinocyte" EXACT []
 xref: FMA:83809
 is_a: CL:0000151 ! secretory cell
 intersection_of: CL:0000151 ! secretory cell
-intersection_of: RO:0002215 GO:0050432 ! capable_of catecholamine secretion
+intersection_of: RO:0002215 GO:0060986 ! capable_of endocrine hormone secretion
 relationship: part_of UBERON:0002368 ! endocrine gland
-relationship: RO:0002215 GO:0050432 ! capable_of catecholamine secretion
+relationship: RO:0002215 GO:0060986 ! capable_of endocrine hormone secretion
 
 [Term]
 id: CL:0000164
@@ -2313,6 +2313,7 @@ xref: ncithesaurus:Beta_Cell
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000164 {is_inferred="true"} ! enteroendocrine cell
 is_a: CL:0000168 {is_inferred="true"} ! insulin secreting cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 intersection_of: CL:0000164 ! enteroendocrine cell
 intersection_of: part_of UBERON:0000006 ! islet of Langerhans
 intersection_of: RO:0002215 GO:0030073 ! capable_of insulin secretion
@@ -2343,6 +2344,7 @@ xref: BTO:0000990
 xref: FMA:70585
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0002067 ! type A enterocrine cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 intersection_of: CL:0002067 ! type A enterocrine cell
 intersection_of: part_of UBERON:0001264 ! pancreas
 relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
@@ -2374,6 +2376,7 @@ xref: BTO:0000803
 xref: FMA:70587
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000502 ! type D enteroendocrine cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 intersection_of: CL:0000502 ! type D enteroendocrine cell
 intersection_of: part_of UBERON:0001264 ! pancreas
 relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
@@ -2384,7 +2387,7 @@ relationship: part_of UBERON:0001264 ! pancreas
 id: CL:0000174
 name: steroid hormone secreting cell
 namespace: cell
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000163 ! endocrine cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: RO:0002215 GO:0035929 ! capable_of steroid hormone secretion
 relationship: RO:0002215 GO:0035929 ! capable_of steroid hormone secretion
@@ -2469,12 +2472,10 @@ comment: Hepatocytes are reportedly MHC Class I-positive and MHC Class II-positi
 xref: BTO:0000575
 xref: CALOHA:TS-0454
 xref: FMA:14515
-is_a: CL:0000066 {is_inferred="true"} ! epithelial cell
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000181 ! metabolising cell
 is_a: CL:0000417 ! endopolyploid cell
 is_a: CL:0002371 ! somatic cell
-intersection_of: CL:0000066 ! epithelial cell
-intersection_of: part_of UBERON:0002107 ! liver
 relationship: develops_from CL:0005026 ! hepatoblast
 relationship: part_of UBERON:0002107 ! liver
 
@@ -4719,7 +4720,7 @@ id: CL:0000438
 name: luteinizing hormone secreting cell
 namespace: cell
 def: "A peptide hormone secreting cell pituitary that produces luteinizing hormone." [GOC:tfm]
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000163 ! endocrine cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: RO:0002215 GO:0032275 ! capable_of luteinizing hormone secretion
 relationship: RO:0002215 GO:0032275 ! capable_of luteinizing hormone secretion
@@ -5011,6 +5012,7 @@ synonym: "adrenocorticotrophic hormone secreting cell" EXACT []
 synonym: "corticotrophin hormone secreting cell" EXACT []
 synonym: "corticotropin hormone secreting cell" EXACT []
 synonym: "corticotropin secreting cell" EXACT [GO:0051458]
+is_a: CL:0000163 ! endocrine cell
 is_a: CL:0000167 ! peptide hormone secreting cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: RO:0002215 GO:0051458 ! capable_of corticotropin secretion
@@ -5125,7 +5127,7 @@ id: CL:0000482
 name: juvenile hormone secreting cell
 namespace: cell
 def: "An endocrine cell that secretes juvenile hormone." [GO:tfm]
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000163 ! endocrine cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: RO:0002215 GO:0045443 ! capable_of juvenile hormone secretion
 relationship: RO:0002215 GO:0045443 ! capable_of juvenile hormone secretion
@@ -5993,8 +5995,8 @@ synonym: "granulocyte/monocyte precursor" EXACT []
 synonym: "granulocyte/monocyte progenitor" EXACT []
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0001012 ! CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor
+is_a: CL:0011115 ! precursor cell
 is_a: CL:1001610 ! bone marrow hematopoietic cell
-is_a: GO:0098732 ! precursor cell
 intersection_of: CL:0002032 ! hematopoietic oligopotent progenitor cell
 intersection_of: has_part PR:000001944 ! transcription factor PU.1
 intersection_of: has_part PR:000005307 ! CCAAT/enhancer-binding protein alpha
@@ -6302,7 +6304,7 @@ xref: CALOHA:TS-0638
 xref: FMA:62864
 is_a: CL:0000766 {is_inferred="true"} ! myeloid leukocyte
 is_a: CL:0002087 ! nongranular leukocyte
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000766 ! myeloid leukocyte
 intersection_of: lacks_part GO:0030141 ! secretory granule
 intersection_of: RO:0002215 GO:0030225 ! capable_of macrophage differentiation
@@ -6481,8 +6483,6 @@ xref: BTO:0000802
 xref: CALOHA:TS-0030
 xref: FMA:83023
 is_a: CL:0000864 {is_inferred="true"} ! tissue-resident macrophage
-is_a: CL:0010003 ! epithelial cell of alveolus of lung
-is_a: CL:1001603 ! lung macrophage
 intersection_of: CL:0000864 ! tissue-resident macrophage
 intersection_of: has_low_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 intersection_of: has_plasma_membrane_part PR:000001013 ! integrin alpha-X
@@ -6492,7 +6492,7 @@ intersection_of: has_plasma_membrane_part PR:000001931 ! sialoadhesin
 intersection_of: has_plasma_membrane_part PR:000002064 ! macrosialin
 intersection_of: has_plasma_membrane_part PR:000002972 ! macrophage mannose receptor 1
 intersection_of: lacks_plasma_membrane_part PR:000001206 ! CX3C chemokine receptor 1
-intersection_of: part_of UBERON:0002299 ! alveolus of lung
+intersection_of: located_in UBERON:0002299 ! alveolus of lung
 intersection_of: RO:0002215 GO:0019882 ! capable_of antigen processing and presentation
 relationship: has_low_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 relationship: has_plasma_membrane_part PR:000001013 ! integrin alpha-X
@@ -6502,7 +6502,7 @@ relationship: has_plasma_membrane_part PR:000001931 ! sialoadhesin
 relationship: has_plasma_membrane_part PR:000002064 ! macrosialin
 relationship: has_plasma_membrane_part PR:000002972 ! macrophage mannose receptor 1
 relationship: lacks_plasma_membrane_part PR:000001206 ! CX3C chemokine receptor 1
-relationship: part_of UBERON:0002299 ! alveolus of lung
+relationship: located_in UBERON:0002299 ! alveolus of lung
 relationship: RO:0002215 GO:0019882 ! capable_of antigen processing and presentation
 
 [Term]
@@ -7646,7 +7646,7 @@ id: CL:0000684
 name: littoral cell of liver
 namespace: cell
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0000182 ! hepatocyte
+is_a: CL:0002371 ! somatic cell
 relationship: part_of UBERON:0002107 ! liver
 
 [Term]
@@ -7779,7 +7779,7 @@ synonym: "dopaminergic cell" EXACT []
 xref: BTO:0004032
 xref: FMA:84787
 xref: WBbt:0006746
-is_a: CL:0000163 ! endocrine cell
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002215 GO:0061527 ! capable_of dopamine secretion, neurotransmission
@@ -8369,7 +8369,7 @@ xref: CALOHA:TS-0289
 xref: FMA:83504
 is_a: CL:0000764 {is_inferred="true"} ! erythroid lineage cell
 is_a: CL:0002242 ! nucleate cell
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000764 ! erythroid lineage cell
 intersection_of: has_part GO:0005634 ! nucleus
 intersection_of: lacks_part GO:0005730 ! nucleolus
@@ -8631,12 +8631,11 @@ namespace: cell
 def: "A tissue-resident macrophage of the renal glomerular mesangium involved in the disposal and degradation of filtration residues, presentation of antigen to T cells and in tissue remodeling." [GOC:add, GOC:tfm, ISBN:0702022918, ISBN:3540536663, PMID:1600140, PMID:16146841]
 synonym: "mesangial cell" BROAD []
 is_a: CL:0000864 {is_inferred="true"} ! tissue-resident macrophage
-is_a: CL:1000742 ! glomerular mesangial cell
 intersection_of: CL:0000864 ! tissue-resident macrophage
-intersection_of: part_of UBERON:0002320 ! glomerular mesangium
+intersection_of: located_in UBERON:0002320 ! glomerular mesangium
 intersection_of: RO:0002215 GO:0019882 ! capable_of antigen processing and presentation
 intersection_of: RO:0002215 GO:0048771 ! capable_of tissue remodeling
-relationship: part_of UBERON:0002320 ! glomerular mesangium
+relationship: located_in UBERON:0002320 ! glomerular mesangium
 relationship: RO:0002215 GO:0019882 ! capable_of antigen processing and presentation
 relationship: RO:0002215 GO:0048771 ! capable_of tissue remodeling
 
@@ -8921,10 +8920,10 @@ synonym: "intraepithelial lymphocyte" BROAD []
 is_a: CL:0000624 {is_inferred="true"} ! CD4-positive, alpha-beta T cell
 is_a: CL:0000797 ! alpha-beta intraepithelial T cell
 intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
-intersection_of: part_of UBERON:0001277 ! intestinal epithelium
+intersection_of: located_in UBERON:0001277 ! intestinal epithelium
 intersection_of: RO:0002215 GO:0002385 ! capable_of mucosal immune response
 relationship: develops_from CL:0000810 ! CD4-positive, alpha-beta thymocyte
-relationship: part_of UBERON:0001277 ! intestinal epithelium
+relationship: located_in UBERON:0001277 ! intestinal epithelium
 relationship: RO:0002215 GO:0002385 ! capable_of mucosal immune response
 
 [Term]
@@ -9014,9 +9013,9 @@ synonym: "intraepithelial lymphocyte" BROAD []
 is_a: CL:0000791 {is_inferred="true"} ! mature alpha-beta T cell
 is_a: CL:0002496 ! intraepithelial lymphocyte
 intersection_of: CL:0000791 ! mature alpha-beta T cell
-intersection_of: part_of UBERON:0001277 ! intestinal epithelium
+intersection_of: located_in UBERON:0001277 ! intestinal epithelium
 intersection_of: RO:0002215 GO:0002385 ! capable_of mucosal immune response
-relationship: part_of UBERON:0001277 ! intestinal epithelium
+relationship: located_in UBERON:0001277 ! intestinal epithelium
 relationship: RO:0002215 GO:0002385 ! capable_of mucosal immune response
 
 [Term]
@@ -9081,9 +9080,9 @@ synonym: "intraepithelial lymphocyte" BROAD []
 is_a: CL:0000800 {is_inferred="true"} ! mature gamma-delta T cell
 is_a: CL:0002496 ! intraepithelial lymphocyte
 intersection_of: CL:0000800 ! mature gamma-delta T cell
-intersection_of: part_of UBERON:0001277 ! intestinal epithelium
+intersection_of: located_in UBERON:0001277 ! intestinal epithelium
 intersection_of: RO:0002215 GO:0002385 ! capable_of mucosal immune response
-relationship: part_of UBERON:0001277 ! intestinal epithelium
+relationship: located_in UBERON:0001277 ! intestinal epithelium
 relationship: RO:0002215 GO:0002385 ! capable_of mucosal immune response
 
 [Term]
@@ -9848,7 +9847,7 @@ xref: BTO:0004731
 xref: CALOHA:TS-2025
 xref: FMA:70338
 is_a: CL:0002031 {is_inferred="true"} ! hematopoietic lineage restricted progenitor cell
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 intersection_of: RO:0002215 GO:0030098 ! capable_of lymphocyte differentiation
 disjoint_from: CL:0000839 ! myeloid lineage restricted progenitor cell
@@ -9865,7 +9864,7 @@ xref: BTO:0004730
 xref: CALOHA:TS-2099
 xref: FMA:70339
 is_a: CL:0002031 {is_inferred="true"} ! hematopoietic lineage restricted progenitor cell
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 intersection_of: RO:0002215 GO:0030099 ! capable_of myeloid cell differentiation
 relationship: RO:0002215 GO:0030099 ! capable_of myeloid cell differentiation
@@ -10056,8 +10055,8 @@ synonym: "5-hydroxytryptamine neuron" EXACT []
 synonym: "serotinergic neuron" RELATED []
 xref: FBbt:00005133
 xref: WBbt:0006837
+is_a: CL:0000381 ! neurosecretory neuron
 is_a: CL:0000458 ! serotonin secreting cell
-is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002215 GO:0060096 ! capable_of serotonin secretion, neurotransmission
 relationship: RO:0002215 GO:0060096 ! capable_of serotonin secretion, neurotransmission
@@ -11148,13 +11147,12 @@ synonym: "dendritic epidermal T lymphocyte" EXACT []
 synonym: "dendritic epidermal T-cell" EXACT []
 synonym: "dendritic epidermal T-lymphocyte" EXACT []
 synonym: "DETC" EXACT []
-is_a: CL:0000362 ! epidermal cell
 is_a: CL:0000800 {is_inferred="true"} ! mature gamma-delta T cell
 intersection_of: CL:0000800 ! mature gamma-delta T cell
-intersection_of: part_of UBERON:0001003 ! skin epidermis
+intersection_of: located_in UBERON:0001003 ! skin epidermis
 intersection_of: RO:0002215 GO:0060054 ! capable_of positive regulation of epithelial cell proliferation involved in wound healing
 relationship: develops_from CL:0002401 ! mature dendritic epithelial T cell precursor
-relationship: part_of UBERON:0001003 ! skin epidermis
+relationship: located_in UBERON:0001003 ! skin epidermis
 relationship: RO:0002215 GO:0060054 ! capable_of positive regulation of epithelial cell proliferation involved in wound healing
 
 [Term]
@@ -11552,7 +11550,7 @@ synonym: "GMLP" RELATED [PMID:18371378]
 synonym: "LMPP" EXACT []
 synonym: "lymphoid-primed multipotent progenitor" EXACT []
 is_a: CL:0000837 {is_inferred="true"} ! hematopoietic multipotent progenitor cell
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000837 ! hematopoietic multipotent progenitor cell
 intersection_of: has_plasma_membrane_part PR:000002001 ! receptor-type tyrosine-protein kinase FLT3
 intersection_of: has_plasma_membrane_part PR:000002065 ! mast/stem cell growth factor receptor
@@ -13686,7 +13684,7 @@ synonym: "multipotential myeloid stem cell" RELATED [ISBN:0878932437]
 synonym: "myeloid stem cell" RELATED [ISBN:0878932437]
 synonym: "pluripotent stem cell (bone marrow)" RELATED [ISBN:0878932437]
 is_a: CL:0000049 ! common myeloid progenitor
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000049 ! common myeloid progenitor
 intersection_of: has_part PR:000001944 ! transcription factor PU.1
 intersection_of: has_part PR:000005307 ! CCAAT/enhancer-binding protein alpha
@@ -14003,7 +14001,7 @@ def: "A progenitor cell that can give rise to plasmacytoid and myeloid dendritic
 synonym: "MDP" EXACT []
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 {is_inferred="true"} ! hematopoietic oligopotent progenitor cell
-is_a: GO:0098732 ! precursor cell
+is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0002032 ! hematopoietic oligopotent progenitor cell
 intersection_of: RO:0002215 GO:0030224 ! capable_of monocyte differentiation
 intersection_of: RO:0002215 GO:0043011 ! capable_of myeloid dendritic cell differentiation
@@ -17933,6 +17931,7 @@ xref: BTO:0000805
 xref: FMA:70588
 is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000696 ! PP cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 intersection_of: CL:0000696 ! PP cell
 intersection_of: part_of UBERON:0000006 ! islet of Langerhans
 intersection_of: part_of UBERON:0001264 ! pancreas
@@ -20366,18 +20365,17 @@ id: CL:0002457
 name: epidermal Langerhans cell
 namespace: cell
 def: "A Langerhans cell that is in the epidermis and is CD45-positive, MHCII-positive, and CD11b-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
-is_a: CL:0000362 ! epidermal cell
 is_a: CL:0000453 {is_inferred="true"} ! Langerhans cell
 is_a: CL:0002465 ! CD11b-positive dendritic cell
 intersection_of: CL:0000453 ! Langerhans cell
 intersection_of: has_plasma_membrane_part GO:0042613 ! MHC class II protein complex
 intersection_of: has_plasma_membrane_part PR:000001012 ! integrin alpha-M
 intersection_of: has_plasma_membrane_part PR:000001014 ! receptor-type tyrosine-protein phosphatase C isoform CD45R
-intersection_of: part_of UBERON:0001003 ! skin epidermis
+intersection_of: located_in UBERON:0001003 ! skin epidermis
 relationship: has_plasma_membrane_part GO:0042613 ! MHC class II protein complex
 relationship: has_plasma_membrane_part PR:000001012 ! integrin alpha-M
 relationship: has_plasma_membrane_part PR:000001014 ! receptor-type tyrosine-protein phosphatase C isoform CD45R
-relationship: part_of UBERON:0001003 ! skin epidermis
+relationship: located_in UBERON:0001003 ! skin epidermis
 created_by: tmeehan
 creation_date: 2010-11-22T03:57:57Z
 
@@ -20923,11 +20921,10 @@ synonym: "IEL" EXACT []
 synonym: "intraepithelial T cell" EXACT []
 synonym: "intraepithelial T-cell" EXACT []
 is_a: CL:0002419 {is_inferred="true"} ! mature T cell
-is_a: CL:0002563 ! intestinal epithelial cell
 intersection_of: CL:0002419 ! mature T cell
-intersection_of: part_of UBERON:0001277 ! intestinal epithelium
+intersection_of: located_in UBERON:0001277 ! intestinal epithelium
 intersection_of: RO:0002215 GO:0002385 ! capable_of mucosal immune response
-relationship: part_of UBERON:0001277 ! intestinal epithelium
+relationship: located_in UBERON:0001277 ! intestinal epithelium
 relationship: RO:0002215 GO:0002385 ! capable_of mucosal immune response
 created_by: tmeehan
 creation_date: 2010-12-07T09:54:50Z
@@ -21027,20 +21024,18 @@ name: liver CD103-negative dendritic cell
 namespace: cell
 def: "A CD11b-positive dendritic cell that is CD11b-high, CD45-positive, MHC-II-positive and CD103-negative." [GOC:tfm, http:http\://www.immgen.org/index_content.html]
 synonym: "DC.103-11b+.Lv" EXACT []
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002454 {is_inferred="true"} ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
-is_a: CL:2000055 ! liver dendritic cell
 intersection_of: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 intersection_of: has_high_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 intersection_of: has_plasma_membrane_part GO:0042613 ! MHC class II protein complex
 intersection_of: has_plasma_membrane_part PR:000001006 ! receptor-type tyrosine-protein phosphatase C
 intersection_of: lacks_plasma_membrane_part PR:000001010 ! integrin alpha-E
-intersection_of: part_of UBERON:0001281 ! hepatic sinusoid
+intersection_of: located_in UBERON:0001281 ! hepatic sinusoid
 relationship: has_high_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 relationship: has_plasma_membrane_part GO:0042613 ! MHC class II protein complex
 relationship: has_plasma_membrane_part PR:000001006 ! receptor-type tyrosine-protein phosphatase C
 relationship: lacks_plasma_membrane_part PR:000001010 ! integrin alpha-E
-relationship: part_of UBERON:0001281 ! hepatic sinusoid
+relationship: located_in UBERON:0001281 ! hepatic sinusoid
 created_by: tmeehan
 creation_date: 2011-01-21T01:27:41Z
 
@@ -21050,21 +21045,19 @@ name: liver CD103-positive dendritic cell
 namespace: cell
 def: "A CD11b-positive dendritic cell that is CD11b-low, CD45-positive, MHC-II-high and CD103-positive that is located in the liver." [GOC:tfm, http:http\://www.immgen.org/index_content.html]
 synonym: "DC.103+11b-.Lv" EXACT []
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002454 {is_inferred="true"} ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 is_a: CL:0002461 ! CD103-positive dendritic cell
-is_a: CL:2000055 ! liver dendritic cell
 intersection_of: CL:0002454 ! Cd4-negative, CD8_alpha-negative, CD11b-positive dendritic cell
 intersection_of: has_low_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 intersection_of: has_plasma_membrane_part GO:0042613 ! MHC class II protein complex
 intersection_of: has_plasma_membrane_part PR:000001006 ! receptor-type tyrosine-protein phosphatase C
 intersection_of: has_plasma_membrane_part PR:000001010 ! integrin alpha-E
-intersection_of: part_of UBERON:0001281 ! hepatic sinusoid
+intersection_of: located_in UBERON:0001281 ! hepatic sinusoid
 relationship: has_low_plasma_membrane_amount PR:000001012 ! integrin alpha-M
 relationship: has_plasma_membrane_part GO:0042613 ! MHC class II protein complex
 relationship: has_plasma_membrane_part PR:000001006 ! receptor-type tyrosine-protein phosphatase C
 relationship: has_plasma_membrane_part PR:000001010 ! integrin alpha-E
-relationship: part_of UBERON:0001281 ! hepatic sinusoid
+relationship: located_in UBERON:0001281 ! hepatic sinusoid
 created_by: tmeehan
 creation_date: 2011-01-21T01:27:45Z
 
@@ -21501,7 +21494,6 @@ name: intrahepatic bile duct epithelial cell
 namespace: cell
 def: "An epithelial cell of the intrahepatic portion of the bile duct." [GOC:tfm]
 is_a: CL:0000069 {is_inferred="true"} ! branched duct epithelial cell
-is_a: CL:0000182 ! hepatocyte
 intersection_of: CL:0000069 ! branched duct epithelial cell
 intersection_of: part_of UBERON:0004823 ! intrahepatic bile duct epithelium
 relationship: part_of UBERON:0004823 ! intrahepatic bile duct epithelium
@@ -23918,6 +23910,23 @@ intersection_of: part_of UBERON:0002062 ! endocardial cushion
 relationship: part_of UBERON:0002062 ! endocardial cushion
 
 [Term]
+id: CL:0008023
+name: cardiac fibroblast
+comment: Duplicate term.
+is_obsolete: true
+replaced_by: CL:0002548
+
+[Term]
+id: CL:0008024
+name: pancreatic endocrine cell
+namespace: cell
+def: "An endocrine cell that is part of the pancreas." [GOC:dos]
+is_a: CL:0000163 ! endocrine cell
+intersection_of: CL:0000163 ! endocrine cell
+intersection_of: part_of UBERON:0001264 ! pancreas
+relationship: part_of UBERON:0001264 ! pancreas
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -24279,7 +24288,7 @@ relationship: RO:0002215 GO:0061585 ! capable_of hypocretin secretion, neurotran
 id: CL:0011110
 name: histaminergic neuron
 def: "Neuron that secretes histamine." [PMID:22677810] {editor="GOC:NV"}
-is_a: CL:0000540 ! neuron
+is_a: CL:0000381 ! neurosecretory neuron
 is_a: CL:0002274 ! histamine secreting cell
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002215 GO:0061538 ! capable_of histamine secretion, neurotransmission
@@ -24291,6 +24300,7 @@ name: gonadotropin releasing neuron
 def: "Neuroendocrine cells that are born in the nasal placode during embryonic development and migrate through the nose and forebrain to the hypothalamus, where they regulate reproduction." [PMID:21828096] {editor="GOC:NV"}
 synonym: "GnRH neuron" EXACT []
 synonym: "GnRH-secreting neuron" EXACT []
+is_a: CL:0000163 ! endocrine cell
 is_a: CL:0000381 ! neurosecretory neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002215 GO:0032274 ! capable_of gonadotropin secretion
@@ -24321,6 +24331,16 @@ is_a: CL:1001610 ! bone marrow hematopoietic cell
 relationship: has_plasma_membrane_part PR:000001012 ! integrin alpha-M
 relationship: has_plasma_membrane_part PR:000001483 ! low affinity immunoglobulin gamma Fc region receptor III
 relationship: part_of UBERON:0002371 ! bone marrow
+
+[Term]
+id: CL:0011115
+name: precursor cell
+def: "A cell that, by division or terminal differentiation, can give rise to other cell types." [GOC:dos]
+comment: Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell. 
+is_a: CL:0000003 ! native cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002215 GO:0030154 ! capable_of cell differentiation
+relationship: RO:0002215 GO:0030154 ! capable_of cell differentiation
 
 [Term]
 id: CL:0012000
@@ -25764,7 +25784,6 @@ namespace: cell
 def: "An endothelial cell that is part of the hepatic sinusoid." [GOC:tfm]
 synonym: "endotheliocyte of hepatic sinusoid" EXACT [FMA:62911]
 xref: FMA:62911
-is_a: CL:0000182 ! hepatocyte
 is_a: CL:0002262 {is_inferred="true"} ! endothelial cell of sinusoid
 intersection_of: CL:0002262 ! endothelial cell of sinusoid
 intersection_of: part_of UBERON:0001281 ! hepatic sinusoid
@@ -29028,14 +29047,11 @@ creation_date: 2014-10-06T19:06:04Z
 id: CL:2000054
 name: hepatic pit cell
 namespace: cell
-def: "Any lymphocyte that is part of a hepatic sinusoid." [GOC:TermGenie]
-comment: http://www.ncbi.nlm.nih.gov/pubmed/9408963
-is_a: CL:0000182 ! hepatocyte
-is_a: CL:0000542 ! lymphocyte
-intersection_of: CL:0000542 ! lymphocyte
-intersection_of: part_of UBERON:0001281 ! hepatic sinusoid
-relationship: part_of UBERON:0001281 ! hepatic sinusoid
-created_by: TermGenie
+def: "A large, granular, liver specific natural killer cell that adheres to the endothelial cells of the hepatic sinusoid." [GOC:dos, PMID:9408963]
+comment: Pit cells are named for the presence of large cytoplasmic granules that resemble pits (pips) of fruit.
+is_a: CL:0000623 ! natural killer cell
+relationship: has_part GO:0030141 ! secretory granule
+relationship: located_in UBERON:0001281 ! hepatic sinusoid
 creation_date: 2014-10-06T19:08:51Z
 
 [Term]
@@ -35123,16 +35139,6 @@ is_a: GO:0044459 ! plasma membrane part
 is_a: GO:0098589 ! membrane region
 intersection_of: GO:0016020 ! membrane
 intersection_of: part_of GO:0005886 ! plasma membrane
-
-[Term]
-id: GO:0098732
-name: precursor cell
-def: "A cell that, by division or terminal differentiation, can give rise to other cell types." [GOC:dos]
-comment: Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell. 
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
-intersection_of: RO:0002215 GO:0030154 ! capable_of cell differentiation
-relationship: RO:0002215 GO:0030154 ! capable_of cell differentiation
 
 [Term]
 id: GO:1901135
