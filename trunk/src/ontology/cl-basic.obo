@@ -651,6 +651,7 @@ xref: BTO:0001663
 xref: FMA:70576
 is_a: CL:0000146 ! simple columnar epithelial cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0002077 ! ecto-epithelial cell
 relationship: develops_from CL:0007000 ! preameloblast
 
 [Term]
@@ -663,6 +664,7 @@ xref: BTO:0001769
 xref: CALOHA:TS-0696
 xref: FMA:62999
 is_a: CL:0000055 ! non-terminally differentiated cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002159 ! general ecto-epithelial cell
 relationship: develops_from CL:0007003 ! preodontoblast
 
@@ -1723,6 +1725,7 @@ id: CL:0000168
 name: insulin secreting cell
 namespace: cell
 xref: BTO:0000783
+is_a: CL:0000154 ! protein secreting cell
 is_a: CL:0000167 ! peptide hormone secreting cell
 
 [Term]
@@ -2044,6 +2047,7 @@ synonym: "inner ear hair cell" RELATED [GO:0060119]
 synonym: "inner ear receptor cell" RELATED [GO:0060119]
 xref: FMA:62364
 is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002374 ! ear hair cell
 is_a: CL:0002491 ! auditory epithelial cell
 
@@ -2104,6 +2108,7 @@ is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0000206 ! chemoreceptor cell
 is_a: CL:0000362 ! epidermal cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002076 ! endo-epithelial cell
 
 [Term]
@@ -2388,6 +2393,7 @@ name: keratinizing barrier epithelial cell
 namespace: cell
 is_a: CL:0000240 ! stratified squamous epithelial cell
 is_a: CL:0000311 ! keratin accumulating cell
+is_a: CL:0002077 ! ecto-epithelial cell
 relationship: develops_from CL:0000114 ! surface ectodermal cell
 
 [Term]
@@ -2424,6 +2430,7 @@ synonym: "Merkel's cell" EXACT []
 xref: FMA:70548
 is_a: CL:0000123 ! neuron associated cell (sensu Vertebrata)
 is_a: CL:0000312 ! keratinocyte
+is_a: CL:0000710 ! neurecto-epithelial cell
 
 [Term]
 id: CL:0000243
@@ -3007,7 +3014,7 @@ name: sebum secreting cell
 namespace: cell
 def: "A cell secreting sebun, an oily substance secreted by sebaceous glands, composed of keratin, fat, and cellular debris." [MESH:A12.200.702]
 synonym: "sebocyte" EXACT []
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:2000021 ! sebaceous gland native cell
 
 [Term]
@@ -3567,6 +3574,7 @@ name: socket cell (sensu Nematoda)
 namespace: cell
 is_a: CL:0000619 ! support cell (sensu Nematoda)
 is_a: CL:0000658 ! cuticle secreting cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 
 [Term]
 id: CL:0000390
@@ -3936,6 +3944,7 @@ id: CL:0000439
 name: prolactin secreting cell
 namespace: cell
 def: "A peptide hormone cell that secretes prolactin." [GOC:tfm, SANBI:mhl]
+is_a: CL:0000154 ! protein secreting cell
 is_a: CL:0000167 ! peptide hormone secreting cell
 
 [Term]
@@ -4132,6 +4141,7 @@ namespace: cell
 def: "An epidermal cell that secretes chitinous cuticle from its apical side." [FlyBase:ds, ISBN:ISBN\:978-0801481253]
 comment: While insect epidermis is generally columnar/cuboidal, there are certainly well studied cases where it is not (e.g.- Rhodnius prolixus when starved). So it would be safer to add this as a differentium for particular species where this is known. -DSJ.
 is_a: CL:0000362 ! epidermal cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 relationship: develops_from CL:0000464 ! epidermoblast
 
 [Term]
@@ -5728,6 +5738,7 @@ xref: BTO:0002741
 xref: CALOHA:TS-0452
 xref: FMA:67763
 is_a: CL:0000057 ! fibroblast
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:0000327 ! extracellular matrix secreting cell
 
 [Term]
@@ -6215,8 +6226,8 @@ id: CL:0000686
 name: cerebrospinal fluid secreting cell
 namespace: cell
 def: "A columnar/cuboidal epithelial cell that secretes cerebrospinal fluid." [GOC:tfm]
-is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000151 ! secretory cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -8098,7 +8109,7 @@ id: CL:0000869
 name: tonsillar macrophage
 namespace: cell
 def: "A gut-associated lymphoid tissue macrophage found in tonsils." [GO_REF:0000031, GOC:ana, PMID:16048540]
-is_a: CL:0000884 ! mucosa-associated lymphoid tissue macrophage
+is_a: CL:0000885 ! gut-associated lymphoid tissue macrophage
 
 [Term]
 id: CL:0000870
@@ -9874,7 +9885,7 @@ id: CL:0001033
 name: hippocampal granule cell
 namespace: cell
 def: "Granule cell that is part of the hippocampus." [GOC:mah]
-is_a: CL:0000120 ! granule cell
+is_a: CL:0001032 ! cortical granule cell
 is_a: CL:0002608 ! hippocampal neuron
 
 [Term]
@@ -11852,8 +11863,10 @@ name: dark cell of eccrine sweat gland
 namespace: cell
 def: "A cell pyramidal in shape, with their broad ends facing and forming the greater extent of the lining of the main lumen. Secretes glycoproteins associated with mucus." [ISBN:0517223651]
 xref: FMA:70659
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:0000318 ! sweat secreting cell
 is_a: CL:0000434 ! eccrine cell
+is_a: CL:1000448 ! epithelial cell of sweat gland
 created_by: tmeehan
 creation_date: 2010-08-24T02:15:16Z
 
@@ -11897,8 +11910,10 @@ name: clear cell of eccrine sweat gland
 namespace: cell
 def: "A sweat producing cell of eccrine sweat glands. Pyramidal in shape, with its base resting on the basal lamina or myoepitheliocytes, and its microvillus-covered apical plasma membrane line up the intercellular canaliculi. Cell is not stained by hematoxylin or eosin." [GOC:tfm, ISBN:0517223651]
 xref: FMA:70658
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:0000318 ! sweat secreting cell
 is_a: CL:0000434 ! eccrine cell
+is_a: CL:1000448 ! epithelial cell of sweat gland
 created_by: tmeehan
 creation_date: 2010-08-24T10:33:02Z
 
@@ -12275,6 +12290,7 @@ namespace: cell
 alt_id: CL:1000401
 def: "A neck cell that secretes mucus within the stomach. Its products are distinct histochemically from those of the surface mucous cells of stomach." [GOC:tfm, ISBN:0517223651]
 xref: FMA:62954
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:0000651 ! mucous neck cell
 is_a: CL:0002180 ! mucous cell of stomach
 created_by: tmeehan
@@ -12299,6 +12315,7 @@ alt_id: CL:1000400
 def: "A stomach epithelial cell that is olumnar in form with a few short apical microvilli; relatively undifferentiated mitotic cell from which other types of gland are derived; few in number, situated in the isthmus region of the gland and base of the gastric pit." [GOC:tfm, ISBN:0517223651]
 xref: FMA:62953
 is_a: CL:0000048 ! multi fate stem cell
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:0002180 ! mucous cell of stomach
 created_by: tmeehan
 creation_date: 2010-08-25T03:57:08Z
@@ -13703,7 +13720,6 @@ xref: FMA:62125
 xref: FMA:70981
 xref: KUPO:0001055
 is_a: CL:0002078 ! meso-epithelial cell
-is_a: CL:1000494 ! nephron tubule epithelial cell
 is_a: CL:1000615 ! kidney cortex tubule cell
 
 [Term]
@@ -13717,7 +13733,6 @@ xref: FMA:70973
 xref: KUPO:0001044
 is_a: CL:0000239 ! brush border epithelial cell
 is_a: CL:0002078 ! meso-epithelial cell
-is_a: CL:1000494 ! nephron tubule epithelial cell
 is_a: CL:1000615 ! kidney cortex tubule cell
 
 [Term]
@@ -15609,6 +15624,7 @@ id: CL:0002486
 name: strial intermediate cell
 namespace: cell
 def: "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ." [GOC:tfm, MP:0000048]
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002484 ! epithelial melanocyte
 is_a: CL:0002491 ! auditory epithelial cell
 created_by: tmeehan
@@ -16752,7 +16768,7 @@ creation_date: 2011-03-06T06:57:27Z
 id: CL:0002604
 name: astrocyte of the hippocampus
 namespace: cell
-is_a: CL:0012000 ! astrocyte of the forebrain
+is_a: CL:0002605 ! astrocyte of the cerebral cortex
 is_a: CL:1001580 ! hippocampus glial cell
 created_by: tmeehan
 creation_date: 2011-03-06T06:57:33Z
@@ -16790,7 +16806,7 @@ id: CL:0002608
 name: hippocampal neuron
 namespace: cell
 def: "A neuron of the hippocampus." [GOC:tfm]
-is_a: CL:0012001 ! neuron of the forebrain
+is_a: CL:0002609 ! neuron of cerebral cortex
 created_by: tmeehan
 creation_date: 2011-03-06T07:31:49Z
 
@@ -17166,51 +17182,51 @@ creation_date: 2011-07-08T02:25:46Z
 
 [Term]
 id: CL:0002646
-name: epithelial cell of buccal part of viscerocranial mucosa
+name: obsolete epithelial cell of buccal part of viscerocranial mucosa
 namespace: cell
 def: "An ecto-epithelial cell of the buccal region of the viscerocranial mucosa." [GOC:tfm]
 xref: FMA:70577
-is_a: CL:0002283 ! ecto-epithelial cell of viscerocranial mucosa
+is_obsolete: true
 created_by: tmeehan
 creation_date: 2011-07-08T02:34:12Z
 
 [Term]
 id: CL:0002647
-name: epithelial cell of anterior palatal part of viscerocranial mucosa
+name: obsolete epithelial cell of anterior palatal part of viscerocranial mucosa
 namespace: cell
 def: "An ecto-epithelial cell of the palatal region of the viscerocranial mucosa." [GOC:tfm]
 xref: FMA:70580
-is_a: CL:0002283 ! ecto-epithelial cell of viscerocranial mucosa
+is_obsolete: true
 created_by: tmeehan
 creation_date: 2011-07-08T02:34:14Z
 
 [Term]
 id: CL:0002648
-name: epithelial cell of nasal part of viscerocranial mucosa
+name: obsolete epithelial cell of nasal part of viscerocranial mucosa
 namespace: cell
 def: "An ecto-epithelial cell of the nasal region of the viscerocranial mucosa." [GOC:tfm]
 xref: FMA:70554
-is_a: CL:0002283 ! ecto-epithelial cell of viscerocranial mucosa
+is_obsolete: true
 created_by: tmeehan
 creation_date: 2011-07-08T02:36:06Z
 
 [Term]
 id: CL:0002649
-name: epithelial cell of gingival part of viscerocranial mucosa
+name: obsolete epithelial cell of gingival part of viscerocranial mucosa
 namespace: cell
 def: "An ecto-epithelial cell of the gingival region of the viscerocranial mucosa." [GOC:tfm]
 xref: FMA:70579
-is_a: CL:0002283 ! ecto-epithelial cell of viscerocranial mucosa
+is_obsolete: true
 created_by: tmeehan
 creation_date: 2011-07-08T02:36:11Z
 
 [Term]
 id: CL:0002650
-name: epithelial cell of paranasal sinus part of viscerocranial mucosa
+name: obsolete epithelial cell of paranasal sinus part of viscerocranial mucosa
 namespace: cell
 def: "An ecto-epithelial cell of the paranasal region of the viscerocranial mucosa." [GOC:tfm]
 xref: FMA:70578
-is_a: CL:0002283 ! ecto-epithelial cell of viscerocranial mucosa
+is_obsolete: true
 created_by: tmeehan
 creation_date: 2011-07-08T02:38:18Z
 
@@ -17945,6 +17961,7 @@ def: "An epidermal cell with apical microvilli or a single apical projection hav
 comment: Taxon specificity not yet fully known, but are known in anuran larvae but not in adults.
 is_a: CL:0000206 ! chemoreceptor cell
 is_a: CL:0000362 ! epidermal cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 created_by: haendel
 
 [Term]
@@ -18169,6 +18186,13 @@ def: "An endocrine cell that is part of the pancreas." [GOC:dos]
 is_a: CL:0000163 ! endocrine cell
 
 [Term]
+id: CL:0008025
+name: noradrenergic neuron
+def: "A neuron that release noradrenaline (noriphinephrine) as a neurotransmitter." [GOC:dos]
+is_a: CL:0000381 ! neurosecretory neuron
+is_a: CL:0000459 ! noradrenergic cell
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -18206,7 +18230,7 @@ name: retinal cell
 def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." []
 xref: GOC:pr
 xref: PMID:10702418
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0009005
@@ -18972,6 +18996,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of gastric cardiac gland." [GOC:tfm]
 synonym: "goblet cell of epithelium of gastric cardiac gland" EXACT []
 xref: FMA:263038
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:1000313 ! gastric goblet cell
 
 [Term]
@@ -18981,6 +19006,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of principal gastric gland." [GOC:tfm]
 synonym: "goblet cell of epithelium of principal gastric gland" EXACT []
 xref: FMA:263040
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:1000313 ! gastric goblet cell
 
 [Term]
@@ -19053,6 +19079,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of pyloric gland." [GOC:tfm]
 synonym: "goblet cell of epithelium of pyloric gland" EXACT []
 xref: FMA:263061
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:1000313 ! gastric goblet cell
 
 [Term]
@@ -19489,6 +19516,7 @@ namespace: cell
 def: "A myocardial endocrine cell that is part of the septal division of left branch of atrioventricular bundle." [GOC:tfm]
 xref: FMA:263180
 is_a: CL:0002074 ! myocardial endocrine cell
+is_a: CL:2000046 ! ventricular cardiac muscle cell
 
 [Term]
 id: CL:1000376
@@ -19514,7 +19542,7 @@ name: type 1 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263186
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19524,7 +19552,7 @@ name: type 1 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263188
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19534,7 +19562,7 @@ name: type 1 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263190
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19544,7 +19572,7 @@ name: type 1 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263192
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19554,7 +19582,7 @@ name: type 2 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263194
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19564,7 +19592,7 @@ name: type 2 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263196
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19574,7 +19602,7 @@ name: type 2 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263198
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19584,7 +19612,7 @@ name: type 2 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263200
-is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 is_a: CL:2000032 ! peripheral nervous system neuron
 
@@ -19820,7 +19848,8 @@ name: epithelial cell of lacrimal canaliculus
 namespace: cell
 def: "An epithelial cell that is part of the lacrimal canaliculus." [GOC:tfm]
 xref: FMA:70553
-is_a: CL:0000068 ! duct epithelial cell
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000434
@@ -19845,7 +19874,8 @@ name: epithelial cell of lacrimal sac
 namespace: cell
 def: "An epithelial cell that is part of the lacrimal sac." [GOC:tfm]
 xref: FMA:70560
-is_a: CL:0000068 ! duct epithelial cell
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000437
@@ -20393,7 +20423,7 @@ name: kidney cortex tubule cell
 namespace: cell
 xref: KUPO:0001024
 is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:1000616
@@ -20619,7 +20649,6 @@ id: CL:1000768
 name: kidney connecting tubule epithelial cell
 namespace: cell
 xref: KUPO:0001058
-is_a: CL:1000494 ! nephron tubule epithelial cell
 is_a: CL:1000615 ! kidney cortex tubule cell
 
 [Term]
@@ -21168,7 +21197,7 @@ name: sensory neuron of dorsal root ganglion
 namespace: cl
 def: "A sensory neuron of the dorsal root ganglia that senses body position and sends information about how much the muscle is stretched to the spinal cord." [MP:0004297]
 synonym: "proprioceptive neuron" EXACT [MP:0004297]
-is_a: CL:0009000 ! sensory neuron of spinal nerve
+is_a: CL:0000101 ! sensory neuron
 
 [Term]
 id: CL:1001474
@@ -21277,8 +21306,8 @@ synonym: "hippocampus (CA) pyramidal cell" EXACT [NIF_Cell:sao131261273]
 synonym: "hippocampus (CA) pyramidal neuron" EXACT [NIF_Cell:sao131261273]
 xref: NIF_Cell:sao131261273
 xref: SAO:sao131261273
-is_a: CL:0000598 ! pyramidal cell
 is_a: CL:0002608 ! hippocampal neuron
+is_a: CL:2000056 ! Meynert cell
 
 [Term]
 id: CL:1001572
@@ -21365,7 +21394,7 @@ synonym: "hippocampal glial cell" RELATED [CALOHA:TS-1257]
 synonym: "hippocampus glial cells" RELATED [CALOHA:TS-1257]
 synonym: "hippocampus neuroglial cell" RELATED [CALOHA:TS-1257]
 xref: CALOHA:TS-1257
-is_a: CL:0000125 ! glial cell
+is_a: CL:1001579 ! cerebral cortex glial cell
 
 [Term]
 id: CL:1001581
@@ -21414,6 +21443,7 @@ synonym: "breast glandular cells" RELATED [CALOHA:TS-1272]
 synonym: "mammary glandular cell" RELATED [CALOHA:TS-1272]
 xref: CALOHA:TS-1272
 is_a: CL:0000150 ! glandular epithelial cell
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:0002327 ! mammary gland epithelial cell
 
 [Term]
@@ -21500,6 +21530,7 @@ def: "Glandular cell of salivary gland. Example: Serous cells, mucous cells, cub
 synonym: "salivary gland glandular cells" RELATED [CALOHA:TS-1282]
 xref: CALOHA:TS-1282
 is_a: CL:0000150 ! glandular epithelial cell
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:0002251 ! epithelial cell of alimentary canal
 
 [Term]
@@ -21764,7 +21795,6 @@ name: fibroblast of peridontal ligament
 namespace: cell
 def: "Any fibroblast that is part of a periodontal ligament." [GOC:TermGenie]
 is_a: CL:0002556 ! fibroblast of periodontium
-is_a: CL:1000307 ! fibroblast of dense regular elastic tissue
 created_by: TermGenie
 creation_date: 2014-06-04T16:50:33Z
 
@@ -22050,7 +22080,7 @@ name: primary motor cortex pyramidal cell
 namespace: cell
 def: "Any pyramidal cell that is part of a primary motor cortex." [GOC:TermGenie]
 comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
-is_a: CL:0000598 ! pyramidal cell
+is_a: CL:2000056 ! Meynert cell
 created_by: TermGenie
 creation_date: 2014-10-06T17:39:04Z
 
@@ -22130,6 +22160,7 @@ namespace: cell
 def: "Any osteoblast that is part of a femur." [GOC:TermGenie]
 comment: http://www.sciencellonline.com/site/productInformation.php?keyword=4610
 is_a: CL:0000062 ! osteoblast
+is_a: CL:0001035 ! bone cell
 created_by: TermGenie
 creation_date: 2014-10-06T19:29:45Z
 
@@ -22313,6 +22344,7 @@ name: anterior visceral endoderm cell
 namespace: cell
 def: "Any endodermal cell that is part of a anterior visceral endoderm." [GOC:TermGenie]
 is_a: CL:0000223 ! endodermal cell
+is_a: CL:0000349 ! extraembryonic cell
 created_by: TermGenie
 creation_date: 2014-11-05T01:34:13Z
 
@@ -22330,6 +22362,7 @@ id: CL:2000077
 name: skeletal muscle tissue of pectoralis major striated muscle cell
 namespace: cell
 def: "Any striated muscle cell that is part of a skeletal muscle tissue of pectoralis major." [GOC:TermGenie]
+is_a: CL:0000188 ! cell of skeletal muscle
 is_a: CL:0000737 ! striated muscle cell
 created_by: TermGenie
 creation_date: 2014-12-02T18:48:17Z
