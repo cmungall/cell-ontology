@@ -1,6 +1,6 @@
 format-version: 1.2
-ontology: cl/imports/imports/go_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/go/releases/2014-07-08/go.owl
+ontology: cl/imports/go_import
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/go/releases/2015-01-29/go.owl
 
 [Term]
 id: GO:0000003
@@ -56,7 +56,6 @@ intersection_of: BFO:0000051 GO:0007067 ! mitotic nuclear division
 id: GO:0000280
 name: nuclear division
 is_a: GO:0048285 ! organelle fission
-relationship: BFO:0000050 GO:0051301 ! cell division
 
 [Term]
 id: GO:0000313
@@ -74,6 +73,7 @@ is_a: GO:0005773 ! vacuole
 [Term]
 id: GO:0000785
 name: chromatin
+is_a: GO:0032991 ! macromolecular complex
 is_a: GO:0044427 ! chromosomal part
 
 [Term]
@@ -138,7 +138,6 @@ is_a: GO:0044707 ! single-multicellular organism process
 id: GO:0001505
 name: regulation of neurotransmitter levels
 is_a: GO:0065008 ! regulation of biological quality
-relationship: BFO:0000050 GO:0007268 ! synaptic transmission
 
 [Term]
 id: GO:0001553
@@ -159,7 +158,7 @@ relationship: BFO:0000050 GO:0001503 ! ossification
 
 [Term]
 id: GO:0001667
-name: ameboidal cell migration
+name: ameboidal-type cell migration
 is_a: GO:0016477 ! cell migration
 
 [Term]
@@ -168,8 +167,10 @@ name: acrosome assembly
 is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0010927 ! cellular component assembly involved in morphogenesis
 is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
+is_a: GO:0033363 ! secretory granule organization
 is_a: GO:0044702 ! single organism reproductive process
 is_a: GO:0070925 ! organelle assembly
+is_a: GO:1902589 ! single-organism organelle organization
 relationship: BFO:0000050 GO:0007286 ! spermatid development
 
 [Term]
@@ -240,6 +241,37 @@ name: blood vessel remodeling
 is_a: GO:0048771 ! tissue remodeling
 
 [Term]
+id: GO:0001976
+name: neurological system process involved in regulation of systemic arterial blood pressure
+is_a: GO:0050877 ! neurological system process
+intersection_of: GO:0050877 ! neurological system process
+intersection_of: BFO:0000050 GO:0003073 ! regulation of systemic arterial blood pressure
+relationship: BFO:0000050 GO:0003073 ! regulation of systemic arterial blood pressure
+
+[Term]
+id: GO:0001990
+name: regulation of systemic arterial blood pressure by hormone
+is_a: GO:0003044 ! regulation of systemic arterial blood pressure mediated by a chemical signal
+is_a: GO:0050886 ! endocrine process
+
+[Term]
+id: GO:0001991
+name: regulation of systemic arterial blood pressure by circulatory renin-angiotensin
+is_a: GO:0003081 ! regulation of systemic arterial blood pressure by renin-angiotensin
+
+[Term]
+id: GO:0001999
+name: renal response to blood flow involved in circulatory renin-angiotensin regulation of systemic arterial blood pressure
+is_a: GO:0003071 ! renal system process involved in regulation of systemic arterial blood pressure
+relationship: BFO:0000050 GO:0001991 ! regulation of systemic arterial blood pressure by circulatory renin-angiotensin
+
+[Term]
+id: GO:0002001
+name: renin secretion into blood stream
+is_a: GO:0009306 ! protein secretion
+relationship: BFO:0000050 GO:0001999 ! renal response to blood flow involved in circulatory renin-angiotensin regulation of systemic arterial blood pressure
+
+[Term]
 id: GO:0002200
 name: somatic diversification of immune receptors
 is_a: GO:0002376 ! immune system process
@@ -303,7 +335,7 @@ name: wound healing involved in inflammatory response
 is_a: GO:0042060 ! wound healing
 intersection_of: GO:0042060 ! wound healing
 intersection_of: BFO:0000050 GO:0006954 ! inflammatory response
-relationship: BFO:0000050 GO:0006954 ! inflammatory response
+relationship: BFO:0000050 GO:0090594 ! inflammatory response to wounding
 
 [Term]
 id: GO:0002249
@@ -545,6 +577,7 @@ is_a: GO:0002386 ! immune response in mucosal-associated lymphoid tissue
 id: GO:0002395
 name: immune response in nasopharyngeal-associated lymphoid tissue
 is_a: GO:0002386 ! immune response in mucosal-associated lymphoid tissue
+is_a: GO:0002387 ! immune response in gut-associated lymphoid tissue
 
 [Term]
 id: GO:0002432
@@ -742,11 +775,18 @@ is_a: GO:0030099 ! myeloid cell differentiation
 id: GO:0002634
 name: regulation of germinal center formation
 is_a: GO:0002822 ! regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
 
 [Term]
 id: GO:0002637
 name: regulation of immunoglobulin production
 is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
+
+[Term]
+id: GO:0002639
+name: positive regulation of immunoglobulin production
+is_a: GO:0002637 ! regulation of immunoglobulin production
+is_a: GO:0002702 ! positive regulation of production of molecular mediator of immune response
 
 [Term]
 id: GO:0002643
@@ -759,6 +799,8 @@ id: GO:0002645
 name: positive regulation of tolerance induction
 is_a: GO:0002643 ! regulation of tolerance induction
 is_a: GO:0002684 ! positive regulation of immune system process
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
 
 [Term]
 id: GO:0002652
@@ -873,9 +915,21 @@ name: regulation of production of molecular mediator of immune response
 is_a: GO:0002697 ! regulation of immune effector process
 
 [Term]
+id: GO:0002702
+name: positive regulation of production of molecular mediator of immune response
+is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
+
+[Term]
 id: GO:0002703
 name: regulation of leukocyte mediated immunity
 is_a: GO:0002697 ! regulation of immune effector process
+
+[Term]
+id: GO:0002705
+name: positive regulation of leukocyte mediated immunity
+is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0002703 ! regulation of leukocyte mediated immunity
 
 [Term]
 id: GO:0002706
@@ -883,10 +937,23 @@ name: regulation of lymphocyte mediated immunity
 is_a: GO:0002703 ! regulation of leukocyte mediated immunity
 
 [Term]
+id: GO:0002708
+name: positive regulation of lymphocyte mediated immunity
+is_a: GO:0002705 ! positive regulation of leukocyte mediated immunity
+is_a: GO:0002706 ! regulation of lymphocyte mediated immunity
+
+[Term]
 id: GO:0002712
 name: regulation of B cell mediated immunity
 is_a: GO:0002706 ! regulation of lymphocyte mediated immunity
 is_a: GO:0002822 ! regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+
+[Term]
+id: GO:0002714
+name: positive regulation of B cell mediated immunity
+is_a: GO:0002708 ! positive regulation of lymphocyte mediated immunity
+is_a: GO:0002712 ! regulation of B cell mediated immunity
+is_a: GO:0002824 ! positive regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
 
 [Term]
 id: GO:0002775
@@ -956,6 +1023,12 @@ name: regulation of immunoglobulin mediated immune response
 is_a: GO:0002712 ! regulation of B cell mediated immunity
 
 [Term]
+id: GO:0002891
+name: positive regulation of immunoglobulin mediated immune response
+is_a: GO:0002714 ! positive regulation of B cell mediated immunity
+is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
+
+[Term]
 id: GO:0002902
 name: regulation of B cell apoptotic process
 is_a: GO:0070228 ! regulation of lymphocyte apoptotic process
@@ -972,8 +1045,6 @@ id: GO:0003006
 name: developmental process involved in reproduction
 is_a: GO:0022414 ! reproductive process
 is_a: GO:0032502 ! developmental process
-intersection_of: GO:0032502 ! developmental process
-intersection_of: BFO:0000050 GO:0000003 ! reproduction
 
 [Term]
 id: GO:0003008
@@ -986,9 +1057,37 @@ name: circulatory system process
 is_a: GO:0003008 ! system process
 
 [Term]
+id: GO:0003014
+name: renal system process
+is_a: GO:0003008 ! system process
+
+[Term]
 id: GO:0003015
 name: heart process
 is_a: GO:0003013 ! circulatory system process
+
+[Term]
+id: GO:0003044
+name: regulation of systemic arterial blood pressure mediated by a chemical signal
+is_a: GO:0003073 ! regulation of systemic arterial blood pressure
+
+[Term]
+id: GO:0003071
+name: renal system process involved in regulation of systemic arterial blood pressure
+is_a: GO:0003014 ! renal system process
+intersection_of: GO:0003014 ! renal system process
+intersection_of: BFO:0000050 GO:0003073 ! regulation of systemic arterial blood pressure
+relationship: BFO:0000050 GO:0003073 ! regulation of systemic arterial blood pressure
+
+[Term]
+id: GO:0003073
+name: regulation of systemic arterial blood pressure
+is_a: GO:0008217 ! regulation of blood pressure
+
+[Term]
+id: GO:0003081
+name: regulation of systemic arterial blood pressure by renin-angiotensin
+is_a: GO:0001990 ! regulation of systemic arterial blood pressure by hormone
 
 [Term]
 id: GO:0003674
@@ -1014,7 +1113,7 @@ relationship: BFO:0000050 GO:0007165 ! signal transduction
 [Term]
 id: GO:0004872
 name: receptor activity
-is_a: GO:0003674 ! molecular_function
+is_a: GO:0060089 ! molecular transducer activity
 
 [Term]
 id: GO:0004888
@@ -1158,10 +1257,10 @@ relationship: BFO:0000050 GO:0071944 ! cell periphery
 id: GO:0005887
 name: integral component of plasma membrane
 is_a: GO:0016021 ! integral component of membrane
+is_a: GO:0031226 ! intrinsic component of plasma membrane
 is_a: GO:0044459 ! plasma membrane part
 intersection_of: GO:0016021 ! integral component of membrane
 intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
-relationship: BFO:0000050 GO:0031226 ! intrinsic component of plasma membrane
 
 [Term]
 id: GO:0005902
@@ -1177,7 +1276,7 @@ is_a: GO:0030054 ! cell junction
 id: GO:0005929
 name: cilium
 is_a: GO:0042995 ! cell projection
-is_a: GO:0043227 ! membrane-bounded organelle
+is_a: GO:0043226 ! organelle
 relationship: BFO:0000051 GO:0030990 ! intraciliary transport particle
 
 [Term]
@@ -1291,6 +1390,7 @@ is_a: GO:0044765 ! single-organism transport
 id: GO:0006837
 name: serotonin transport
 is_a: GO:0006812 ! cation transport
+is_a: GO:0015696 ! ammonium transport
 is_a: GO:0015844 ! monoamine transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 
@@ -1347,14 +1447,14 @@ relationship: BFO:0000050 GO:0097194 ! execution phase of apoptosis
 
 [Term]
 id: GO:0006928
-name: cellular component movement
+name: movement of cell or subcellular component
 is_a: GO:0044763 ! single-organism cellular process
 
 [Term]
 id: GO:0006935
 name: chemotaxis
-is_a: GO:0042221 ! response to chemical
 is_a: GO:0042330 ! taxis
+relationship: BFO:0000050 GO:0042221 ! response to chemical
 
 [Term]
 id: GO:0006937
@@ -1380,7 +1480,6 @@ is_a: GO:0006950 ! response to stress
 id: GO:0006954
 name: inflammatory response
 is_a: GO:0006952 ! defense response
-is_a: GO:0009611 ! response to wounding
 
 [Term]
 id: GO:0006955
@@ -1454,7 +1553,6 @@ is_a: GO:0000278 ! mitotic cell cycle
 id: GO:0007126
 name: meiotic nuclear division
 is_a: GO:0000280 ! nuclear division
-is_a: GO:0048610 ! cellular process involved in reproduction
 intersection_of: GO:0000280 ! nuclear division
 intersection_of: BFO:0000050 GO:0051321 ! meiotic cell cycle
 relationship: BFO:0000050 GO:0051321 ! meiotic cell cycle
@@ -1464,7 +1562,6 @@ id: GO:0007135
 name: meiosis II
 is_a: GO:0007126 ! meiotic nuclear division
 is_a: GO:0022402 ! cell cycle process
-is_a: GO:0048610 ! cellular process involved in reproduction
 is_a: GO:1902589 ! single-organism organelle organization
 is_a: GO:1903046 ! meiotic cell cycle process
 
@@ -1496,12 +1593,28 @@ name: cell communication
 is_a: GO:0044763 ! single-organism cellular process
 
 [Term]
+id: GO:0007155
+name: cell adhesion
+is_a: GO:0022610 ! biological adhesion
+
+[Term]
+id: GO:0007159
+name: leukocyte cell-cell adhesion
+is_a: GO:0016337 ! single organismal cell-cell adhesion
+
+[Term]
+id: GO:0007162
+name: negative regulation of cell adhesion
+is_a: GO:0030155 ! regulation of cell adhesion
+is_a: GO:0048523 ! negative regulation of cellular process
+
+[Term]
 id: GO:0007165
 name: signal transduction
 is_a: GO:0050794 ! regulation of cellular process
-is_a: GO:0051716 ! cellular response to stimulus
 relationship: BFO:0000050 GO:0007154 ! cell communication
 relationship: BFO:0000050 GO:0044700 ! single organism signaling
+relationship: BFO:0000050 GO:0051716 ! cellular response to stimulus
 
 [Term]
 id: GO:0007267
@@ -1667,6 +1780,12 @@ name: metabolic process
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0008217
+name: regulation of blood pressure
+is_a: GO:0065008 ! regulation of biological quality
+relationship: BFO:0000050 GO:0008015 ! blood circulation
+
+[Term]
 id: GO:0008219
 name: cell death
 is_a: GO:0016265 ! death
@@ -1712,7 +1831,7 @@ relationship: BFO:0000050 GO:0045137 ! development of primary sexual characteris
 id: GO:0008509
 name: anion transmembrane transporter activity
 is_a: GO:0015075 ! ion transmembrane transporter activity
-relationship: BFO:0000050 GO:0006820 ! anion transport
+relationship: BFO:0000050 GO:0098656 ! anion transmembrane transport
 
 [Term]
 id: GO:0008514
@@ -1814,8 +1933,8 @@ is_a: GO:0009629 ! response to gravity
 [Term]
 id: GO:0009593
 name: detection of chemical stimulus
-is_a: GO:0042221 ! response to chemical
 is_a: GO:0051606 ! detection of stimulus
+relationship: BFO:0000050 GO:0042221 ! response to chemical
 
 [Term]
 id: GO:0009605
@@ -1939,6 +2058,7 @@ is_a: GO:0033036 ! macromolecule localization
 [Term]
 id: GO:0010927
 name: cellular component assembly involved in morphogenesis
+is_a: GO:0044763 ! single-organism cellular process
 is_a: GO:0044767 ! single-organism developmental process
 is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
 intersection_of: GO:0022607 ! cellular component assembly
@@ -2009,6 +2129,7 @@ is_a: GO:0060537 ! muscle tissue development
 [Term]
 id: GO:0015031
 name: protein transport
+is_a: GO:0008104 ! protein localization
 is_a: GO:0045184 ! establishment of protein localization
 is_a: GO:0071702 ! organic substance transport
 
@@ -2042,10 +2163,22 @@ name: oxygen transport
 is_a: GO:0015669 ! gas transport
 
 [Term]
+id: GO:0015672
+name: monovalent inorganic cation transport
+is_a: GO:0006812 ! cation transport
+
+[Term]
 id: GO:0015695
 name: organic cation transport
 is_a: GO:0006812 ! cation transport
 is_a: GO:0071702 ! organic substance transport
+
+[Term]
+id: GO:0015696
+name: ammonium transport
+is_a: GO:0015672 ! monovalent inorganic cation transport
+is_a: GO:0015698 ! inorganic anion transport
+is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
 id: GO:0015698
@@ -2136,6 +2269,7 @@ is_a: GO:0071702 ! organic substance transport
 id: GO:0015870
 name: acetylcholine transport
 is_a: GO:0006812 ! cation transport
+is_a: GO:0015696 ! ammonium transport
 is_a: GO:0071705 ! nitrogen compound transport
 is_a: GO:1901374 ! acetate ester transport
 
@@ -2143,6 +2277,7 @@ is_a: GO:1901374 ! acetate ester transport
 id: GO:0015872
 name: dopamine transport
 is_a: GO:0006812 ! cation transport
+is_a: GO:0015696 ! ammonium transport
 is_a: GO:0051937 ! catecholamine transport
 
 [Term]
@@ -2158,8 +2293,7 @@ is_a: GO:0005575 ! cellular_component
 [Term]
 id: GO:0016021
 name: integral component of membrane
-is_a: GO:0044425 ! membrane part
-relationship: BFO:0000050 GO:0031224 ! intrinsic component of membrane
+is_a: GO:0031224 ! intrinsic component of membrane
 
 [Term]
 id: GO:0016023
@@ -2209,6 +2343,11 @@ is_a: GO:0045132 ! meiotic chromosome segregation
 intersection_of: GO:0007059 ! chromosome segregation
 intersection_of: BFO:0000050 GO:0007143 ! female meiotic division
 relationship: BFO:0000050 GO:0007143 ! female meiotic division
+
+[Term]
+id: GO:0016337
+name: single organismal cell-cell adhesion
+is_a: GO:0098602 ! single organism cell adhesion
 
 [Term]
 id: GO:0016444
@@ -2322,6 +2461,23 @@ intersection_of: BFO:0000050 GO:0007049 ! cell cycle
 relationship: BFO:0000050 GO:0007049 ! cell cycle
 
 [Term]
+id: GO:0022407
+name: regulation of cell-cell adhesion
+is_a: GO:0030155 ! regulation of cell adhesion
+
+[Term]
+id: GO:0022408
+name: negative regulation of cell-cell adhesion
+is_a: GO:0007162 ! negative regulation of cell adhesion
+is_a: GO:0022407 ! regulation of cell-cell adhesion
+
+[Term]
+id: GO:0022409
+name: positive regulation of cell-cell adhesion
+is_a: GO:0022407 ! regulation of cell-cell adhesion
+is_a: GO:0045785 ! positive regulation of cell adhesion
+
+[Term]
 id: GO:0022411
 name: cellular component disassembly
 is_a: GO:0016043 ! cellular component organization
@@ -2330,7 +2486,7 @@ is_a: GO:0044763 ! single-organism cellular process
 [Term]
 id: GO:0022412
 name: cellular process involved in reproduction in multicellular organism
-is_a: GO:0048610 ! cellular process involved in reproduction
+is_a: GO:0044763 ! single-organism cellular process
 intersection_of: GO:0044763 ! single-organism cellular process
 intersection_of: BFO:0000050 GO:0032504 ! multicellular organism reproduction
 relationship: BFO:0000050 GO:0032504 ! multicellular organism reproduction
@@ -2339,13 +2495,14 @@ relationship: BFO:0000050 GO:0032504 ! multicellular organism reproduction
 id: GO:0022414
 name: reproductive process
 is_a: GO:0008150 ! biological_process
-relationship: BFO:0000050 GO:0000003 ! reproduction
 
 [Term]
 id: GO:0022602
 name: ovulation cycle process
 is_a: GO:0044699 ! single-organism process
 is_a: GO:0048511 ! rhythmic process
+intersection_of: GO:0044699 ! single-organism process
+intersection_of: BFO:0000050 GO:0042698 ! ovulation cycle
 relationship: BFO:0000050 GO:0042698 ! ovulation cycle
 
 [Term]
@@ -2358,6 +2515,11 @@ id: GO:0022607
 name: cellular component assembly
 is_a: GO:0016043 ! cellular component organization
 relationship: BFO:0000050 GO:0044085 ! cellular component biogenesis
+
+[Term]
+id: GO:0022610
+name: biological adhesion
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0022857
@@ -2429,6 +2591,7 @@ is_a: GO:0046879 ! hormone secretion
 [Term]
 id: GO:0030073
 name: insulin secretion
+is_a: GO:0009306 ! protein secretion
 is_a: GO:0030072 ! peptide hormone secretion
 
 [Term]
@@ -2465,6 +2628,11 @@ name: cell differentiation
 is_a: GO:0048869 ! cellular developmental process
 
 [Term]
+id: GO:0030155
+name: regulation of cell adhesion
+is_a: GO:0050794 ! regulation of cellular process
+
+[Term]
 id: GO:0030182
 name: neuron differentiation
 is_a: GO:0030154 ! cell differentiation
@@ -2485,8 +2653,8 @@ is_a: GO:0043062 ! extracellular structure organization
 id: GO:0030202
 name: heparin metabolic process
 is_a: GO:0006790 ! sulfur compound metabolic process
-is_a: GO:0030203 ! glycosaminoglycan metabolic process
 is_a: GO:0043436 ! oxoacid metabolic process
+is_a: GO:1903510 ! mucopolysaccharide metabolic process
 
 [Term]
 id: GO:0030203
@@ -2552,6 +2720,7 @@ is_a: GO:0030072 ! peptide hormone secretion
 [Term]
 id: GO:0030261
 name: chromosome condensation
+is_a: GO:0006259 ! DNA metabolic process
 is_a: GO:0006323 ! DNA packaging
 is_a: GO:0044710 ! single-organism metabolic process
 is_a: GO:0051276 ! chromosome organization
@@ -2674,10 +2843,10 @@ intersection_of: BFO:0000050 GO:0031090 ! organelle membrane
 id: GO:0031301
 name: integral component of organelle membrane
 is_a: GO:0016021 ! integral component of membrane
+is_a: GO:0031300 ! intrinsic component of organelle membrane
 is_a: GO:0044422 ! organelle part
 intersection_of: GO:0016021 ! integral component of membrane
 intersection_of: BFO:0000050 GO:0031090 ! organelle membrane
-relationship: BFO:0000050 GO:0031300 ! intrinsic component of organelle membrane
 
 [Term]
 id: GO:0031323
@@ -2738,6 +2907,7 @@ is_a: GO:0043226 ! organelle
 id: GO:0031988
 name: membrane-bounded vesicle
 is_a: GO:0031982 ! vesicle
+is_a: GO:0043227 ! membrane-bounded organelle
 
 [Term]
 id: GO:0032101
@@ -3023,6 +3193,28 @@ is_a: GO:0048771 ! tissue remodeling
 relationship: BFO:0000050 GO:0034101 ! erythrocyte homeostasis
 
 [Term]
+id: GO:0034109
+name: homotypic cell-cell adhesion
+is_a: GO:0016337 ! single organismal cell-cell adhesion
+
+[Term]
+id: GO:0034110
+name: regulation of homotypic cell-cell adhesion
+is_a: GO:0022407 ! regulation of cell-cell adhesion
+
+[Term]
+id: GO:0034111
+name: negative regulation of homotypic cell-cell adhesion
+is_a: GO:0022408 ! negative regulation of cell-cell adhesion
+is_a: GO:0034110 ! regulation of homotypic cell-cell adhesion
+
+[Term]
+id: GO:0034112
+name: positive regulation of homotypic cell-cell adhesion
+is_a: GO:0022409 ! positive regulation of cell-cell adhesion
+is_a: GO:0034110 ! regulation of homotypic cell-cell adhesion
+
+[Term]
 id: GO:0034220
 name: ion transmembrane transport
 is_a: GO:0006811 ! ion transport
@@ -3130,6 +3322,11 @@ name: ghrelin secretion
 is_a: GO:0030072 ! peptide hormone secretion
 
 [Term]
+id: GO:0038001
+name: paracrine signaling
+is_a: GO:0007267 ! cell-cell signaling
+
+[Term]
 id: GO:0038023
 name: signaling receptor activity
 is_a: GO:0004871 ! signal transducer activity
@@ -3186,6 +3383,7 @@ is_a: GO:0042101 ! T cell receptor complex
 id: GO:0042110
 name: T cell activation
 is_a: GO:0046649 ! lymphocyte activation
+is_a: GO:0070489 ! T cell aggregation
 
 [Term]
 id: GO:0042113
@@ -3230,8 +3428,8 @@ is_a: GO:0005102 ! receptor binding
 [Term]
 id: GO:0042330
 name: taxis
-is_a: GO:0009605 ! response to external stimulus
 is_a: GO:0040011 ! locomotion
+relationship: BFO:0000050 GO:0009605 ! response to external stimulus
 
 [Term]
 id: GO:0042384
@@ -3267,6 +3465,7 @@ id: GO:0042483
 name: negative regulation of odontogenesis
 is_a: GO:0042481 ! regulation of odontogenesis
 is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
 
 [Term]
 id: GO:0042492
@@ -3776,6 +3975,7 @@ id: GO:0044765
 name: single-organism transport
 is_a: GO:0006810 ! transport
 is_a: GO:0044699 ! single-organism process
+is_a: GO:1902578 ! single-organism localization
 
 [Term]
 id: GO:0044767
@@ -3787,6 +3987,7 @@ is_a: GO:0044699 ! single-organism process
 id: GO:0044782
 name: cilium organization
 is_a: GO:0030030 ! cell projection organization
+is_a: GO:1902589 ! single-organism organelle organization
 
 [Term]
 id: GO:0045058
@@ -3811,7 +4012,6 @@ id: GO:0045132
 name: meiotic chromosome segregation
 is_a: GO:0007059 ! chromosome segregation
 is_a: GO:0022402 ! cell cycle process
-is_a: GO:0048610 ! cellular process involved in reproduction
 is_a: GO:1903046 ! meiotic cell cycle process
 intersection_of: GO:0007059 ! chromosome segregation
 intersection_of: BFO:0000050 GO:0007126 ! meiotic nuclear division
@@ -3830,7 +4030,7 @@ name: meiotic sister chromatid segregation
 is_a: GO:0000819 ! sister chromatid segregation
 is_a: GO:0045132 ! meiotic chromosome segregation
 is_a: GO:0070192 ! chromosome organization involved in meiosis
-intersection_of: GO:0007059 ! chromosome segregation
+intersection_of: GO:0000819 ! sister chromatid segregation
 intersection_of: BFO:0000050 GO:0007135 ! meiosis II
 relationship: BFO:0000050 GO:0007135 ! meiosis II
 
@@ -3936,6 +4136,7 @@ name: positive regulation of T-helper cell differentiation
 is_a: GO:0002699 ! positive regulation of immune effector process
 is_a: GO:0043372 ! positive regulation of CD4-positive, alpha-beta T cell differentiation
 is_a: GO:0045622 ! regulation of T-helper cell differentiation
+is_a: GO:0050778 ! positive regulation of immune response
 
 [Term]
 id: GO:0045625
@@ -3946,6 +4147,7 @@ is_a: GO:0045622 ! regulation of T-helper cell differentiation
 [Term]
 id: GO:0045627
 name: positive regulation of T-helper 1 cell differentiation
+is_a: GO:0002827 ! positive regulation of T-helper 1 type immune response
 is_a: GO:0045624 ! positive regulation of T-helper cell differentiation
 is_a: GO:0045625 ! regulation of T-helper 1 cell differentiation
 
@@ -3958,6 +4160,7 @@ is_a: GO:0045622 ! regulation of T-helper cell differentiation
 [Term]
 id: GO:0045630
 name: positive regulation of T-helper 2 cell differentiation
+is_a: GO:0002830 ! positive regulation of type 2 immune response
 is_a: GO:0045624 ! positive regulation of T-helper cell differentiation
 is_a: GO:0045628 ! regulation of T-helper 2 cell differentiation
 
@@ -3985,14 +4188,25 @@ id: GO:0045766
 name: positive regulation of angiogenesis
 is_a: GO:0045765 ! regulation of angiogenesis
 is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+
+[Term]
+id: GO:0045785
+name: positive regulation of cell adhesion
+is_a: GO:0030155 ! regulation of cell adhesion
+is_a: GO:0048522 ! positive regulation of cellular process
 
 [Term]
 id: GO:0045830
 name: positive regulation of isotype switching
+is_a: GO:0002639 ! positive regulation of immunoglobulin production
 is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0002891 ! positive regulation of immunoglobulin mediated immune response
 is_a: GO:0045191 ! regulation of isotype switching
 is_a: GO:0045911 ! positive regulation of DNA recombination
 is_a: GO:0050871 ! positive regulation of B cell activation
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
 
 [Term]
 id: GO:0045911
@@ -4284,14 +4498,6 @@ is_a: GO:0022414 ! reproductive process
 relationship: BFO:0000050 GO:0032504 ! multicellular organism reproduction
 
 [Term]
-id: GO:0048610
-name: cellular process involved in reproduction
-is_a: GO:0009987 ! cellular process
-intersection_of: GO:0009987 ! cellular process
-intersection_of: BFO:0000050 GO:0000003 ! reproduction
-relationship: BFO:0000050 GO:0000003 ! reproduction
-
-[Term]
 id: GO:0048646
 name: anatomical structure formation involved in morphogenesis
 is_a: GO:0032502 ! developmental process
@@ -4359,7 +4565,7 @@ is_a: GO:0044767 ! single-organism developmental process
 [Term]
 id: GO:0048870
 name: cell motility
-is_a: GO:0006928 ! cellular component movement
+is_a: GO:0006928 ! movement of cell or subcellular component
 is_a: GO:0040011 ! locomotion
 relationship: BFO:0000050 GO:0051674 ! localization of cell
 
@@ -4424,17 +4630,15 @@ is_a: GO:0050678 ! regulation of epithelial cell proliferation
 [Term]
 id: GO:0050708
 name: regulation of protein secretion
-is_a: GO:0051046 ! regulation of secretion
 is_a: GO:0051223 ! regulation of protein transport
-is_a: GO:0060341 ! regulation of cellular localization
+is_a: GO:1903530 ! regulation of secretion by cell
 
 [Term]
 id: GO:0050714
 name: positive regulation of protein secretion
-is_a: GO:0048522 ! positive regulation of cellular process
 is_a: GO:0050708 ! regulation of protein secretion
-is_a: GO:0051047 ! positive regulation of secretion
 is_a: GO:0051222 ! positive regulation of protein transport
+is_a: GO:1903532 ! positive regulation of secretion by cell
 
 [Term]
 id: GO:0050727
@@ -4507,7 +4711,9 @@ is_a: GO:0044707 ! single-multicellular organism process
 [Term]
 id: GO:0050863
 name: regulation of T cell activation
+is_a: GO:0034110 ! regulation of homotypic cell-cell adhesion
 is_a: GO:0051249 ! regulation of lymphocyte activation
+is_a: GO:1903037 ! regulation of leukocyte cell-cell adhesion
 
 [Term]
 id: GO:0050864
@@ -4534,14 +4740,18 @@ is_a: GO:0050865 ! regulation of cell activation
 [Term]
 id: GO:0050868
 name: negative regulation of T cell activation
+is_a: GO:0034111 ! negative regulation of homotypic cell-cell adhesion
 is_a: GO:0050863 ! regulation of T cell activation
 is_a: GO:0051250 ! negative regulation of lymphocyte activation
+is_a: GO:1903038 ! negative regulation of leukocyte cell-cell adhesion
 
 [Term]
 id: GO:0050870
 name: positive regulation of T cell activation
+is_a: GO:0034112 ! positive regulation of homotypic cell-cell adhesion
 is_a: GO:0050863 ! regulation of T cell activation
 is_a: GO:0051251 ! positive regulation of lymphocyte activation
+is_a: GO:1903039 ! positive regulation of leukocyte cell-cell adhesion
 
 [Term]
 id: GO:0050871
@@ -4731,6 +4941,7 @@ is_a: GO:0050708 ! regulation of protein secretion
 [Term]
 id: GO:0051024
 name: positive regulation of immunoglobulin secretion
+is_a: GO:0002639 ! positive regulation of immunoglobulin production
 is_a: GO:0050714 ! positive regulation of protein secretion
 is_a: GO:0051023 ! regulation of immunoglobulin secretion
 
@@ -4810,9 +5021,9 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0051216
 name: cartilage development
-is_a: GO:0061448 ! connective tissue development
+is_a: GO:0048513 ! organ development
 relationship: BFO:0000050 GO:0001501 ! skeletal system development
-relationship: BFO:0000050 GO:0048513 ! organ development
+relationship: BFO:0000050 GO:0061448 ! connective tissue development
 
 [Term]
 id: GO:0051222
@@ -4829,13 +5040,18 @@ is_a: GO:0070201 ! regulation of establishment of protein localization
 [Term]
 id: GO:0051234
 name: establishment of localization
-is_a: GO:0008150 ! biological_process
-relationship: BFO:0000050 GO:0051179 ! localization
+is_a: GO:0051179 ! localization
 
 [Term]
 id: GO:0051239
 name: regulation of multicellular organismal process
 is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:0051240
+name: positive regulation of multicellular organismal process
+is_a: GO:0048518 ! positive regulation of biological process
+is_a: GO:0051239 ! regulation of multicellular organismal process
 
 [Term]
 id: GO:0051241
@@ -4886,7 +5102,6 @@ is_a: GO:0044763 ! single-organism cellular process
 id: GO:0051321
 name: meiotic cell cycle
 is_a: GO:0007049 ! cell cycle
-is_a: GO:0048610 ! cellular process involved in reproduction
 intersection_of: GO:0007049 ! cell cycle
 intersection_of: BFO:0000051 GO:0007126 ! meiotic nuclear division
 relationship: BFO:0000050 GO:0000003 ! reproduction
@@ -4906,6 +5121,7 @@ is_a: GO:0050896 ! response to stimulus
 id: GO:0051608
 name: histamine transport
 is_a: GO:0006812 ! cation transport
+is_a: GO:0015696 ! ammonium transport
 is_a: GO:0045117 ! azole transport
 
 [Term]
@@ -5024,7 +5240,7 @@ id: GO:0060326
 name: cell chemotaxis
 is_a: GO:0006935 ! chemotaxis
 is_a: GO:0016477 ! cell migration
-is_a: GO:0070887 ! cellular response to chemical stimulus
+relationship: BFO:0000050 GO:0070887 ! cellular response to chemical stimulus
 
 [Term]
 id: GO:0060341
@@ -5193,6 +5409,7 @@ is_a: GO:0007269 ! neurotransmitter secretion
 id: GO:0061539
 name: octopamine secretion
 is_a: GO:0015695 ! organic cation transport
+is_a: GO:0015696 ! ammonium transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 is_a: GO:0032940 ! secretion by cell
 is_a: GO:0071705 ! nitrogen compound transport
@@ -5245,7 +5462,6 @@ is_a: GO:0030072 ! peptide hormone secretion
 id: GO:0070192
 name: chromosome organization involved in meiosis
 is_a: GO:0022402 ! cell cycle process
-is_a: GO:0048610 ! cellular process involved in reproduction
 is_a: GO:0051276 ! chromosome organization
 is_a: GO:1902589 ! single-organism organelle organization
 is_a: GO:1903046 ! meiotic cell cycle process
@@ -5283,12 +5499,24 @@ relationship: BFO:0000050 GO:0030198 ! extracellular matrix organization
 [Term]
 id: GO:0070459
 name: prolactin secretion
+is_a: GO:0009306 ! protein secretion
 is_a: GO:0030072 ! peptide hormone secretion
 
 [Term]
 id: GO:0070460
 name: thyroid-stimulating hormone secretion
 is_a: GO:0030072 ! peptide hormone secretion
+
+[Term]
+id: GO:0070486
+name: leukocyte aggregation
+is_a: GO:0007159 ! leukocyte cell-cell adhesion
+is_a: GO:0034109 ! homotypic cell-cell adhesion
+
+[Term]
+id: GO:0070489
+name: T cell aggregation
+is_a: GO:0071593 ! lymphocyte aggregation
 
 [Term]
 id: GO:0070661
@@ -5326,8 +5554,8 @@ is_a: GO:0051716 ! cellular response to stimulus
 [Term]
 id: GO:0070925
 name: organelle assembly
+is_a: GO:0006996 ! organelle organization
 is_a: GO:0022607 ! cellular component assembly
-relationship: BFO:0000050 GO:0006996 ! organelle organization
 
 [Term]
 id: GO:0070998
@@ -5346,7 +5574,12 @@ relationship: BFO:0000050 GO:0070998 ! sensory perception of gravity
 [Term]
 id: GO:0071103
 name: DNA conformation change
-is_a: GO:0006259 ! DNA metabolic process
+is_a: GO:0051276 ! chromosome organization
+
+[Term]
+id: GO:0071593
+name: lymphocyte aggregation
+is_a: GO:0070486 ! leukocyte aggregation
 
 [Term]
 id: GO:0071622
@@ -5467,6 +5700,7 @@ is_a: GO:0044464 ! cell part
 [Term]
 id: GO:0071971
 name: extracellular vesicular exosome assembly
+is_a: GO:0016050 ! vesicle organization
 is_a: GO:0070925 ! organelle assembly
 
 [Term]
@@ -5518,6 +5752,12 @@ id: GO:0090304
 name: nucleic acid metabolic process
 is_a: GO:0006139 ! nucleobase-containing compound metabolic process
 is_a: GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0090594
+name: inflammatory response to wounding
+is_a: GO:0006954 ! inflammatory response
+is_a: GO:0009611 ! response to wounding
 
 [Term]
 id: GO:0097028
@@ -5579,6 +5819,25 @@ intersection_of: GO:0016020 ! membrane
 intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
 
 [Term]
+id: GO:0098602
+name: single organism cell adhesion
+is_a: GO:0007155 ! cell adhesion
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0098631
+name: protein binding involved in cell adhesion
+is_a: GO:0005515 ! protein binding
+intersection_of: GO:0005515 ! protein binding
+intersection_of: BFO:0000050 GO:0007155 ! cell adhesion
+
+[Term]
+id: GO:0098656
+name: anion transmembrane transport
+is_a: GO:0006820 ! anion transport
+is_a: GO:0034220 ! ion transmembrane transport
+
+[Term]
 id: GO:1901135
 name: carbohydrate derivative metabolic process
 is_a: GO:0071704 ! organic substance metabolic process
@@ -5631,15 +5890,21 @@ is_a: GO:0071704 ! organic substance metabolic process
 [Term]
 id: GO:1902105
 name: regulation of leukocyte differentiation
-is_a: GO:0002682 ! regulation of immune system process
 is_a: GO:0045595 ! regulation of cell differentiation
-is_a: GO:2000026 ! regulation of multicellular organismal development
+is_a: GO:1903706 ! regulation of hemopoiesis
 
 [Term]
 id: GO:1902107
 name: positive regulation of leukocyte differentiation
 is_a: GO:0045597 ! positive regulation of cell differentiation
 is_a: GO:1902105 ! regulation of leukocyte differentiation
+is_a: GO:1903708 ! positive regulation of hemopoiesis
+
+[Term]
+id: GO:1902578
+name: single-organism localization
+is_a: GO:0044699 ! single-organism process
+is_a: GO:0051179 ! localization
 
 [Term]
 id: GO:1902589
@@ -5694,10 +5959,26 @@ is_a: GO:0048584 ! positive regulation of response to stimulus
 is_a: GO:1903034 ! regulation of response to wounding
 
 [Term]
+id: GO:1903037
+name: regulation of leukocyte cell-cell adhesion
+is_a: GO:0022407 ! regulation of cell-cell adhesion
+
+[Term]
+id: GO:1903038
+name: negative regulation of leukocyte cell-cell adhesion
+is_a: GO:0022408 ! negative regulation of cell-cell adhesion
+is_a: GO:1903037 ! regulation of leukocyte cell-cell adhesion
+
+[Term]
+id: GO:1903039
+name: positive regulation of leukocyte cell-cell adhesion
+is_a: GO:0022409 ! positive regulation of cell-cell adhesion
+is_a: GO:1903037 ! regulation of leukocyte cell-cell adhesion
+
+[Term]
 id: GO:1903046
 name: meiotic cell cycle process
 is_a: GO:0022402 ! cell cycle process
-is_a: GO:0048610 ! cellular process involved in reproduction
 intersection_of: GO:0022402 ! cell cycle process
 intersection_of: BFO:0000050 GO:0051321 ! meiotic cell cycle
 relationship: BFO:0000050 GO:0051321 ! meiotic cell cycle
@@ -5709,6 +5990,47 @@ is_a: GO:0022402 ! cell cycle process
 intersection_of: GO:0022402 ! cell cycle process
 intersection_of: BFO:0000050 GO:0000278 ! mitotic cell cycle
 relationship: BFO:0000050 GO:0000278 ! mitotic cell cycle
+
+[Term]
+id: GO:1903510
+name: mucopolysaccharide metabolic process
+is_a: GO:0030203 ! glycosaminoglycan metabolic process
+
+[Term]
+id: GO:1903530
+name: regulation of secretion by cell
+is_a: GO:0051046 ! regulation of secretion
+is_a: GO:0060341 ! regulation of cellular localization
+
+[Term]
+id: GO:1903532
+name: positive regulation of secretion by cell
+is_a: GO:0048522 ! positive regulation of cellular process
+is_a: GO:0051047 ! positive regulation of secretion
+is_a: GO:1903530 ! regulation of secretion by cell
+
+[Term]
+id: GO:1903561
+name: extracellular vesicle
+is_a: GO:0031982 ! vesicle
+is_a: GO:0043230 ! extracellular organelle
+intersection_of: GO:0031982 ! vesicle
+intersection_of: BFO:0000050 GO:0005576 ! extracellular region
+relationship: BFO:0000050 GO:0005576 ! extracellular region
+
+[Term]
+id: GO:1903706
+name: regulation of hemopoiesis
+is_a: GO:0002682 ! regulation of immune system process
+is_a: GO:2000026 ! regulation of multicellular organismal development
+
+[Term]
+id: GO:1903708
+name: positive regulation of hemopoiesis
+is_a: GO:0002684 ! positive regulation of immune system process
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:1903706 ! regulation of hemopoiesis
 
 [Term]
 id: GO:2000026
