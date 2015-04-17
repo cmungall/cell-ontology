@@ -19,7 +19,7 @@ build/%: build/cl.owl
 cl.owl: build/cl.owl
 	cp $< $@
 cl.obo: build/cl.owl
-	owltools $(USECAT) $< --merge-imports-closure -o -f obo $@
+	owltools $(USECAT) $< --add-obo-shorthand-to-properties --merge-imports-closure -o -f obo $@
 cl-basic.owl: build/cl-simple.owl
 	owltools $< --remove-axioms -t DisjointClasses --set-ontology-id $(OBO)/cl/$@ -o $@
 cl-basic.obo: cl-basic.owl
@@ -80,16 +80,16 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
 imports/%_import.owl: cl-edit.owl mirror/%.owl imports/%_seed.owl
-	OWLTOOLS_MEMORY=12G owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties $(KEEPRELS)  --remove-annotation-assertions -l -s --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
+	OWLTOOLS_MEMORY=12G owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties -f $(KEEPRELS)  --remove-annotation-assertions -l -s --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
 
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: cl-edit.owl
-	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS)  -o $@
+	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 mirror/uberon.owl: cl-edit.owl
-	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
+	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
 mirror/pr.obo: cl-edit.owl
 	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
 mirror/pr.owl: mirror/pr.obo
