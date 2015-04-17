@@ -429,7 +429,6 @@ synonym: "colony forming unit monocyte" RELATED []
 synonym: "monocyte stem cell" RELATED []
 xref: CALOHA:TS-1195
 xref: FMA:83553
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002194 ! monopoietic cell
 relationship: develops_from CL:0002009 ! macrophage dendritic cell progenitor
 
@@ -504,7 +503,6 @@ xref: BTO:0002881
 xref: CALOHA:TS-2360
 xref: FMA:86684
 is_a: CL:0000048 ! multi fate stem cell
-is_a: CL:0002319 ! neural cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
 
 [Term]
@@ -651,7 +649,6 @@ xref: BTO:0001663
 xref: FMA:70576
 is_a: CL:0000146 ! simple columnar epithelial cell
 is_a: CL:0000151 ! secretory cell
-is_a: CL:0002077 ! ecto-epithelial cell
 relationship: develops_from CL:0007000 ! preameloblast
 
 [Term]
@@ -664,7 +661,6 @@ xref: BTO:0001769
 xref: CALOHA:TS-0696
 xref: FMA:62999
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002159 ! general ecto-epithelial cell
 relationship: develops_from CL:0007003 ! preodontoblast
 
@@ -1130,7 +1126,7 @@ name: autonomic neuron
 namespace: cell
 def: "A neruon whose cell body is within an autonomic ganglion." [GOC:tfm]
 xref: FMA:80121
-is_a: CL:2000032 ! peripheral nervous system neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000108
@@ -1226,14 +1222,12 @@ is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 id: CL:0000119
 name: cerebellar Golgi cell
 namespace: cell
-def: "Large intrinsic neuron located in the granule layer of the cerebellar cortex that extends its dendrites into the molecular layer where they receive contact from parallel fibers. The axon of the Golgi cell enters ramifies densely in the granule layer and enters into a complex arrangement with mossy fiber terminals and granule cell dendrites to form the cerebellar glomerulus. Llinas, Walton and Lang. In The Synaptic Organization of the Brain. 5th ed. 2004." [] {comment="NIF_Cell:sao1415726815"}
+def: "Large intrinsic neuron located in the granule layer of the cerebellar cortex that extends its dendrites into the molecular layer where they receive contact from parallel fibers. The axon of the Golgi cell enters ramifies densely in the granule layer and enters into a complex arrangement with mossy fiber terminals and granule cell dendrites to form the cerebellar glomerulus. Llinas, Walton and Lang. In The Synaptic Organization of the Brain. 5th ed. 2004." [] {comment="NIFSTD:sao1415726815"}
 synonym: "cerebellar Golgi neuron" EXACT []
 synonym: "cerebellum Golgi cell" EXACT []
 synonym: "Golgi cell" EXACT []
 synonym: "Golgi neuron" EXACT []
-is_a: CL:0000402 ! CNS interneuron
 is_a: CL:0011005 ! GABAergic interneuron
-is_a: CL:1001611 ! cerebellar neuron
 
 [Term]
 id: CL:0000120
@@ -1256,7 +1250,6 @@ xref: CALOHA:TS-0845
 xref: FMA:67969
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000527 ! efferent neuron
-is_a: CL:1001611 ! cerebellar neuron
 
 [Term]
 id: CL:0000122
@@ -1749,10 +1742,8 @@ xref: EV:0200009
 xref: FMA:70586
 xref: MA:0002419
 xref: ncithesaurus:Beta_Cell
-is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000168 ! insulin secreting cell
-is_a: CL:0008024 ! pancreatic endocrine cell
 relationship: develops_from CL:0002351 ! progenitor cell of endocrine pancreas
 
 [Term]
@@ -2047,7 +2038,6 @@ synonym: "inner ear hair cell" RELATED [GO:0060119]
 synonym: "inner ear receptor cell" RELATED [GO:0060119]
 xref: FMA:62364
 is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002374 ! ear hair cell
 is_a: CL:0002491 ! auditory epithelial cell
 
@@ -2107,8 +2097,6 @@ xref: FMA:67910
 is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0000206 ! chemoreceptor cell
-is_a: CL:0000362 ! epidermal cell
-is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002076 ! endo-epithelial cell
 
 [Term]
@@ -3058,7 +3046,7 @@ synonym: "pneumonocyte" EXACT []
 xref: BTO:0000395
 xref: CALOHA:TS-2168
 xref: FMA:62499
-is_a: CL:0010003 ! epithelial cell of alveolus of lung
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:0000323
@@ -3165,8 +3153,9 @@ alt_id: CL:1000422
 def: "A cell found within the adrenal medulla that secrete biogenic amine hormones upon stimulation." [GOC:tfm, http://www.britannica.com/EBchecked/topic/6405/adrenal-gland]
 synonym: "medullary chromaffin cell of adrenal gland" EXACT [FMA:69262]
 xref: FMA:69262
+is_a: CL:0000150 ! glandular epithelial cell
+is_a: CL:0000166 ! chromaffin cell
 is_a: CL:0000457 ! biogenic amine secreting cell
-is_a: CL:1000426 ! chromaffin cell of adrenal gland
 relationship: develops_from CL:0000011 ! migratory trunk neural crest cell
 
 [Term]
@@ -4069,7 +4058,6 @@ synonym: "LC" EXACT []
 xref: BTO:0000705
 xref: CALOHA:TS-2375
 xref: FMA:63072
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0000763 ! myeloid cell
 
@@ -4141,7 +4129,6 @@ namespace: cell
 def: "An epidermal cell that secretes chitinous cuticle from its apical side." [FlyBase:ds, ISBN:ISBN\:978-0801481253]
 comment: While insect epidermis is generally columnar/cuboidal, there are certainly well studied cases where it is not (e.g.- Rhodnius prolixus when starved). So it would be safer to add this as a differentium for particular species where this is known. -DSJ.
 is_a: CL:0000362 ! epidermal cell
-is_a: CL:0000710 ! neurecto-epithelial cell
 relationship: develops_from CL:0000464 ! epidermoblast
 
 [Term]
@@ -4513,7 +4500,6 @@ xref: FMA:67609
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000506 ! enkephalin secreting cell
 is_a: CL:0000509 ! gastrin secreting cell
-is_a: CL:0002180 ! mucous cell of stomach
 
 [Term]
 id: CL:0000509
@@ -4531,7 +4517,6 @@ xref: BTO:0000993
 xref: FMA:62897
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000323 ! lysozyme secreting cell
-is_a: CL:0002563 ! intestinal epithelial cell
 
 [Term]
 id: CL:0000511
@@ -4554,7 +4539,6 @@ namespace: cell
 alt_id: CL:0000714
 def: "A precursor cell destined to differentiate into cardiac muscle cell." [GOC:tfm, MESH:A11.635.470]
 xref: FMA:84797
-is_a: CL:0002494 ! cardiocyte
 is_a: CL:0010021 ! cardiac myoblast
 relationship: RO:0002203 CL:0000746 ! develops into cardiac muscle cell
 
@@ -4950,7 +4934,6 @@ synonym: "promegakaryocyte" RELATED []
 xref: BTO:0001164
 xref: CALOHA:TS-0610
 xref: FMA:84235
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0000050 ! megakaryocyte-erythroid progenitor cell
 
@@ -5020,7 +5003,6 @@ def: "A precursor in the monocytic series, being a cell intermediate in developm
 comment: Morphology: Mononuclear cell, diameter 14-18 _M, fine azurophilic granules; markers: CD11b (shared with many other myeloid cells); location: Adult: bone marrow; Fetal: Liver, Yolk Sac; role or process: hematopoiesis, monocyte development; lineage: hematopoietic, myeloid.
 xref: BTO:0004657
 xref: FMA:83551
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002194 ! monopoietic cell
 relationship: develops_from CL:0000040 ! monoblast
 
@@ -5087,7 +5069,7 @@ relationship: develops_from CL:0000042 ! neutrophilic myeloblast
 id: CL:0000565
 name: fat body cell
 namespace: cell
-def: "A cell whose primary function is intermediary metabolism." [FB:ma]
+def: "A cell found in fat bodies whose primary function is intermediary metabolism." [FB:ma]
 is_a: CL:0000181 ! metabolising cell
 
 [Term]
@@ -5211,7 +5193,6 @@ is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000166 ! chromaffin cell
 is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000506 ! enkephalin secreting cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 
 [Term]
 id: CL:0000578
@@ -5416,7 +5397,7 @@ synonym: "pyramidal neuron" EXACT []
 xref: BTO:0003102
 xref: FMA:67310
 xref: FMA:86775
-xref: NIF_Cell:sao862606388
+xref: NIFSTD:sao862606388
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 
 [Term]
@@ -5531,7 +5512,6 @@ synonym: "CFU-Eo" RELATED []
 synonym: "colony forming unit eosinophil" RELATED []
 synonym: "EoP" EXACT [PMCID:PMC2212039, PMCID:PMC2626675]
 synonym: "eosinophil stem cell" RELATED []
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 
@@ -5556,7 +5536,6 @@ synonym: "BaP" EXACT []
 synonym: "basophilic stem cell" RELATED []
 synonym: "CFU-Bas" RELATED []
 synonym: "colony forming unit basophil" RELATED []
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0002028 ! basophil mast progenitor cell
 
@@ -5681,7 +5660,6 @@ name: olfactory granule cell
 namespace: cell
 def: "Granule cell that is part of the olfactory bulb." [GOC:mah]
 is_a: CL:0000120 ! granule cell
-is_a: CL:0012001 ! neuron of the forebrain
 
 [Term]
 id: CL:0000627
@@ -5789,7 +5767,6 @@ xref: FMA:83089
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000166 ! chromaffin cell
 is_a: CL:0000167 ! peptide hormone secreting cell
-is_a: CL:2000004 ! pituitary gland cell
 
 [Term]
 id: CL:0000638
@@ -5888,7 +5865,7 @@ synonym: "renin secreting cell" EXACT []
 xref: FMA:84138
 is_a: CL:0000154 ! protein secreting cell
 is_a: CL:0000192 ! smooth muscle cell
-is_a: CL:1000618 ! juxtaglomerular complex cell
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:0000649
@@ -5942,6 +5919,7 @@ synonym: "epithelial cell of visceral layer of glomerular capsule" BROAD [FMA:70
 synonym: "glomerular podocyte" EXACT [FMA:70967]
 synonym: "podocyte" EXACT []
 xref: BTO:0002295
+is_a: CL:0002518 ! kidney epithelial cell
 is_a: CL:0002522 ! renal filtration cell
 is_a: CL:1000451 ! epithelial cell of visceral layer of glomerular capsule
 
@@ -6194,9 +6172,10 @@ synonym: "M-cell" EXACT []
 synonym: "microfold cell" EXACT []
 xref: BTO:0003600
 xref: FMA:62929
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000473 ! defensive cell
 is_a: CL:0000627 ! transporting cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:0000683
@@ -6226,8 +6205,8 @@ id: CL:0000686
 name: cerebrospinal fluid secreting cell
 namespace: cell
 def: "A columnar/cuboidal epithelial cell that secretes cerebrospinal fluid." [GOC:tfm]
+is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000151 ! secretory cell
-is_a: CL:0000710 ! neurecto-epithelial cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -6391,7 +6370,6 @@ synonym: "epithelial cell of choroid plexus" EXACT []
 xref: FMA:70549
 is_a: CL:0000065 ! ependymal cell
 is_a: CL:0000627 ! transporting cell
-is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000707
@@ -6408,7 +6386,6 @@ namespace: cell
 def: "Stromal cell that forms the internal covering of the vertebrate brain and produces ECM for this and the choroid plexus." [JB:jb]
 synonym: "leptomemingeal cell" RELATED []
 is_a: CL:0000327 ! extracellular matrix secreting cell
-is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000709
@@ -6683,7 +6660,6 @@ def: "A neuron that laterally connects other neurons in the inner nuclear layer 
 synonym: "horizontal cell" EXACT []
 xref: BTO:0004120
 is_a: CL:0000099 ! interneuron
-is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0000746
@@ -7072,7 +7048,6 @@ synonym: "interdigitating cell" BROAD []
 synonym: "mDC" EXACT []
 synonym: "veiled cell" BROAD []
 xref: BTO:0004721
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0000576 ! monocyte
 relationship: develops_from CL:0000763 ! myeloid cell
@@ -7697,7 +7672,6 @@ namespace: cell
 def: "A progenitor cell of the thrombocyte, a nucleated blood cell involved in coagulation typically seen in birds and other non-mammalian vertebrates." [GOC:add, GOC:tfm, PMID:7758949]
 comment: Note that this is a non-mammalian cell type.
 is_a: CL:0000226 ! single nucleate cell
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0000050 ! megakaryocyte-erythroid progenitor cell
 
@@ -7728,7 +7702,6 @@ synonym: "CFU-Mast " RELATED []
 synonym: "CFU-MC" RELATED []
 synonym: "colony forming unit mast cell" RELATED []
 synonym: "MCP" EXACT []
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0000839 ! myeloid lineage restricted progenitor cell
 relationship: develops_from CL:0002028 ! basophil mast progenitor cell
 
@@ -7755,7 +7728,6 @@ name: neutrophil progenitor cell
 namespace: cell
 def: "A progenitor cell of the neutrophil lineage." [GOC:add, GOC:tfm, ISBN:0721601464]
 synonym: "neutrophil stem cell" RELATED []
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 
@@ -7766,7 +7738,6 @@ namespace: cell
 def: "The most primitive precursor in the granulocytic series, having fine, evenly distributed chromatin, several nucleoli, a high nuclear-to-cytoplasmic ration (5:1-7:1), and a nongranular basophilic cytoplasm. They reside in the bone marrow." [GOC:add, http://en.wikipedia.org/wiki/Myeloblast, http://www.cap.org, ISBN:0721601464]
 xref: BTO:0000187
 xref: FMA:83524
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
@@ -7778,7 +7749,6 @@ namespace: cell
 def: "A precursor in the granulocytic series, being a cell intermediate in development between a myeloblast and myelocyte, that has distinct nucleoli, a nuclear-to-cytoplasmic ratio of 5:1 to 3:1, and containing a few primary cytoplasmic granules. Markers for this cell are fucosyltransferase FUT4-positive, CD33-positive, integrin alpha-M-negative, low affinity immunoglobulin gamma Fc region receptor III-negative, and CD24-negative." [GOC:add, GOC:amm, GOC:tfm, http://www.cap.org, ISBN:0721601464]
 xref: CALOHA:TS-0825
 xref: FMA:83530
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000835 ! myeloblast
@@ -7828,7 +7798,6 @@ name: immature conventional dendritic cell
 namespace: cell
 def: "An immature cell of the conventional dendritic cell lineage, characterized by high levels of antigen uptake via endocytosis, macropinocytosis, and phagocytosis, and typically found resident in the tissues. Markers for this cell are CD80-low, CD86-low, and MHC-II-low." [GOC:add, GOC:tfm, PMID:9521319]
 synonym: "immature myeloid dendritic cell" NARROW []
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0001029 ! common dendritic progenitor
 
@@ -7840,7 +7809,6 @@ def: "A mature cell of the conventional dendritic cell lineage, characterized by
 synonym: "mature dendritic cell" BROAD [] {comment="GOC:add"}
 synonym: "mature myeloid dendritic cell" NARROW []
 xref: FMA:83038
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0000840 ! immature conventional dendritic cell
 
@@ -7899,7 +7867,6 @@ synonym: "MZ B lymphocyte" EXACT []
 synonym: "MZ B-cell" EXACT []
 synonym: "MZ B-lymphocyte" EXACT []
 is_a: CL:0000785 ! mature B cell
-is_a: CL:2000074 ! splenocyte
 
 [Term]
 id: CL:0000846
@@ -7958,7 +7925,6 @@ name: neuromast mantle cell
 namespace: cell
 def: "Neuromast mantle cell is a non-sensory cell. Neuromast mantle cells surround the neuromast support cells and neuromast hair cells, separating the neuromast from the epidermis, and secrete cupula in which the ciliary bundles of all the hair cells are embedded." [ISBN:0125296509]
 is_a: CL:0000151 ! secretory cell
-is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000852
@@ -7966,7 +7932,6 @@ name: neuromast support cell
 namespace: cell
 def: "Neuromast support cell is a non-sensory cell of the neuromast that extend between the sensory hair cells from the basement membrane to the apical surface; neuromast support cells are surrounded by neuromast mantle cells." [ISBN:0125296509]
 is_a: CL:0000630 ! supportive cell
-is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000853
@@ -7978,7 +7943,7 @@ synonym: "supporting cell of olfactory epithelium" EXACT []
 synonym: "sustentaculocyte of olfactory epithelium" EXACT []
 xref: FMA:62302
 is_a: CL:0000630 ! supportive cell
-is_a: CL:0002167 ! olfactory epithelial cell
+is_a: CL:0002169 ! basal cell of olfactory epithelium
 
 [Term]
 id: CL:0000854
@@ -8003,7 +7968,6 @@ name: neuromast hair cell
 namespace: cell
 def: "Neuromast hair cell is a hair cell that acts as a sensory receptor of the neuromast; it is morphologically polarized as a result of the relative position of the single kinocilium and the clusters of stereocilia on its apical surface." [SANBI:mhl]
 is_a: CL:0000855 ! sensory hair cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:0000857
@@ -8185,7 +8149,6 @@ namespace: cell
 def: "A tissue-resident macrophage found in the central nervous system." [GO_REF:0000031, PMID:16322748]
 synonym: "CNS macrophage" EXACT []
 is_a: CL:0000864 ! tissue-resident macrophage
-is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000879
@@ -9481,7 +9444,6 @@ name: immature CD11c-low plasmacytoid dendritic cell
 namespace: cell
 def: "Immature CD11c-low plasmacytoid dendritic cell is a CD11c-low plasmacytoid dendritic cell that is CD80-low and CD86-low." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
 comment: Originally described in the dendritic cell ontology (DC_CL:0000006)(PMID:19243617).
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 relationship: develops_from CL:0001029 ! common dendritic progenitor
 
@@ -9491,7 +9453,6 @@ name: mature CD11c-low plasmacytoid dendritic cell
 namespace: cell
 def: "Mature CD11c-low plasmacytoid dendritic cell is a CD11c-low plasmacytoid dendritic cell that is CD83-high and is CD80-positive, CD86-positive, and MHCII-positive." [GO_REF:0000031, GOC:amm, PMID:15771572, PMID:17850486]
 comment: Originally described in the dendritic cell ontology (DC_CL:0000007)(PMID:19243617).
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000989 ! CD11c-low plasmacytoid dendritic cell
 relationship: develops_from CL:0000992 ! immature CD11c-low plasmacytoid dendritic cell
 
@@ -9539,7 +9500,6 @@ def: "CD8_alpha-negative CD11b-negative dendritic cell is a conventional dendrit
 comment: These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000011)(PMID:19243617).
 synonym: "DC.8-4-11b-" EXACT []
 synonym: "triple negative dendritic cell" EXACT []
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 
@@ -9550,7 +9510,6 @@ namespace: cell
 def: "CD8_alpha-negative CD11b-positive dendritic cell is a conventional dendritic cell that is CD11b-positive, CD4-positive and is CD205-negative and CD8_alpha-negative." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
 comment: Defined as having a disposition to secreting anti-inflammatory cytokines. These markers are associated with mouse cells. Originally described in the dendritic cell ontology (DC_CL:0000012)(PMID:19243617).
 synonym: "DC.4+" EXACT []
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0002465 ! CD11b-positive dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 
@@ -9561,7 +9520,6 @@ namespace: cell
 def: "CD8_alpha-positive CD11b-negative dendritic cell is a conventional dendritic cell that is CD11b-negative, CD4-negative and is CD205-positive and CD8_alpha-positive." [GO_REF:0000031, GOC:amm, GOC:tfm, PMCID:PMC2346585]
 comment: Cells are defined as having a disposition to secreting inflammatory cytokines. Originally described in the dendritic cell ontology (DC_CL:0000013)(PMID:19243617).
 synonym: "DC.8+" EXACT []
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 
@@ -9852,7 +9810,6 @@ comment: Surface markers are for mouse cells. Originally described in the dendri
 synonym: "CDP" EXACT [PMID:21219184]
 synonym: "common dendritic precursor" EXACT []
 synonym: "pro-DCs" EXACT [PMID:21219184]
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0001019 ! CD115-positive monocyte OR common dendritic progenitor
 relationship: develops_from CL:0002009 ! macrophage dendritic cell progenitor
 
@@ -9885,7 +9842,7 @@ id: CL:0001033
 name: hippocampal granule cell
 namespace: cell
 def: "Granule cell that is part of the hippocampus." [GOC:mah]
-is_a: CL:0001032 ! cortical granule cell
+is_a: CL:0000120 ! granule cell
 is_a: CL:0002608 ! hippocampal neuron
 
 [Term]
@@ -9923,7 +9880,6 @@ def: "Osteoblast that is non-terminally differentiated and located in cellular b
 comment: VSAO relationship simplified OBO_REL:integral_part_of VSAO:0000118
 xref: VSAO:0000117
 is_a: CL:0000062 ! osteoblast
-is_a: CL:0001035 ! bone cell
 
 [Term]
 id: CL:0001041
@@ -10304,7 +10260,6 @@ name: macrophage dendritic cell progenitor
 namespace: cell
 def: "A progenitor cell that can give rise to plasmacytoid and myeloid dendritic cells, and to monocytes and macrophages." [GOC:tfm, PMID:19273628]
 synonym: "MDP" EXACT []
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 ! hematopoietic oligopotent progenitor cell
 is_a: CL:0011115 ! precursor cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
@@ -10316,7 +10271,6 @@ id: CL:0002010
 name: pre-conventional dendritic cell
 namespace: cell
 def: "A lin-negative, MHC-II-negative, CD11c-positive, FLT3-positive cell with intermediate expression of SIRP-alpha." [GOC:tfm]
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 relationship: develops_from CL:0001029 ! common dendritic progenitor
 created_by: tmeehan
@@ -10517,7 +10471,6 @@ namespace: cell
 def: "A cell type that can give rise to basophil and mast cells. This cell is CD34-positive, CD117-positive, CD125-positive, FceRIa-negative, and T1/ST2-negative, and expresses Gata-1, Gata-2, C/EBPa" [GOC:ak, GOC:dsd, GOC:tfm, PMCID:PMC1312421]
 comment: There may be an intermediate cell type. These cells also CD13-positive, CD16-positive, CD32-positive, and integrin beta 7-positive. Transcription factors: GATA1-positive, MCP-1-positive, mitf-positive, PU.1-positive, and CEBP/a-low.
 synonym: "BMCP" EXACT []
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
 created_by: tmeehan
@@ -10948,7 +10901,6 @@ xref: BTO:0000538
 xref: FMA:62501
 is_a: CL:0000157 ! surfactant secreting cell
 is_a: CL:0000322 ! pneumocyte
-is_a: CL:1000272 ! lung secretory cell
 created_by: tmeehan
 creation_date: 2010-06-24T12:04:13Z
 
@@ -10961,8 +10913,8 @@ synonym: "acinar cell of pancreas" EXACT []
 xref: BTO:0000028
 xref: CALOHA:TS-0737
 xref: FMA:63032
+is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000622 ! acinar cell
-is_a: CL:1001599 ! pancreas exocrine glandular cell
 created_by: tmeehan
 creation_date: 2010-06-24T03:16:29Z
 
@@ -11137,8 +11089,8 @@ name: pancreatic ductal cell
 namespace: cell
 def: "Epithelial cell found in the ducts of the pancreas. This cell type contributes to the high luminal pH." [FMA:63099, GOC:tfm, PMID:14740223]
 xref: FMA:63099
-is_a: CL:1000488 ! cholangiocyte
-is_a: CL:1001433 ! epithelial cell of exocrine pancreas
+is_a: CL:0000069 ! branched duct epithelial cell
+is_a: CL:0000083 ! epithelial cell of pancreas
 created_by: tmeehan
 creation_date: 2010-06-30T08:49:43Z
 
@@ -11150,7 +11102,7 @@ def: "A cubodial epithelial cell that is continuous with the lining of intercala
 synonym: "centroacinar cell of Langerhans" EXACT []
 synonym: "pancreatic centroacinar cell" EXACT []
 xref: FMA:62455
-is_a: CL:1001433 ! epithelial cell of exocrine pancreas
+is_a: CL:0000083 ! epithelial cell of pancreas
 created_by: tmeehan
 creation_date: 2010-06-30T08:49:52Z
 
@@ -12025,7 +11977,6 @@ name: endosteal cell
 namespace: cell
 def: "A cell type that makes up the highly vascular membrane lining the marrow cavity of long bones." [FMA:0618947256, GOC:tfm]
 xref: FMA:86495
-is_a: CL:0001035 ! bone cell
 is_a: CL:0002078 ! meso-epithelial cell
 created_by: tmeehan
 creation_date: 2010-08-24T03:33:58Z
@@ -12118,7 +12069,6 @@ synonym: "epithelial cell rests of Malassez " EXACT []
 synonym: "epithelial debris of Malassez" EXACT []
 xref: FMA:62987
 is_a: CL:0002159 ! general ecto-epithelial cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 created_by: tmeehan
 creation_date: 2010-08-26T08:51:27Z
 
@@ -12152,7 +12102,6 @@ def: "An epithelial cell located on the basal lamina of the olfactory epithelium
 synonym: "horizontal basal call" BROAD []
 xref: FMA:62303
 is_a: CL:0002167 ! olfactory epithelial cell
-is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2010-08-26T01:58:54Z
 
@@ -12162,7 +12111,6 @@ name: keratinized cell of the oral mucosa
 namespace: cell
 def: "A keratinized cell located in the hard palate or gingiva." [GOC:tfm, PMID:12014572]
 is_a: CL:0000237 ! keratinizing barrier epithelial cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 is_a: CL:0002336 ! buccal mucosa cell
 created_by: tmeehan
 creation_date: 2010-08-26T02:51:30Z
@@ -12200,9 +12148,7 @@ synonym: "polar cushion cells" EXACT []
 xref: FMA:84143
 xref: KUPO:0001033
 is_a: CL:0000650 ! mesangial cell
-is_a: CL:1000500 ! kidney interstitial cell
 is_a: CL:1000618 ! juxtaglomerular complex cell
-is_a: CL:1000746 ! glomerular cell
 is_a: CL:1001318 ! renal interstitial pericyte
 created_by: tmeehan
 creation_date: 2010-08-25T02:20:55Z
@@ -12247,7 +12193,6 @@ synonym: "folliculostellate cell of pars anterior of adenohypophysis" EXACT []
 xref: FMA:83102
 is_a: CL:0000642 ! folliculostellate cell
 is_a: CL:0000710 ! neurecto-epithelial cell
-is_a: CL:2000004 ! pituitary gland cell
 created_by: tmeehan
 creation_date: 2010-08-25T03:10:10Z
 
@@ -12315,8 +12260,7 @@ alt_id: CL:1000400
 def: "A stomach epithelial cell that is olumnar in form with a few short apical microvilli; relatively undifferentiated mitotic cell from which other types of gland are derived; few in number, situated in the isthmus region of the gland and base of the gastric pit." [GOC:tfm, ISBN:0517223651]
 xref: FMA:62953
 is_a: CL:0000048 ! multi fate stem cell
-is_a: CL:0000152 ! exocrine cell
-is_a: CL:0002180 ! mucous cell of stomach
+is_a: CL:0002178 ! epithelial cell of stomach
 created_by: tmeehan
 creation_date: 2010-08-25T03:57:08Z
 
@@ -12353,7 +12297,6 @@ xref: BTO:0004632
 xref: FMA:70970
 is_a: CL:0000115 ! endothelial cell
 is_a: CL:0000666 ! fenestrated cell
-is_a: CL:1000746 ! glomerular cell
 created_by: tmeehan
 creation_date: 2010-08-26T10:59:44Z
 
@@ -12393,7 +12336,6 @@ name: metamyelocyte
 namespace: cell
 def: "A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a myelocyte and a band form cell. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare." [GOC:tfm, http://en.wikipedia.org/wiki/Metamyelocyte, ISBN:0721601464]
 xref: FMA:83541
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0002193 ! myelocyte
 created_by: tmeehan
@@ -12406,7 +12348,6 @@ namespace: cell
 def: "A cell type that is the first of the maturation stages of the granulocytic leukocytes normally found in the bone marrow. Granules are seen in the cytoplasm. The nuclear material of the myelocyte is denser than that of the myeloblast but lacks a definable membrane. The cell is flat and contains increasing numbers of granules as maturation progresses." [GOC:tfm, http://en.wikipedia.org/wiki/Myelocyte, ISBN:0323052908]
 xref: BTO:0000734
 xref: FMA:83525
-is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000836 ! promyelocyte
 created_by: tmeehan
@@ -12543,7 +12484,6 @@ namespace: cell
 alt_id: CL:1000386
 def: "A brush cell found in the epithelium of lobular bronchiole." [GOC:tfm]
 xref: FMA:263220
-is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:0002208 ! brush cell of bronchus
 created_by: tmeehan
 creation_date: 2010-09-02T02:38:34Z
@@ -12555,6 +12495,7 @@ namespace: cell
 alt_id: CL:1000390
 def: "A brush cell of the epithelium in the terminal bronchiole." [GOC:tfm]
 xref: FMA:263228
+is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:0002205 ! brush cell of lobular bronchiole
 created_by: tmeehan
 creation_date: 2010-09-02T02:38:36Z
@@ -12959,7 +12900,6 @@ namespace: cell
 def: "A fibroblast in the bone marrow." [GOC:tfm]
 xref: FMA:84377
 is_a: CL:0000057 ! fibroblast
-is_a: CL:0002092 ! bone marrow cell
 created_by: tmeehan
 creation_date: 2010-09-07T02:25:18Z
 
@@ -12994,7 +12934,6 @@ synonym: "smooth muscle fiber of sphincter of pupil" EXACT []
 synonym: "smooth muscle fibre of sphincter of pupil" RELATED []
 xref: FMA:70611
 is_a: CL:0000358 ! sphincter associated smooth muscle cell
-is_a: CL:0000359 ! vascular associated smooth muscle cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
 created_by: tmeehan
 creation_date: 2010-09-08T08:53:42Z
@@ -13245,7 +13184,7 @@ namespace: cell
 def: "A D cell located in the colon." [GOC:tfm]
 xref: FMA:268744
 is_a: CL:0000502 ! type D enteroendocrine cell
-is_a: CL:1001516 ! intestinal enteroendocrine cell
+is_a: CL:0002658 ! glandular cell of the large intestine
 is_a: CL:1001588 ! colon glandular cell
 created_by: tmeehan
 creation_date: 2010-09-10T11:37:35Z
@@ -13257,7 +13196,7 @@ namespace: cell
 def: "A type D cell of the small intestine." [GOC:tfm]
 xref: FMA:268736
 is_a: CL:0000502 ! type D enteroendocrine cell
-is_a: CL:1001516 ! intestinal enteroendocrine cell
+is_a: CL:0002254 ! epithelial cell of small intestine
 is_a: CL:1001598 ! small intestine glandular cell
 created_by: tmeehan
 creation_date: 2010-09-10T01:34:22Z
@@ -13692,7 +13631,7 @@ def: "A ciliated epithelial cell of the retina, this cell type uptakes sodium ch
 synonym: "PE" EXACT []
 xref: FMA:70606
 is_a: CL:0000067 ! ciliated epithelial cell
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000529 ! pigmented epithelial cell
 is_a: CL:0005012 ! multi-ciliated epithelial cell
 created_by: tmeehan
 creation_date: 2010-09-13T04:09:27Z
@@ -13733,7 +13672,7 @@ xref: FMA:70973
 xref: KUPO:0001044
 is_a: CL:0000239 ! brush border epithelial cell
 is_a: CL:0002078 ! meso-epithelial cell
-is_a: CL:1000615 ! kidney cortex tubule cell
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:0002307
@@ -13842,7 +13781,6 @@ name: supporting cell of cochlea
 namespace: cell
 def: "An epithelial supporting cell located in the cochlea." [GOC:tfm]
 xref: FMA:79796
-is_a: CL:0001035 ! bone cell
 is_a: CL:0005014 ! auditory epithelial support cell
 created_by: tmeehan
 creation_date: 2010-09-14T03:31:38Z
@@ -13961,9 +13899,9 @@ synonym: "epithelial cell of lactiferous gland" EXACT []
 synonym: "luminal cell of alveolus of lactiferous gland" EXACT []
 xref: FMA:74506
 xref: FMA:79866
+is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000314 ! milk secreting cell
 is_a: CL:0002159 ! general ecto-epithelial cell
-is_a: CL:1001586 ! mammary gland glandular cell
 created_by: tmeehan
 creation_date: 2010-09-20T01:30:57Z
 
@@ -13997,7 +13935,7 @@ name: bronchial epithelial cell
 namespace: cell
 def: "An epithelial cell of the bronchus." [GOC:tfm]
 xref: BTO:0002922
-is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
+is_a: CL:0000066 ! epithelial cell
 created_by: tmeehan
 creation_date: 2010-09-20T02:00:00Z
 
@@ -14211,7 +14149,7 @@ def: "An endothelial cell that lines the intracavitary lumen of the heart, separ
 synonym: "endocardial endothelial cell" EXACT []
 synonym: "endothelial cell of endocardium" EXACT [FMA:75621]
 xref: FMA:75621
-is_a: CL:0010008 ! cardiac endothelial cell
+is_a: CL:0000115 ! endothelial cell
 created_by: tmeehan
 creation_date: 2010-09-21T04:33:05Z
 
@@ -14381,7 +14319,7 @@ namespace: cell
 def: "A smooth muscle cell of the myometrium that enlarges and stretches during pregnancy, and contracts in response to oxytocin." [GOC:tfm, PMID:11429640]
 synonym: "myometrium smooth muscle cell" EXACT []
 xref: BTO:0004519
-is_a: CL:0002601 ! uterine smooth muscle cell
+is_a: CL:0000192 ! smooth muscle cell
 created_by: tmeehan
 creation_date: 2010-09-23T03:46:34Z
 
@@ -15373,7 +15311,6 @@ id: CL:0002461
 name: CD103-positive dendritic cell
 namespace: cell
 def: "A conventional dendritic cell that is CD103-positive. This cell type is usually found in non-lymphoid tissue." [GOC:tfm, http://www.immgen.org/index_content.html]
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
 created_by: tmeehan
@@ -15384,7 +15321,6 @@ id: CL:0002462
 name: adipose dendritic cell
 namespace: cell
 def: "A F4/80-negative dendritic cell located in adipose tissue." [GOC:tfm, http://www.immgen.org/index_content.html]
-is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0002010 ! pre-conventional dendritic cell
@@ -15566,7 +15502,7 @@ name: nasal mucosa goblet cell
 namespace: cell
 def: "A goblet cell located in the nasal epithelium." [GOC:cjm, GOC:tfm]
 xref: MP:0002262
-is_a: CL:0002370 ! respiratory goblet cell
+is_a: CL:0000160 ! goblet cell
 created_by: tmeehan
 creation_date: 2010-12-03T03:03:02Z
 
@@ -15585,7 +15521,7 @@ id: CL:0002482
 name: dermal melanocyte
 namespace: cell
 def: "A melanocyte that produces pigment in the dermis." [GOC:cjm, GOC:tfm, MP:0009386]
-is_a: CL:1000458 ! melanocyte of skin
+is_a: CL:0000148 ! melanocyte
 created_by: tmeehan
 creation_date: 2010-12-03T03:17:05Z
 
@@ -15594,8 +15530,8 @@ id: CL:0002483
 name: hair follicle melanocyte
 namespace: cell
 def: "A melanocyte that produces pigment within the hair follicle." [GOC:tfm, MP:0004381]
+is_a: CL:0000148 ! melanocyte
 is_a: CL:0002559 ! hair follicle cell
-is_a: CL:2000000 ! epidermal melanocyte
 created_by: tmeehan
 creation_date: 2010-12-03T03:17:09Z
 
@@ -15624,7 +15560,6 @@ id: CL:0002486
 name: strial intermediate cell
 namespace: cell
 def: "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ." [GOC:tfm, MP:0000048]
-is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0002484 ! epithelial melanocyte
 is_a: CL:0002491 ! auditory epithelial cell
 created_by: tmeehan
@@ -15789,8 +15724,8 @@ namespace: cell
 def: "An enteroendocrine cell of the small intestine that secretes motilin." [GOC:tfm, PMID:15153415]
 synonym: "Mo enteroendocrine cell" BROAD []
 xref: FMA:63420
+is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0002272 ! motilin secreting cell
-is_a: CL:1001516 ! intestinal enteroendocrine cell
 is_a: CL:1001598 ! small intestine glandular cell
 created_by: tmeehan
 creation_date: 2010-12-07T03:55:49Z
@@ -16174,7 +16109,6 @@ name: mesenchymal stem cell of the bone marrow
 namespace: cell
 def: "A mesenchymal stem cell that is part of the bone marrow." [GOC:tfm]
 is_a: CL:0000134 ! mesenchymal stem cell
-is_a: CL:0002092 ! bone marrow cell
 created_by: tmeehan
 creation_date: 2011-02-28T01:47:47Z
 
@@ -16259,7 +16193,6 @@ name: fibroblast of choroid plexus
 namespace: cell
 def: "A fibroblast that is part of the choroid plexus." [GOC:tfm]
 is_a: CL:0000057 ! fibroblast
-is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2011-02-28T05:01:39Z
 
@@ -16359,7 +16292,7 @@ id: CL:0002560
 name: inner root sheath cell
 namespace: cell
 def: "An epithelial cell that resides in the inner root sheath of the hair follicle." [GOC:tfm]
-is_a: CL:0000362 ! epidermal cell
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002559 ! hair follicle cell
 created_by: tmeehan
 creation_date: 2011-03-01T04:27:51Z
@@ -16369,7 +16302,7 @@ id: CL:0002561
 name: outer root sheath cell
 namespace: cell
 def: "An epithelial cell that is part of the outer root sheath." [GOC:tfm]
-is_a: CL:0000362 ! epidermal cell
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002559 ! hair follicle cell
 created_by: tmeehan
 creation_date: 2011-03-01T04:29:47Z
@@ -16381,7 +16314,6 @@ namespace: cell
 def: "An epidermal cell that is part of the germinal matrix." [GOC:tfm]
 synonym: "trichocyte" EXACT []
 is_a: CL:0000362 ! epidermal cell
-is_a: CL:0002559 ! hair follicle cell
 created_by: tmeehan
 creation_date: 2011-03-01T04:31:06Z
 
@@ -16505,7 +16437,6 @@ name: central nervous system pericyte
 namespace: cell
 def: "A pericyte of the central nervous system." [GOC:tfm]
 is_a: CL:0000669 ! pericyte cell
-is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2011-03-02T02:54:18Z
 
@@ -16515,7 +16446,6 @@ name: perineural cell
 namespace: cell
 def: "A myofibroblast that lies in the connective tissue of the spinal cord that has a distinctly lamellar arrangement." [GO:tfm, http://en.wikipedia.org/wiki/Perineurium]
 is_a: CL:0000186 ! myofibroblast cell
-is_a: CL:0002319 ! neural cell
 is_a: CL:0002320 ! connective tissue cell
 created_by: tmeehan
 creation_date: 2011-03-02T03:03:58Z
@@ -16610,7 +16540,7 @@ xref: BTO:0004910
 xref: FMA:75802
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000149 ! visual pigment cell
-is_a: CL:0009004 ! retinal cell
+is_a: CL:0002371 ! somatic cell
 created_by: tmeehan
 creation_date: 2011-03-06T03:37:09Z
 
@@ -16638,7 +16568,6 @@ name: smooth muscle cell of the brain vasculature
 namespace: cell
 def: "A vascular associated smooth muscle cell of the brain vasculature." [GOC:tfm]
 is_a: CL:0000359 ! vascular associated smooth muscle cell
-is_a: CL:0002319 ! neural cell
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:20Z
 
@@ -16658,7 +16587,6 @@ name: smooth muscle cell of the coronary artery
 namespace: cell
 def: "A smooth muscle cell of the coronary artery." [GOC:tfm]
 is_a: CL:0000359 ! vascular associated smooth muscle cell
-is_a: CL:0002494 ! cardiocyte
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:34Z
 
@@ -16667,7 +16595,7 @@ id: CL:0002593
 name: smooth muscle cell of the internal thoracic artery
 namespace: cell
 def: "A smooth muscle of the internal thoracic artery." [GOC:tfm]
-is_a: CL:0002595 ! smooth muscle cell of the subclavian artery
+is_a: CL:0000359 ! vascular associated smooth muscle cell
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:41Z
 
@@ -16760,7 +16688,6 @@ name: astrocyte of the cerebellum
 namespace: cell
 def: "An astrocyte of the cerebellum." [GOC:tfm]
 is_a: CL:0000127 ! astrocyte
-is_a: CL:2000005 ! brain macroglial cell
 created_by: tmeehan
 creation_date: 2011-03-06T06:57:27Z
 
@@ -16768,7 +16695,7 @@ creation_date: 2011-03-06T06:57:27Z
 id: CL:0002604
 name: astrocyte of the hippocampus
 namespace: cell
-is_a: CL:0002605 ! astrocyte of the cerebral cortex
+is_a: CL:0000127 ! astrocyte
 is_a: CL:1001580 ! hippocampus glial cell
 created_by: tmeehan
 creation_date: 2011-03-06T06:57:33Z
@@ -16778,7 +16705,7 @@ id: CL:0002605
 name: astrocyte of the cerebral cortex
 namespace: cell
 def: "An astrocyte of the cerebral cortex." [GOC:tfm]
-is_a: CL:0012000 ! astrocyte of the forebrain
+is_a: CL:0000127 ! astrocyte
 is_a: CL:1001579 ! cerebral cortex glial cell
 created_by: tmeehan
 creation_date: 2011-03-06T06:57:36Z
@@ -16806,7 +16733,7 @@ id: CL:0002608
 name: hippocampal neuron
 namespace: cell
 def: "A neuron of the hippocampus." [GOC:tfm]
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 created_by: tmeehan
 creation_date: 2011-03-06T07:31:49Z
 
@@ -16818,8 +16745,8 @@ def: "A CNS neuron of the cerebral cortex." [GOC:tfm]
 synonym: "cortical neuron" EXACT []
 xref: BTO:0004102
 xref: FMA:84104
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0010012 ! cerebral cortex neuron
-is_a: CL:0012001 ! neuron of the forebrain
 created_by: tmeehan
 creation_date: 2011-03-06T07:37:08Z
 
@@ -16855,7 +16782,7 @@ id: CL:0002613
 name: striatum neuron
 namespace: cell
 def: "A neuron of the striatum." [GOC:tfm]
-is_a: CL:0012001 ! neuron of the forebrain
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 created_by: tmeehan
 creation_date: 2011-03-06T07:47:12Z
 
@@ -16937,7 +16864,8 @@ creation_date: 2011-03-14T12:31:49Z
 id: CL:0002621
 name: gingival epithelial cell
 namespace: cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
 created_by: tmeehan
 creation_date: 2011-03-14T12:46:28Z
 
@@ -17063,7 +16991,8 @@ id: CL:0002634
 name: epithelial cell of anal column
 namespace: cell
 def: "An epithelial cell of the anal column." [GOC:tfm]
-is_a: CL:0002253 ! epithelial cell of large intestine
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
 created_by: tmeehan
 creation_date: 2011-07-08T12:11:38Z
 
@@ -17291,7 +17220,7 @@ name: glandular cell of endometrium
 namespace: cell
 def: "A glandular epithelial cell of the endometrium." [GOC:tfm]
 xref: FMA:86489
-is_a: CL:1001591 ! oviduct glandular cell
+is_a: CL:0000150 ! glandular epithelial cell
 created_by: tmeehan
 creation_date: 2011-07-08T03:54:08Z
 
@@ -17313,7 +17242,6 @@ namespace: cell
 def: "A glandular epithelial cell of the large intestine." [GOC:tfm]
 xref: FMA:87194
 is_a: CL:0000150 ! glandular epithelial cell
-is_a: CL:0002253 ! epithelial cell of large intestine
 created_by: tmeehan
 creation_date: 2011-07-08T04:03:01Z
 
@@ -17542,7 +17470,7 @@ name: PP cell of intestine
 namespace: cell
 def: "A PP cell found in intestine." [GOC:tfm, PMID:2420136, PMID:728970]
 is_a: CL:0000696 ! PP cell
-is_a: CL:1001516 ! intestinal enteroendocrine cell
+is_a: CL:0002563 ! intestinal epithelial cell
 created_by: tmeehan
 creation_date: 2011-09-27T11:59:01Z
 
@@ -17900,7 +17828,6 @@ name: enteric neuron
 namespace: cell
 def: "Neuron that is part of the enteric nervous system." [CL:MAH]
 is_a: CL:0000029 ! neuron neural crest derived
-is_a: CL:0000107 ! autonomic neuron
 relationship: develops_from CL:0002607 ! migratory enteric neural crest cell
 created_by: haendel
 creation_date: 2012-06-28T08:20:31Z
@@ -17959,9 +17886,10 @@ id: CL:0007017
 name: Stiftchenzellen
 def: "An epidermal cell with apical microvilli or a single apical projection have synaptic associations with nerve fibres in the epidermis. " [PMID:1087183]
 comment: Taxon specificity not yet fully known, but are known in anuran larvae but not in adults.
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0000206 ! chemoreceptor cell
 is_a: CL:0000362 ! epidermal cell
-is_a: CL:0000710 ! neurecto-epithelial cell
 created_by: haendel
 
 [Term]
@@ -18169,7 +18097,6 @@ id: CL:0008022
 name: endocardial cushion cell
 def: "A mesenchymal cell of the endocardial cushion.   These cells develop via an epithelial to mesenchymal transition when endocardial cells break cell-to-cell contacts and migrate into the cardiac jelly. Cells from this population form the heart septa and valves." [PMID:18816864]
 is_a: CL:0000569 ! cardiac mesenchymal cell
-is_a: CL:0002494 ! cardiocyte
 
 [Term]
 id: CL:0008023
@@ -18198,7 +18125,6 @@ name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
 synonym: "spinal sensory neuron" EXACT []
 is_a: CL:0000101 ! sensory neuron
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:0009001
@@ -18230,7 +18156,7 @@ name: retinal cell
 def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." []
 xref: GOC:pr
 xref: PMID:10702418
-is_a: CL:0002319 ! neural cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:0009005
@@ -18246,7 +18172,6 @@ name: stromal cell of bone marrow
 def: "a stromal cell that is part_of a bone marrow" []
 synonym: "bone marrow stromal cell" EXACT []
 is_a: CL:0000499 ! stromal cell
-is_a: CL:0002092 ! bone marrow cell
 created_by: GOC:cjm
 
 [Term]
@@ -18263,7 +18188,7 @@ name: epithelial cell of alveolus of lung
 def: "a epithelial cell that is part_of a alveolus of lung" []
 comment: May be merged with pneumocyte in future
 synonym: "alveolus of lung epithelial cell" EXACT []
-is_a: CL:0000082 ! epithelial cell of lung
+is_a: CL:0000066 ! epithelial cell
 created_by: GOC:cjm
 
 [Term]
@@ -18280,7 +18205,7 @@ id: CL:0010005
 name: atrioventricular bundle cell
 def: "A specialized cardiomyocyte that transmit signals from the AV node to the cardiac Purkinje fibers." [GOC:mtg_heart]
 synonym: "AV bundle cell" EXACT []
-is_a: CL:0010007 ! His-Purkinje system cell
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:0010006
@@ -18316,15 +18241,39 @@ is_a: CL:1001611 ! cerebellar neuron
 id: CL:0010011
 name: cerebral cortex GABAergic interneuron
 def: "a GABAergic interneuron that is part_of a cerebral cortex" []
-is_a: CL:0000402 ! CNS interneuron
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:0010012 ! cerebral cortex neuron
 is_a: CL:0011005 ! GABAergic interneuron
 
 [Term]
 id: CL:0010012
 name: cerebral cortex neuron
 def: "a neuron that is part_of a cerebral cortex" []
-is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:0000540 ! neuron
+
+[Term]
+id: CL:0010013
+name: type I pinealocyte
+synonym: "light pinealocyte" EXACT []
+is_a: CL:0000652 ! pinealocyte
+
+[Term]
+id: CL:0010014
+name: type II pinealocyte
+synonym: "dark pinealocyte" EXACT []
+is_a: CL:0000652 ! pinealocyte
+
+[Term]
+id: CL:0010015
+name: coronet cell
+def: "A highly specialized cell type exclusive to and forming neuroepithelium of the Saccus vasculosus, covering the caudal diverticulum of the infundibular recess." [GOC:mr, PMID:17595538]
+comment: Editor note: remember to link to Saccus vasculosus in next uberon release
+is_a: CL:0000066 ! epithelial cell
+
+[Term]
+id: CL:0010016
+name: collar cell
+def: "a cell with a flagellum surrounded by a collar of microvilli. The motion of the flagellum draws water past the microvilli, serving either a feeding or sensory function. Collar cells are found in multiple animals, including sponges, echinoderms, and cnidarians. They are also found outside animals in the choanoflagellates. Although collar cells are superficially similar, their cytoskeletal structure and functional biology are different in different groups of organisms." [] {comment="http://dx.doi.org/10.1016/j.tree.2015.03.003"}
+is_a: CL:0000548 ! animal cell
 
 [Term]
 id: CL:0010020
@@ -18357,7 +18306,6 @@ id: CL:0011001
 name: spinal cord motor neuron
 def: "A motor neuron that passes from the spinal cord toward or to a muscle and conducts an impulse that causes movement." [GOC:nv]
 is_a: CL:0000100 ! motor neuron
-is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:0011002
@@ -18372,8 +18320,6 @@ name: magnocellular neurosecretory cell (duplicate class)
 def: "A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that secretes the hormones oxytocin and vasopressin." [GOC:nv, MP:0009467]
 synonym: "magnocellular neuron" EXACT []
 is_a: CL:0000381 ! neurosecretory neuron
-is_a: CL:2000029 ! central nervous system neuron
-is_a: CL:2000030 ! hypothalamus native cell
 
 [Term]
 id: CL:0011004
@@ -18394,9 +18340,7 @@ id: CL:0011006
 name: lugaro cell
 def: "An inhibitory GABAergic interneuron found in the cerebellar cortex." [GOC:nv]
 synonym: "Lugaro cell" EXACT []
-is_a: CL:0000402 ! CNS interneuron
 is_a: CL:0011005 ! GABAergic interneuron
-is_a: CL:1001611 ! cerebellar neuron
 
 [Term]
 id: CL:0011100
@@ -18428,7 +18372,6 @@ name: interplexiform cell
 def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer." [PMID:12771169]
 comment: Need to MIREOT retinal inner nuclear layer (part of)
 is_a: CL:0000099 ! interneuron
-is_a: CL:0009004 ! retinal cell
 
 [Term]
 id: CL:0011105
@@ -18460,7 +18403,7 @@ id: CL:0011108
 name: colon epithelial cell
 def: "Epithelial cell that is part of the colon epithelium. " []
 synonym: "colonic epithelial cell" EXACT []
-is_a: CL:0002253 ! epithelial cell of large intestine
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:0011109
@@ -18520,7 +18463,6 @@ namespace: cell
 def: "An astrocyte of the forebrain." []
 synonym: "forebrain astrocyte" EXACT []
 is_a: CL:0000127 ! astrocyte
-is_a: CL:2000005 ! brain macroglial cell
 created_by: tberardini
 
 [Term]
@@ -18548,12 +18490,12 @@ is_a: CL:0000100 ! motor neuron
 [Term]
 id: CL:1000001
 name: retrotrapezoid nucleus neuron
-is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:1000022
 name: mesonephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:1000042
@@ -18591,18 +18533,18 @@ is_a: CL:0000357 ! stratified epithelial stem cell
 [Term]
 id: CL:1000090
 name: pronephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:1000123
 name: metanephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:1000143
 name: lung goblet cell
 is_a: CL:0000082 ! epithelial cell of lung
-is_a: CL:0002370 ! respiratory goblet cell
+is_a: CL:0000160 ! goblet cell
 is_a: CL:1000272 ! lung secretory cell
 
 [Term]
@@ -18737,7 +18679,7 @@ namespace: cell
 def: "A smooth muscle cell that is part of the colon." [GOC:tfm]
 synonym: "non-striated muscle fiber of colon" EXACT [FMA:15663]
 xref: FMA:15663
-is_a: CL:1000279 ! smooth muscle cell of large intestine
+is_a: CL:0002504 ! enteric smooth muscle cell
 
 [Term]
 id: CL:1000281
@@ -18747,7 +18689,7 @@ def: "A smooth muscle cell that is part of the cecum." [GOC:tfm]
 synonym: "non-striated muscle fiber of cecum" EXACT [FMA:15681]
 synonym: "smooth muscle fiber of cecum" EXACT []
 xref: FMA:15681
-is_a: CL:1000280 ! smooth muscle cell of colon
+is_a: CL:0000192 ! smooth muscle cell
 
 [Term]
 id: CL:1000282
@@ -18793,7 +18735,7 @@ def: "A smooth muscle cell that is part of the rectum." [GOC:tfm]
 synonym: "non-striated muscle fiber of rectum" EXACT [FMA:17522]
 synonym: "smooth muscle fiber of rectum" EXACT []
 xref: FMA:17522
-is_a: CL:1000279 ! smooth muscle cell of large intestine
+is_a: CL:0002504 ! enteric smooth muscle cell
 
 [Term]
 id: CL:1000287
@@ -18853,7 +18795,7 @@ def: "A mesothelial cell that is part of the dura mater." [GOC:tfm]
 synonym: "squamous mesothelial cell of dura mater" EXACT [FMA:256516]
 xref: FMA:256516
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002319 ! neural cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000299
@@ -18935,7 +18877,7 @@ namespace: cell
 def: "A fibrocyte that is part of the adventitia of ureter." [GOC:tfm]
 xref: FMA:261289
 is_a: CL:0000135 ! fibrocyte
-is_a: CL:1000708 ! ureter adventitial cell
+is_a: CL:0002503 ! adventitial cell
 
 [Term]
 id: CL:1000309
@@ -18945,9 +18887,7 @@ def: "A fat cell that is part of the epicardial fat." [GOC:tfm]
 synonym: "adipocyte of epicardial fat" EXACT [FMA:261293]
 synonym: "epicardial fat cell" EXACT [FMA:261293]
 xref: FMA:261293
-is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000136 ! fat cell
-is_a: CL:0002494 ! cardiocyte
 
 [Term]
 id: CL:1000310
@@ -18976,8 +18916,8 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of bronchus." [GOC:tfm]
 synonym: "goblet cell of epithelium of bronchus" EXACT [FMA:263032]
 xref: FMA:263032
+is_a: CL:0000160 ! goblet cell
 is_a: CL:0002328 ! bronchial epithelial cell
-is_a: CL:0002370 ! respiratory goblet cell
 
 [Term]
 id: CL:1000313
@@ -18987,7 +18927,7 @@ def: "A goblet cell that is part of the epithelium of stomach." [GOC:tfm]
 synonym: "goblet cell of epithelium of stomach" EXACT [FMA:263035]
 xref: FMA:263035
 is_a: CL:0000160 ! goblet cell
-is_a: CL:0002180 ! mucous cell of stomach
+is_a: CL:0002659 ! glandular cell of stomach
 
 [Term]
 id: CL:1000314
@@ -18997,7 +18937,7 @@ def: "A goblet cell that is part of the epithelium of gastric cardiac gland." [G
 synonym: "goblet cell of epithelium of gastric cardiac gland" EXACT []
 xref: FMA:263038
 is_a: CL:0000152 ! exocrine cell
-is_a: CL:1000313 ! gastric goblet cell
+is_a: CL:0000160 ! goblet cell
 
 [Term]
 id: CL:1000315
@@ -19025,7 +18965,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of intestinal villus." [GOC:tfm]
 synonym: "goblet cell of epithelium of intestinal villus" EXACT []
 xref: FMA:263046
-is_a: CL:1000495 ! small intestine goblet cell
+is_a: CL:0000160 ! goblet cell
 
 [Term]
 id: CL:1000318
@@ -19069,8 +19009,8 @@ def: "A goblet cell that is part of the epithelium of pancreatic duct." [GOC:tfm
 synonym: "goblet cell of epithelium of pancreatic duct" EXACT [FMA:263058]
 xref: FMA:263058
 is_a: CL:0000069 ! branched duct epithelial cell
+is_a: CL:0000083 ! epithelial cell of pancreas
 is_a: CL:0000160 ! goblet cell
-is_a: CL:1001599 ! pancreas exocrine glandular cell
 
 [Term]
 id: CL:1000323
@@ -19080,7 +19020,7 @@ def: "A goblet cell that is part of the epithelium of pyloric gland." [GOC:tfm]
 synonym: "goblet cell of epithelium of pyloric gland" EXACT []
 xref: FMA:263061
 is_a: CL:0000152 ! exocrine cell
-is_a: CL:1000313 ! gastric goblet cell
+is_a: CL:0000160 ! goblet cell
 
 [Term]
 id: CL:1000324
@@ -19089,7 +19029,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of duodenum." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of duodenum" EXACT []
 xref: FMA:263063
-is_a: CL:1000317 ! intestinal villus goblet cell
+is_a: CL:0000160 ! goblet cell
 is_a: CL:1001589 ! duodenum glandular cell
 
 [Term]
@@ -19099,7 +19039,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of jejunum." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of jejunum" EXACT []
 xref: FMA:263065
-is_a: CL:1000317 ! intestinal villus goblet cell
+is_a: CL:0000160 ! goblet cell
 
 [Term]
 id: CL:1000326
@@ -19108,7 +19048,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of ileum." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of ileum" EXACT []
 xref: FMA:263067
-is_a: CL:1000317 ! intestinal villus goblet cell
+is_a: CL:0000160 ! goblet cell
 
 [Term]
 id: CL:1000327
@@ -19117,7 +19057,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of appendix." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of appendix" EXACT []
 xref: FMA:263069
-is_a: CL:1000320 ! large intestine goblet cell
+is_a: CL:0000160 ! goblet cell
 is_a: CL:1001585 ! appendix glandular cell
 
 [Term]
@@ -19168,7 +19108,6 @@ name: serous cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263084
-is_a: CL:1000272 ! lung secretory cell
 is_a: CL:1000331 ! serous cell of epithelium of bronchus
 
 [Term]
@@ -19178,7 +19117,6 @@ namespace: cell
 def: "An enterocyte that is part of the epithelium of small intestine." [GOC:tfm]
 xref: FMA:263086
 is_a: CL:0000584 ! enterocyte
-is_a: CL:0002254 ! epithelial cell of small intestine
 
 [Term]
 id: CL:1000335
@@ -19195,7 +19133,6 @@ namespace: cell
 def: "An enterocyte that is part of the epithelium of duodenal gland." [GOC:tfm]
 xref: FMA:263092
 is_a: CL:0000584 ! enterocyte
-is_a: CL:0002254 ! epithelial cell of small intestine
 
 [Term]
 id: CL:1000338
@@ -19244,6 +19181,7 @@ namespace: cell
 def: "A paneth cell that is part of the epithelium of small intestine." [GOC:tfm]
 xref: FMA:263104
 is_a: CL:0000510 ! paneth cell
+is_a: CL:0002254 ! epithelial cell of small intestine
 is_a: CL:1001598 ! small intestine glandular cell
 
 [Term]
@@ -19280,7 +19218,6 @@ namespace: cell
 def: "A columnar cell of the colon that is part of the colonic epithelium." [GOC:tfm]
 xref: FMA:263114
 is_a: CL:0002071 ! enterocyte of epithelium of large intestine
-is_a: CL:0011108 ! colon epithelial cell
 
 [Term]
 id: CL:1000348
@@ -19288,7 +19225,6 @@ name: basal cell of epithelium of trachea
 namespace: cell
 def: "A basal cell that is part of the epithelium of trachea." [GOC:tfm]
 xref: FMA:263118
-is_a: CL:0000307 ! tracheal epithelial cell
 is_a: CL:0002633 ! respiratory basal cell
 
 [Term]
@@ -19299,7 +19235,6 @@ alt_id: CL:0002331
 def: "A basal cell found in the bronchus epithelium." [GOC:tfm]
 synonym: "basal cell of bronchus" EXACT []
 xref: FMA:263120
-is_a: CL:0002328 ! bronchial epithelial cell
 is_a: CL:0002329 ! basal epithelial cell of tracheobronchial tree
 is_a: CL:0002633 ! respiratory basal cell
 
@@ -19325,7 +19260,6 @@ name: basal cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A basal cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263126
-is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000349 ! basal cell of epithelium of bronchus
 
 [Term]
@@ -19335,7 +19269,6 @@ namespace: cell
 def: "A M cell that is part of the epithelium of small intestine." [GOC:tfm]
 xref: FMA:263128
 is_a: CL:0000682 ! M cell of gut
-is_a: CL:0002254 ! epithelial cell of small intestine
 
 [Term]
 id: CL:1000354
@@ -19343,7 +19276,7 @@ name: microfold cell of epithelium of intestinal villus
 namespace: cell
 def: "A M cell that is part of the epithelium of intestinal villus." [GOC:tfm]
 xref: FMA:263130
-is_a: CL:1000353 ! microfold cell of epithelium of small intestine
+is_a: CL:0000682 ! M cell of gut
 
 [Term]
 id: CL:1000355
@@ -19359,7 +19292,7 @@ name: microfold cell of epithelium proper of duodenum
 namespace: cell
 def: "A M cell that is part of the epithelium proper of duodenum." [GOC:tfm]
 xref: FMA:263134
-is_a: CL:1000354 ! microfold cell of epithelium of intestinal villus
+is_a: CL:0000682 ! M cell of gut
 
 [Term]
 id: CL:1000357
@@ -19367,7 +19300,7 @@ name: microfold cell of epithelium proper of jejunum
 namespace: cell
 def: "A M cell that is part of the epithelium proper of jejunum." [GOC:tfm]
 xref: FMA:263136
-is_a: CL:1000353 ! microfold cell of epithelium of small intestine
+is_a: CL:0000682 ! M cell of gut
 
 [Term]
 id: CL:1000358
@@ -19375,7 +19308,7 @@ name: microfold cell of epithelium proper of ileum
 namespace: cell
 def: "A M cell that is part of the epithelium proper of ileum." [GOC:tfm]
 xref: FMA:263138
-is_a: CL:1000353 ! microfold cell of epithelium of small intestine
+is_a: CL:0000682 ! M cell of gut
 
 [Term]
 id: CL:1000359
@@ -19383,7 +19316,7 @@ name: microfold cell of epithelium proper of appendix
 namespace: cell
 def: "A M cell that is part of the epithelium proper of appendix." [GOC:tfm]
 xref: FMA:263140
-is_a: CL:1000360 ! microfold cell of epithelium proper of large intestine
+is_a: CL:0000682 ! M cell of gut
 is_a: CL:1000405 ! epithelial cell of appendix
 
 [Term]
@@ -19516,7 +19449,6 @@ namespace: cell
 def: "A myocardial endocrine cell that is part of the septal division of left branch of atrioventricular bundle." [GOC:tfm]
 xref: FMA:263180
 is_a: CL:0002074 ! myocardial endocrine cell
-is_a: CL:2000046 ! ventricular cardiac muscle cell
 
 [Term]
 id: CL:1000376
@@ -19542,9 +19474,9 @@ name: type 1 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263186
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000379
@@ -19552,9 +19484,9 @@ name: type 1 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263188
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000380
@@ -19562,9 +19494,9 @@ name: type 1 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263190
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000381
@@ -19572,9 +19504,9 @@ name: type 1 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263192
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000382
@@ -19582,9 +19514,9 @@ name: type 2 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263194
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000383
@@ -19592,9 +19524,9 @@ name: type 2 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263196
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000384
@@ -19602,9 +19534,9 @@ name: type 2 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263198
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000385
@@ -19612,9 +19544,9 @@ name: type 2 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263200
-is_a: CL:0000710 ! neurecto-epithelial cell
+is_a: CL:0000006 ! neuronal receptor cell
+is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
-is_a: CL:2000032 ! peripheral nervous system neuron
 
 [Term]
 id: CL:1000391
@@ -19642,7 +19574,6 @@ def: "An endothelial cell that is part of the venous sinus of red pulp of spleen
 comment: todo - add logical definition to UBERON:0009967
 xref: FMA:62817
 is_a: CL:0002651 ! endothelial cell of venous sinus of spleen
-is_a: CL:2000053 ! splenic endothelial cell
 
 [Term]
 id: CL:1000398
@@ -19661,7 +19592,8 @@ def: "An epithelial cell that is part of the appendix." [GOC:tfm]
 synonym: "columnar epitheliocyte of appendix" EXACT [FMA:63602]
 synonym: "epithelial cell of vermiform appendix" EXACT [FMA:63602]
 xref: FMA:63602
-is_a: CL:0011108 ! colon epithelial cell
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000409
@@ -19689,7 +19621,6 @@ synonym: "AV node cardiac muscle cell" EXACT [GOC:pr]
 synonym: "AV node cell" EXACT [GOC:pr]
 xref: FMA:67106
 is_a: CL:0002072 ! nodal myocyte
-is_a: CL:2000022 ! cardiac septum native cell
 
 [Term]
 id: CL:1000411
@@ -19698,7 +19629,6 @@ namespace: cell
 def: "An endothelial cell that is part of the small intestine Peyer's patch." [GOC:tfm]
 xref: FMA:67757
 is_a: CL:0000115 ! endothelial cell
-is_a: CL:0002254 ! epithelial cell of small intestine
 
 [Term]
 id: CL:1000412
@@ -19707,7 +19637,7 @@ namespace: cell
 def: "An endothelial cell that is part of the arteriole." [GOC:tfm]
 xref: FMA:67760
 xref: KUPO:0001097
-is_a: CL:1000413 ! endothelial cell of artery
+is_a: CL:0000071 ! blood vessel endothelial cell
 
 [Term]
 id: CL:1000413
@@ -19766,7 +19696,7 @@ def: "A myoepithelial cell that is part of the mammary gland alveolus." [GOC:tfm
 synonym: "basal cell of alveolus of lactiferous gland" EXACT [FMA:67802]
 synonym: "myoepithelial cell of mammary alveolus" EXACT [FMA:67802]
 xref: FMA:67802
-is_a: CL:1000416 ! myoepithelial cell of lactiferous gland
+is_a: CL:0000185 ! myoepithelial cell
 
 [Term]
 id: CL:1000419
@@ -19775,7 +19705,7 @@ namespace: cell
 def: "A myoepithelial cell that is part of the lactiferous duct." [GOC:tfm]
 xref: FMA:67803
 is_a: CL:0000068 ! duct epithelial cell
-is_a: CL:1000416 ! myoepithelial cell of lactiferous gland
+is_a: CL:0000185 ! myoepithelial cell
 
 [Term]
 id: CL:1000420
@@ -19792,7 +19722,7 @@ namespace: cell
 def: "A chromaffin cell that is part of the paraaortic body." [GOC:tfm]
 synonym: "chromaffin cell of para-aortic body" EXACT [FMA:69328]
 xref: FMA:69328
-is_a: CL:0000166 ! chromaffin cell
+is_a: CL:1000425 ! chromaffin cell of paraganglion
 
 [Term]
 id: CL:1000425
@@ -19820,8 +19750,7 @@ def: "A chromaffin cell that is part of the adrenal cortex." [GOC:tfm]
 comment: Not clear this cell type exists. Can't call it a cortical adrenal cell because of different germ layer origin.
 synonym: "chromaffin cell of adrenal cortex" EXACT []
 xref: FMA:69795
-is_a: CL:1000426 ! chromaffin cell of adrenal gland
-is_a: CL:1001601 ! adrenal gland glandular cell
+is_a: CL:0000166 ! chromaffin cell
 
 [Term]
 id: CL:1000428
@@ -19883,7 +19812,7 @@ name: epithelial cell of nasolacrimal duct
 namespace: cell
 def: "An epithelial cell that is part of the nasolacrimal duct." [GOC:tfm]
 xref: FMA:70561
-is_a: CL:1000435 ! epithelial cell of lacrimal duct
+is_a: CL:0000072 ! non-branched duct epithelial cell
 
 [Term]
 id: CL:1000438
@@ -19910,7 +19839,6 @@ def: "An urothelial cell that is part of the trigone of urinary bladder." [GOC:t
 synonym: "epithelial cell of vesical trigone" EXACT [FMA:70598]
 xref: FMA:70598
 is_a: CL:0000731 ! urothelial cell
-is_a: CL:1001319 ! bladder cell
 
 [Term]
 id: CL:1000443
@@ -19919,7 +19847,7 @@ namespace: cell
 def: "A smooth muscle cell that is part of the ciliary body." [GOC:tfm]
 synonym: "smooth muscle cell of ciliary body" EXACT [FMA:70610]
 xref: FMA:70610
-is_a: CL:0000359 ! vascular associated smooth muscle cell
+is_a: CL:0000192 ! smooth muscle cell
 
 [Term]
 id: CL:1000444
@@ -19953,7 +19881,6 @@ name: epithelial cell of sweat gland
 namespace: cell
 def: "An epithelial cell that is part of the sweat gland." [GOC:tfm]
 xref: FMA:70952
-is_a: CL:0000362 ! epidermal cell
 is_a: CL:0002308 ! epithelial cell of skin gland
 
 [Term]
@@ -19962,7 +19889,8 @@ name: epithelial cell of nephron
 namespace: cell
 def: "An epithelial cell that is part of the nephron." [GOC:tfm]
 xref: FMA:70965
-is_a: CL:0002518 ! kidney epithelial cell
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000450
@@ -19974,6 +19902,7 @@ synonym: "epithelial cell of Bowman's capsule" EXACT [FMA:70966]
 xref: FMA:70966
 xref: KUPO:0001034
 is_a: CL:1000510 ! kidney glomerular epithelial cell
+is_a: CL:1000612 ! kidney corpuscule cell
 
 [Term]
 id: CL:1000451
@@ -19983,7 +19912,8 @@ def: "An epithelial cell that is part of the visceral layer of glomerular capsul
 comment: consider merging into CL:0000653
 synonym: "glomerular podocyte" NARROW [FMA:70967]
 xref: FMA:70967
-is_a: CL:1000450 ! epithelial cell of glomerular capsule
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000452
@@ -19994,7 +19924,7 @@ def: "An epithelial cell that is part of the glomerular parietal epithelium." [G
 synonym: "epithelial cell of parietal layer of glomerular capsule" EXACT [FMA:70968]
 xref: FMA:70968
 xref: KUPO:0001035
-is_a: CL:1000450 ! epithelial cell of glomerular capsule
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:1000453
@@ -20002,7 +19932,8 @@ name: epithelial cell of intermediate tubule
 namespace: cell
 def: "An epithelial cell that is part of the intermediate tubule." [GOC:tfm]
 xref: FMA:70980
-is_a: CL:1000909 ! kidney loop of henle epithelial cell
+is_a: CL:0002371 ! somatic cell
+is_a: CL:1000494 ! nephron tubule epithelial cell
 
 [Term]
 id: CL:1000454
@@ -20013,6 +19944,7 @@ synonym: "epithelial cell of renal collecting tubule" EXACT [FMA:70982]
 xref: FMA:70982
 xref: KUPO:0001059
 is_a: CL:0000072 ! non-branched duct epithelial cell
+is_a: CL:0002518 ! kidney epithelial cell
 is_a: CL:1001225 ! kidney collecting duct cell
 
 [Term]
@@ -20021,7 +19953,8 @@ name: mesothelial cell of parietal peritoneum
 namespace: cell
 def: "A mesothelial cell that is part of the parietal peritoneum." [GOC:tfm]
 xref: FMA:72142
-is_a: CL:1000490 ! mesothelial cell of peritoneum
+is_a: CL:0000077 ! mesothelial cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000457
@@ -20029,7 +19962,8 @@ name: mesothelial cell of visceral peritoneum
 namespace: cell
 def: "A mesothelial cell that is part of the visceral peritoneum." [GOC:tfm]
 xref: FMA:72143
-is_a: CL:1000490 ! mesothelial cell of peritoneum
+is_a: CL:0000077 ! mesothelial cell
+is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000458
@@ -20073,7 +20007,7 @@ namespace: cell
 def: "A myoepithelial cell that is part of the acinus of lactiferous gland." [GOC:tfm]
 synonym: "basal cell of acinus of lactiferous gland" EXACT [FMA:74469]
 xref: FMA:74469
-is_a: CL:1000416 ! myoepithelial cell of lactiferous gland
+is_a: CL:0000185 ! myoepithelial cell
 
 [Term]
 id: CL:1000469
@@ -20163,7 +20097,6 @@ xref: FMA:83388
 xref: FMA:83885
 is_a: CL:0002073 ! transitional myocyte
 is_a: CL:0010005 ! atrioventricular bundle cell
-is_a: CL:2000046 ! ventricular cardiac muscle cell
 
 [Term]
 id: CL:1000482
@@ -20191,7 +20124,6 @@ def: "A Purkinje myocyte that is part of the atrioventricular bundle." [GOC:tfm]
 xref: FMA:83393
 is_a: CL:0002068 ! Purkinje myocyte
 is_a: CL:0010005 ! atrioventricular bundle cell
-is_a: CL:2000046 ! ventricular cardiac muscle cell
 
 [Term]
 id: CL:1000486
@@ -20227,7 +20159,6 @@ namespace: cell
 def: "A reticular cell that is part of the splenic cord." [GOC:tfm]
 xref: FMA:86497
 is_a: CL:0000432 ! reticular cell
-is_a: CL:2000051 ! splenic fibroblast
 
 [Term]
 id: CL:1000490
@@ -20263,7 +20194,6 @@ name: mesothelial cell of visceral pleura
 namespace: cell
 def: "A mesothelial cell that is part of the visceral pleura." [GOC:tfm]
 xref: FMA:86739
-is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000491 ! mesothelial cell of pleura
 
 [Term]
@@ -20275,7 +20205,7 @@ comment: This needs to be further defined as a juxtamedullary nephron. Will requ
 synonym: "kidney tubule epithelial cell" EXACT []
 xref: FMA:86785
 xref: KUPO:0001022
-is_a: CL:1000507 ! kidney tubule cell
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:1000495
@@ -20317,28 +20247,26 @@ name: kidney pelvis cell
 namespace: cell
 xref: KUPO:0001018
 is_a: CL:1000497 ! kidney cell
-is_a: CL:1000601 ! ureteral cell
 
 [Term]
 id: CL:1000507
 name: kidney tubule cell
 namespace: cell
 xref: KUPO:0001020
-is_a: CL:1000449 ! epithelial cell of nephron
+is_a: CL:0002518 ! kidney epithelial cell
 
 [Term]
 id: CL:1000510
 name: kidney glomerular epithelial cell
 namespace: cell
 xref: KUPO:0001023
-is_a: CL:1000746 ! glomerular cell
+is_a: CL:0002518 ! kidney epithelial cell
 
 [Term]
 id: CL:1000546
 name: kidney medulla collecting duct epithelial cell
 namespace: cell
 xref: KUPO:0001060
-is_a: CL:1000504 ! kidney medulla cell
 is_a: CL:1001225 ! kidney collecting duct cell
 
 [Term]
@@ -20346,24 +20274,21 @@ id: CL:1000547
 name: kidney inner medulla collecting duct epithelial cell
 namespace: cell
 xref: KUPO:0001061
-is_a: CL:1000546 ! kidney medulla collecting duct epithelial cell
-is_a: CL:1000617 ! kidney inner medulla cell
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:1000548
 name: kidney outer medulla collecting duct epithelial cell
 namespace: cell
 xref: KUPO:0001062
-is_a: CL:1000546 ! kidney medulla collecting duct epithelial cell
-is_a: CL:1000616 ! kidney outer medulla cell
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:1000549
 name: kidney cortex collecting duct epithelial cell
 namespace: cell
 xref: KUPO:0001063
-is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1001225 ! kidney collecting duct cell
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:1000550
@@ -20377,15 +20302,14 @@ id: CL:1000596
 name: inner renal cortex cell
 namespace: cell
 xref: KUPO:0001111
-is_a: CL:0002681 ! kidney cortical cell
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:1000597
 name: papillary tips cell
 namespace: cell
 xref: KUPO:0001112
-is_a: CL:1000505 ! kidney pelvis cell
-is_a: CL:1000617 ! kidney inner medulla cell
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:1000600
@@ -20415,7 +20339,6 @@ name: kidney corpuscule cell
 namespace: cell
 xref: KUPO:0001021
 is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000449 ! epithelial cell of nephron
 
 [Term]
 id: CL:1000615
@@ -20424,6 +20347,7 @@ namespace: cell
 xref: KUPO:0001024
 is_a: CL:0002584 ! renal cortical epithelial cell
 is_a: CL:1000494 ! nephron tubule epithelial cell
+is_a: CL:1000507 ! kidney tubule cell
 
 [Term]
 id: CL:1000616
@@ -20532,8 +20456,8 @@ id: CL:1000702
 name: kidney pelvis smooth muscle cell
 namespace: cell
 xref: KUPO:0001113
+is_a: CL:0000192 ! smooth muscle cell
 is_a: CL:1000505 ! kidney pelvis cell
-is_a: CL:1000979 ! ureter smooth muscle cell
 
 [Term]
 id: CL:1000703
@@ -20566,48 +20490,48 @@ id: CL:1000714
 name: kidney cortex collecting duct principal cell
 namespace: cell
 xref: KUPO:0001130
+is_a: CL:0005009 ! renal principal cell
 is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
 
 [Term]
 id: CL:1000715
 name: kidney cortex collecting duct intercalated cell
 namespace: cell
 xref: KUPO:0001131
+is_a: CL:0005010 ! renal intercalated cell
 is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
 
 [Term]
 id: CL:1000716
 name: kidney outer medulla collecting duct principal cell
 namespace: cell
 xref: KUPO:0001132
+is_a: CL:0005009 ! renal principal cell
 is_a: CL:1000548 ! kidney outer medulla collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
 
 [Term]
 id: CL:1000717
 name: kidney outer medulla collecting duct intercalated cell
 namespace: cell
 xref: KUPO:0001133
+is_a: CL:0005010 ! renal intercalated cell
 is_a: CL:1000548 ! kidney outer medulla collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
 
 [Term]
 id: CL:1000718
 name: kidney inner medulla collecting duct principal cell
 namespace: cell
 xref: KUPO:0001134
+is_a: CL:0005009 ! renal principal cell
 is_a: CL:1000547 ! kidney inner medulla collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
 
 [Term]
 id: CL:1000719
 name: kidney inner medulla collecting duct intercalated cell
 namespace: cell
 xref: KUPO:0001135
+is_a: CL:0005010 ! renal intercalated cell
 is_a: CL:1000547 ! kidney inner medulla collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
 
 [Term]
 id: CL:1000720
@@ -20633,8 +20557,7 @@ def: "Intraglomerular mesangial cells are specialized pericytes located among th
 synonym: "intraglomerular mesangial cell" EXACT [CL:cjm]
 xref: KUPO:0001032
 is_a: CL:0000650 ! mesangial cell
-is_a: CL:1000500 ! kidney interstitial cell
-is_a: CL:1000746 ! glomerular cell
+is_a: CL:1000612 ! kidney corpuscule cell
 is_a: CL:1001318 ! renal interstitial pericyte
 
 [Term]
@@ -20673,6 +20596,7 @@ name: kidney proximal convoluted tubule epithelial cell
 namespace: cell
 xref: KUPO:0001045
 is_a: CL:0002306 ! epithelial cell of proximal tubule
+is_a: CL:1000615 ! kidney cortex tubule cell
 
 [Term]
 id: CL:1000839
@@ -20680,8 +20604,8 @@ name: kidney proximal straight tubule epithelial cell
 namespace: cell
 xref: KUPO:0001046
 is_a: CL:0002306 ! epithelial cell of proximal tubule
+is_a: CL:1000615 ! kidney cortex tubule cell
 is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001021 ! kidney loop of henle descending limb epithelial cell
 
 [Term]
 id: CL:1000849
@@ -20751,6 +20675,7 @@ xref: KUPO:0001037
 is_a: CL:0002144 ! capillary endothelial cell
 is_a: CL:0002188 ! glomerular endothelial cell
 is_a: CL:1000510 ! kidney glomerular epithelial cell
+is_a: CL:1000746 ! glomerular cell
 is_a: CL:1000892 ! kidney capillary endothelial cell
 
 [Term]
@@ -20758,7 +20683,6 @@ id: CL:1001006
 name: kidney afferent arteriole cell
 namespace: cell
 xref: KUPO:0001038
-is_a: CL:1000612 ! kidney corpuscule cell
 is_a: CL:1000891 ! kidney arterial blood vessel cell
 
 [Term]
@@ -20766,7 +20690,6 @@ id: CL:1001009
 name: kidney efferent arteriole cell
 namespace: cell
 xref: KUPO:0001041
-is_a: CL:1000612 ! kidney corpuscule cell
 is_a: CL:1000891 ! kidney arterial blood vessel cell
 
 [Term]
@@ -20820,7 +20743,7 @@ name: kidney artery smooth muscle cell
 namespace: cell
 comment: Note that the source of this term is KUPO:0001096 (artery smooth muscle cell), which we believe actually denotes the kidney specific structure.
 xref: KUPO:0001096
-is_a: CL:0000359 ! vascular associated smooth muscle cell
+is_a: CL:0000192 ! smooth muscle cell
 is_a: CL:1000891 ! kidney arterial blood vessel cell
 
 [Term]
@@ -20829,7 +20752,7 @@ name: kidney arteriole smooth muscle cell
 namespace: cell
 comment: Note that the source of this term is KUPO:0001098 (arteriole smooth muscle cell), which we believe actually denotes the kidney specific structure.
 xref: KUPO:0001098
-is_a: CL:0000359 ! vascular associated smooth muscle cell
+is_a: CL:0000192 ! smooth muscle cell
 is_a: CL:1000891 ! kidney arterial blood vessel cell
 
 [Term]
@@ -20838,7 +20761,7 @@ name: kidney venous system smooth muscle cell
 namespace: cell
 comment: Note that the source of this term is KUPO:0001068 (venous system smooth muscle cell), which we believe actually denotes the kidney specific structure.
 xref: KUPO:0001100
-is_a: CL:0000359 ! vascular associated smooth muscle cell
+is_a: CL:0000192 ! smooth muscle cell
 is_a: CL:1000893 ! kidney venous blood vessel cell
 
 [Term]
@@ -20854,6 +20777,7 @@ id: CL:1001097
 name: kidney afferent arteriole smooth muscle cell
 namespace: cell
 xref: KUPO:0001040
+is_a: CL:0000359 ! vascular associated smooth muscle cell
 is_a: CL:1001006 ! kidney afferent arteriole cell
 is_a: CL:1001066 ! kidney arteriole smooth muscle cell
 
@@ -20870,6 +20794,7 @@ id: CL:1001100
 name: kidney efferent arteriole smooth muscle cell
 namespace: cell
 xref: KUPO:0001043
+is_a: CL:0000359 ! vascular associated smooth muscle cell
 is_a: CL:1001009 ! kidney efferent arteriole cell
 is_a: CL:1001066 ! kidney arteriole smooth muscle cell
 
@@ -20886,7 +20811,6 @@ id: CL:1001107
 name: kidney loop of henle thin ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001050
-is_a: CL:1000617 ! kidney inner medulla cell
 is_a: CL:1001016 ! kidney loop of henle ascending limb epithelial cell
 
 [Term]
@@ -20895,21 +20819,21 @@ name: kidney loop of henle medullary thick ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001051
 is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001106 ! kidney loop of henle thick ascending limb epithelial cell
+is_a: CL:1001016 ! kidney loop of henle ascending limb epithelial cell
 
 [Term]
 id: CL:1001109
 name: kidney loop of henle cortical thick ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001052
-is_a: CL:1001106 ! kidney loop of henle thick ascending limb epithelial cell
+is_a: CL:1001016 ! kidney loop of henle ascending limb epithelial cell
 
 [Term]
 id: CL:1001111
 name: kidney loop of henle thin descending limb epithelial cell
 namespace: cell
 xref: KUPO:0001054
-is_a: CL:1000453 ! epithelial cell of intermediate tubule
+is_a: CL:1000507 ! kidney tubule cell
 is_a: CL:1000616 ! kidney outer medulla cell
 is_a: CL:1001021 ! kidney loop of henle descending limb epithelial cell
 
@@ -21008,6 +20932,7 @@ id: CL:1001214
 name: arcuate artery smooth muscle cell
 namespace: cell
 xref: KUPO:0001080
+is_a: CL:0000359 ! vascular associated smooth muscle cell
 is_a: CL:1001064 ! kidney artery smooth muscle cell
 is_a: CL:1001135 ! arcuate artery cell
 
@@ -21024,6 +20949,7 @@ id: CL:1001217
 name: interlobulary artery smooth muscle cell
 namespace: cell
 xref: KUPO:0001083
+is_a: CL:0000359 ! vascular associated smooth muscle cell
 is_a: CL:1001064 ! kidney artery smooth muscle cell
 is_a: CL:1001138 ! interlobular artery cell
 
@@ -21040,6 +20966,7 @@ id: CL:1001221
 name: arcuate vein smooth muscle cell
 namespace: cell
 xref: KUPO:0001087
+is_a: CL:0000359 ! vascular associated smooth muscle cell
 is_a: CL:1001068 ! kidney venous system smooth muscle cell
 is_a: CL:1001142 ! arcuate vein cell
 
@@ -21056,6 +20983,7 @@ id: CL:1001224
 name: interlobulary vein smooth muscle cell
 namespace: cell
 xref: KUPO:0001090
+is_a: CL:0000359 ! vascular associated smooth muscle cell
 is_a: CL:1001068 ! kidney venous system smooth muscle cell
 is_a: CL:1001145 ! interlobular vein cell
 
@@ -21065,7 +20993,7 @@ name: kidney collecting duct cell
 namespace: cell
 xref: KUPO:0001012
 xref: Wikipedia:Kidney_collecting_duct_cell
-is_a: CL:1000449 ! epithelial cell of nephron
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:1001285
@@ -21103,14 +21031,14 @@ id: CL:1001319
 name: bladder cell
 namespace: cell
 xref: KUPO:0001120
-is_a: CL:1000600 ! lower urinary tract cell
+is_a: CL:0000548 ! animal cell
 
 [Term]
 id: CL:1001320
 name: urethra cell
 namespace: cell
 xref: KUPO:0001123
-is_a: CL:1000600 ! lower urinary tract cell
+is_a: CL:0000548 ! animal cell
 
 [Term]
 id: CL:1001428
@@ -21152,29 +21080,28 @@ namespace: cell
 def: "An epithelial cell of the exocrine pancreas." [GOC:tfm]
 synonym: "exocrine pancreas cell" EXACT []
 xref: FMA:70986
-is_a: CL:0000083 ! epithelial cell of pancreas
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:1001434
 name: olfactory bulb interneuron
 namespace: cl
 def: "A neuron residing in the olfactory bulb that serve to process and refine signals arising from olfactory sensory neurons" [PMID:18603310]
+is_a: CL:0000099 ! interneuron
 is_a: CL:0000101 ! sensory neuron
-is_a: CL:0000402 ! CNS interneuron
-is_a: CL:0012001 ! neuron of the forebrain
 
 [Term]
 id: CL:1001435
 name: periglomerular cell
 namespace: cl
 def: "the small neuron in the glomerular layer of the olfactory bulb whose dendrites arborize within a glomerulus, where it receives synaptic input from olfactory receptor cell axon terminals, and also engages in dendrodendritic interactions with mitral and tufted cell dendrites; uses both GABA and dopamine as a neurotransmitter" [MP:0009943]
-synonym: "glomerular layer cell" EXACT [NIF_Cell:nifext_122]
-synonym: "olfactory bulb (accessory) glomerular layer cell" EXACT [NIF_Cell:nifext_122]
-synonym: "olfactory bulb glomerular layer cell" EXACT [NIF_Cell:nifext_122]
+synonym: "glomerular layer cell" EXACT [NIFSTD:nifext_122]
+synonym: "olfactory bulb (accessory) glomerular layer cell" EXACT [NIFSTD:nifext_122]
+synonym: "olfactory bulb glomerular layer cell" EXACT [NIFSTD:nifext_122]
 synonym: "olfactory bulb glomerularal cell" EXACT [MP:0009943]
-synonym: "periglomerular cell" EXACT [NIF_Cell:nifext_122]
+synonym: "periglomerular cell" EXACT [NIFSTD:nifext_122]
 xref: BTO:0003796
-xref: NIF_Cell:nifext_122
+xref: NIFSTD:nifext_122
 is_a: CL:1001434 ! olfactory bulb interneuron
 
 [Term]
@@ -21207,7 +21134,7 @@ def: "the inhibitory projection neurons located in the striatum that integrate g
 synonym: "medium-sized densely spiny neuron" RELATED [BTO:0004778]
 synonym: "striatal medium spiny neuron" EXACT [GO:0021773]
 xref: BTO:0004778
-is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:1001502
@@ -21221,7 +21148,7 @@ id: CL:1001503
 name: olfactory bulb tufted cell
 namespace: cl
 def: "the principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala" [MP:0009955]
-is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:1001505
@@ -21230,8 +21157,6 @@ namespace: cl
 def: "the secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system" [MP:0010125]
 is_a: CL:0000167 ! peptide hormone secreting cell
 is_a: CL:0000381 ! neurosecretory neuron
-is_a: CL:2000029 ! central nervous system neuron
-is_a: CL:2000030 ! hypothalamus native cell
 
 [Term]
 id: CL:1001509
@@ -21247,7 +21172,6 @@ name: intestinal enteroendocrine cell
 namespace: cl
 def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract" [MP:0010802]
 is_a: CL:0000164 ! enteroendocrine cell
-is_a: CL:0002563 ! intestinal epithelial cell
 
 [Term]
 id: CL:1001517
@@ -21255,7 +21179,6 @@ name: stomach enteroendocrine cell
 namespace: cl
 def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the stomach" [MP:0010803]
 is_a: CL:0000164 ! enteroendocrine cell
-is_a: CL:0002659 ! glandular cell of stomach
 
 [Term]
 id: CL:1001561
@@ -21294,20 +21217,19 @@ name: hippocampal interneuron
 namespace: cl
 def: "An interneuron of the hippocampus." [GOC:pr]
 xref: FMA:84777
-is_a: CL:0000402 ! CNS interneuron
-is_a: CL:0002608 ! hippocampal neuron
+is_a: CL:0000099 ! interneuron
 
 [Term]
 id: CL:1001571
 name: hippocampal pyramidal neuron
 namespace: cl
 def: "A pyramidal cell of the hippocampus." [GOC:pr, PMID:19342486]
-synonym: "hippocampus (CA) pyramidal cell" EXACT [NIF_Cell:sao131261273]
-synonym: "hippocampus (CA) pyramidal neuron" EXACT [NIF_Cell:sao131261273]
-xref: NIF_Cell:sao131261273
+synonym: "hippocampus (CA) pyramidal cell" EXACT [NIFSTD:sao131261273]
+synonym: "hippocampus (CA) pyramidal neuron" EXACT [NIFSTD:sao131261273]
+xref: NIFSTD:sao131261273
 xref: SAO:sao131261273
+is_a: CL:0000598 ! pyramidal cell
 is_a: CL:0002608 ! hippocampal neuron
-is_a: CL:2000056 ! Meynert cell
 
 [Term]
 id: CL:1001572
@@ -21325,8 +21247,7 @@ name: nasopharyngeal epithelial cell
 def: "Cell of the nasopharyngeal epithelium." [NPX:PDR]
 synonym: "nasopharynx respiratory epithelial cells" RELATED [CALOHA:TS-2398]
 xref: CALOHA:TS-2398
-is_a: CL:0002251 ! epithelial cell of alimentary canal
-is_a: CL:0002631 ! epithelial cell of upper respiratory tract
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:1001575
@@ -21351,7 +21272,6 @@ synonym: "oral mucosa squamous epithelial cell" RELATED [CALOHA:TS-1252]
 synonym: "oral mucosa squamous epithelial cells" RELATED [CALOHA:TS-1252]
 xref: CALOHA:TS-1252
 is_a: CL:0000076 ! squamous epithelial cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 
 [Term]
 id: CL:1001577
@@ -21363,7 +21283,6 @@ synonym: "tonsillar squamous cell" RELATED [CALOHA:TS-1253]
 synonym: "tonsillar squamous epithelial cell" RELATED [CALOHA:TS-1253]
 xref: CALOHA:TS-1253
 is_a: CL:0000076 ! squamous epithelial cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 
 [Term]
 id: CL:1001578
@@ -21394,7 +21313,7 @@ synonym: "hippocampal glial cell" RELATED [CALOHA:TS-1257]
 synonym: "hippocampus glial cells" RELATED [CALOHA:TS-1257]
 synonym: "hippocampus neuroglial cell" RELATED [CALOHA:TS-1257]
 xref: CALOHA:TS-1257
-is_a: CL:1001579 ! cerebral cortex glial cell
+is_a: CL:0000125 ! glial cell
 
 [Term]
 id: CL:1001581
@@ -21412,7 +21331,7 @@ synonym: "lateral ventricle neural cell" RELATED [CALOHA:TS-1261]
 synonym: "lateral ventricle neuronal cell" RELATED [CALOHA:TS-1261]
 synonym: "lateral ventricle neuronal cells" RELATED [CALOHA:TS-1261]
 xref: CALOHA:TS-1261
-is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:1001583
@@ -21431,8 +21350,8 @@ synonym: "caecal appendix glandular cell" RELATED [CALOHA:TS-1271]
 synonym: "cecal appendix glandular cell" RELATED [CALOHA:TS-1271]
 synonym: "vermiform appendix glandular cell" RELATED [CALOHA:TS-1271]
 xref: CALOHA:TS-1271
+is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:1000405 ! epithelial cell of appendix
-is_a: CL:1001588 ! colon glandular cell
 
 [Term]
 id: CL:1001586
@@ -21454,8 +21373,8 @@ synonym: "cervix glandular cell" RELATED [CALOHA:TS-1273]
 synonym: "cervix, uterine glandular cell" RELATED [CALOHA:TS-1273]
 synonym: "cervix, uterine glandular cells" RELATED [CALOHA:TS-1273]
 xref: CALOHA:TS-1273
+is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0002535 ! epithelial cell of cervix
-is_a: CL:1001591 ! oviduct glandular cell
 
 [Term]
 id: CL:1001588
@@ -21463,7 +21382,7 @@ name: colon glandular cell
 def: "Glandular cell of colon epithelium. Example: Goblet cells; enterocytes or absorptive cells; enteroendocrine and M cells." [NPX:PDR]
 synonym: "colon glandular cells" RELATED [CALOHA:TS-1274]
 xref: CALOHA:TS-1274
-is_a: CL:0002658 ! glandular cell of the large intestine
+is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0011108 ! colon epithelial cell
 
 [Term]
@@ -21472,7 +21391,7 @@ name: duodenum glandular cell
 def: "Glandular cell of duodenal epithelium. Example: Enterocytes, Goblet cells, enteroendocrine cells; Paneth cells; M cells; Brunner's gland cell." [NPX:PDR]
 synonym: "duodenum glandular cells" RELATED [CALOHA:TS-1275]
 xref: CALOHA:TS-1275
-is_a: CL:1001598 ! small intestine glandular cell
+is_a: CL:0000150 ! glandular epithelial cell
 
 [Term]
 id: CL:1001590
@@ -21521,7 +21440,7 @@ def: "Glandular cell of rectal epithelium. Example: Goblet cell; enterocytes or 
 synonym: "rectal glandular cell" RELATED [CALOHA:TS-1281]
 synonym: "rectum glandular cells" RELATED [CALOHA:TS-1281]
 xref: CALOHA:TS-1281
-is_a: CL:0002658 ! glandular cell of the large intestine
+is_a: CL:0000150 ! glandular epithelial cell
 
 [Term]
 id: CL:1001596
@@ -21531,7 +21450,6 @@ synonym: "salivary gland glandular cells" RELATED [CALOHA:TS-1282]
 xref: CALOHA:TS-1282
 is_a: CL:0000150 ! glandular epithelial cell
 is_a: CL:0000152 ! exocrine cell
-is_a: CL:0002251 ! epithelial cell of alimentary canal
 
 [Term]
 id: CL:1001597
@@ -21539,7 +21457,6 @@ name: seminal vesicle glandular cell
 def: "Glandular cell of seminal vesicle epithelium." [NPX:PDR]
 synonym: "seminal vesicle glandular cells" RELATED [CALOHA:TS-1283]
 xref: CALOHA:TS-1283
-is_a: CL:0000068 ! duct epithelial cell
 is_a: CL:0000150 ! glandular epithelial cell
 
 [Term]
@@ -21552,7 +21469,6 @@ synonym: "small intestine glandular cells" RELATED [CALOHA:TS-1286]
 xref: CALOHA:TS-1286
 xref: FMA:86928
 is_a: CL:0000150 ! glandular epithelial cell
-is_a: CL:0002254 ! epithelial cell of small intestine
 
 [Term]
 id: CL:1001599
@@ -21563,6 +21479,7 @@ synonym: "pancreas exocrine glandular cells" RELATED [CALOHA:TS-1242]
 xref: BTO:0000028
 xref: CALOHA:TS-1242
 is_a: CL:0000150 ! glandular epithelial cell
+is_a: CL:0000152 ! exocrine cell
 is_a: CL:1001433 ! epithelial cell of exocrine pancreas
 
 [Term]
@@ -21583,7 +21500,6 @@ synonym: "cerebral cortex endothelial cells" RELATED [CALOHA:TS-2372]
 synonym: "endothelial cells of cerebral cortex" RELATED [CALOHA:TS-2372]
 xref: CALOHA:TS-2372
 is_a: CL:0000115 ! endothelial cell
-is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:1001603
@@ -21630,7 +21546,6 @@ synonym: "bone marrow hematopoietic cells" RELATED [CALOHA:TS-2109]
 synonym: "bone marrow poietic cells" RELATED [CALOHA:TS-2109]
 xref: CALOHA:TS-2109
 is_a: CL:0000988 ! hematopoietic cell
-is_a: CL:0002092 ! bone marrow cell
 
 [Term]
 id: CL:1001611
@@ -21639,7 +21554,7 @@ def: "Neuron of the cerebellum." [NPX:PDR]
 synonym: "cerebellum neuron" RELATED [CALOHA:TS-2359]
 xref: CALOHA:TS-2359
 xref: FMA:84665
-is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:2000000
@@ -21648,7 +21563,6 @@ namespace: cell
 def: "Any melanocyte that is part of a epidermis." [GOC:TermGenie]
 comment: These cells are found primarily, but not exclusively, in primates including humans
 is_a: CL:0002484 ! epithelial melanocyte
-is_a: CL:1000458 ! melanocyte of skin
 created_by: TermGenie
 creation_date: 2014-02-03T23:03:09Z
 
@@ -21676,7 +21590,7 @@ id: CL:2000004
 name: pituitary gland cell
 namespace: cell
 def: "Any cell that is part of a pituitary gland." [GOC:TermGenie]
-is_a: CL:0002319 ! neural cell
+is_a: CL:0000003 ! native cell
 created_by: TermGenie
 creation_date: 2014-03-26T22:14:56Z
 
@@ -21794,7 +21708,7 @@ id: CL:2000017
 name: fibroblast of peridontal ligament
 namespace: cell
 def: "Any fibroblast that is part of a periodontal ligament." [GOC:TermGenie]
-is_a: CL:0002556 ! fibroblast of periodontium
+is_a: CL:0000057 ! fibroblast
 created_by: TermGenie
 creation_date: 2014-06-04T16:50:33Z
 
@@ -21803,7 +21717,6 @@ id: CL:2000018
 name: endothelial cell of coronary artery
 namespace: cell
 def: "Any endothelial cell of artery that is part of a coronary artery." [GOC:TermGenie]
-is_a: CL:0010006 ! cardiac blood vessel endothelial cell
 is_a: CL:1000413 ! endothelial cell of artery
 created_by: TermGenie
 creation_date: 2014-06-04T17:08:47Z
@@ -21849,7 +21762,7 @@ id: CL:2000023
 name: spinal cord ventral column interneuron
 namespace: cell
 def: "Any interneuron that is part of a spinal cord ventral column." [GOC:TermGenie]
-is_a: CL:0005000 ! spinal cord interneuron
+is_a: CL:0000099 ! interneuron
 created_by: TermGenie
 creation_date: 2014-06-25T00:23:36Z
 
@@ -21858,7 +21771,7 @@ id: CL:2000024
 name: spinal cord medial motor column neuron
 namespace: cell
 def: "Any neuron that is part of a spinal cord medial motor column." [GOC:TermGenie]
-is_a: CL:2000029 ! central nervous system neuron
+is_a: CL:0000540 ! neuron
 created_by: TermGenie
 creation_date: 2014-06-25T00:23:43Z
 
@@ -21914,7 +21827,7 @@ id: CL:2000030
 name: hypothalamus native cell
 namespace: cell
 def: "Any native cell that is part of a hypothalamus." [GOC:TermGenie]
-is_a: CL:0002319 ! neural cell
+is_a: CL:0000003 ! native cell
 created_by: TermGenie
 creation_date: 2014-06-25T01:17:50Z
 
@@ -21923,7 +21836,7 @@ id: CL:2000031
 name: lateral line ganglion neuron
 namespace: cell
 def: "Any neuron that is part of a lateral line ganglion." [GOC:TermGenie]
-is_a: CL:2000032 ! peripheral nervous system neuron
+is_a: CL:0000540 ! neuron
 created_by: TermGenie
 creation_date: 2014-06-25T01:17:57Z
 
@@ -22032,7 +21945,7 @@ id: CL:2000043
 name: brain pericyte
 namespace: cell
 def: "Any pericyte cell that is part of a brain." [GOC:TermGenie]
-is_a: CL:0002575 ! central nervous system pericyte
+is_a: CL:0000669 ! pericyte cell
 created_by: TermGenie
 creation_date: 2014-07-09T00:18:22Z
 
@@ -22041,7 +21954,6 @@ id: CL:2000044
 name: brain microvascular endothelial cell
 namespace: cell
 def: "Any microvascular endothelial cell that is part of a brain." [GOC:TermGenie]
-is_a: CL:0002319 ! neural cell
 is_a: CL:2000008 ! microvascular endothelial cell
 created_by: TermGenie
 creation_date: 2014-07-09T00:24:53Z
@@ -22070,7 +21982,6 @@ name: brainstem motor neuron
 namespace: cell
 def: "Any motor neuron that is part of a brainstem." [GOC:TermGenie]
 is_a: CL:0000100 ! motor neuron
-is_a: CL:2000029 ! central nervous system neuron
 created_by: TermGenie
 creation_date: 2014-10-02T23:52:53Z
 
@@ -22080,7 +21991,7 @@ name: primary motor cortex pyramidal cell
 namespace: cell
 def: "Any pyramidal cell that is part of a primary motor cortex." [GOC:TermGenie]
 comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
-is_a: CL:2000056 ! Meynert cell
+is_a: CL:0000598 ! pyramidal cell
 created_by: TermGenie
 creation_date: 2014-10-06T17:39:04Z
 
@@ -22253,7 +22164,7 @@ name: cardiac ventricle fibroblast
 namespace: cell
 def: "Any fibroblast that is part of a cardiac ventricle." [GOC:TermGenie]
 comment: http://www.sciencellonline.com/site/productInformation.php?keyword=6310
-is_a: CL:0002548 ! fibroblast of cardiac tissue
+is_a: CL:0000057 ! fibroblast
 created_by: TermGenie
 creation_date: 2014-10-07T18:35:38Z
 
@@ -22263,7 +22174,7 @@ name: cardiac atrium fibroblast
 namespace: cell
 def: "Any fibroblast that is part of a cardiac atrium." [GOC:TermGenie]
 comment: http://www.sciencellonline.com/site/productInformation.php?keyword=6320
-is_a: CL:0002548 ! fibroblast of cardiac tissue
+is_a: CL:0000057 ! fibroblast
 created_by: TermGenie
 creation_date: 2014-10-07T18:36:54Z
 
@@ -22382,6 +22293,7 @@ id: CL:2000079
 name: mesenchymal stem cell of femoral bone marrow
 namespace: cell
 def: "Any mesenchymal stem cell of the bone marrow that is part of a femur." [GOC:TermGenie]
+is_a: CL:0002092 ! bone marrow cell
 is_a: CL:0002540 ! mesenchymal stem cell of the bone marrow
 created_by: TermGenie
 creation_date: 2014-12-02T19:07:31Z
@@ -22410,7 +22322,6 @@ name: melanocyte of foreskin
 namespace: cell
 def: "Any melanocyte of skin that is part of a skin of prepuce of penis." [GOC:TermGenie]
 is_a: CL:1000458 ! melanocyte of skin
-is_a: CL:2000045 ! foreskin melanocyte
 created_by: TermGenie
 creation_date: 2014-12-02T19:10:45Z
 
@@ -22540,10 +22451,6 @@ name: lacks_plasma_membrane_part
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
 
 [Typedef]
-id: located_in
-name: located_in
-
-[Typedef]
 id: negatively_regulates
 name: negatively_regulates
 is_a: regulates ! regulates
@@ -22581,10 +22488,6 @@ id: regulates
 name: regulates
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 transitive_over: part_of ! part_of
-
-[Typedef]
-id: secretes
-name: secretes
 
 [Typedef]
 id: seeAlso
