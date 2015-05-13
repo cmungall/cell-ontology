@@ -669,6 +669,18 @@ is_a: UBERON:0002472 ! stylopod
 is_a: UBERON:0008784 ! lower limb segment
 
 [Term]
+id: UBERON:0000378
+name: tongue muscle
+synonym: "muscle of tongue" EXACT []
+synonym: "muscle organ of tongue" EXACT []
+synonym: "musculi linguae" RELATED []
+is_a: UBERON:0000078 ! mixed ectoderm/mesoderm/endoderm-derived structure
+is_a: UBERON:0010959 ! craniocervical muscle
+is_a: UBERON:0013765 ! digestive system element
+union_of: UBERON:0001575 ! extrinsic muscle of tongue
+union_of: UBERON:0001576 ! intrinsic muscle of tongue
+
+[Term]
 id: UBERON:0000379
 name: tracheal mucosa
 synonym: "mucosa of organ of trachea" EXACT []
@@ -1225,7 +1237,7 @@ is_a: UBERON:3000961 ! external integument structure
 id: UBERON:0001004
 name: respiratory system
 synonym: "apparatus respiratorius" EXACT []
-synonym: "apparatus respiratorius " RELATED []
+synonym: "apparatus respiratorius" RELATED []
 synonym: "Atmungssystem" RELATED []
 synonym: "respiratory system" EXACT []
 synonym: "systema respiratorium" RELATED []
@@ -1628,13 +1640,13 @@ synonym: "kidney corpuscle" RELATED []
 synonym: "malphighian corpuscle" RELATED []
 synonym: "malphigian corpuscle" EXACT []
 synonym: "Malpighian corpuscle" EXACT []
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0000063 ! organ subunit
 
 [Term]
 id: UBERON:0001230
 name: glomerular capsule
 synonym: "Bowman's capsule" EXACT []
-synonym: "bowman's capsule " RELATED []
+synonym: "bowman's capsule" RELATED []
 synonym: "Bowmans capsule" EXACT []
 synonym: "capsula glomerularis" EXACT []
 synonym: "capsula glomeruli" RELATED []
@@ -2362,6 +2374,21 @@ synonym: "organ neck" EXACT []
 is_a: UBERON:0034944 ! zone of organ
 
 [Term]
+id: UBERON:0001575
+name: extrinsic muscle of tongue
+synonym: "extrinsic lingual muscle" EXACT []
+synonym: "extrinsic tongue muscle" EXACT []
+is_a: UBERON:0001576 ! intrinsic muscle of tongue
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001576
+name: intrinsic muscle of tongue
+synonym: "intrinsic lingual muscle" EXACT []
+synonym: "intrinsic tongue muscle" EXACT []
+is_a: UBERON:0000378 ! tongue muscle
+
+[Term]
 id: UBERON:0001606
 name: muscle of iris
 synonym: "iris muscle" EXACT []
@@ -2828,6 +2855,19 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 
 [Term]
+id: UBERON:0001885
+name: dentate gyrus of hippocampal formation
+synonym: "area dentata" EXACT []
+synonym: "dentate area" RELATED []
+synonym: "dentate area (dentate gyrus)" EXACT []
+synonym: "dentate gyrus" EXACT []
+synonym: "fascia dentata" NARROW []
+synonym: "gyrus dentatus" RELATED []
+synonym: "hippocampal dentate gyrus" RELATED []
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
 id: UBERON:0001886
 name: choroid plexus
 synonym: "chorioid plexus" EXACT []
@@ -2980,6 +3020,23 @@ synonym: "gingiva epithelium" EXACT []
 is_a: UBERON:0002424 ! oral epithelium
 is_a: UBERON:0006915 ! stratified squamous epithelium
 is_a: UBERON:0035037 ! jaw epithelium
+
+[Term]
+id: UBERON:0001950
+name: neocortex
+synonym: "cerebral neocortex" EXACT []
+synonym: "homogenetic cortex" EXACT []
+synonym: "homotypical cortex" EXACT []
+synonym: "iso-cortex" RELATED []
+synonym: "isocortex" NARROW []
+synonym: "isocortex (sensu lato)" EXACT []
+synonym: "neocortex (isocortex)" EXACT []
+synonym: "neopallial cortex" EXACT []
+synonym: "neopallium" EXACT []
+synonym: "nonolfactory cortex" RELATED []
+synonym: "nucleus hypoglossalis" RELATED []
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 
 [Term]
 id: UBERON:0001951
@@ -3577,10 +3634,13 @@ is_a: UBERON:0000042 ! serous membrane
 [Term]
 id: UBERON:0002097
 name: skin of body
+synonym: "entire integument" RELATED []
 synonym: "entire skin" EXACT []
 synonym: "integument" RELATED []
+synonym: "integumental organ" RELATED []
 synonym: "pelt" RELATED []
 synonym: "skin" RELATED []
+synonym: "skin organ" EXACT []
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0004121 ! ectoderm-derived structure
 
@@ -6399,7 +6459,7 @@ id: UBERON:0005185
 name: renal medulla collecting duct
 synonym: "kidney medulla collecting duct" EXACT []
 synonym: "medullary collecting duct" EXACT []
-is_a: UBERON:0001232 ! collecting duct of renal tubule
+is_a: UBERON:0013522 ! subdivision of tube
 
 [Term]
 id: UBERON:0005211
@@ -6594,6 +6654,12 @@ synonym: "nasal mucosa" RELATED []
 is_a: UBERON:0003350 ! epithelium of mucosa
 is_a: UBERON:0004814 ! upper respiratory tract epithelium
 is_a: UBERON:0019306 ! nose epithelium
+
+[Term]
+id: UBERON:0005385
+name: nasal cavity respiratory epithelium
+is_a: UBERON:0005384 ! nasal cavity epithelium
+is_a: UBERON:0010499 ! pseudostratified ciliated columnar epithelium
 
 [Term]
 id: UBERON:0005388
@@ -6917,8 +6983,9 @@ id: UBERON:0006234
 name: femur pre-cartilage condensation
 synonym: "femoral pre-cartilage condensation" RELATED []
 is_a: UBERON:0005254 ! upper leg mesenchyme
+is_a: UBERON:0005866 ! pre-cartilage condensation
 is_a: UBERON:0010882 ! limb bone pre-cartilage condensation
-is_a: UBERON:0010886 ! hindlimb bone pre-cartilage condensation
+is_a: UBERON:0010886 ! hindlimb pre-cartilage condensation
 is_a: UBERON:0015052 ! femur endochondral element
 is_a: UBERON:0017650 ! developing mesenchymal structure
 
@@ -7002,6 +7069,7 @@ is_a: UBERON:0002308 ! nucleus of brain
 [Term]
 id: UBERON:0006598
 name: presumptive structure
+synonym: "future structure" EXACT []
 synonym: "presumptive structures" EXACT []
 is_a: UBERON:0005423 ! developing anatomical structure
 
@@ -7552,6 +7620,7 @@ is_a: UBERON:0003104 ! mesenchyme
 [Term]
 id: UBERON:0009751
 name: cardiac mesenchyme
+synonym: "heart mesenchyme" EXACT []
 is_a: UBERON:0003104 ! mesenchyme
 is_a: UBERON:0004120 ! mesoderm-derived structure
 
@@ -7727,6 +7796,7 @@ name: femur cartilage element
 synonym: "femoral cartilage condensation" EXACT []
 is_a: UBERON:0005254 ! upper leg mesenchyme
 is_a: UBERON:0005863 ! cartilaginous condensation
+is_a: UBERON:0010881 ! limb cartilage element
 is_a: UBERON:0010885 ! hindlimb cartilage element
 is_a: UBERON:0015052 ! femur endochondral element
 
@@ -7889,14 +7959,14 @@ is_a: UBERON:0015061 ! limb endochondral element
 [Term]
 id: UBERON:0010885
 name: hindlimb cartilage element
-is_a: UBERON:0010881 ! limb cartilage element
+synonym: "hindlimb cartilage condensation" EXACT []
+is_a: UBERON:0007844 ! cartilage element
 is_a: UBERON:0015022 ! hindlimb endochondral element
 
 [Term]
 id: UBERON:0010886
-name: hindlimb bone pre-cartilage condensation
-is_a: UBERON:0003860 ! hindlimb mesenchyme
-is_a: UBERON:0005866 ! pre-cartilage condensation
+name: hindlimb pre-cartilage condensation
+synonym: "hindlimb pre-cartilage condensation" EXACT []
 is_a: UBERON:0015022 ! hindlimb endochondral element
 
 [Term]
@@ -7904,6 +7974,13 @@ id: UBERON:0010913
 name: vertebral element
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0004765 ! skeletal element
+
+[Term]
+id: UBERON:0010959
+name: craniocervical muscle
+synonym: "muscle of head and neck" RELATED []
+synonym: "muscle of head or neck" EXACT []
+is_a: UBERON:0014892 ! skeletal muscle organ
 
 [Term]
 id: UBERON:0010996
@@ -8221,10 +8298,11 @@ union_of: UBERON:0011095 ! vertebra pre-cartilage condensation
 id: UBERON:0015022
 name: hindlimb endochondral element
 synonym: "hindlimb bone skeletal element" BROAD []
-is_a: UBERON:0015061 ! limb endochondral element
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004765 ! skeletal element
 union_of: UBERON:0003464 ! hindlimb bone
 union_of: UBERON:0010885 ! hindlimb cartilage element
-union_of: UBERON:0010886 ! hindlimb bone pre-cartilage condensation
+union_of: UBERON:0010886 ! hindlimb pre-cartilage condensation
 
 [Term]
 id: UBERON:0015052
@@ -8232,6 +8310,7 @@ name: femur endochondral element
 synonym: "femur element" EXACT []
 synonym: "femur skeletal element" BROAD []
 is_a: UBERON:0015022 ! hindlimb endochondral element
+is_a: UBERON:0015061 ! limb endochondral element
 union_of: UBERON:0000981 ! femur
 union_of: UBERON:0006234 ! femur pre-cartilage condensation
 union_of: UBERON:0010129 ! femur cartilage element
@@ -8251,6 +8330,13 @@ union_of: UBERON:0010882 ! limb bone pre-cartilage condensation
 id: UBERON:0015165
 name: multi-unit eye
 is_a: UBERON:0000970 ! eye
+
+[Term]
+id: UBERON:0015172
+name: endometrial blood vessel
+synonym: "blood vessel of endometrium" EXACT []
+is_a: UBERON:0001981 ! blood vessel
+is_a: UBERON:0005156 ! reproductive structure
 
 [Term]
 id: UBERON:0015212
