@@ -3507,10 +3507,9 @@ is_a: CL:0000527 ! efferent neuron
 
 [Term]
 id: CL:0000382
-name: scolopidium
+name: scolopale cell
 namespace: cell
-synonym: "scolopale cell" EXACT []
-xref: FBbt:00005217
+xref: FBbt:00005219
 is_a: CL:0000378 ! support cell (sensu Nematoda and Protostomia)
 
 [Term]
@@ -4021,7 +4020,7 @@ relationship: develops_from CL:0002334 ! preadipocyte
 id: CL:0000449
 name: brown fat cell
 namespace: cell
-def: "A cell from the thermogenic form of adipose tissue found in newborns of many species, including humans, and in hibernating mammals. Brown fat is capable of rapid liberation of energy and seems to be important in the maintenance of body temperature immediately after birth and upon waking from hibernation." [MESH:A10.165.114.322]
+def: "A cell from the thermogenic form of adipose tissue found in many species,  particularly in newborns and hibernating mammals, but also in lesser amounts in adults of other mammals including humans. Brown fat is capable of rapid liberation of energy and seems to be important in the maintenance of body temperature immediately after birth and upon waking from hibernation." [MESH:A10.165.114.322]
 synonym: "brown adipocyte" EXACT []
 synonym: "brown adipose cell" EXACT []
 xref: CALOHA:TS-0099
@@ -5389,10 +5388,11 @@ is_a: CL:0002381 ! uninucleate conidium
 
 [Term]
 id: CL:0000598
-name: pyramidal cell
+name: pyramidal neuron
 namespace: cell
-def: "A projection neuron in the cerebral cortex and the hippocampus. Pyramidal cells have a pyramid-shaped soma with the apex and an apical dendrite pointed toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their cortical region." [GOC:tfm, MESH:A08.186.211.577.405.700]
+def: "Pyramidal neurons have a pyramid-shaped soma with the apex and an apical dendrite pointed toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their  region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala." [GOC:tfm, MESH:A08.186.211.577.405.700]
 synonym: "projection neuron" EXACT []
+synonym: "pyramidal cell" EXACT []
 synonym: "pyramidal neuron" EXACT []
 xref: BTO:0003102
 xref: FMA:67310
@@ -7494,7 +7494,7 @@ is_a: CL:0002419 ! mature T cell
 id: CL:0000816
 name: immature B cell
 namespace: cell
-def: "An immature B cell is a precursor B cell that has the phenotype surface IgM-positive and surface IgD-negative, and have not undergone class immunoglobulin class switching or peripheral encounter with antigen and activation." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, GOC:tfm, ISBN:0781735149, PMID:20081059, PMID:20839338]
+def: "An immature B cell is a B cell that has the phenotype surface IgM-positive and surface IgD-negative, and have not undergone class immunoglobulin class switching or peripheral encounter with antigen and activation." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, GOC:tfm, ISBN:0781735149, PMID:20081059, PMID:20839338]
 comment: Immature B cells are also reportedly CD5-positive, CD10-positive, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD24-positive, CD25-negative, CD27-negative, CD34-negative, CD38-positive, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD79a-positive, CD80-negative, CD81-positive, CD86-negative, CD95-negative, CD127-negative, CD138-negative, CD185-positive, CD196-positive, MHCII/HLA-DR-positive, RAG-positive, TdT-negative, Vpre-B-negative, and preBCR-negative. Transcription factors expressed: Pax5-positive.
 synonym: "immature B lymphocyte" EXACT []
 synonym: "immature B-cell" EXACT []
@@ -7508,7 +7508,6 @@ id: CL:0000817
 name: precursor B cell
 namespace: cell
 def: "A precursor B cell is a B cell with the phenotype CD10-positive." [GO_REF:0000031, GOC:rhs, GOC:tfm]
-comment: Representation needs to be aligned with GO
 synonym: "pre-B cell" RELATED []
 xref: BTO:0001133
 xref: CALOHA:TS-0819
@@ -10149,6 +10148,19 @@ xref: BTO:0004911
 is_a: CL:0000038 ! erythroid progenitor cell
 
 [Term]
+id: CL:0001070
+name: beige adipocyte
+namespace: cell
+def: "A fat cell that is beige in color, thermogenic, and which differentiates in white fat tissue from a Myf5-negative progenitor." [] {comment="GOC:add", comment="GOC:cvs", comment="GOC:ymb", comment="PMID:22796012", comment="PMID:25851693"}
+synonym: "beige brown adipocyte" EXACT []
+synonym: "beige fat cell" EXACT []
+synonym: "beige/brite adipocyte" EXACT []
+synonym: "brite adipocyte" EXACT []
+synonym: "brite cell" EXACT []
+synonym: "brite fat cell" EXACT []
+is_a: CL:0000136 ! fat cell
+
+[Term]
 id: CL:0001658
 name: visual pigment cell (sensu Nematoda and Protostomia)
 namespace: cell
@@ -10748,7 +10760,7 @@ def: "A pre-B cell that is pre-BCR-negative, and the kappa- and lambda- light im
 comment: Fraction D precursor B cells are also reportedly CD24-positive and sIgD-negative.
 synonym: "Fr. D" EXACT []
 synonym: "Fraction D pre-B cell" EXACT [GOC:tfm]
-is_a: CL:0000817 ! precursor B cell
+is_a: CL:0002400 ! Fraction B/C precursor B cell
 relationship: develops_from CL:0002050 ! Fraction C' precursor B cell
 created_by: tmeehan
 creation_date: 2010-04-28T02:55:16Z
@@ -10783,7 +10795,6 @@ namespace: cell
 def: "An immature B cell that is CD38-negative, CD10-low, CD21-low, and CD22-high." [GOC:tfm, PMID:18432934]
 comment: Markers are associated with human cell type.
 is_a: CL:0000816 ! immature B cell
-is_a: CL:0000817 ! precursor B cell
 relationship: develops_from CL:0002053 ! CD22-positive, CD38-low small pre-B cell
 created_by: tmeehan
 creation_date: 2010-04-28T03:19:14Z
@@ -20267,7 +20278,7 @@ id: CL:1000546
 name: kidney medulla collecting duct epithelial cell
 namespace: cell
 xref: KUPO:0001060
-is_a: CL:1001225 ! kidney collecting duct cell
+is_a: CL:1000497 ! kidney cell
 
 [Term]
 id: CL:1000547
@@ -21223,12 +21234,12 @@ is_a: CL:0000099 ! interneuron
 id: CL:1001571
 name: hippocampal pyramidal neuron
 namespace: cl
-def: "A pyramidal cell of the hippocampus." [GOC:pr, PMID:19342486]
+def: "A pyramidal neuron of the hippocampus." [GOC:pr, PMID:19342486]
 synonym: "hippocampus (CA) pyramidal cell" EXACT [NIFSTD:sao131261273]
 synonym: "hippocampus (CA) pyramidal neuron" EXACT [NIFSTD:sao131261273]
 xref: NIFSTD:sao131261273
 xref: SAO:sao131261273
-is_a: CL:0000598 ! pyramidal cell
+is_a: CL:0000598 ! pyramidal neuron
 is_a: CL:0002608 ! hippocampal neuron
 
 [Term]
@@ -21986,12 +21997,21 @@ created_by: TermGenie
 creation_date: 2014-10-02T23:52:53Z
 
 [Term]
+id: CL:2000048
+name: ventral horn of spinal cord spinal cord motor neuron
+namespace: cell
+def: "Any spinal cord motor neuron that is part of a ventral horn of spinal cord." [GOC:TermGenie]
+is_a: CL:0011001 ! spinal cord motor neuron
+created_by: TermGenie
+creation_date: 2014-10-03T00:26:27Z
+
+[Term]
 id: CL:2000049
 name: primary motor cortex pyramidal cell
 namespace: cell
 def: "Any pyramidal cell that is part of a primary motor cortex." [GOC:TermGenie]
 comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
-is_a: CL:0000598 ! pyramidal cell
+is_a: CL:0000598 ! pyramidal neuron
 created_by: TermGenie
 creation_date: 2014-10-06T17:39:04Z
 
@@ -22059,7 +22079,7 @@ id: CL:2000056
 name: Meynert cell
 namespace: cell
 def: "Any pyramidal cell that is part of a regional part of cerebral cortex." [GOC:TermGenie]
-is_a: CL:0000598 ! pyramidal cell
+is_a: CL:0000598 ! pyramidal neuron
 is_a: CL:0002609 ! neuron of cerebral cortex
 created_by: TermGenie
 creation_date: 2014-10-06T19:20:41Z
@@ -22353,6 +22373,90 @@ is_a: CL:0000349 ! extraembryonic cell
 is_a: CL:0000842 ! mononuclear cell
 created_by: TermGenie
 creation_date: 2014-12-02T20:14:16Z
+
+[Term]
+id: CL:2000086
+name: neocortex basket cell
+namespace: cell
+def: "Any basket cell that is part of a neocortex." [GOC:TermGenie]
+is_a: CL:0000118 ! basket cell
+created_by: TermGenie
+creation_date: 2014-12-24T00:37:19Z
+
+[Term]
+id: CL:2000087
+name: dentate gyrus of hippocampal formation basket cell
+namespace: cell
+def: "Any basket cell that is part of a dentate gyrus of hippocampal formation." [GOC:TermGenie]
+is_a: CL:0000118 ! basket cell
+created_by: TermGenie
+creation_date: 2014-12-24T00:37:24Z
+
+[Term]
+id: CL:2000088
+name: Ammon's horn basket cell
+namespace: cell
+def: "Any basket cell that is part of a Ammon's horn." [GOC:TermGenie]
+is_a: CL:0000118 ! basket cell
+is_a: CL:0002608 ! hippocampal neuron
+created_by: TermGenie
+creation_date: 2014-12-24T00:37:30Z
+
+[Term]
+id: CL:2000089
+name: dentate gyrus of hippocampal formation granule cell
+namespace: cell
+def: "The principal cell type of the dentate gyrus." [GOC:TermGenie]
+comment: The granule cell has a characteristic cone-shaped tree of spiny apical dendrites.
+is_a: CL:0000120 ! granule cell
+created_by: TermGenie
+creation_date: 2015-02-23T05:48:23Z
+
+[Term]
+id: CL:2000090
+name: dentate gyrus of hippocampal formation stellate cell
+namespace: cell
+def: "Any stellate cell that is part of a dentate gyrus of hippocampal formation." [GOC:TermGenie]
+is_a: CL:0000122 ! stellate cell
+created_by: TermGenie
+creation_date: 2015-02-23T05:48:40Z
+
+[Term]
+id: CL:2000091
+name: endometrial microvascular endothelial cells
+namespace: cell
+def: "Any microvascular endothelial cell that is part of a endometrial blood vessel." [GOC:TermGenie]
+is_a: CL:2000008 ! microvascular endothelial cell
+created_by: TermGenie
+creation_date: 2015-03-31T21:02:36Z
+
+[Term]
+id: CL:2000092
+name: hair follicular keratinocyte
+namespace: cell
+def: "Any keratinocyte that is part of a hair follicle." [GOC:TermGenie]
+is_a: CL:0000312 ! keratinocyte
+is_a: CL:0002559 ! hair follicle cell
+created_by: TermGenie
+creation_date: 2015-03-31T21:07:02Z
+
+[Term]
+id: CL:2000093
+name: bronchus fibroblast of lung
+namespace: cell
+def: "Any fibroblast of lung that is part of a bronchus." [GOC:TermGenie]
+is_a: CL:0002553 ! fibroblast of lung
+created_by: TermGenie
+creation_date: 2015-03-31T21:16:22Z
+
+[Term]
+id: CL:2000094
+name: nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa
+namespace: cell
+def: "Any epithelial cell of viscerocranial mucosa that is part of a nasal cavity respiratory epithelium." [GOC:TermGenie]
+is_a: CL:1000441 ! epithelial cell of viscerocranial mucosa
+created_by: TermGenie
+creation_date: 2015-03-31T22:25:17Z
 
 [Typedef]
 id: RO:0002120

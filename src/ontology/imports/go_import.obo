@@ -1,6 +1,6 @@
 format-version: 1.2
 ontology: cl/imports/go_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/go/releases/2015-04-17/go.owl
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/go/releases/2015-05-09/go.owl
 
 [Term]
 id: GO:0000018
@@ -1479,6 +1479,7 @@ is_a: GO:0065008 ! regulation of biological quality
 [Term]
 id: GO:0010927
 name: cellular component assembly involved in morphogenesis
+is_a: GO:0022607 ! cellular component assembly
 is_a: GO:0044763 ! single-organism cellular process
 is_a: GO:0044767 ! single-organism developmental process
 is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
@@ -1709,6 +1710,7 @@ is_a: GO:0043231 ! intracellular membrane-bounded organelle
 [Term]
 id: GO:0016043
 name: cellular component organization
+is_a: GO:0009987 ! cellular process
 is_a: GO:0071840 ! cellular component organization or biogenesis
 
 [Term]
@@ -1740,6 +1742,7 @@ is_a: GO:0006810 ! transport
 id: GO:0016337
 name: single organismal cell-cell adhesion
 is_a: GO:0098602 ! single organism cell adhesion
+is_a: GO:0098609 ! cell-cell adhesion
 
 [Term]
 id: GO:0016444
@@ -1830,6 +1833,7 @@ name: B cell receptor complex
 is_a: GO:0019814 ! immunoglobulin complex
 is_a: GO:0043235 ! receptor complex
 is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0098802 ! plasma membrane receptor complex
 
 [Term]
 id: GO:0019882
@@ -2141,6 +2145,7 @@ id: GO:0030667
 name: secretory granule membrane
 is_a: GO:0030659 ! cytoplasmic vesicle membrane
 is_a: GO:0098588 ! bounding membrane of organelle
+is_a: GO:0098805 ! whole membrane
 
 [Term]
 id: GO:0030851
@@ -2419,6 +2424,7 @@ id: GO:0032997
 name: Fc receptor complex
 is_a: GO:0043234 ! protein complex
 is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0098797 ! plasma membrane protein complex
 
 [Term]
 id: GO:0033001
@@ -2544,6 +2550,7 @@ id: GO:0035369
 name: pre-B cell receptor complex
 is_a: GO:0043234 ! protein complex
 is_a: GO:0044425 ! membrane part
+is_a: GO:0098796 ! membrane protein complex
 
 [Term]
 id: GO:0035637
@@ -2646,6 +2653,7 @@ id: GO:0042101
 name: T cell receptor complex
 is_a: GO:0043235 ! receptor complex
 is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0098802 ! plasma membrane receptor complex
 
 [Term]
 id: GO:0042105
@@ -2800,6 +2808,7 @@ id: GO:0042611
 name: MHC protein complex
 is_a: GO:0043234 ! protein complex
 is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0098797 ! plasma membrane protein complex
 
 [Term]
 id: GO:0042613
@@ -2951,6 +2960,7 @@ id: GO:0043384
 name: pre-T cell receptor complex
 is_a: GO:0043235 ! receptor complex
 is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0098802 ! plasma membrane receptor complex
 
 [Term]
 id: GO:0043436
@@ -4327,6 +4337,7 @@ is_a: GO:0034109 ! homotypic cell-cell adhesion
 [Term]
 id: GO:0070489
 name: T cell aggregation
+is_a: GO:0045321 ! leukocyte activation
 is_a: GO:0071593 ! lymphocyte aggregation
 
 [Term]
@@ -4549,6 +4560,7 @@ is_a: GO:0002521 ! leukocyte differentiation
 id: GO:0097186
 name: amelogenesis
 is_a: GO:0042475 ! odontogenesis of dentin-containing tooth
+is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
 
 [Term]
 id: GO:0097367
@@ -4578,9 +4590,37 @@ is_a: GO:0007155 ! cell adhesion
 is_a: GO:0044699 ! single-organism process
 
 [Term]
+id: GO:0098609
+name: cell-cell adhesion
+is_a: GO:0007155 ! cell adhesion
+
+[Term]
 id: GO:0098754
 name: detoxification
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0098796
+name: membrane protein complex
+is_a: GO:0043234 ! protein complex
+is_a: GO:0044425 ! membrane part
+
+[Term]
+id: GO:0098797
+name: plasma membrane protein complex
+is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0098796 ! membrane protein complex
+
+[Term]
+id: GO:0098802
+name: plasma membrane receptor complex
+is_a: GO:0043235 ! receptor complex
+is_a: GO:0098797 ! plasma membrane protein complex
+
+[Term]
+id: GO:0098805
+name: whole membrane
+is_a: GO:0016020 ! membrane
 
 [Term]
 id: GO:1901135

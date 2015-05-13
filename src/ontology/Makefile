@@ -173,7 +173,7 @@ NIFBM = $(NIF)/BiomaterialEntities
 
 ## A module that consists of all portions of other NIFSTD ontologies depended on by NIF-Cell
 imports/nif_import.owl:
-	owltools $(NIFBM)/NIF-Cell.owl $(NIF)/nif.owl --extract-module -s $(NIFBM)/NIF-Cell.owl -c --set-ontology-id $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
+	owltools $(NIFBM)/NIF-Cell.owl $(NIF)/nif.owl --extract-module -s $(NIFBM)/NIF-Cell.owl -c --extract-mingraph --set-ontology-id $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
 
 ## A rewritten version of NIF-Cell that uses the importer above
 mirror/NIF-Cell.owl:
