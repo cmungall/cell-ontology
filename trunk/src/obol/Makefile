@@ -1,11 +1,13 @@
 
-cell-new.owl: ../ontology/cl-edit.owl
+all: cell-defs.obo neuron-defs.obo
+
+cell-defs.owl: ../ontology/cl-edit.owl
 	owljs-obol -r cell -p label,has_exact_synonym -u -o $@ -t ofn -C cfg_cl.js -m anatomy $< > $@.LOG
 
 cell-gen.owl: ../ontology/cl-edit.owl
 	owljs-obol -F "whole" -R "part of whole" -r cell -p label,has_exact_synonym -u -o $@ -t ofn -C cfg_cl_uberon.js -m anatomy $< > $@.LOG
 
-neuron-new.owl: ../ontology/cl-edit.owl
+neuron-defs.owl: ../ontology/cl-edit.owl
 	owljs-obol -r neuron -p label,has_exact_synonym -u -o $@ -t ofn -C cfg_cl_uberon.js -m anatomy $< > $@.LOG
 
 neuron-gen.owl: ../ontology/cl-edit.owl
@@ -16,6 +18,9 @@ neuron-zfa.owl: ../ontology/cl-plus-zfa.owl
 
 cell-zfa.owl: ../ontology/cl-plus-zfa.owl
 	owljs-obol -u -r cell -o $@ -t ofn -C cfg_cl.js -m equiv $< > $@.LOG
+
+neuron-nif.owl: ../ontology/cl-plus-nif.owl
+	owljs-obol -r neuron -o $@ -t ofn -C cfg_cl_nif.js -m equiv $< > $@.LOG
 
 
 all.owl: ../ontology/cl-edit.owl
